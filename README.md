@@ -1,3 +1,3 @@
 # Labh.IO
 
-# Landing page
+## Landing page
