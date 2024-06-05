@@ -6,7 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Labh</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" />
+
 </head>
+<!-- Your content here -->
+
 
 <body>
   <!DOCTYPE html>
@@ -37,17 +42,34 @@
 
   </html>
   <div class="container-fluid vh-100 vw-100">
-    <div class="col-lg-12 w-100">
+    <div class="col-lg-12 w-100" data-aos="fade-up" data-aos-duration="1000">
       <img src="assets/1.png" class="img-fluid  w-100" alt="Responsive image">
     </div>
-    <div class="col-lg-12  w-100">
+    <div class="col-lg-12  w-100" data-aos="fade-up" data-aos-duration="1000">
       <img src="assets/2.png" class="img-fluid  w-100" alt="Responsive image">
     </div>
-    <div class="col-lg-12  w-100">
-      <img src="assets/3.png" class="img-fluid  w-100" alt="Responsive image">
-    </div>
-    <!-- Add more divs for more images -->
+
+    <footer class="footer bg-light" style="height:25vh;">
+      <div class="container ">
+        <div class="row">
+          <div class="col-lg-6">
+            <h1 style="margin-top: 10%;text-align: left;">Labh.io</h1>
+            <h2>Your handheld guide to investing.</h2>
+          </div>
+
+
+        </div>
+      </div>
+    </footer>
   </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
