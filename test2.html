@@ -193,6 +193,30 @@
             cursor: pointer;
         }
 
+        .neumorphic-button.light {
+            background: #ffffff;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 1px 1px 5px #0d0d0d, -1px -1px 5px #2b2b2b;
+            color: #000000;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .neumorphic-button.light:hover {
+            background: #ffffff;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 1px 1px 5px #0d0d0d, -1px -1px 5px #2b2b2b;
+            color: #000000;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
         .neumorphic-button:hover {
             box-shadow: inset 7px 7px 15px #0d0d0d, inset -7px -7px 15px #2b2b2b;
         }
@@ -231,7 +255,10 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Labh Wealth Management</a>
+        <a class="navbar-brand" href="#">
+            <img src="assets/logo_final.png" alt="Labh Logo" style="height: 40px;">
+            <span style="margin-left: 10px; vertical-align: middle;">Labh</span>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -261,11 +288,11 @@
     </nav>
 
     <!-- Jumbotron -->
-    <div class="jumbotron text-center animate__animated ">
+    <div id="jtron" class="jumbotron text-center animate__animated ">
         <h1 class="display-4">Welcome to Labh</h1>
         <p class="lead">Advanced Financial Research and Portfolio Management for Retail Investors</p>
         <br>
-        <a class="neumorphic-button" href="#beta">Join our beta!</a>
+        <a class="neumorphic-button light" href="#beta">Join our beta!</a>
     </div>
     <hr>
 
@@ -390,7 +417,7 @@
         <hr>
         <div id="how" class="container-fluid">
             <div class="row neumorphic-section">
-                <div class="col-md-3 mx-auto d-flex flex-column justify-content-center">
+                <div class="col-xs-12 col-md-3 mx-auto d-flex flex-column justify-content-center">
                     <h2>How does it work ?</h2>
 
                     <ul class="nav nav-pills flex-column neumorphic-nav-pills" id=" myTab" role="tablist">
@@ -408,48 +435,69 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-9">
+                <div class="col-xs-12 col-md-9">
                     <div class="tab-content" id="myTabContent">
                         <div id="tab1" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tab1-tab">
-                            <div>
-                                <h2>Automated Portfolio Analysis</h2>
-                                <p>At Labh, our detailed portfolio analysis ensures your investments are
-                                    optimized for
-                                    performance and aligned with your financial goals.
-                                    <br>Analysis includes but not limited to performance review, risk assesment,
-                                    diversification analysis, cost analysis etc
-                                </p>
+                            <div class="row d-flex align-items-center">
+                                <div class="col-xs-12 col-md-7 d-flex flex-column">
+                                    <h2>Automated Portfolio Analysis</h2>
+                                    <p>At Labh, our detailed portfolio analysis ensures your investments are
+                                        optimized for
+                                        performance and aligned with your financial goals.
+                                        <br>Analysis includes but not limited to performance review, risk assesment,
+                                        diversification analysis, cost analysis etc
+                                    </p>
+                                </div>
+                                <div class="col-md-5">
+                                    <img src="assets/portfolio.gif" class="img-fluid">
+                                </div>
+
                             </div>
                         </div>
                         <div id="tab2" class="tab-pane fade" role="tabpanel" aria-labelledby="tab2-tab">
-                            <div>
-                                <h2>Portfolio Construction</h2>
-                                <p>Based on our thorough analyses, we construct diversified asset baskets
-                                    tailored to
-                                    retail
-                                    investors. These baskets include carefully selected stocks, mutual funds,
-                                    and other
-                                    assets
-                                    designed to maximize returns while managing risk.</p>
+                            <div class="row d-flex align-items-center">
+                                <div class="col-xs-12 col-md-7 d-flex flex-column">
+                                    <h2>Portfolio Construction</h2>
+                                    <p>Based on our thorough analyses, we construct diversified asset baskets
+                                        tailored to
+                                        retail
+                                        investors. These baskets include carefully selected stocks, mutual funds,
+                                        and other
+                                        assets
+                                        designed to maximize returns while managing risk.</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <img src="assets/basket.gif" class="img-fluid">
+                                </div>
                             </div>
+
+
                         </div>
                         <div id="tab3" class=" tab-pane fade" role="tabpanel" aria-labelledby="tab3-tab">
-                            <div>
-                                <h2>Continuous Monitoring and Rebalancing</h2>
-                                <p>We constantly monitor market conditions and portfolio performance. Our
-                                    dynamic
-                                    rebalancing
-                                    strategies ensure that your portfolio remains aligned with your investment
-                                    goals
-                                    and
-                                    risk
-                                    tolerance.</p>
-                            </div>
-                        </div>
+                            <div class="row d-flex align-items-center">
+                                <div class="col-xs-12 col-md-7 d-flex flex-column">
+                                    <h2>Continuous Monitoring and Rebalancing</h2>
+                                    <p>We constantly monitor market conditions and portfolio performance. Our
+                                        dynamic
+                                        rebalancing
+                                        strategies ensure that your portfolio remains aligned with your investment
+                                        goals
+                                        and
+                                        risk
+                                        tolerance.</p>
 
+                                </div>
+                                <div class="col-xs-12 col-md-5">
+                                    <img src="assets/chart.gif" class="img-fluid">
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
+
                 </div>
             </div>
+        </div>
         </div>
         </div>
     </section>
