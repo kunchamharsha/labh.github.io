@@ -175,7 +175,7 @@
 
         .neumorphic-nav-pills .nav-link {
             background: var(--background-color);
-            box-shadow: 1px 1px 5px #bebebe, -1px -1px 5px #ffffff;
+            box-shadow: 1px 1px 5px #999999, -1px -1px 12px #000000;
             color: #ffffff;
             margin: 10px 0;
             padding: 10px 20px;
@@ -268,6 +268,53 @@
         #jtron {
             background-image: url('assets/anime.gif');
         }
+
+        /* Accordion Header */
+        .accordion .card-header {
+            background-color: #000;
+            /* Black background */
+            color: #fff;
+            /* White text */
+            border: none;
+            /* Remove border */
+        }
+
+        /* Accordion Button */
+        .accordion .btn-link {
+            color: #fff;
+            /* White text */
+            text-decoration: none;
+            /* Remove underline */
+        }
+
+        .accordion .btn-link:hover {
+            color: #ccc;
+            /* Light grey text on hover */
+        }
+
+        /* Accordion Body */
+        .accordion .card-body {
+            background-color: #fff;
+            /* White background */
+            color: #000;
+            /* Black text */
+        }
+
+        /* Accordion Card */
+        .accordion .card {
+            border: none;
+            /* Remove border */
+            border-bottom: 1px solid #ccc;
+            /* Light grey bottom border */
+        }
+
+        .card-title {
+            color: #000;
+        }
+
+        .card-text {
+            color: #000;
+        }
     </style>
 </head>
 
@@ -310,12 +357,101 @@
     <!-- Jumbotron -->
     <div id="jtron" class="jumbotron text-center animate__animated ">
         <h1 class="display-4">Welcome to Labh</h1>
-        <p class="lead">Advanced Financial Research and Portfolio Management for Retail Investors</p>
+        <p class="lead">Assorted Mutual Funds and Stock Baskets via Advanced Financial Research
+            for Retail Investors</p>
         <br>
-        <a class="neumorphic-button light" href="#about">Read about the team!</a>
+        <a class="neumorphic-button light" href="#how">How does it work ?</a>
     </div>
     <hr>
 
+
+    <div id="how" class="container-fluid">
+        <div class="row neumorphic-section">
+            <div class="col-xs-12 col-md-3 mx-auto d-flex flex-column justify-content-center">
+                <h2>How does it work ?</h2>
+
+                <ul class="nav nav-pills flex-column neumorphic-nav-pills" id=" myTab" role="tablist">
+
+                    <li class="nav-item active neumorphic-pill">
+                        <a class="nav-link" id="tab2-tab" data-toggle="pill" href="#tab2" role="tab"
+                            aria-controls="tab2" aria-selected="false">Portfolio Construction</a>
+                    </li>
+                    <li class="nav-item neumorphic-pill">
+                        <a class="nav-link" id="tab3-tab" data-toggle="pill" href="#tab3" role="tab"
+                            aria-controls="tab3" aria-selected="false">Monitoring</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  neumorphic-pill" id="tab1-tab" data-toggle="pill" href="#tab1" role="tab"
+                            aria-controls="tab1" aria-selected="true">Automated Portfolio Analysis</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-md-9">
+                <div class="tab-content" id="myTabContent">
+                    <div id="tab2" class="tab-pane fade  show active" role="tabpanel" aria-labelledby="tab2-tab">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-xs-12 col-md-7 d-flex flex-column">
+                                <h2>Portfolio Construction</h2>
+                                <p>Based on our thorough analyses, we construct diversified asset baskets
+                                    tailored to
+                                    retail
+                                    investors. These baskets include carefully selected stocks, mutual funds,
+                                    and other
+                                    assets
+                                    designed to maximize returns while managing risk.</p>
+                            </div>
+                            <div class="col-md-5">
+                                <img src="assets/basket.gif" class="img-fluid">
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div id="tab3" class=" tab-pane fade" role="tabpanel" aria-labelledby="tab3-tab">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-xs-12 col-md-7 d-flex flex-column">
+                                <h2>Continuous Monitoring and Rebalancing</h2>
+                                <p>We constantly monitor market conditions and portfolio performance. Our
+                                    dynamic
+                                    rebalancing
+                                    strategies ensure that your portfolio remains aligned with your investment
+                                    goals
+                                    and
+                                    risk
+                                    tolerance.</p>
+
+                            </div>
+                            <div class="col-xs-12 col-md-5">
+                                <img src="assets/chart.gif" class="img-fluid">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="tab1" class="tab-pane fade" role="tabpanel" aria-labelledby="tab1-tab">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-xs-12 col-md-7 d-flex flex-column">
+                                <h2>Automated Portfolio Analysis</h2>
+                                <p>At Labh, our detailed portfolio analysis ensures your investments are
+                                    optimized for
+                                    performance and aligned with your financial goals.
+                                    <br>Analysis includes but not limited to performance review, risk assesment,
+                                    diversification analysis, cost analysis etc
+                                </p>
+                            </div>
+                            <div class="col-md-5">
+                                <img src="assets/portfolio.gif" class="img-fluid">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <hr>
     <!-- About Us Section -->
     <div id="about" class="container second-section animate__animated">
         <div class="row justify-content-center d-flex align-items-center ">
@@ -325,12 +461,21 @@
                 <hr>
             </div>
             <div class="col-xs-12 col-md-8 ">
-                <h4>Our team is a powerhouse of diverse expertise, comprising engineers, <br>PhD mathematicians,
+                <p>Our team is a powerhouse of diverse expertise, comprising engineers, <br>PhD mathematicians,
                     traders,
-                    and MBAs. <br>The founders are Alum of the prestigious IIM Ahmedabad. Our professionals are equipped
+                    and MBAs. The founders are Alum of the prestigious IIM Ahmedabad.<br>
+                    <br>Our professionals are
+                    equipped
                     with top-tier
-                    certifications, including CFA Level 3,<br> NISM Research Analyst, Mutual Fund Distribution,
-                    Investment Advisor, and Equity Derivatives.</h4>
+                    certifications.
+                <ul style="list-style: none;">
+                    <li> - CFA Level 3</li>
+                    <li> - NISM Research Analyst</li>
+                    <li> - NISM Mutual Fund Distributor</li>
+                    <li> - NISM Registered Investment Advisor</li>
+                    <li> - NISM Equity Derivatives.</li>
+                </ul>
+                </p>
                 <br>
                 <a class="neumorphic-button light" href="#pitch">Read our methodology!</a>
 
@@ -437,93 +582,210 @@
                 </div>
             </div>
         </div>
-        <hr>
-        <div id="how" class="container-fluid">
-            <div class="row neumorphic-section">
-                <div class="col-xs-12 col-md-3 mx-auto d-flex flex-column justify-content-center">
-                    <h2>How does it work ?</h2>
 
-                    <ul class="nav nav-pills flex-column neumorphic-nav-pills" id=" myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active neumorphic-pill" id="tab1-tab" data-toggle="pill" href="#tab1"
-                                role="tab" aria-controls="tab1" aria-selected="true">Automated Portfolio Analysis</a>
-                        </li>
-                        <li class="nav-item neumorphic-pill">
-                            <a class="nav-link" id="tab2-tab" data-toggle="pill" href="#tab2" role="tab"
-                                aria-controls="tab2" aria-selected="false">Portfolio Construction</a>
-                        </li>
-                        <li class="nav-item neumorphic-pill">
-                            <a class="nav-link" id="tab3-tab" data-toggle="pill" href="#tab3" role="tab"
-                                aria-controls="tab3" aria-selected="false">Monitoring</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-md-9">
-                    <div class="tab-content" id="myTabContent">
-                        <div id="tab1" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tab1-tab">
-                            <div class="row d-flex align-items-center">
-                                <div class="col-xs-12 col-md-7 d-flex flex-column">
-                                    <h2>Automated Portfolio Analysis</h2>
-                                    <p>At Labh, our detailed portfolio analysis ensures your investments are
-                                        optimized for
-                                        performance and aligned with your financial goals.
-                                        <br>Analysis includes but not limited to performance review, risk assesment,
-                                        diversification analysis, cost analysis etc
-                                    </p>
-                                </div>
-                                <div class="col-md-5">
-                                    <img src="assets/portfolio.gif" class="img-fluid">
-                                </div>
-
-                            </div>
-                        </div>
-                        <div id="tab2" class="tab-pane fade" role="tabpanel" aria-labelledby="tab2-tab">
-                            <div class="row d-flex align-items-center">
-                                <div class="col-xs-12 col-md-7 d-flex flex-column">
-                                    <h2>Portfolio Construction</h2>
-                                    <p>Based on our thorough analyses, we construct diversified asset baskets
-                                        tailored to
-                                        retail
-                                        investors. These baskets include carefully selected stocks, mutual funds,
-                                        and other
-                                        assets
-                                        designed to maximize returns while managing risk.</p>
-                                </div>
-                                <div class="col-md-5">
-                                    <img src="assets/basket.gif" class="img-fluid">
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div id="tab3" class=" tab-pane fade" role="tabpanel" aria-labelledby="tab3-tab">
-                            <div class="row d-flex align-items-center">
-                                <div class="col-xs-12 col-md-7 d-flex flex-column">
-                                    <h2>Continuous Monitoring and Rebalancing</h2>
-                                    <p>We constantly monitor market conditions and portfolio performance. Our
-                                        dynamic
-                                        rebalancing
-                                        strategies ensure that your portfolio remains aligned with your investment
-                                        goals
-                                        and
-                                        risk
-                                        tolerance.</p>
-
-                                </div>
-                                <div class="col-xs-12 col-md-5">
-                                    <img src="assets/chart.gif" class="img-fluid">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
         </div>
         </div>
     </section>
+    <hr>
+    <section id="three-cards" class="py-5">
+        <div class="container">
+            <div class="col-md-12 col-xs-12 ">
+                <div class="mb-5 sticky-method">
+                    <h2>Read our blogs</h2>
+                    <hr>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-xs-12">
+                    <div class="card mt-3 mb-3">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhIFFkVciSScrq9M4nSWsZiXRIUKUgWr4DrOm2EjYAlzLkyT8zRafuKS_J7V37cl1MS9t_W55ZjcZEXljhMXuS36qp74d-4MDfYiQoTPouqOw6Dbe6jTDJBzWvTwwSPJDxBom-0LflyZHEfmSxUxzxNzgzgE5XL6sBnc3TU49t3LhEu3jA_95goxr3r-JED/s7001/sl_121021_47240_20.jpg"
+                            class="card-img-top" alt="Card Image 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Thematic Funds in India: A Comprehensive Guide</h5>
+
+                            <p class="card-text">Thematic funds have gained significant traction in India, offering
+                                investors a unique way to capitalize on specific investment themes. Unlike traditional
+                                mutual funds that diversify across sectors,</p>
+                            <a href="https://blog.labh.io/2024/06/thematic-funds-in-india-comprehensive.html"
+                                class="btn btn-dark">Keep Reading..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="card mt-3 mb-3">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOqRytFA3xLU2cddyBoympAbNUotRMTL7wQCEXM_B-TzESzlIhJOW5YmTx1-2qMcUmqIgs40Xh_kUZBmMiSal3XwK8nGpxxqUIp8V_SIQ7YXc-jqWdjiP7biV6_NApj8xIQddtWvVqxQiQIkGwI_-8Ow5IgITNnQwDw_1LdLnzE2jA8e2djLy3vCp7VVYa/s1024/DALL%C2%B7E%202024-08-06%2016.21.24%20-%20A%20modern%20and%20professional%20illustration%20for%20a%20blog%20titled%20'How%20Global%20Events%20Influence%20Mutual%20Fund%20Performance'.%20The%20image%20features%20symbols%20of%20global%20e.webp"
+                            class="card-img-top" alt="Card Image 2" height="200" style="object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">How Global Events Influence Mutual Fund Performances</h5>
+                            <p class="card-text">The performance of mutual funds, a popular investment vehicle, is often
+                                influenced by a myriad of factors, many of which extend beyond the realm of domestic
+                                markets</p>
+                            <a href="https://blog.labh.io/2024/06/how-global-events-influence-mutual-fund.html"
+                                class="btn btn-dark">Keep Reading..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="card mt-3 mb-3">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjO1c9Em_xkaKfNDKKmVDWPmn74iQGE_m42B8MQPlfLr7pl2p4FEY9K9_16Yso2VPzY1yqOrclwW-2qzJW6Pjg-z0YQNqEm8gmzAOeaDoWFlzWnilm1cME501RzBLZomCJ6axUZs_VlKwGOalUWcGjCfDxuuBuOfNtWeB1LfK_lsjUyVt6_kaoaOX_yA5Zz/s1024/LimeWire%20AI%20Studio%20Asset.jpeg"
+                            class="card-img-top" alt="Card Image 3" height="200" style="object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Funding Education for your kids with Mutual Funds</h5>
+                            <p class="card-text">As parents, one of our most significant responsibilities is to ensure
+                                that our children receive the best education possible. However, the cost of education in
+                                India has been rising steadily</p>
+                            <a href="https://blog.labh.io/2024/06/funding-education-for-your-kids-with.html"
+                                class="btn btn-dark">Keep Reading..</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    <section id="faq" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mb-5 sticky-method">
+                        <h2>Frequently Asked Questions</h2>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-xs-12 ">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="card" type="button" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            <div class=" card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link">
+                                        What is Labh?
+                                    </button>
+                                </h5>
+                                <hr>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#faqAccordion">
+                                <div class="card-body">
+                                    <p>Labh is a research organisation that researches and creates baskets of mutual
+                                        funds and stocks that will yield optimal returns according to your risk
+                                        appetite.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                            aria-expanded="false" aria-controls="collapseTwo">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed">
+                                        How safe is your money ?
+                                    </button>
+                                </h5>
+                                <hr>
+
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#faqAccordion">
+                                <div class="card-body">
+                                    <p>Your orders are processed through NSE and BSE which are two largest stock
+                                        exchanges in our country. The securities will be deposited in your Demat
+                                        Account. At no point your money will touch our bank account. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" type="button" data-toggle="collapse" data-target="#collapseThree"
+                            aria-expanded="false" aria-controls="collapseThree">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed">
+                                        Why should you invest with Labh ?
+                                    </button>
+                                    <hr>
+
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#faqAccordion">
+                                <div class="card-body">
+                                    <p>Investing is a high consequence activity.It requires constant tracking of your
+                                        assets with respect to the market conditions. Labh has enough technical
+                                        resources to help you with the monitoring and help keep track of threats
+                                        and identify opportunities. In case of black swan events looming, we will pull
+                                        you out before you go down hard.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" type="button" data-toggle="collapse" data-target="#collapseFour"
+                            aria-expanded="false" aria-controls="collapseFour">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed">
+                                        How do you charge?
+                                    </button>
+                                </h5>
+                                <hr>
+
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#faqAccordion">
+                                <div class="card-body">
+                                    <p>We have 2 types of services. Stock baskets and Mutual Fund baskets.
+                                        For mutual funds basket, we get 0.75% commissions from the AMC (set by SEBI) for
+                                        the
+                                        investment that you do.
+                                        For stock baskets, we charge you on yearly subscription basis.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" type="button" data-toggle="collapse" data-target="#collapseFive"
+                            aria-expanded="false" aria-controls="collapseFive">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed">
+                                        How safe is your platform ?
+                                    </button>
+                                    <hr>
+
+                                </h5>
+
+                            </div>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#faqAccordion">
+                                <div class="card-body">
+                                    <p>
+                                    <ul>
+                                        <li>For Infrastructure Security, We host our services on DigitalOcean which is
+                                            AICPA
+                                            SOC 2 Type II and SOC 3 Type
+                                            II certified. </li>
+                                        <li>On data security level, we perform
+                                            regular VAPT auditing and follow best security practices.</li>
+                                        <li>All critical
+                                            Personally
+                                            identifible data is encrypted with 256 bit encryption.</li>
+                                        <li>We have DDOS protection
+                                            from cloudflare to keep the system safe from DDOS attacks.</li>
+                                        <li>We have access based controls to limit the amount of data accessed by our
+                                            teams</li>
+                                        <li>Our systems have continous backup systems to prevent data loss in cases of
+                                            disaster.</li>
+                                        </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
     <div id="beta" class="container second-section">
         <div class="row justify-content-center d-flex align-items-center">
 
@@ -541,8 +803,6 @@
                     title="Join Our Beta!"></iframe>
                 <script>var d = document, w = "https://tally.so/widgets/embed.js", v = function () { "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function (e) { e.src = e.dataset.tallySrc })) }; if ("undefined" != typeof Tally) v(); else if (d.querySelector('script[src="' + w + '"]') == null) { var s = d.createElement("script"); s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s); }</script>
 
-
-
             </div>
         </div>
     </div>
@@ -550,7 +810,7 @@
 
 
 
-    <!-- Footer -->
+
     <footer class="footer text-center">
         <div class="container">
             <p>&copy; 2024 Labh Wealth Management. All rights reserved.</p>
