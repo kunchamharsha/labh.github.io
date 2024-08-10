@@ -890,29 +890,7 @@
     });
 </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const timelineCards = document.querySelectorAll('.sticky-timeline');
-        const offset = 20; // Adjust this value to control the spacing between stacked elements
 
-        window.addEventListener('scroll', function () {
-            let previousCardBottom = 0;
-
-            timelineCards.forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const cardTop = rect.top + window.scrollY;
-
-                if (cardTop < previousCardBottom + offset) {
-                    card.style.top = `${previousCardBottom + offset - window.scrollY}px`;
-                } else {
-                    card.style.top = '0';
-                }
-
-                previousCardBottom = cardTop + rect.height;
-            });
-        });
-    });
-</script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTWZJ8Q6D6"></script>
 <script>
