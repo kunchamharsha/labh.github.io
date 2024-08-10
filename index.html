@@ -183,9 +183,9 @@
         }
 
         .neumorphic-nav-pills .nav-link {
-            background: var(--background-color);
+            background: var(--text-color);
             box-shadow: 1px 1px 5px #999999, -1px -1px 12px #000000;
-            color: #ffffff;
+            color: var(--background-color);
             margin: 10px 0;
             padding: 10px 20px;
             transition: all 0.3s ease;
@@ -324,6 +324,16 @@
         .card-text {
             color: #000;
         }
+
+        .mobile-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 20vh;
+            /* Adjust as needed */
+        }
     </style>
 </head>
 
@@ -369,7 +379,7 @@
         <p class="lead">Assorted Mutual Funds and Stock Baskets via Advanced Financial Research
             for Retail Investors</p>
         <br>
-        <a class="neumorphic-button light" href="#beta">Join our waitlist</a>
+        <a class="neumorphic-button light" href="#beta">Join Beta!</a>
     </div>
     <hr>
 
@@ -381,16 +391,16 @@
 
                 <ul class="nav nav-pills flex-column neumorphic-nav-pills" id=" myTab" role="tablist">
 
-                    <li class="nav-item active neumorphic-pill">
-                        <a class="nav-link" id="tab2-tab" data-toggle="pill" href="#tab2" role="tab"
+                    <li class="nav-item">
+                        <a class="nav-link active" id="tab2-tab" data-toggle="pill" href="#tab2" role="tab"
                             aria-controls="tab2" aria-selected="false">Portfolio Construction</a>
                     </li>
-                    <li class="nav-item neumorphic-pill">
+                    <li class="nav-item">
                         <a class="nav-link" id="tab3-tab" data-toggle="pill" href="#tab3" role="tab"
                             aria-controls="tab3" aria-selected="false">Monitoring</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  neumorphic-pill" id="tab1-tab" data-toggle="pill" href="#tab1" role="tab"
+                        <a class="nav-link" id="tab1-tab" data-toggle="pill" href="#tab1" role="tab"
                             aria-controls="tab1" aria-selected="true">Automated Portfolio Analysis</a>
                     </li>
                 </ul>
@@ -596,6 +606,12 @@
         </div>
     </section>
     <hr>
+    <section class="d-block d-sm-none mobile-cta py-5">
+        <p>Faster,Better and Safer Investments</p>
+        <a class="neumorphic-button light" href="#beta">Join today!</a>
+    </section>
+    <hr>
+
     <section id="three-cards" class="py-5">
         <div class="container">
             <div class="col-md-12 col-xs-12 ">
@@ -608,8 +624,7 @@
             <div class="row">
                 <div class="col-md-4 col-xs-12">
                     <div class="card mt-3 mb-3">
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhIFFkVciSScrq9M4nSWsZiXRIUKUgWr4DrOm2EjYAlzLkyT8zRafuKS_J7V37cl1MS9t_W55ZjcZEXljhMXuS36qp74d-4MDfYiQoTPouqOw6Dbe6jTDJBzWvTwwSPJDxBom-0LflyZHEfmSxUxzxNzgzgE5XL6sBnc3TU49t3LhEu3jA_95goxr3r-JED/s7001/sl_121021_47240_20.jpg"
-                            class="card-img-top" alt="Card Image 1">
+                        <img src="assets/thematic.jpg" class="card-img-top" alt="Card Image 1">
                         <div class="card-body">
                             <h5 class="card-title">Thematic Funds in India: A Comprehensive Guide</h5>
 
@@ -623,8 +638,8 @@
                 </div>
                 <div class="col-md-4 col-xs-12">
                     <div class="card mt-3 mb-3">
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOqRytFA3xLU2cddyBoympAbNUotRMTL7wQCEXM_B-TzESzlIhJOW5YmTx1-2qMcUmqIgs40Xh_kUZBmMiSal3XwK8nGpxxqUIp8V_SIQ7YXc-jqWdjiP7biV6_NApj8xIQddtWvVqxQiQIkGwI_-8Ow5IgITNnQwDw_1LdLnzE2jA8e2djLy3vCp7VVYa/s1024/DALL%C2%B7E%202024-08-06%2016.21.24%20-%20A%20modern%20and%20professional%20illustration%20for%20a%20blog%20titled%20'How%20Global%20Events%20Influence%20Mutual%20Fund%20Performance'.%20The%20image%20features%20symbols%20of%20global%20e.webp"
-                            class="card-img-top" alt="Card Image 2" height="200" style="object-fit: cover;">
+                        <img src="assets/globalevents.jpg" class="card-img-top" alt="Card Image 2" height="200"
+                            style="object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">How Global Events Influence Mutual Fund Performances</h5>
                             <p class="card-text">The performance of mutual funds, a popular investment vehicle, is often
@@ -637,8 +652,8 @@
                 </div>
                 <div class="col-md-4 col-xs-12">
                     <div class="card mt-3 mb-3">
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjO1c9Em_xkaKfNDKKmVDWPmn74iQGE_m42B8MQPlfLr7pl2p4FEY9K9_16Yso2VPzY1yqOrclwW-2qzJW6Pjg-z0YQNqEm8gmzAOeaDoWFlzWnilm1cME501RzBLZomCJ6axUZs_VlKwGOalUWcGjCfDxuuBuOfNtWeB1LfK_lsjUyVt6_kaoaOX_yA5Zz/s1024/LimeWire%20AI%20Studio%20Asset.jpeg"
-                            class="card-img-top" alt="Card Image 3" height="200" style="object-fit: cover;">
+                        <img src="assets/education.jpeg" class="card-img-top" alt="Card Image 3" height="200"
+                            style="object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">Funding Education for your kids with Mutual Funds</h5>
                             <p class="card-text">As parents, one of our most significant responsibilities is to ensure
@@ -811,22 +826,33 @@
                     loading="lazy" width="100%" height="100" frameborder="0" marginheight="0" marginwidth="0"
                     title="Join Our Beta!">
                     <!-- Event snippet for Submit lead form (1) conversion page -->
-                    <script>
-                        gtag('event', 'conversion', { 'send_to': 'AW-16592797832/ZJ7uCM684sgZEIiBiOg9' });
-                    </script>
 
                 </iframe>
-                <script>var d = document, w = "https://tally.so/widgets/embed.js", v = function () { "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function (e) { e.src = e.dataset.tallySrc })) }; if ("undefined" != typeof Tally) v(); else if (d.querySelector('script[src="' + w + '"]') == null) { var s = d.createElement("script"); s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s); }</script>
                 <script>
-                    window.addEventListener('message', function (event) {
-                        console.log(event.data)
-                        if (event.data === 'formSubmitted') {
-                            console.log("hello");
-                            gtag_report_conversion('https://labh.io/#beta')
+                    var d = document, w = "https://tally.so/widgets/embed.js",
+                        v = function () {
+                            "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function (e) {
+                                e.src = e.dataset.tallySrc
+                            }))
+                        }; if ("undefined" != typeof Tally) v(); else if (d.querySelector('script[src="' + w + '"]') == null) {
+                            var s = d.createElement("script"); s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s);
                         }
-                    });
                 </script>
+
             </div>
+
+            <script>
+                window.addEventListener('message', function (event) {
+                    const data = event.data;
+                    console.log('Received message:', data);
+
+                    // Check for Tally.FormSubmitted event
+                    if (data.event === 'Tally.FormSubmitted') {
+                        console.log('Tally form submitted');
+                        gtag('event', 'conversion', { 'send_to': 'AW-16592797832/ZJ7uCM684sgZEIiBiOg9' });
+                    }
+                });
+            </script>
         </div>
     </div>
     <hr>
@@ -840,102 +866,102 @@
         </div>
     </footer>
 
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const observerOptions = {
-                threshold: 0.2
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate__fadeIn');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.animate__animated').forEach(element => {
-                observer.observe(element);
-            });
-        });
-    </script>
-    <!--script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const timelineCards = document.querySelectorAll('.sticky-timeline');
-            const offset = 20; // Adjust this value to control the spacing between stacked elements
-
-            window.addEventListener('scroll', function () {
-                let previousCardBottom = 0;
-
-                timelineCards.forEach(card => {
-                    const rect = card.getBoundingClientRect();
-                    const cardTop = rect.top + window.scrollY;
-
-                    if (cardTop < previousCardBottom + offset) {
-                        card.style.top = `${previousCardBottom + offset - window.scrollY}px`;
-                    } else {
-                        card.style.top = '0';
-                    }
-
-                    previousCardBottom = cardTop + rect.height;
-                });
-            });
-        });
-    </script-->
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTWZJ8Q6D6"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-JTWZJ8Q6D6');
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZBYHK4HSX">
-    </script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-WZBYHK4HSX');
-    </script>
-    <!-- Hotjar Tracking Code for Site 5086567 (name missing) -->
-    <script>
-        (function (h, o, t, j, a, r) {
-            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-            h._hjSettings = { hjid: 5086567, hjsv: 6 };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script'); r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
-
-    <script>
-        function gtag_report_conversion(url) {
-            var callback = function () {
-                if (typeof (url) != 'undefined') {
-                    window.location = url;
-                }
-            };
-            gtag('event', 'conversion', {
-                'send_to': 'AW-16592797832/ZJ7uCM684sgZEIiBiOg9',
-                'event_callback': callback
-            });
-            return false;
-        }
-    </script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const observerOptions = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__fadeIn');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate__animated').forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const timelineCards = document.querySelectorAll('.sticky-timeline');
+        const offset = 20; // Adjust this value to control the spacing between stacked elements
+
+        window.addEventListener('scroll', function () {
+            let previousCardBottom = 0;
+
+            timelineCards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const cardTop = rect.top + window.scrollY;
+
+                if (cardTop < previousCardBottom + offset) {
+                    card.style.top = `${previousCardBottom + offset - window.scrollY}px`;
+                } else {
+                    card.style.top = '0';
+                }
+
+                previousCardBottom = cardTop + rect.height;
+            });
+        });
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JTWZJ8Q6D6"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-JTWZJ8Q6D6');
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZBYHK4HSX">
+</script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-WZBYHK4HSX');
+</script>
+<!-- Hotjar Tracking Code for Site 5086567 (name missing) -->
+<script>
+    (function (h, o, t, j, a, r) {
+        h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+        h._hjSettings = { hjid: 5086567, hjsv: 6 };
+        a = o.getElementsByTagName('head')[0];
+        r = o.createElement('script'); r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+</script>
+
+<script>
+    function gtag_report_conversion(url) {
+        var callback = function () {
+            if (typeof (url) != 'undefined') {
+                window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-16592797832/ZJ7uCM684sgZEIiBiOg9',
+            'event_callback': callback
+        });
+        return false;
+    }
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 </html>
