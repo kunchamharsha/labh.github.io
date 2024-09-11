@@ -471,6 +471,48 @@
         </div>
     </div>
     <hr>
+    <div id="beta" class="container second-section">
+        <div class="row justify-content-center d-flex align-items-center">
+
+            <div class="col-xs-12 col-lg-4 col-md-4 animate__animated">
+                <h3>Join our Beta</h3>
+                <hr>
+            </div>
+            <div class="col-xs-12 col-lg-8 col-md-8 animate__animated">
+                <p>Please share your details. We promise not to spam you.</p>
+
+                <form id="beta-form" method="post" action="">
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="mobile" name="mobile" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <button type="submit" class="neumorphic-button light">Submit</button>
+                </form>
+                <div id="completion-msg" style="display: none;">
+                    Thank you for completing this form!
+                </div>
+
+            </div>
+
+            <script>
+                window.addEventListener('message', function (event) {
+                    const data = event.data;
+                    console.log('Received message:', data);
+
+                    // Check for Tally.FormSubmitted event
+                    if (data.event === 'Tally.FormSubmitted') {
+                        console.log('Tally form submitted');
+                        gtag('event', 'conversion', { 'send_to': 'AW-16592797832/ZJ7uCM684sgZEIiBiOg9' });
+                    }
+                });
+            </script>
+        </div>
+    </div>
+    <hr>
     <!-- About Us Section -->
     <div id="about" class="container second-section animate__animated">
         <div class="row justify-content-center d-flex align-items-center ">
@@ -605,7 +647,7 @@
         </div>
         </div>
     </section>
-    <hr>
+    <hr class="d-sm-none">
     <section class="d-block d-sm-none mobile-cta py-5">
         <p>Faster,Better and Safer Investments</p>
         <a class="neumorphic-button light" href="#beta">Join today!</a>
@@ -809,52 +851,7 @@
         </div>
     </section>
 
-    <hr>
-    <div id="beta" class="container second-section">
-        <div class="row justify-content-center d-flex align-items-center">
 
-            <div class="col-xs-12 col-md-4 animate__animated">
-                <h1>Join our Beta</h1>
-                <hr>
-            </div>
-            <div class="col-xs-12 col-md-8 animate__animated">
-                <p>Please share your details. We promise not to spam you and Our founders don't write heartfelt
-                    Automated
-                    e-mails.</p>
-                <iframe
-                    data-tally-src="https://tally.so/embed/nPlRNx?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                    loading="lazy" width="100%" height="100" frameborder="0" marginheight="0" marginwidth="0"
-                    title="Join Our Beta!">
-                    <!-- Event snippet for Submit lead form (1) conversion page -->
-
-                </iframe>
-                <script>
-                    var d = document, w = "https://tally.so/widgets/embed.js",
-                        v = function () {
-                            "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function (e) {
-                                e.src = e.dataset.tallySrc
-                            }))
-                        }; if ("undefined" != typeof Tally) v(); else if (d.querySelector('script[src="' + w + '"]') == null) {
-                            var s = d.createElement("script"); s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s);
-                        }
-                </script>
-
-            </div>
-
-            <script>
-                window.addEventListener('message', function (event) {
-                    const data = event.data;
-                    console.log('Received message:', data);
-
-                    // Check for Tally.FormSubmitted event
-                    if (data.event === 'Tally.FormSubmitted') {
-                        console.log('Tally form submitted');
-                        gtag('event', 'conversion', { 'send_to': 'AW-16592797832/ZJ7uCM684sgZEIiBiOg9' });
-                    }
-                });
-            </script>
-        </div>
-    </div>
     <hr>
 
 
@@ -891,25 +888,9 @@
 </script>
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JTWZJ8Q6D6"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-    gtag('config', 'G-JTWZJ8Q6D6');
-</script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZBYHK4HSX">
-</script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-WZBYHK4HSX');
-</script>
 <!-- Hotjar Tracking Code for Site 5086567 (name missing) -->
 <script>
     (function (h, o, t, j, a, r) {
@@ -922,24 +903,51 @@
     })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
 </script>
 
-<script>
-    function gtag_report_conversion(url) {
-        var callback = function () {
-            if (typeof (url) != 'undefined') {
-                window.location = url;
-            }
-        };
-        gtag('event', 'conversion', {
-            'send_to': 'AW-16592797832/ZJ7uCM684sgZEIiBiOg9',
-            'event_callback': callback
-        });
-        return false;
-    }
-</script>
 
+<script>
+    $(document).ready(function () {
+        $('#beta-form').on('submit', function (event) {
+            event.preventDefault();
+
+            var phone = $('#mobile').val();
+            var email = $('#email').val();
+            $('#beta-form').fadeOut(function(){
+                $('#completion-msg').fadeIn();
+            });
+
+            $.ajax({
+                url: 'https://script.google.com/macros/s/AKfycbwiTaiL1gc1C25KSdZHy_K-2o0RrsDMFVK995HRfhhTHGMGZ6Ko6kCgx_JOlq423BTvWA/exec',
+                type: 'POST',
+                data: {
+                    mobile: phone,
+                    email: email
+                },
+                redirect: "follow",
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8",
+                },
+                success: function (response) {
+
+                },
+                error: function (xhr, status, error) {
+               
+                }
+            });
+        });
+    });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZBYHK4HSX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZBYHK4HSX');
+</script>
 
 </html>
