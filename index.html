@@ -905,6 +905,7 @@
 
 
 <script>
+    
     $(document).ready(function () {
         $('#beta-form').on('submit', function (event) {
             event.preventDefault();
@@ -914,6 +915,14 @@
             $('#beta-form').fadeOut(function(){
                 $('#completion-msg').fadeIn();
             });
+
+            gtag('event', 'conversion', {
+                'send_to': 'AW-16592797832/HPuJCNy02tEZEIiBiOg9',
+                'value': 1.0,
+                'currency': 'INR',
+            });
+
+
 
             $.ajax({
                 url: 'https://script.google.com/macros/s/AKfycbwiTaiL1gc1C25KSdZHy_K-2o0RrsDMFVK995HRfhhTHGMGZ6Ko6kCgx_JOlq423BTvWA/exec',
