@@ -481,7 +481,7 @@
             <div class="col-xs-12 col-lg-8 col-md-8 animate__animated">
                 <p>Please share your details. We promise not to spam you.</p>
 
-                <form id="beta-form" method="post" action="">
+                <form id="beta-form" method = "post" action="https://script.google.com/macros/s/AKfycbxWfRrVCtZuNE44xZU8H08bj3_HKlq-uXZy0HhsvtC-4SrlULQ4CFADKqgUE8JTswzDSQ/exec">
                     <div class="form-group">
                         <label for="phone">Phone Number:</label>
                         <input type="tel" id="mobile" name="mobile" class="form-control" required>
@@ -498,18 +498,7 @@
 
             </div>
 
-            <script>
-                window.addEventListener('message', function (event) {
-                    const data = event.data;
-                    console.log('Received message:', data);
-
-                    // Check for Tally.FormSubmitted event
-                    if (data.event === 'Tally.FormSubmitted') {
-                        console.log('Tally form submitted');
-                        gtag('event', 'conversion', { 'send_to': 'AW-16592797832/ZJ7uCM684sgZEIiBiOg9' });
-                    }
-                });
-            </script>
+            
         </div>
     </div>
     <hr>
@@ -910,7 +899,7 @@
         $('#beta-form').on('submit', function (event) {
             event.preventDefault();
 
-            var phone = $('#mobile').val();
+            var mobile = $('#mobile').val();
             var email = $('#email').val();
             $('#beta-form').fadeOut(function(){
                 $('#completion-msg').fadeIn();
@@ -925,21 +914,23 @@
 
 
             $.ajax({
-                url: 'https://script.google.com/macros/s/AKfycbwiTaiL1gc1C25KSdZHy_K-2o0RrsDMFVK995HRfhhTHGMGZ6Ko6kCgx_JOlq423BTvWA/exec',
+                url: "https://script.google.com/macros/s/AKfycby8POjBhq-xJFDG6XfLUoxE3cfGBOY4E1rS9adjIvcxV6QjBHGUNVmaxvPL3wghZ8JCZA/exec",
                 type: 'POST',
-                data: {
-                    mobile: phone,
-                    email: email
+                data: {  
+                    'mobile': mobile.toString(),
+                    'email': email
                 },
-                redirect: "follow",
                 headers: {
-                    "Content-Type": "text/plain;charset=utf-8",
+                    "Content-Type": "application/x-www-form-urlencoded",
                 },
                 success: function (response) {
-
+                    if (response.redirectUrl) {
+                        window.location.href = response.redirectUrl;
+                    }
                 },
                 error: function (xhr, status, error) {
-               
+                    console.error(error);
+
                 }
             });
         });
