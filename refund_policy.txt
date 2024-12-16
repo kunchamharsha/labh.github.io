@@ -1,0 +1,34 @@
+Here's a Refund Policy you can use for your mutual fund advisory website:
+
+Refund Policy
+At Labh.io, we are committed to providing transparent and high-quality advisory services. Please review our refund policy carefully.
+
+1. General Policy
+1.1. Refunds are only applicable to paid services offered on this Website.
+1.2. Refunds will not be provided for any advisory services that have already been rendered or delivered.
+
+2. Eligibility for Refunds
+2.1. A refund request may be considered in the following cases:
+    - Technical issues that prevent access to the purchased service.
+    - Errors in billing or duplicate payments.
+2.2. Refund requests must be submitted within [X days] from the date of payment.
+
+3. Non-Refundable Services
+3.1. The following services are non-refundable:
+    - Consultation sessions already completed.
+    - Subscription-based services, once the subscription period has started.
+    - Any free or trial offers.
+
+4. Process for Requesting a Refund
+4.1. To request a refund, contact us at [Your Contact Email] with the following details:
+    - Full name and contact information.
+    - Payment receipt or proof of purchase.
+    - Reason for requesting the refund.
+4.2. Refunds will be processed after reviewing your request and verifying the eligibility criteria.
+
+5. Refund Timeline
+5.1. Approved refunds will be processed within [X business days] of approval.
+5.2. Refunds will be issued to the original payment method used during the transaction.
+
+6. Contact Us
+If you have any questions about this Refund Policy, please reach out to us at supprt@labh.io.
