@@ -1360,7 +1360,7 @@
                 gap: 10px;
                 justify-content: center;
             }
-            
+
 
             .responsive-button {
                 background-color: #cec3fe;
@@ -2082,7 +2082,6 @@
 
                 #bodycon {
                     width: 100vw;
-                    height: 50vh;
                     overflow-y: scroll;
                     display: flex;
                     flex-direction: column;
@@ -2312,6 +2311,24 @@
                 top: 50%;
                 transform: translateY(-50%);
             }
+
+            @media only screen and (max-width: 480px) {
+                .jumbotron .display-4 {
+                    font-weight: bold;
+                    font-size: 37px;
+                    line-height: 44px;
+                }
+                .lead {
+                    margin-top: 10px;
+                    font-size: 20px;
+                }
+                #bodycon {
+                    overflow: visible;
+                }
+                .bodycontainer {
+                    margin-top: 0px;
+                }
+            }
         </style>
     </head>
 
@@ -2474,7 +2491,7 @@
         </div>
 
         <div id="bodycon">
-            <div class="bodycontainer" style="margin-top: -220px">
+            <div class="bodycontainer">
                 <div class="container1">
                     <img
                         class="corner-design top-left"
@@ -2568,7 +2585,7 @@
 
             <div
                 class="bodycontainer"
-                style="margin-top: -220px; margin-bottom: 10rem"
+                style="margin-bottom: 10rem"
             >
                 <div class="container1">
                     <img
@@ -2644,7 +2661,7 @@
             </h3>
         </center>
 
-        <div class="bodycontainer" style="margin-top: -100px">
+        <div class="bodycontainer">
             <div class="container1">
                 <img
                     class="corner-design top-left"
