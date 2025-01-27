@@ -391,8 +391,8 @@
             }
 
             .gradient-button {
-                width: 200px;
-                height: 40px;
+                width: 350px;
+                height: 66px;
                 display: inline-block;
                 padding: 10px 20px;
                 font-size: 16px;
@@ -603,7 +603,8 @@
                 /* font-style: italic; */
                 text-align: left;
                 line-height: 32px;
-                font-weight: 540;
+                font-weight: 600;
+                font-size: 26px;
                 /* display: block;  */
             }
 
@@ -993,8 +994,6 @@
                 color: #333;
                 line-height: 1.6;
                 margin-top: 10px;
-                max-height: 150px;
-                overflow-y: hidden;
             }
 
             .cards .subtitle,
@@ -1011,8 +1010,6 @@
                 color: white;
                 line-height: 1.6;
                 margin-top: 10px;
-                max-height: 150px;
-                overflow-y: hidden;
             }
 
             .carousel-wrapper {
@@ -1345,11 +1342,9 @@
                 justify-content: center;
                 align-items: center;
                 text-align: center;
-                width: 800px;
-                height: 200px;
                 border-radius: 30px;
                 margin: 0 auto;
-                padding: 20px;
+                padding: 66px 54px;
             }
 
             .responsive-container h4 {
@@ -1370,7 +1365,7 @@
                 background-color: #cec3fe;
                 width: 350px;
                 height: 40px;
-                border-radius: 20px;
+                border-radius: 10px;
                 border: none;
                 display: flex;
                 justify-content: space-between;
@@ -2193,16 +2188,23 @@
             }
 
             .lead {
+                width: 1079px;
                 margin-top: 40px;
                 font-weight: 500;
-                font-size: 1.75rem;
+                font-size: 32px;
                 opacity: 60%;
+            }
+
+            .lead-container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
             }
 
             .button1 {
                 margin-top: 3rem;
-                width: 20rem;
-                height: 60px;
+                width: 350px;
+                height: 66px;
                 display: flex;
                 text-align: center;
                 align-items: center;
@@ -2253,9 +2255,9 @@
 
             .approach h5 {
                 display: inline;
-                font-size: 2rem;
+                font-size: 40px;
+                font-weight: 700;
                 text-align: left;
-                font-weight: bold;
                 margin-top: 150px;
                 margin-bottom: 1rem;
                 color: #cec3fe;
@@ -2272,6 +2274,42 @@
                 margin-right: 8rem;
                 margin-left: 24px;
                 margin-top: 1.5rem;
+            }
+
+            .arrow-button {
+                background-color: #9b8cc5;
+                border: none;
+                color: white;
+                font-size: 20px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+
+            .arrow-button:hover {
+                background-color: #7d69a8;
+                transform: scale(1.1);
+                box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+            }
+
+            .arrow-button .left {
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .arrow-button .right {
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
             }
         </style>
     </head>
@@ -2293,7 +2331,7 @@
                 <img
                     src="assets/LOGO.png"
                     alt="Labh Logo"
-                    style="height: 50px; color: #a663ff"
+                    style="height: 39px; width: 39px; color: #a663ff"
                 />
                 <span
                     style="
@@ -2302,6 +2340,7 @@
                         vertical-align: middle;
                         color: white;
                         font-weight: bold;
+                        letter-spacing: 1px;
                     "
                     >Labh</span
                 >
@@ -2417,10 +2456,12 @@
                 <br />
                 Baskets Designed for You.
             </h4>
-            <p class="lead">
-                Get accessed to researched Mutual Funds + Stock Baskets matched
-                to your risk profile.
-            </p>
+            <div class="lead-container">
+                <p class="lead">
+                    Get access to researched Mutual Funds + Stock Baskets
+                    matched to your risk profile.
+                </p>
+            </div>
             <br />
             <center>
                 <a class="gradient-button button1" href="#beta">
@@ -2466,6 +2507,8 @@
                                 text-align: justify;
                                 text-wrap: wrap;
                                 width: 100%;
+                                font-size: 40px;
+                                font-weight: 700;
                             "
                         >
                             Tired of trying to make sense of complex market
@@ -2477,9 +2520,9 @@
                             <p
                                 style="
                                     text-align: left;
-                                    font-size: 1.75rem;
+                                    font-size: 26px;
                                     color: #161432;
-                                    font-weight: 540;
+                                    font-weight: 600;
                                     line-height: 32px;
                                     opacity: 60%;
                                 "
@@ -2503,9 +2546,9 @@
                             <p
                                 style="
                                     line-height: 40px;
-                                    font-size: 1.75rem;
+                                    font-size: 28px;
                                     color: #161432;
-                                    font-weight: 540;
+                                    font-weight: 600;
                                     opacity: 60%;
                                 "
                             >
@@ -2552,7 +2595,10 @@
                         alt="Bottom Left Design"
                     />
                     <div class="content">
-                        <h1 class="heading">
+                        <h1
+                            class="heading"
+                            style="font-size: 40px; font-weight: 700"
+                        >
                             The Only Investment Help You’ll Ever Need:
                         </h1>
                         <br />
@@ -2561,9 +2607,9 @@
                             <p
                                 style="
                                     line-height: 40px;
-                                    font-size: 1.75rem;
+                                    font-size: 28px;
                                     color: #161432;
-                                    font-weight: 540;
+                                    font-weight: 600;
                                     margin-top: 1.5rem;
                                     margin-right: 0.6rem;
                                     opacity: 60%;
@@ -2624,7 +2670,10 @@
                     alt="Bottom Left Design"
                 />
                 <div class="content">
-                    <h1 class="heading">
+                    <h1
+                        class="heading"
+                        style="font-size: 40px; font-weight: 700"
+                    >
                         Ignorance might be bliss, but not when it’s your money
                         on<br />
                         the line!
@@ -2635,11 +2684,11 @@
                         <p
                             style="
                                 text-align: left;
-                                font-size: 1.75rem;
                                 color: #161432;
-                                font-weight: 540;
                                 line-height: 32px;
                                 opacity: 60%;
+                                font-weight: 600;
+                                font-size: 26px;
                             "
                         >
                             That’s why we created Labh,
@@ -2647,13 +2696,13 @@
                         <p
                             style="
                                 text-align: left;
-                                font-size: 1.75rem;
-                                margin-top: 1.5rem;
+                                margin-top: 28px;
                                 color: #161432;
-                                font-weight: 540;
                                 line-height: 40px;
                                 opacity: 60%;
                                 margin-right: 8rem;
+                                font-weight: 600;
+                                font-size: 26px;
                             "
                         >
                             We handle the deep research and heavy lifting, so
@@ -2697,7 +2746,7 @@
                         color: #161432;
                         opacity: 60%;
                         font-weight: 540;
-                        font-size: 1.75rem;
+                        font-size: 28px;
                         line-height: 40px;
                         margin-right: 8rem;
                         margin-left: 24px;
@@ -2743,8 +2792,8 @@
             style="
                 margin-top: 50px;
                 margin-left: 70px;
-                font-size: 20px;
-                font-weight: bold;
+                font-size: 48px;
+                font-weight: 700;
                 text-align: left;
             "
         >
@@ -2764,7 +2813,7 @@
             "
         >
             <div class="cards">
-                <div class="card1">
+                <div class="card1" style="min-height: 560px">
                     <img
                         class="corner-design top-left"
                         src="assets/Design_corner_left top.png"
@@ -2778,7 +2827,14 @@
                     <div class="content1">
                         <h5 class="title">Portfolio Construction</h5>
                         <h4 class="subtitle">Construct Asset Baskets</h4>
-                        <p class="description">
+                        <p
+                            class="description"
+                            style="
+                                font-size: 24px;
+                                font-weight: 400;
+                                color: #7d7980;
+                            "
+                        >
                             We craft investment mixes tailored to your goals.
                             Our team of experts carefully select stocks, mutual
                             funds, and other assets that align with your goals,
@@ -2788,7 +2844,7 @@
                     </div>
                 </div>
 
-                <div class="card2 gradient-button">
+                <div class="card2 gradient-button" style="min-height: 560px">
                     <img
                         class="corner-design top-left"
                         src="assets/Design_corner_left top.png"
@@ -2808,6 +2864,8 @@
                                 text-align: justify;
                                 font-weight: normal;
                                 text-wrap: wrap;
+                                font-size: 24px;
+                                font-weight: 400;
                             "
                         >
                             Don’t worry about tracking the market—we handle it
@@ -2818,7 +2876,7 @@
                     </div>
                 </div>
 
-                <div class="card3 gradient-button">
+                <div class="card3 gradient-button" style="min-height: 560px">
                     <img
                         class="corner-design top-left"
                         src="assets/Design_corner_left top.png"
@@ -2834,7 +2892,12 @@
                         <h4 class="subtitle">Automated Portfolio Analysis</h4>
                         <p
                             class="description"
-                            style="text-align: justify; font-weight: normal"
+                            style="
+                                text-align: justify;
+                                font-weight: normal;
+                                font-size: 24px;
+                                color: #7d7980;
+                            "
                         >
                             You get regular insights into how your investments
                             are performing, helping you stay informed and
@@ -2847,15 +2910,17 @@
             </div>
         </div>
 
-        <div class="button-container" style="margin: 10rem">
-            <a class="gradient-button" href="#beta">Join Beta today</a><br />
-        </div>
+        <center>
+            <a class="gradient-button button1" href="#beta">
+                <p style="color: #161432; font-size: 20px">Join Beta today</p>
+            </a>
+        </center>
 
         <div class="methodology" id="pitch">
             <h1>SIX</h1>
             <h4 class="gradient-text">Methodology</h4>
             <h1>STEPS</h1>
-            <p>
+            <p style="font-size: 28px; font-weight: 500">
                 Your financial goals deserve the backing of the Industry’s top
                 names. That’s why we partner with trusted and reputable Asset
                 Management Companies (AMCs) to bring you mutual fund options
@@ -3335,11 +3400,19 @@
                     column-gap: 5rem;
                 "
             >
-                <button id="scroll-left" style="color: black; cursor: pointer">
-                    &#9664;
+                <button
+                    id="scroll-left"
+                    class="arrow-button left"
+                    style="color: black; cursor: pointer"
+                >
+                    &lt;
                 </button>
-                <button id="scroll-right" style="color: black; cursor: pointer">
-                    &#9654;
+                <button
+                    id="scroll-right"
+                    class="arrow-button right"
+                    style="color: black; cursor: pointer"
+                >
+                    &gt;
                 </button>
             </div>
         </div>
@@ -3355,7 +3428,8 @@
                 );
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
-                font-size: 2rem;
+                font-size: 48px;
+                font-weight: 700;
                 margin: 2rem;
             "
         >
@@ -3380,7 +3454,14 @@
                     justify-content: space-between;
                 "
             >
-                <p style="color: black; font-size: 2rem; font-weight: bold">
+                <p
+                    style="
+                        color: black;
+                        font-size: 2rem;
+                        font-weight: boldl;
+                        margin: 0px;
+                    "
+                >
                     Get started today—no hidden fees or long-term commitments
                     involved!
                 </p>
@@ -3389,7 +3470,9 @@
         </div>
 
         <div class="amc" style="flex-direction: column">
-            <h5 class="gradient-text">Our Trusted Partners</h5>
+            <h5 class="gradient-text" style="font-size: 32px">
+                Our Trusted Partners
+            </h5>
             <div
                 style="
                     position: relative;
@@ -3417,6 +3500,7 @@
                         transform: translate(-50%, -50%);
                         width: auto;
                         white-space: nowrap;
+                        letter-spacing: 2px;
                     "
                 >
                     Asset Management Companies
@@ -3469,7 +3553,9 @@
             id="carouselExampleControls"
             class="carousel slide"
             data-ride="carousel"
+            style="background: linear-gradient(96.5deg, rgba(100, 59, 153, 0.12) 2.93%, rgba(224, 207, 246, 0.12) 37.67%, rgba(100, 59, 153, 0.12) 71.09%, rgba(224, 207, 246, 0.12) 97.07%)";
         >
+
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div
@@ -3484,26 +3570,26 @@
                         "
                     >
                         <img
-                            class="d-block w-100 img"
-                            style="width: 25%; height: 10vh"
+                            class="d-block img"
+                            style="width: 25%"
                             src="assets/id5W9ODoZn_1735890486195 1.png"
                             alt="Image 1"
                         />
                         <img
-                            class="d-block w-100"
-                            style="width: 25%; height: 10vh"
+                            class="d-block"
+                            style="width: 25%"
                             src="assets/idO1wzN_Y0_1735890577316 1.png"
                             alt="Image 2"
                         />
                         <img
-                            class="d-block w-100"
-                            style="width: 25%; height: 10vh"
+                            class="d-block"
+                            style="width: 25%"
                             src="assets/idRZFh7JuJ_1735891441599 1.png"
                             alt="Image 3"
                         />
                         <img
-                            class="d-block w-100"
-                            style="width: 25%; height: 10vh"
+                            class="d-block"
+                            style="width: 25%"
                             src="assets/image 1.png"
                             alt="Image 4"
                         />
@@ -3522,26 +3608,26 @@
                         "
                     >
                         <img
-                            class="d-block w-100"
-                            style="width: 25%; height: 10vh"
+                            class="d-block"
+                            style="width: 25%"
                             src="assets/image 6.png"
                             alt="Image 5"
                         />
                         <img
-                            class="d-block w-100"
-                            style="width: 25%; height: 10vh"
+                            class="d-block"
+                            style="width: 25%"
                             src="assets/image 7.png"
                             alt="Image 6"
                         />
                         <img
-                            class="d-block w-100"
-                            style="width: 25%; height: 10vh"
+                            class="d-block"
+                            style="width: 25%"
                             src="assets/image 8.png"
                             alt="Image 7"
                         />
                         <img
-                            class="d-block w-100"
-                            style="width: 25%; height: 10vh"
+                            class="d-block"
+                            style="width: 25%"
                             src="assets/image 9.png"
                             alt="Image 8"
                         />
@@ -3560,14 +3646,14 @@
                         "
                     >
                         <img
-                            class="d-block w-100"
-                            style="width: 25%; height: 10vh"
+                            class="d-block"
+                            style="width: 25%"
                             src="assets/image 10.png"
                             alt="Image 9"
                         />
                         <img
-                            class="d-block w-100"
-                            style="width: 25%; height: 10vh"
+                            class="d-block"
+                            style="width: 25%"
                             src="assets/image 11.png"
                             alt="Image 10"
                         />
@@ -3698,13 +3784,15 @@
                         transform: translate(-50%, -50%);
                         width: auto;
                         white-space: nowrap;
+                        letter-spacing: 2px;
                     "
+                    
                 >
                     About us
                 </h4>
                 <hr />
             </div>
-            <p style="color: grey; text-align: center">
+            <p style="color: grey; text-align: center; font-size: 28px; font-weight: 500;">
                 At Labh, our team is a mix of talented professionals who bring
                 unique skills to the<br />
                 table. We have engineers, PhD mathematicians, traders, and MBAs,
@@ -3713,8 +3801,10 @@
                 alumni of IIM Ahmedabad,<br />
                 a school known for excellence.
             </p>
-            <div class="responsive-container">
-                <h4>
+            <div class="responsive-container"
+            style="background: linear-gradient(96.5deg, rgba(100, 59, 153, 0.2) 2.93%, rgba(224, 207, 246, 0.2) 37.67%, rgba(100, 59, 153, 0.2) 71.09%, rgba(224, 207, 246, 0.2) 97.07%);"
+            >
+                <h4 style="font-size: 32px; font-weight: 500;">
                     We’re not just passionate about investing; we’re certified
                     to<br />
                     help you succeed. Our team holds top certifications,<br />
