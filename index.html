@@ -67,7 +67,7 @@
             rel="stylesheet"
         />
 
-        <!-- <link rel="stylesheet" href="style.css"> -->
+        <link rel="stylesheet" href="style.css" />
         <!-- Google tag (gtag.js) -->
 
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
@@ -1361,7 +1361,6 @@
                 justify-content: center;
             }
 
-
             .responsive-button {
                 background-color: #cec3fe;
                 width: 350px;
@@ -2092,6 +2091,7 @@
                 .bodycontainer {
                     padding-bottom: 3rem;
                     margin-bottom: 3rem;
+                    height: fit-content;
                 }
 
                 .desktop-view {
@@ -2313,6 +2313,9 @@
             }
 
             @media only screen and (max-width: 480px) {
+                .jumbotron {
+                    height: fit-content;
+                }
                 .jumbotron .display-4 {
                     font-weight: bold;
                     font-size: 37px;
@@ -2324,9 +2327,6 @@
                 }
                 #bodycon {
                     overflow: visible;
-                }
-                .bodycontainer {
-                    margin-top: 0px;
                 }
             }
         </style>
@@ -2481,18 +2481,14 @@
                 </p>
             </div>
             <br />
-            <center>
-                <a class="gradient-button button1" href="#beta">
-                    <p style="color: #161432; font-size: 20px">
-                        Join Beta today
-                    </p>
-                </a>
-            </center>
+            <a class="gradient-button button1 mx-auto" href="#beta">
+                <p style="color: #161432; font-size: 20px">Join Beta today</p>
+            </a>
         </div>
 
         <div id="bodycon">
             <div class="bodycontainer">
-                <div class="container1">
+                <div class="container1 description-container">
                     <img
                         class="corner-design top-left"
                         style="position: absolute; top: 2; left: 2"
@@ -2583,11 +2579,8 @@
                 <!-- <hr style="color: black;"> -->
             </div>
 
-            <div
-                class="bodycontainer"
-                style="margin-bottom: 10rem"
-            >
-                <div class="container1">
+            <div class="bodycontainer" style="margin-bottom: 10rem">
+                <div class="container1 description-container">
                     <img
                         class="corner-design top-left"
                         style="position: absolute; top: 2; left: 2"
@@ -2649,20 +2642,20 @@
                 <!-- <hr style="color: black;"> -->
             </div>
         </div>
-        <center>
-            <a class="gradient-button button1" href="#beta">
+        <div class="join-container w-100">
+            <a class="gradient-button button1 mx-auto" href="#beta">
                 <p style="color: #161432; font-size: 20px">
-                    Join Beta today
+                    Join Beta Today
                 </p> </a
             ><br />
-            <h3 class="lead">
+            <h3 class="lead text-center mx-auto">
                 Get started today—no hidden fees or long-term commitments
                 involved!
             </h3>
-        </center>
+        </div>
 
-        <div class="bodycontainer">
-            <div class="container1">
+        <div class="bodycontainer mt-1">
+            <div class="container1 description-container">
                 <img
                     class="corner-design top-left"
                     style="position: absolute; top: 2; left: 2"
@@ -2735,28 +2728,28 @@
             <!-- <hr style="color: black;"> -->
         </div>
 
-        <h2
-            style="
-                background: linear-gradient(
-                    135deg,
-                    #7c7a99 0%,
-                    #cecbff 27%,
-                    #c1c0d2 59%,
-                    #cecbff 100%
-                );
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                margin-left: 2rem;
-                display: inline-block;
-                line-height: 50px;
-                font-size: 45px;
-                font-weight: bold;
-                margin: 3rem;
-            "
-        >
-            Our Approach
-        </h2>
         <div class="approachcon">
+            <h2
+                style="
+                    background: linear-gradient(
+                        135deg,
+                        #7c7a99 0%,
+                        #cecbff 27%,
+                        #c1c0d2 59%,
+                        #cecbff 100%
+                    );
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    margin-left: 2rem;
+                    display: inline-block;
+                    line-height: 50px;
+                    font-size: 45px;
+                    font-weight: bold;
+                    margin: 3rem;
+                "
+            >
+                Our Approach
+            </h2>
             <div class="approach">
                 <h5>Data-Driven Insights</h5>
                 <p
@@ -2805,21 +2798,23 @@
             </div>
         </div>
 
-        <h4
-            class="gradient-text"
+        <!-- <div class="carousel-wrapper" style="overflow: hidden; width: 100%; position: relative;"> -->
+
+        <h2
+            class="gradient-text mx-auto expect-heading"
             style="
                 margin-top: 50px;
                 margin-left: 70px;
                 font-size: 48px;
                 font-weight: 700;
                 text-align: left;
+                width: fit-content;
             "
         >
             Here’s what to expect:
-        </h4>
-        <!-- <div class="carousel-wrapper" style="overflow: hidden; width: 100%; position: relative;"> -->
+        </h2>
         <div
-            class="carousel"
+            class="carousel expect"
             style="
                 display: flex;
                 overflow-x: auto;
@@ -2831,7 +2826,7 @@
             "
         >
             <div class="cards">
-                <div class="card1" style="min-height: 560px">
+                <div class="card1 expect-cards" style="min-height: 560px">
                     <img
                         class="corner-design top-left"
                         src="assets/Design_corner_left top.png"
@@ -2862,7 +2857,7 @@
                     </div>
                 </div>
 
-                <div class="card2 gradient-button" style="min-height: 560px">
+                <div class="card2 expect-cards gradient-button" style="min-height: 560px">
                     <img
                         class="corner-design top-left"
                         src="assets/Design_corner_left top.png"
@@ -2894,7 +2889,7 @@
                     </div>
                 </div>
 
-                <div class="card3 gradient-button" style="min-height: 560px">
+                <div class="card3 expect-cards gradient-button" style="min-height: 560px">
                     <img
                         class="corner-design top-left"
                         src="assets/Design_corner_left top.png"
@@ -3436,6 +3431,7 @@
         </div>
 
         <h2
+            class="signup-button"
             style="
                 background: linear-gradient(
                     135deg,
@@ -3462,6 +3458,7 @@
             "
         >
             <div
+                class="signup-offer"
                 style="
                     width: 95%;
                     padding: 1rem;
@@ -3571,9 +3568,17 @@
             id="carouselExampleControls"
             class="carousel slide"
             data-ride="carousel"
-            style="background: linear-gradient(96.5deg, rgba(100, 59, 153, 0.12) 2.93%, rgba(224, 207, 246, 0.12) 37.67%, rgba(100, 59, 153, 0.12) 71.09%, rgba(224, 207, 246, 0.12) 97.07%)";
+            style="
+                background: linear-gradient(
+                    96.5deg,
+                    rgba(100, 59, 153, 0.12) 2.93%,
+                    rgba(224, 207, 246, 0.12) 37.67%,
+                    rgba(100, 59, 153, 0.12) 71.09%,
+                    rgba(224, 207, 246, 0.12) 97.07%
+                );
+            "
+            ;
         >
-
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div
@@ -3804,13 +3809,19 @@
                         white-space: nowrap;
                         letter-spacing: 2px;
                     "
-                    
                 >
                     About us
                 </h4>
                 <hr />
             </div>
-            <p style="color: grey; text-align: center; font-size: 28px; font-weight: 500;">
+            <p
+                style="
+                    color: grey;
+                    text-align: center;
+                    font-size: 28px;
+                    font-weight: 500;
+                "
+            >
                 At Labh, our team is a mix of talented professionals who bring
                 unique skills to the<br />
                 table. We have engineers, PhD mathematicians, traders, and MBAs,
@@ -3819,10 +3830,19 @@
                 alumni of IIM Ahmedabad,<br />
                 a school known for excellence.
             </p>
-            <div class="responsive-container"
-            style="background: linear-gradient(96.5deg, rgba(100, 59, 153, 0.2) 2.93%, rgba(224, 207, 246, 0.2) 37.67%, rgba(100, 59, 153, 0.2) 71.09%, rgba(224, 207, 246, 0.2) 97.07%);"
+            <div
+                class="responsive-container"
+                style="
+                    background: linear-gradient(
+                        96.5deg,
+                        rgba(100, 59, 153, 0.2) 2.93%,
+                        rgba(224, 207, 246, 0.2) 37.67%,
+                        rgba(100, 59, 153, 0.2) 71.09%,
+                        rgba(224, 207, 246, 0.2) 97.07%
+                    );
+                "
             >
-                <h4 style="font-size: 32px; font-weight: 500;">
+                <h4 style="font-size: 32px; font-weight: 500">
                     We’re not just passionate about investing; we’re certified
                     to<br />
                     help you succeed. Our team holds top certifications,<br />
