@@ -222,3 +222,12 @@
         margin-left: 0px !important;
     }
 }
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    #bodycon {
+        margin-top: 80px !important;
+    }
+    .bodycontainer:nth-child(2) {
+        margin-top: 5rem;
+    }
+}
