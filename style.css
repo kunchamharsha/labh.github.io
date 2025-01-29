@@ -1,3 +1,23 @@
+::placeholder {
+    color: #666;
+    font-size: 23px;
+    font-weight: bold;
+}
+body {
+    overflow-x: hidden;
+}
+.my-container {
+    padding: 0px 10px;
+}
+.navbar {
+    padding: 50px;
+}
+#bodycon {
+    margin-top: 100px;
+}
+.bodycontainer {
+    height: fit-content !important;
+}
 .approach {
     background: linear-gradient(
         96.5deg,
@@ -6,11 +26,30 @@
         rgba(100, 59, 153, 0.4) 71.09%,
         rgba(224, 207, 246, 0.4) 97.07%
     ) !important;
+    border-radius: 42px !important;
+    padding: 24px 12px !important;
 }
 .approach p {
     color: #ffffff !important;
+    margin-bottom: 0px !important;
+    font-weight: 400 !important;
 }
 
+.sub-content p {
+    font-weight: 300 !important;
+}
+.sub-content li {
+    font-weight: 300 !important;
+}
+
+.description-container
+    img:nth-child(1)
+    img:nth-child(2)
+    img:nth-child(3)
+    img:nth-child(4) {
+    width: 170px !important;
+    height: 130px !important;
+}
 .description-container img:nth-child(1) {
     top: 0px !important;
     left: 0px !important;
@@ -34,8 +73,182 @@
 .description-container {
     overflow: hidden;
 }
+.join-container {
+    margin-top: 400px;
+}
 .join-container h3 {
     width: 90vw;
+}
+.lead {
+    margin-bottom: 100px;
+}
+.approachcon {
+    margin-top: 334px;
+}
+
+.approachcon h2 {
+    font-size: 48px !important;
+}
+.approachcon h5 {
+    font-size: 36px !important;
+    font-weight: 450 !important;
+}
+
+.expect-cards img {
+    width: 120px !important;
+    height: 94px !important;
+}
+.expect-cards img:nth-child(1) {
+    top: 0;
+    left: 3;
+}
+.expect-cards img:nth-child(2) {
+    bottom: -4px;
+    right: 0px;
+}
+
+.expect-cards p {
+    text-align: left !important;
+}
+.methodology h1 {
+    opacity: 30% !important;
+    background-image: linear-gradient(
+        94.34deg,
+        #7c7a99 5.43%,
+        #cecbff 19.57%,
+        #7c7a99 35.82%,
+        #cecbff 57.03%
+    ) !important;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.methodology h4 {
+    background-image: linear-gradient(
+        94.34deg,
+        #7c7a99 5.43%,
+        #cecbff 19.57%,
+        #7c7a99 35.82%,
+        #cecbff 57.03%
+    ) !important;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 8px;
+}
+.methodology p {
+    font-size: 32px;
+    font-weight: 400;
+    color: #ffffff;
+    opacity: 60%;
+}
+
+.hover-content h3 {
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    text-align: left !important;
+}
+.hover-content p {
+    text-align: left !important;
+    font-size: 32px !important;
+}
+.six-cards1 .hover-content img {
+    width: 122px;
+    height: 90px;
+}
+.six-cards1 .hover-content img:nth-child(1) {
+    top: 0px;
+}
+
+.six-cards1 .hover-content img:nth-child(2) {
+    transform: scaleX(-1);
+    top: 0px;
+}
+.six-cards1 .hover-content img:nth-child(3) {
+    transform: scaleY(1);
+    bottom: 0px;
+    right: 0px;
+}
+
+.six-cards1 .hover-content img:nth-child(4) {
+    transform: scaleX(-1);
+    bottom: 0px;
+    left: 0px;
+}
+
+.six-cards1 .sc-img {
+    width: 136px !important;
+    height: 106px !important;
+}
+
+.six-cards1 img:nth-child(1) {
+    top: 0px;
+}
+.six-cards1 img:nth-child(2) {
+    right: 0px;
+    bottom: 0px;
+    transform: scaleX(1);
+}
+.six-cards1 h3 {
+    font-size: 48px;
+}
+
+.scroll-buttons button {
+    font-size: 46px;
+    width: 80px;
+    height: 80px;
+    background: #292833;
+    border: 1px solid #cecbff99;
+}
+.scroll-buttons span {
+    color: #cecbff;
+    opacity: 100%;
+}
+#aboutsection h1 {
+    background-image: linear-gradient(
+        94.34deg,
+        #7c7a99 5.43%,
+        #cecbff 19.57%,
+        #7c7a99 35.82%,
+        #cecbff 57.03%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 20%;
+    font-size: 300px;
+}
+#aboutsection h4 {
+    font-size: 76px;
+}
+.contact-form input {
+    width: 36vw !important;
+    height: 70px;
+    border-radius: 24px !important;
+    padding-left: 30px !important;
+}
+.contact-form button {
+    height: 70px;
+    width: 150px;
+    margin-top: 20px;
+    border-radius: 32px !important;
+}
+.company-address {
+    font-size: 24px;
+    line-height: 36px;
+}
+.footer-company {
+    width: 15%;
+}
+.footer-company a {
+    font-size: 20px !important;
+    line-height: 40px;
+}
+.footer-expect li {
+    font-size: 20px !important;
+}
+.footer-methodologies li {
+    font-size: 20px !important;
 }
 @media (min-width: 0px) and (max-width: 480px) {
     .bodycontainer:nth-child(1) {
@@ -290,3 +503,30 @@
     }
 }
 
+@media (min-width: 0px) and (max-width: 991px) {
+    #navbarNav {
+        background: #161432;
+        border-radius: 5px;
+    }
+    #navbarNav a {
+        font-size: 24px;
+        margin-left: 0px !important;
+    }
+    #navbarNav ul {
+        padding: 5px;
+    }
+    #navbarNav li {
+        padding-left: 4%;
+    }
+    #navbarNav li:hover {
+        background: #e2abff33;
+        border-radius: 5px;
+        color: #cec3fe;
+    }
+    .navbar-brand {
+        margin-top: -38px;
+    }
+    .navbar-toggler {
+        margin-bottom: 30px;
+    }
+}
