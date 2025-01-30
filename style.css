@@ -644,6 +644,7 @@ body {
     }
     .form-group input {
         width: 100% !important;
+        height: 56px !important;
     }
     #beta-form button {
         width: 100%;
@@ -741,6 +742,10 @@ body {
         width: 107px !important;
         height: 36px !important;
     }
+    ::placeholder {
+    font-size: 14px;
+    font-weight: bold;
+}
 }
 
 @media (min-width: 481px) and (max-width: 1023px) {
