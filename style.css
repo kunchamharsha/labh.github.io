@@ -85,9 +85,26 @@ body {
 .approachcon {
     margin-top: 334px;
 }
-
 .approachcon h2 {
     font-size: 48px !important;
+    width: 100%;
+    margin-left: 130px !important;
+    background: linear-gradient(
+        135deg,
+        #7c7a99 0%,
+        #cecbff 27%,
+        #c1c0d2 59%,
+        #cecbff 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    line-height: 50px;
+    font-size: 45px;
+    font-weight: bold;
+    margin: 3rem;
+    margin-bottom: 10px;
+    margin-top: 100px;
 }
 .approachcon h5 {
     font-size: 36px !important;
@@ -236,6 +253,8 @@ body {
 .company-address {
     font-size: 24px;
     line-height: 36px;
+    margin-top: 20px;
+    width: 475px;
 }
 .footer-company {
     width: 15%;
@@ -250,32 +269,147 @@ body {
 .footer-methodologies li {
     font-size: 20px !important;
 }
+.social-media {
+    font-size: 24px !important;
+    font-weight: bold !important;
+    margin-bottom: 20px;
+}
+.my-text-gradient {
+    background-image: linear-gradient(
+        91.85deg,
+        #643b99 0.39%,
+        #8f64c7 30.84%,
+        #643b99 61.59%,
+        #8f64c7 99.57%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.infinite-carousel {
+    overflow: hidden;
+    display: flex;
+    gap: 50px;
+    flex: 0 0 100%;
+}
+.carousel-group {
+    display: flex;
+    gap: 150px;
+    margin-top: 45px;
+    margin-left: 100px;
+}
+.infinite-carousel .carousel-group {
+    will-change: transform;
+    animation: scrolling 40s linear infinite;
+}
+.expect-heading {
+    margin-top: 120px;
+    margin-left: 42px !important;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: left;
+    width: fit-content;
+}
+.signup-offer {
+    width: 95%;
+    height: 70px;
+    padding: 1rem;
+    border-radius: 35px;
+    background-color: #cec3fe;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.signup-offer img {
+    width: 80px;
+    margin-right: -20px;
+}
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
 @media (min-width: 0px) and (max-width: 480px) {
+    .my-container {
+        padding: 0px;
+    }
+    .navbar-brand {
+        margin-left: -30px !important;
+        margin-bottom: 33px;
+    }
+    .navbar-brand img {
+        width: 31px !important;
+        height: 31px !important;
+    }
+    .navbar-brand span {
+        font-size: 20px !important;
+    }
+    .navbar-toggler {
+        margin-bottom: 41px;
+        margin-right: -31px;
+    }
+    .display-4 {
+        font-size: 32px !important;
+        font-weight: 700 !important;
+        line-height: 36px !important;
+    }
+    .main-join {
+        margin-top: 15px;
+        width: 63vw;
+    }
+    .main.join p {
+        font-size: 14px;
+    }
     .bodycontainer:nth-child(1) {
         margin-top: 0px;
+        margin-bottom: 292px !important;
     }
-    .description-container img:nth-child(1),
-    img:nth-child(2),
-    img:nth-child(3),
-    img:nth-child(4) {
-        width: 77px !important;
-        height: 56px !important;
+    .testp {
+        margin-top: 0.5rem !important;
+    }
+    .testp2 {
+        margin-top: 0px !important;
+    }
+    .description-container img {
+        width: 51px !important;
+        height: 38px !important;
+    }
+    .container1 {
+        border-radius: 20px;
+        padding: 25px 10px;
+    }
+    .container1:nth-child(1) {
+        margin-bottom: -400px !important;
+    }
+    .button1 {
+        margin-top: 0px;
+        width: 158px !important;
+        height: 36px !important;
+    }
+    .button1 p {
+        font-size: 14px !important;
     }
     .content {
         margin: 6px !important;
     }
     .content .heading {
-        font-size: 20px !important;
+        font-size: 16px !important;
     }
     .sub-content {
         margin-top: 0px !important;
         margin-left: 0px !important;
     }
-    .sub-content p,
-    li {
-        font-size: 16px !important;
+    .sub-content p, .sub-content li {
+        font-size: 12px !important;
         font-weight: 300 !important;
-        line-height: 20px !important;
+        line-height: 16px !important;
+        margin-bottom: 0px !important;
+    }
+    .sub-content ul {
+        margin: 0.5rem auto 0.5rem;
     }
     .divider {
         margin-top: 5px;
@@ -286,35 +420,76 @@ body {
         width: 180px;
     }
     .join-container {
-        margin-top: 180px;
+        margin-top: 156px;
+    }
+    .lead {
+        font-size: 18px;
+        margin-bottom: 0px !important;
+        font-size: 18px !important;
+        margin-top: 0px;
+    }
+    .approach {
+        border-radius: 20px !important;
+        padding: 12px !important;
     }
     .approachcon {
-        margin-top: 260px;
+        margin-top: 240px;
     }
     .approachcon h2 {
-        font-size: 30px !important;
+        font-size: 24px !important;
+        margin-left: 84px !important;
+        margin-top: 116px !important;
+        margin-bottom: -5px !important;
+        margin-top: 0px !important;
     }
-    .approachcon h5,
+    .approach h5{
+        font-size: 20px !important;
+        margin-left: 0px;
+    }
+    .approach p {
+        font-size: 12px !important;
+        margin: 10px 0 0 0 !important;
+        line-height: 16px !important;
+        font-weight: 500 !important;
+        text-align: left;
+    }
+    .testdiv {
+        margin-bottom: 0px !important;
+    }
+    .heading {
+        display: block;
+        margin-top: 0px;
+        width: 100% !important;
+        text-align: left !important;
+    }
+    #bodycon {
+        margin-top: 0px;
+    }
+    .jumbotron {
+        margin-bottom: 0px;
+    }
     .expect-heading {
         margin: 0 !important;
-        font-size: 25px !important;
+        font-weight: 700 !important;
+        font-size: 24px !important;
+        margin: 41px auto 0px 18px !important;
     }
-    .approachcon p {
-        font-size: 18px !important;
-        margin: 10px 0 0 0 !important;
-        line-height: 18px !important;
-        font-weight: 300 !important;
-    }
-    .expect-heading {
-        margin: 50px auto 50px 25px !important;
+    .expect {
+        padding: 20px 12px !important;
     }
     .expect-cards {
+        border-radius: 20px !important;
         min-height: auto !important;
+        margin: 5px !important;
+        width: 97% !important;
     }
-    .expect-cards img:nth-child(1),
-    img:nth-child(2) {
-        width: 77px !important;
-        height: 56px !important;
+    .testb{
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .expect-cards img {
+        width: 62px !important;
+        height: 46px !important;
     }
     .expect-cards img:nth-child(1) {
         top: 0;
@@ -323,29 +498,76 @@ body {
     .expect-cards img:nth-child(2) {
         bottom: 0;
     }
-    .expect-cards h5 {
-        font-size: 17px !important;
+    .content1 p {
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 18px !important;
     }
-    .expect-cards h4 {
-        font-size: 20px !important;
-    }
-    .expect-cards .content1 {
+    .content1 {
         margin: 5px !important;
     }
-    .expect-cards p {
-        font-size: 16px !important;
+    .content1 h5 {
+        font-size: 10px !important;
+        font-weight: 700 !important;
+    }
+    .content1 h4 {
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        margin-bottom: 1rem !important;
+    }
+    .cards {
+        gap: 3px ;
     }
     .methodology p {
-        font-size: 16px !important;
+        font-size: 12px !important;
+        font-weight: 600;
+        line-height: 16px;
     }
+    .scroll-buttons button {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+    .six-cards1 {
+        width: 118% !important;
+        height: 198px !important;
+        border-radius: 20px !important;
+    }
+    .six-cards1 img:nth-child(1), .six-cards1 img:nth-child(2) {
+        width: 92px !important;
+        height: 68px !important;
+    }
+    .six-cards1 h3 {
+        font-size: 24px !important;
+        line-height: 26px !important;
+        font-weight: 700 !important;
+    }
+
     #pitch {
-        min-height: 75vh !important;
+        min-height: fit-content !important;
+        margin-top: 10px;
+    }
+    #pitch h1 {
+        font-size: 96px !important;
+    }
+    #pitch h1 {
+        margin: 0px !important;
+    }
+    #pitch h4 {
+        font-size: 20px !important;
+        font-weight: 700;
     }
     .signup-button {
-        font-size: 25px !important;
+        font-size: 20px !important;
+        margin: 16px 0px 13px 11px !important;
+    }
+    .signup-offer {
+        border-radius: 40px !important;
     }
     .signup-offer p {
-        font-size: 18px !important;
+        font-size: 14px !important;
+        line-height: 22px !important;
+        font-weight: 400 !important;
     }
     .footercontainer {
         padding: 0px !important;
@@ -373,17 +595,166 @@ body {
     .footer-contact-us-wrapper {
         display: block !important;
     }
+    .amc h1 {
+        font-size: 96px !important;
+    }
+    .amc h4 {
+        font-size: 20px !important;
+    }
+    .amc p {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 400;
+        padding-top: 0px;
+        margin-bottom: 0px;
+    }
+    #aboutsection p {
+        font-size: 12px !important;
+        line-height: 16px !important;
+    }
+    .labh-background {
+        font-size: 96px !important;
+        width: 113% !important;
+        font-weight: 700 !important;
+    }
+    .about-us-front {
+        font-size: 20px !important;
+    }
+    .responsive-container {
+        width: 100%;
+        border-radius: 20px;
+    }
+    .responsive-container h4{
+        font-size: 16px !important;
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
+    #beta h1 {
+        font-size: 36px;
+        margin-top: 0px !important;
+        letter-spacing: 4px;
+    }
+    #beta p {
+        font-size: 14px !important;
+    }
+    #beta-form label {
+        color: white !important;
+        font-size: 16px !important;
+        width: 100% !important;
+    }
+    .form-group input {
+        width: 100% !important;
+    }
+    #beta-form button {
+        width: 100%;
+    }
+    .form-group:nth-child(1) {
+        margin-top: 14px;
+    }
+    .faq-title {
+        font-size: 36px !important;
+    }
+    .faq-container {
+        margin-top: 56px !important;
+    }
+    .faq-question {
+        margin-left: 0px;
+    }
+    .faq-question span {
+        font-size: 12px !important;
+    }
+    .arrow img {
+        width: 34px !important;
+    }
+    .call-container {
+        margin: 0px 1% !important;
+    }
+    .call-container h4{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .call-button {
+        padding-left: 20px !important;
+    }
+    .call-button span {
+        font-size: 14px;
+        text-align: left;
+    }
+    .footer-icon {
+        width: 24px !important;
+        height: 24px !important;
+    }
+    .footer-logo {
+        font-size: 16px !important;
+    }
+    .desktop-footer {
+        display: none !important;
+    }
+    .company-address {
+        font-size: 14px;
+        line-height: 20px;
+        width: 100%;
+        margin-top: 12px;
+    }
+    .mobile-footer h6, .mobile-footer strong {
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        line-height: 18px !important;
+    }
+    .mobile-footer-first {
+        display: flex;
+    }
+    .mobile-footer a, .mobile-footer li {
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 18px !important;
+    }
+    .social-media {
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        margin-top: -47px !important;
+    }
+    .footer-icons img {
+        width: 24px !important;
+        height: 24px !important;
+    }
+    .footer-icons img:nth-child(2), .footer-icons img:nth-child(3) {
+        width: 28px !important;
+        height: 28px !important;
+    }
+    .footer-icons img:nth-child(4) {
+        margin-top: 1px !important;
+    }
+    .contact-us-footer {
+        font-size: 16px !important;
+        font-weight: 700 !important;
+    }
+    .support-email {
+        font-size: 12px !important;
+        font-weight: 400 !important;
+    }
+    .support-email img {
+        width: 41px !important;
+        height: 33px !important;
+    }
+    .get-app {
+        width: 107px !important;
+        height: 36px !important;
+    }
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 1023px) {
     .jumbotron h4 {
         font-size: 45px !important;
     }
     .lead {
-        font-size: 30px !important;
+        font-size: 24px !important;
     }
     #bodycon {
-        margin-top: 300px !important;
+        margin-top: 0px !important;
+    }
+    .button1 {
+        margin-top: 0rem !important;
     }
     .bodycontainer {
         height: fit-content !important;
@@ -398,18 +769,17 @@ body {
     }
     .sub-content p,
     li {
-        font-size: 20px !important;
+        font-size: 12px !important;
         font-weight: 350 !important;
-        line-height: 24px !important;
+        line-height: 16px !important;
     }
     .description-container:nth-child(1) {
         margin-bottom: -140px;
     }
     .approachcon {
-        margin-top: 260px;
+        margin-top: 146px;
     }
-    .approachcon h5,
-    .expect-heading {
+    .approachcon h5 {
         margin: 0 !important;
         font-size: 28px !important;
     }
@@ -417,10 +787,19 @@ body {
         font-size: 20px !important;
         margin: 10px 0 0 0 !important;
         line-height: 19px !important;
-        font-weight: 320 !important;
+        font-weight: 420 !important;
+    }
+    .approachcon h2 {
+        margin-left: 102px !important;
     }
     .expect-heading {
-        margin: 50px auto 50px 25px !important;
+        margin: 105px auto 50px 25px !important;
+        font-size: 48px;
+    }
+    .expect {
+        padding-left: 18px !important;
+        padding-top: 0px !important;
+        margin-bottom: 80px;
     }
     .cards {
         width: 100vw;
@@ -439,17 +818,116 @@ body {
         padding: 0px !important;
         margin-left: 0px !important;
     }
-}
-
-@media (min-width: 767px) and (max-width: 1023px) {
-    #bodycon {
-        margin-top: 80px !important;
+    .description-container img {
+        width: 100px !important;
+        height: 86px !important;
     }
-    .bodycontainer:nth-child(2) {
-        margin-top: 5rem;
+    .description-container .content {
+        margin: 1rem !important;
     }
-    .footer-contact-us {
-        margin-left: 15px !important;
+    .description-container .divider {
+        margin-top: 1rem !important;
+    }
+    .second-description {
+        margin-top: -190px !important;
+    }
+    .join-container {
+        margin-top: 240px;
+    }
+    .lead {
+        margin-top: 0px;
+        margin-bottom: 46px;
+    }
+    .approach {
+        padding: 24px 22px !important;
+    }
+    #pitch {
+        height: fit-content;
+        min-height: fit-content;
+    }
+    #pitch h1 {
+        font-size: 204px;
+        margin-bottom: -2px !important;
+    }
+    #pitch h4 {
+        margin-bottom: 18px;
+    }
+    .methodology p {
+        font-size: 24px;
+    }
+    .six-cards1 {
+        width: 100% !important;
+    }
+    .signup-offer {
+        padding: 4rem 1rem;
+        border-radius: 62px;
+    }
+    .signup-offer p {
+        font-size: 26px;
+    }
+    .signup-offer img {
+        width: 108px;
+    }
+    .amc {
+        margin-top: 80px;
+    }
+    .amc h5 {
+        font-size: 48px !important;
+        font-weight: 700;
+    }
+    .amc h1 {
+        font-size: 204px !important;
+    }
+    .amc h4 {
+        font-size: 2rem;
+        letter-spacing: 5px !important;
+        margin-top: -30px;
+    }
+    .amc p {
+        font-size: 24px;
+    }
+    #aboutsection h1 {
+        font-size: 204px;
+    }
+    #aboutsection h4 {
+        font-size: 50px;
+        margin-top: -31px;
+    }
+    #aboutsection p {
+        font-size: 24px !important;
+    }
+    .responsive-container {
+        padding: 61px 10px;
+        width: 100%;
+    }
+    .responsive-container h4 {
+        font-size: 26px;
+    }
+    .responsive-button {
+        max-width: 100%;
+    }
+    .responsive-button img {
+        width: 50px;
+        height: 50px;
+    }
+    #beta p {
+        font-size: 22px;
+    }
+    #beta-form label {
+        color: white !important;
+        font-size: 16px !important;
+    }
+    .form-group input {
+        width: 100% !important;
+    }
+    #beta-form button {
+        width: 100%;
+    }
+    .gradient-text {
+        text-align: left;
+    }
+    .call-button {
+        height: 100px;
     }
 }
 
@@ -459,7 +937,7 @@ body {
     }
 }
 
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 768px) {
     .desktop-footer {
         display: none !important;
     }
@@ -524,9 +1002,6 @@ body {
         color: #cec3fe;
     }
     .navbar-brand {
-        margin-top: -38px;
-    }
-    .navbar-toggler {
-        margin-bottom: 30px;
+        margin-top: -10px;
     }
 }

@@ -155,7 +155,7 @@
             }
 
             .hrs {
-                color: rgb(223, 203, 203);
+                border-color: #1614324d;
                 margin-top: -20px;
             }
 
@@ -270,7 +270,7 @@
                 transition: all 0.3s ease;
                 cursor: pointer;
             }
-/* 
+            /* 
             .neumorphic-button:hover {
                 background: #ffffff;
                 border: none;
@@ -304,7 +304,7 @@
                 transition: all 0.3s ease;
                 cursor: pointer;
             }
-/* 
+            /* 
             .neumorphic-button:hover {
                 box-shadow: inset 7px 7px 15px #0d0d0d,
                     inset -7px -7px 15px #2b2b2b;
@@ -866,6 +866,7 @@
                 scroll-behavior: smooth;
                 white-space: nowrap;
                 padding: 20px;
+                height: 266px;
             }
 
             .cards {
@@ -1255,7 +1256,6 @@
                 font-weight: 400;
             }
 
-
             .aboutsec,
             .amc {
                 padding: 2rem;
@@ -1397,6 +1397,7 @@
                 margin: 40px 6%;
                 text-align: left;
                 padding: 20px;
+                margin-bottom: 100px;
             }
 
             .call-container h4 {
@@ -1414,9 +1415,9 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding:0px 4px 0px 51px;
+                padding: 0px 4px 0px 51px;
                 font-size: 28px;
-                font-weight: bold;
+                font-weight: 500;
                 box-sizing: border-box;
             }
 
@@ -1469,7 +1470,6 @@
                 flex-wrap: wrap;
                 justify-content: space-between;
                 margin: 0 auto;
-                max-width: 1200px;
             }
 
             /* Left Section */
@@ -2382,18 +2382,13 @@
                     >Labh</span
                 >
             </a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                style="background-color: #45424e; width: 60px"
+            <img class="navbar-toggler"
                 data-toggle="collapse"
                 data-target="#navbarNav"
                 aria-controls="navbarNav"
                 aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon" style="color: #cec3fe"></span>
-            </button>
+                aria-label="Toggle navigation" src="assets/Group 2225.png" alt="navbar-toggler">
+            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
@@ -2402,7 +2397,7 @@
                             class="nav-link"
                             href="#"
                             id="home"
-                            style="font-size: 1.25rem; color: #6b6b7b;"
+                            style="font-size: 1.25rem; color: #6b6b7b"
                             >Home</a
                         >
                     </li>
@@ -2472,17 +2467,16 @@
                 <h4 class="display-4" style="font-weight: bold">
                     <span class="gradient-text">Build Wealth</span> with
                     Investment
-                    <br />
                     Baskets Designed for You.
                 </h4>
                 <div class="lead-container">
                     <p class="lead">
                         Get access to researched Mutual Funds + Stock Baskets
-                        matched to your risk profile.
+                        matched to your <br/> risk profile.
                     </p>
                 </div>
                 <br />
-                <a class="gradient-button button1 mx-auto" href="#beta">
+                <a class="gradient-button button1 mx-auto main-join" href="#beta">
                     <p style="color: #161432; font-size: 20px">
                         Join Beta today
                     </p>
@@ -2530,7 +2524,6 @@
                                 Tired of trying to make sense of complex market
                                 trends, high risks, and unpredictable returns?
                             </h1>
-                            <br />
                             <hr class="divider" />
                             <div class="sub-content">
                                 <p
@@ -2582,7 +2575,7 @@
                 </div>
 
                 <div
-                    class="bodycontainer"
+                    class="bodycontainer second-description"
                     style="
                         margin-bottom: 10rem;
                         height: fit-content;
@@ -2621,10 +2614,10 @@
                             >
                                 The Only Investment Help You’ll Ever Need:
                             </h1>
-                            <br />
                             <hr class="divider" />
                             <div class="sub-content">
                                 <p
+                                class="testp"
                                     style="
                                         line-height: 40px;
                                         font-size: 28px;
@@ -2694,10 +2687,9 @@
                             style="font-size: 40px; font-weight: 700"
                         >
                             Ignorance might be bliss, but not when it’s your
-                            money on<br />
+                            money on
                             the line!
                         </h1>
-                        <br />
                         <hr class="divider" />
                         <div class="sub-content">
                             <p
@@ -2713,6 +2705,7 @@
                                 That’s why we created Labh,
                             </p>
                             <p
+                            class="testp2"
                                 style="
                                     text-align: left;
                                     margin-top: 28px;
@@ -2736,31 +2729,8 @@
                 <!-- <hr style="color: black;"> -->
             </div>
             <div class="approachcon">
-                <h2
-                    style="
-                        width: 100%;
-                        margin-left: 130px !important;
-                        background: linear-gradient(
-                            135deg,
-                            #7c7a99 0%,
-                            #cecbff 27%,
-                            #c1c0d2 59%,
-                            #cecbff 100%
-                        );
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        display: inline-block;
-                        line-height: 50px;
-                        font-size: 45px;
-                        font-weight: bold;
-                        margin: 3rem;
-                        margin-bottom: 10px;
-                        margin-top: 100px;
-                    "
-                >
-                    Our Approach
-                </h2>
-                <div style="margin-bottom: 16px" class="approach">
+                <h2 class="my-default-heading">Our Approach</h2>
+                <div style="margin-bottom: 16px" class="approach testdiv">
                     <h5>Data-Driven Insights</h5>
                     <p
                         style="
@@ -2808,17 +2778,7 @@
                 </div>
             </div>
 
-            <h2
-                class="gradient-text mx-auto expect-heading"
-                style="
-                    margin-top: 120px;
-                    margin-left: 42px !important;
-                    font-size: 48px;
-                    font-weight: 700;
-                    text-align: left;
-                    width: fit-content;
-                "
-            >
+            <h2 class="gradient-text mx-auto expect-heading">
                 Here’s what to expect:
             </h2>
             <div
@@ -2831,6 +2791,7 @@
                     white-space: nowrap;
                     padding: 20px 38px;
                     background-color: black;
+                    height: fit-content;
                 "
             >
                 <div class="cards">
@@ -2942,17 +2903,13 @@
                 </div>
             </div>
 
-            <center>
-                <a
-                    class="gradient-button button1"
-                    style="margin-top: 7rem; margin-bottom: 6rem"
-                    href="#beta"
-                >
-                    <p style="color: #161432; font-size: 20px">
-                        Join Beta today
-                    </p>
-                </a>
-            </center>
+            <a
+                class="gradient-button button1 mx-auto testb"
+                style="margin-top: 7rem; margin-bottom: 6rem"
+                href="#beta"
+            >
+                <p style="color: #161432; font-size: 20px">Join Beta today</p>
+            </a>
 
             <div class="methodology" id="pitch">
                 <h1 style="margin-bottom: -45px">SIX</h1>
@@ -3020,6 +2977,15 @@
                             text-wrap: wrap;
                             font-size: 48px;
                             width: 80%;
+                            background-image: linear-gradient(
+                                91.85deg,
+                                #836f9d 0.39%,
+                                #643b99 49.49%,
+                                #8f64c7 99.57%
+                            );
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
                         "
                     >
                         Data Collection from Diverse Sources
@@ -3106,6 +3072,15 @@
                             font-size: 48px;
                             width: 80%;
                             text-wrap: wrap;
+                            background-image: linear-gradient(
+                                91.85deg,
+                                #836f9d 0.39%,
+                                #643b99 49.49%,
+                                #8f64c7 99.57%
+                            );
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
                         "
                     >
                         Technical Analysis
@@ -3182,6 +3157,15 @@
                             font-size: 48px;
                             width: 80%;
                             text-wrap: wrap;
+                            background-image: linear-gradient(
+                                91.85deg,
+                                #836f9d 0.39%,
+                                #643b99 49.49%,
+                                #8f64c7 99.57%
+                            );
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
                         "
                     >
                         Understanding Economic Trends for Future Gains
@@ -3260,6 +3244,15 @@
                             font-size: 48px;
                             width: 80%;
                             text-wrap: wrap;
+                            background-image: linear-gradient(
+                                91.85deg,
+                                #836f9d 0.39%,
+                                #643b99 49.49%,
+                                #8f64c7 99.57%
+                            );
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
                         "
                     >
                         Identifying Patterns for Predictable Outcomes
@@ -3336,6 +3329,15 @@
                             text-wrap: wrap;
                             font-size: 48px;
                             width: 80%;
+                            background-image: linear-gradient(
+                                91.85deg,
+                                #836f9d 0.39%,
+                                #643b99 49.49%,
+                                #8f64c7 99.57%
+                            );
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
                         "
                     >
                         Holistic Evaluations Beyond Numbers
@@ -3413,6 +3415,15 @@
                             text-wrap: wrap;
                             font-size: 48px;
                             width: 80%;
+                            background-image: linear-gradient(
+                                91.85deg,
+                                #836f9d 0.39%,
+                                #643b99 49.49%,
+                                #8f64c7 99.57%
+                            );
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
                         "
                     >
                         Smart Algorithms for Continuous Opportunity Scanning
@@ -3501,30 +3512,32 @@
             >
                 <div
                     class="signup-offer"
-                    style="
-                        width: 95%;
-                        padding: 1rem;
-                        border-radius: 35px;
-                        background-color: #cec3fe;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                    "
                 >
                     <p
                         style="
-                            color: black;
-                            font-size: 2rem;
+                            font-size: 28px;
                             font-weight: 500;
                             margin-left: 20px;
                             margin-bottom: 0px;
+                            background-image: linear-gradient(
+                                91.85deg,
+                                #643b99 0.39%,
+                                #8f64c7 30.84%,
+                                #643b99 61.59%,
+                                #8f64c7 99.57%
+                            );
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
                         "
                     >
                         Get started today—no hidden fees or long-term
                         commitments involved!
                     </p>
                     <a href=""
-                        ><img src="assets/Frame 877.png" alt="arrow"
+                        ><img
+                            src="assets/Frame 877.png"
+                            alt="arrow"
                     /></a>
                 </div>
             </div>
@@ -3623,8 +3636,7 @@
             <!-- </section> -->
 
             <div
-                id="carouselExampleControls"
-                class="carousel slide"
+                class="carousel slide infinite-carousel"
                 data-ride="carousel"
                 style="
                     background: linear-gradient(
@@ -3637,134 +3649,130 @@
                 "
                 ;
             >
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div
-                            style="
-                                display: flex;
-                                width: 80%;
-                                height: 80%;
-                                align-items: center;
-                                justify-content: space-evenly;
-                                column-gap: 3rem;
-                                padding: 3rem;
-                            "
-                        >
-                            <img
-                                class="d-block img"
-                                style="width: auto; height: 127px"
-                                src="assets/id5W9ODoZn_1735890486195 1.png"
-                                alt="Image 1"
-                            />
-                            <img
-                                class="d-block"
-                                style="width: auto; height: 127px"
-                                src="assets/idO1wzN_Y0_1735890577316 1.png"
-                                alt="Image 2"
-                            />
-                            <img
-                                class="d-block"
-                                style="width: auto; height: 127px"
-                                src="assets/idRZFh7JuJ_1735891441599 1.png"
-                                alt="Image 3"
-                            />
-                            <img
-                                class="d-block"
-                                style="width: auto; height: 127px"
-                                src="assets/image 1.png"
-                                alt="Image 4"
-                            />
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div
-                            style="
-                                display: flex;
-                                width: 80%;
-                                height: 80%;
-                                align-items: center;
-                                justify-content: space-evenly;
-                                column-gap: 3rem;
-                                padding: 3rem;
-                            "
-                        >
-                            <img
-                                class="d-block"
-                                style="width: auto; height: 127px"
-                                src="assets/image 6.png"
-                                alt="Image 5"
-                            />
-                            <img
-                                class="d-block"
-                                style="width: auto; height: 127px"
-                                src="assets/image 7.png"
-                                alt="Image 6"
-                            />
-                            <img
-                                class="d-block"
-                                style="width: auto; height: 127px"
-                                src="assets/image 8.png"
-                                alt="Image 7"
-                            />
-                            <img
-                                class="d-block"
-                                style="width: auto; height: 127px"
-                                src="assets/image 9.png"
-                                alt="Image 8"
-                            />
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div
-                            style="
-                                display: flex;
-                                width: 80%;
-                                height: 80%;
-                                align-items: center;
-                                justify-content: space-evenly;
-                                column-gap: 3rem;
-                                padding: 3rem;
-                            "
-                        >
-                            <img
-                                class="d-block"
-                                style="width: auto; height: 127px"
-                                src="assets/image 10.png"
-                                alt="Image 9"
-                            />
-                            <img
-                                class="d-block"
-                                style="width: auto; height: 127px"
-                                src="assets/image 11.png"
-                                alt="Image 10"
-                            />
-                        </div>
-                    </div>
+                <div class="carousel-group">
+                    <img
+                        class="d-block"
+                        style="width: 248px; height: 83px; margin-top: 22px"
+                        src="assets/idO1wzN_Y0_1735890577316 1.png"
+                        alt="Image 2"
+                    />
+                    <img
+                        class="d-block"
+                        style="width: 462px; height: 73px; margin-top: 27px"
+                        src="assets/idRZFh7JuJ_1735891441599 1.png"
+                        alt="Image 3"
+                    />
+                    <img
+                        class="d-block"
+                        style="width: 318px; height: 127px"
+                        src="assets/image 1.png"
+                        alt="Image 4"
+                    />
+                    <img
+                        class="d-block"
+                        style="width: 206px; height: 120px"
+                        src="assets/image 6.png"
+                        alt="Image 5"
+                    />
+                    <img
+                        class="d-block"
+                        style="width: 321px; height: 120px"
+                        src="assets/image 7.png"
+                        alt="Image 6"
+                    />
+                    <img
+                        class="d-block"
+                        style="width: 172px; height: 120px"
+                        src="assets/image 8.png"
+                        alt="Image 7"
+                    />
+                    <img
+                        class="d-block"
+                        style="width: 218px; height: 120px"
+                        src="assets/image 9.png"
+                        alt="Image 8"
+                    />
+                    <img
+                        class="d-block"
+                        style="width: 330px; height: 124px"
+                        src="assets/image 10.png"
+                        alt="Image 9"
+                    />
+                    <img
+                        class="d-block"
+                        style="width: 240px; height: 127px"
+                        src="assets/image 11.png"
+                        alt="Image 10"
+                    />
+                    <img
+                        class="d-block img"
+                        style="width: 210px; height: 123px"
+                        src="assets/id5W9ODoZn_1735890486195 1.png"
+                        alt="Image 1"
+                    />
                 </div>
-                <a
-                    class="carousel-control-prev"
-                    href="#carouselExampleControls"
-                    role="button"
-                    data-slide="prev"
-                >
-                    <span
-                        class="carousel-control-prev-icon"
-                        aria-hidden="true"
-                    ></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a
-                    class="carousel-control-next"
-                    href="#carouselExampleControls"
-                    role="button"
-                    data-slide="next"
-                >
-                    <span
-                        class="carousel-control-next-icon"
-                        aria-hidden="true"
-                    ></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div aria-hidden class="carousel-group">
+                    <img
+                        class="d-block"
+                        style="width: 248px; height: 83px; margin-top: 22px"
+                        src="assets/idO1wzN_Y0_1735890577316 1.png"
+                        alt="Image 2"
+                    />
+                    <img
+                        class="d-block"
+                        style="width: 462px; height: 73px; margin-top: 27px"
+                        src="assets/idRZFh7JuJ_1735891441599 1.png"
+                        alt="Image 3"
+                    />
+                    <img
+                        class="d-block"
+                        style="width: 318px; height: 127px"
+                        src="assets/image 1.png"
+                        alt="Image 4"
+                    />
+                    <img
+                        class="d-block"
+                        style="width: 206px; height: 120px"
+                        src="assets/image 6.png"
+                        alt="Image 5"
+                    />
+                    <img
+                        class="d-block"
+                        style="width: 321px; height: 120px"
+                        src="assets/image 7.png"
+                        alt="Image 6"
+                    />
+                    <img
+                        class="d-block"
+                        style="width: 172px; height: 120px"
+                        src="assets/image 8.png"
+                        alt="Image 7"
+                    />
+                    <img
+                        class="d-block"
+                        style="width: 218px; height: 120px"
+                        src="assets/image 9.png"
+                        alt="Image 8"
+                    />
+                    <img
+                        class="d-block"
+                        style="width: 330px; height: 124px"
+                        src="assets/image 10.png"
+                        alt="Image 9"
+                    />
+                    <img
+                        class="d-block"
+                        style="width: 240px; height: 127px"
+                        src="assets/image 11.png"
+                        alt="Image 10"
+                    />
+                    <img
+                        class="d-block img"
+                        style="width: 210px; height: 123px"
+                        src="assets/id5W9ODoZn_1735890486195 1.png"
+                        alt="Image 1"
+                    />
+                </div>
             </div>
             <div
                 id="aboutsection"
@@ -3779,6 +3787,7 @@
                     "
                 >
                     <h1
+                        class="labh-background"
                         style="
                             margin-top: -100px;
                             position: relative;
@@ -3789,7 +3798,7 @@
                         L A B H
                     </h1>
                     <h4
-                        class="gradient-text"
+                        class="gradient-text about-us-front"
                         style="
                             position: absolute;
                             top: 30%;
@@ -3832,13 +3841,17 @@
                     </h4>
                     <div class="button-group">
                         <button class="responsive-button">
-                            AMFI Registered Mutual Fund Distributor
+                            <span class="my-text-gradient"
+                                >AMFI Registered Mutual Fund Distributor</span
+                            >
                             <a href=""
                                 ><img src="assets/Frame 877.png" alt="arrow"
                             /></a>
                         </button>
                         <button class="responsive-button">
-                            NISM Certified Research Analyst
+                            <span class="my-text-gradient"
+                                >NISM Certified Research Analyst</span
+                            >
                             <a href=""
                                 ><img src="assets/Frame 877.png" alt="arrow"
                             /></a>
@@ -3870,7 +3883,7 @@
                 </div>
             </div>
             <form
-                class="contact-form  mx-auto"
+                class="contact-form mx-auto"
                 id="beta-form"
                 method="post"
                 action="https://script.google.com/macros/s/AKfycbxWfRrVCtZuNE44xZU8H08bj3_HKlq-uXZy0HhsvtC-4SrlULQ4CFADKqgUE8JTswzDSQ/exec"
@@ -4074,7 +4087,10 @@
                     Got Question? Let’s hop on a call.
                 </h4>
                 <button class="call-button">
-                    Click me - to schedule a call with our professionals
+                    <span class="my-text-gradient"
+                        >Click me - to schedule a call with our
+                        professionals</span
+                    >
                     <a href=""
                         ><img src="assets/Frame 877.png" alt="arrow"
                     /></a>
@@ -4098,23 +4114,40 @@
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: space-between;
-                    margin-left: 80px;
+                    margin-left: 24px;
                     margin-bottom: -30px;
                 "
             >
                 <!-- Left Section -->
                 <div style="flex: 1; min-width: 250px; margin-bottom: 20px">
-                    <div style="display: flex; align-items: center">
+                    <div
+                        style="
+                            display: flex;
+                            align-items: center;
+                            margin-top: 20px;
+                        "
+                    >
                         <img
+                            class="footer-icon"
                             src="assets/LOGO.png"
                             alt="Labh Logo"
                             style="width: 60px; margin-bottom: 10px"
                         />&nbsp;
-                        <h3 style="color: #a663fe; font-weight: bold">Labh</h3>
+                        <h3
+                            class="footer-logo"
+                            style="
+                                color: #a663fe;
+                                font-weight: bold;
+                                font-size: 38px;
+                                margin-left: 4px;
+                            "
+                        >
+                            Labh
+                        </h3>
                     </div>
                     <p class="company-address">
-                        Incubation council Andhra University, Maddilapalem,
-                        Visakhapatnam, Andhra<br />
+                        Andhra University Incubation council, Maddilapalem,
+                        Visakhapatnam, Andhra
                         Pradesh - 530040
                     </p>
                     <div class="mobile-footer">
@@ -4274,12 +4307,12 @@
                         style="
                             font-size: 15px;
                             font-weight: bold;
-                            margin-top: 90px;
+                            margin-top: -64px;
                         "
                     >
                         Find us on social media:
                     </h4>
-                    <div class="footer-icons" style="display: flex; gap: 10px">
+                    <div class="footer-icons" style="display: flex; gap: 15px">
                         <img
                             src="assets/instagram.png"
                             alt="Instagram"
@@ -4307,26 +4340,35 @@
                             flex: 1;
                             min-width: 250px;
                             margin-bottom: 20px;
-                            margin-top: 50px;
+                            margin-top: 28px;
                             display: flex;
                             gap: 80px;
                         "
                     >
                         <div style="flex: 1">
-                            <strong style="font-size: 20px"
+                            <strong
+                                class="contact-us-footer"
+                                style="
+                                    font-size: 24px;
+                                    font-weight: bold;
+                                    margin-bottom: 20px;
+                                "
                                 >Contact us on:</strong
                             >
                             <p
+                            class="support-email"
                                 style="
                                     display: flex;
                                     align-items: center;
                                     gap: 10px;
+                                    font-size: 23px;
                                 "
                             >
                                 <img
+                                    
                                     src="assets/mail.png"
                                     alt="Email"
-                                    style="width: 35px; height: 35px"
+                                    style="width: 75px; height: 75px"
                                 />
                                 support@labh.io
                             </p>
@@ -4386,11 +4428,14 @@
                         margin-bottom: 20px;
                         display: flex;
                         justify-content: space-between;
-                        margin-top: 80px;
+                        margin-top: 22px;
+                        margin-right: 30px;
                     "
                 >
                     <div class="footer-company">
-                        <h6 style="font-weight: bold; font-size: 24px;">Company</h6>
+                        <h6 style="font-weight: bold; font-size: 24px">
+                            Company
+                        </h6>
                         <ul style="list-style: none; padding: 0; margin: 0">
                             <li>
                                 <a
@@ -4440,8 +4485,9 @@
                         </ul>
                     </div>
                     <div style="margin-left: 50px" class="footer-expect">
-                        <strong style="display: block; font-size: 24px;">What to Expect?</strong
-                        ><br />
+                        <strong style="display: block; font-size: 24px"
+                            >What to Expect?</strong
+                        >
                         <ul style="list-style: none; padding: 0; margin: 0">
                             <li style="display: block; margin-top: 10px">
                                 Portfolio Construction
@@ -4455,7 +4501,7 @@
                         </ul>
                     </div>
                     <div class="footer-methodologies">
-                        <strong style="font-size: 24px;">Methodologies</strong>
+                        <strong style="font-size: 24px">Methodologies</strong>
                         <ul style="list-style: none; padding: 0; margin: 0">
                             <li
                                 style="
@@ -4518,7 +4564,11 @@
             </div>
             <hr
                 class="hrs"
-                style="color: rgb(223, 203, 203); margin-top: -20px; margin-bottom: 20px;"
+                style="
+                    color: rgb(223, 203, 203);
+                    margin-top: -20px;
+                    margin-bottom: 20px;
+                "
             />
             <div
                 style="
@@ -4526,20 +4576,25 @@
                     display: flex;
                     justify-content: flex-end;
                     gap: 10px;
+                    margin-bottom: 20px;
+                    margin-top: 36px;
+                    margin-right: 62px;
                 "
             >
                 <div>
                     <img
+                        class="get-app"
                         src="assets/googleplay.png"
-                        alt="Google Play"
-                        style="width: 145px"
+                        alst="Google Play"
+                        style="width: 250px"
                     />
                 </div>
                 <div>
                     <img
+                        class="get-app"
                         src="assets/applestore.png"
                         alt="App Store"
-                        style="width: 145px"
+                        style="width: 250px"
                     />
                 </div>
             </div>
@@ -4658,11 +4713,11 @@
         const scrollRightButton = document.getElementById("scroll-right");
 
         scrollLeftButton.addEventListener("click", () => {
-            scrollContainer.scrollBy({ left: -400, behavior: "smooth" });
+            scrollContainer.scrollBy({ left: -800, behavior: "smooth" });
         });
 
         scrollRightButton.addEventListener("click", () => {
-            scrollContainer.scrollBy({ left: 400, behavior: "smooth" });
+            scrollContainer.scrollBy({ left: 800, behavior: "smooth" });
         });
     </script>
 
