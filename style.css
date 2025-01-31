@@ -1,7 +1,8 @@
 ::placeholder {
     color: #666;
     font-size: 23px;
-    font-weight: bold;
+    font-weight: 400;
+    opacity: 0.5;
 }
 body {
     overflow-x: hidden;
@@ -78,9 +79,6 @@ body {
 }
 .join-container h3 {
     width: 90vw;
-}
-.lead {
-    margin-bottom: 100px;
 }
 .approachcon {
     margin-top: 334px;
@@ -194,8 +192,8 @@ body {
 }
 
 .six-cards1 .sc-img {
-    width: 136px !important;
-    height: 106px !important;
+    width: 136px;
+    height: 106px;
 }
 
 .six-cards1 img:nth-child(1) {
@@ -324,6 +322,53 @@ body {
     width: 80px;
     margin-right: -20px;
 }
+#beta-form button {
+    border-radius: 56px !important;
+}
+#beta-form input {
+    border-radius: 28px !important;
+}
+.faq-answer {
+    background: linear-gradient(179.87deg, #30243e 18.73%, #623699 99.89%);
+}
+.faq-answer p {
+    text-align: left !important;
+}
+.faq-answer li {
+    font-weight: 400 !important;
+    opacity: 100% !important;
+}
+.faq-title {
+    letter-spacing: 14px;
+}
+.faq-item {
+    background: linear-gradient(
+        96.5deg,
+        rgba(100, 59, 153, 0.2) 2.93%,
+        rgba(224, 207, 246, 0.2) 37.67%,
+        rgba(100, 59, 153, 0.2) 71.09%,
+        rgba(224, 207, 246, 0.2) 97.07%
+    );
+}
+.motto {
+    opacity: 60%;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 6px;
+}
+.footer-icon {
+    width: 446px !important;
+    height: 94px !important;
+}
+.button1 p {
+    font-size: 24px !important;
+}
+.mb-10 {
+    margin-bottom: 100px;
+}
+.company-services li {
+    margin-top: 10px;
+}
 @keyframes scrolling {
     0% {
         transform: translateX(0);
@@ -355,6 +400,7 @@ body {
         font-size: 32px !important;
         font-weight: 700 !important;
         line-height: 36px !important;
+        margin-bottom: 18px !important;
     }
     .main-join {
         margin-top: 15px;
@@ -382,7 +428,7 @@ body {
         padding: 25px 10px;
     }
     .container1:nth-child(1) {
-        margin-bottom: -400px !important;
+        margin-bottom: -380px !important;
     }
     .button1 {
         margin-top: 0px;
@@ -402,10 +448,11 @@ body {
         margin-top: 0px !important;
         margin-left: 0px !important;
     }
-    .sub-content p, .sub-content li {
-        font-size: 12px !important;
-        font-weight: 300 !important;
-        line-height: 16px !important;
+    .sub-content p,
+    .sub-content li {
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        line-height: 20px !important;
         margin-bottom: 0px !important;
     }
     .sub-content ul {
@@ -427,30 +474,33 @@ body {
         margin-bottom: 0px !important;
         font-size: 18px !important;
         margin-top: 0px;
+        line-height: 20px;
     }
     .approach {
         border-radius: 20px !important;
         padding: 12px !important;
+        width: 93% !important;
+        margin-left: 8px;
     }
     .approachcon {
-        margin-top: 240px;
+        margin-top: 266px;
     }
     .approachcon h2 {
         font-size: 24px !important;
-        margin-left: 84px !important;
+        margin-left: 90px !important;
         margin-top: 116px !important;
         margin-bottom: -5px !important;
         margin-top: 0px !important;
     }
-    .approach h5{
+    .approach h5 {
         font-size: 20px !important;
         margin-left: 0px;
     }
     .approach p {
-        font-size: 12px !important;
+        font-size: 14px !important;
         margin: 10px 0 0 0 !important;
-        line-height: 16px !important;
-        font-weight: 500 !important;
+        line-height: 20px !important;
+        font-weight: 400 !important;
         text-align: left;
     }
     .testdiv {
@@ -483,9 +533,9 @@ body {
         margin: 5px !important;
         width: 97% !important;
     }
-    .testb{
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
+    .testb {
+        margin-top: 40px !important;
+        margin-bottom: 40px !important;
     }
     .expect-cards img {
         width: 62px !important;
@@ -507,7 +557,7 @@ body {
         margin: 5px !important;
     }
     .content1 h5 {
-        font-size: 10px !important;
+        font-size: 12px !important;
         font-weight: 700 !important;
     }
     .content1 h4 {
@@ -516,24 +566,27 @@ body {
         margin-bottom: 1rem !important;
     }
     .cards {
-        gap: 3px ;
+        gap: 3px;
     }
     .methodology p {
-        font-size: 12px !important;
-        font-weight: 600;
-        line-height: 16px;
+        font-size: 18px !important;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    .scroll-buttons {
+        column-gap: 24px !important;
     }
     .scroll-buttons button {
-        width: 36px;
-        height: 36px;
+        width: 50px;
+        height: 50px;
         font-size: 18px;
     }
     .six-cards1 {
-        width: 118% !important;
-        height: 198px !important;
+        width: 100% !important;
+        height: 258px !important;
         border-radius: 20px !important;
     }
-    .six-cards1 img:nth-child(1), .six-cards1 img:nth-child(2) {
+    .six-cards1 img {
         width: 92px !important;
         height: 68px !important;
     }
@@ -541,6 +594,26 @@ body {
         font-size: 24px !important;
         line-height: 26px !important;
         font-weight: 700 !important;
+    }
+    .hover-content h3 {
+        font-size: 14px !important;
+        font-weight: 300 !important;
+        margin-top: 10px !important;
+        line-height: 20px !important;
+    }
+    .hover-content p {
+        font-size: 14px !important;
+        font-weight: 400 !important;
+    }
+    .hover-content img {
+        width: 51px !important;
+        height: 38px !important;
+    }
+    .hover-content {
+        border-radius: 22px;
+    }
+    .hover-content div {
+        row-gap: 8px !important;
     }
 
     #pitch {
@@ -555,19 +628,26 @@ body {
     }
     #pitch h4 {
         font-size: 20px !important;
-        font-weight: 700;
+        font-weight: 800;
+        letter-spacing: 4px;
     }
     .signup-button {
         font-size: 20px !important;
-        margin: 16px 0px 13px 11px !important;
+        margin: 16px 0px 13px 23px !important;
     }
     .signup-offer {
+        width: 90%;
+        height: 85px;
         border-radius: 40px !important;
     }
     .signup-offer p {
-        font-size: 14px !important;
+        margin-left: 10px !important;
+        font-size: 16px !important;
         line-height: 22px !important;
-        font-weight: 400 !important;
+        font-weight: 600 !important;
+    }
+    .signup-offer img {
+        width: 85px;
     }
     .footercontainer {
         padding: 0px !important;
@@ -595,36 +675,53 @@ body {
     .footer-contact-us-wrapper {
         display: block !important;
     }
+    .amc {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
     .amc h1 {
         font-size: 96px !important;
     }
     .amc h4 {
         font-size: 20px !important;
+        font-weight: 800;
+    }
+    .amc h5 {
+        font-size: 14px !important;
+        letter-spacing: 2px;
     }
     .amc p {
-        font-size: 12px;
-        line-height: 16px;
+        font-size: 18px;
+        line-height: 24px;
         font-weight: 400;
         padding-top: 0px;
         margin-bottom: 0px;
     }
+    #aboutsection {
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
     #aboutsection p {
-        font-size: 12px !important;
-        line-height: 16px !important;
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        line-height: 24px !important;
     }
     .labh-background {
         font-size: 96px !important;
         width: 113% !important;
         font-weight: 700 !important;
+        letter-spacing: -4px !important;
+        margin-left: -17px !important;
     }
     .about-us-front {
         font-size: 20px !important;
+        font-weight: 800;
     }
     .responsive-container {
         width: 100%;
         border-radius: 20px;
     }
-    .responsive-container h4{
+    .responsive-container h4 {
         font-size: 16px !important;
         line-height: 20px;
         margin-bottom: 10px;
@@ -637,6 +734,10 @@ body {
     #beta p {
         font-size: 14px !important;
     }
+    #beta-form {
+        gap: 0px !important;
+        margin-top: 76px !important;
+    }
     #beta-form label {
         color: white !important;
         font-size: 16px !important;
@@ -644,46 +745,52 @@ body {
     }
     .form-group input {
         width: 100% !important;
-        height: 56px !important;
+        height: 42px !important;
     }
     #beta-form button {
-        width: 100%;
+        width: 52%;
+        height: 46px !important;
+        font-size: 14px !important;
     }
     .form-group:nth-child(1) {
         margin-top: 14px;
     }
     .faq-title {
         font-size: 36px !important;
+        letter-spacing: 7px;
     }
     .faq-container {
         margin-top: 56px !important;
+        row-gap: 0px;
     }
     .faq-question {
         margin-left: 0px;
     }
     .faq-question span {
-        font-size: 12px !important;
+        font-size: 14px !important;
     }
     .arrow img {
         width: 34px !important;
     }
     .call-container {
-        margin: 0px 1% !important;
+        margin: 0px 0px 24px 1% !important;
     }
-    .call-container h4{
+    .call-container h4 {
         font-size: 20px;
         font-weight: 700;
     }
     .call-button {
         padding-left: 20px !important;
+        font-weight: 600;
     }
     .call-button span {
-        font-size: 14px;
+        margin-left: 4px !important;
+        font-size: 16px;
         text-align: left;
     }
     .footer-icon {
-        width: 24px !important;
-        height: 24px !important;
+        width: 296px !important;
+        height: 70px !important;
     }
     .footer-logo {
         font-size: 16px !important;
@@ -697,7 +804,8 @@ body {
         width: 100%;
         margin-top: 12px;
     }
-    .mobile-footer h6, .mobile-footer strong {
+    .mobile-footer h6,
+    .mobile-footer strong {
         font-size: 16px !important;
         font-weight: 700 !important;
         line-height: 18px !important;
@@ -705,7 +813,8 @@ body {
     .mobile-footer-first {
         display: flex;
     }
-    .mobile-footer a, .mobile-footer li {
+    .mobile-footer a,
+    .mobile-footer li {
         font-size: 14px !important;
         font-weight: 400 !important;
         line-height: 18px !important;
@@ -719,19 +828,21 @@ body {
         width: 24px !important;
         height: 24px !important;
     }
-    .footer-icons img:nth-child(2), .footer-icons img:nth-child(3) {
+    .footer-icons img:nth-child(2),
+    .footer-icons img:nth-child(3) {
         width: 28px !important;
         height: 28px !important;
     }
     .footer-icons img:nth-child(4) {
-        margin-top: 1px !important;
+        margin-top: 3px !important;
+        height: 22px !important;
     }
     .contact-us-footer {
         font-size: 16px !important;
         font-weight: 700 !important;
     }
     .support-email {
-        font-size: 12px !important;
+        font-size: 14px !important;
         font-weight: 400 !important;
     }
     .support-email img {
@@ -742,10 +853,102 @@ body {
         width: 107px !important;
         height: 36px !important;
     }
+    footer {
+        padding: 20px 16px !important;
+    }
+    .mobile-footer-second {
+        margin-top: 72px !important;
+    }
+    .footer-logo-wrapper {
+        margin-top: 0px !important;
+    }
+    .faq-answer li,
+    .faq-answer p {
+        font-size: 14px !important;
+    }
+    .faq-answer ul {
+        margin: 0px !important;
+    }
+    .faq-answer li {
+        line-height: 16px;
+    }
+    .open {
+        border-radius: 26px !important;
+    }
     ::placeholder {
-    font-size: 14px;
-    font-weight: bold;
-}
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .lead-container {
+        margin-bottom: 16px;
+    }
+    .six-cards {
+        padding: 20px 18px;
+        padding-top: 0px;
+    }
+    .responsive-button img {
+        width: 50px;
+        height: 50px;
+        margin-right: -15px;
+    }
+    .responsive-button span {
+        text-align: left;
+    }
+    .hdfc-img {
+        width: 160.5px !important;
+        height: 60px !important;
+    }
+    .kotak-img {
+        width: 124px !important;
+        height: 60px !important;
+        margin-top: 0px !important;
+    }
+    .axis-img {
+        width: 231px !important;
+        height: 36.5px !important;
+        margin-top: 10px !important;
+    }
+    .invesco-img {
+        width: 159px !important;
+        height: 63.5px !important;
+    }
+    .birla-img {
+        width: 103px !important;
+        height: 51px !important;
+    }
+    .sbi-img {
+        width: 86px !important;
+        height: 51px !important;
+    }
+    .tata-img {
+        width: 109px !important;
+        height: 51px !important;
+    }
+    .ppfas-img {
+        width: 165px !important;
+        height: 62px !important;
+    }
+    .quant-img {
+        width: 120px !important;
+        height: 61.5px !important;
+    }
+    .icici-img {
+        width: 105px !important;
+        height: 61.5px !important;
+    }
+    .testp3 {
+        font-size: 14px;
+    }
+    .carousel {
+        height: 160px;
+    }
+    .carousel-group {
+        margin-top: 32px;
+        gap: 50px;
+    }
+    .support-email {
+        margin-top: 10px;
+    }
 }
 
 @media (min-width: 481px) and (max-width: 1023px) {
@@ -774,9 +977,9 @@ body {
     }
     .sub-content p,
     li {
-        font-size: 12px !important;
+        font-size: 14px !important;
         font-weight: 350 !important;
-        line-height: 16px !important;
+        line-height: 20px !important;
     }
     .description-container:nth-child(1) {
         margin-bottom: -140px;
@@ -1008,5 +1211,11 @@ body {
     }
     .navbar-brand {
         margin-top: -10px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .display-4 {
+        width: 80vw;
     }
 }
