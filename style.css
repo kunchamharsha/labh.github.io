@@ -240,7 +240,7 @@ body {
     width: 36vw !important;
     height: 70px;
     border-radius: 24px !important;
-    padding-left: 30px !important;
+    padding-left: 16px !important;
 }
 .contact-form button {
     height: 70px;
@@ -263,6 +263,9 @@ body {
 }
 .footer-expect li {
     font-size: 20px !important;
+}
+.footer-expect a {
+    color: black;
 }
 .footer-methodologies li {
     font-size: 20px !important;
@@ -818,23 +821,25 @@ body {
         font-size: 14px !important;
         font-weight: 400 !important;
         line-height: 18px !important;
+        color: black;
     }
     .social-media {
         font-size: 16px !important;
         font-weight: 700 !important;
         margin-top: -47px !important;
     }
-    .footer-icons img {
+    .insta-link {
         width: 24px !important;
         height: 24px !important;
     }
-    .footer-icons img:nth-child(2),
-    .footer-icons img:nth-child(3) {
+    .facebook-link,
+    .linkedin-link {
         width: 28px !important;
         height: 28px !important;
     }
-    .footer-icons img:nth-child(4) {
+    .x-link {
         margin-top: 3px !important;
+        width: auto !important;
         height: 22px !important;
     }
     .contact-us-footer {
@@ -846,7 +851,7 @@ body {
         font-weight: 400 !important;
     }
     .support-email img {
-        width: 41px !important;
+        width: 30px !important;
         height: 33px !important;
     }
     .get-app {
@@ -899,7 +904,7 @@ body {
         height: 60px !important;
     }
     .kotak-img {
-        width: 124px !important;
+        width: 144px !important;
         height: 60px !important;
         margin-top: 0px !important;
     }
@@ -909,6 +914,7 @@ body {
         margin-top: 10px !important;
     }
     .invesco-img {
+        margin-bottom: 5px !important;
         width: 159px !important;
         height: 63.5px !important;
     }
@@ -943,6 +949,7 @@ body {
         height: 160px;
     }
     .carousel-group {
+        margin-left: 20px;
         margin-top: 32px;
         gap: 50px;
     }
