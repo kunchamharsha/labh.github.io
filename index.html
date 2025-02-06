@@ -2,7 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, maximum-scale=1.0,initial-scale=1.0, user-scalable=no" />
+        <meta
+            name="viewport"
+            content="width=device-width, maximum-scale=1.0,initial-scale=1.0, user-scalable=no"
+        />
         <!-- Optimized Title Tag -->
         <title>
             Labh – Best Mutual Funds, Stock Baskets, & Financial Research for
@@ -93,7 +96,6 @@
             html {
                 scroll-behavior: smooth;
                 overflow-x: hidden;
-
             }
 
             body {
@@ -101,7 +103,6 @@
                 color: var(--text-color);
                 font-family: "Roboto", sans-serif;
                 overflow-x: hidden;
-
             }
 
             .neumorphic-card {
@@ -3540,7 +3541,7 @@
                         Get started today—no hidden fees or long-term
                         commitments involved!
                     </p>
-                    <a href=""
+                    <a href="#beta"
                         ><img src="assets/Frame 877.png" alt="arrow"
                     /></a>
                 </div>
@@ -3884,6 +3885,7 @@
                             color: white;
                             width: 300px;
                         "
+                        value="+91"
                         placeholder="+91 123466789"
                         type="tel"
                         id="mobile"
@@ -4178,7 +4180,7 @@
                                     </li>
                                     <li>
                                         <a
-                                            href="#about"
+                                            href="#aboutsection"
                                             style="
                                                 text-decoration: none;
                                                 font-size: 20px;
@@ -4266,9 +4268,7 @@
                                 class="footer-icons"
                                 style="display: flex; gap: 15px"
                             >
-                                <a
-                                    href="https://www.instagram.com/labh.io/"
-                                >
+                                <a href="https://www.instagram.com/labh.io/">
                                     <img
                                         class="insta-link"
                                         src="assets/instagram.png"
@@ -4388,7 +4388,7 @@
                             </li>
                             <li>
                                 <a
-                                    href="#about"
+                                    href="#aboutsection"
                                     style="
                                         text-decoration: none;
                                         font-size: 15px;
@@ -4460,9 +4460,7 @@
                             class="footer-icons"
                             style="display: flex; gap: 15px"
                         >
-                            <a
-                                href="https://www.instagram.com/labh.io/"
-                            >
+                            <a href="https://www.instagram.com/labh.io/">
                                 <img
                                     class="insta-link"
                                     src="assets/instagram.png"
@@ -4636,11 +4634,19 @@
         const scrollRightButton = document.getElementById("scroll-right");
 
         scrollLeftButton.addEventListener("click", () => {
-            scrollContainer.scrollBy({ left: -900, behavior: "smooth" });
+            if (window.innerWidth <= 480) {
+                scrollContainer.scrollBy({ left: -400, behavior: "smooth" });
+            } else {
+                scrollContainer.scrollBy({ left: -900, behavior: "smooth" });
+            }
         });
 
         scrollRightButton.addEventListener("click", () => {
-            scrollContainer.scrollBy({ left: 900, behavior: "smooth" });
+            if (window.innerWidth <= 480) {
+                scrollContainer.scrollBy({ left: 400, behavior: "smooth" });
+            } else {
+                scrollContainer.scrollBy({ left: 900, behavior: "smooth" });
+            }
         });
     </script>
 
@@ -4674,6 +4680,10 @@
         // Initialize the first card to be visible
         showCard();
 
+        function hiddenNav() {
+            $("#navbarNav").removeClass("show");
+        }
+
         function home() {
             const home = document.getElementById("home");
             home.style.color = "#CEC3FE";
@@ -4682,6 +4692,7 @@
             document.getElementById("Methodology").style.color = "#6b6b7b";
             document.getElementById("Blog").style.color = "#6b6b7b";
             document.getElementById("Contact").style.color = "#6b6b7b";
+            hiddenNav();
         }
 
         function about() {
@@ -4691,6 +4702,7 @@
             document.getElementById("Methodology").style.color = "#6b6b7b";
             document.getElementById("Blog").style.color = "#6b6b7b";
             document.getElementById("Contact").style.color = "#6b6b7b";
+            hiddenNav();
         }
 
         function Methodology() {
@@ -4700,6 +4712,7 @@
             document.getElementById("about").style.color = "#6b6b7b";
             document.getElementById("Blog").style.color = "#6b6b7b";
             document.getElementById("Contact").style.color = "#6b6b7b";
+            hiddenNav();
         }
 
         function Blog() {
@@ -4709,6 +4722,7 @@
             document.getElementById("about").style.color = "#6b6b7b";
             document.getElementById("Methodology").style.color = "#6b6b7b";
             document.getElementById("Contact").style.color = "#6b6b7b";
+            hiddenNav();
         }
 
         function Contact() {
@@ -4718,13 +4732,29 @@
             document.getElementById("about").style.color = "#6b6b7b";
             document.getElementById("Methodology").style.color = "#6b6b7b";
             document.getElementById("Blog").style.color = "#6b6b7b";
+            hiddenNav();
         }
 
         $(document).ready(function () {
+        $("#mobile").on("input", function () {
+            var phoneNumber = $("#mobile").val();
+            console.log(phoneNumber)
+            if (phoneNumber == "+9") {
+                $("#mobile").val("+91");
+            }
+        });
             $("#beta-form").on("submit", function (event) {
                 event.preventDefault();
 
-                var mobile = $("#mobile").val();
+                var phoneNumber = $("#mobile").val();
+                var phoneRegex = /^(\+91|91|0)[0-9]{10}$/;
+
+                if (!phoneRegex.test(phoneNumber)) {
+                    alert("Invalid phone number.");
+                    e.preventDefault();
+                }
+
+                var mobile = phoneNumber;
                 var email = $("#email").val();
                 $("#beta-form").fadeOut(function () {
                     $("#completion-msg").fadeIn();
