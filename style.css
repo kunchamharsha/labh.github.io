@@ -352,6 +352,7 @@ body {
         rgba(100, 59, 153, 0.2) 71.09%,
         rgba(224, 207, 246, 0.2) 97.07%
     );
+    overflow: hidden;
 }
 .motto {
     opacity: 60%;
@@ -1224,5 +1225,11 @@ body {
 @media (min-width: 1600px) {
     .display-4 {
         width: 80vw;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+    .company-address {
+        width: 100%;
     }
 }
