@@ -400,6 +400,12 @@ body {
     .my-container {
         padding: 0px;
     }
+
+    .navbar {
+        height: 84px !important;
+        padding: 0px 50px;
+        padding-top: 21px;
+    }
     .navbar-brand {
         margin-left: -30px !important;
         margin-bottom: 33px;
@@ -415,6 +421,15 @@ body {
         margin-bottom: 41px;
         margin-right: -31px;
     }
+    #navbarNav {
+        background: #161432;
+        border-radius: 5px;
+        text-align: center;
+    }
+    #navbarNav a {
+        margin: 0px !important;
+    }
+
     .display-4 {
         font-size: 32px !important;
         font-weight: 700 !important;
@@ -988,7 +1003,9 @@ body {
         margin-left: -15px !important;
     }
     .navbar {
-        height: 136px !important;
+        height: 94px !important;
+        padding: 0px 34px;
+        padding-top: 1px;
     }
     .navbar-collapse {
         background: #161432;
@@ -1331,6 +1348,10 @@ body {
         background: #161432;
         border-radius: 5px;
         text-align: center;
+    }
+
+    .navbar {
+        height: 124px !important;
     }
     #navbarNav a {
         font-size: 26px !important;
