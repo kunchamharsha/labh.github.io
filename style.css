@@ -360,6 +360,9 @@ body {
     );
     overflow: hidden;
 }
+.faq-question {
+    text-align: left;
+}
 .motto {
     opacity: 60%;
     font-size: 24px;
