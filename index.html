@@ -2835,9 +2835,7 @@
                         </div>
                     </div>
 
-                    <div
-                        class="card2 expect-cards gradient-button"
-                    >
+                    <div class="card2 expect-cards gradient-button">
                         <img
                             class="corner-design top-left"
                             src="assets/Design_corner_left top.png"
@@ -2871,9 +2869,7 @@
                         </div>
                     </div>
 
-                    <div
-                        class="card3 expect-cards"
-                    >
+                    <div class="card3 expect-cards">
                         <img
                             class="corner-design top-left"
                             src="assets/Design_corner_left top.png"
@@ -3891,7 +3887,10 @@
                         class="form-control"
                         required
                     />
-                    <span style="color: red; position: absolute" id="mobile-error"></span>
+                    <span
+                        style="color: red; position: absolute"
+                        id="mobile-error"
+                    ></span>
                 </div>
                 <div class="form-group">
                     <label
@@ -3919,6 +3918,10 @@
                         class="form-control"
                         required
                     />
+                    <span
+                        style="color: red; position: absolute"
+                        id="email-error"
+                    ></span>
                 </div>
                 <button
                     type="submit"
@@ -4201,7 +4204,7 @@
                                     </li>
                                     <li>
                                         <a
-                                            href="https://tawk.to/lab"
+                                            href="https://tawk.to/labh"
                                             style="
                                                 text-decoration: none;
                                                 font-size: 20px;
@@ -4409,7 +4412,7 @@
                             </li>
                             <li>
                                 <a
-                                    href="https://tawk.to/lab"
+                                    href="https://tawk.to/labh"
                                     style="
                                         text-decoration: none;
                                         font-size: 15px;
@@ -4734,6 +4737,12 @@
             hiddenNav();
         }
 
+        function validateEmail(email) {
+            const emailRegex =
+                /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailRegex.test(email);
+        }
+
         $(document).ready(function () {
             $("#mobile").on("input", function () {
                 var phoneNumber = $("#mobile").val();
@@ -4749,14 +4758,23 @@
                 var phoneRegex = /^(\+91|91|0)[0-9]{10}$/;
 
                 if (!phoneRegex.test(phoneNumber)) {
-                    $('#mobile-error').text('Please enter a valid phone number');
+                    $("#mobile-error").text(
+                        "Please enter a valid phone number"
+                    );
                     return;
                 } else {
-                    $('#mobile-error').text('');
+                    $("#mobile-error").text("");
                 }
 
                 var mobile = phoneNumber;
                 var email = $("#email").val();
+
+                if (!validateEmail(email)) {
+                    $("#email-error").text("Please enter a valid email");
+                    return;
+                } else {
+                    $("#email-error").text("");
+                }
                 $("#beta-form").fadeOut(function () {
                     $("#completion-msg").fadeIn();
                 });
