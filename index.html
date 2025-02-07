@@ -2804,7 +2804,7 @@
                 "
             >
                 <div class="cards">
-                    <div class="card1 expect-cards" style="min-height: 560px">
+                    <div class="card1 expect-cards">
                         <img
                             class="corner-design top-left"
                             src="assets/Design_corner_left top.png"
@@ -2837,7 +2837,6 @@
 
                     <div
                         class="card2 expect-cards gradient-button"
-                        style="min-height: 560px"
                     >
                         <img
                             class="corner-design top-left"
@@ -2873,8 +2872,7 @@
                     </div>
 
                     <div
-                        class="card3 expect-cards gradient-button"
-                        style="min-height: 560px"
+                        class="card3 expect-cards"
                     >
                         <img
                             class="corner-design top-left"
@@ -3893,6 +3891,7 @@
                         class="form-control"
                         required
                     />
+                    <span style="color: red; position: absolute" id="mobile-error"></span>
                 </div>
                 <div class="form-group">
                     <label
@@ -4736,13 +4735,13 @@
         }
 
         $(document).ready(function () {
-        $("#mobile").on("input", function () {
-            var phoneNumber = $("#mobile").val();
-            console.log(phoneNumber)
-            if (phoneNumber == "+9") {
-                $("#mobile").val("+91");
-            }
-        });
+            $("#mobile").on("input", function () {
+                var phoneNumber = $("#mobile").val();
+                console.log(phoneNumber);
+                if (phoneNumber == "+9") {
+                    $("#mobile").val("+91");
+                }
+            });
             $("#beta-form").on("submit", function (event) {
                 event.preventDefault();
 
@@ -4750,8 +4749,10 @@
                 var phoneRegex = /^(\+91|91|0)[0-9]{10}$/;
 
                 if (!phoneRegex.test(phoneNumber)) {
-                    alert("Invalid phone number.");
-                    e.preventDefault();
+                    $('#mobile-error').text('Please enter a valid phone number');
+                    return;
+                } else {
+                    $('#mobile-error').text('');
                 }
 
                 var mobile = phoneNumber;
