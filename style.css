@@ -4,20 +4,21 @@
     font-weight: 400;
     opacity: 0.5;
 }
-body {
-    overflow: visible;
-}
 .my-container {
     padding: 0px 10px;
 }
-.navbar {
-    padding: 50px;
+body {
+    overflow: clip;
+    width: 100vw;
 }
 #bodycon {
     margin-top: 100px;
 }
 .display-4 {
     padding: 0px 20px;
+}
+.nav-link:hover {
+    color: #cec3fe !important;
 }
 .bodycontainer {
     height: fit-content !important;
@@ -379,6 +380,15 @@ body {
 .button1 p {
     font-size: 24px !important;
 }
+.button1:hover {
+    background: linear-gradient(
+        97.31deg,
+        #7c7a99 -3.19%,
+        #cecbff 35.82%,
+        #7c7a99 112.37%,
+        #cecbff 145.68%
+    );
+}
 .mb-10 {
     margin-bottom: 100px;
 }
@@ -393,6 +403,12 @@ body {
 .signup-button {
     padding-left: 20px;
     padding-right: 20px;
+}
+.container1 {
+    background: linear-gradient(180deg, #CECBFF 50%, #7C7A99 100%);
+}
+#beta-form button:hover {
+    background: #A663FFCC !important;
 }
 @keyframes scrolling {
     0% {
@@ -1347,13 +1363,12 @@ body {
     .footer-logo-wrapper {
         margin-top: 0px !important;
     }
-    #completion-msg{
+    #completion-msg {
         margin-bottom: 150px !important;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-
     .navbar {
         height: 124px !important;
         justify-content: space-between !important;
@@ -1627,16 +1642,17 @@ body {
         margin-top: 0px !important;
     }
 
-    #completion-msg{
+    #completion-msg {
         margin-bottom: 160px !important;
     }
 }
 
 @media (min-width: 1024px) and (max-width: 1279px) {
-
     .navbar {
         height: 124px !important;
         justify-content: flex-start !important;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
     .expect {
         display: block !important;
@@ -1669,7 +1685,7 @@ body {
     .company-address {
         width: auto;
     }
-    #completion-msg{
+    #completion-msg {
         margin-bottom: 160px !important;
     }
 }
@@ -1684,3 +1700,9 @@ body {
         display: none !important;
     }
 }
+
+/* * {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+} */
