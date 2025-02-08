@@ -4,17 +4,21 @@
     font-weight: 400;
     opacity: 0.5;
 }
-body {
-    overflow-x: hidden;
-}
 .my-container {
     padding: 0px 10px;
 }
-.navbar {
-    padding: 50px;
+body {
+    overflow: clip;
+    width: 100vw;
 }
 #bodycon {
     margin-top: 100px;
+}
+.display-4 {
+    padding: 0px 20px;
+}
+.nav-link:hover {
+    color: #cec3fe !important;
 }
 .bodycontainer {
     height: fit-content !important;
@@ -352,6 +356,13 @@ body {
         rgba(100, 59, 153, 0.2) 71.09%,
         rgba(224, 207, 246, 0.2) 97.07%
     );
+    overflow: hidden;
+}
+.faq-question {
+    text-align: left;
+}
+.faq-container {
+    margin-bottom: 60px;
 }
 .motto {
     opacity: 60%;
@@ -366,11 +377,41 @@ body {
 .button1 p {
     font-size: 24px !important;
 }
+.button1:hover {
+    background: linear-gradient(
+        97.31deg,
+        #7c7a99 -3.19%,
+        #cecbff 35.82%,
+        #7c7a99 112.37%,
+        #cecbff 145.68%
+    );
+}
 .mb-10 {
     margin-bottom: 100px;
 }
 .company-services li {
     margin-top: 10px;
+}
+.card1,
+.card2,
+.card3 {
+    min-height: 560px;
+}
+.signup-button {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.container1 {
+    background: linear-gradient(180deg, #CECBFF 50%, #7C7A99 100%);
+}
+#beta-form button:hover {
+    background: #A663FFCC !important;
+}
+.footer-company a:hover {
+    text-decoration: underline !important;
+}
+.testdiv {
+    text-align: left;
 }
 @keyframes scrolling {
     0% {
@@ -383,6 +424,12 @@ body {
 @media (min-width: 0px) and (max-width: 480px) {
     .my-container {
         padding: 0px;
+    }
+
+    .navbar {
+        height: 84px !important;
+        padding: 0px 50px;
+        padding-top: 21px;
     }
     .navbar-brand {
         margin-left: -30px !important;
@@ -399,6 +446,15 @@ body {
         margin-bottom: 41px;
         margin-right: -31px;
     }
+    #navbarNav {
+        background: #161432;
+        border-radius: 5px;
+        text-align: center;
+    }
+    #navbarNav a {
+        margin: 0px !important;
+    }
+
     .display-4 {
         font-size: 32px !important;
         font-weight: 700 !important;
@@ -652,32 +708,6 @@ body {
     .signup-offer img {
         width: 85px;
     }
-    .footercontainer {
-        padding: 0px !important;
-        margin-left: 0px !important;
-    }
-    .footer-main {
-        font-size: 10px;
-        width: 100vw;
-        justify-content: space-between;
-    }
-    .footer-main li {
-        font-size: 10px !important;
-    }
-    .footer-main li a {
-        font-size: 10px !important;
-    }
-    .footer-main span {
-        font-size: 11px !important;
-        font-weight: bolder !important;
-    }
-    .address {
-        width: 100px;
-        font-size: 10px;
-    }
-    .footer-contact-us-wrapper {
-        display: block !important;
-    }
     .amc {
         margin-top: 40px;
         margin-bottom: 40px;
@@ -754,6 +784,8 @@ body {
         width: 52%;
         height: 46px !important;
         font-size: 14px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
     .form-group:nth-child(1) {
         margin-top: 14px;
@@ -790,6 +822,32 @@ body {
         margin-left: 4px !important;
         font-size: 16px;
         text-align: left;
+    }
+    .footercontainer {
+        padding: 0px !important;
+        margin-left: 0px !important;
+    }
+    .footer-main {
+        font-size: 10px;
+        width: 100vw;
+        justify-content: space-between;
+    }
+    .footer-main li {
+        font-size: 10px !important;
+    }
+    .footer-main li a {
+        font-size: 10px !important;
+    }
+    .footer-main span {
+        font-size: 11px !important;
+        font-weight: bolder !important;
+    }
+    .address {
+        width: 100px;
+        font-size: 10px;
+    }
+    .footer-contact-us-wrapper {
+        display: block !important;
     }
     .footer-icon {
         width: 296px !important;
@@ -860,6 +918,7 @@ body {
     }
     footer {
         padding: 20px 16px !important;
+        margin-top: 65px;
     }
     .mobile-footer-second {
         margin-top: 72px !important;
@@ -956,253 +1015,377 @@ body {
     .support-email {
         margin-top: 10px;
     }
+    #completion-msg {
+        margin-bottom: 60px !important;
+    }
 }
 
-@media (min-width: 481px) and (max-width: 1023px) {
-    .jumbotron h4 {
-        font-size: 45px !important;
+@media (min-width: 481px) and (max-width: 767px) {
+    #jtron {
+        height: fit-content;
+    }
+    .navbar-brand {
+        margin-left: -15px !important;
+    }
+    .navbar {
+        height: 94px !important;
+        padding: 0px 34px;
+        padding-top: 1px;
+    }
+    .navbar-collapse {
+        background: #161432;
+        margin-top: 30px;
+        border-radius: 10px;
+    }
+    .navbar-nav a {
+        text-align: center;
+        margin: 0px !important;
+    }
+    .display-4 {
+        font-size: 40px;
     }
     .lead {
-        font-size: 24px !important;
-    }
-    #bodycon {
-        margin-top: 0px !important;
+        font-size: 26px;
+        padding: 0px 30px;
     }
     .button1 {
-        margin-top: 0rem !important;
+        margin-top: 1rem;
+    }
+    .button1 p {
+        font-size: 20px !important;
+    }
+    #bodycon {
+        margin-top: 0px;
     }
     .bodycontainer {
-        height: fit-content !important;
+        margin-top: 0px;
     }
     .heading {
-        font-size: 25px !important;
+        font-size: 24px !important;
     }
-
+    .description-container img {
+        width: 100px !important;
+        height: 88px !important;
+    }
+    .content {
+        margin: 1rem;
+    }
     .sub-content {
-        margin-top: 0px !important;
-        margin-left: 0px !important;
+        margin: 0px;
     }
     .sub-content p,
-    li {
-        font-size: 14px !important;
-        font-weight: 350 !important;
-        line-height: 20px !important;
+    .sub-content li {
+        font-size: 20px !important;
+        line-height: 26px !important;
     }
-    .description-container:nth-child(1) {
-        margin-bottom: -140px;
-    }
-    .approachcon {
-        margin-top: 146px;
+    .second-description {
+        margin-top: -76px !important;
     }
     .approachcon h5 {
-        margin: 0 !important;
-        font-size: 28px !important;
+        font-size: 26px !important;
+        margin-bottom: 5px;
     }
     .approachcon p {
         font-size: 20px !important;
-        margin: 10px 0 0 0 !important;
-        line-height: 19px !important;
-        font-weight: 420 !important;
-    }
-    .approachcon h2 {
-        margin-left: 102px !important;
-    }
-    .expect-heading {
-        margin: 105px auto 50px 25px !important;
-        font-size: 48px;
+        line-height: 26px !important;
+        margin: 0px 24px !important;
     }
     .expect {
-        padding-left: 18px !important;
-        padding-top: 0px !important;
-        margin-bottom: 80px;
+        display: block !important;
     }
     .cards {
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
+        display: block !important;
     }
-    .card1,
-    .card2,
-    .card3 {
+    .expect-cards {
+        width: 100% !important;
+        min-height: auto !important;
+    }
+    .expect-cards img {
+        width: 100px !important;
+        height: 88px !important;
+    }
+    .expect-cards .title {
+        font-size: 16px !important;
+    }
+    .subtitle {
+        font-size: 24px !important;
+    }
+    .content1 {
+        margin: 1rem !important;
+        margin-left: 27px !important;
+        margin-top: 39px !important;
+    }
+    .content1 p {
+        font-size: 22px !important;
+    }
+    .card2 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    #pitch h1,
+    #pitch h4 {
+        margin: 0 !important;
+    }
+    #pitch h4 {
+        font-size: 40px !important;
+    }
+    .methodology p {
+        font-size: 24px !important;
+    }
+    .six-cards {
+        gap: 10px;
+    }
+    .six-cards1 {
+        width: 100% !important;
+        height: 416px !important;
+    }
+    .six-cards1 h3 {
+        font-size: 28px !important;
+    }
+    .hover-content img {
+        width: 80px !important;
+        height: 68px !important;
+    }
+    .hover-content h3 {
+        font-size: 20px !important;
+    }
+    .hover-content p {
+        font-size: 18px !important;
+    }
+    .signup-button {
+        margin-left: 33px !important;
+    }
+    .signup-offer {
+        width: 89%;
+    }
+    .signup-offer p {
+        font-size: 18px !important;
+    }
+    .amc h5 {
+        font-size: 20px !important;
+    }
+    .amc h1 {
+        font-size: 120px !important;
+    }
+    .amc p {
+        font-size: 22px !important;
+    }
+
+    .hdfc-img {
+        width: 160.5px !important;
+        height: 60px !important;
+    }
+    .kotak-img {
+        width: 144px !important;
+        height: 60px !important;
+        margin-top: 0px !important;
+    }
+    .axis-img {
+        width: 231px !important;
+        height: 36.5px !important;
+        margin-top: 10px !important;
+    }
+    .invesco-img {
+        margin-bottom: 5px !important;
+        width: 159px !important;
+        height: 63.5px !important;
+    }
+    .birla-img {
+        width: 103px !important;
+        height: 51px !important;
+    }
+    .sbi-img {
+        width: 86px !important;
+        height: 51px !important;
+    }
+    .tata-img {
+        width: 109px !important;
+        height: 51px !important;
+    }
+    .ppfas-img {
+        width: 165px !important;
+        height: 62px !important;
+    }
+    .quant-img {
+        width: 120px !important;
+        height: 61.5px !important;
+    }
+    .icici-img {
+        width: 105px !important;
+        height: 61.5px !important;
+    }
+    .testp3 {
+        font-size: 14px;
+    }
+    .carousel {
+        height: 160px;
+    }
+    .carousel-group {
+        margin-left: 20px;
+        margin-top: 32px;
+        gap: 50px;
+    }
+    #aboutsection h1 {
+        font-size: 138px;
+    }
+    #aboutsection h4 {
+        top: 41% !important;
+        font-size: 24px !important;
+    }
+    #aboutsection p {
+        font-size: 22px !important;
+    }
+    .responsive-button img {
+        width: 70px !important;
+        height: 70px !important;
+    }
+    #beta p {
+        font-size: 22px !important;
+    }
+    .contact-form {
+        margin-top: 100px !important;
+    }
+    .form-group input {
         width: 100% !important;
     }
-    .faq-container {
-        margin-top: 150px;
+    .faq-title {
+        font-size: 4rem !important;
+    }
+    .faq-question {
+        font-size: 20px !important;
+        margin-left: 0px;
+    }
+    .faq-answer p {
+        font-size: 20px !important;
     }
     .footercontainer {
         padding: 0px !important;
         margin-left: 0px !important;
     }
-    .description-container img {
-        width: 100px !important;
-        height: 86px !important;
+    .footer-main {
+        font-size: 10px;
+        width: 100vw;
+        justify-content: space-between;
     }
-    .description-container .content {
-        margin: 1rem !important;
+    .footer-main li {
+        font-size: 10px !important;
     }
-    .description-container .divider {
-        margin-top: 1rem !important;
+    .footer-main li a {
+        font-size: 10px !important;
     }
-    .second-description {
-        margin-top: -190px !important;
+    .footer-main span {
+        font-size: 11px !important;
+        font-weight: bolder !important;
     }
-    .join-container {
-        margin-top: 240px;
+    .address {
+        width: 100px;
+        font-size: 10px;
     }
-    .lead {
-        margin-top: 0px;
-        margin-bottom: 46px;
+    .footer-contact-us-wrapper {
+        display: block !important;
     }
-    .approach {
-        padding: 24px 22px !important;
+    .footer-icon {
+        width: 296px !important;
+        height: 70px !important;
     }
-    #pitch {
-        height: fit-content;
-        min-height: fit-content;
-    }
-    #pitch h1 {
-        font-size: 204px;
-        margin-bottom: -2px !important;
-    }
-    #pitch h4 {
-        margin-bottom: 18px;
-    }
-    .methodology p {
-        font-size: 24px;
-    }
-    .six-cards1 {
-        width: 100% !important;
-    }
-    .signup-offer {
-        padding: 4rem 1rem;
-        border-radius: 62px;
-    }
-    .signup-offer p {
-        font-size: 26px;
-    }
-    .signup-offer img {
-        width: 108px;
-    }
-    .amc {
-        margin-top: 80px;
-    }
-    .amc h5 {
-        font-size: 48px !important;
-        font-weight: 700;
-    }
-    .amc h1 {
-        font-size: 204px !important;
-    }
-    .amc h4 {
-        font-size: 2rem;
-        letter-spacing: 5px !important;
-        margin-top: -30px;
-    }
-    .amc p {
-        font-size: 24px;
-    }
-    #aboutsection h1 {
-        font-size: 204px;
-    }
-    #aboutsection h4 {
-        font-size: 50px;
-        margin-top: -31px;
-    }
-    #aboutsection p {
-        font-size: 24px !important;
-    }
-    .responsive-container {
-        padding: 61px 10px;
-        width: 100%;
-    }
-    .responsive-container h4 {
-        font-size: 26px;
-    }
-    .responsive-button {
-        max-width: 100%;
-    }
-    .responsive-button img {
-        width: 50px;
-        height: 50px;
-    }
-    #beta p {
-        font-size: 22px;
-    }
-    #beta-form label {
-        color: white !important;
+    .footer-logo {
         font-size: 16px !important;
     }
-    .form-group input {
-        width: 100% !important;
-    }
-    #beta-form button {
-        width: 100%;
-    }
-    .gradient-text {
-        text-align: left;
-    }
-    .call-button {
-        height: 100px;
-    }
-}
-
-@media (min-width: 769px) {
-    .mobile-footer {
-        display: none !important;
-    }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
     .desktop-footer {
         display: none !important;
+    }
+    .company-address {
+        font-size: 18px;
+        line-height: 30px;
+        width: 100%;
+        margin-top: 12px;
+        margin-bottom: 32px;
+    }
+    .mobile-footer h6,
+    .mobile-footer strong {
+        font-size: 22px !important;
+        font-weight: 700 !important;
+        line-height: 18px !important;
     }
     .mobile-footer-first {
         display: flex;
     }
-    .company-address {
-        font-size: 20px !important;
-    }
-    .company-services li {
-        margin-top: 10px !important;
+    .mobile-footer a,
+    .mobile-footer li {
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        line-height: 35px !important;
+        color: black;
     }
     .social-media {
-        margin-top: 10px !important;
+        font-size: 22px !important;
+        font-weight: 700 !important;
+        margin-top: -47px !important;
+    }
+    .insta-link {
+        width: 38px !important;
+        height: 40px !important;
+    }
+    .facebook-link,
+    .linkedin-link {
+        width: 44px !important;
+        height: 44px !important;
+    }
+    .x-link {
+        margin-top: 3px !important;
+        width: auto !important;
+        height: 30px !important;
+    }
+    .contact-us-footer {
+        font-size: 16px !important;
+        font-weight: 700 !important;
+    }
+    .support-email {
         font-size: 20px !important;
+        font-weight: 400 !important;
     }
-    .footer-icons {
-        gap: 15px !important;
+    .support-email img {
+        width: 42px !important;
+        height: 42px !important;
     }
-    .footer-icons img {
-        width: 50px !important;
-        height: 50px !important;
+    .get-app {
+        width: 107px !important;
+        height: 36px !important;
     }
-    .footer-icons img:nth-child(2) {
-        width: 55px !important;
-        height: 55px !important;
+    footer {
+        padding: 24px 52px !important;
+        margin-top: 65px;
     }
-    .footer-icons img:nth-child(3) {
-        width: 55px !important;
-        height: 55px !important;
+    .mobile-footer-second {
+        margin-top: 72px !important;
     }
-    .footer-icons img:nth-child(4) {
-        width: 45px !important;
-        height: 45px !important;
+    .footer-logo-wrapper {
+        margin-top: 0px !important;
     }
-    .footer-contact-us {
-        margin-left: 5px !important;
-    }
-    .footer-contact-us-wrapper {
-        gap: 0px !important;
+    #completion-msg {
+        margin-bottom: 150px !important;
     }
 }
 
-@media (min-width: 0px) and (max-width: 991px) {
-    #navbarNav {
+@media (min-width: 768px) and (max-width: 1023px) {
+    .navbar {
+        height: 124px !important;
+        justify-content: space-between !important;
+    }
+    .navbar-collapse {
         background: #161432;
         border-radius: 5px;
+        text-align: center;
+        position: absolute;
+        width: 90%;
+        top: 132px;
+    }
+    .navbar-collapse ul {
+        flex-direction: column !important;
+        width: 100%;
     }
     #navbarNav a {
-        font-size: 24px;
+        font-size: 26px !important;
         margin-left: 0px !important;
     }
     #navbarNav ul {
@@ -1210,6 +1393,12 @@ body {
     }
     #navbarNav li {
         padding-left: 4%;
+    }
+    .navbar-toggler {
+        display: block !important;
+    }
+    .collapse:not(.show) {
+        display: none !important;
     }
     #navbarNav li:hover {
         background: #e2abff33;
@@ -1219,10 +1408,300 @@ body {
     .navbar-brand {
         margin-top: -10px;
     }
-}
-
-@media (min-width: 1600px) {
+    .jumbotron {
+        padding-top: 100px;
+        height: fit-content;
+    }
+    .carousel {
+        display: block !important;
+    }
+    .cards {
+        display: block;
+        overflow-y: visible;
+    }
+    .card2 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    .expect-cards {
+        width: 100% !important;
+        min-height: auto !important;
+    }
     .display-4 {
-        width: 80vw;
+        font-size: 70px;
+    }
+    .lead {
+        font-size: 30px;
+    }
+    .button1 p {
+        font-size: 22px !important;
+    }
+    .heading {
+        font-size: 30px !important;
+    }
+    .sub-content p,
+    .sub-content li {
+        font-size: 24px !important;
+        line-height: 30px !important;
+    }
+    .approachcon h5 {
+        font-size: 32px !important;
+    }
+    .approachcon p {
+        font-size: 24px !important;
+        line-height: 30px !important;
+    }
+    .subtitle {
+        font-size: 32px !important;
+    }
+    #pitch h1 {
+        margin: 0 !important;
+    }
+    .methodology p {
+        font-size: 30px !important;
+    }
+    .six-cards {
+        gap: 18px;
+    }
+    .six-cards1 {
+        height: 480px !important;
+        width: 98% !important;
+    }
+    .six-cards1 h3 {
+        font-size: 40px !important;
+    }
+    .hover-content h3 {
+        font-size: 22px !important;
+    }
+    .hover-content p {
+        font-size: 26px !important;
+    }
+    .signup-offer {
+        height: 96px;
+    }
+    .signup-offer p {
+        font-size: 26px !important;
+    }
+    .amc h1 {
+        font-size: 200px !important;
+    }
+    .amc h4 {
+        font-size: 46px !important;
+        top: 10% !important;
+    }
+    .amc h5 {
+        font-size: 26px !important;
+    }
+    .amc p {
+        font-size: 30px !important;
+    }
+    .slide {
+        display: flex !important    ;
+    }
+    #aboutsection h1 {
+        font-size: 212px !important;
+    }
+    .about-us-front {
+        top: 15% !important;
+        font-size: 46px !important;
+    }
+    #aboutsection p {
+        font-size: 30px !important;
+    }
+    .button-group {
+        display: block;
+    }
+    .responsive-button {
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+    #beta h1 {
+        font-size: 120px;
+    }
+    #beta p {
+        font-size: 30px;
+    }
+    #beta-form {
+        display: block !important;
+    }
+    .form-group {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    .form-group input {
+        width: 100% !important;
+    }
+    #beta-form button {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .footercontainer {
+        padding: 0px !important;
+        margin-left: 0px !important;
+    }
+    .footer-main {
+        font-size: 10px;
+        width: 100vw;
+        justify-content: space-between;
+    }
+    .footer-main li {
+        font-size: 10px !important;
+    }
+    .footer-main li a {
+        font-size: 10px !important;
+    }
+    .footer-main span {
+        font-size: 11px !important;
+        font-weight: bolder !important;
+    }
+    .address {
+        width: 100px;
+        font-size: 10px;
+    }
+    .footer-contact-us-wrapper {
+        display: block !important;
+    }
+    .footer-icon {
+        width: 296px !important;
+        height: 70px !important;
+    }
+    .footer-logo {
+        font-size: 16px !important;
+    }
+    .desktop-footer {
+        display: none !important;
+    }
+    .company-address {
+        font-size: 24px;
+        line-height: 32px;
+        width: 100%;
+        margin-top: 12px;
+        margin-bottom: 32px;
+    }
+    .mobile-footer h6,
+    .mobile-footer strong {
+        font-size: 26px !important;
+        font-weight: 700 !important;
+        line-height: 18px !important;
+    }
+    .mobile-footer-first {
+        display: flex;
+    }
+    .mobile-footer a,
+    .mobile-footer li {
+        font-size: 22px !important;
+        font-weight: 400 !important;
+        line-height: 35px !important;
+        color: black;
+    }
+    .social-media {
+        font-size: 24px !important;
+        font-weight: 700 !important;
+        margin-top: -47px !important;
+    }
+    .insta-link {
+        width: 38px !important;
+        height: 40px !important;
+    }
+    .facebook-link,
+    .linkedin-link {
+        width: 44px !important;
+        height: 44px !important;
+    }
+    .x-link {
+        margin-top: 3px !important;
+        width: auto !important;
+        height: 30px !important;
+    }
+    .contact-us-footer {
+        font-size: 16px !important;
+        font-weight: 700 !important;
+    }
+    .support-email {
+        font-size: 22px !important;
+        font-weight: 400 !important;
+    }
+    .support-email img {
+        width: 42px !important;
+        height: 42px !important;
+    }
+    .get-app {
+        width: 107px !important;
+        height: 36px !important;
+    }
+    footer {
+        padding: 24px 52px !important;
+        margin-top: 65px;
+    }
+    .mobile-footer-second {
+        margin-top: 72px !important;
+    }
+    .footer-logo-wrapper {
+        margin-top: 0px !important;
+    }
+
+    #completion-msg {
+        margin-bottom: 160px !important;
     }
 }
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .navbar {
+        height: 124px !important;
+        justify-content: flex-start !important;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .expect {
+        display: block !important;
+    }
+    .cards {
+        display: block !important;
+    }
+    .expect-cards {
+        width: 100% !important;
+        min-height: auto !important;
+    }
+    .card2 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    #pitch h1 {
+        margin-top: -26px !important;
+        margin-bottom: -30px !important;
+    }
+    .amc h4 {
+        font-size: 56px !important;
+    }
+    #beta-form {
+        width: 92vw;
+    }
+    .footer-icon {
+        width: 322px !important;
+        height: 94px !important;
+    }
+    .company-address {
+        width: auto;
+    }
+    #completion-msg {
+        margin-bottom: 160px !important;
+    }
+}
+@media (min-width: 1280px) and (max-width: 1439px) {
+    .company-address {
+        width: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .mobile-footer {
+        display: none !important;
+    }
+}
+
+/* * {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+} */

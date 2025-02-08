@@ -2,7 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, maximum-scale=1.0,initial-scale=1.0, user-scalable=no" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
         <!-- Optimized Title Tag -->
         <title>
             Labh – Best Mutual Funds, Stock Baskets, & Financial Research for
@@ -39,7 +42,7 @@
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://labh.io" />
-        <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="assets/logo.svg" type="image/x-icon" />
 
         <!-- Twitter Card Meta Tags -->
         <meta name="twitter:card" content="summary_large_image" />
@@ -93,7 +96,6 @@
             html {
                 scroll-behavior: smooth;
                 overflow-x: hidden;
-
             }
 
             body {
@@ -101,7 +103,6 @@
                 color: var(--text-color);
                 font-family: "Roboto", sans-serif;
                 overflow-x: hidden;
-
             }
 
             .neumorphic-card {
@@ -2803,7 +2804,7 @@
                 "
             >
                 <div class="cards">
-                    <div class="card1 expect-cards" style="min-height: 560px">
+                    <div class="card1 expect-cards">
                         <img
                             class="corner-design top-left"
                             src="assets/Design_corner_left top.png"
@@ -2834,10 +2835,7 @@
                         </div>
                     </div>
 
-                    <div
-                        class="card2 expect-cards gradient-button"
-                        style="min-height: 560px"
-                    >
+                    <div class="card2 expect-cards gradient-button">
                         <img
                             class="corner-design top-left"
                             src="assets/Design_corner_left top.png"
@@ -2871,10 +2869,7 @@
                         </div>
                     </div>
 
-                    <div
-                        class="card3 expect-cards gradient-button"
-                        style="min-height: 560px"
-                    >
+                    <div class="card3 expect-cards">
                         <img
                             class="corner-design top-left"
                             src="assets/Design_corner_left top.png"
@@ -3540,7 +3535,7 @@
                         Get started today—no hidden fees or long-term
                         commitments involved!
                     </p>
-                    <a href=""
+                    <a href="#beta"
                         ><img src="assets/Frame 877.png" alt="arrow"
                     /></a>
                 </div>
@@ -3884,6 +3879,7 @@
                             color: white;
                             width: 300px;
                         "
+                        value="+91"
                         placeholder="+91 123466789"
                         type="tel"
                         id="mobile"
@@ -3891,6 +3887,10 @@
                         class="form-control"
                         required
                     />
+                    <span
+                        style="color: red; position: absolute"
+                        id="mobile-error"
+                    ></span>
                 </div>
                 <div class="form-group">
                     <label
@@ -3918,6 +3918,10 @@
                         class="form-control"
                         required
                     />
+                    <span
+                        style="color: red; position: absolute"
+                        id="email-error"
+                    ></span>
                 </div>
                 <button
                     type="submit"
@@ -4178,7 +4182,7 @@
                                     </li>
                                     <li>
                                         <a
-                                            href="#about"
+                                            href="#aboutsection"
                                             style="
                                                 text-decoration: none;
                                                 font-size: 20px;
@@ -4200,7 +4204,7 @@
                                     </li>
                                     <li>
                                         <a
-                                            href="https://tawk.to/lab"
+                                            href="https://tawk.to/labh"
                                             style="
                                                 text-decoration: none;
                                                 font-size: 20px;
@@ -4266,9 +4270,7 @@
                                 class="footer-icons"
                                 style="display: flex; gap: 15px"
                             >
-                                <a
-                                    href="https://www.instagram.com/labh.io/profilecard/?igsh=djd1cncwaWpjbXNi"
-                                >
+                                <a href="https://www.instagram.com/labh.io/">
                                     <img
                                         class="insta-link"
                                         src="assets/instagram.png"
@@ -4388,7 +4390,7 @@
                             </li>
                             <li>
                                 <a
-                                    href="#about"
+                                    href="#aboutsection"
                                     style="
                                         text-decoration: none;
                                         font-size: 15px;
@@ -4410,7 +4412,7 @@
                             </li>
                             <li>
                                 <a
-                                    href="https://tawk.to/lab"
+                                    href="https://tawk.to/labh"
                                     style="
                                         text-decoration: none;
                                         font-size: 15px;
@@ -4460,9 +4462,7 @@
                             class="footer-icons"
                             style="display: flex; gap: 15px"
                         >
-                            <a
-                                href="https://www.instagram.com/labh.io/profilecard/?igsh=djd1cncwaWpjbXNi"
-                            >
+                            <a href="https://www.instagram.com/labh.io/">
                                 <img
                                     class="insta-link"
                                     src="assets/instagram.png"
@@ -4636,15 +4636,28 @@
         const scrollRightButton = document.getElementById("scroll-right");
 
         scrollLeftButton.addEventListener("click", () => {
-            scrollContainer.scrollBy({ left: -900, behavior: "smooth" });
+            if (window.innerWidth <= 480) {
+                scrollContainer.scrollBy({ left: -400, behavior: "smooth" });
+            } else {
+                scrollContainer.scrollBy({ left: -900, behavior: "smooth" });
+            }
         });
 
         scrollRightButton.addEventListener("click", () => {
-            scrollContainer.scrollBy({ left: 900, behavior: "smooth" });
+            if (window.innerWidth <= 480) {
+                scrollContainer.scrollBy({ left: 400, behavior: "smooth" });
+            } else {
+                scrollContainer.scrollBy({ left: 900, behavior: "smooth" });
+            }
         });
     </script>
 
     <script>
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 0) {
+                $("#navbarNav").collapse("hide");
+            }
+        });
         let index = 0;
         const cards = document.querySelectorAll(".six-cards1");
 
@@ -4674,6 +4687,10 @@
         // Initialize the first card to be visible
         showCard();
 
+        function hiddenNav() {
+            $("#navbarNav").removeClass("show");
+        }
+
         function home() {
             const home = document.getElementById("home");
             home.style.color = "#CEC3FE";
@@ -4682,6 +4699,7 @@
             document.getElementById("Methodology").style.color = "#6b6b7b";
             document.getElementById("Blog").style.color = "#6b6b7b";
             document.getElementById("Contact").style.color = "#6b6b7b";
+            hiddenNav();
         }
 
         function about() {
@@ -4691,6 +4709,7 @@
             document.getElementById("Methodology").style.color = "#6b6b7b";
             document.getElementById("Blog").style.color = "#6b6b7b";
             document.getElementById("Contact").style.color = "#6b6b7b";
+            hiddenNav();
         }
 
         function Methodology() {
@@ -4700,6 +4719,7 @@
             document.getElementById("about").style.color = "#6b6b7b";
             document.getElementById("Blog").style.color = "#6b6b7b";
             document.getElementById("Contact").style.color = "#6b6b7b";
+            hiddenNav();
         }
 
         function Blog() {
@@ -4709,6 +4729,7 @@
             document.getElementById("about").style.color = "#6b6b7b";
             document.getElementById("Methodology").style.color = "#6b6b7b";
             document.getElementById("Contact").style.color = "#6b6b7b";
+            hiddenNav();
         }
 
         function Contact() {
@@ -4718,14 +4739,47 @@
             document.getElementById("about").style.color = "#6b6b7b";
             document.getElementById("Methodology").style.color = "#6b6b7b";
             document.getElementById("Blog").style.color = "#6b6b7b";
+            hiddenNav();
+        }
+
+        function validateEmail(email) {
+            const emailRegex =
+                /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailRegex.test(email);
         }
 
         $(document).ready(function () {
+            $("#mobile").on("input", function () {
+                var phoneNumber = $("#mobile").val();
+                console.log(phoneNumber);
+                if (phoneNumber == "+9") {
+                    $("#mobile").val("+91");
+                }
+            });
             $("#beta-form").on("submit", function (event) {
                 event.preventDefault();
 
-                var mobile = $("#mobile").val();
+                var phoneNumber = $("#mobile").val();
+                var phoneRegex = /^(\+91|91|0)[0-9]{10}$/;
+
+                if (!phoneRegex.test(phoneNumber)) {
+                    $("#mobile-error").text(
+                        "Please enter a valid phone number"
+                    );
+                    return;
+                } else {
+                    $("#mobile-error").text("");
+                }
+
+                var mobile = phoneNumber;
                 var email = $("#email").val();
+
+                if (!validateEmail(email)) {
+                    $("#email-error").text("Please enter a valid email");
+                    return;
+                } else {
+                    $("#email-error").text("");
+                }
                 $("#beta-form").fadeOut(function () {
                     $("#completion-msg").fadeIn();
                 });
