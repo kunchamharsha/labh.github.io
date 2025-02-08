@@ -2,7 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
         <!-- Optimized Title Tag -->
         <title>
             Labh – Best Mutual Funds, Stock Baskets, & Financial Research for
@@ -4650,6 +4653,11 @@
     </script>
 
     <script>
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 0) {
+                $("#navbarNav").collapse("hide");
+            }
+        });
         let index = 0;
         const cards = document.querySelectorAll(".six-cards1");
 

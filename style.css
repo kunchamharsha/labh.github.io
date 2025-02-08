@@ -268,9 +268,6 @@ body {
 .footer-expect li {
     font-size: 20px !important;
 }
-.footer-expect li a:hover {
-    text-decoration: none !important;
-}
 .footer-expect a {
     color: black;
 }
@@ -409,6 +406,12 @@ body {
 }
 #beta-form button:hover {
     background: #A663FFCC !important;
+}
+.footer-company a:hover {
+    text-decoration: underline !important;
+}
+.testdiv {
+    text-align: left;
 }
 @keyframes scrolling {
     0% {
@@ -1313,10 +1316,6 @@ body {
         font-weight: 400 !important;
         line-height: 35px !important;
         color: black;
-        text-decoration: none;
-    }
-    .mobile-footer li:hover {
-        text-decoration: none;
     }
     .social-media {
         font-size: 22px !important;
