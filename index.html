@@ -2472,7 +2472,7 @@
         <div class="my-container">
             <div class="sticky-qr sticky-qr-desktop">
                 <div class="sticky-container d-flex">
-                    <img class="qr-img" src="assets/qr_code.svg" alt="qr_code" srcset="" />
+                    <img class="qr-img" src="assets/qr_code.png" alt="qr_code" srcset="" />
                     <div>
                         <div class="d-flex">
                             <p>Download now!</p>
@@ -4687,6 +4687,9 @@
         $('#close-sticky-qr-mobiile').click(function () {
             $('.sticky-qr-mobile').addClass('d-none');
         });
+        $('.sticky-qr-mobile, .sticky-qr-desktop').click(function () {
+            window.open('https://api.labh.io/get-app/', '_blank');
+        })
         $(window).scroll(function () {
             if ($(this).scrollTop() > 0) {
                 $("#navbarNav").collapse("hide");
