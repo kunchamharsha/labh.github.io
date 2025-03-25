@@ -2470,6 +2470,37 @@
         </nav>
 
         <div class="my-container">
+            <div class="sticky-qr sticky-qr-desktop">
+                <div class="sticky-container d-flex">
+                    <img class="qr-img" src="assets/qr_code.svg" alt="qr_code" srcset="" />
+                    <div>
+                        <div class="d-flex">
+                            <p>Download now!</p>
+                            <img
+                                class="download-now"
+                                src="assets/download_now.svg"
+                                alt="download now"
+                            />
+                        </div>
+                        <img
+                            class="playstore-app-store-icons"
+                            src="assets/playstore_app_store_icons.svg"
+                            alt="play store and app store icons"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="sticky-qr-mobile">
+                <div class="d-flex" style="align-items: center;">
+                    <img class="s-close" src="assets/close.svg" alt="close" srcset="" id="close-sticky-qr-mobiile"/>
+                    <img class="s-logo" src="assets/logo.svg" alt="qr_code" srcset="" />
+                    <div>
+                        <p class="s-heading">Labh - Mutual Funds</p>
+                        <p class="s-description">Invest in Hope, Harvest Success</p>
+                    </div>
+                </div>
+                <span class="s-get-app">Get App</span>
+            </div>
             <h1 style="display: none">Labh</h1>
             <div id="jtron" class="jumbotron text-center animate__animated">
                 <h4 class="display-4 mx-auto" style="font-weight: bold">
@@ -4151,8 +4182,8 @@
                         />&nbsp;
                     </div>
                     <p class="company-address">
-                        Forty2 Enterprises,Andhra University Incubation council, Maddilapalem,
-                        Visakhapatnam, Andhra Pradesh - 530040
+                        Forty2 Enterprises,Andhra University Incubation council,
+                        Maddilapalem, Visakhapatnam, Andhra Pradesh - 530040
                     </p>
                     <div class="mobile-footer">
                         <div class="mobile-footer-first">
@@ -4653,6 +4684,9 @@
     </script>
 
     <script>
+        $('#close-sticky-qr-mobiile').click(function () {
+            $('.sticky-qr-mobile').addClass('d-none');
+        });
         $(window).scroll(function () {
             if ($(this).scrollTop() > 0) {
                 $("#navbarNav").collapse("hide");

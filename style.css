@@ -402,10 +402,10 @@ body {
     padding-right: 20px;
 }
 .container1 {
-    background: linear-gradient(180deg, #CECBFF 50%, #7C7A99 100%);
+    background: linear-gradient(180deg, #cecbff 50%, #7c7a99 100%);
 }
 #beta-form button:hover {
-    background: #A663FFCC !important;
+    background: #a663ffcc !important;
 }
 .footer-company a:hover {
     text-decoration: underline !important;
@@ -413,6 +413,52 @@ body {
 .testdiv {
     text-align: left;
 }
+
+.sticky-qr-mobile {
+    display: none;
+}
+
+.sticky-qr {
+    position: fixed;
+    width: 266px;
+    height: 95px;
+    background: linear-gradient(
+        99.76deg,
+        rgba(124, 122, 153, 0.32) 1.27%,
+        rgba(206, 203, 255, 0.32) 23.48%,
+        rgba(124, 122, 153, 0.32) 49.02%,
+        rgba(206, 203, 255, 0.32) 82.34%
+    );
+    top: 88vh;
+    right: 1vw;
+    z-index: 1;
+    border-radius: 16px;
+    padding: 18px;
+}
+.qr-img {
+    width: 62px;
+    height: 62px;
+    margin-right: 10px;
+}
+
+.sticky-qr p {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0px;
+    margin-right: 10px;
+}
+
+.download-now {
+    width: 16px;
+    height: 20px;
+}
+
+.playstore-app-store-icons {
+    margin-top: 10px;
+    width: 150px;
+    height: 25px;
+}
+
 @keyframes scrolling {
     0% {
         transform: translateX(0);
@@ -1017,6 +1063,58 @@ body {
     }
     #completion-msg {
         margin-bottom: 60px !important;
+    }
+    .sticky-qr-desktop {
+        display: none;
+    }
+    .sticky-qr-mobile {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        background: linear-gradient(
+            92.23deg,
+            rgba(255, 255, 255, 0.42) 0.14%,
+            rgba(221, 219, 219, 0.42) 80.1%
+        );
+        backdrop-filter: blur(41.900001525878906px);
+        z-index: 1;
+        border-radius: 16px;
+        bottom: 10px;
+        padding: 16px 10px;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .sticky-qr-mobile .s-logo {
+        height: 42px;
+        width: 42px;
+        margin: 0px 10px;
+    }
+    .s-close {
+        height: 22px;
+        width: 22px;
+    }
+    .s-heading {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0px;
+        color: #111111;
+        letter-spacing: 2%;
+    }
+    .s-description {
+        font-size: 12px;
+        font-weight: 600;
+        margin: 0;
+        color: #11111199;
+        letter-spacing: 2%;
+    }
+    .s-get-app {
+        width: 75px;
+        height: 38px;
+        background: #A663FF;
+        border-radius: 20px;
+        font-size: 14px;
+        text-align: center;
+        padding-top: 8px;
     }
 }
 
