@@ -420,8 +420,8 @@ body {
 
 .sticky-qr {
     position: fixed;
-    width: 282px;
-    height: 95px;
+    width: 328px;
+    height: 104px;
     background: linear-gradient(
         99.76deg,
         rgba(124, 122, 153, 0.32) 1.27%,
@@ -430,20 +430,21 @@ body {
         rgba(206, 203, 255, 0.32) 82.34%
     );
     backdrop-filter: blur(6px) saturate(140%);
-    top: 88vh;
-    right: 1vw;
+    top: 86vh;
+    right: 2.5vw;
     z-index: 1;
     border-radius: 16px;
     padding: 13px 18px;
 }
 .qr-img {
-    width: 70px;
-    height: 70px;
-    margin-right: 10px;
+    border: 5px solid;
+    width: 80px;
+    height: 80px;
+    margin-right: 14px;
 }
 
 .sticky-qr p {
-    font-size: 17px;
+    font-size: 24px;
     font-weight: 700;
     margin: 0px;
     margin-right: 10px;
@@ -452,12 +453,13 @@ body {
 .download-now {
     width: 18px;
     height: 20px;
+    margin-top: 7px;
 }
 
 .playstore-app-store-icons {
-    margin-top: 10px;
-    width: 162px;
-    height: 30px;
+    margin-top: 9px;
+    width: 200px;
+    height: 35px;
 }
 
 @keyframes scrolling {
