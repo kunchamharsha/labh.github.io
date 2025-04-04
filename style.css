@@ -462,6 +462,16 @@ body {
     height: 35px;
 }
 
+.navbar {
+    padding: .5rem 3rem !important;
+}
+.carousel {
+    overflow-x: hidden !important;
+}
+.faq-item {
+    overflow: hidden !important;
+}
+
 @keyframes scrolling {
     0% {
         transform: translateX(0);
@@ -575,7 +585,7 @@ body {
         width: 180px;
     }
     .join-container {
-        margin-top: 156px;
+        margin-top: 226px;
     }
     .lead {
         font-size: 18px;
@@ -591,7 +601,7 @@ body {
         margin-left: 8px;
     }
     .approachcon {
-        margin-top: 266px;
+        margin-top: 318px;
     }
     .approachcon h2 {
         font-size: 24px !important;
@@ -1054,7 +1064,8 @@ body {
         font-size: 14px;
     }
     .carousel {
-        height: 160px;
+        height: 160px !important;
+        overflow: hidden !important;
     }
     .carousel-group {
         margin-left: 20px;
