@@ -521,7 +521,7 @@ body {
         margin-bottom: 18px !important;
     }
     .main-join {
-        margin-top: 15px;
+        margin-top: 15px !important;
         width: 63vw;
     }
     .main.join p {
