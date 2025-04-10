@@ -69,7 +69,7 @@
             rel="stylesheet"
         />
 
-    <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style.css" />
         <!-- Google tag (gtag.js) -->
 
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
@@ -2473,7 +2473,12 @@
         <div class="my-container">
             <div class="sticky-qr sticky-qr-desktop">
                 <div class="sticky-container d-flex">
-                    <img class="qr-img" src="assets/qr_code.png" alt="qr_code" srcset="" />
+                    <img
+                        class="qr-img"
+                        src="assets/qr_code.png"
+                        alt="qr_code"
+                        srcset=""
+                    />
                     <div>
                         <div class="d-flex">
                             <p>Download Now!</p>
@@ -2492,12 +2497,25 @@
                 </div>
             </div>
             <div class="sticky-qr-mobile">
-                <div class="d-flex" style="align-items: center;">
-                    <img class="s-close" src="assets/close.svg" alt="close" srcset="" id="close-sticky-qr-mobiile"/>
-                    <img class="s-logo" src="assets/logo.svg" alt="qr_code" srcset="" />
+                <div class="d-flex" style="align-items: center">
+                    <img
+                        class="s-close"
+                        src="assets/close.svg"
+                        alt="close"
+                        srcset=""
+                        id="close-sticky-qr-mobiile"
+                    />
+                    <img
+                        class="s-logo"
+                        src="assets/logo.svg"
+                        alt="qr_code"
+                        srcset=""
+                    />
                     <div>
                         <p class="s-heading">Labh - Mutual Funds</p>
-                        <p class="s-description">Invest in Hope, Harvest Success</p>
+                        <p class="s-description">
+                            Invest in Hope, Harvest Success
+                        </p>
                     </div>
                 </div>
                 <span class="s-get-app">Get App</span>
@@ -2520,9 +2538,7 @@
                     class="gradient-button button1 mx-auto main-join"
                     href="https://api.labh.io/get-app/"
                 >
-                    <p style="color: #161432; font-size: 20px">
-                        Download Now
-                    </p>
+                    <p style="color: #161432; font-size: 20px">Download Now</p>
                 </a>
             </div>
             <div id="bodycon">
@@ -2688,7 +2704,10 @@
                 </div>
             </div>
             <div class="join-container w-100">
-                <a class="gradient-button button1 mx-auto" href="https://api.labh.io/get-app/">
+                <a
+                    class="gradient-button button1 mx-auto"
+                    href="https://api.labh.io/get-app/"
+                >
                     <p style="color: #161432; font-size: 20px">
                         Download Now
                     </p> </a
@@ -2897,9 +2916,9 @@
                                 it all. Our team keeps your investments on track
                                 with timely adjustments, so you can focus on
                                 what really matters.
-                                <br>
-                                <br>
-                                <br>
+                                <br />
+                                <br />
+                                <br />
                             </p>
                         </div>
                     </div>
@@ -2960,6 +2979,13 @@
                     options designed to grow and protect your wealth.
                 </p>
             </div>
+            <a
+                class="gradient-button button1 mx-auto testb"
+                style="margin-top: 7rem; margin-bottom: 6rem"
+                href="https://api.labh.io/get-app/"
+            >
+                <p style="color: #161432; font-size: 20px">Download Now</p>
+            </a>
             <div
                 style="
                     width: 100%;
@@ -3818,6 +3844,13 @@
                     make investing easier for you. Our founders are alumni of
                     IIM Ahmedabad, a school known for excellence.
                 </p>
+                <a
+                    class="gradient-button button1 mx-auto testb"
+                    style="margin-top: 7rem; margin-bottom: 6rem"
+                    href="https://api.labh.io/get-app/"
+                >
+                    <p style="color: #161432; font-size: 20px">Download Now</p>
+                </a>
                 <div
                     class="responsive-container"
                     style="
@@ -3857,7 +3890,6 @@
                     </div>
                 </div>
             </div>
-
 
             <center>
                 <div
@@ -4078,10 +4110,15 @@
                         />&nbsp;
                     </div>
                     <p class="company-address">
-                        Forty2 Enterprises is authorised entity registered with AMFI to sell mutual funds.
-                        AMFI License No. ARN-308230. <br>Same can be verified 
-                        <a href="https://www.amfiindia.com/locate-your-nearest-mutual-fund-distributor-details">here.</a><br>
-                        <strong>Address: </strong>Forty2 Enterprises,Andhra University Incubation council, Maddilapalem,
+                        Forty2 Enterprises is authorised entity registered with
+                        AMFI to sell mutual funds. AMFI License No. ARN-308230.
+                        <br />Same can be verified
+                        <a
+                            href="https://www.amfiindia.com/locate-your-nearest-mutual-fund-distributor-details"
+                            >here.</a
+                        ><br />
+                        <strong>Address: </strong>Forty2 Enterprises,Andhra
+                        University Incubation council, Maddilapalem,
                         Visakhapatnam, Andhra Pradesh - 530040
                     </p>
                     <div class="mobile-footer">
@@ -4583,12 +4620,12 @@
     </script>
 
     <script>
-        $('#close-sticky-qr-mobiile').click(function () {
-            $('.sticky-qr-mobile').addClass('d-none');
+        $("#close-sticky-qr-mobiile").click(function () {
+            $(".sticky-qr-mobile").addClass("d-none");
         });
-        $('.s-get-app, .sticky-qr-desktop').click(function () {
-            window.open('https://api.labh.io/get-app/', '_blank');
-        })
+        $(".s-get-app, .sticky-qr-desktop").click(function () {
+            window.open("https://api.labh.io/get-app/", "_blank");
+        });
         $(window).scroll(function () {
             if ($(this).scrollTop() > 0) {
                 $("#navbarNav").collapse("hide");
@@ -4766,5 +4803,4 @@
 
         gtag("config", "G-WZBYHK4HSX");
     </script>
-
 </html>
