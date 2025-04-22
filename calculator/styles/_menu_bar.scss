@@ -10,10 +10,13 @@
         padding-left: 0px;
     }
 
+    li {
+        margin-right: calculate-rem(16);
+    }
+
     a {
         text-decoration: none;
         color: white;
-        margin-right: calculate-rem(16);
     }
 
     ul {
