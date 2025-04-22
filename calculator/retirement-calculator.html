@@ -33,6 +33,7 @@
         <div class="menu-bar">
             <ul>
                 <li><a href="../index.html">Home</a></li>
+                <li>⦿</li>
                 <li><a href="home.html">Calculator</a></li>
                 <li><a href="#" class="active">Retierment Calculator</a></li>
             </ul>
@@ -72,7 +73,7 @@
                             id="spend-slider"
                             min="10000"
                             max="100000"
-                            step="1"
+                            step="500"
                             value="25000"
                         />
 
@@ -255,15 +256,20 @@
             </div>
 
             <div class="moblie-search-bar-container">
-                <div class="mobile-search-bar">
-                    <input
-                        type="text"
-                        placeholder="Search for Calculator"
-                        id="search2"
-                    />
+                <div id="search-results" class="cards display-none margin-bottom-none"></div>
+                <div class="black-container">
+                    <div class="mobile-search-bar">
+                        <input
+                            type="text"
+                            placeholder="Search for Calculator"
+                            id="search2"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
+
+                <div class="blur-effect display-none"></div>
         <footer
             style="
                 background-color: #cec3fe;
@@ -810,10 +816,11 @@
 
             const annualExpensesAtRetirement = futureExpenses * 12;
 
-            const corpusRequired = calculateRetirementCorpus(
-                annualExpensesAtRetirement,
-                yearsAfterRetirement
-            ) * coefficent;
+            const corpusRequired =
+                calculateRetirementCorpus(
+                    annualExpensesAtRetirement,
+                    yearsAfterRetirement
+                ) * coefficent;
 
             const monthsToInvest = yearsToRetirement * 12;
             const sipRequired = calculateSIPRequired(
@@ -895,8 +902,6 @@
             });
         });
 
-
-
         const calculators = [
             {
                 "card-heading": "Retirement calculator",
@@ -954,26 +959,55 @@
             },
         ];
 
-        function search(event) {
-            const query = event.target.value.toLowerCase();
+        function filterCalculators(searchTerm) {
+            if (!searchTerm || searchTerm.trim() === "") {
+                return [];
+            }
 
-            
-            $(".cards").addClass("cards-grid-constant-gap"); // this is added to maintain the gap b/t cards
-            $(".card").each(function () {
-                const cardHeading = $(this).find(".card-heading").text();
-                const cardDescription = $(this)
-                    .find(".card-description")
-                    .text();
-                if (
-                    cardHeading.toLowerCase().includes(query) ||
-                    cardDescription.toLowerCase().includes(query)
-                ) {
-                    $(this).show();
-                    $(this).width(cardWidth);
-                } else {
-                    $(this).hide();
-                }
-            });
+            const lowerSearchTerm = searchTerm.toLowerCase();
+
+            return calculators.filter(
+                (calculator) =>
+                    calculator["card-heading"]
+                        .toLowerCase()
+                        .includes(lowerSearchTerm) ||
+                    calculator["card-description"]
+                        .toLowerCase()
+                        .includes(lowerSearchTerm)
+            );
         }
+
+        $("#search2").on("input", function () {
+            const searchTerm = $(this).val();
+            const filteredCalculators = filterCalculators(searchTerm);
+            if (filteredCalculators.length != 0) {
+                $(".cards").empty();
+                $(".cards").removeClass("display-none");
+                $(".blur-effect").removeClass("display-none");
+                filteredCalculators.forEach((calculator) => {
+                    const card = `
+                    <div class="card">
+                        <img src="../assets/card-edge-image.svg" alt="edge-image">
+                        <img src="../assets/card-edge-image.svg" alt="edge-image">
+                        <img src="../assets/calculator-arrow.svg" alt="calculator-arrow">
+                        <div class="card-heading">${calculator["card-heading"]}</div>
+                        <div class="card-description">${calculator["card-description"]}</div>
+                    </div>
+                `;
+                    $(".cards").append(card);
+                });
+
+                // $(".blur-effect").height(
+                //     window.innerHeight -
+                //         $("#search-results").outerHeight(true) -
+                //         $("nav").outerHeight(true) -
+                //         $(".black-container").outerHeight(true) -
+                //         $('.menu-bar').outerHeight(true)
+                // );
+            } else {
+                $(".cards").addClass("display-none");
+                $(".blur-effect").addClass("display-none");
+            }
+        });
     </script>
 </html>

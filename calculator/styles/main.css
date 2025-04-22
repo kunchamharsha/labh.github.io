@@ -110,10 +110,12 @@ nav {
   margin-left: 2.5rem;
   padding-left: 0px;
 }
+.menu-bar li {
+  margin-right: 1rem;
+}
 .menu-bar a {
   text-decoration: none;
   color: white;
-  margin-right: 1rem;
 }
 .menu-bar ul .active {
   color: #cecbff;
@@ -1011,9 +1013,7 @@ nav {
     position: sticky;
     bottom: 0rem;
     width: 100%;
-    background-color: black;
-    padding-top: 0.625rem;
-    padding-bottom: 1.3125rem;
+    z-index: 3;
   }
   .mobile-search-bar {
     display: flex;
@@ -1051,4 +1051,41 @@ nav {
     margin-right: 8px;
     display: inline-block;
   }
+  .black-container {
+    background-color: black;
+    padding-top: 0.625rem;
+    padding-bottom: 1.3125rem;
+  }
+  #search-results {
+    background-color: black;
+    height: auto;
+    max-height: 70vh;
+    overflow: scroll;
+    padding-top: 0.625rem;
+  }
+  .blur-effect {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    opacity: 80%;
+    z-index: 1;
+    background-color: black;
+  }
+}
+@media (min-width: 1024px) {
+  .moblie-search-bar-container {
+    display: none;
+  }
+}
+.display-none {
+  display: none;
+}
+
+.margin-none {
+  margin: 0;
+}
+
+.margin-bottom-none {
+  margin-bottom: 0;
 }/*# sourceMappingURL=main.css.map */
