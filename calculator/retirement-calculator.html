@@ -760,6 +760,20 @@
     ></script>
 
     <script>
+
+        /*
+        How to calculate Retirement Plan Steps:
+        - Calculate how much your current monthly expenses will grow by retirement age.
+            - Future Expenses = Current Expenses × (1 + Inflation Rate) ^ Years to Retirement
+        - Multiply future monthly expenses by 12 to get yearly expenses.
+            - Annual Expenses = Future Expenses * 12
+        - Calculate total money needed for retirement years.
+            - Retirement Corpus = Annual Expenses * Retirement Years * coefficent (1, 1.5, 2)
+        - Find how much you need to invest monthly to reach the corpus.
+            - SIP = (Corpus × Monthly Return Rate) / ((1 + Monthly Return Rate) ^ Total Months - 1)
+        */
+
+
         const retirementAge = 60;
         const inflationRate = 0.06;
         const yearsAfterRetirement = 20;
