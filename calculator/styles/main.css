@@ -326,6 +326,81 @@ nav {
   justify-content: center;
   align-items: center;
 }
+.calculator-card-contents .toggler {
+  width: 14.875rem;
+  height: 3.25rem;
+  background-color: white;
+  border-radius: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  margin-bottom: 2.625rem;
+}
+.calculator-card-contents .toggler span {
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calculator-card-contents .toggler .sip-span {
+  border-radius: 1.25rem;
+  width: 6.125rem;
+  height: 3rem;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+.calculator-card-contents .toggler .lumpsum-span {
+  width: 7.25rem;
+  height: 3rem;
+  border-radius: 1.25rem;
+}
+.calculator-card-contents .toggler .active {
+  background-color: #A663FF;
+  color: white;
+}
+.calculator-card-contents .legend {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.calculator-card-contents .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #333;
+}
+.calculator-card-contents .legend-color {
+  width: 1.9375rem;
+  height: 1.3125rem;
+  border-radius: 0.375rem;
+  margin-left: 1.25rem;
+}
+.calculator-card-contents .graph-container {
+  display: flex;
+  align-items: center;
+}
+.calculator-card-contents .graph {
+  width: 15.125rem;
+  height: 15.125rem;
+  border-radius: 50%;
+  background: conic-gradient(#9A5CED 0% 40%, #E8D8FD 40% 100%);
+  position: relative;
+}
+.calculator-card-contents .graph::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: 160px;
+  background: #f9f7fc;
+  border-radius: 50%;
+}
 
 .cal-content {
   display: flex;
@@ -992,6 +1067,27 @@ nav {
   .calculator-card .result {
     margin-bottom: 0;
   }
+  .calculator-card .toggler {
+    width: 12.4375rem;
+    height: 2.375rem;
+    padding: 0.125rem;
+  }
+  .calculator-card .toggler .sip-span,
+  .calculator-card .toggler .lumpsum-span {
+    width: 6.125rem;
+    height: 2.125rem;
+  }
+  .calculator-card .graph {
+    width: 7.875rem;
+    height: 7.875rem;
+  }
+  .calculator-card .graph::after {
+    width: 5.1875rem;
+    height: 5.1875rem;
+  }
+  .calculator-card .graph-container {
+    margin-bottom: 2rem;
+  }
   .calculator-card-contents {
     display: block;
   }
@@ -1080,6 +1176,10 @@ nav {
 }
 .display-none {
   display: none;
+}
+
+.margin-bottom-100 {
+  margin-bottom: 6.25rem !important;
 }
 
 .margin-none {

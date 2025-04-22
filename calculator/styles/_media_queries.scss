@@ -179,6 +179,30 @@
         //     height: calculate-rem(34);
         //     border-radius: 40%;
         // }
+
+        .toggler {
+            width: calculate-rem(199);
+            height: calculate-rem(38);
+            padding: calculate-rem(2);
+
+            .sip-span,
+            .lumpsum-span {
+                width: calculate-rem(98);
+                height: calculate-rem(34);
+            }
+        }
+
+        .graph {
+            width: calculate-rem(126);
+            height: calculate-rem(126);
+        }
+        .graph::after {
+            width: calculate-rem(83);
+            height: calculate-rem(83);
+        }
+        .graph-container {
+            margin-bottom: calculate-rem(32);
+        }
     }
 
     .calculator-card-contents {
@@ -257,7 +281,6 @@
         padding-top: calculate-rem(10);
         padding-bottom: calculate-rem(21);
     }
-
 
     #search-results {
         background-color: black;
