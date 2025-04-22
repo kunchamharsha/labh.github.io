@@ -207,6 +207,21 @@
 
     .calculator-card-contents {
         display: block;
+
+        .box-result {
+            width: calculate-rem(314);
+            height: calculate-rem(109);
+
+
+            .heading {
+                font-size: calculate-rem(16);
+            }
+
+            .amount {
+                font-size: calculate-rem(28);
+            }
+        }
+        
     }
 
     .cal-content {

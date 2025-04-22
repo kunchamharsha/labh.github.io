@@ -2,95 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Donut Chart</title>
+  <title>Custom Styled Dropdown</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #f9f7fc;
+      background-color: #4a4a4a;
+      font-family: sans-serif;
+      padding: 50px;
     }
 
-    .chart-container {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .donut-chart {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background: conic-gradient(
-        #7A4DF3 0% 40%,  /* Est. Returns */
-        #D6BFFB 40% 100% /* Invested amt */
-      );
+    .dropdown {
       position: relative;
+      width: 250px;
     }
 
-    .donut-chart::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 120px;
-      height: 120px;
-      background: #f9f7fc;
-      border-radius: 50%;
-    }
-
-    .legend {
+    .dropdown-selected {
+      background: #ece6ff; /* light lavender */
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .legend-item {
-      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 1rem;
-      color: #333;
     }
 
-    .legend-color {
-      width: 20px;
-      height: 20px;
-      border-radius: 4px;
+    .dropdown-options {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      margin-top: 2px;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .dropdown-options div {
+      padding: 12px 16px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .dropdown-options div:hover {
+      background-color: #f0f0f0;
+    }
+
+    .arrow {
+      font-size: 12px;
     }
   </style>
 </head>
 <body>
 
-<div class="chart-container">
-  <div class="donut-chart"></div>
-  <div class="legend">
-    <div class="legend-item">
-      <div class="legend-color" style="background-color: #7A4DF3;"></div>
-      <span>Est. Returns</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-color" style="background-color: #D6BFFB;"></div>
-      <span>Invested amt</span>
-    </div>
+<div class="dropdown" id="customDropdown">
+  <div class="dropdown-selected" id="selectedItem">
+    MBBS <span class="arrow" id="arrowIcon">▾</span>
+  </div>
+  <div class="dropdown-options" id="dropdownOptions">
+    <div>Other</div>
+    <div>Lawyer</div>
+    <div>Engineer</div>
+    <div>MBA</div>
   </div>
 </div>
 
 <script>
-  // Optional: You can dynamically update the chart by changing the CSS background
-  function updateChart(returnsPercentage) {
-    const chart = document.querySelector('.donut-chart');
-    chart.style.background = `conic-gradient(
-      #7A4DF3 0% ${returnsPercentage}%,
-      #D6BFFB ${returnsPercentage}% 100%
-    )`;
-  }
+  const dropdown = document.getElementById('customDropdown');
+  const selected = document.getElementById('selectedItem');
+  const options = document.getElementById('dropdownOptions');
+  const arrow = document.getElementById('arrowIcon');
 
-  // Example: Set Est. Returns to 30%
-  updateChart(30);
+  selected.addEventListener('click', () => {
+    options.style.display = options.style.display === 'block' ? 'none' : 'block';
+    arrow.textContent = options.style.display === 'block' ? '▴' : '▾';
+  });
+
+  document.querySelectorAll('#dropdownOptions div').forEach(option => {
+    option.addEventListener('click', function() {
+      selected.childNodes[0].textContent = this.textContent + ' ';
+      options.style.display = 'none';
+      arrow.textContent = '▾';
+    });
+  });
+
+  // Close dropdown if clicked outside
+  document.addEventListener('click', function(event) {
+    if (!dropdown.contains(event.target)) {
+      options.style.display = 'none';
+      arrow.textContent = '▾';
+    }
+  });
 </script>
 
 </body>

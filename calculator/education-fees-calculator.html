@@ -10,7 +10,7 @@
             crossorigin="anonymous"
         />
         <link rel="stylesheet" href="styles/main.css" />
-        <title>SIP Calculator</title>
+        <title>Education Fees Calculator</title>
     </head>
     <body>
         <nav>
@@ -34,124 +34,166 @@
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li>⦿</li>
-                <li><a href="index.html">Calculator</a></li>
-                <li><a href="#" class="active">SIP Calculator</a></li>
+                <li><a href="home.html">Calculator</a></li>
+                <li>
+                    <a href="#" class="active">Education Fees Calculator</a>
+                </li>
             </ul>
         </div>
         <div class="main-container">
             <div class="contents">
-                <h1>SIP calculator</h1>
+                <h1>Education Fees Calculator</h1>
                 <p>
-                    Compute potential returns from regular monthly SIP
-                    investments.
+                    Calculate the future cost of your child's education
+                    considering inflation and current fees
                 </p>
             </div>
-            <div class="calculator-card">
+            <div class="calculator-card education-calculator">
                 <img src="../assets/card-edge-image.svg" alt="edge-image" />
                 <img src="../assets/card-edge-image.svg" alt="edge-image" />
                 <div class="calculator-card-contents">
                     <div>
-                        <div class="toggler">
-                            <span class="sip-span active" id="sip-span"
-                                >SIP</span
-                            >
-                            <span class="lumpsum-span" id="lumpsum-span"
-                                >Lumpsum</span
-                            >
-                        </div>
-                        <div class="sip-content">
-                            <div class="cal-content">
-                                <label>Monthly Investment</label>
-                                <span id="investment-slider-value">Rs.500</span>
-                            </div>
-                            <input
-                                type="range"
-                                id="investment-slider"
-                                min="500"
-                                max="1000000"
-                                step="500"
-                                value="5000"
-                            />
-                        </div>
-
-                        <div class="lumpsum-content display-none">
-                            <div class="cal-content">
-                                <label>One Time Investment</label>
-                                <span id="lumpsum-investment-slider-value"
-                                    >Rs.5000</span
-                                >
-                            </div>
-                            <input
-                                type="range"
-                                id="lumpsum-investment-slider"
-                                min="500"
-                                max="1000000"
-                                step="500"
-                                value="5000"
-                            />
-                        </div>
-
                         <div class="cal-content">
-                            <label>Time Period</label>
-                            <span id="year-slider-value">10 years</span>
+                            <label>Current Child Age</label>
+                            <span id="age-slider-value">0 Years</span>
+                        </div>
+                        <div class="input-limits">
+                            <div>0</div>
+                            <div>20</div>
                         </div>
                         <input
                             type="range"
-                            id="year-slider"
-                            min="1"
-                            max="32"
+                            id="age-slider"
+                            min="0"
+                            max="20"
                             step="1"
-                            value="5"
+                            value="0"
                         />
-                        <div class="graph-container">
-                            <div class="graph"></div>
-                            <div class="legend">
-                                <div class="legend-item">
-                                    <div
-                                        class="legend-color"
-                                        style="background-color: #9a5ced"
-                                    ></div>
-                                    <span>Est. Returns</span>
-                                </div>
-                                <div class="legend-item">
-                                    <div
-                                        class="legend-color"
-                                        style="background-color: #e8d8fd"
-                                    ></div>
-                                    <span>Invested amt</span>
-                                </div>
-                            </div>
+
+                        <div class="cal-content">
+                            <label>Child's course age</label>
+                            <span id="course-slider-value">19 Years</span>
                         </div>
+                        <div class="input-limits">
+                            <div>18</div>
+                            <div>24</div>
+                        </div>
+                        <input
+                            type="range"
+                            id="course-slider"
+                            min="18"
+                            max="24"
+                            step="1"
+                            value="19"
+                        />
+
+                        <div class="cal-content">
+                            <label>Rate of Inflation</label>
+                            <span id="inflation-slider-value">9%</span>
+                        </div>
+                        <div class="input-limits">
+                            <div>0%</div>
+                            <div>25%</div>
+                        </div>
+                        <input
+                            type="range"
+                            id="inflation-slider"
+                            min="0"
+                            max="25"
+                            step="1"
+                            value="9"
+                        />
+
+                        <div class="cal-content">
+                            <label>Rate of return</label>
+                            <span id="return-slider-value">14%</span>
+                        </div>
+                        <div class="input-limits">
+                            <div>0%</div>
+                            <div>25%</div>
+                        </div>
+                        <input
+                            type="range"
+                            id="return-slider"
+                            min="0"
+                            max="25"
+                            step="1"
+                            value="14"
+                        />
                     </div>
                     <div>
                         <div class="cal-content">
-                            <label>Expected return(p.a.)</label>
-                            <span id="return-slider-value">12%</span>
-                        </div>
-                        <input
-                            class="margin-bottom-100"
-                            type="range"
-                            id="return-slider"
-                            min="1"
-                            max="30"
-                            step="1"
-                            value="12"
-                        />
-                        <div class="cal-content result">
-                            <label>Invested Amt</label>
-                            <span id="invested-amt">Rs.46,36,567</span>
-                        </div>
-                        <div class="cal-content result">
-                            <label>Est. returns</label>
-                            <span id="est-returns">Rs.12,67,346</span>
-                        </div>
-                        <hr class="calculator-hr" />
-                        <div class="cal-content result">
-                            <label>Total Value</label>
-                            <span id="total-value">Rs.59,85,385</span>
+                            <label>Choose a target course</label>
                         </div>
 
-                        <a href="">Invest Now</a>
+                        <div class="dropdown" id="customDropdown">
+                            <div class="dropdown-selected" id="dropdown">
+                                <span id="selected-cource">MBBS</span>
+                                <span
+                                    ><img
+                                        src="../assets/down-arroow.svg"
+                                        alt="down-arrow"
+                                        id="dropdown-arrow"
+                                /></span>
+                            </div>
+                            <div
+                                class="dropdown-options display-none"
+                                id="dropdownOptions"
+                            >
+                                <div data-value="Other">Other</div>
+                                <div data-value="Lawyer">Lawyer</div>
+                                <div data-value="Engineer">Engineer</div>
+                                <div data-value="MBA">MBA</div>
+                            </div>
+                        </div>
+
+                        <div class="cal-content">
+                            <label
+                                class="padding-4px"
+                                style="margin-bottom: 8px"
+                                >Have you estimated the cost of
+                                Education?</label
+                            >
+                        </div>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input
+                                    type="radio"
+                                    id="yes"
+                                    name="estimated"
+                                    value="yes"
+                                />
+                                <label for="yes">Yes</label>
+                            </div>
+
+                            <div class="radio-option">
+                                <input
+                                    type="radio"
+                                    id="no"
+                                    name="estimated"
+                                    value="no"
+                                    checked
+                                />
+                                <label for="no">No</label>
+                            </div>
+                        </div>
+                        <div class="cal-content">
+                            <label>What is the current Education fee?</label>
+                        </div>
+                        <input
+                            type="text"
+                            name="current-fees"
+                            id="current-fees"
+                        />
+
+                        <div class="box-result">
+                            <span class="heading"
+                                >Amount you should save monthly</span
+                            >
+                            <span class="amount" id="total-amount"
+                                >Rs.15,652.55</span
+                            >
+                        </div>
                     </div>
                 </div>
             </div>
@@ -162,20 +204,16 @@
                     <li>
                         Set the investment period and expected returns rate.
                     </li>
-                    <li>
-                        View accumulated corpus and returns.
-                    </li>
+                    <li>View accumulated corpus and returns.</li>
                 </ul>
 
                 <h1>Formula</h1>
-                <p> FV = P × [((1 + r)^n - 1) / r] × (1 + r)</p>
+                <p>FV = P × [((1 + r)^n - 1) / r] × (1 + r)</p>
 
                 <table>
                     <tr>
                         <td>FV (Future Value):</td>
-                        <td>
-                            The accumulated amount after investing via SIP.
-                        </td>
+                        <td>The accumulated amount after investing via SIP.</td>
                     </tr>
                     <tr>
                         <td>P :</td>
@@ -183,11 +221,17 @@
                     </tr>
                     <tr>
                         <td>r :</td>
-                        <td>Expected monthly return rate (annual rate divided by 12).</td>
+                        <td>
+                            Expected monthly return rate (annual rate divided by
+                            12).
+                        </td>
                     </tr>
                     <tr>
                         <td>n :</td>
-                        <td>Total number of monthly installments (years multiplied by 12).</td>
+                        <td>
+                            Total number of monthly installments (years
+                            multiplied by 12).
+                        </td>
                     </tr>
                 </table>
 
@@ -246,9 +290,7 @@
 
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span
-                                >Is SIP safe?
-                            </span>
+                            <span>Is SIP safe? </span>
                             <span class="arrow"
                                 ><img src="../assets/Frame 877 (1).png"
                             /></span>
@@ -776,99 +818,24 @@
     ></script>
 
     <script>
-        let sip = 1;
-
-        /*
-        Investment Calculators: SIP and Lump Sum
-        
-        1. SIP (Systematic Investment Plan) Formula:
-            Final Amount = P × [(1 + r)^n - 1] / r × (1 + r)
-        
-            Where:
-            - P = Monthly investment amount
-            - r = Monthly interest rate (annual rate ÷ 12 ÷ 100)
-            - n = Total number of months (years × 12)
-        
-        2. Lump Sum Investment Formula:
-            Final Amount = P × (1 + R)^t
-        
-            Where:
-            - P = One-time initial investment
-            - R = Annual interest rate (annual rate ÷ 100)
-            - t = Number of years
-         */
-
-        function calculateSIP(P, annualRate, years) {
-            const r = annualRate / 12 / 100;
-            const n = years * 12;
-
-            const finalAmount = P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
-
-            return finalAmount;
-        }
-
-        function calculateLumpSum(P, annualRate, years) {
-            const R = annualRate / 100;
-            const finalAmount = P * Math.pow(1 + R, years);
-            return finalAmount.toFixed(2);
-        }
-        function updateChart(returnsPercentage) {
-            const chart = document.querySelector(".graph");
-            chart.style.background = `conic-gradient(
-            #9A5CED 0% ${returnsPercentage}%,
-            #E8D8FD ${returnsPercentage}% 100%
-            )`;
-        }
-        function updateValues() {
-            const sipPerMonth = $("#investment-slider").val();
-            const years = $("#year-slider").val();
-            let investedAmount = sipPerMonth * (years * 12);
-            let returns = 0;
-            let totalReturns = 0;
-            if (sip == 1) {
-                totalReturns = calculateSIP(
-                    sipPerMonth,
-                    $("#return-slider").val(),
-                    years
-                );
-                returns = totalReturns - investedAmount;
-            } else {
-                investedAmount = $("#lumpsum-investment-slider").val();
-                totalReturns = calculateLumpSum(
-                    investedAmount,
-                    $("#return-slider").val(),
-                    years
-                );
-                returns = totalReturns - investedAmount;
-            }
-            $("#invested-amt").text(
-                `Rs.${investedAmount.toLocaleString("en-IN")}`
-            );
-            $("#est-returns").text(`Rs.${returns.toLocaleString("en-IN")}`);
-            $("#total-value").text(
-                `Rs.${parseFloat(totalReturns).toLocaleString("en-IN")}`
-            );
-            const returnsPercentage = (returns / investedAmount) * 100;
-            updateChart(returnsPercentage);
-        }
+        let course = null;
+        function updateValues() {}
 
         $(document).ready(function () {
-            $("#sip-span").click(function () {
-                $(".lumpsum-content").addClass("display-none");
-                $(".sip-content").removeClass("display-none");
-                $("#sip-span").addClass("active");
-                $("#lumpsum-span").removeClass("active");
-                sip = 1;
-                updateValues();
+            $("#dropdown").click(function () {
+                $(".dropdown-selected").toggleClass("border-class");
+                $(".dropdown-options").toggleClass("display-none");
+                $("#dropdown-arrow").toggleClass("transform-y");
             });
 
-            $("#lumpsum-span").click(function () {
-                $(".lumpsum-content").removeClass("display-none");
-                $(".sip-content").addClass("display-none");
-                $("#lumpsum-span").addClass("active");
-                $("#sip-span").removeClass("active");
-                sip = 0;
-                updateValues();
+            $("#dropdownOptions > div").on("click", function () {
+                const value = $(this).data("value");
+                course = value;
+
+                $(".dropdown-selected").toggleClass("border-class");
+                $('#selected-cource').text(value);
+                $(".dropdown-options").toggleClass("display-none");
+                $("#dropdown-arrow").toggleClass("transform-y");
             });
 
             $(".faq-question").click(function () {
@@ -880,16 +847,11 @@
             });
 
             function updateSliderBackground(slider) {
-                if (
-                    slider.id == "investment-slider" ||
-                    slider.id == "lumpsum-investment-slider"
-                ) {
+                if (slider.id == "age-slider" || slider.id == "course-slider") {
                     $(`#${slider.id}-value`).text(
-                        `Rs.${parseInt(slider.value).toLocaleString("en-IN")}`
+                        `${parseInt(slider.value)} Years`
                     );
-                } else if (slider.id == "year-slider") {
-                    $(`#${slider.id}-value`).text(`${slider.value} years`);
-                } else if (slider.id == "return-slider") {
+                } else if (slider.id == "return-slider" || slider.id == "inflation-slider") {
                     $(`#${slider.id}-value`).text(`${slider.value} %`);
                 }
 
@@ -902,9 +864,7 @@
                 );
             }
 
-            $(
-                "#investment-slider, #lumpsum-investment-slider, #year-slider, #return-slider"
-            )
+            $("#age-slider, #course-slider, #inflation-slider, #return-slider")
                 .each(function () {
                     updateSliderBackground(this);
                     updateValues();
@@ -1012,14 +972,6 @@
                 `;
                     $(".cards").append(card);
                 });
-
-                // $(".blur-effect").height(
-                //     window.innerHeight -
-                //         $("#search-results").outerHeight(true) -
-                //         $("nav").outerHeight(true) -
-                //         $(".black-container").outerHeight(true) -
-                //         $('.menu-bar').outerHeight(true)
-                // );
             } else {
                 $(".cards").addClass("display-none");
                 $(".blur-effect").addClass("display-none");
