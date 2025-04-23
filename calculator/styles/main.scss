@@ -536,8 +536,20 @@ body {
 .pf-calculator {
     .calculator-card-contents {
         .box-result {
-            width: calculate-rem(375);
+            width: auto;
+            margin-top: calculate-rem(40);
         }
+        #rate {
+            width: calculate-rem(75);
+            height: calculate-rem(40);
+            background-color: #A663FF33;
+            border: 0px;
+        }
+
+        #rate:focus {
+            outline: none;
+        }
+
     }
 }
 

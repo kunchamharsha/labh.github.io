@@ -105,25 +105,35 @@
                     </div>
                     <div>
                         <div class="cal-content">
-                            <label>Rate of return</label>
-                            <span id="return-slider-value">14%</span>
+                            <label>Annual salary increase</label>
+                            <span id="annual-increase-slider-value">9%</span>
                         </div>
                         <div class="input-limits">
                             <div>0%</div>
-                            <div>25%</div>
+                            <div>15%</div>
                         </div>
                         <input
                             type="range"
-                            id="return-slider"
+                            id="annual-increase-slider"
                             min="0"
-                            max="25"
+                            max="15"
                             step="1"
-                            value="14"
+                            value="9"
                         />
+
+                        <div class="cal-content">
+                            <label>Rate of interest</label>
+                            <input
+                                type="number"
+                                id="rate"
+                                placeholder="%"
+                                value="7"
+                            />
+                        </div>
 
                         <div class="box-result">
                             <span class="heading"
-                                >Amount you should save monthly</span
+                                >You will have accumulated</span
                             >
                             <span class="amount" id="total-amount"
                                 >Rs.15,652.55</span
@@ -560,8 +570,57 @@
     ></script>
 
     <script>
-        let course = null;
-        function updateValues() {}
+        /*
+        - Every month, PF grows by adding the employee's contribution and earning interest.
+        - After every 12 months, salary increases by the annual increment percentage.
+        - Interest is compounded monthly on the running PF balance.
+        */
+        function calculatePF(
+            monthlySalary,
+            currentAge,
+            contributionPercent,
+            annualIncrementPercent,
+            interestRate
+        ) {
+            const retirementAge = 58;
+            let pfBalance = 0;
+            let monthlyContributionPercent = contributionPercent / 100;
+            let monthlyInterestRate = interestRate / 100 / 12;
+
+            for (let age = currentAge; age < retirementAge; age++) {
+                for (let month = 1; month <= 12; month++) {
+                    let monthlyContribution =
+                        monthlySalary * monthlyContributionPercent;
+                    pfBalance =
+                        pfBalance * (1 + monthlyInterestRate) +
+                        monthlyContribution;
+                }
+                // After each year, increase salary
+                monthlySalary =
+                    monthlySalary * (1 + annualIncrementPercent / 100);
+            }
+
+            return pfBalance.toFixed(2);
+        }
+        function updateValues() {
+            const monthlySalary = $("#salary-slider").val();
+            const currentAge = $("#age-slider").val();
+            const contributionPercentage = $("#contribution-slider").val();
+            const annualIncrementPercent = $("#annual-increase-slider").val();
+            const interestRate = $("#rate").val();
+
+            const finalPF = calculatePF(
+                monthlySalary,
+                currentAge,
+                contributionPercentage,
+                annualIncrementPercent,
+                interestRate
+            );
+
+            $("#total-amount").text(
+                `Rs.${parseInt(finalPF).toLocaleString("en-IN")}`
+            );
+        }
 
         $(document).ready(function () {
             $(".faq-question").click(function () {
@@ -573,15 +632,17 @@
             });
 
             function updateSliderBackground(slider) {
-                if (slider.id == "age-slider" || slider.id == "course-slider") {
+                if (slider.id == "salary-slider") {
                     $(`#${slider.id}-value`).text(
-                        `${parseInt(slider.value)} Years`
+                        `Rs.${parseInt(slider.value).toLocaleString("en-IN")}`
                     );
                 } else if (
-                    slider.id == "return-slider" ||
-                    slider.id == "inflation-slider"
+                    slider.id == "contribution-slider" ||
+                    slider.id == "annual-increase-slider"
                 ) {
                     $(`#${slider.id}-value`).text(`${slider.value} %`);
+                } else if (slider.id == "age-slider") {
+                    $(`#${slider.id}-value`).text(`${slider.value} Years`);
                 }
 
                 const value =
@@ -593,7 +654,9 @@
                 );
             }
 
-            $("#age-slider, #course-slider, #inflation-slider, #return-slider")
+            $(
+                "#salary-slider, #age-slider, #contribution-slider, #annual-increase-slider"
+            )
                 .each(function () {
                     updateSliderBackground(this);
                     updateValues();
@@ -602,9 +665,6 @@
                     updateSliderBackground(this);
                     updateValues();
                 });
-            $("#luxury, #good, #normal").on("change", function () {
-                updateValues();
-            });
         });
     </script>
     <script src="../main.js"></script>

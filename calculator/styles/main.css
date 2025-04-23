@@ -558,7 +558,17 @@ nav {
 }
 
 .pf-calculator .calculator-card-contents .box-result {
-  width: 23.4375rem;
+  width: auto;
+  margin-top: 2.5rem;
+}
+.pf-calculator .calculator-card-contents #rate {
+  width: 4.6875rem;
+  height: 2.5rem;
+  background-color: rgba(166, 99, 255, 0.2);
+  border: 0px;
+}
+.pf-calculator .calculator-card-contents #rate:focus {
+  outline: none;
 }
 
 .guide {
