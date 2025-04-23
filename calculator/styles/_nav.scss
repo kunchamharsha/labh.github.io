@@ -1,0 +1,112 @@
+$nav-margin-top: calculate-rem(75);
+$nav-margin-left: calculate-rem(40);
+$nav-margin-bottom: calculate-rem(42);
+
+nav {
+    margin-top: $nav-margin-top;
+    margin-left: $nav-margin-left;
+    margin-right: $nav-margin-left;
+    margin-bottom: $nav-margin-bottom;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    width: 11.625rem;
+    aspect-ratio: 31 / 12;
+    align-items: center;
+
+    img {
+        width: 4.5rem;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+    span {
+        font-size: calculate-rem(40);
+        font-weight: 700;
+        margin-left: calculate-rem(16);
+    }
+}
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calculate-rem(652);
+    height: calculate-rem(60);
+
+    a {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-size: calculate-rem(20);
+        font-weight: 600;
+        width: calculate-rem(192);
+        height: calculate-rem(60);
+        border-radius: calculate-rem(40);
+        background: linear-gradient(
+            95.56deg,
+            #7c7a99 2.21%,
+            #cecbff 42.84%,
+            #7c7a99 95.18%
+        );
+    }
+}
+
+.search-bar {
+    background: linear-gradient(
+        95.56deg,
+        rgba(124, 122, 153, 0.32) 2.21%,
+        rgba(206, 203, 255, 0.32) 42.84%,
+        rgba(124, 122, 153, 0.32) 95.18%
+    );
+    border-radius: calculate-rem(40);
+    padding: 0 calculate-rem(16);
+    width: calculate-rem(437);
+    height: calculate-rem(60);
+    display: flex;
+    align-items: center;
+    color: #b9bbbe;
+    font-family: Arial, sans-serif;
+    font-size: calculate-rem(16);
+
+    input {
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        height: 90%;
+        color: white;
+        font-size: calculate-rem(20);
+    }
+
+    input::placeholder {
+        font-size: calculate-rem(20);
+        color: #cecbff;
+    }
+    input:focus-visible {
+        outline: none;
+    }
+}
+
+.search-bar::before {
+    content: "";
+    background-image: url("../../assets/search-icon.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: calculate-rem(31);
+    height: calculate-rem(31);
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.nav-hr {
+    width: 95%;
+    margin-left: 3%;
+    border: 1px solid #cecbff;
+    margin: auto;
+}

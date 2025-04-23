@@ -1,0 +1,19 @@
+body {
+    background: black;
+    color: white;
+}
+
+.logo-container {
+    width: 11.625rem;
+    aspect-ratio: 31/12;
+}
+
+.logo-container img {
+    width: 4.5rem;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.logo-container span {
+    width: calculate-rem(97);
+}

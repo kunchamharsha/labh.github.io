@@ -1,0 +1,32 @@
+.menu-bar {
+    font-weight: 500;
+    font-size: calculate-rem(20);
+    margin-top: calculate-rem(32);
+
+    ul {
+        list-style: none;
+        display: flex;
+        margin-left: $nav-margin-left;
+        padding-left: 0px;
+    }
+
+    li {
+        margin-right: calculate-rem(16);
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    ul {
+        .active {
+            color: #cecbff;
+        }
+        .active::before {
+            content: "⦿";
+            font-weight: 900;
+            margin-right: calculate-rem(16);
+        }
+    }
+}
