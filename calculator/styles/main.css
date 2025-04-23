@@ -142,7 +142,7 @@ nav {
 
 .contents p {
   color: rgba(252, 252, 252, 0.6980392157);
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 400;
 }
 
@@ -246,6 +246,39 @@ nav {
   right: 0px;
   transform: scaleX(-1) scaleY(-1);
 }
+.calculator-card .toggler {
+  width: 14.875rem;
+  height: 3.25rem;
+  background-color: white;
+  border-radius: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.125rem;
+  margin-bottom: 3.1875rem;
+}
+.calculator-card .toggler span {
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calculator-card .toggler .sip-span {
+  border-radius: 1.25rem;
+  width: 6.125rem;
+  height: 3rem;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+.calculator-card .toggler .lumpsum-span {
+  width: 7.25rem;
+  height: 3rem;
+  border-radius: 1.25rem;
+}
+.calculator-card .toggler .active {
+  background-color: #a663ff;
+  color: white;
+}
 
 .calculator-card-contents {
   display: flex;
@@ -325,40 +358,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.calculator-card-contents .toggler {
-  width: 14.875rem;
-  height: 3.25rem;
-  background-color: white;
-  border-radius: 1.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
-  margin-bottom: 2.625rem;
-}
-.calculator-card-contents .toggler span {
-  height: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.calculator-card-contents .toggler .sip-span {
-  border-radius: 1.25rem;
-  width: 6.125rem;
-  height: 3rem;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
-}
-.calculator-card-contents .toggler .lumpsum-span {
-  width: 7.25rem;
-  height: 3rem;
-  border-radius: 1.25rem;
-}
-.calculator-card-contents .toggler .active {
-  background-color: #a663ff;
-  color: white;
 }
 .calculator-card-contents .legend {
   display: flex;
@@ -499,6 +498,31 @@ nav {
   font-weight: 600;
 }
 
+.sip-calculator {
+  height: 42.0625rem;
+}
+.sip-calculator .calculator-card-contents {
+  height: 23rem;
+}
+.sip-calculator .calculator-card-contents .graph-container {
+  margin-bottom: 2rem;
+}
+.sip-calculator .calculator-card-contents .graph {
+  width: 9.5rem;
+  height: 9.5rem;
+}
+.sip-calculator .calculator-card-contents .graph::after {
+  width: 6.625rem;
+  height: 6.625rem;
+}
+.sip-calculator .calculator-card-contents hr {
+  margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
+}
+.sip-calculator .calculator-card-contents input[type=range] {
+  margin-top: 2rem;
+}
+
 .education-calculator {
   height: 46.25rem;
 }
@@ -515,7 +539,7 @@ nav {
 }
 
 .guide {
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 .guide h1 {
   margin-bottom: 2.5rem;
@@ -532,6 +556,12 @@ nav {
   border: 1px solid #fff;
   padding: 10px;
   text-align: center;
+}
+.guide p,
+.guide td,
+.guide li {
+  color: #fcfcfc;
+  opacity: 80%;
 }
 
 #faq {
@@ -697,6 +727,7 @@ nav {
 
 .footer-methodologies {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 60px;
 }
 
@@ -784,6 +815,8 @@ nav {
   }
   .footer-contact-us-wrapper {
     display: block !important;
+    margin-left: 0px;
+    margin-top: 10px;
   }
   .footer-icon {
     width: 296px !important;
@@ -817,7 +850,6 @@ nav {
   .social-media {
     font-size: 16px !important;
     font-weight: 700 !important;
-    margin-top: -47px !important;
   }
   .insta-link {
     width: 24px !important;
@@ -859,6 +891,12 @@ nav {
   .footer-logo-wrapper {
     margin-top: 0px !important;
     justify-content: space-between;
+  }
+  .footer-links-section {
+    width: 13.125rem;
+  }
+  .footer-links-section li, .footer-links-section h4 {
+    font-size: 0.875rem;
   }
 }
 @media (min-width: 481px) and (max-width: 767px) {
@@ -965,7 +1003,8 @@ nav {
   .footer-links {
     font-size: 18px;
   }
-  .footer-links h4, .footer-links li {
+  .footer-links h4,
+  .footer-links li {
     font-size: 18px;
   }
 }
@@ -1251,6 +1290,9 @@ nav {
   }
   .calculator-card-contents .box-result .amount {
     font-size: 1.75rem;
+  }
+  .sip-calculator .calculator-card-contents {
+    height: auto;
   }
 }
 @media (min-width: 0px) and (max-width: 1023px) {

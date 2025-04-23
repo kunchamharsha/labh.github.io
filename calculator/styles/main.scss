@@ -34,7 +34,7 @@ body {
 .contents {
     p {
         color: #fcfcfcb2;
-        font-size: calculate-rem(32);
+        font-size: calculate-rem(28);
         font-weight: 400;
     }
 }
@@ -164,6 +164,44 @@ body {
         right: 0px;
         transform: scaleX(-1) scaleY(-1);
     }
+
+    .toggler {
+        width: calculate-rem(238);
+        height: calculate-rem(52);
+        background-color: white;
+        border-radius: calculate-rem(20);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: calculate-rem(2);
+        margin-bottom: calculate-rem(51);
+
+        span {
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sip-span {
+            border-radius: calculate-rem(20);
+            width: calculate-rem(98);
+            height: calculate-rem(48);
+            padding-left: calculate-rem(10);
+            padding-right: calculate-rem(10);
+        }
+
+        .lumpsum-span {
+            width: calculate-rem(116);
+            height: calculate-rem(48);
+            border-radius: calculate-rem(20);
+        }
+
+        .active {
+            background-color: #a663ff;
+            color: white;
+        }
+    }
 }
 
 .calculator-card-contents {
@@ -261,45 +299,6 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    .toggler {
-        width: calculate-rem(238);
-        height: calculate-rem(52);
-        background-color: white;
-        border-radius: calculate-rem(20);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-left: calculate-rem(10);
-        padding-right: calculate-rem(10);
-        margin-bottom: calculate-rem(42);
-
-        span {
-            height: fit-content;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .sip-span {
-            border-radius: calculate-rem(20);
-            width: calculate-rem(98);
-            height: calculate-rem(48);
-            padding-left: calculate-rem(10);
-            padding-right: calculate-rem(10);
-        }
-
-        .lumpsum-span {
-            width: calculate-rem(116);
-            height: calculate-rem(48);
-            border-radius: calculate-rem(20);
-        }
-
-        .active {
-            background-color: #a663ff;
-            color: white;
-        }
     }
 
     .legend {
@@ -439,7 +438,7 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        box-shadow: 0px 4px 13.8px 0px #A663FF38;
+        box-shadow: 0px 4px 13.8px 0px #a663ff38;
 
         .heading {
             font-size: calculate-rem(20);
@@ -463,6 +462,37 @@ body {
     }
 }
 
+.sip-calculator {
+    height: calculate-rem(673);
+
+    .calculator-card-contents {
+        height: calculate-rem(368);
+
+        .graph-container {
+            margin-bottom: calculate-rem(32);
+        }
+
+        .graph {
+            width: calculate-rem(152);
+            height: calculate-rem(152);
+        }
+
+        .graph::after {
+            width: calculate-rem(106);
+            height: calculate-rem(106);
+        }
+
+        hr {
+            margin-bottom: calculate-rem(20);
+            margin-top: calculate-rem(20);
+        }
+
+        input[type="range"] {
+            margin-top: calculate-rem(32);
+        }
+    }
+}
+
 .education-calculator {
     height: calculate-rem(740);
 
@@ -481,7 +511,7 @@ body {
 }
 
 .guide {
-    font-size: calculate-rem(32);
+    font-size: calculate-rem(28);
     h1 {
         margin-bottom: calculate-rem(40);
     }
@@ -500,6 +530,13 @@ body {
         border: 1px solid #fff;
         padding: 10px;
         text-align: center;
+    }
+
+    p,
+    td,
+    li {
+        color: #fcfcfc;
+        opacity: 80%;
     }
 }
 

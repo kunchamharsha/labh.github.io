@@ -22,6 +22,7 @@
 
 .footer-methodologies {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 60px;
 }
 
@@ -107,6 +108,8 @@
     }
     .footer-contact-us-wrapper {
         display: block !important;
+        margin-left: 0px;
+        margin-top: 10px;
     }
     .footer-icon {
         width: 296px !important;
@@ -140,7 +143,6 @@
     .social-media {
         font-size: 16px !important;
         font-weight: 700 !important;
-        margin-top: -47px !important;
     }
     .insta-link {
         width: 24px !important;
@@ -182,6 +184,12 @@
     .footer-logo-wrapper {
         margin-top: 0px !important;
         justify-content: space-between;
+    }
+    .footer-links-section {
+        width: calculate-rem(210);
+        li, h4 {
+            font-size: calculate-rem(14);
+        }
     }
 }
 
@@ -289,11 +297,11 @@
     }
     .footer-links {
         font-size: 18px;
-        
-        h4, li {
+
+        h4,
+        li {
             font-size: 18px;
         }
-
     }
 }
 

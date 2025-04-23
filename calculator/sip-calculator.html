@@ -46,19 +46,16 @@
                     investments.
                 </p>
             </div>
-            <div class="calculator-card">
+            <div class="calculator-card sip-calculator">
                 <img src="../assets/card-edge-image.svg" alt="edge-image" />
                 <img src="../assets/card-edge-image.svg" alt="edge-image" />
+
+                <div class="toggler">
+                    <span class="sip-span active" id="sip-span">SIP</span>
+                    <span class="lumpsum-span" id="lumpsum-span">Lumpsum</span>
+                </div>
                 <div class="calculator-card-contents">
                     <div>
-                        <div class="toggler">
-                            <span class="sip-span active" id="sip-span"
-                                >SIP</span
-                            >
-                            <span class="lumpsum-span" id="lumpsum-span"
-                                >Lumpsum</span
-                            >
-                        </div>
                         <div class="sip-content">
                             <div class="cal-content">
                                 <label>Monthly Investment</label>
@@ -103,6 +100,22 @@
                             step="1"
                             value="5"
                         />
+
+                        <div class="cal-content">
+                            <label>Expected return(p.a.)</label>
+                            <span id="return-slider-value">12%</span>
+                        </div>
+                        <input
+                            type="range"
+                            id="return-slider"
+                            min="1"
+                            max="30"
+                            step="1"
+                            value="12"
+                        />
+                    </div>
+
+                    <div>
                         <div class="graph-container">
                             <div class="graph"></div>
                             <div class="legend">
@@ -122,21 +135,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="cal-content">
-                            <label>Expected return(p.a.)</label>
-                            <span id="return-slider-value">12%</span>
-                        </div>
-                        <input
-                            class="margin-bottom-100"
-                            type="range"
-                            id="return-slider"
-                            min="1"
-                            max="30"
-                            step="1"
-                            value="12"
-                        />
+
                         <div class="cal-content result">
                             <label>Invested Amt</label>
                             <span id="invested-amt">Rs.46,36,567</span>
@@ -150,8 +149,6 @@
                             <label>Total Value</label>
                             <span id="total-value">Rs.59,85,385</span>
                         </div>
-
-                        <a href="">Invest Now</a>
                     </div>
                 </div>
             </div>
@@ -162,20 +159,16 @@
                     <li>
                         Set the investment period and expected returns rate.
                     </li>
-                    <li>
-                        View accumulated corpus and returns.
-                    </li>
+                    <li>View accumulated corpus and returns.</li>
                 </ul>
 
                 <h1>Formula</h1>
-                <p> FV = P × [((1 + r)^n - 1) / r] × (1 + r)</p>
+                <p>FV = P × [((1 + r)^n - 1) / r] × (1 + r)</p>
 
                 <table>
                     <tr>
                         <td>FV (Future Value):</td>
-                        <td>
-                            The accumulated amount after investing via SIP.
-                        </td>
+                        <td>The accumulated amount after investing via SIP.</td>
                     </tr>
                     <tr>
                         <td>P :</td>
@@ -183,11 +176,17 @@
                     </tr>
                     <tr>
                         <td>r :</td>
-                        <td>Expected monthly return rate (annual rate divided by 12).</td>
+                        <td>
+                            Expected monthly return rate (annual rate divided by
+                            12).
+                        </td>
                     </tr>
                     <tr>
                         <td>n :</td>
-                        <td>Total number of monthly installments (years multiplied by 12).</td>
+                        <td>
+                            Total number of monthly installments (years
+                            multiplied by 12).
+                        </td>
                     </tr>
                 </table>
 
@@ -246,9 +245,7 @@
 
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span
-                                >Is SIP safe?
-                            </span>
+                            <span>Is SIP safe? </span>
                             <span class="arrow"
                                 ><img src="../assets/Frame 877 (1).png"
                             /></span>
@@ -286,7 +283,7 @@
         </div>
 
         <div class="blur-effect display-none"></div>
-        
+
         <footer
             style="
                 background-color: #cec3fe;
@@ -311,6 +308,7 @@
                         class="footer-logo-wrapper"
                         style="
                             display: flex;
+                            flex-wrap: wrap;
                             align-items: center;
                             margin-top: 20px;
                         "
@@ -339,156 +337,193 @@
 
                     <div class="desktop-footer">
                         <div class="footer-methodologies">
-                        <div>
-                            <h4
-                                class="social-media"
-                                style="font-size: 15px; font-weight: bold"
-                            >
-                                Find us on social media:
-                            </h4>
+                            <div>
+                                <h4
+                                    class="social-media"
+                                    style="font-size: 15px; font-weight: bold"
+                                >
+                                    Find us on social media:
+                                </h4>
+                                <div
+                                    class="footer-icons"
+                                    style="display: flex; gap: 15px"
+                                >
+                                    <a
+                                        href="https://www.instagram.com/labh.io/"
+                                    >
+                                        <img
+                                            class="insta-link"
+                                            src="../assets/instagram.png"
+                                            alt="Instagram"
+                                            style="
+                                                width: 60px;
+                                                height: 57px;
+                                                margin-top: 2px;
+                                            "
+                                        />
+                                    </a>
+                                    <a
+                                        href="https://in.linkedin.com/company/labh-io"
+                                    >
+                                        <img
+                                            class="linkedin-link"
+                                            src="../assets/linkedin.png"
+                                            alt="LinkedIn"
+                                            style="width: 70px; height: 65px"
+                                        />
+                                    </a>
+                                    <a
+                                        href="https://www.facebook.com/people/Labh/61565477967568/"
+                                    >
+                                        <img
+                                            class="facebook-link"
+                                            src="../assets/facebook.png"
+                                            alt="Facebook"
+                                            style="width: 70px; height: 65px"
+                                        />
+                                    </a>
+                                    <a href="https://x.com/labh_io">
+                                        <img
+                                            class="x-link"
+                                            src="../assets/x.png"
+                                            alt="X"
+                                            style="
+                                                width: 60px;
+                                                height: 52px;
+                                                margin-top: 7px;
+                                            "
+                                        />
+                                    </a>
+                                </div>
+                            </div>
                             <div
-                                class="footer-icons"
-                                style="display: flex; gap: 15px"
+                                class="footer-contact-us-wrapper"
+                                style="display: flex"
                             >
-                                <a href="https://www.instagram.com/labh.io/">
-                                    <img
-                                        class="insta-link"
-                                        src="../assets/instagram.png"
-                                        alt="Instagram"
+                                <div style="flex: 1">
+                                    <strong
+                                        class="contact-us-footer"
                                         style="
-                                            width: 60px;
-                                            height: 57px;
-                                            margin-top: 2px;
+                                            font-size: 24px;
+                                            font-weight: bold;
+                                            margin-bottom: 20px;
                                         "
-                                    />
-                                </a>
-                                <a href="https://in.linkedin.com/company/labh-io">
-                                    <img
-                                        class="linkedin-link"
-                                        src="../assets/linkedin.png"
-                                        alt="LinkedIn"
-                                        style="width: 70px; height: 65px"
-                                    />
-                                </a>
-                                <a
-                                    href="https://www.facebook.com/people/Labh/61565477967568/"
-                                >
-                                    <img
-                                        class="facebook-link"
-                                        src="../assets/facebook.png"
-                                        alt="Facebook"
-                                        style="width: 70px; height: 65px"
-                                    />
-                                </a>
-                                <a href="https://x.com/labh_io">
-                                    <img
-                                        class="x-link"
-                                        src="../assets/x.png"
-                                        alt="X"
+                                        >Contact us on:</strong
+                                    >
+                                    <p
+                                        class="support-email"
                                         style="
-                                            width: 60px;
-                                            height: 52px;
-                                            margin-top: 7px;
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 10px;
+                                            font-size: 23px;
                                         "
-                                    />
-                                </a>
+                                    >
+                                        <img
+                                            src="../assets/mail.png"
+                                            alt="Email"
+                                            style="width: 75px; height: 75px"
+                                        />
+                                        support@labh.io
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div
-                            class="footer-contact-us-wrapper"
-                            style="
-                                display: flex;
-                            "
-                        >
-                            <div style="flex: 1">
-                                <strong
-                                    class="contact-us-footer"
-                                    style="
-                                        font-size: 24px;
-                                        font-weight: bold;
-                                        margin-bottom: 20px;
-                                    "
-                                    >Contact us on:</strong
-                                >
-                                <p
-                                    class="support-email"
-                                    style="
-                                        display: flex;
-                                        align-items: center;
-                                        gap: 10px;
-                                        font-size: 23px;
-                                    "
-                                >
-                                    <img
-                                        src="../assets/mail.png"
-                                        alt="Email"
-                                        style="width: 75px; height: 75px"
-                                    />
-                                    support@labh.io
-                                </p>
+                        <div class="footer-links">
+                            <div class="footer-links-section">
+                                <h4>Top Picks</h4>
+                                <ul>
+                                    <li><a href="">Mutual Funds</a></li>
+                                    <li><a href="">New Fund Offers</a></li>
+                                    <li><a href="">Systematic Plans</a></li>
+                                    <li>
+                                        <a href=""
+                                            >Tax-Saving Investment Funds</a
+                                        >
+                                    </li>
+                                    <li><a href="">Top AMC's</a></li>
+                                    <li><a href="">Market Indices</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-links-section">
+                                <h4>Know us</h4>
+                                <ul>
+                                    <li><a href="">Home</a></li>
+                                    <li><a href="">Who are we</a></li>
+                                    <li><a href="">Why labh</a></li>
+                                    <li><a href="">Our mission & Vision</a></li>
+                                    <li><a href="">Experts behind Labh</a></li>
+                                    <li>
+                                        <a href=""
+                                            >Regulatory Compliance &
+                                            Certifications</a
+                                        >
+                                    </li>
+                                    <li><a href="">Beta</a></li>
+                                    <li><a href="">Contact Us</a></li>
+                                    <li><a href="">Support</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-links-section">
+                                <h4>Investor's toolkit</h4>
+                                <ul>
+                                    <li>
+                                        <a href="">Retirement calculator</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Education fees calculator</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Sip returns calculator</a>
+                                    </li>
+                                    <li>
+                                        <a href=""
+                                            >Fixed deposit return calculator</a
+                                        >
+                                    </li>
+                                    <li><a href="">Lumpsum calculator</a></li>
+                                    <li><a href="">PF calculator</a></li>
+                                    <li><a href="">NPS calculator</a></li>
+                                    <li>
+                                        <a href="">Personal Loan calculator</a>
+                                    </li>
+                                    <li>
+                                        <a href=""
+                                            >Credit card debt calculator</a
+                                        >
+                                    </li>
+                                    <li><a href="">Car loan calculator</a></li>
+                                    <li><a href="">Bike cost calculator</a></li>
+                                    <li><a href="">House calculator</a></li>
+                                    <li>
+                                        <a href="">Sip step up calculator</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer-links-section">
+                                <h4>Labh Digest</h4>
+                                <ul>
+                                    <li>
+                                        <a href=""
+                                            >Labh Blogs & Market Insights</a
+                                        >
+                                    </li>
+                                    <li><a href="">Mutual Fund Basics</a></li>
+                                    <li>
+                                        <a href="">Investment Strategies</a>
+                                    </li>
+                                    <li><a href="">Glossary</a></li>
+                                    <li>
+                                        <a href="">Fin tech News letters</a>
+                                    </li>
+                                    <li><a href="">Disclaimer</a></li>
+                                    <li><a href="">Policy</a></li>
+                                    <li><a href="">Terms and conditions</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="footer-links">
-                        <div class="footer-links-section">
-                            <h4>Top Picks</h4>
-                            <ul>
-                                <li><a href="">Mutual Funds</a></li>
-                                <li><a href="">New Fund Offers</a></li>
-                                <li><a href="">Systematic Plans</a></li>
-                                <li><a href="">Tax-Saving Investment Funds</a></li>
-                                <li><a href="">Top AMC's</a></li>
-                                <li><a href="">Market Indices</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-links-section">
-                            <h4>Know us</h4>
-                            <ul>
-                                <li><a href="">Home</a></li>
-                                <li><a href="">Who are we</a></li>
-                                <li><a href="">Why labh</a></li>
-                                <li><a href="">Our mission & Vision</a></li>
-                                <li><a href="">Experts behind Labh</a></li>
-                                <li><a href="">Regulatory Compliance & Certifications</a></li>
-                                <li><a href="">Beta</a></li>
-                                <li><a href="">Contact Us</a></li>
-                                <li><a href="">Support</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-links-section">
-                            <h4>Investor's toolkit</h4>
-                            <ul>
-                                <li><a href="">Retirement calculator</a></li>
-                                <li><a href="">Education fees calculator</a></li>
-                                <li><a href="">Sip returns calculator</a></li>
-                                <li><a href="">Fixed deposit return calculator</a></li>
-                                <li><a href="">Lumpsum calculator</a></li>
-                                <li><a href="">PF calculator</a></li>
-                                <li><a href="">NPS calculator</a></li>
-                                <li><a href="">Personal Loan calculator</a></li>
-                                <li><a href="">Credit card debt calculator</a></li>
-                                <li><a href="">Car loan calculator</a></li>
-                                <li><a href="">Bike cost calculator</a></li>
-                                <li><a href="">House calculator</a></li>
-                                <li><a href="">Sip step up calculator</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-links-section">
-                            <h4>Labh Digest</h4>
-                            <ul>
-                                <li><a href="">Labh Blogs & Market Insights</a></li>
-                                <li><a href="">Mutual Fund Basics</a></li>
-                                <li><a href="">Investment Strategies</a></li>
-                                <li><a href="">Glossary</a></li>
-                                <li><a href="">Fin tech News letters</a></li>
-                                <li><a href="">Disclaimer</a></li>
-                                <li><a href="">Policy</a></li>
-                                <li><a href="">Terms and conditions</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    </div>
-                    
+
                     <br /><br /><br />
                 </div>
             </div>
