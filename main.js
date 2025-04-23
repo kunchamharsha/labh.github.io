@@ -105,3 +105,11 @@ if (window.location.pathname != "/calculator/") {
         }
     });
 }
+
+$(".faq-question").click(function () {
+    var $item = $(this).closest(".faq-item");
+
+    $(".faq-item").not($item).removeClass("open");
+
+    $item.toggleClass("open");
+});
