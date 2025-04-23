@@ -1,0 +1,278 @@
+---
+layout: calculator-base.njk
+title: Credit Card Debit Calculator
+menu: '
+    <li>⦿</li>
+    <li><a href="index.html">Calculator</a></li>
+    <li><a href="#" class="active">Credit Card Debit Calculator</a></li>
+'
+---
+
+<div class="main-container">
+    <div class="contents">
+        <h1>Credit Card Debit Calculator</h1>
+        <p>Calculate EMIs and total payable interest on credit card dues.</p>
+    </div>
+    <div class="calculator-card pf-calculator">
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <div class="calculator-card-contents">
+            <div>
+                <div class="cal-content">
+                    <label>Transaction Amount</label>
+                    <span id="loan-slider-value">Rs.10,000</span>
+                </div>
+                <div class="input-limits">
+                    <div>1 Lac</div>
+                    <div>1 Crore</div>
+                </div>
+                <input
+                    type="range"
+                    id="loan-slider"
+                    min="100000"
+                    max="10000000"
+                    step="100000"
+                    value="200000"
+                />
+
+                <div class="cal-content">
+                    <label>Illustrative Interest Rate (p.a)*</label>
+                    <span id="interest-slider-value">10%</span>
+                </div>
+                <div class="input-limits">
+                    <div>1%</div>
+                    <div>30%</div>
+                </div>
+                <input
+                    type="range"
+                    id="interest-slider"
+                    min="1"
+                    max="30"
+                    step="1"
+                    value="10"
+                />
+
+                <div class="cal-content">
+                    <label>Loan Tenure(Months)</label>
+                    <span id="tenure-slider-value">23</span>
+                </div>
+                <div class="input-limits">
+                    <div>12</div>
+                    <div>120</div>
+                </div>
+                <input
+                    type="range"
+                    id="tenure-slider"
+                    min="12"
+                    max="120"
+                    step="1"
+                    value="23"
+                />
+            </div>
+            <div>
+                <div class="cal-content result">
+                    <label>Monthly EMI</label>
+                    <span id="monthly-emi" class="total">Rs.16,334</span>
+                </div>
+
+                <div class="cal-content result">
+                    <label>Total Interest Payable</label>
+                    <span id="interest">Rs.88,019</span>
+                </div>
+
+                <div class="cal-content result">
+                    <label>Total Amount Payable</label>
+                    <span id="total-amount">Rs.5,88,019</span>
+                </div>
+                <a href="">Invest Now</a>
+            </div>
+        </div>
+    </div>
+    <div class="guide">
+        <h2>How to Use?</h2>
+        <ul>
+            <li>
+                Input outstanding amount, interest rate, and repayment duration.
+            </li>
+            <li>View EMI and interest payable.</li>
+        </ul>
+
+        <h2>Formula</h2>
+        <p class="formula">
+            EMI = [Outstanding × r × (1 + r)^n] / [(1 + r)^n – 1]
+        </p>
+        <table>
+            <tr>
+                <td>EMI (Equated Monthly Installment)</td>
+                <td>The fixed monthly repayment amount.</td>
+            </tr>
+            <tr>
+                <td>Outstanding</td>
+                <td>The total amount currently due or owed.</td>
+            </tr>
+            <tr>
+                <td>r</td>
+                <td>
+                    Monthly interest rate (annual interest rate divided by 12).
+                </td>
+            </tr>
+            <tr>
+                <td>n</td>
+                <td>
+                    Total number of monthly installments (loan tenure in months)
+                </td>
+            </tr>
+        </table>
+        <h2>Advantages</h2>
+        <ul>
+            <li>Helps in quick debt repayment</li>
+            <li>Clear interest payment understanding</li>
+            <li>Financial discipline encouragement</li>
+            <li>Effective debt management</li>
+        </ul>
+        <h2>FAQ's</h2>
+
+        <div class="faq-container" style="background-color: transparent">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do I reduce credit card debt? </span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Labh is a research team that builds custom groups of
+                            mutual funds, designed to grow your money based on
+                            how much risk you’re comfortable taking. We do the
+                            research so you can invest with confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is it wise to pay EMI on credit cards? </span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Labh is a research team that builds custom groups of
+                            mutual funds, designed to grow your money based on
+                            how much risk you’re comfortable taking. We do the
+                            research so you can invest with confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can EMIs impact my credit score? </span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Labh is a research team that builds custom groups of
+                            mutual funds, designed to grow your money based on
+                            how much risk you’re comfortable taking. We do the
+                            research so you can invest with confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="moblie-search-bar-container">
+        <div
+            id="search-results"
+            class="cards display-none margin-bottom-none"
+        ></div>
+        <div class="black-container">
+            <div class="mobile-search-bar">
+                <input
+                    type="text"
+                    placeholder="Search for Calculator"
+                    id="search2"
+                />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="blur-effect display-none"></div>
+
+<script>
+    function calculateEMI(principal, annualInterestRate, tenureInMonths) {
+        let monthlyInterestRate = annualInterestRate / (12 * 100);
+        let emi =
+            (principal *
+                monthlyInterestRate *
+                Math.pow(1 + monthlyInterestRate, tenureInMonths)) /
+            (Math.pow(1 + monthlyInterestRate, tenureInMonths) - 1);
+        return emi.toFixed(2);
+    }
+
+    function updateValues() {
+        const loanAmount = $("#loan-slider").val();
+        const interest = $("#interest-slider").val();
+        const tenure = $("#tenure-slider").val();
+
+        const emi = calculateEMI(loanAmount, interest, tenure);
+
+        const totalPayable = emi * tenure;
+        const interestAmount = totalPayable - loanAmount;
+
+        $("#monthly-emi").text(`Rs.${parseInt(emi).toLocaleString("en-IN")}`);
+        $("#principal-amount").text(`Rs.${loanAmount.toLocaleString("en-IN")}`);
+        $("#interest").text(
+            `Rs.${parseInt(interestAmount).toLocaleString("en-IN")}`
+        );
+        $("#total-amount").text(
+            `Rs.${parseInt(totalPayable).toLocaleString("en-IN")}`
+        );
+    }
+
+    $(document).ready(function () {
+        function updateSliderBackground(slider) {
+            if (slider.id == "loan-slider") {
+                $(`#${slider.id}-value`).text(
+                    `Rs.${parseInt(slider.value).toLocaleString("en-IN")}`
+                );
+            } else if (
+                slider.id == "interest-slider" ||
+                slider.id == "tenure-slider"
+            ) {
+                $(`#${slider.id}-value`).text(`${slider.value} %`);
+            } else if (slider.id == "age-slider") {
+                $(`#${slider.id}-value`).text(`${slider.value} Years`);
+            }
+
+            const value =
+                ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+            $(slider).css(
+                "background",
+                `linear-gradient(to right, #9b5de5 ${value}%, #d3bfff ${value}%)`
+            );
+        }
+
+        $("#loan-slider, #interest-slider, #tenure-slider")
+            .each(function () {
+                updateSliderBackground(this);
+                updateValues();
+            })
+            .on("input", function () {
+                updateSliderBackground(this);
+                updateValues();
+            });
+    });
+</script>
