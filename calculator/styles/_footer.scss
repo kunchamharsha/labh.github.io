@@ -18,6 +18,8 @@
 
 .footer-methodologies li {
     font-size: 20px !important;
+    display: flex;
+    margin-top: 60px;
 }
 
 .footer-icon {
@@ -27,6 +29,45 @@
 
 .footer-company a:hover {
     text-decoration: underline !important;
+}
+
+.footer-contact-us-wrapper {
+    margin-left: 60px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-links h4 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+
+.footer-links-section {
+    width: 260px;
+}
+
+.footer-links-section ul {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links-section li {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 8px;
 }
 
 @media (min-width: 0px) and (max-width: 480px) {
@@ -62,9 +103,6 @@
     }
     .footer-logo {
         font-size: 16px !important;
-    }
-    .desktop-footer {
-        display: none !important;
     }
     .company-address {
         font-size: 14px;
@@ -168,9 +206,6 @@
     }
     .footer-logo {
         font-size: 16px !important;
-    }
-    .desktop-footer {
-        display: none !important;
     }
     .company-address {
         font-size: 18px;
@@ -276,9 +311,6 @@
     .footer-logo {
         font-size: 16px !important;
     }
-    .desktop-footer {
-        display: none !important;
-    }
     .company-address {
         font-size: 24px;
         line-height: 32px;
@@ -353,11 +385,5 @@
     .footer-icon {
         width: 322px !important;
         height: 94px !important;
-    }
-}
-
-@media (min-width: 1024px) {
-    .mobile-footer {
-        display: none !important;
     }
 }

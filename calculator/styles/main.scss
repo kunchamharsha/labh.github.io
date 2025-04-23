@@ -476,6 +476,10 @@ body {
     }
 }
 
+.fixed-deposit-calculator {
+    height: calculate-rem(705);
+}
+
 .guide {
     font-size: calculate-rem(32);
     h1 {

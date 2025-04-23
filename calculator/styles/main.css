@@ -510,6 +510,10 @@ nav {
   padding-bottom: 0.25rem;
 }
 
+.fixed-deposit-calculator {
+  height: 44.0625rem;
+}
+
 .guide {
   font-size: 2rem;
 }
@@ -689,6 +693,8 @@ nav {
 
 .footer-methodologies li {
   font-size: 20px !important;
+  display: flex;
+  margin-top: 60px;
 }
 
 .footer-icon {
@@ -698,6 +704,45 @@ nav {
 
 .footer-company a:hover {
   text-decoration: underline !important;
+}
+
+.footer-contact-us-wrapper {
+  margin-left: 60px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-links h4 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: 60px;
+}
+
+.footer-links-section {
+  width: 260px;
+}
+
+.footer-links-section ul {
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links-section li {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 8px;
 }
 
 @media (min-width: 0px) and (max-width: 480px) {
@@ -733,9 +778,6 @@ nav {
   }
   .footer-logo {
     font-size: 16px !important;
-  }
-  .desktop-footer {
-    display: none !important;
   }
   .company-address {
     font-size: 14px;
@@ -838,9 +880,6 @@ nav {
   }
   .footer-logo {
     font-size: 16px !important;
-  }
-  .desktop-footer {
-    display: none !important;
   }
   .company-address {
     font-size: 18px;
@@ -945,9 +984,6 @@ nav {
   .footer-logo {
     font-size: 16px !important;
   }
-  .desktop-footer {
-    display: none !important;
-  }
   .company-address {
     font-size: 24px;
     line-height: 32px;
@@ -1021,11 +1057,6 @@ nav {
   .footer-icon {
     width: 322px !important;
     height: 94px !important;
-  }
-}
-@media (min-width: 1024px) {
-  .mobile-footer {
-    display: none !important;
   }
 }
 @media (min-width: 0px) and (max-width: 480px) {
@@ -1187,6 +1218,9 @@ nav {
   .calculator-card .graph-container {
     margin-bottom: 2rem;
   }
+  .calculator-card .cal-content {
+    width: auto;
+  }
   .calculator-card-contents {
     display: block;
   }
@@ -1199,9 +1233,6 @@ nav {
   }
   .calculator-card-contents .box-result .amount {
     font-size: 1.75rem;
-  }
-  .cal-content {
-    width: auto;
   }
 }
 @media (min-width: 0px) and (max-width: 1023px) {
