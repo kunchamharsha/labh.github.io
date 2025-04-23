@@ -132,12 +132,17 @@ nav {
   margin-top: 2.5rem;
   margin-bottom: 5rem;
 }
-.main-container h1 {
-  font-size: 3rem;
+.main-container h1, .main-container h2 {
   font-weight: 700;
   background: linear-gradient(148.3deg, #e5d4fe 4.55%, #ffffff 52.27%, #e8dff4 95.45%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.main-container h1 {
+  font-size: 3rem;
+}
+.main-container h2 {
+  font-size: 2rem;
 }
 
 .contents p {
@@ -552,10 +557,14 @@ nav {
   margin-top: 2rem;
 }
 
+.pf-calculator .calculator-card-contents .box-result {
+  width: 23.4375rem;
+}
+
 .guide {
   font-size: 1.75rem;
 }
-.guide h1 {
+.guide h2 {
   margin-bottom: 2.5rem;
 }
 .guide ul {
@@ -576,6 +585,9 @@ nav {
 .guide li {
   color: #fcfcfc;
   opacity: 80%;
+}
+.guide .formula {
+  color: #CECBFF;
 }
 
 #faq {

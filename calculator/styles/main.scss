@@ -17,8 +17,7 @@ body {
     margin-top: calculate-rem(40);
     margin-bottom: calculate-rem(80);
 
-    h1 {
-        font-size: calculate-rem(48);
+    h1, h2 {
         font-weight: 700;
         background: linear-gradient(
             148.3deg,
@@ -28,6 +27,14 @@ body {
         );
         background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+
+    h1 {
+        font-size: calculate-rem(48);
+    }
+
+    h2 {
+        font-size: calculate-rem(32);
     }
 }
 
@@ -508,9 +515,9 @@ body {
 
 .fixed-deposit-calculator {
     height: calculate-rem(705);
-        .graph-container {
-            margin-bottom: calculate-rem(32);
-        }
+    .graph-container {
+        margin-bottom: calculate-rem(32);
+    }
     .graph {
         width: calculate-rem(152);
         height: calculate-rem(152);
@@ -521,14 +528,23 @@ body {
         height: calculate-rem(106);
     }
 
-        input[type="range"] {
-            margin-top: calculate-rem(32);
+    input[type="range"] {
+        margin-top: calculate-rem(32);
+    }
+}
+
+.pf-calculator {
+    .calculator-card-contents {
+        .box-result {
+            width: calculate-rem(375);
         }
+    }
 }
 
 .guide {
     font-size: calculate-rem(28);
-    h1 {
+
+    h2 {
         margin-bottom: calculate-rem(40);
     }
 
@@ -553,6 +569,10 @@ body {
     li {
         color: #fcfcfc;
         opacity: 80%;
+    }
+
+    .formula {
+        color: #CECBFF;
     }
 }
 

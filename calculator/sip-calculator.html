@@ -153,7 +153,7 @@
                 </div>
             </div>
             <div class="guide">
-                <h1>How to Use?</h1>
+                <h2>How to Use?</h2>
                 <ul>
                     <li>Enter your monthly investment amount.</li>
                     <li>
@@ -162,8 +162,8 @@
                     <li>View accumulated corpus and returns.</li>
                 </ul>
 
-                <h1>Formula</h1>
-                <p>FV = P × [((1 + r)^n - 1) / r] × (1 + r)</p>
+                <h2>Formula</h2>
+                <p class="formula">FV = P × [((1 + r)^n - 1) / r] × (1 + r)</p>
 
                 <table>
                     <tr>
@@ -190,14 +190,14 @@
                     </tr>
                 </table>
 
-                <h1>Advantages</h1>
+                <h2>Advantages</h2>
                 <ul>
                     <li>Encourages disciplined investing</li>
                     <li>Provides expected growth clarity</li>
                     <li>Easy comparison of returns</li>
                     <li>Tailored investment planning</li>
                 </ul>
-                <h1>FAQ's</h1>
+                <h2>FAQ's</h2>
 
                 <div
                     class="faq-container"
@@ -329,6 +329,8 @@
                                 href="https://www.amfiindia.com/locate-your-nearest-mutual-fund-distributor-details"
                                 >here.</a
                             ><br />
+                        </p>
+                        <p class="company-address">
                             <strong>Address: </strong>Forty2 Enterprises,Andhra
                             University Incubation council, Maddilapalem,
                             Visakhapatnam, Andhra Pradesh - 530040
@@ -645,9 +647,15 @@
             $("#invested-amt").text(
                 `Rs.${investedAmount.toLocaleString("en-IN")}`
             );
-            $("#est-returns").text(`Rs.${returns.toLocaleString("en-IN")}`);
+            $("#est-returns").text(
+                `Rs.${returns.toLocaleString("en-IN", {
+                    maximumFractionDigits: 0,
+                })}`
+            );
             $("#total-value").text(
-                `Rs.${parseFloat(totalReturns).toLocaleString("en-IN")}`
+                `Rs.${parseFloat(totalReturns).toLocaleString("en-IN", {
+                    maximumFractionDigits: 0,
+                })}`
             );
             const returnsPercentage = (returns / investedAmount) * 100;
             updateChart(returnsPercentage);
