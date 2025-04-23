@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="styles/main.css" />
+        <title>Smart Investment Calculator</title>
+    </head>
+    <body>
+        <nav>
+            <div class="logo-container">
+                <img src="../assets/LOGO.png" alt="logo" />
+                <span>Labh</span>
+            </div>
+            <div class="search-bar-container">
+                <div class="search-bar">
+                    <input
+                        type="text"
+                        placeholder="Search for Calculator"
+                        id="search"
+                    />
+                </div>
+                <a href="http://api.labh.io/get-app/">Download Now</a>
+            </div>
+        </nav>
+        <hr class="nav-hr" />
+        <div class="menu-bar">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#" class="active">Calculator</a></li>
+            </ul>
+        </div>
+        <div class="main-container">
+            <div class="contents">
+                <h1>Smart Investment Calculator</h1>
+                <p>
+                    Make informed decisions with real-time insights on returns,
+                    risks, and optimal investment strategies.
+                </p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img
+                        src="../assets/calculator-arrow.svg"
+                        alt="calculator-arrow"
+                    />
+                    <div class="card-heading">Retirement calculator</div>
+                    <div class="card-description">
+                        Estimate your savings for a secure retirement.
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img
+                        src="../assets/calculator-arrow.svg"
+                        alt="calculator-arrow"
+                    />
+                    <div class="card-heading">Education fees calculator</div>
+                    <div class="card-description">
+                        Plan for your child’s education costs.
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img
+                        src="../assets/calculator-arrow.svg"
+                        alt="calculator-arrow"
+                    />
+                    <div class="card-heading">SIP returns calculator</div>
+                    <div class="card-description">
+                        Estimate Your Investment Growth.
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img
+                        src="../assets/calculator-arrow.svg"
+                        alt="calculator-arrow"
+                    />
+                    <div class="card-heading">
+                        Fixed deposit return calculator
+                    </div>
+                    <div class="card-description">
+                        Calculate Your Fixed Deposit Growth.
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img
+                        src="../assets/calculator-arrow.svg"
+                        alt="calculator-arrow"
+                    />
+                    <div class="card-heading">Lumpsum calculator</div>
+                    <div class="card-description">
+                        Estimate Your Investment Returns.
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img
+                        src="../assets/calculator-arrow.svg"
+                        alt="calculator-arrow"
+                    />
+                    <div class="card-heading">PF calculators</div>
+                    <div class="card-description">Estimate Your PF Growth.</div>
+                </div>
+                <div class="card">
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img
+                        src="../assets/calculator-arrow.svg"
+                        alt="calculator-arrow"
+                    />
+                    <div class="card-heading">NPS calculator</div>
+                    <div class="card-description">
+                        Plan Your Retirement Savings.
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img
+                        src="../assets/calculator-arrow.svg"
+                        alt="calculator-arrow"
+                    />
+                    <div class="card-heading">Personal loan calculator</div>
+                    <div class="card-description">Calculate Your Loan EMI.</div>
+                </div>
+                <div class="card">
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img
+                        src="../assets/calculator-arrow.svg"
+                        alt="calculator-arrow"
+                    />
+                    <div class="card-heading">
+                        Credit card debt calculator calculator
+                    </div>
+                    <div class="card-description">
+                        Manage Your Debt Smartly.
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img
+                        src="../assets/calculator-arrow.svg"
+                        alt="calculator-arrow"
+                    />
+                    <div class="card-heading">Car loan calculator</div>
+                    <div class="card-description">
+                        Estimate Your Monthly EMI.
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img
+                        src="../assets/calculator-arrow.svg"
+                        alt="calculator-arrow"
+                    />
+                    <div class="card-heading">Bike cost calculator</div>
+                    <div class="card-description">
+                        Estimate Your Total Bike Expense.
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img
+                        src="../assets/calculator-arrow.svg"
+                        alt="calculator-arrow"
+                    />
+                    <div class="card-heading">House calculator</div>
+                    <div class="card-description">
+                        Estimate Your Home Investment.
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img src="../assets/card-edge-image.svg" alt="edge-image" />
+                    <img
+                        src="../assets/calculator-arrow.svg"
+                        alt="calculator-arrow"
+                    />
+                    <div class="card-heading">Sip step up calculator</div>
+                    <div class="card-description">
+                        Grow Your Investments with Incremental SIPs.
+                    </div>
+                </div>
+            </div>
+            <div class="moblie-search-bar-container">
+                <div class="black-container">
+                    <div class="mobile-search-bar">
+                        <input
+                            type="text"
+                            placeholder="Search for Calculator"
+                            id="search2"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer
+            style="
+                background-color: #cec3fe;
+                font-family: Arial, sans-serif;
+                color: #000;
+            "
+        >
+            <div
+                class="footercontainer"
+                style="
+                    padding: 20px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    margin-left: 24px;
+                    margin-bottom: -30px;
+                "
+            >
+                <!-- Left Section -->
+                <div style="flex: 1; min-width: 250px; margin-bottom: 20px">
+                    <div
+                        class="footer-logo-wrapper"
+                        style="
+                            display: flex;
+                            align-items: center;
+                            margin-top: 20px;
+                        "
+                    >
+                        <img
+                            class="footer-icon"
+                            src="../assets/Frame 2.svg"
+                            alt="Labh Logo"
+                            style="width: 60px; margin-bottom: 10px"
+                        />&nbsp;
+                    </div>
+                    <p class="company-address">
+                        Forty2 Enterprises is authorised entity registered with
+                        AMFI to sell mutual funds. AMFI License No. ARN-308230.
+                        <br />Same can be verified
+                        <a
+                            href="https://www.amfiindia.com/locate-your-nearest-mutual-fund-distributor-details"
+                            >here.</a
+                        ><br />
+                        <strong>Address: </strong>Forty2 Enterprises,Andhra
+                        University Incubation council, Maddilapalem,
+                        Visakhapatnam, Andhra Pradesh - 530040
+                    </p>
+                    <div class="mobile-footer">
+                        <div class="mobile-footer-first">
+                            <div>
+                                <h6 style="font-weight: bold; font-size: 22px">
+                                    Company
+                                </h6>
+                                <ul
+                                    class="company-services"
+                                    style="
+                                        list-style: none;
+                                        padding: 0;
+                                        margin: 0;
+                                    "
+                                >
+                                    <li>
+                                        <a
+                                            href="#"
+                                            style="
+                                                text-decoration: none;
+                                                font-size: 20px;
+                                                color: #000;
+                                                padding-top: 20px;
+                                            "
+                                            >Home</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="#aboutsection"
+                                            style="
+                                                text-decoration: none;
+                                                font-size: 20px;
+                                                color: #000;
+                                            "
+                                            >About Us</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="https://blog.labh.io"
+                                            style="
+                                                text-decoration: none;
+                                                font-size: 20px;
+                                                color: #000;
+                                            "
+                                            >Methodologies</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="https://tawk.to/labh"
+                                            style="
+                                                text-decoration: none;
+                                                font-size: 20px;
+                                                color: #000;
+                                            "
+                                            >Contact Us</a
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                            <div style="margin-left: 50px">
+                                <strong style="display: block; font-size: 22px"
+                                    >Explore Our Blogs</strong
+                                >
+                                <ul
+                                    style="
+                                        list-style: none;
+                                        padding: 0;
+                                        margin: 0;
+                                    "
+                                >
+                                    <li
+                                        style="display: block; margin-top: 10px"
+                                    >
+                                        <a
+                                            href="https://blog.labh.io/2024/06/funding-education-for-your-kids-with.html"
+                                            >Mutual Funds for Your Child’s
+                                            Future</a
+                                        >
+                                    </li>
+                                    <li style="margin-top: 10px">
+                                        <a
+                                            href="https://blog.labh.io/2024/11/Top%2010%20mutual%20funds%20to%20invest%20in%20India%202024.html"
+                                            >Best Mutual Funds to Invest</a
+                                        >
+                                    </li>
+                                    <li style="margin-top: 10px">
+                                        <a
+                                            href="https://blog.labh.io/2024/07/comprehensive-financial-planning-guide_4.html"
+                                            >A Complete Financial Planning
+                                            Guide</a
+                                        >
+                                    </li>
+                                    <li style="margin-top: 10px">
+                                        <a href="https://blog.labh.io/"
+                                            >Read More</a
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div
+                            style="margin-top: 10px"
+                            class="mobile-footer-second"
+                        >
+                            <h4
+                                class="social-media"
+                                style="font-size: 15px; font-weight: bold"
+                            >
+                                Find us on social media:
+                            </h4>
+                            <div
+                                class="footer-icons"
+                                style="display: flex; gap: 15px"
+                            >
+                                <a href="https://www.instagram.com/labh.io/">
+                                    <img
+                                        class="insta-link"
+                                        src="../assets/instagram.png"
+                                        alt="Instagram"
+                                        style="
+                                            width: 60px;
+                                            height: 57px;
+                                            margin-top: 2px;
+                                        "
+                                    />
+                                </a>
+                                <a
+                                    href="https://in.linkedin.com/company/labh-io"
+                                >
+                                    <img
+                                        class="linkedin-link"
+                                        src="../assets/linkedin.png"
+                                        alt="LinkedIn"
+                                        style="width: 70px; height: 65px"
+                                    />
+                                </a>
+                                <a
+                                    href="https://www.facebook.com/people/Labh/61565477967568/"
+                                >
+                                    <img
+                                        class="facebook-link"
+                                        src="../assets/facebook.png"
+                                        alt="Facebook"
+                                        style="width: 70px; height: 65px"
+                                    />
+                                </a>
+                                <a href="https://x.com/labh_io">
+                                    <img
+                                        class="x-link"
+                                        src="../assets/x.png"
+                                        alt="X"
+                                        style="
+                                            width: 60px;
+                                            height: 52px;
+                                            margin-top: 7px;
+                                        "
+                                    />
+                                </a>
+                            </div>
+                            <div
+                                class="footer-contact-us-wrapper"
+                                style="
+                                    flex: 1;
+                                    min-width: 250px;
+                                    margin-bottom: 20px;
+                                    margin-top: 28px;
+                                    display: flex;
+                                    gap: 80px;
+                                "
+                            >
+                                <div style="flex: 1">
+                                    <strong
+                                        class="contact-us-footer"
+                                        style="
+                                            font-size: 24px;
+                                            font-weight: bold;
+                                            margin-bottom: 20px;
+                                        "
+                                        >Contact us on:</strong
+                                    >
+                                    <p
+                                        class="support-email"
+                                        style="
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 10px;
+                                            font-size: 23px;
+                                        "
+                                    >
+                                        <img
+                                            src="../assets/mail.png"
+                                            alt="Email"
+                                            style="width: 75px; height: 75px"
+                                        />
+                                        support@labh.io
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br /><br /><br />
+                </div>
+
+                <div
+                    class="desktop-footer"
+                    style="
+                        flex: 2;
+                        min-width: 250px;
+                        margin-bottom: 20px;
+                        display: flex;
+                        justify-content: space-between;
+                        margin-top: 22px;
+                        margin-right: 30px;
+                    "
+                >
+                    <div class="footer-company">
+                        <h6 style="font-weight: bold; font-size: 24px">
+                            Company
+                        </h6>
+                        <ul style="list-style: none; padding: 0; margin: 0">
+                            <li>
+                                <a
+                                    href="#"
+                                    style="
+                                        text-decoration: none;
+                                        font-size: 15px;
+                                        color: #000;
+                                        padding-top: 20px;
+                                    "
+                                    >Home</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#aboutsection"
+                                    style="
+                                        text-decoration: none;
+                                        font-size: 15px;
+                                        color: #000;
+                                    "
+                                    >About Us</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://blog.labh.io"
+                                    style="
+                                        text-decoration: none;
+                                        font-size: 15px;
+                                        color: #000;
+                                    "
+                                    >Blogs</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://tawk.to/labh"
+                                    style="
+                                        text-decoration: none;
+                                        font-size: 15px;
+                                        color: #000;
+                                    "
+                                    >Contact Us</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="margin-left: 50px" class="footer-expect">
+                        <strong style="display: block; font-size: 22px"
+                            >Explore Our Blogs</strong
+                        >
+                        <ul style="list-style: none; padding: 0; margin: 0">
+                            <li style="display: block; margin-top: 10px">
+                                <a
+                                    href="https://blog.labh.io/2024/06/funding-education-for-your-kids-with.html"
+                                    >Mutual Funds for Your Child’s Future</a
+                                >
+                            </li>
+                            <li style="margin-top: 10px">
+                                <a
+                                    href="https://blog.labh.io/2024/11/Top%2010%20mutual%20funds%20to%20invest%20in%20India%202024.html"
+                                    >Best Mutual Funds to Invest</a
+                                >
+                            </li>
+                            <li style="margin-top: 10px">
+                                <a
+                                    href="https://blog.labh.io/2024/07/comprehensive-financial-planning-guide_4.html"
+                                    >A Complete Financial Planning Guide</a
+                                >
+                            </li>
+                            <li style="margin-top: 10px">
+                                <a href="https://blog.labh.io/">Read More</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-methodologies">
+                        <h4
+                            class="social-media"
+                            style="font-size: 15px; font-weight: bold"
+                        >
+                            Find us on social media:
+                        </h4>
+                        <div
+                            class="footer-icons"
+                            style="display: flex; gap: 15px"
+                        >
+                            <a href="https://www.instagram.com/labh.io/">
+                                <img
+                                    class="insta-link"
+                                    src="../assets/instagram.png"
+                                    alt="Instagram"
+                                    style="
+                                        width: 60px;
+                                        height: 57px;
+                                        margin-top: 2px;
+                                    "
+                                />
+                            </a>
+                            <a href="https://in.linkedin.com/company/labh-io">
+                                <img
+                                    class="linkedin-link"
+                                    src="../assets/linkedin.png"
+                                    alt="LinkedIn"
+                                    style="width: 70px; height: 65px"
+                                />
+                            </a>
+                            <a
+                                href="https://www.facebook.com/people/Labh/61565477967568/"
+                            >
+                                <img
+                                    class="facebook-link"
+                                    src="../assets/facebook.png"
+                                    alt="Facebook"
+                                    style="width: 70px; height: 65px"
+                                />
+                            </a>
+                            <a href="https://x.com/labh_io">
+                                <img
+                                    class="x-link"
+                                    src="../assets/x.png"
+                                    alt="X"
+                                    style="
+                                        width: 60px;
+                                        height: 52px;
+                                        margin-top: 7px;
+                                    "
+                                />
+                            </a>
+                        </div>
+                        <div
+                            class="footer-contact-us-wrapper"
+                            style="
+                                flex: 1;
+                                min-width: 250px;
+                                margin-bottom: 20px;
+                                margin-top: 28px;
+                                display: flex;
+                                gap: 80px;
+                            "
+                        >
+                            <div style="flex: 1">
+                                <strong
+                                    class="contact-us-footer"
+                                    style="
+                                        font-size: 24px;
+                                        font-weight: bold;
+                                        margin-bottom: 20px;
+                                    "
+                                    >Contact us on:</strong
+                                >
+                                <p
+                                    class="support-email"
+                                    style="
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 10px;
+                                        font-size: 23px;
+                                    "
+                                >
+                                    <img
+                                        src="../assets/mail.png"
+                                        alt="Email"
+                                        style="width: 75px; height: 75px"
+                                    />
+                                    support@labh.io
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr
+                class="hrs"
+                style="
+                    color: rgb(223, 203, 203);
+                    margin-top: -20px;
+                    margin-bottom: 20px;
+                "
+            />
+            <div
+                style="
+                    flex: 1;
+                    display: none;
+                    justify-content: flex-end;
+                    gap: 10px;
+                    margin-bottom: 20px;
+                    margin-top: 36px;
+                    margin-right: 62px;
+                "
+            >
+                <div>
+                    <img
+                        class="get-app"
+                        src="../assets/googleplay.png"
+                        alst="Google Play"
+                        style="width: 250px"
+                    />
+                </div>
+                <div>
+                    <img
+                        class="get-app"
+                        src="../assets/applestore.png"
+                        alt="App Store"
+                        style="width: 250px"
+                    />
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+        crossorigin="anonymous"
+    ></script>
+
+    <script>
+        $(document).ready(function () {
+            let cardWidth = $(".card").width();
+
+            $(".card").hover(
+                function () {
+                    $(this)
+                        .find("img")
+                        .last()
+                        .attr("src", "../assets/calculator-arrow-hover.svg");
+                },
+                function () {
+                    $(this)
+                        .find("img")
+                        .last()
+                        .attr("src", "../assets/calculator-arrow.svg");
+                }
+            );
+
+            function search(event) {
+                const query = event.target.value.toLowerCase();
+                $(".cards").addClass("cards-grid-constant-gap"); // this is added to maintain the gap b/t cards
+                $(".card").each(function () {
+                    const cardHeading = $(this).find(".card-heading").text();
+                    const cardDescription = $(this)
+                        .find(".card-description")
+                        .text();
+                    if (
+                        cardHeading.toLowerCase().includes(query) ||
+                        cardDescription.toLowerCase().includes(query)
+                    ) {
+                        $(this).show();
+                        $(this).width(cardWidth);
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }
+
+            $("#search").on("input", search);
+            $("#search2").on("input", search);
+        });
+    </script>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('assets/login_bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container vh-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center">Login</h2>
+                        <form>
+                            <!-- HTML -->
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">+91</span>
+                                    </div>
+                                    <input type="tel" class="form-control" id="phoneNumber"
+                                        placeholder="Enter phone number">
+                                </div>
+
+                            </div>
+                            <div class="form-group" id="otp_update" style="display:none;">
+                                <p style="color:green;">OTP Sent to the number</p>
+                            </div>
+                            <button type="button" class="btn btn-dark" id="generateOtpBtn">Generate OTP</button>
+                            <div class="form-group" id="otpGroup" style="display: none;">
+                                <label for="otp">OTP</label>
+                                <input type="text" class="form-control" id="otp" placeholder="Enter OTP">
+                            </div>
+                            <div class="form-group" id="sign_in_result" style="display:none;">
+                                <p style="color:green;" id="sign_in_message"></p>
+                            </div>
+                            <button type="submit" class="btn btn-dark" id="submitBtn"
+                                style="display: none;">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/67701c0f49e2fd8dfeffe243/1ig6ur772';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        // jQuery
+        $('#generateOtpBtn').click(function () {
+            var phoneNumber = $('#phoneNumber').val();
+            // Add your logic to generate the OTP and send it to the phone number
+            console.log(phoneNumber);
+            var settings = {
+                "url": "https://staging-api.expenseyoda.com/consumer/generate_otp/",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "data": JSON.stringify({
+                    "phone_number": phoneNumber
+                }),
+            };
+
+            $.ajax(settings).done(function (response) {
+                $('#otp_update').show();
+                $('#phoneNumber').prop('readonly', true);
+                $('#otpGroup').show();
+                $('#submitBtn').show();
+                console.log(response);
+            });
+
+        });
+
+
+        $('#submitBtn').click(function (e) {
+            var otp = $('#otp').val();
+            var phoneNumber = $('#phoneNumber').val();
+
+            var settings = {
+                "url": "https://staging-api.expenseyoda.com/consumer/signin/",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "data": JSON.stringify({
+                    "phone_number": '+91' + phoneNumber,
+                    "otp": otp
+                }),
+            };
+
+            $.ajax(settings).fail(function (response) {
+                print(response);
+                $('#sign_in_result').css('color', 'red').html('Invalid OTP').show();
+                return;
+            }).done(function (response) {
+                console.log(response);
+
+                if (response.status == 'success') {
+                    if (response.access_token == null) {
+                        console.log(response)
+                        $('#sign_in_result').css('color', 'red').html('Invalid OTP').show();
+                        return;
+                    } else if (response.access_token != null && response.flag == 'signup') {
+                        var signup = {
+                            "url": "https://staging-api.expenseyoda.com/consumer/signup/",
+                            "method": "POST",
+                            "timeout": 0,
+                            "headers": {
+                                "Content-Type": "application/json"
+                            },
+                            "data": JSON.stringify({
+                                "phone_number": phoneNumber
+                            }),
+                        };
+
+                        $.ajax(signup).done(function (response) {
+                            $('#sign_in_result').css('color', 'green').html('Signed up successfully').show();
+                            var access_token = response.access_token;
+                            localStorage.setItem('jwtaccess_token', access_token);
+                            window.location.href = 'dashboard.html';
+                        });
+                    } else if (response.access_token != null && response.flag == 'signin') {
+                        $('#sign_in_result').css('color', 'green').html('Login Successful').show();
+                        var access_token = response.access_token;
+                        localStorage.setItem('jwtaccess_token', access_token);
+                        window.location.href = 'dashboard.html';
+                    }
+                }
+            });
+            e.preventDefault();
+            // Add your logic to verify the OTP
+            console.log(otp);
+        });
+    </script>
+</body>
+
+</html>

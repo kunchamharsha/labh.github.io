@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labh Wealth Management</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e0e0e0;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        .neumorphic {
+            background: #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+        }
+
+        .jumbotron {
+            background-color: #e0e0e0;
+            padding: 2rem 1rem;
+            height: 100vh;
+            padding-top: 35vh;
+            border-radius: 10px;
+            box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+        }
+
+        .team-photo {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #007bff;
+            box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+            border-radius: 50%;
+            padding: 10px;
+            background: #e0e0e0;
+        }
+
+        .footer {
+            background-color: #e0e0e0;
+            color: #333;
+            padding: 1rem 0;
+            border-radius: 10px;
+            box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+        }
+
+        .container.neumorphic,
+        .row.neumorphic,
+        .col-md-6.neumorphic,
+        .timeline-item .timeline-content.neumorphic {
+            background: #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            list-style: none;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #007bff;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .timeline-item:before,
+        .timeline-item:after {
+            content: " ";
+            display: table;
+        }
+
+        .timeline-item:after {
+            clear: both;
+        }
+
+        .timeline-item .timeline-icon {
+            position: absolute;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin-left: -10px;
+            background: #007bff;
+            border-radius: 50%;
+            z-index: 100;
+            box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+        }
+
+        .timeline-item .timeline-content {
+            position: relative;
+            width: 45%;
+            padding: 20px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            left: 55%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light neumorphic">
+        <a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Bootstrap">
+            <img src="assets/logo_final.png" class="logo-img" alt="Logo">
+            <span class="logo-text">Labh</span>
+        </a>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron text-center neumorphic">
+        <h1 class="display-4">Welcome to Labh Wealth Management</h1>
+        <p class="lead">Advanced Financial Research and Portfolio Management for Retail Investors</p>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="container second-section neumorphic">
+        <div class="row d-flex justify-content-center align-items-center neumorphic">
+            <div class="col-md-6 neumorphic">
+                <h1>About Us</h1>
+            </div>
+            <div class="col-md-6 neumorphic">
+                <p>Our team is a powerhouse of diverse expertise, comprising engineers, <br>PhD mathematicians, traders, and MBAs. <br>The founders are Alum of the prestigious IIM Ahmedabad, <br>having completed the Advanced General Management Program (AGMP). Our professionals are equipped with top-tier certifications, including CFA Level 3,<br> NISM Research Analyst, Mutual Fund Distribution, Investment Advisor, and Equity Derivatives.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="bg-light py-5 neumorphic">
+        <div class="container neumorphic">
+            <div class="text-center mb-5 neumorphic">
+                <h2>Our methodology</h2>
+                <p>Labh leverages cutting-edge financial research to curate bespoke investment solutions for retail
+                    investors. Our approach encompasses:</p>
+            </div>
+            <div class="row neumorphic">
+                <div class="col-md-6 text-center neumorphic">
+                    <h4>Comprehensive Data Collection</h4>
+                    <p>We gather extensive data from a variety of sources, including market trends, economic indicators,
+                        company reports, and historical performance metrics.</p>
+                </div>
+                <div class="col-md-6 text-center neumorphic">
+                   <img src="/assets/landing/data_collection.webp" class="img-fluid neumorphic">
+                </div>
+            </div>
+            <div class="row neumorphic">
+                <div class="col-md-6 text-center neumorphic">
+                    <img src="/assets/landing/technical_analysis.webp" class="img-fluid neumorphic">
+                </div>
+                <div class="col-md-6 text-center neumorphic">
+                    <h4>Technical Analysis</h4>
+                    <p>We study price movements, trading volumes, and historical trends to forecast future price
+                        trajectories. Our technical analysis helps us determine optimal entry and exit points for
+                        investments.</p>
+                </div>
+            </div>
+            <div class="row neumorphic">
+                <div class="col-md-6 text-center neumorphic">
+                    <h4>Econometric Analysis</h4>
+                </div>
+            </div>
+            
+            <!-- Timeline Section -->
+            <div class="timeline neumorphic">
+                <div class="timeline-item neumorphic">
+                    <div class="timeline-icon neumorphic"></div>
+                    <div class="timeline-content neumorphic">
+                        <h4>Step 1</h4>
+                        <p>Description of step 1.</p>
+                    </div>
+                </div>
+                <div class="timeline-item neumorphic">
+                    <div class="timeline-icon neumorphic"></div>
+                    <div class="timeline-content neumorphic">
+                        <h4>Step 2</h4>
+                        <p>Description of step 2.</p>
+                    </div>
+                </div>
+                <div class="timeline-item neumorphic">
+                    <div class="timeline-icon neumorphic"></div>
+                    <div class="timeline-content neumorphic">
+                        <h4>Step 3</h4>
+                        <p>Description of step 3.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
