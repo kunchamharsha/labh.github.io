@@ -18,6 +18,9 @@
 
 .footer-methodologies li {
     font-size: 20px !important;
+}
+
+.footer-methodologies {
     display: flex;
     margin-top: 60px;
 }
@@ -70,6 +73,14 @@
     margin-bottom: 8px;
 }
 
+.company-address {
+    font-size: 24px;
+    line-height: 36px;
+    margin-top: 20px;
+}
+.social-media {
+    font-size: 24px !important;
+}
 @media (min-width: 0px) and (max-width: 480px) {
     .footercontainer {
         padding: 0px !important;
@@ -170,6 +181,7 @@
     }
     .footer-logo-wrapper {
         margin-top: 0px !important;
+        justify-content: space-between;
     }
 }
 
@@ -231,9 +243,9 @@
         color: black;
     }
     .social-media {
-        font-size: 22px !important;
+        font-size: 18px !important;
         font-weight: 700 !important;
-        margin-top: -47px !important;
+        // margin-top: -47px !important;
     }
     .insta-link {
         width: 38px !important;
@@ -250,7 +262,7 @@
         height: 30px !important;
     }
     .contact-us-footer {
-        font-size: 16px !important;
+        font-size: 18px !important;
         font-weight: 700 !important;
     }
     .support-email {
@@ -274,6 +286,14 @@
     }
     .footer-logo-wrapper {
         margin-top: 0px !important;
+    }
+    .footer-links {
+        font-size: 18px;
+        
+        h4, li {
+            font-size: 18px;
+        }
+
     }
 }
 
@@ -337,7 +357,7 @@
     .social-media {
         font-size: 24px !important;
         font-weight: 700 !important;
-        margin-top: -47px !important;
+        // margin-top: -47px !important;
     }
     .insta-link {
         width: 38px !important;
@@ -354,7 +374,7 @@
         height: 30px !important;
     }
     .contact-us-footer {
-        font-size: 16px !important;
+        font-size: 24px !important;
         font-weight: 700 !important;
     }
     .support-email {
