@@ -989,7 +989,6 @@ body {
     .social-media {
         font-size: 16px !important;
         font-weight: 700 !important;
-        margin-top: -47px !important;
     }
     .insta-link {
         width: 24px !important;
@@ -1006,7 +1005,7 @@ body {
         height: 22px !important;
     }
     .contact-us-footer {
-        font-size: 16px !important;
+        font-size: 18px !important;
         font-weight: 700 !important;
     }
     .support-email {
@@ -1479,9 +1478,8 @@ body {
         color: black;
     }
     .social-media {
-        font-size: 22px !important;
+        font-size: 18px !important;
         font-weight: 700 !important;
-        margin-top: -47px !important;
     }
     .insta-link {
         width: 38px !important;
@@ -1498,7 +1496,7 @@ body {
         height: 30px !important;
     }
     .contact-us-footer {
-        font-size: 16px !important;
+        font-size: 18px !important;
         font-weight: 700 !important;
     }
     .support-email {
@@ -1525,6 +1523,14 @@ body {
     }
     #completion-msg {
         margin-bottom: 150px !important;
+    }
+
+    .footer-links-section h4 {
+        font-size: 18px;
+    }
+
+    .footer-links-section a {
+        font-size: 18px;
     }
 }
 
@@ -1759,7 +1765,6 @@ body {
     .social-media {
         font-size: 24px !important;
         font-weight: 700 !important;
-        margin-top: -47px !important;
     }
     .insta-link {
         width: 38px !important;
@@ -1776,7 +1781,7 @@ body {
         height: 30px !important;
     }
     .contact-us-footer {
-        font-size: 16px !important;
+        font-size: 24px !important;
         font-weight: 700 !important;
     }
     .support-email {
