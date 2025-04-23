@@ -560,6 +560,14 @@
     <script>
         const compoundingFrequency = 4;
 
+        function updateChart(returnsPercentage) {
+            const chart = document.querySelector(".graph");
+            chart.style.background = `conic-gradient(
+            #9A5CED 0% ${returnsPercentage}%,
+            #E8D8FD ${returnsPercentage}% 100%
+            )`;
+        }
+
         function calculateFD(
             principal,
             annualRate,
@@ -587,6 +595,9 @@
 
             const returns = maturityAmount - principle;
 
+            const returnsPercentage = (returns / principle) * 100;
+            updateChart(returnsPercentage);
+    
             $("#invested-amount").text(
                 `RS.${parseInt(principle).toLocaleString("en-IN")}`
             );
