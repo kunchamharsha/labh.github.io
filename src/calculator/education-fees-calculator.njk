@@ -1,0 +1,333 @@
+---
+layout: calculator-base.njk
+title: Education Fees Calculator
+menu: '
+    <li>⦿</li>
+    <li><a href="index.html">Calculator</a></li>
+    <li><a href="#" class="active">Education Fees Calculator</a></li>
+'
+---
+
+<div class="main-container">
+    <div class="contents">
+        <h1>Education Fees Calculator</h1>
+        <p>
+            Calculate the future cost of your child's education considering
+            inflation and current fees
+        </p>
+    </div>
+    <div class="calculator-card education-calculator">
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <div class="calculator-card-contents">
+            <div>
+                <div class="cal-content">
+                    <label>Current Child Age</label>
+                    <span id="age-slider-value">0 Years</span>
+                </div>
+                <div class="input-limits">
+                    <div>0</div>
+                    <div>20</div>
+                </div>
+                <input
+                    type="range"
+                    id="age-slider"
+                    min="0"
+                    max="20"
+                    step="1"
+                    value="0"
+                />
+
+                <div class="cal-content">
+                    <label>Child's course age</label>
+                    <span id="course-slider-value">19 Years</span>
+                </div>
+                <div class="input-limits">
+                    <div>18</div>
+                    <div>24</div>
+                </div>
+                <input
+                    type="range"
+                    id="course-slider"
+                    min="18"
+                    max="24"
+                    step="1"
+                    value="19"
+                />
+
+                <div class="cal-content">
+                    <label>Rate of Inflation</label>
+                    <span id="inflation-slider-value">9%</span>
+                </div>
+                <div class="input-limits">
+                    <div>0%</div>
+                    <div>25%</div>
+                </div>
+                <input
+                    type="range"
+                    id="inflation-slider"
+                    min="0"
+                    max="25"
+                    step="1"
+                    value="9"
+                />
+
+                <div class="cal-content">
+                    <label>Rate of return</label>
+                    <span id="return-slider-value">14%</span>
+                </div>
+                <div class="input-limits">
+                    <div>0%</div>
+                    <div>25%</div>
+                </div>
+                <input
+                    type="range"
+                    id="return-slider"
+                    min="0"
+                    max="25"
+                    step="1"
+                    value="14"
+                />
+            </div>
+            <div>
+                <div class="cal-content">
+                    <label>Choose a target course</label>
+                </div>
+
+                <div class="dropdown" id="customDropdown">
+                    <div class="dropdown-selected" id="dropdown">
+                        <span id="selected-cource">MBBS</span>
+                        <span
+                            ><img
+                                src="/assets/down-arroow.svg"
+                                alt="down-arrow"
+                                id="dropdown-arrow"
+                        /></span>
+                    </div>
+                    <div
+                        class="dropdown-options display-none"
+                        id="dropdownOptions"
+                    >
+                        <div data-value="Other">Other</div>
+                        <div data-value="Lawyer">Lawyer</div>
+                        <div data-value="Engineer">Engineer</div>
+                        <div data-value="MBA">MBA</div>
+                    </div>
+                </div>
+
+                <div class="cal-content">
+                    <label class="padding-4px" style="margin-bottom: 8px"
+                        >Have you estimated the cost of Education?</label
+                    >
+                </div>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input
+                            type="radio"
+                            id="yes"
+                            name="estimated"
+                            value="yes"
+                            checked
+                        />
+                        <label for="yes">Yes</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input
+                            type="radio"
+                            id="no"
+                            name="estimated"
+                            value="no"
+                        />
+                        <label for="no">No</label>
+                    </div>
+                </div>
+
+                <div class="current-fees">
+                    <div class="cal-content">
+                        <label>What is the current Education fee?</label>
+                    </div>
+                    <input type="text" name="current-fees" id="current-fees" />
+                </div>
+
+                <div class="box-result">
+                    <span class="heading">Amount you should save monthly</span>
+                    <span class="amount" id="total-amount">Rs.15,652.55</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="guide">
+        <h2>How to Use?</h2>
+        <ul>
+            <li>Input your child's current age and expected age at college.</li>
+            <li>Enter current education costs and expected inflation rate.</li>
+            <li>
+                Calculate to see future education expenses and required savings.
+            </li>
+        </ul>
+
+        <h2>Formula</h2>
+        <p class="formula">
+            Future Education Cost = Current Cost × (1 + Inflation Rate)^Years
+        </p>
+
+        <h2>Advantages</h2>
+        <ul>
+            <li>Accurate future cost projection</li>
+            <li>Helps systematic saving</li>
+            <li>Considers inflation impact</li>
+            <li>Customized financial goal setting</li>
+        </ul>
+        <h2>FAQ's</h2>
+
+        <div class="faq-container" style="background-color: transparent">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I add multiple children?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Labh is a research team that builds custom groups of
+                            mutual funds, designed to grow your money based on
+                            how much risk you’re comfortable taking. We do the
+                            research so you can invest with confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Does it calculate for international education?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Labh is a research team that builds custom groups of
+                            mutual funds, designed to grow your money based on
+                            how much risk you’re comfortable taking. We do the
+                            research so you can invest with confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What inflation rate should I use? </span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Labh is a research team that builds custom groups of
+                            mutual funds, designed to grow your money based on
+                            how much risk you’re comfortable taking. We do the
+                            research so you can invest with confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="moblie-search-bar-container">
+        <div
+            id="search-results"
+            class="cards display-none margin-bottom-none"
+        ></div>
+        <div class="black-container">
+            <div class="mobile-search-bar">
+                <input
+                    type="text"
+                    placeholder="Search for Calculator"
+                    id="search2"
+                />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let course = null;
+    function updateValues() {}
+
+    $(document).ready(function () {
+        $("#dropdown").click(function () {
+            $(".dropdown-selected").toggleClass("border-class");
+            $(".dropdown-options").toggleClass("display-none");
+            $("#dropdown-arrow").toggleClass("transform-y");
+        });
+
+        $("#dropdownOptions > div").on("click", function () {
+            const value = $(this).data("value");
+            course = value;
+
+            $(".dropdown-selected").toggleClass("border-class");
+            $("#selected-cource").text(value);
+            $(".dropdown-options").toggleClass("display-none");
+            $("#dropdown-arrow").toggleClass("transform-y");
+        });
+
+        $('input[name="estimated"]').on("change", function () {
+            const value = $(this).val();
+
+            if (value == "yes") {
+                $(".current-fees").show();
+            } else {
+                $(".current-fees").hide();
+            }
+        });
+
+        $(".faq-question").click(function () {
+            var $item = $(this).closest(".faq-item");
+
+            $(".faq-item").not($item).removeClass("open");
+
+            $item.toggleClass("open");
+        });
+
+        function updateSliderBackground(slider) {
+            if (slider.id == "age-slider" || slider.id == "course-slider") {
+                $(`#${slider.id}-value`).text(
+                    `${parseInt(slider.value)} Years`
+                );
+            } else if (
+                slider.id == "return-slider" ||
+                slider.id == "inflation-slider"
+            ) {
+                $(`#${slider.id}-value`).text(`${slider.value} %`);
+            }
+
+            const value =
+                ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+            $(slider).css(
+                "background",
+                `linear-gradient(to right, #9b5de5 ${value}%, #d3bfff ${value}%)`
+            );
+        }
+
+        $("#age-slider, #course-slider, #inflation-slider, #return-slider")
+            .each(function () {
+                updateSliderBackground(this);
+                updateValues();
+            })
+            .on("input", function () {
+                updateSliderBackground(this);
+                updateValues();
+            });
+        $("#luxury, #good, #normal").on("change", function () {
+            updateValues();
+        });
+    });
+</script>

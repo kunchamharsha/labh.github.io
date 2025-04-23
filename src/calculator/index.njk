@@ -1,0 +1,177 @@
+---
+layout: calculator-base.njk
+title: Labh
+menu: '<li><a href="#" class="active">Calculator</a></li>'
+---
+
+<div class="main-container">
+    <div class="contents">
+        <h1>Smart Investment Calculator</h1>
+        <p>
+            Make informed decisions with real-time insights on returns, risks,
+            and optimal investment strategies.
+        </p>
+    </div>
+    <div class="cards">
+        <div class="card">
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
+            <div class="card-heading">Retirement calculator</div>
+            <div class="card-description">
+                Estimate your savings for a secure retirement.
+            </div>
+        </div>
+        <div class="card">
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
+            <div class="card-heading">Education fees calculator</div>
+            <div class="card-description">
+                Plan for your child’s education costs.
+            </div>
+        </div>
+        <div class="card">
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
+            <div class="card-heading">SIP returns calculator</div>
+            <div class="card-description">Estimate Your Investment Growth.</div>
+        </div>
+        <div class="card">
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
+            <div class="card-heading">Fixed deposit return calculator</div>
+            <div class="card-description">
+                Calculate Your Fixed Deposit Growth.
+            </div>
+        </div>
+        <div class="card">
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
+            <div class="card-heading">Lumpsum calculator</div>
+            <div class="card-description">
+                Estimate Your Investment Returns.
+            </div>
+        </div>
+        <div class="card">
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
+            <div class="card-heading">PF calculators</div>
+            <div class="card-description">Estimate Your PF Growth.</div>
+        </div>
+        <div class="card">
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
+            <div class="card-heading">NPS calculator</div>
+            <div class="card-description">Plan Your Retirement Savings.</div>
+        </div>
+        <div class="card">
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
+            <div class="card-heading">Personal loan calculator</div>
+            <div class="card-description">Calculate Your Loan EMI.</div>
+        </div>
+        <div class="card">
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
+            <div class="card-heading">
+                Credit card debt calculator calculator
+            </div>
+            <div class="card-description">Manage Your Debt Smartly.</div>
+        </div>
+        <div class="card">
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
+            <div class="card-heading">Car loan calculator</div>
+            <div class="card-description">Estimate Your Monthly EMI.</div>
+        </div>
+        <div class="card">
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
+            <div class="card-heading">Bike cost calculator</div>
+            <div class="card-description">
+                Estimate Your Total Bike Expense.
+            </div>
+        </div>
+        <div class="card">
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
+            <div class="card-heading">House calculator</div>
+            <div class="card-description">Estimate Your Home Investment.</div>
+        </div>
+        <div class="card">
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
+            <div class="card-heading">Sip step up calculator</div>
+            <div class="card-description">
+                Grow Your Investments with Incremental SIPs.
+            </div>
+        </div>
+    </div>
+    <div class="moblie-search-bar-container">
+        <div class="black-container">
+            <div class="mobile-search-bar">
+                <input
+                    type="text"
+                    placeholder="Search for Calculator"
+                    id="search2"
+                />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        let cardWidth = $(".card").width();
+
+        $(".card").hover(
+            function () {
+                $(this)
+                    .find("img")
+                    .last()
+                    .attr("src", "/assets/calculator-arrow-hover.svg");
+            },
+            function () {
+                $(this)
+                    .find("img")
+                    .last()
+                    .attr("src", "/assets/calculator-arrow.svg");
+            }
+        );
+
+        function search(event) {
+            const query = event.target.value.toLowerCase();
+            $(".cards").addClass("cards-grid-constant-gap"); // this is added to maintain the gap b/t cards
+            $(".card").each(function () {
+                const cardHeading = $(this).find(".card-heading").text();
+                const cardDescription = $(this)
+                    .find(".card-description")
+                    .text();
+                if (
+                    cardHeading.toLowerCase().includes(query) ||
+                    cardDescription.toLowerCase().includes(query)
+                ) {
+                    $(this).show();
+                    $(this).width(cardWidth);
+                } else {
+                    $(this).hide();
+                }
+            });
+        }
+
+        $("#search").on("input", search);
+        $("#search2").on("input", search);
+    });
+</script>

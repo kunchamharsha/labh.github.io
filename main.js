@@ -71,15 +71,16 @@ function filterCalculators(searchTerm) {
     );
 }
 
-$("#search2").on("input", function () {
-    const searchTerm = $(this).val();
-    const filteredCalculators = filterCalculators(searchTerm);
-    if (filteredCalculators.length != 0) {
-        $(".cards").empty();
-        $(".cards").removeClass("display-none");
-        $(".blur-effect").removeClass("display-none");
-        filteredCalculators.forEach((calculator) => {
-            const card = `
+if (window.location.pathname != "/calculator/") {
+    $("#search2").on("input", function () {
+        const searchTerm = $(this).val();
+        const filteredCalculators = filterCalculators(searchTerm);
+        if (filteredCalculators.length != 0) {
+            $(".cards").empty();
+            $(".cards").removeClass("display-none");
+            $(".blur-effect").removeClass("display-none");
+            filteredCalculators.forEach((calculator) => {
+                const card = `
                     <div class="card">
                         <img src="../assets/card-edge-image.svg" alt="edge-image">
                         <img src="../assets/card-edge-image.svg" alt="edge-image">
@@ -88,18 +89,19 @@ $("#search2").on("input", function () {
                         <div class="card-description">${calculator["card-description"]}</div>
                     </div>
                 `;
-            $(".cards").append(card);
-        });
+                $(".cards").append(card);
+            });
 
-        // $(".blur-effect").height(
-        //     window.innerHeight -
-        //         $("#search-results").outerHeight(true) -
-        //         $("nav").outerHeight(true) -
-        //         $(".black-container").outerHeight(true) -
-        //         $('.menu-bar').outerHeight(true)
-        // );
-    } else {
-        $(".cards").addClass("display-none");
-        $(".blur-effect").addClass("display-none");
-    }
-});
+            // $(".blur-effect").height(
+            //     window.innerHeight -
+            //         $("#search-results").outerHeight(true) -
+            //         $("nav").outerHeight(true) -
+            //         $(".black-container").outerHeight(true) -
+            //         $('.menu-bar').outerHeight(true)
+            // );
+        } else {
+            $(".cards").addClass("display-none");
+            $(".blur-effect").addClass("display-none");
+        }
+    });
+}
