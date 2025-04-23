@@ -256,7 +256,7 @@ body {
     font-size: 24px;
     line-height: 36px;
     margin-top: 20px;
-    /* width: 475px; */
+    width: 475px;
 }
 .footer-company {
     width: 15%;
@@ -273,9 +273,6 @@ body {
 }
 .footer-methodologies li {
     font-size: 20px !important;
-}
-.footer-methodologies {
-    display: flex;
 }
 .social-media {
     font-size: 24px !important;
@@ -473,49 +470,6 @@ body {
 }
 .faq-item {
     overflow: hidden !important;
-}
-
-.footer-methodologies {
-    margin-top: 60px;
-}
-
-.footer-contact-us-wrapper {
-    margin-left: 60px;
-}
-
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.footer-links a {
-    text-decoration: none;
-    color: black;
-}
-
-.footer-links h4 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    margin-top: 60px;
-}
-
-.footer-links-section {
-    width: 260px;
-}
-
-.footer-links-section ul {
-    text-decoration: none;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.footer-links-section li {
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 8px;
 }
 
 @keyframes scrolling {
@@ -961,9 +915,9 @@ body {
     .footer-logo {
         font-size: 16px !important;
     }
-    /* .desktop-footer {
+    .desktop-footer {
         display: none !important;
-    } */
+    }
     .company-address {
         font-size: 14px;
         line-height: 20px;
@@ -1452,9 +1406,9 @@ body {
     .footer-logo {
         font-size: 16px !important;
     }
-    /* .desktop-footer {
+    .desktop-footer {
         display: none !important;
-    } */
+    }
     .company-address {
         font-size: 18px;
         line-height: 30px;
@@ -1730,9 +1684,9 @@ body {
     .footer-logo {
         font-size: 16px !important;
     }
-    /* .desktop-footer {
+    .desktop-footer {
         display: none !important;
-    } */
+    }
     .company-address {
         font-size: 24px;
         line-height: 32px;
@@ -1855,11 +1809,11 @@ body {
     }
 }
 
-/* @media (min-width: 1024px) {
+@media (min-width: 1024px) {
     .mobile-footer {
         display: none !important;
     }
-} */
+}
 
 /* * {
   background: #000 !important;
