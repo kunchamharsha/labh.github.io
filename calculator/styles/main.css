@@ -537,6 +537,20 @@ nav {
 .fixed-deposit-calculator {
   height: 44.0625rem;
 }
+.fixed-deposit-calculator .graph-container {
+  margin-bottom: 2rem;
+}
+.fixed-deposit-calculator .graph {
+  width: 9.5rem;
+  height: 9.5rem;
+}
+.fixed-deposit-calculator .graph::after {
+  width: 6.625rem;
+  height: 6.625rem;
+}
+.fixed-deposit-calculator input[type=range] {
+  margin-top: 2rem;
+}
 
 .guide {
   font-size: 1.75rem;

@@ -85,7 +85,7 @@
                         </div>
                         <input
                             type="range"
-                            id="interest"
+                            id="interest-slider"
                             min="1"
                             max="30"
                             step="1"
@@ -115,54 +115,66 @@
 
                         <div class="cal-content result">
                             <label>Invested Amount</label>
-                            <span id="sip-required">Rs 46,36,567</span>
+                            <span id="invested-amount">Rs 46,36,567</span>
                         </div>
                         <div class="cal-content result">
                             <label>Est. returns</label>
-                            <span id="sip-required">Rs 12,67,346</span>
+                            <span id="est-returns">Rs 12,67,346</span>
                         </div>
                         <hr class="calculator-hr" />
 
                         <div class="cal-content result">
                             <label>Retirement Amt</label>
-                            <span class="total" id="corpus-required"
+                            <span class="total" id="total-amount"
                                 >RS 59,85,385</span
                             >
                         </div>
-
-                        <a href="">Invest Now</a>
                     </div>
                 </div>
             </div>
             <div class="guide">
                 <h1>How to Use?</h1>
                 <ul>
-                    <li>
-                        Input your child's current age and expected age at
-                        college.
-                    </li>
-                    <li>
-                        Enter current education costs and expected inflation
-                        rate.
-                    </li>
-                    <li>
-                        Calculate to see future education expenses and required
-                        savings.
-                    </li>
+                    <li>Input deposit amount, interest rate, and tenure.</li>
+                    <li>Select compounding frequency.</li>
+                    <li>View maturity amount and total interest.</li>
                 </ul>
 
                 <h1>Formula</h1>
-                <p>
-                    Future Education Cost = Current Cost × (1 + Inflation
-                    Rate)^Years
-                </p>
-
+                <p>A = P (1 + r/n)^(nt)</p>
+                <table>
+                    <tr>
+                        <td>A</td>
+                        <td>
+                            The maturity amount or total amount after
+                            investment.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>P</td>
+                        <td>The principal amount or initial deposit.</td>
+                    </tr>
+                    <tr>
+                        <td>r</td>
+                        <td>Annual interest rate (in decimal form).</td>
+                    </tr>
+                    <tr>
+                        <td>n</td>
+                        <td>
+                            Number of times interest is compounded per year.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>t</td>
+                        <td>Investment duration in years.</td>
+                    </tr>
+                </table>
                 <h1>Advantages</h1>
                 <ul>
-                    <li>Accurate future cost projection</li>
-                    <li>Helps systematic saving</li>
-                    <li>Considers inflation impact</li>
-                    <li>Customized financial goal setting</li>
+                    <li>Clarity on returns</li>
+                    <li>Easy comparison among banks</li>
+                    <li>Flexible tenure planning</li>
+                    <li>Interest compounding visibility</li>
                 </ul>
                 <h1>FAQ's</h1>
 
@@ -172,7 +184,27 @@
                 >
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span>Can I add multiple children?</span>
+                            <span>Is FD interest taxable?</span>
+                            <span class="arrow"
+                                ><img src="../assets/Frame 877 (1).png"
+                            /></span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="content">
+                                <p style="text-align: left">
+                                    Labh is a research team that builds custom
+                                    groups of mutual funds, designed to grow
+                                    your money based on how much risk you’re
+                                    comfortable taking. We do the research so
+                                    you can invest with confidence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I withdraw prematurely? </span>
                             <span class="arrow"
                                 ><img src="../assets/Frame 877 (1).png"
                             /></span>
@@ -193,29 +225,8 @@
                     <div class="faq-item">
                         <div class="faq-question">
                             <span
-                                >Does it calculate for international
-                                education?</span
-                            >
-                            <span class="arrow"
-                                ><img src="../assets/Frame 877 (1).png"
-                            /></span>
-                        </div>
-                        <div class="faq-answer">
-                            <div class="content">
-                                <p style="text-align: left">
-                                    Labh is a research team that builds custom
-                                    groups of mutual funds, designed to grow
-                                    your money based on how much risk you’re
-                                    comfortable taking. We do the research so
-                                    you can invest with confidence.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>What inflation rate should I use? </span>
+                                >How does compounding frequency impact returns?
+                            </span>
                             <span class="arrow"
                                 ><img src="../assets/Frame 877 (1).png"
                             /></span>
@@ -253,7 +264,6 @@
         </div>
 
         <div class="blur-effect display-none"></div>
-        
 
         <footer
             style="
@@ -548,8 +558,49 @@
     ></script>
 
     <script>
-        let course = null;
-        function updateValues() {}
+        const compoundingFrequency = 4;
+
+        function calculateFD(
+            principal,
+            annualRate,
+            years,
+            compoundingFrequency
+        ) {
+            let r = annualRate / 100;
+            let n = compoundingFrequency;
+            let t = years;
+
+            let amount = principal * Math.pow(1 + r / n, n * t);
+            return amount;
+        }
+        function updateValues() {
+            const principle = $("#investment-slider").val();
+            const years = $("#period-slider").val();
+            const rate = $("#interest-slider").val();
+
+            const maturityAmount = calculateFD(
+                principle,
+                rate,
+                years,
+                compoundingFrequency
+            );
+
+            const returns = maturityAmount - principle;
+
+            $("#invested-amount").text(
+                `RS.${parseInt(principle).toLocaleString("en-IN")}`
+            );
+            $("#est-returns").text(
+                `RS.${returns.toLocaleString("en-IN", {
+                    maximumFractionDigits: 0,
+                })}`
+            );
+            $("#total-amount").text(
+                `RS.${maturityAmount.toLocaleString("en-IN", {
+                    maximumFractionDigits: 0,
+                })}`
+            );
+        }
 
         $(document).ready(function () {
             $(".faq-question").click(function () {
@@ -561,14 +612,13 @@
             });
 
             function updateSliderBackground(slider) {
-                if (slider.id == "age-slider" || slider.id == "course-slider") {
+                if (slider.id == "investment-slider") {
                     $(`#${slider.id}-value`).text(
-                        `${parseInt(slider.value)} Years`
+                        `Rs. ${parseInt(slider.value)}`
                     );
-                } else if (
-                    slider.id == "return-slider" ||
-                    slider.id == "inflation-slider"
-                ) {
+                } else if (slider.id == "period-slider") {
+                    $(`#${slider.id}-value`).text(`${slider.value} Years`);
+                } else {
                     $(`#${slider.id}-value`).text(`${slider.value} %`);
                 }
 
@@ -581,7 +631,7 @@
                 );
             }
 
-            $("#age-slider, #course-slider, #inflation-slider, #return-slider")
+            $("#investment-slider, #period-slider, #interest-slider")
                 .each(function () {
                     updateSliderBackground(this);
                     updateValues();

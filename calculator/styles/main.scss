@@ -508,6 +508,22 @@ body {
 
 .fixed-deposit-calculator {
     height: calculate-rem(705);
+        .graph-container {
+            margin-bottom: calculate-rem(32);
+        }
+    .graph {
+        width: calculate-rem(152);
+        height: calculate-rem(152);
+    }
+
+    .graph::after {
+        width: calculate-rem(106);
+        height: calculate-rem(106);
+    }
+
+        input[type="range"] {
+            margin-top: calculate-rem(32);
+        }
 }
 
 .guide {
