@@ -162,6 +162,7 @@
                                     id="yes"
                                     name="estimated"
                                     value="yes"
+                                    checked
                                 />
                                 <label for="yes">Yes</label>
                             </div>
@@ -172,19 +173,23 @@
                                     id="no"
                                     name="estimated"
                                     value="no"
-                                    checked
                                 />
                                 <label for="no">No</label>
                             </div>
                         </div>
-                        <div class="cal-content">
-                            <label>What is the current Education fee?</label>
+
+                        <div class="current-fees">
+                            <div class="cal-content">
+                                <label
+                                    >What is the current Education fee?</label
+                                >
+                            </div>
+                            <input
+                                type="text"
+                                name="current-fees"
+                                id="current-fees"
+                            />
                         </div>
-                        <input
-                            type="text"
-                            name="current-fees"
-                            id="current-fees"
-                        />
 
                         <div class="box-result">
                             <span class="heading"
@@ -200,47 +205,22 @@
             <div class="guide">
                 <h1>How to Use?</h1>
                 <ul>
-                    <li>Enter your monthly investment amount.</li>
+                    <li>Input your child's current age and expected age at college.</li>
                     <li>
-                        Set the investment period and expected returns rate.
+                        Enter current education costs and expected inflation rate.
                     </li>
-                    <li>View accumulated corpus and returns.</li>
+                    <li>Calculate to see future education expenses and required savings.</li>
                 </ul>
 
                 <h1>Formula</h1>
-                <p>FV = P × [((1 + r)^n - 1) / r] × (1 + r)</p>
-
-                <table>
-                    <tr>
-                        <td>FV (Future Value):</td>
-                        <td>The accumulated amount after investing via SIP.</td>
-                    </tr>
-                    <tr>
-                        <td>P :</td>
-                        <td>Monthly investment amount.</td>
-                    </tr>
-                    <tr>
-                        <td>r :</td>
-                        <td>
-                            Expected monthly return rate (annual rate divided by
-                            12).
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>n :</td>
-                        <td>
-                            Total number of monthly installments (years
-                            multiplied by 12).
-                        </td>
-                    </tr>
-                </table>
+                <p>Future Education Cost = Current Cost × (1 + Inflation Rate)^Years</p>
 
                 <h1>Advantages</h1>
                 <ul>
-                    <li>Encourages disciplined investing</li>
-                    <li>Provides expected growth clarity</li>
-                    <li>Easy comparison of returns</li>
-                    <li>Tailored investment planning</li>
+                    <li>Accurate future cost projection</li>
+                    <li>Helps systematic saving</li>
+                    <li>Considers inflation impact</li>
+                    <li>Customized financial goal setting</li>
                 </ul>
                 <h1>FAQ's</h1>
 
@@ -250,7 +230,7 @@
                 >
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span>What is SIP?</span>
+                            <span>Can I add multiple children?</span>
                             <span class="arrow"
                                 ><img src="../assets/Frame 877 (1).png"
                             /></span>
@@ -270,7 +250,7 @@
 
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span>Can returns vary?</span>
+                            <span>Does it calculate for international education?</span>
                             <span class="arrow"
                                 ><img src="../assets/Frame 877 (1).png"
                             /></span>
@@ -290,7 +270,7 @@
 
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span>Is SIP safe? </span>
+                            <span>What inflation rate should I use? </span>
                             <span class="arrow"
                                 ><img src="../assets/Frame 877 (1).png"
                             /></span>
@@ -833,9 +813,19 @@
                 course = value;
 
                 $(".dropdown-selected").toggleClass("border-class");
-                $('#selected-cource').text(value);
+                $("#selected-cource").text(value);
                 $(".dropdown-options").toggleClass("display-none");
                 $("#dropdown-arrow").toggleClass("transform-y");
+            });
+
+            $('input[name="estimated"]').on("change", function () {
+                const value = $(this).val();
+
+                if (value == "yes") {
+                    $(".current-fees").show();
+                } else {
+                    $(".current-fees").hide();
+                }
             });
 
             $(".faq-question").click(function () {
@@ -851,7 +841,10 @@
                     $(`#${slider.id}-value`).text(
                         `${parseInt(slider.value)} Years`
                     );
-                } else if (slider.id == "return-slider" || slider.id == "inflation-slider") {
+                } else if (
+                    slider.id == "return-slider" ||
+                    slider.id == "inflation-slider"
+                ) {
                     $(`#${slider.id}-value`).text(`${slider.value} %`);
                 }
 
