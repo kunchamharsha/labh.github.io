@@ -82,9 +82,9 @@ if (window.location.pathname != "/calculator/") {
             filteredCalculators.forEach((calculator) => {
                 const card = `
                     <div class="card">
-                        <img src="../assets/card-edge-image.svg" alt="edge-image">
-                        <img src="../assets/card-edge-image.svg" alt="edge-image">
-                        <img src="../assets/calculator-arrow.svg" alt="calculator-arrow">
+                        <img src="/assets/card-edge-image.svg" alt="edge-image">
+                        <img src="/assets/card-edge-image.svg" alt="edge-image">
+                        <img src="/assets/calculator-arrow.svg" alt="calculator-arrow">
                         <div class="card-heading">${calculator["card-heading"]}</div>
                         <div class="card-description">${calculator["card-description"]}</div>
                     </div>
