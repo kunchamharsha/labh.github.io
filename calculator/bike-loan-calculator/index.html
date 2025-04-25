@@ -21,11 +21,17 @@
             integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
             crossorigin="anonymous"
         ></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script
+            id="MathJax-script"
+            async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+        ></script>
+
         <title>Bike Loan Calculator</title>
     </head>
     <body>
-
-    <nav>
+        <nav>
     <div class="logo-container">
         <img src="/assets/LOGO.png" alt="logo" />
         <span>Labh</span>
@@ -34,7 +40,7 @@
         <div class="search-bar">
             <input
                 type="text"
-                placeholder="Search for Calculator"
+                placeholder="Search"
                 id="search"
             />
         </div>
@@ -44,15 +50,14 @@
 <hr class="nav-hr" />
 
 
+        <div class="menu-bar">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                 <li>⦿</li> <li><a href="index.html">Calculator</a></li> <li><a href="#" class="active">Bike Loan Calculator</a></li> 
+            </ul>
+        </div>
 
-    <div class="menu-bar">
-        <ul>
-            <li><a href="/index.html">Home</a></li>
-             <li>⦿</li> <li><a href="index.html">Calculator</a></li> <li><a href="#" class="active">Bike Loan Calculator</a></li> 
-        </ul>
-    </div>
-
-    
+        
 <div class="main-container">
     <div class="contents">
         <h1>Bike Loan calculators</h1>
@@ -349,9 +354,9 @@
 </script>
 
 
-    <div class="blur-effect display-none"></div>
+        <div class="blur-effect display-none"></div>
 
-    <footer
+        <footer
     style="
         background-color: #cec3fe;
         font-family: Arial, sans-serif;
@@ -621,7 +626,6 @@
 </footer>
 
 
-    <script src="/main.js"></script>
-</body>
-
+        <script src="/main.js"></script>
+    </body>
 </html>

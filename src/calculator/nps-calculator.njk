@@ -1,0 +1,301 @@
+---
+layout: calculator-base.njk
+title: NPS Calculator
+menu: '
+    <li>⦿</li>
+    <li><a href="index.html">Calculator</a></li>
+    <li><a href="#" class="active">NPS Calculator</a></li>
+'
+---
+
+<div class="main-container">
+    <div class="contents">
+        <h1>NPS calculators</h1>
+        <p>Estimate your corpus from National Pension Scheme investments.</p>
+    </div>
+    <div class="calculator-card pf-calculator">
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <div class="calculator-card-contents">
+            <div>
+                <div class="cal-content">
+                    <label>Monthly Investment</label>
+                    <span id="investment-slider-value">₹25000</span>
+                </div>
+                <div class="input-limits">
+                    <div>₹500</div>
+                    <div>₹1.5 Lac</div>
+                </div>
+                <input
+                    type="range"
+                    id="investment-slider"
+                    min="500"
+                    max="150000"
+                    step="500"
+                    value="25000"
+                />
+
+                <div class="cal-content">
+                    <label>Expected Return Rate (p.a)*</label>
+                    <span id="returnrate-slider-value">10%</span>
+                </div>
+                <div class="input-limits">
+                    <div>8%</div>
+                    <div>15%</div>
+                </div>
+                <input
+                    type="range"
+                    id="returnrate-slider"
+                    min="8"
+                    max="15"
+                    step="1"
+                    value="10"
+                />
+
+                <div class="cal-content">
+                    <label>Your Age</label>
+                    <span id="age-slider-value">25 Years</span>
+                </div>
+                <div class="input-limits">
+                    <div>18</div>
+                    <div>60</div>
+                </div>
+                <input
+                    type="range"
+                    id="age-slider"
+                    min="18"
+                    max="60"
+                    step="1"
+                    value="23"
+                />
+            </div>
+            <div>
+                <div class="cal-content result">
+                    <label>Interest Earned</label>
+                    <span id="interest">₹20,45,535</span>
+                </div>
+
+                <div class="cal-content result">
+                    <label>Maturity Amount</label>
+                    <span id="maturity">₹37,73,535</span>
+                </div>
+
+                <div class="cal-content result">
+                    <label>Min.Annuity Investment</label>
+                    <span id="annuity">₹15,09,414</span>
+                </div>
+                <hr />
+                <div class="cal-content result">
+                    <label>Total Investment</label>
+                    <span id="total-amount" class="total">₹16,334</span>
+                </div>
+                <a href="">Invest Now</a>
+            </div>
+        </div>
+    </div>
+    <div class="guide">
+        <h2>How to Use?</h2>
+        <ul>
+            <li>Input monthly or yearly investment amount.</li>
+            <li>Choose investment duration and expected returns.</li>
+            <li>View expected retirement corpus.</li>
+        </ul>
+
+        <h2>Formula</h2>
+        <p class="formula">
+            $$ A = P \times \left( \frac{(1 + r)^n - 1}{r} \right) $$
+        </p>
+        <table>
+            <tr>
+                <td>A</td>
+                <td>Total corpus at retirement (maturity amount)</td>
+            </tr>
+            <tr>
+                <td>P</td>
+                <td>Contribution amount per month</td>
+            </tr>
+            <tr>
+                <td>r</td>
+                <td>
+                    Expected rate of return per month (Annual return ÷ 12 ÷ 100)
+                </td>
+            </tr>
+            <tr>
+                <td>n</td>
+                <td>Total number of contributions (Years × 12)</td>
+            </tr>
+        </table>
+        <h2>Advantages</h2>
+        <ul>
+            <li>Long-term financial security</li>
+            <li>Tax saving benefits</li>
+            <li>Transparent growth calculation</li>
+            <li>Flexible contribution options</li>
+        </ul>
+        <h2>FAQ's</h2>
+
+        <div class="faq-container" style="background-color: transparent">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is the minimum contribution for NPS?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            The minimum annual contribution is ₹1,000 for Tier-I
+                            accounts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span
+                        >C Can I withdraw my NPS corpus before retirement?
+                    </span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Partial withdrawals are allowed after 3 years for
+                            specific purposes like education, marriage, or
+                            medical treatment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is NPS taxable at maturity? </span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            60% of the corpus is tax-free, while the remaining
+                            40% must be used to purchase an annuity, which is
+                            taxable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="moblie-search-bar-container">
+        <div
+            id="search-results"
+            class="cards display-none margin-bottom-none"
+        ></div>
+        <div class="black-container">
+            <div class="mobile-search-bar">
+                <input
+                    type="text"
+                    placeholder="Search for Calculator"
+                    id="search2"
+                />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function calculateNPSDetails(
+        monthlyInvestment,
+        annualRatePercent,
+        currentAge,
+        retirementAge = 60
+    ) {
+        const P = monthlyInvestment;
+        const r = annualRatePercent / 100 / 12;
+        const n = (retirementAge - currentAge) * 12;
+
+        const FV = P * (((Math.pow(1 + r, n) - 1) / r) * (1 + r));
+
+        const totalInvestment = P * n;
+
+        const interestEarned = FV - totalInvestment;
+
+        const minAnnuityInvestment = FV * 0.4;
+
+        const lumpSum = FV * 0.6;
+
+        return {
+            maturityAmount: FV.toFixed(2),
+            totalInvestment: totalInvestment.toFixed(2),
+            interestEarned: interestEarned.toFixed(2),
+            minAnnuityInvestment: minAnnuityInvestment.toFixed(2),
+            lumpSum: lumpSum.toFixed(2),
+        };
+    }
+
+    function updateValues() {
+        const investment = $("#investment-slider").val();
+        const rate = $("#returnrate-slider").val();
+        const age = $("#age-slider").val();
+
+        const result = calculateNPSDetails(investment, rate, age);
+
+        $("#total-amount").text(
+            `₹${parseInt(result.totalInvestment).toLocaleString("en-IN", {
+                maximumFractionDigits: 0,
+            })}`
+        );
+        $("#maturity").text(
+            `₹${parseInt(result.maturityAmount).toLocaleString("en-IN", {
+                maximumFractionDigits: 0,
+            })}`
+        );
+        $("#annuity").text(
+            `₹${parseInt(result.minAnnuityInvestment).toLocaleString("en-IN", {
+                maximumFractionDigits: 0,
+            })}`
+        );
+        $("#interest").text(
+            `₹${parseInt(result.interestEarned).toLocaleString("en-IN", {
+                maximumFractionDigits: 0,
+            })}`
+        );
+    }
+
+    $(document).ready(function () {
+        function updateSliderBackground(slider) {
+            if (slider.id == "investment-slider") {
+                $(`#${slider.id}-value`).text(
+                    `₹${parseInt(slider.value).toLocaleString("en-IN")}`
+                );
+            } else if (slider.id == "returnrate-slider") {
+                $(`#${slider.id}-value`).text(`${slider.value} %`);
+            } else if (slider.id == "age-slider") {
+                $(`#${slider.id}-value`).text(`${slider.value} Years`);
+            }
+
+            const value =
+                ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+            $(slider).css(
+                "background",
+                `linear-gradient(to right, #9b5de5 ${value}%, #d3bfff ${value}%)`
+            );
+        }
+
+        $("#investment-slider, #returnrate-slider, #age-slider")
+            .each(function () {
+                updateSliderBackground(this);
+                updateValues();
+            })
+            .on("input", function () {
+                updateSliderBackground(this);
+                updateValues();
+            });
+    });
+</script>

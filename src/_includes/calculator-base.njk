@@ -21,27 +21,33 @@
             integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
             crossorigin="anonymous"
         ></script>
-        <title>{{title}}</title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script
+            id="MathJax-script"
+            async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+        ></script>
+
+        <title>{{ title }}</title>
     </head>
     <body>
+        {% include "calculator-header.njk" %}
 
-    {% include "calculator-header.njk" %}
+        <div class="menu-bar">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                {{
+                    menu | safe
+                }}
+            </ul>
+        </div>
 
+        {{ content | safe }}
 
-    <div class="menu-bar">
-        <ul>
-            <li><a href="/index.html">Home</a></li>
-            {{ menu | safe }}
-        </ul>
-    </div>
+        <div class="blur-effect display-none"></div>
 
-    {{ content | safe }}
+        {% include "footer.njk" %}
 
-    <div class="blur-effect display-none"></div>
-
-    {% include "footer.njk" %}
-
-    <script src="/main.js"></script>
-</body>
-
+        <script src="/main.js"></script>
+    </body>
 </html>
