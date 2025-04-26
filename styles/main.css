@@ -633,6 +633,7 @@ nav {
 }
 .guide .formula {
   color: #cecbff;
+  overflow: scroll;
 }
 
 #faq {
@@ -1445,11 +1446,39 @@ nav {
     font-size: 1rem;
     width: auto;
   }
+  .calculator-card .graph-container .graph {
+    width: 6.625rem;
+    height: 6.625rem;
+  }
+  .calculator-card .graph-container .graph::after {
+    width: 4.4375rem;
+    height: 4.4375rem;
+  }
+  .calculator-card .graph-container .legend {
+    gap: 0;
+  }
+  .calculator-card .graph-container .legend .legend-color {
+    width: 1.4375rem;
+    height: 0.9375rem;
+  }
+  .calculator-card .graph-container .legend .legend-item {
+    font-size: 0.875rem;
+  }
+  .calculator-card .calculator-card-contents .box-result {
+    width: auto;
+  }
+  .calculator-card .calculator-card-contents .box-result .heading {
+    font-size: 0.75rem;
+  }
+  .calculator-card .calculator-card-contents .box-result .amount {
+    font-size: 1.75rem;
+  }
   .guide h2 {
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
   }
-  .guide li, .guide td {
+  .guide li,
+  .guide td {
     font-size: 1.25rem;
   }
 }

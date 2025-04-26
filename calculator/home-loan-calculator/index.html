@@ -21,7 +21,6 @@
             integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
             crossorigin="anonymous"
         ></script>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script
             id="MathJax-script"
             async
@@ -185,7 +184,7 @@
         <div class="faq-container" style="background-color: transparent">
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>How to lower my home loan EMI? </span>
+                    <span>What is the maximum home loan tenure? </span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -193,10 +192,7 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
+                            Most banks offer a maximum tenure of 30 years.
                         </p>
                     </div>
                 </div>
@@ -204,7 +200,7 @@
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>What is the impact of tenure on EMI? </span>
+                    <span>Can I get a home loan without a credit score? </span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -212,10 +208,8 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
+                            It’s difficult, but some lenders may consider
+                            alternative credit history.
                         </p>
                     </div>
                 </div>
@@ -223,7 +217,7 @@
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Is home loan interest tax-deductible? </span>
+                    <span>Are home loan EMIs tax-deductible? </span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -231,10 +225,8 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
+                            Yes, under Section 24(b) for interest paid and
+                            Section 80C for principal repayment
                         </p>
                     </div>
                 </div>
@@ -298,12 +290,9 @@
                 $(`#${slider.id}-value`).text(
                     `Rs.${parseInt(slider.value).toLocaleString("en-IN")}`
                 );
-            } else if (
-                slider.id == "interest-slider" ||
-                slider.id == "tenure-slider"
-            ) {
+            } else if (slider.id == "interest-slider") {
                 $(`#${slider.id}-value`).text(`${slider.value} %`);
-            } else if (slider.id == "age-slider") {
+            } else if (slider.id == "tenure-slider") {
                 $(`#${slider.id}-value`).text(`${slider.value} Years`);
             }
 

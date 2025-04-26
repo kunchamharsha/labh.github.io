@@ -21,7 +21,6 @@
             integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
             crossorigin="anonymous"
         ></script>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script
             id="MathJax-script"
             async
@@ -186,7 +185,9 @@
         <div class="faq-container" style="background-color: transparent">
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>What affects EMI? </span>
+                    <span
+                        >What is the maximum loan tenure for a personal loan?
+                    </span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -194,10 +195,8 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
+                            Most banks offer a maximum tenure of 5 years, but it
+                            varies by lender.
                         </p>
                     </div>
                 </div>
@@ -213,29 +212,8 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Is personal loan interest tax-deductible? </span>
-                    <span class="arrow"
-                        ><img src="/assets/Frame 877 (1).png"
-                    /></span>
-                </div>
-                <div class="faq-answer">
-                    <div class="content">
-                        <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
+                            Yes, but some lenders may charge a prepayment
+                            penalty.
                         </p>
                     </div>
                 </div>
@@ -285,8 +263,12 @@
 
         $("#monthly-emi").text(`Rs.${parseInt(emi).toLocaleString("en-IN")}`);
         $("#principal-amount").text(`Rs.${loanAmount.toLocaleString("en-IN")}`);
-        $("#interest").text(`Rs.${parseInt(interestAmount).toLocaleString("en-IN")}`);
-        $("#total-amount").text(`Rs.${parseInt(totalPayable).toLocaleString("en-IN")}`);
+        $("#interest").text(
+            `Rs.${parseInt(interestAmount).toLocaleString("en-IN")}`
+        );
+        $("#total-amount").text(
+            `Rs.${parseInt(totalPayable).toLocaleString("en-IN")}`
+        );
     }
 
     $(document).ready(function () {

@@ -21,7 +21,6 @@
             integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
             crossorigin="anonymous"
         ></script>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script
             id="MathJax-script"
             async
@@ -61,7 +60,10 @@
 <div class="main-container">
     <div class="contents">
         <h1>Step Up SIP calculators</h1>
-        <p>Calculate EMIs and interest payable for personal loans.</p>
+        <p>
+            Compute returns from SIP investments with increasing contributions
+            each year.
+        </p>
     </div>
     <div class="calculator-card pf-calculator">
         <img src="/assets/card-edge-image.svg" alt="edge-image" />
@@ -177,20 +179,23 @@
     <div class="guide">
         <h2>How to Use?</h2>
         <ul>
-            <li>Enter loan amount, tenure, and interest rate.</li>
-            <li>Calculate EMI and total payable interest.</li>
+            <li>
+                Enter initial SIP amount, annual increment percentage, expected
+                returns, and investment duration.
+            </li>
+            <li>Calculate to view the total corpus and returns.</li>
         </ul>
 
         <h2>Formula</h2>
-        <p class="formula">EMI = [P × r × (1 + r)^n] / [(1 + r)^n – 1]</p>
+        <p class="formula">
+            $$ \text{Future Value} = P \cdot \left( \frac{(1 + r)^n - 1}{r}
+            \cdot (1 + r) \right) + Q \cdot \left( \frac{(1 + r)^n - (1 +
+            i)^n}{r - i} \cdot (1 + r) \right) $$
+        </p>
         <table>
             <tr>
-                <td>EMI (Equated Monthly Installment)</td>
-                <td>The fixed monthly repayment amount.</td>
-            </tr>
-            <tr>
                 <td>P</td>
-                <td>Principal amount of the home loan.</td>
+                <td>Fixed payment each period</td>
             </tr>
             <tr>
                 <td>r</td>
@@ -204,20 +209,24 @@
                     Total number of monthly installments (loan tenure in months)
                 </td>
             </tr>
+            <tr>
+                <td>Q</td>
+                <td>Increasing payment added every period</td>
+            </tr>
         </table>
         <h2>Advantages</h2>
         <ul>
-            <li>Accurate EMI planning</li>
-            <li>Transparent interest calculation</li>
-            <li>Helps budgeting</li>
-            <li>Easy comparison of loan offers</li>
+            <li>Promotes disciplined and progressive investment</li>
+            <li>Enhanced returns through systematic increments</li>
+            <li>Clear visualization of financial growth</li>
+            <li>Customizable investment plans</li>
         </ul>
         <h2>FAQ's</h2>
 
         <div class="faq-container" style="background-color: transparent">
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>What affects EMI? </span>
+                    <span>What is a step-up SIP?</span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -225,10 +234,8 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
+                            It’s a SIP where you increase your investment amount
+                            annually by a fixed percentage or amount.
                         </p>
                     </div>
                 </div>
@@ -236,7 +243,7 @@
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Can I repay early? </span>
+                    <span> Can I stop a step-up SIP anytime? </span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -244,10 +251,8 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
+                            Yes, you can pause or stop it, but check with your
+                            mutual fund provider for penalties.
                         </p>
                     </div>
                 </div>
@@ -255,7 +260,9 @@
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Is personal loan interest tax-deductible? </span>
+                    <span
+                        >IHow does a step-up SIP help in long-term goals?
+                    </span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -263,10 +270,8 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
+                            It allows you to invest more as your income grows,
+                            helping you achieve bigger financial goals.
                         </p>
                     </div>
                 </div>
@@ -290,8 +295,6 @@
         </div>
     </div>
 </div>
-
-<div class="blur-effect display-none"></div>
 
 <script>
     function calculateFutureValue(initialAmount, increment, r, i, n) {
@@ -327,7 +330,7 @@
             tenure
         );
 
-        const returns = futureValue - investment;
+        const returns = futureValue - initialPart;
 
         $("#total-amount").text(
             `Rs.${parseInt(futureValue).toLocaleString("en-IN")}`

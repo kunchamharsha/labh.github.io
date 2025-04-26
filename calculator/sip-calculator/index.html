@@ -21,7 +21,6 @@
             integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
             crossorigin="anonymous"
         ></script>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script
             id="MathJax-script"
             async
@@ -216,7 +215,7 @@
         <div class="faq-container" style="background-color: transparent">
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>What is SIP?</span>
+                    <span>What is a good SIP amount to start with?</span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -224,10 +223,8 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
+                            Start with an amount you’re comfortable with, even
+                            if it’s small.
                         </p>
                     </div>
                 </div>
@@ -235,7 +232,7 @@
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Can returns vary?</span>
+                    <span>Can I change my SIP amount later?</span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -243,10 +240,8 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
+                            Yes, most SIPs allow you to increase or decrease
+                            your contribution.
                         </p>
                     </div>
                 </div>
@@ -388,14 +383,6 @@
             $("#sip-span").removeClass("active");
             sip = 0;
             updateValues();
-        });
-
-        $(".faq-question").click(function () {
-            var $item = $(this).closest(".faq-item");
-
-            $(".faq-item").not($item).removeClass("open");
-
-            $item.toggleClass("open");
         });
 
         function updateSliderBackground(slider) {

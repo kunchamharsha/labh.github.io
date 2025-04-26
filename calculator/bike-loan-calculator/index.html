@@ -21,7 +21,6 @@
             integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
             crossorigin="anonymous"
         ></script>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script
             id="MathJax-script"
             async
@@ -208,7 +207,7 @@
         <div class="faq-container" style="background-color: transparent">
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Can I pre-close my bike loan?</span>
+                    <span>What is the maximum tenure for a bike loan?</span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -216,10 +215,7 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
+                            Most lenders offer a maximum tenure of 3-4 years
                         </p>
                     </div>
                 </div>
@@ -227,7 +223,7 @@
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>What affects my EMI amount?</span>
+                    <span>Can I get a bike loan for a used bike? </span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -235,10 +231,8 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
+                            Yes, but the interest rate may be higher compared to
+                            a new bike loan.
                         </p>
                     </div>
                 </div>
@@ -256,10 +250,8 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
+                            Yes, comprehensive insurance is usually required by
+                            lenders.
                         </p>
                     </div>
                 </div>
@@ -320,7 +312,10 @@
 
     $(document).ready(function () {
         function updateSliderBackground(slider) {
-            if (slider.id == "loan-slider" || slider.id == "downpayment-slider") {
+            if (
+                slider.id == "loan-slider" ||
+                slider.id == "downpayment-slider"
+            ) {
                 $(`#${slider.id}-value`).text(
                     `Rs.${parseInt(slider.value).toLocaleString("en-IN")}`
                 );

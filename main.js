@@ -2,54 +2,67 @@ const calculators = [
     {
         "card-heading": "Retirement calculator",
         "card-description": "Estimate your savings for a secure retirement.",
+        "url": "/calculator/retirement-calculator/",
     },
     {
         "card-heading": "Education fees calculator",
         "card-description": "Plan for your child’s education costs.",
+        "url": "/calculator/education-fees-calculator/",
     },
     {
         "card-heading": "SIP returns calculator",
         "card-description": "Estimate Your Investment Growth.",
+        "url": "/calculator/sip-calculator/",
     },
     {
         "card-heading": "Fixed deposit return calculator",
         "card-description": "Calculate Your Fixed Deposit Growth.",
+        "url": "/calculator/fixed-deposit-calculator/",
     },
     {
         "card-heading": "Lumpsum calculator",
         "card-description": "Estimate Your Investment Returns.",
+        "url": "/calculator/lumpsum-calculator/",
     },
     {
         "card-heading": "PF calculators",
         "card-description": "Estimate Your PF Growth.",
+        "url": "/calculator/pf-calculator/",
     },
     {
         "card-heading": "NPS calculator",
         "card-description": "Plan Your Retirement Savings.",
+        "url": "/calculator/nps-calculator/",
     },
     {
         "card-heading": "Personal loan calculator",
         "card-description": "Calculate Your Loan EMI.",
+        "url": "/calculator/personal-loan-calculator/",
     },
     {
         "card-heading": "Credit card debt calculator",
         "card-description": "Manage Your Debt Smartly.",
+        "url": "/calculator/credit-card-debit-calculator/",
     },
     {
         "card-heading": "Car loan calculator",
         "card-description": "Estimate Your Monthly EMI.",
+        "url": "/calculator/car-loan-calculator/",
     },
     {
         "card-heading": "Bike cost calculator",
         "card-description": "Estimate Your Total Bike Expense.",
+        "url": "/calculator/bike-loan-calculator/",
     },
     {
         "card-heading": "House calculator",
         "card-description": "Estimate Your Home Investment.",
+        "url": "/calculator/home-loan-calculator/",
     },
     {
         "card-heading": "Sip step up calculator",
         "card-description": "Grow Your Investments with Incremental SIPs.",
+        "url": "/calculator/stepup-sip-calculator/",
     },
 ];
 
@@ -81,7 +94,7 @@ if (window.location.pathname != "/calculator/") {
             $(".blur-effect").removeClass("display-none");
             filteredCalculators.forEach((calculator) => {
                 const card = `
-                    <div class="card">
+                    <div class="card" onclick="window.location.href='${calculator['url']}'">
                         <img src="/assets/card-edge-image.svg" alt="edge-image">
                         <img src="/assets/card-edge-image.svg" alt="edge-image">
                         <img src="/assets/calculator-arrow.svg" alt="calculator-arrow">

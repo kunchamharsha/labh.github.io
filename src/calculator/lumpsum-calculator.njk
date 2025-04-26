@@ -1,29 +1,29 @@
 ---
 layout: calculator-base.njk
-title: Sip calculator
+title: Lumpsum calculator
 menu: '
     <li>⦿</li>
     <li><a href="index.html">Calculator</a></li>
-    <li><a href="#" class="active">SIP Calculator</a></li>
+    <li><a href="#" class="active">Lumpsum Calculator</a></li>
 '
 ---
 
 <div class="main-container">
     <div class="contents">
-        <h1>SIP calculator</h1>
-        <p>Compute potential returns from regular monthly SIP investments.</p>
+        <h1>Lumpsum calculator</h1>
+        <p>Estimate returns on one-time lumpsum investments.</p>
     </div>
     <div class="calculator-card sip-calculator">
         <img src="/assets/card-edge-image.svg" alt="edge-image" />
         <img src="/assets/card-edge-image.svg" alt="edge-image" />
 
         <div class="toggler">
-            <span class="sip-span active" id="sip-span">SIP</span>
-            <span class="lumpsum-span" id="lumpsum-span">Lumpsum</span>
+            <span class="sip-span" id="sip-span">SIP</span>
+            <span class="lumpsum-span active" id="lumpsum-span">Lumpsum</span>
         </div>
         <div class="calculator-card-contents">
             <div>
-                <div class="sip-content">
+                <div class="sip-content display-none">
                     <div class="cal-content">
                         <label>Monthly Investment</label>
                         <span id="investment-slider-value">Rs.500</span>
@@ -38,7 +38,7 @@ menu: '
                     />
                 </div>
 
-                <div class="lumpsum-content display-none">
+                <div class="lumpsum-content">
                     <div class="cal-content">
                         <label>One Time Investment</label>
                         <span id="lumpsum-investment-slider-value"
@@ -122,51 +122,51 @@ menu: '
     <div class="guide">
         <h2>How to Use?</h2>
         <ul>
-            <li>Enter your monthly investment amount.</li>
-            <li>Set the investment period and expected returns rate.</li>
-            <li>View accumulated corpus and returns.</li>
+            <li>
+                Enter lumpsum amount, expected returns, and investment period.
+            </li>
+            <li>Calculate to view final corpus.</li>
         </ul>
 
         <h2>Formula</h2>
-        <p class="formula">FV = P × [((1 + r)^n - 1) / r] × (1 + r)</p>
+        <p class="formula">A = P (1 + r/n) ^ nt</p>
 
         <table>
             <tr>
-                <td>FV (Future Value):</td>
-                <td>The accumulated amount after investing via SIP.</td>
+                <td>A</td>
+                <td>Estimated Returns</td>
             </tr>
             <tr>
                 <td>P :</td>
-                <td>Monthly investment amount.</td>
+                <td>Present Value</td>
             </tr>
             <tr>
                 <td>r :</td>
-                <td>
-                    Expected monthly return rate (annual rate divided by 12).
-                </td>
+                <td>Rate of return</td>
             </tr>
             <tr>
-                <td>n :</td>
-                <td>
-                    Total number of monthly installments (years multiplied by
-                    12).
-                </td>
+                <td>t:</td>
+                <td>Duration of investment</td>
+            </tr>
+            <tr>
+                <td>n:</td>
+                <td>Number of compounded interests in a year</td>
             </tr>
         </table>
 
         <h2>Advantages</h2>
         <ul>
-            <li>Encourages disciplined investing</li>
-            <li>Provides expected growth clarity</li>
-            <li>Easy comparison of returns</li>
-            <li>Tailored investment planning</li>
+            <li>Instant returns estimate</li>
+            <li>Helps strategic investment planning</li>
+            <li>Clear view of investment growth</li>
+            <li>Easy to use</li>
         </ul>
         <h2>FAQ's</h2>
 
         <div class="faq-container" style="background-color: transparent">
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>What is a good SIP amount to start with?</span>
+                    <span>Is a lump sum investment better than SIP?</span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -174,8 +174,8 @@ menu: '
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Start with an amount you’re comfortable with, even
-                            if it’s small.
+                            It depends on market conditions and your risk
+                            appetite.
                         </p>
                     </div>
                 </div>
@@ -183,7 +183,7 @@ menu: '
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Can I change my SIP amount later?</span>
+                    <span>Can I use this for mutual funds?</span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -191,8 +191,8 @@ menu: '
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Yes, most SIPs allow you to increase or decrease
-                            your contribution.
+                            Yes, this calculator works for any lump sum
+                            investment.
                         </p>
                     </div>
                 </div>
@@ -318,6 +318,7 @@ menu: '
     }
 
     $(document).ready(function () {
+        console.log('ready')
         $("#sip-span").click(function () {
             $(".lumpsum-content").addClass("display-none");
             $(".sip-content").removeClass("display-none");
@@ -335,6 +336,7 @@ menu: '
             sip = 0;
             updateValues();
         });
+
 
         function updateSliderBackground(slider) {
             if (

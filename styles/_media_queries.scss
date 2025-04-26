@@ -328,6 +328,40 @@
             font-size: calculate-rem(16);
             width: auto;
         }
+        .graph-container {
+            .graph {
+                width: calculate-rem(106);
+                height: calculate-rem(106);
+            }
+
+            .graph::after {
+                width: calculate-rem(71);
+                height: calculate-rem(71);
+            }
+
+            .legend {
+                gap: 0;
+                .legend-color {
+                    width: calculate-rem(23);
+                    height: calculate-rem(15);
+                }
+                .legend-item {
+                    font-size: calculate-rem(14);
+                }
+            }
+        }
+
+        .calculator-card-contents {
+            .box-result {
+                width: auto;
+                .heading {
+                    font-size: calculate-rem(12);
+                }
+                .amount {
+                    font-size: calculate-rem(28);
+                }
+            }
+        }
     }
 
     .guide {
@@ -336,10 +370,10 @@
             margin-bottom: calculate-rem(24);
         }
 
-        li, td {
+        li,
+        td {
             font-size: calculate-rem(20);
         }
-
     }
 }
 

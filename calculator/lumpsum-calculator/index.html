@@ -27,7 +27,7 @@
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
         ></script>
 
-        <title>PF Calculator</title>
+        <title>Lumpsum calculator</title>
     </head>
     <body>
         <nav>
@@ -52,98 +52,118 @@
         <div class="menu-bar">
             <ul>
                 <li><a href="/index.html">Home</a></li>
-                 <li>⦿</li> <li><a href="index.html">Calculator</a></li> <li><a href="#" class="active">PF Calculator</a></li> 
+                 <li>⦿</li> <li><a href="index.html">Calculator</a></li> <li><a href="#" class="active">Lumpsum Calculator</a></li> 
             </ul>
         </div>
 
         
 <div class="main-container">
     <div class="contents">
-        <h1>PF calculators</h1>
-        <p>Calculate the total corpus accumulated in your EPF account.</p>
+        <h1>Lumpsum calculator</h1>
+        <p>Estimate returns on one-time lumpsum investments.</p>
     </div>
-    <div class="calculator-card pf-calculator">
+    <div class="calculator-card sip-calculator">
         <img src="/assets/card-edge-image.svg" alt="edge-image" />
         <img src="/assets/card-edge-image.svg" alt="edge-image" />
+
+        <div class="toggler">
+            <span class="sip-span" id="sip-span">SIP</span>
+            <span class="lumpsum-span active" id="lumpsum-span">Lumpsum</span>
+        </div>
         <div class="calculator-card-contents">
             <div>
-                <div class="cal-content">
-                    <label>Monthly salary(Basic + DA)</label>
-                    <span id="salary-slider-value">Rs.40,000</span>
+                <div class="sip-content display-none">
+                    <div class="cal-content">
+                        <label>Monthly Investment</label>
+                        <span id="investment-slider-value">Rs.500</span>
+                    </div>
+                    <input
+                        type="range"
+                        id="investment-slider"
+                        min="500"
+                        max="1000000"
+                        step="500"
+                        value="5000"
+                    />
                 </div>
-                <div class="input-limits">
-                    <div>Rs.1000</div>
-                    <div>Rs.5 Lac</div>
+
+                <div class="lumpsum-content">
+                    <div class="cal-content">
+                        <label>One Time Investment</label>
+                        <span id="lumpsum-investment-slider-value"
+                            >Rs.5000</span
+                        >
+                    </div>
+                    <input
+                        type="range"
+                        id="lumpsum-investment-slider"
+                        min="500"
+                        max="1000000"
+                        step="500"
+                        value="5000"
+                    />
+                </div>
+
+                <div class="cal-content">
+                    <label>Time Period</label>
+                    <span id="year-slider-value">10 years</span>
                 </div>
                 <input
                     type="range"
-                    id="salary-slider"
-                    min="1000"
-                    max="500000"
-                    step="500"
-                    value="40000"
+                    id="year-slider"
+                    min="1"
+                    max="32"
+                    step="1"
+                    value="5"
                 />
 
                 <div class="cal-content">
-                    <label>Your Age</label>
-                    <span id="age-slider-value">25 Years</span>
-                </div>
-                <div class="input-limits">
-                    <div>18</div>
-                    <div>48</div>
+                    <label>Expected return(p.a.)</label>
+                    <span id="return-slider-value">12%</span>
                 </div>
                 <input
                     type="range"
-                    id="age-slider"
-                    min="18"
-                    max="48"
+                    id="return-slider"
+                    min="1"
+                    max="30"
                     step="1"
-                    value="23"
-                />
-
-                <div class="cal-content">
-                    <label>Your contribution to PF</label>
-                    <span id="contribution-slider-value">14%</span>
-                </div>
-                <div class="input-limits">
-                    <div>12%</div>
-                    <div>20%</div>
-                </div>
-                <input
-                    type="range"
-                    id="contribution-slider"
-                    min="0"
-                    max="20"
-                    step="1"
-                    value="14"
+                    value="12"
                 />
             </div>
+
             <div>
-                <div class="cal-content">
-                    <label>Annual salary increase</label>
-                    <span id="annual-increase-slider-value">9%</span>
-                </div>
-                <div class="input-limits">
-                    <div>0%</div>
-                    <div>15%</div>
-                </div>
-                <input
-                    type="range"
-                    id="annual-increase-slider"
-                    min="0"
-                    max="15"
-                    step="1"
-                    value="9"
-                />
-
-                <div class="cal-content">
-                    <label>Rate of interest</label>
-                    <input type="number" id="rate" placeholder="%" value="7" />
+                <div class="graph-container">
+                    <div class="graph"></div>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div
+                                class="legend-color"
+                                style="background-color: #9a5ced"
+                            ></div>
+                            <span>Est. Returns</span>
+                        </div>
+                        <div class="legend-item">
+                            <div
+                                class="legend-color"
+                                style="background-color: #e8d8fd"
+                            ></div>
+                            <span>Invested amt</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="box-result">
-                    <span class="heading">You will have accumulated</span>
-                    <span class="amount" id="total-amount">Rs.15,652.55</span>
+                <div class="cal-content result">
+                    <label>Invested Amt</label>
+                    <span id="invested-amt">Rs.46,36,567</span>
+                </div>
+                <div class="cal-content result">
+                    <label>Est. returns</label>
+                    <span id="est-returns">Rs.12,67,346</span>
+                </div>
+                <hr class="calculator-hr" />
+                <div class="cal-content result">
+                    <label>Total Value</label>
+                    <span id="total-value">Rs.59,85,385</span>
                 </div>
             </div>
         </div>
@@ -152,47 +172,50 @@
         <h2>How to Use?</h2>
         <ul>
             <li>
-                Enter basic monthly salary, current age, retirement age, and
-                current PF balance.
+                Enter lumpsum amount, expected returns, and investment period.
             </li>
-            <li>Calculate to see retirement corpus.</li>
+            <li>Calculate to view final corpus.</li>
         </ul>
 
         <h2>Formula</h2>
-        <p class="formula">
-            Accumulated Balance = Monthly Contribution × [(1 + r)^n - 1] / r
-        </p>
+        <p class="formula">A = P (1 + r/n) ^ nt</p>
+
         <table>
             <tr>
-                <td>Accumulated Balance</td>
-                <td>Total amount saved at retirement.</td>
+                <td>A</td>
+                <td>Estimated Returns</td>
             </tr>
             <tr>
-                <td>Monthly Contribution</td>
-                <td>Amount contributed monthly to PF.</td>
+                <td>P :</td>
+                <td>Present Value</td>
             </tr>
             <tr>
-                <td>r</td>
-                <td>Monthly interest rate (annual rate divided by 12).</td>
+                <td>r :</td>
+                <td>Rate of return</td>
             </tr>
             <tr>
-                <td>n</td>
-                <td>Total number of contributions (years multiplied by 12).</td>
+                <td>t:</td>
+                <td>Duration of investment</td>
+            </tr>
+            <tr>
+                <td>n:</td>
+                <td>Number of compounded interests in a year</td>
             </tr>
         </table>
+
         <h2>Advantages</h2>
         <ul>
-            <li>Easy tracking of retirement corpus</li>
-            <li>Clarity on employer and employee contributions</li>
-            <li>Future planning simplified</li>
-            <li>Encourages awareness of PF benefits</li>
+            <li>Instant returns estimate</li>
+            <li>Helps strategic investment planning</li>
+            <li>Clear view of investment growth</li>
+            <li>Easy to use</li>
         </ul>
         <h2>FAQ's</h2>
 
         <div class="faq-container" style="background-color: transparent">
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Can I add multiple children?</span>
+                    <span>Is a lump sum investment better than SIP?</span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -200,10 +223,8 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
+                            It depends on market conditions and your risk
+                            appetite.
                         </p>
                     </div>
                 </div>
@@ -211,7 +232,7 @@
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Does it calculate for international education?</span>
+                    <span>Can I use this for mutual funds?</span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -219,10 +240,8 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
+                            Yes, this calculator works for any lump sum
+                            investment.
                         </p>
                     </div>
                 </div>
@@ -230,7 +249,7 @@
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>What inflation rate should I use? </span>
+                    <span>Is SIP safe? </span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -266,80 +285,120 @@
     </div>
 </div>
 
-<div class="blur-effect display-none"></div>
-
 <script>
+    let sip = 1;
+
     /*
-        - Every month, PF grows by adding the employee's contribution and earning interest.
-        - After every 12 months, salary increases by the annual increment percentage.
-        - Interest is compounded monthly on the running PF balance.
-        */
-    function calculatePF(
-        monthlySalary,
-        currentAge,
-        contributionPercent,
-        annualIncrementPercent,
-        interestRate
-    ) {
-        const retirementAge = 58;
-        let pfBalance = 0;
-        let monthlyContributionPercent = contributionPercent / 100;
-        let monthlyInterestRate = interestRate / 100 / 12;
+        Investment Calculators: SIP and Lump Sum
+        
+        1. SIP (Systematic Investment Plan) Formula:
+            Final Amount = P × [(1 + r)^n - 1] / r × (1 + r)
+        
+            Where:
+            - P = Monthly investment amount
+            - r = Monthly interest rate (annual rate ÷ 12 ÷ 100)
+            - n = Total number of months (years × 12)
+        
+        2. Lump Sum Investment Formula:
+            Final Amount = P × (1 + R)^t
+        
+            Where:
+            - P = One-time initial investment
+            - R = Annual interest rate (annual rate ÷ 100)
+            - t = Number of years
+         */
 
-        for (let age = currentAge; age < retirementAge; age++) {
-            for (let month = 1; month <= 12; month++) {
-                let monthlyContribution =
-                    monthlySalary * monthlyContributionPercent;
-                pfBalance =
-                    pfBalance * (1 + monthlyInterestRate) + monthlyContribution;
-            }
-            // After each year, increase salary
-            monthlySalary = monthlySalary * (1 + annualIncrementPercent / 100);
-        }
+    function calculateSIP(P, annualRate, years) {
+        const r = annualRate / 12 / 100;
+        const n = years * 12;
 
-        return pfBalance.toFixed(2);
+        const finalAmount = P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+
+        return finalAmount;
+    }
+
+    function calculateLumpSum(P, annualRate, years) {
+        const R = annualRate / 100;
+        const finalAmount = P * Math.pow(1 + R, years);
+        return finalAmount.toFixed(2);
+    }
+    function updateChart(returnsPercentage) {
+        const chart = document.querySelector(".graph");
+        chart.style.background = `conic-gradient(
+            #9A5CED 0% ${returnsPercentage}%,
+            #E8D8FD ${returnsPercentage}% 100%
+            )`;
     }
     function updateValues() {
-        const monthlySalary = $("#salary-slider").val();
-        const currentAge = $("#age-slider").val();
-        const contributionPercentage = $("#contribution-slider").val();
-        const annualIncrementPercent = $("#annual-increase-slider").val();
-        const interestRate = $("#rate").val();
-
-        const finalPF = calculatePF(
-            monthlySalary,
-            currentAge,
-            contributionPercentage,
-            annualIncrementPercent,
-            interestRate
+        const sipPerMonth = $("#investment-slider").val();
+        const years = $("#year-slider").val();
+        let investedAmount = sipPerMonth * (years * 12);
+        let returns = 0;
+        let totalReturns = 0;
+        if (sip == 1) {
+            totalReturns = calculateSIP(
+                sipPerMonth,
+                $("#return-slider").val(),
+                years
+            );
+            returns = totalReturns - investedAmount;
+        } else {
+            investedAmount = $("#lumpsum-investment-slider").val();
+            totalReturns = calculateLumpSum(
+                investedAmount,
+                $("#return-slider").val(),
+                years
+            );
+            returns = totalReturns - investedAmount;
+        }
+        $("#invested-amt").text(`Rs.${investedAmount.toLocaleString("en-IN")}`);
+        $("#est-returns").text(
+            `Rs.${returns.toLocaleString("en-IN", {
+                maximumFractionDigits: 0,
+            })}`
         );
-
-        $("#total-amount").text(
-            `Rs.${parseInt(finalPF).toLocaleString("en-IN")}`
+        $("#total-value").text(
+            `Rs.${parseFloat(totalReturns).toLocaleString("en-IN", {
+                maximumFractionDigits: 0,
+            })}`
         );
+        const returnsPercentage = (returns / investedAmount) * 100;
+        updateChart(returnsPercentage);
     }
 
     $(document).ready(function () {
-        $(".faq-question").click(function () {
-            var $item = $(this).closest(".faq-item");
-
-            $(".faq-item").not($item).removeClass("open");
-
-            $item.toggleClass("open");
+        console.log('ready')
+        $("#sip-span").click(function () {
+            $(".lumpsum-content").addClass("display-none");
+            $(".sip-content").removeClass("display-none");
+            $("#sip-span").addClass("active");
+            $("#lumpsum-span").removeClass("active");
+            sip = 1;
+            updateValues();
         });
 
+        $("#lumpsum-span").click(function () {
+            $(".lumpsum-content").removeClass("display-none");
+            $(".sip-content").addClass("display-none");
+            $("#lumpsum-span").addClass("active");
+            $("#sip-span").removeClass("active");
+            sip = 0;
+            updateValues();
+        });
+
+
         function updateSliderBackground(slider) {
-            if (slider.id == "salary-slider") {
+            if (
+                slider.id == "investment-slider" ||
+                slider.id == "lumpsum-investment-slider"
+            ) {
                 $(`#${slider.id}-value`).text(
                     `Rs.${parseInt(slider.value).toLocaleString("en-IN")}`
                 );
-            } else if (
-                slider.id == "contribution-slider" ||
-                slider.id == "annual-increase-slider"
-            ) {
+            } else if (slider.id == "year-slider") {
+                $(`#${slider.id}-value`).text(`${slider.value} years`);
+            } else if (slider.id == "return-slider") {
                 $(`#${slider.id}-value`).text(`${slider.value} %`);
-            } else if (slider.id == "age-slider") {
-                $(`#${slider.id}-value`).text(`${slider.value} Years`);
             }
 
             const value =
@@ -351,7 +410,7 @@
         }
 
         $(
-            "#salary-slider, #age-slider, #contribution-slider, #annual-increase-slider"
+            "#investment-slider, #lumpsum-investment-slider, #year-slider, #return-slider"
         )
             .each(function () {
                 updateSliderBackground(this);
@@ -361,6 +420,9 @@
                 updateSliderBackground(this);
                 updateValues();
             });
+        $("#luxury, #good, #normal").on("change", function () {
+            updateValues();
+        });
     });
 </script>
 
