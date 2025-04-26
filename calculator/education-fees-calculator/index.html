@@ -52,7 +52,7 @@
         <div class="menu-bar">
             <ul>
                 <li><a href="/index.html">Home</a></li>
-                 <li>⦿</li> <li><a href="index.html">Calculator</a></li> <li><a href="#" class="active">Education Fees Calculator</a></li> 
+                 <li>⦿</li> <li><a href="/calculator/">Calculator</a></li> <li><a href="#" class="active">Education Fees Calculator</a></li> 
             </ul>
         </div>
 
@@ -314,13 +314,6 @@
             }
         });
 
-        $(".faq-question").click(function () {
-            var $item = $(this).closest(".faq-item");
-
-            $(".faq-item").not($item).removeClass("open");
-
-            $item.toggleClass("open");
-        });
 
         function updateSliderBackground(slider) {
             if (slider.id == "age-slider" || slider.id == "course-slider") {
@@ -413,6 +406,130 @@
             </div>
 
             <div class="desktop-footer">
+                <div class="footer-links">
+                    <div class="footer-links-section">
+                        <h4>Top Picks</h4>
+                        <ul>
+                            <li><a href="">Mutual Funds</a></li>
+                            <li><a href="">New Fund Offers</a></li>
+                            <li><a href="">Systematic Plans</a></li>
+                            <li>
+                                <a href="">Tax-Saving Investment Funds</a>
+                            </li>
+                            <li><a href="">Top AMC's</a></li>
+                            <li><a href="">Market Indices</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-section">
+                        <h4>Know us</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#aboutsection">Who are we</a></li>
+                            <li><a href="">Why labh</a></li>
+                            <li><a href="">Our mission & Vision</a></li>
+                            <li><a href="">Experts behind Labh</a></li>
+                            <li>
+                                <a href=""
+                                    >Regulatory Compliance & Certifications</a
+                                >
+                            </li>
+                            <li><a href="">Beta</a></li>
+                            <li><a href="">Contact Us</a></li>
+                            <li><a href="">Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-section">
+                        <h4>Investor's toolkit</h4>
+                        <ul>
+                            <li><a href="/calculator/">All calculators</a></li>
+                            <li>
+                                <a href="/calculator/retirement-calculator/"
+                                    >Retirement calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/education-fees-calculator/"
+                                    >Education fees calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/sip-calculator/"
+                                    >Sip returns calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/fixed-deposit-calculator/"
+                                    >Fixed deposit return calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/fixed-deposit-calculator/"
+                                    >Lumpsum calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/pf-calculator/"
+                                    >PF calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/nps-calculator/"
+                                    >NPS calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/personal-loan-calculator/"
+                                    >Personal Loan calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/calculator/credit-card-debit-calculator/"
+                                    >Credit card debt calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/car-loan-calculator/"
+                                    >Car loan calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/bike-loan-calculator/"
+                                    >Bike cost calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/home-loan-calculator/"
+                                    >House calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/stepup-sip-calculator/"
+                                    >Sip step up calculator</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-section">
+                        <h4>Labh Digest</h4>
+                        <ul>
+                            <li>
+                                <a href="">Labh Blogs & Market Insights</a>
+                            </li>
+                            <li><a href="">Mutual Fund Basics</a></li>
+                            <li>
+                                <a href="">Investment Strategies</a>
+                            </li>
+                            <li><a href="">Glossary</a></li>
+                            <li>
+                                <a href="">Fin tech News letters</a>
+                            </li>
+                            <li><a href="">Disclaimer</a></li>
+                            <li><a href="">Policy</a></li>
+                            <li><a href="">Terms and conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="footer-methodologies">
                     <div>
                         <h4
@@ -502,90 +619,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-links-section">
-                        <h4>Top Picks</h4>
-                        <ul>
-                            <li><a href="">Mutual Funds</a></li>
-                            <li><a href="">New Fund Offers</a></li>
-                            <li><a href="">Systematic Plans</a></li>
-                            <li>
-                                <a href="">Tax-Saving Investment Funds</a>
-                            </li>
-                            <li><a href="">Top AMC's</a></li>
-                            <li><a href="">Market Indices</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-links-section">
-                        <h4>Know us</h4>
-                        <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Who are we</a></li>
-                            <li><a href="">Why labh</a></li>
-                            <li><a href="">Our mission & Vision</a></li>
-                            <li><a href="">Experts behind Labh</a></li>
-                            <li>
-                                <a href=""
-                                    >Regulatory Compliance & Certifications</a
-                                >
-                            </li>
-                            <li><a href="">Beta</a></li>
-                            <li><a href="">Contact Us</a></li>
-                            <li><a href="">Support</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-links-section">
-                        <h4>Investor's toolkit</h4>
-                        <ul>
-                            <li>
-                                <a href="">Retirement calculator</a>
-                            </li>
-                            <li>
-                                <a href="">Education fees calculator</a>
-                            </li>
-                            <li>
-                                <a href="">Sip returns calculator</a>
-                            </li>
-                            <li>
-                                <a href="">Fixed deposit return calculator</a>
-                            </li>
-                            <li><a href="">Lumpsum calculator</a></li>
-                            <li><a href="">PF calculator</a></li>
-                            <li><a href="">NPS calculator</a></li>
-                            <li>
-                                <a href="">Personal Loan calculator</a>
-                            </li>
-                            <li>
-                                <a href="">Credit card debt calculator</a>
-                            </li>
-                            <li><a href="">Car loan calculator</a></li>
-                            <li><a href="">Bike cost calculator</a></li>
-                            <li><a href="">House calculator</a></li>
-                            <li>
-                                <a href="">Sip step up calculator</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-links-section">
-                        <h4>Labh Digest</h4>
-                        <ul>
-                            <li>
-                                <a href="">Labh Blogs & Market Insights</a>
-                            </li>
-                            <li><a href="">Mutual Fund Basics</a></li>
-                            <li>
-                                <a href="">Investment Strategies</a>
-                            </li>
-                            <li><a href="">Glossary</a></li>
-                            <li>
-                                <a href="">Fin tech News letters</a>
-                            </li>
-                            <li><a href="">Disclaimer</a></li>
-                            <li><a href="">Policy</a></li>
-                            <li><a href="">Terms and conditions</a></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
 
             <br /><br /><br />
@@ -594,20 +627,17 @@
     <hr
         class="hrs"
         style="
-            color: rgb(223, 203, 203);
+            color: black;
             margin-top: -20px;
             margin-bottom: 20px;
         "
     />
     <div
+        class="download-app-footer"
         style="
             flex: 1;
-            display: none;
             justify-content: flex-end;
-            gap: 10px;
-            margin-bottom: 20px;
-            margin-top: 36px;
-            margin-right: 62px;
+            gap: 20px;
         "
     >
         <div>

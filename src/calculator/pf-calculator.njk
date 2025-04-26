@@ -3,7 +3,7 @@ layout: calculator-base.njk
 title: PF Calculator
 menu: '
     <li>⦿</li>
-    <li><a href="index.html">Calculator</a></li>
+    <li><a href="/calculator/">Calculator</a></li>
     <li><a href="#" class="active">PF Calculator</a></li>
 '
 ---
@@ -271,13 +271,6 @@ menu: '
     }
 
     $(document).ready(function () {
-        $(".faq-question").click(function () {
-            var $item = $(this).closest(".faq-item");
-
-            $(".faq-item").not($item).removeClass("open");
-
-            $item.toggleClass("open");
-        });
 
         function updateSliderBackground(slider) {
             if (slider.id == "salary-slider") {

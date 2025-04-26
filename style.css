@@ -274,6 +274,58 @@ body {
 .footer-methodologies li {
     font-size: 20px !important;
 }
+.footer-methodologies {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-links h4 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+
+.footer-links-section {
+    width: 260px;
+}
+
+.footer-links-section ul {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links-section li {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+.download-app-footer {
+    display: flex;
+    padding-top: 50px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.download-app-footer img {
+    width: 207px;
+}
 .social-media {
     font-size: 24px !important;
     font-weight: bold !important;
@@ -1133,6 +1185,15 @@ body {
         text-align: center;
         padding-top: 8px;
     }
+    .download-app-footer {
+        padding-top: 22px;
+        padding-bottom: 21px;
+        justify-content: flex-start !important;
+        margin: 0px !important;
+    }
+    .footer-methodologies {
+        flex-direction: column;
+    }
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
@@ -1405,9 +1466,6 @@ body {
     }
     .footer-logo {
         font-size: 16px !important;
-    }
-    .desktop-footer {
-        display: none !important;
     }
     .company-address {
         font-size: 18px;
@@ -1684,9 +1742,6 @@ body {
     .footer-logo {
         font-size: 16px !important;
     }
-    .desktop-footer {
-        display: none !important;
-    }
     .company-address {
         font-size: 24px;
         line-height: 32px;
@@ -1809,11 +1864,6 @@ body {
     }
 }
 
-@media (min-width: 1024px) {
-    .mobile-footer {
-        display: none !important;
-    }
-}
 
 /* * {
   background: #000 !important;

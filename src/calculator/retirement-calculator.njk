@@ -3,7 +3,7 @@ layout: calculator-base.njk
 title: Retirement calculator
 menu: '
     <li>⦿</li>
-    <li><a href="home.html">Calculator</a></li>
+    <li><a href="/calculator/">Calculator</a></li>
     <li><a href="#" class="active">Retierment Calculator</a></li>
 '
 ---
@@ -17,8 +17,8 @@ menu: '
         </p>
     </div>
     <div class="calculator-card">
-        <img src="../assets/card-edge-image.svg" alt="edge-image" />
-        <img src="../assets/card-edge-image.svg" alt="edge-image" />
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
         <div class="calculator-card-contents">
             <div>
                 <div class="cal-content">
@@ -158,7 +158,7 @@ menu: '
                 <div class="faq-question">
                     <span>How does Labh keep my investments safe?</span>
                     <span class="arrow"
-                        ><img src="../assets/Frame 877 (1).png"
+                        ><img src="/assets/Frame 877 (1).png"
                     /></span>
                 </div>
                 <div class="faq-answer">
@@ -177,7 +177,7 @@ menu: '
                 <div class="faq-question">
                     <span>Can I adjust my retirement age later?</span>
                     <span class="arrow"
-                        ><img src="../assets/Frame 877 (1).png"
+                        ><img src="/assets/Frame 877 (1).png"
                     /></span>
                 </div>
                 <div class="faq-answer">
@@ -196,7 +196,7 @@ menu: '
                 <div class="faq-question">
                     <span>Does the calculator consider pension income? </span>
                     <span class="arrow"
-                        ><img src="../assets/Frame 877 (1).png"
+                        ><img src="/assets/Frame 877 (1).png"
                     /></span>
                 </div>
                 <div class="faq-answer">
@@ -311,22 +311,23 @@ menu: '
         );
 
         return {
-            futureExpenses: futureExpenses.toLocaleString("en-IN"),
+            futureExpenses: futureExpenses.toLocaleString("en-IN", {
+                maximumFractionDigits: 0,
+            }),
             annualExpensesAtRetirement:
-                annualExpensesAtRetirement.toLocaleString("en-IN"),
-            corpusRequired: corpusRequired.toLocaleString("en-IN"),
-            sipRequired: sipRequired.toLocaleString("en-IN"),
+                annualExpensesAtRetirement.toLocaleString("en-IN", {
+                    maximumFractionDigits: 0,
+                }),
+            corpusRequired: corpusRequired.toLocaleString("en-IN", {
+                maximumFractionDigits: 0,
+            }),
+            sipRequired: sipRequired.toLocaleString("en-IN", {
+                maximumFractionDigits: 0,
+            }),
         };
     }
 
     $(document).ready(function () {
-        $(".faq-question").click(function () {
-            var $item = $(this).closest(".faq-item");
-
-            $(".faq-item").not($item).removeClass("open");
-
-            $item.toggleClass("open");
-        });
 
         function updateSliderBackground(slider) {
             const value =

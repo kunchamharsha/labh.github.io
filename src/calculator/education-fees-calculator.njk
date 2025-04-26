@@ -3,7 +3,7 @@ layout: calculator-base.njk
 title: Education Fees Calculator
 menu: '
     <li>⦿</li>
-    <li><a href="index.html">Calculator</a></li>
+    <li><a href="/calculator/">Calculator</a></li>
     <li><a href="#" class="active">Education Fees Calculator</a></li>
 '
 ---
@@ -265,13 +265,6 @@ menu: '
             }
         });
 
-        $(".faq-question").click(function () {
-            var $item = $(this).closest(".faq-item");
-
-            $(".faq-item").not($item).removeClass("open");
-
-            $item.toggleClass("open");
-        });
 
         function updateSliderBackground(slider) {
             if (slider.id == "age-slider" || slider.id == "course-slider") {

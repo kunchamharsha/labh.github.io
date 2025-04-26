@@ -82,6 +82,19 @@
 .social-media {
     font-size: 24px !important;
 }
+.download-app-footer {
+    display: flex;
+    padding-top: 50px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.download-app-footer img {
+    width: calculate-rem(207);
+}
 @media (min-width: 0px) and (max-width: 480px) {
     .footercontainer {
         padding: 0px !important;
@@ -190,6 +203,15 @@
         li, h4 {
             font-size: calculate-rem(14);
         }
+    }
+    .download-app-footer {
+        padding-top: 22px;
+        padding-bottom: 21px;
+        justify-content: flex-start !important;
+        margin: 0px !important;
+    }
+    .footer-methodologies {
+        flex-direction: column;
     }
 }
 
