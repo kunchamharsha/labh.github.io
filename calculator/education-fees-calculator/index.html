@@ -196,7 +196,12 @@
                     <div class="cal-content">
                         <label>What is the current Education fee?</label>
                     </div>
-                    <input type="text" name="current-fees" id="current-fees" />
+                    <input
+                        type="number"
+                        name="current-fees"
+                        id="estimated-fees"
+                        placeholder=""
+                    />
                 </div>
 
                 <div class="box-result">
@@ -233,7 +238,10 @@
         <div class="faq-container" style="background-color: transparent">
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>What if I don’t know the current cost of education?</span>
+                    <span
+                        >What if I don’t know the current cost of
+                        education?</span
+                    >
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -241,7 +249,8 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                             Research the average cost of the course or use an estimated figure.
+                            Research the average cost of the course or use an
+                            estimated figure.
                         </p>
                     </div>
                 </div>
@@ -257,12 +266,12 @@
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Use an average education inflation rate (e.g., 10-12%).
+                            Use an average education inflation rate (e.g.,
+                            10-12%).
                         </p>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -285,9 +294,78 @@
 
 <script>
     let course = null;
-    function updateValues() {}
+    const other = 1000000;
+    const lawyer = 1500000;
+    const engineer = 2000000;
+    const mba = 2500000;
+    const mbbs = 5000000;
+    let course_value = mbbs;
+
+    function educationGoalCalculator(
+        currentAge,
+        goalAge,
+        currentCost,
+        inflationRate,
+        rateOfReturn,
+        currentSavings = 1
+    ) {
+        const yearsLeft = goalAge - currentAge;
+        const monthsLeft = yearsLeft * 12;
+
+        currentCost = parseInt(currentCost);
+
+        const futureCost =
+            currentCost *
+            Math.pow(1 + parseFloat(inflationRate) / 100, yearsLeft);
+
+        const futureValueOfSavings =
+            currentSavings * Math.pow(1 + rateOfReturn / 100, yearsLeft);
+
+        let amountNeeded = futureCost - futureValueOfSavings;
+
+        amountNeeded = Math.max(amountNeeded, 0);
+
+        const monthlyRate = rateOfReturn / 100 / 12;
+        let monthlyInvestment;
+
+        if (monthlyRate === 0) {
+            monthlyInvestment = amountNeeded / monthsLeft;
+        } else {
+            monthlyInvestment =
+                (amountNeeded * monthlyRate) /
+                (Math.pow(1 + monthlyRate, monthsLeft) - 1);
+        }
+
+        return (Math.round(monthlyInvestment * 100) / 100).toLocaleString(
+            "en-IN",
+            { maximumFractionDigits: 0 }
+        );
+    }
+
+    function updateValues() {
+        const currentAge = $("#age-slider").val();
+        const goalAge = $("#course-slider").val();
+        const inflationRate = $("#inflation-slider").val();
+        const rateOfReturn = $("#return-slider").val();
+        const estimatedFees =
+            $("#estimated-fees").val() == ""
+                ? course_value
+                : $("#estimated-fees").val();
+
+        const totalAmount = educationGoalCalculator(
+            currentAge,
+            goalAge,
+            estimatedFees,
+            inflationRate,
+            rateOfReturn
+        );
+
+        $("#total-amount").text("₹" + totalAmount);
+    }
 
     $(document).ready(function () {
+        $("#estimated-fees").attr("placeholder", course_value);
+
         $("#dropdown").click(function () {
             $(".dropdown-selected").toggleClass("border-class");
             $(".dropdown-options").toggleClass("display-none");
@@ -298,10 +376,27 @@
             const value = $(this).data("value");
             course = value;
 
+            if (course == "Other") {
+                course_value = other;
+            } else if (course == "Lawyer") {
+                course_value = lawyer;
+            } else if (course == "Engineer") {
+                course_value = engineer;
+            } else if (course == "MBA") {
+                course_value = mba;
+            }
+
             $(".dropdown-selected").toggleClass("border-class");
             $("#selected-cource").text(value);
             $(".dropdown-options").toggleClass("display-none");
             $("#dropdown-arrow").toggleClass("transform-y");
+
+            updateValues();
+            $("#estimated-fees").attr("placeholder", course_value);
+        });
+
+        $("#estimated-fees").on("input", function () {
+            updateValues();
         });
 
         $('input[name="estimated"]').on("change", function () {
@@ -313,7 +408,6 @@
                 $(".current-fees").hide();
             }
         });
-
 
         function updateSliderBackground(slider) {
             if (slider.id == "age-slider" || slider.id == "course-slider") {

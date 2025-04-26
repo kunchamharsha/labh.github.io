@@ -19,7 +19,7 @@ menu: '
 
         <div class="toggler">
             <span class="sip-span active" id="sip-span">SIP</span>
-            <span class="lumpsum-span" id="lumpsum-span">Lumpsum</span>
+            <span class="lumpsum-span" id="lumpsum-span" onclick="window.location.href='/calculator/lumpsum-calculator/'">Lumpsum</span>
         </div>
         <div class="calculator-card-contents">
             <div>
@@ -128,7 +128,9 @@ menu: '
         </ul>
 
         <h2>Formula</h2>
-        <p class="formula">FV = P × [((1 + r)^n - 1) / r] × (1 + r)</p>
+        <p class="formula">
+            $$ FV = P \times \left( \frac{(1 + r)^n - 1}{r} \right) \times (1 + r) $$
+        </p>
 
         <table>
             <tr>

@@ -482,14 +482,14 @@ nav {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.calculator-card-contents input[type=text] {
+.calculator-card-contents input[type=number] {
   border: 0px;
   background-color: transparent;
   border-bottom: 1px solid black;
   width: 100%;
   margin-bottom: 2.5rem;
 }
-.calculator-card-contents input[type=text]:focus {
+.calculator-card-contents input[type=number]:focus {
   outline: none;
 }
 .calculator-card-contents .box-result {

@@ -23,11 +23,11 @@ menu: '
             <div>
                 <div class="cal-content">
                     <label>Monthly Investment</label>
-                    <span id="investment-slider-value">Rs.20000</span>
+                    <span id="investment-slider-value">₹20000</span>
                 </div>
                 <div class="input-limits">
-                    <div>Rs.500</div>
-                    <div>Rs.10,00,000</div>
+                    <div>₹500</div>
+                    <div>₹10 Lacs</div>
                 </div>
                 <input
                     type="range"
@@ -40,11 +40,11 @@ menu: '
 
                 <div class="cal-content">
                     <label>Increment Yearly</label>
-                    <span id="increment-slider-value">Rs.2000</span>
+                    <span id="increment-slider-value">₹2000</span>
                 </div>
                 <div class="input-limits">
-                    <div>Rs.500</div>
-                    <div>Rs.5,00,000</div>
+                    <div>₹500</div>
+                    <div>₹5 Lacs</div>
                 </div>
                 <input
                     type="range"
@@ -109,19 +109,19 @@ menu: '
 
                 <div class="cal-content result">
                     <label>Invested Amt</label>
-                    <span id="invested-amt" class="total">Rs.58,66,36,480</span>
+                    <span id="invested-amt" class="total">₹58,66,36,480</span>
                 </div>
 
                 <div class="cal-content result">
                     <label>Est. return</label>
-                    <span id="returns">Rs.10,03,99,76,645</span>
+                    <span id="returns">₹10,03,99,76,645</span>
                 </div>
 
                 <hr />
 
                 <div class="cal-content result">
                     <label>Total Amount Payable</label>
-                    <span id="total-amount">Rs.5,88,019</span>
+                    <span id="total-amount">₹5,88,019</span>
                 </div>
                 <a href="">Invest Now</a>
             </div>
@@ -252,14 +252,25 @@ menu: '
 </div>
 
 <script>
-    function calculateFutureValue(initialAmount, increment, r, i, n) {
-        const initialPart =
-            initialAmount * (((Math.pow(1 + r, n) - 1) / r) * (1 + r));
-        const incrementPart =
-            increment *
-            (((Math.pow(1 + r, n) - Math.pow(1 + i, n)) / (r - i)) * (1 + r));
-        const futureValue = initialPart + incrementPart;
-        return [futureValue, initialPart];
+    function calculateFutureValue(
+        P,
+        r,
+        n,
+        stepUpPercent,
+        m = 0
+    ) {
+        let FV = 0;
+        let investedAmount = 0;
+        const rate = 1 + r / 100;
+
+        for (let i = 0; i < n - m; i++) {
+            const steppedP = P * Math.pow(1 + stepUpPercent / 100, i);
+            investedAmount += steppedP;
+            const years = n - i;
+            FV += steppedP * Math.pow(rate, years);
+        }
+
+        return [ FV, investedAmount ];
     }
 
     function calculateInvestedAmount(initialAmount, increment, i, n) {
@@ -280,20 +291,20 @@ menu: '
         const [futureValue, initialPart] = calculateFutureValue(
             investment,
             increment,
+            tenure,
             returnRate,
             raise,
-            tenure
         );
 
         const returns = futureValue - initialPart;
 
         $("#total-amount").text(
-            `Rs.${parseInt(futureValue).toLocaleString("en-IN")}`
+            `₹${parseInt(futureValue).toLocaleString("en-IN")}`
         );
         $("#invested-amt").text(
-            `Rs.${parseInt(initialPart).toLocaleString("en-IN")}`
+            `₹${parseInt(initialPart).toLocaleString("en-IN")}`
         );
-        $("#returns").text(`Rs.${parseInt(returns).toLocaleString("en-IN")}`);
+        $("#returns").text(`₹${parseInt(returns).toLocaleString("en-IN")}`);
     }
 
     $(document).ready(function () {
@@ -303,7 +314,7 @@ menu: '
                 slider.id == "increment-slider"
             ) {
                 $(`#${slider.id}-value`).text(
-                    `Rs.${parseInt(slider.value).toLocaleString("en-IN")}`
+                    `₹${parseInt(slider.value).toLocaleString("en-IN")}`
                 );
             } else if (
                 slider.id == "return-slider" ||
