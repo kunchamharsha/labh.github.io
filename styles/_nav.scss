@@ -3,10 +3,14 @@ $nav-margin-left: calculate-rem(40);
 $nav-margin-bottom: calculate-rem(42);
 
 nav {
-    margin-top: $nav-margin-top;
-    margin-left: $nav-margin-left;
-    margin-right: $nav-margin-left;
-    margin-bottom: $nav-margin-bottom;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background: black;
+    padding: $nav-margin-top;
+    padding: $nav-margin-left;
+    padding-right: $nav-margin-left;
+    padding-bottom: $nav-margin-bottom;
     display: flex;
     justify-content: space-between;
     align-items: center;

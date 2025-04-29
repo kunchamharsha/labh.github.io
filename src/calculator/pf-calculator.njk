@@ -88,8 +88,10 @@ menu: '
                 />
 
                 <div class="cal-content">
-                    <label>Rate of interest</label>
-                    <input type="number" id="rate" placeholder="%" value="7" />
+                    <label>Rate of interest %</label>
+                    <div class="rate-container">
+                        8.1%
+                    </div>
                 </div>
 
                 <div class="box-result">
@@ -111,24 +113,30 @@ menu: '
 
         <h2>Formula</h2>
         <p class="formula">
-            Accumulated Balance = Monthly Contribution × [(1 + r)^n - 1] / r
+            $$ PF = \sum_{y=0}^{Y-1} \sum_{m=1}^{12} \left( PF_{y,m-1} \times
+            \left(1 + \frac{R}{12} \right) + S_0 \times (1 + i)^y \times r
+            \right) $$
         </p>
         <table>
             <tr>
-                <td>Accumulated Balance</td>
-                <td>Total amount saved at retirement.</td>
+                <td>$$ PF_{y,m-1} $$</td>
+                <td>PF balance at previous month</td>
             </tr>
             <tr>
-                <td>Monthly Contribution</td>
-                <td>Amount contributed monthly to PF.</td>
+                <td>$$ S_0 $$</td>
+                <td>Initial monthly salary</td>
             </tr>
             <tr>
                 <td>r</td>
-                <td>Monthly interest rate (annual rate divided by 12).</td>
+                <td>Contribution percentage (as decimal) </td>
             </tr>
             <tr>
-                <td>n</td>
-                <td>Total number of contributions (years multiplied by 12).</td>
+                <td>i</td>
+                <td>Annual salary increment percentage (as decimal)</td>
+            </tr>
+            <tr>
+                <td>R</td>
+                <td>Annual interest rate (as decimal)</td>
             </tr>
         </table>
         <h2>Advantages</h2>
@@ -255,7 +263,7 @@ menu: '
         const currentAge = $("#age-slider").val();
         const contributionPercentage = $("#contribution-slider").val();
         const annualIncrementPercent = $("#annual-increase-slider").val();
-        const interestRate = $("#rate").val();
+        const interestRate = 8.1;
 
         const finalPF = calculatePF(
             monthlySalary,
@@ -271,7 +279,6 @@ menu: '
     }
 
     $(document).ready(function () {
-
         function updateSliderBackground(slider) {
             if (slider.id == "salary-slider") {
                 $(`#${slider.id}-value`).text(
@@ -305,5 +312,6 @@ menu: '
                 updateSliderBackground(this);
                 updateValues();
             });
+
     });
 </script>

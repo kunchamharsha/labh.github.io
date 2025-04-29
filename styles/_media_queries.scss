@@ -1,9 +1,11 @@
 @media (min-width: 0px) and (max-width: 744px) {
     nav {
-        margin-left: calculate-rem(20);
-        margin-right: calculate-rem(20);
-        margin-top: calculate-rem(44.5);
-        margin-bottom: calculate-rem(46);
+        position: static;
+        top: 0;
+        padding-left: calculate-rem(20);
+        padding-right: calculate-rem(20);
+        padding-top: calculate-rem(44.5);
+        padding-bottom: calculate-rem(26);
     }
 
     .logo-container {
@@ -39,7 +41,8 @@
     }
 
     .menu-bar {
-        margin-top: 0px;
+        position: static;
+        top: calculate-rem(130.5);
         font-size: calculate-rem(16);
         overflow: scroll;
         white-space: nowrap;
@@ -214,11 +217,21 @@
             height: calculate-rem(83);
         }
         .graph-container {
+            margin-top: calculate-rem(32);
             margin-bottom: calculate-rem(32);
         }
 
         .cal-content {
             width: auto;
+            font-size: calculate-rem(14);
+        }
+    }
+
+    .pf-calculator {
+        .calculator-card-contents {
+            .rate-container {
+                font-weight: 600;
+            }
         }
     }
 
@@ -228,9 +241,11 @@
         .box-result {
             width: calculate-rem(314);
             height: calculate-rem(109);
+            border-radius: calculate-rem(20);
 
             .heading {
                 font-size: calculate-rem(16);
+                margin-bottom: 0px;
             }
 
             .amount {
@@ -248,10 +263,10 @@
 
 @media (min-width: 745px) and (max-width: 1022px) {
     nav {
-        margin-top: calculate-rem(75);
-        margin-bottom: calculate-rem(36);
-        margin-left: calculate-rem(32);
-        margin-right: calculate-rem(32);
+        padding-top: calculate-rem(75);
+        padding-bottom: calculate-rem(36);
+        padding-left: calculate-rem(32);
+        padding-right: calculate-rem(32);
     }
 
     .logo-container {
@@ -284,7 +299,6 @@
 
     .menu-bar {
         font-size: calculate-rem(16);
-
         ul {
             margin-left: calculate-rem(32);
         }
@@ -297,7 +311,7 @@
     .main-container {
         margin-left: calculate-rem(32);
         margin-right: calculate-rem(32);
-        margin-top: calculate-rem(10);
+        margin-top: calculate-rem(223);
     }
 
     .contents {
@@ -334,6 +348,7 @@
             width: auto;
         }
         .graph-container {
+
             .graph {
                 width: calculate-rem(106);
                 height: calculate-rem(106);

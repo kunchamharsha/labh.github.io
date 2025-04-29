@@ -174,24 +174,36 @@
         </ul>
 
         <h2>Formula</h2>
-        <p class="formula">Future Value = Present Value × (1 + r)^n</p>
+        <p class="formula">
+            $$
+            \text{SIP} = \frac{[C \times (1 + r)^t \times 12 \times y] \times i}{(1 + i)^n - 1}
+            $$
+        </p>
 
         <table>
             <tr>
-                <td>Future Value (FV) :</td>
-                <td>The amount of money you will have at retirement.</td>
+                <td>C</td>
+                <td>Monthly expenses</td>
             </tr>
             <tr>
-                <td>Present Value (PV) :</td>
-                <td>The current amount or savings.</td>
-            </tr>
-            <tr>
-                <td>r :</td>
+                <td>r</td>
                 <td>Expected annual rate of return (interest).</td>
             </tr>
             <tr>
-                <td>n :</td>
-                <td>Number of years until retirement.</td>
+                <td>t</td>
+                <td>Years until retirement</td>
+            </tr>
+            <tr>
+                <td>y</td>
+                <td>Years expected after retirement</td>
+            </tr>
+            <tr>
+                <td>i</td>
+                <td>Monthly return rate (e.g., 12% annual = 0.01 monthly)</td>
+            </tr>
+            <tr>
+                <td>n</td>
+                <td>Total number of months to invest (n = t × 12)</td>
             </tr>
         </table>
 
@@ -715,6 +727,7 @@
     <div
         class="download-app-footer"
         style="flex: 1; justify-content: flex-end; gap: 20px"
+        onclick="window.location.href = 'https://api.labh.io/get-app/'"
     >
         <div>
             <img

@@ -1,7 +1,11 @@
 .menu-bar {
+    position: fixed;
+    z-index: 10;
+    background-color: black;
+    width: 100%;
     font-weight: 500;
     font-size: calculate-rem(20);
-    margin-top: calculate-rem(32);
+    top: calculate-rem(154);
 
     ul {
         list-style: none;

@@ -89,7 +89,7 @@
                     value="20000"
                 />
 
-                <div class="cal-content">
+                <!-- <div class="cal-content">
                     <label>Increment Yearly</label>
                     <span id="increment-slider-value">₹2000</span>
                 </div>
@@ -104,7 +104,7 @@
                     max="500000"
                     step="500"
                     value="2000"
-                />
+                /> -->
 
                 <div class="cal-content">
                     <label>Annual Growth in SIP</label>
@@ -303,59 +303,59 @@
 </div>
 
 <script>
-    function calculateFutureValue(
-        P,
-        r,
-        n,
-        stepUpPercent,
-        m = 0
+    function calculateTotalInvestment(
+        initialMonthly,
+        annualIncrementPercent,
+        years
     ) {
-        let FV = 0;
-        let investedAmount = 0;
-        const rate = 1 + r / 100;
+        const r = 1 + annualIncrementPercent / 100;
+        let total = 0;
 
-        for (let i = 0; i < n - m; i++) {
-            const steppedP = P * Math.pow(1 + stepUpPercent / 100, i);
-            investedAmount += steppedP;
-            const years = n - i;
-            FV += steppedP * Math.pow(rate, years);
+        for (let i = 0; i < years; i++) {
+            const monthly = initialMonthly * Math.pow(r, i);
+            const yearlyInvestment = monthly * 12;
+            total += yearlyInvestment;
         }
 
-        return [ FV, investedAmount ];
+        return total;
     }
 
-    function calculateInvestedAmount(initialAmount, increment, i, n) {
-        let totalIncrements = 0;
-        for (let year = 0; year < n; year++) {
-            totalIncrements += increment * Math.pow(1 + i, year);
-        }
-        return initialAmount + totalIncrements;
+    function calculateFutureValue(P, r, n, t, S) {
+        const compoundFactor = Math.pow(1 + r / n, n * t);
+        const futureValuePrincipal = P * ((compoundFactor - 1) / (r / n));
+        const futureValueContributions = S * ((compoundFactor - 1) / (r / n));
+
+        const totalFutureValue =
+            futureValuePrincipal + futureValueContributions;
+        return [totalFutureValue, calculateTotalInvestment(parseInt(P), r, t)];
     }
 
     function updateValues() {
         const investment = $("#investment-slider").val();
-        const increment = $("#increment-slider").val();
+        let increment = $("#increment-slider").val();
         const raise = $("#raise-slider").val() / 100;
         const returnRate = $("#return-slider").val() / 100;
         const tenure = $("#tenure-slider").val();
 
+        increment = investment * raise;
+
         const [futureValue, initialPart] = calculateFutureValue(
             investment,
-            increment,
-            tenure,
             returnRate,
-            raise,
+            4,
+            tenure,
+            increment
         );
 
-        const returns = futureValue - initialPart;
+        const returns = futureValue + initialPart;
 
         $("#total-amount").text(
-            `₹${parseInt(futureValue).toLocaleString("en-IN")}`
+            `₹${parseInt(returns).toLocaleString("en-IN")}`
         );
         $("#invested-amt").text(
             `₹${parseInt(initialPart).toLocaleString("en-IN")}`
         );
-        $("#returns").text(`₹${parseInt(returns).toLocaleString("en-IN")}`);
+        $("#returns").text(`₹${parseInt(futureValue).toLocaleString("en-IN")}`);
     }
 
     $(document).ready(function () {
@@ -680,6 +680,7 @@
     <div
         class="download-app-footer"
         style="flex: 1; justify-content: flex-end; gap: 20px"
+        onclick="window.location.href = 'https://api.labh.io/get-app/'"
     >
         <div>
             <img

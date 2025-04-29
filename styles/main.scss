@@ -32,7 +32,7 @@ body {
 .main-container {
     margin-left: $nav-margin-left;
     margin-right: $nav-margin-left;
-    margin-top: calculate-rem(40);
+    margin-top: calculate-rem(200);
     margin-bottom: calculate-rem(80);
 
     h1,
@@ -561,15 +561,26 @@ body {
             width: auto;
             margin-top: calculate-rem(40);
         }
-        #rate {
+        .rate-container {
             width: calculate-rem(75);
             height: calculate-rem(40);
             background-color: #a663ff33;
-            border: 0px;
+            height: fit-content;
+            text-align: center;
         }
 
         #rate:focus {
             outline: none;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Remove arrows in Firefox */
+        input[type="number"] {
+            appearance: textfield;
         }
     }
 }
