@@ -112,14 +112,19 @@
         letter-spacing: 7px;
     }
     .faq-container {
-        margin-top: 56px !important;
+        margin-top: calculate-rem(16) !important;
         row-gap: 0px;
     }
     .faq-question {
         margin-left: 0px;
+        padding-bottom: calculate-rem(5);
+        padding-top: calculate-rem(5);
     }
     .faq-question span {
         font-size: 14px !important;
+    }
+    .faq-answer {
+        padding: 0px calculate-rem(14);
     }
     .faq-answer li,
     .faq-answer p {
@@ -133,6 +138,12 @@
     }
     .open {
         border-radius: 26px !important;
+    }
+    .arrow {
+        img {
+            width: calculate-rem(34);
+            height: auto;
+        }
     }
 }
 

@@ -3,7 +3,7 @@
         margin-left: calculate-rem(20);
         margin-right: calculate-rem(20);
         margin-top: calculate-rem(44.5);
-        margin-bottom: calculate-rem(16);
+        margin-bottom: calculate-rem(46);
     }
 
     .logo-container {
@@ -48,6 +48,9 @@
             margin-left: calculate-rem(20);
             margin-bottom: 0;
         }
+        li:has(img) {
+            margin-right: calculate-rem(6);
+        }
     }
 
     .main-container {
@@ -64,8 +67,8 @@
         }
         p {
             font-size: calculate-rem(16);
-            font-weight: 600;
-            line-height: calculate-rem(17);
+            font-weight: 500;
+            line-height: calculate-rem(20);
         }
     }
 
@@ -117,9 +120,9 @@
 
     // retirement calculator
     .guide {
-        h1 {
+        h2 {
             font-size: calculate-rem(24);
-            margin-bottom: calculate-rem(4);
+            margin-bottom: calculate-rem(16);
         }
         ul {
             font-size: calculate-rem(14);
@@ -131,6 +134,8 @@
 
         table {
             font-size: calculate-rem(14);
+            margin-top: calculate-rem(32);
+            margin-bottom: calculate-rem(32);
         }
     }
 
@@ -157,9 +162,9 @@
         }
 
         a {
-            height: calculate-rem(35);
+            height: calculate-rem(43);
             width: 100%;
-            font-size: calculate-rem(14);
+            font-size: calculate-rem(18);
             font-weight: 700;
             margin-top: calculate-rem(32);
         }
@@ -373,7 +378,7 @@
     .guide {
         h2 {
             font-size: calculate-rem(28);
-            margin-bottom: calculate-rem(24);
+            margin-bottom: calculate-rem(16);
         }
 
         li,

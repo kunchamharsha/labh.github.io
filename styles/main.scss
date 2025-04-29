@@ -160,7 +160,7 @@ body {
         #e8dff4 95.45%
     );
     border-radius: calculate-rem(40);
-    height: calculate-rem(613);
+    height: auto;
     width: 100%;
     overflow: hidden;
     color: black;
@@ -320,7 +320,7 @@ body {
             #7c7a99 110.75%,
             #cecbff 186.22%
         );
-        width: calculate-rem(375);
+        width: auto;
         height: calculate-rem(66);
         display: flex;
         justify-content: center;
@@ -383,6 +383,7 @@ body {
         font-size: calculate-rem(14);
         font-weight: 400;
         color: #000000cc;
+        margin-bottom: calculate-rem(4);
     }
 
     .dropdown {

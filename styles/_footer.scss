@@ -86,7 +86,7 @@
     display: flex;
     padding-top: 50px;
     padding-right: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 55px;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
@@ -132,8 +132,8 @@
         font-size: 16px !important;
     }
     .company-address {
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 16px;
+        line-height: 26px;
         width: 100%;
         margin-top: 12px;
     }
@@ -158,18 +158,18 @@
         font-weight: 700 !important;
     }
     .insta-link {
-        width: 24px !important;
-        height: 24px !important;
+        width: 50px !important;
+        height: 50px !important;
     }
     .facebook-link,
     .linkedin-link {
-        width: 28px !important;
-        height: 28px !important;
+        width: 58px !important;
+        height: auto !important;
     }
     .x-link {
         margin-top: 3px !important;
         width: auto !important;
-        height: 22px !important;
+        height: 46px !important;
     }
     .contact-us-footer {
         font-size: 16px !important;
@@ -180,11 +180,11 @@
         font-weight: 400 !important;
     }
     .support-email img {
-        width: 30px !important;
-        height: 33px !important;
+        width: 50px !important;
+        height: auto !important;
     }
     .get-app {
-        width: 107px !important;
+        width: 115px !important;
         height: 36px !important;
     }
     footer {
@@ -201,17 +201,26 @@
     .footer-links-section {
         width: calculate-rem(210);
         li, h4 {
-            font-size: calculate-rem(14);
+            font-size: calculate-rem(16);
+        }
+        h4 {
+            margin-top: calculate-rem(20);
+            font-weight: 700;
         }
     }
     .download-app-footer {
-        padding-top: 22px;
-        padding-bottom: 21px;
+        padding-top: 0;
+        padding-bottom: 0;
         justify-content: flex-start !important;
         margin: 0px !important;
     }
     .footer-methodologies {
         flex-direction: column;
+        margin-top: calculate-rem(20);
+    }
+
+    footer {
+        margin-top: calculate-rem(20);
     }
 }
 

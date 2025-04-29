@@ -23,10 +23,10 @@
         .active {
             color: #cecbff;
         }
-        .active::before {
-            content: "⦿";
-            font-weight: 900;
-            margin-right: calculate-rem(16);
-        }
+        // .active::before {
+        //     content: "⦿";
+        //     font-weight: 900;
+        //     margin-right: calculate-rem(16);
+        // }
     }
 }

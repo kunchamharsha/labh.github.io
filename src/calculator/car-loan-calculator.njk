@@ -2,8 +2,8 @@
 layout: calculator-base.njk
 title: Car Loan Calculator
 menu: '
-    <li>⦿</li>
     <li><a href="/calculator/">Calculator</a></li>
+    <li><img src="/assets/dote-active.svg" alt="dote-active"></li>
     <li><a href="#" class="active">Car Loan Calculator</a></li>
 '
 ---
@@ -54,19 +54,19 @@ menu: '
 
                 <div class="cal-content">
                     <label>Loan Tenure(Months)</label>
-                    <span id="tenure-slider-value">23</span>
+                    <span id="tenure-slider-value">23 Years</span>
                 </div>
                 <div class="input-limits">
-                    <div>12</div>
-                    <div>120</div>
+                    <div>1</div>
+                    <div>10</div>
                 </div>
                 <input
                     type="range"
                     id="tenure-slider"
-                    min="12"
-                    max="120"
+                    min="1"
+                    max="10"
                     step="1"
-                    value="23"
+                    value="2"
                 />
             </div>
             <div>
@@ -264,12 +264,9 @@ menu: '
                 $(`#${slider.id}-value`).text(
                     `Rs.${parseInt(slider.value).toLocaleString("en-IN")}`
                 );
-            } else if (
-                slider.id == "interest-slider" ||
-                slider.id == "tenure-slider"
-            ) {
+            } else if (slider.id == "interest-slider") {
                 $(`#${slider.id}-value`).text(`${slider.value} %`);
-            } else if (slider.id == "age-slider") {
+            } else if (slider.id == "tenure-slider") {
                 $(`#${slider.id}-value`).text(`${slider.value} Years`);
             }
 
