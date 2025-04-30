@@ -32,7 +32,6 @@ body {
 .main-container {
     margin-left: $nav-margin-left;
     margin-right: $nav-margin-left;
-    margin-top: calculate-rem(200);
     margin-bottom: calculate-rem(80);
 
     h1,
@@ -125,7 +124,7 @@ body {
         font-size: calculate-rem(20);
         font-weight: 700;
         color: #cecbff;
-        line-height: 4rem;
+        margin-bottom: calculate-rem(10);
     }
 
     .card-description {

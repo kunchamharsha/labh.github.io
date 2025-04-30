@@ -256,7 +256,6 @@ body {
     font-size: 24px;
     line-height: 36px;
     margin-top: 20px;
-    width: 475px;
 }
 .footer-company {
     width: 15%;
@@ -850,6 +849,9 @@ body {
         font-weight: 400 !important;
         line-height: 24px !important;
     }
+    #aboutsection .button1 p {
+        font-size: 14px !important;
+    }
     .labh-background {
         font-size: 96px !important;
         width: 113% !important;
@@ -967,8 +969,11 @@ body {
     .footer-logo {
         font-size: 16px !important;
     }
-    .desktop-footer {
-        display: none !important;
+    .footer-links h4, .footer-links li {
+        font-size: 14px;
+    }
+    .footer-links-section {
+        width: 210px;
     }
     .company-address {
         font-size: 14px;
@@ -995,7 +1000,6 @@ body {
     .social-media {
         font-size: 16px !important;
         font-weight: 700 !important;
-        margin-top: -47px !important;
     }
     .insta-link {
         width: 24px !important;
@@ -1146,6 +1150,7 @@ body {
             rgba(221, 219, 219, 0.8) 80.1%
         );
         backdrop-filter: blur(41.900001525878906px);
+        -webkit-backdrop-filter: blur(41.900001525878906px);
         z-index: 1;
         border-radius: 16px;
         bottom: 0px;

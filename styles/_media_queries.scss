@@ -128,15 +128,15 @@
             margin-bottom: calculate-rem(16);
         }
         ul {
-            font-size: calculate-rem(14);
+            font-size: calculate-rem(16);
             margin-bottom: calculate-rem(32);
         }
         p {
-            font-size: calculate-rem(14);
+            font-size: calculate-rem(16);
         }
 
         table {
-            font-size: calculate-rem(14);
+            font-size: calculate-rem(16);
             margin-top: calculate-rem(32);
             margin-bottom: calculate-rem(32);
         }
@@ -225,6 +225,10 @@
             width: auto;
             font-size: calculate-rem(14);
         }
+
+        .result-container {
+            margin-top: calculate-rem(32);
+        }
     }
 
     .pf-calculator {
@@ -311,7 +315,6 @@
     .main-container {
         margin-left: calculate-rem(32);
         margin-right: calculate-rem(32);
-        margin-top: calculate-rem(223);
     }
 
     .contents {

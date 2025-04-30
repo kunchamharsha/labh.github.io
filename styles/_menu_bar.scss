@@ -1,7 +1,6 @@
 .menu-bar {
-    position: fixed;
-    z-index: 10;
     background-color: black;
+    margin-top: calculate-rem(28);
     width: 100%;
     font-weight: 500;
     font-size: calculate-rem(20);

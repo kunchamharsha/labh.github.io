@@ -3,9 +3,6 @@ $nav-margin-left: calculate-rem(40);
 $nav-margin-bottom: calculate-rem(42);
 
 nav {
-    position: fixed;
-    width: 100%;
-    z-index: 10;
     background: black;
     padding: $nav-margin-top;
     padding: $nav-margin-left;
