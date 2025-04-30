@@ -265,7 +265,10 @@
     }
 }
 
-@media (min-width: 745px) and (max-width: 1022px) {
+@media (min-width: 745px) and (max-width: 1200px) {
+    $search-bar-width: calculate-rem(306);
+    $search-bar-height: calculate-rem(60);
+
     nav {
         padding-top: calculate-rem(75);
         padding-bottom: calculate-rem(36);
@@ -286,7 +289,7 @@
         width: calculate-rem(465);
         justify-content: space-between;
         .search-bar {
-            width: calculate-rem(306);
+            width: $search-bar-width;
             height: calculate-rem(40);
             font-size: calculate-rem(16);
         }
@@ -298,6 +301,19 @@
             width: calculate-rem(139);
             height: calculate-rem(40);
             font-size: calculate-rem(14);
+        }
+        .search-dropdown {
+            top: calc($search-bar-height / 2);
+            padding-top: calc($search-bar-height / 2);
+            width: $search-bar-width;
+            font-size: calculate-rem(16);
+        }
+    }
+
+    .cards {
+        gap: calculate-rem(16);
+        .card {
+            height: calculate-rem(232);
         }
     }
 
@@ -342,7 +358,7 @@
         }
 
         .cal-content {
-            width: calculate-rem(264);
+            width: auto;
         }
 
         a {
@@ -351,7 +367,6 @@
             width: auto;
         }
         .graph-container {
-
             .graph {
                 width: calculate-rem(106);
                 height: calculate-rem(106);
@@ -375,6 +390,7 @@
         }
 
         .calculator-card-contents {
+            display: block;
             .box-result {
                 width: auto;
                 .heading {
@@ -404,9 +420,15 @@
             font-size: calculate-rem(20);
         }
     }
+    
+    .sip-calculator {
+        .calculator-card-contents {
+            height: auto;
+        }
+    }
 }
 
-@media (min-width: 0px) and (max-width: 1023px) {
+@media (min-width: 0px) and (max-width: 744px) {
     .cards-grid-constant-gap {
         grid-template-columns: repeat(
             auto-fill,
@@ -484,7 +506,7 @@
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 745px) {
     .moblie-search-bar-container {
         display: none;
     }

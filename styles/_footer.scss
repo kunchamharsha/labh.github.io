@@ -200,7 +200,8 @@
     }
     .footer-links-section {
         width: calculate-rem(210);
-        li, h4 {
+        li,
+        h4 {
             font-size: calculate-rem(16);
         }
         h4 {
@@ -334,6 +335,11 @@
             font-size: 18px;
         }
     }
+    .download-app-footer {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin: 0px !important;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -437,6 +443,11 @@
     }
     .footer-logo-wrapper {
         margin-top: 0px !important;
+    }
+    .download-app-footer {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin: 0px !important;
     }
 }
 
