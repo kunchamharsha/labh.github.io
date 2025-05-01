@@ -71,19 +71,19 @@
             <div>
                 <div class="cal-content">
                     <label>Monthly Investment</label>
-                    <span id="investment-slider-value">₹20000</span>
+                    <span id="investment-slider-value">₹500</span>
                 </div>
                 <div class="input-limits">
                     <div>₹500</div>
-                    <div>₹10 Lacs</div>
+                    <div>₹1 Lac</div>
                 </div>
                 <input
                     type="range"
                     id="investment-slider"
                     min="500"
-                    max="1000000"
+                    max="100000"
                     step="500"
-                    value="20000"
+                    value="500"
                 />
 
                 <!-- <div class="cal-content">
@@ -122,7 +122,7 @@
 
                 <div class="cal-content">
                     <label>Expected Return Rate(P.A)</label>
-                    <span id="return-slider-value">12%</span>
+                    <span id="return-slider-value">10%</span>
                 </div>
                 <div class="input-limits">
                     <div>1%</div>
@@ -134,13 +134,13 @@
                     min="1"
                     max="30"
                     step="1"
-                    value="12"
+                    value="10"
                 />
             </div>
             <div>
                 <div class="cal-content">
                     <label>Time Period(Years)</label>
-                    <span id="tenure-slider-value">23</span>
+                    <span id="tenure-slider-value">1</span>
                 </div>
                 <div class="input-limits">
                     <div>1</div>
@@ -152,7 +152,7 @@
                     min="1"
                     max="40"
                     step="1"
-                    value="23"
+                    value="1"
                 />
 
                 <div class="cal-content result">
@@ -168,10 +168,12 @@
                 <hr />
 
                 <div class="cal-content result">
-                    <label>Total Amount Payable</label>
+                    <label>Total Amount</label>
                     <span id="total-amount">₹5,88,019</span>
                 </div>
-                <a href="https://api.labh.io/get-app/" target="_blank">Invest Now</a>
+                <a href="https://api.labh.io/get-app/" target="_blank"
+                    >Invest Now</a
+                >
             </div>
         </div>
     </div>
@@ -187,7 +189,8 @@
 
         <h2>Formula</h2>
         <p class="formula">
-            $$ {Total Future Value} = (P + S) \times \frac{\left(1 + \frac{r}{n}\right)^{nt} - 1}{\frac{r}{n}} $$
+            $$ {Total Future Value} = (P + S) \times \frac{\left(1 +
+            \frac{r}{n}\right)^{nt} - 1}{\frac{r}{n}} $$
         </p>
         <table>
             <tr>
@@ -298,22 +301,18 @@
 </div>
 
 <script>
-    function calculateTotalInvestment(
-        initialMonthly,
-        annualIncrementPercent,
-        years
-    ) {
-        const r = 1 + annualIncrementPercent / 100;
-        let total = 0;
+    function calculateTotalInvestment(n, p, stepUpRate) {
+        let totalInvested = 0.0;
 
-        for (let i = 0; i < years; i++) {
-            const monthly = initialMonthly * Math.pow(r, i);
-            const yearlyInvestment = monthly * 12;
-            total += yearlyInvestment;
+        for (let year = 0; year < n; year++) {
+            const sipAmount = p * Math.pow(1 + stepUpRate, year);
+            for (let month = 0; month < 12; month++) {
+                totalInvested += sipAmount;
+            }
         }
-
-        return total;
+        return totalInvested;
     }
+
 
     function calculateFutureValue(P, r, n, t, S) {
         const compoundFactor = Math.pow(1 + r / n, n * t);
@@ -322,7 +321,7 @@
 
         const totalFutureValue =
             futureValuePrincipal + futureValueContributions;
-        return [totalFutureValue, calculateTotalInvestment(parseInt(P), r, t)];
+        return totalFutureValue
     }
 
     function updateValues() {
@@ -334,23 +333,24 @@
 
         increment = investment * raise;
 
-        const [futureValue, initialPart] = calculateFutureValue(
+        const returns = calculateFutureValue(
             investment,
             returnRate,
             1,
             tenure,
             increment
         );
+        const total_investment = calculateTotalInvestment(tenure, investment, raise)
 
-        const returns = futureValue + initialPart;
+        const total_amount = returns + total_investment;
 
         $("#total-amount").text(
-            `₹${parseInt(returns).toLocaleString("en-IN")}`
+            `₹${parseInt(total_amount).toLocaleString("en-IN")}`
         );
         $("#invested-amt").text(
-            `₹${parseInt(initialPart).toLocaleString("en-IN")}`
+            `₹${parseInt(total_investment).toLocaleString("en-IN")}`
         );
-        $("#returns").text(`₹${parseInt(futureValue).toLocaleString("en-IN")}`);
+        $("#returns").text(`₹${parseInt(returns).toLocaleString("en-IN")}`);
     }
 
     $(document).ready(function () {
@@ -638,8 +638,6 @@
                             <strong
                                 class="contact-us-footer"
                                 style="
-                                    font-size: 24px;
-                                    font-weight: bold;
                                     margin-bottom: 20px;
                                 "
                                 >Contact us on:</strong

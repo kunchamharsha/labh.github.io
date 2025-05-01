@@ -22,6 +22,7 @@
 
 .footer-methodologies {
     display: flex;
+    gap: 50px;
     flex-wrap: wrap;
     margin-top: 60px;
 }
@@ -35,9 +36,6 @@
     text-decoration: underline !important;
 }
 
-.footer-contact-us-wrapper {
-    margin-left: 60px;
-}
 
 .footer-links {
     display: flex;
@@ -318,7 +316,7 @@
         height: 36px !important;
     }
     footer {
-        padding: 24px 52px !important;
+        padding: 24px 20px !important;
         margin-top: 65px;
     }
     .mobile-footer-second {
@@ -435,7 +433,7 @@
         height: 36px !important;
     }
     footer {
-        padding: 24px 52px !important;
+        padding: 24px 30px !important;
         margin-top: 65px;
     }
     .mobile-footer-second {
