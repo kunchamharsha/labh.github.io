@@ -253,6 +253,18 @@ menu: '
 </div>
 
 <script>
+    function calculateFutureValue(P, r, t, m=12) {
+
+        let FV = 0;
+
+        for (let i = 0; i < t; i++) {
+            const annuityFactor = ((1 + r) ** m - 1) / r;
+            const compoundFactor = (1 + r) ** ((t - (i + 1)) * m);
+            FV += P * annuityFactor * compoundFactor;
+        }
+
+        return FV;
+    }
     function calculateTotalInvestment(n, p, stepUpRate) {
         let totalInvested = 0.0;
 
@@ -265,16 +277,15 @@ menu: '
         return totalInvested;
     }
 
+    // function calculateFutureValue(P, r, n, t, S) {
+    //     const compoundFactor = Math.pow(1 + r / n, n * t);
+    //     const futureValuePrincipal = P * ((compoundFactor - 1) / (r / n));
+    //     const futureValueContributions = S * ((compoundFactor - 1) / (r / n));
 
-    function calculateFutureValue(P, r, n, t, S) {
-        const compoundFactor = Math.pow(1 + r / n, n * t);
-        const futureValuePrincipal = P * ((compoundFactor - 1) / (r / n));
-        const futureValueContributions = S * ((compoundFactor - 1) / (r / n));
-
-        const totalFutureValue =
-            futureValuePrincipal + futureValueContributions;
-        return totalFutureValue
-    }
+    //     const totalFutureValue =
+    //         futureValuePrincipal + futureValueContributions;
+    //     return totalFutureValue
+    // }
 
     function updateValues() {
         const investment = $("#investment-slider").val();
@@ -285,14 +296,21 @@ menu: '
 
         increment = investment * raise;
 
-        const returns = calculateFutureValue(
-            investment,
-            returnRate,
-            1,
+        // const returns = calculateFutureValue(
+        //     investment,
+        //     returnRate,
+        //     1,
+        //     tenure,
+        //     increment
+        // );
+
+        const returns = calculateFutureValue(investment, returnRate, tenure)
+
+        const total_investment = calculateTotalInvestment(
             tenure,
-            increment
+            investment,
+            raise
         );
-        const total_investment = calculateTotalInvestment(tenure, investment, raise)
 
         const total_amount = returns + total_investment;
 
