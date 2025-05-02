@@ -59,11 +59,11 @@ const calculators = [
         "card-description": "Estimate Your Home Investment.",
         url: "/calculator/home-loan-calculator/",
     },
-    {
-        "card-heading": "Sip step up calculator",
-        "card-description": "Grow Your Investments with Incremental SIPs.",
-        url: "/calculator/stepup-sip-calculator/",
-    },
+    // {
+    //     "card-heading": "Sip step up calculator",
+    //     "card-description": "Grow Your Investments with Incremental SIPs.",
+    //     url: "/calculator/stepup-sip-calculator/",
+    // },
 ];
 
 function filterCalculators(searchTerm) {
