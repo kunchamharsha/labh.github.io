@@ -156,6 +156,10 @@ menu: '<li><a href="#" class="active">Calculator</a></li>'
         </div> -->
     </div>
     <div class="moblie-search-bar-container">
+        <div
+            id="search-results"
+            class="cards display-none margin-bottom-none"
+        ></div>
         <div class="black-container">
             <div class="mobile-search-bar">
                 <input
@@ -188,6 +192,10 @@ menu: '<li><a href="#" class="active">Calculator</a></li>'
         );
 
         function search(event) {
+            if (window.innerWidth < 1200) {
+                console.log('skipped')
+                return; // Do not execute the search function on mobile
+            }
             const query = event.target.value.toLowerCase();
             $(".cards").addClass("cards-grid-constant-gap"); // this is added to maintain the gap b/t cards
             $(".card").each(function () {
@@ -205,7 +213,7 @@ menu: '<li><a href="#" class="active">Calculator</a></li>'
                     $(this).hide();
                 }
             });
-            $("html, body").animate({ scrollTop: 0 }, 300);
+            $("html, body").animate({ scrollTop: 0 }, 10);
         }
 
         $("#search").on("input", search);

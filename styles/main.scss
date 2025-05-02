@@ -359,8 +359,8 @@ body {
         height: calculate-rem(242);
         border-radius: 50%;
         background: conic-gradient(
-            #9a5ced 0% 40%,
-            /* Est. Returns */ #e8d8fd 40% 100% /* Invested amt */
+            #9a5ced 0% 0%,
+            /* Est. Returns */ #e8d8fd 0% 100% /* Invested amt */
         );
         position: relative;
     }

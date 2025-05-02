@@ -276,8 +276,8 @@ menu: '
     function updateChart(returnsPercentage) {
         const chart = document.querySelector(".graph");
         chart.style.background = `conic-gradient(
-            #9A5CED 0% ${returnsPercentage}%,
-            #E8D8FD ${returnsPercentage}% 100%
+            #E8D8FD 0% ${returnsPercentage}%,
+            #9A5CED ${returnsPercentage}% 100%
             )`;
     }
     function updateValues() {
@@ -313,7 +313,7 @@ menu: '
                 maximumFractionDigits: 0,
             })}`
         );
-        const returnsPercentage = (returns / investedAmount) * 100;
+        const returnsPercentage = (investedAmount / totalReturns) * 100;
         updateChart(returnsPercentage);
     }
 

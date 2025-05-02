@@ -451,7 +451,7 @@ nav {
   width: 15.125rem;
   height: 15.125rem;
   border-radius: 50%;
-  background: conic-gradient(#9a5ced 0% 40%, #e8d8fd 40% 100%);
+  background: conic-gradient(#9a5ced 0% 0%, #e8d8fd 0% 100%);
   position: relative;
 }
 .calculator-card-contents .graph::after {

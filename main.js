@@ -84,7 +84,9 @@ function filterCalculators(searchTerm) {
     );
 }
 
-if (window.location.pathname != "/calculator/") {
+// why window.innerWidth < 1024
+// because we want to show this in the mobile view of the calculator index page
+if (window.location.pathname != "/calculator/" || window.innerWidth < 1200) {
     $("#search").on("input", function () {
         const searchTerm = $(this).val();
         const filteredCalculators = filterCalculators(searchTerm);
@@ -116,10 +118,10 @@ if (window.location.pathname != "/calculator/") {
 
     $("#search2").on("input", function () {
         const searchTerm = $(this).val();
-        const filteredCalculators = filterCalculators(searchTerm);
+        const filteredCalculators = filterCalculators(searchTerm).slice(0, 3);
         if (filteredCalculators.length != 0) {
-            $(".cards").empty();
-            $(".cards").removeClass("display-none");
+            $("#search-results").empty();
+            $("#search-results").removeClass("display-none");
             $(".blur-effect").removeClass("display-none");
             filteredCalculators.forEach((calculator) => {
                 const card = `
@@ -131,7 +133,7 @@ if (window.location.pathname != "/calculator/") {
                         <div class="card-description">${calculator["card-description"]}</div>
                     </div>
                 `;
-                $(".cards").append(card);
+                $("#search-results").append(card);
             });
 
             // $(".blur-effect").height(
@@ -142,11 +144,19 @@ if (window.location.pathname != "/calculator/") {
             //         $('.menu-bar').outerHeight(true)
             // );
         } else {
-            $(".cards").addClass("display-none");
-            $(".blur-effect").addClass("display-none");
+            $("#search-results").addClass("display-none");
+            if (window.location.pathname != "/calculator/") {
+                $(".blur-effect").addClass("display-none");
+            }
         }
     });
 }
+
+// if someone clicks outside the search bar, we want to close the dropdown
+$(".blur-effect").on("click", function () {
+    $("#search-results").addClass("display-none");
+    $(".blur-effect").addClass("display-none");
+});
 
 $(".faq-question").click(function () {
     var $item = $(this).closest(".faq-item");
