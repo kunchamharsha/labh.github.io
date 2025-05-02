@@ -171,7 +171,7 @@
             <div>
                 <div class="cal-content">
                     <label>Loan Tenure(Months)</label>
-                    <span id="tenure-slider-value">23</span>
+                    <span id="tenure-slider-value">23 Years</span>
                 </div>
                 <div class="input-limits">
                     <div>12</div>
@@ -369,12 +369,9 @@
                 $(`#${slider.id}-value`).text(
                     `Rs.${parseInt(slider.value).toLocaleString("en-IN")}`
                 );
-            } else if (
-                slider.id == "interest-slider" ||
-                slider.id == "tenure-slider"
-            ) {
+            } else if (slider.id == "interest-slider") {
                 $(`#${slider.id}-value`).text(`${slider.value} %`);
-            } else if (slider.id == "age-slider") {
+            } else if (slider.id == "tenure-slider") {
                 $(`#${slider.id}-value`).text(`${slider.value} Years`);
             }
 
