@@ -256,7 +256,6 @@ body {
     font-size: 24px;
     line-height: 36px;
     margin-top: 20px;
-    width: 475px;
 }
 .footer-company {
     width: 15%;
@@ -273,6 +272,59 @@ body {
 }
 .footer-methodologies li {
     font-size: 20px !important;
+}
+.footer-methodologies {
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-links h4 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+
+.footer-links-section {
+    width: 260px;
+}
+
+.footer-links-section ul {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links-section li {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+.download-app-footer {
+    display: flex;
+    padding-top: 50px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.download-app-footer img {
+    width: 207px;
 }
 .social-media {
     font-size: 24px !important;
@@ -470,6 +522,10 @@ body {
 }
 .faq-item {
     overflow: hidden !important;
+}
+
+.contact-us-footer {
+    font-size: 24px;
 }
 
 @keyframes scrolling {
@@ -798,6 +854,9 @@ body {
         font-weight: 400 !important;
         line-height: 24px !important;
     }
+    #aboutsection .button1 p {
+        font-size: 14px !important;
+    }
     .labh-background {
         font-size: 96px !important;
         width: 113% !important;
@@ -915,8 +974,11 @@ body {
     .footer-logo {
         font-size: 16px !important;
     }
-    .desktop-footer {
-        display: none !important;
+    .footer-links h4, .footer-links li {
+        font-size: 14px;
+    }
+    .footer-links-section {
+        width: 210px;
     }
     .company-address {
         font-size: 14px;
@@ -943,7 +1005,6 @@ body {
     .social-media {
         font-size: 16px !important;
         font-weight: 700 !important;
-        margin-top: -47px !important;
     }
     .insta-link {
         width: 24px !important;
@@ -1094,6 +1155,7 @@ body {
             rgba(221, 219, 219, 0.8) 80.1%
         );
         backdrop-filter: blur(41.900001525878906px);
+        -webkit-backdrop-filter: blur(41.900001525878906px);
         z-index: 1;
         border-radius: 16px;
         bottom: 0px;
@@ -1132,6 +1194,15 @@ body {
         font-size: 14px;
         text-align: center;
         padding-top: 8px;
+    }
+    .download-app-footer {
+        padding-top: 22px;
+        padding-bottom: 21px;
+        justify-content: flex-start !important;
+        margin: 0px !important;
+    }
+    .footer-methodologies {
+        flex-direction: column;
     }
 }
 
@@ -1406,9 +1477,6 @@ body {
     .footer-logo {
         font-size: 16px !important;
     }
-    .desktop-footer {
-        display: none !important;
-    }
     .company-address {
         font-size: 18px;
         line-height: 30px;
@@ -1435,7 +1503,6 @@ body {
     .social-media {
         font-size: 22px !important;
         font-weight: 700 !important;
-        margin-top: -47px !important;
     }
     .insta-link {
         width: 38px !important;
@@ -1452,7 +1519,7 @@ body {
         height: 30px !important;
     }
     .contact-us-footer {
-        font-size: 16px !important;
+        font-size: 22px !important;
         font-weight: 700 !important;
     }
     .support-email {
@@ -1684,9 +1751,6 @@ body {
     .footer-logo {
         font-size: 16px !important;
     }
-    .desktop-footer {
-        display: none !important;
-    }
     .company-address {
         font-size: 24px;
         line-height: 32px;
@@ -1713,7 +1777,6 @@ body {
     .social-media {
         font-size: 24px !important;
         font-weight: 700 !important;
-        margin-top: -47px !important;
     }
     .insta-link {
         width: 38px !important;
@@ -1730,7 +1793,7 @@ body {
         height: 30px !important;
     }
     .contact-us-footer {
-        font-size: 16px !important;
+        font-size: 24px !important;
         font-weight: 700 !important;
     }
     .support-email {
@@ -1809,11 +1872,6 @@ body {
     }
 }
 
-@media (min-width: 1024px) {
-    .mobile-footer {
-        display: none !important;
-    }
-}
 
 /* * {
   background: #000 !important;

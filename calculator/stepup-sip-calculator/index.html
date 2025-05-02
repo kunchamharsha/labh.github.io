@@ -79,7 +79,7 @@
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
         ></script>
 
-        <title>Labh</title>
+        <title>Step Up SIP Calculator</title>
     </head>
     <body>
         <nav>
@@ -102,162 +102,238 @@
             <ul>
                 <li><a href="/index.html">Home</a></li>
                 <li><img src="/assets/dote.svg" alt="dote" /></li>
-                <li><a href="#" class="active">Calculator</a></li>
+                 <li><a href="/calculator/">Calculator</a></li> <li><img src="/assets/dote-active.svg" alt="dote-active"></li> <li><a href="#" class="active">Step Up SIP Calculator</a></li> 
             </ul>
         </div>
 
         
 <div class="main-container">
     <div class="contents">
-        <h1>Smart Investment Calculator</h1>
+        <h1>Step Up SIP calculators</h1>
         <p>
-            Make informed decisions with real-time insights on returns, risks,
-            and optimal investment strategies.
+            Compute returns from SIP investments with increasing contributions
+            each year.
         </p>
     </div>
-    <div class="cards">
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/retirement-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Retirement calculator</div>
-            <div class="card-description">
-                Estimate your savings for a secure retirement.
+    <div class="calculator-card pf-calculator">
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <div class="calculator-card-contents">
+            <div>
+                <div class="cal-content">
+                    <label>Monthly Investment</label>
+                    <span id="investment-slider-value">₹500</span>
+                </div>
+                <div class="input-limits">
+                    <div>₹500</div>
+                    <div>₹1 Lac</div>
+                </div>
+                <input
+                    type="range"
+                    id="investment-slider"
+                    min="500"
+                    max="100000"
+                    step="500"
+                    value="500"
+                />
+
+                <!-- <div class="cal-content">
+                    <label>Increment Yearly</label>
+                    <span id="increment-slider-value">₹2000</span>
+                </div>
+                <div class="input-limits">
+                    <div>₹500</div>
+                    <div>₹5 Lacs</div>
+                </div>
+                <input
+                    type="range"
+                    id="increment-slider"
+                    min="500"
+                    max="500000"
+                    step="500"
+                    value="2000"
+                /> -->
+
+                <div class="cal-content">
+                    <label>Annual Growth in SIP</label>
+                    <span id="raise-slider-value">10%</span>
+                </div>
+                <div class="input-limits">
+                    <div>1%</div>
+                    <div>100%</div>
+                </div>
+                <input
+                    type="range"
+                    id="raise-slider"
+                    min="1"
+                    max="100"
+                    step="1"
+                    value="10"
+                />
+
+                <div class="cal-content">
+                    <label>Expected Return Rate(P.A)</label>
+                    <span id="return-slider-value">10%</span>
+                </div>
+                <div class="input-limits">
+                    <div>1%</div>
+                    <div>30%</div>
+                </div>
+                <input
+                    type="range"
+                    id="return-slider"
+                    min="1"
+                    max="30"
+                    step="1"
+                    value="10"
+                />
+            </div>
+            <div>
+                <div class="cal-content">
+                    <label>Time Period(Years)</label>
+                    <span id="tenure-slider-value">1</span>
+                </div>
+                <div class="input-limits">
+                    <div>1</div>
+                    <div>40</div>
+                </div>
+                <input
+                    type="range"
+                    id="tenure-slider"
+                    min="1"
+                    max="40"
+                    step="1"
+                    value="1"
+                />
+
+                <div class="cal-content result">
+                    <label>Invested Amt</label>
+                    <span id="invested-amt" class="total">₹58,66,36,480</span>
+                </div>
+
+                <div class="cal-content result">
+                    <label>Est. return</label>
+                    <span id="returns">₹10,03,99,76,645</span>
+                </div>
+
+                <hr />
+
+                <div class="cal-content result">
+                    <label>Total Amount</label>
+                    <span id="total-amount">₹5,88,019</span>
+                </div>
+                <a href="https://api.labh.io/get-app/" target="_blank"
+                    >Invest Now</a
+                >
             </div>
         </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/education-fees-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Education fees calculator</div>
-            <div class="card-description">
-                Plan for your child’s education costs.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/sip-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">SIP returns calculator</div>
-            <div class="card-description">Estimate Your Investment Growth.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/fixed-deposit-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Fixed deposit return calculator</div>
-            <div class="card-description">
-                Calculate Your Fixed Deposit Growth.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/lumpsum-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Lumpsum calculator</div>
-            <div class="card-description">
-                Estimate Your Investment Returns.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/pf-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">PF calculators</div>
-            <div class="card-description">Estimate Your PF Growth.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/nps-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">NPS calculator</div>
-            <div class="card-description">Plan Your Retirement Savings.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/personal-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Personal loan calculator</div>
-            <div class="card-description">Calculate Your Loan EMI.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/credit-card-debit-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">
-                Credit card debt calculator calculator
-            </div>
-            <div class="card-description">Manage Your Debt Smartly.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/car-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Car loan calculator</div>
-            <div class="card-description">Estimate Your Monthly EMI.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/bike-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Bike cost calculator</div>
-            <div class="card-description">
-                Estimate Your Total Bike Expense.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/home-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">House calculator</div>
-            <div class="card-description">Estimate Your Home Investment.</div>
-        </div>
-        <!-- <div class="card" onclick="window.location.href='/calculator/stepup-sip-calculator/'">
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Sip step up calculator</div>
-            <div class="card-description">
-                Grow Your Investments with Incremental SIPs.
-            </div>
-        </div> -->
     </div>
+    <div class="guide">
+        <h2>How to Use?</h2>
+        <ul>
+            <li>
+                Enter initial SIP amount, annual increment percentage, expected
+                returns, and investment duration.
+            </li>
+            <li>Calculate to view the total corpus and returns.</li>
+        </ul>
+
+        <h2>Formula</h2>
+        <p class="formula">
+            $$ {Total Future Value} = (P + S) \times \frac{\left(1 +
+            \frac{r}{n}\right)^{nt} - 1}{\frac{r}{n}} $$
+        </p>
+        <table>
+            <tr>
+                <td>P</td>
+                <td>Fixed payment each period</td>
+            </tr>
+            <tr>
+                <td>r</td>
+                <td>
+                    Monthly interest rate (annual interest rate divided by 12).
+                </td>
+            </tr>
+            <tr>
+                <td>n</td>
+                <td>
+                    Total number of monthly installments (loan tenure in months)
+                </td>
+            </tr>
+            <tr>
+                <td>Q</td>
+                <td>Incremented Income Each Period</td>
+            </tr>
+            <tr>
+                <td>i</td>
+                <td>Rate of increase in contribution</td>
+            </tr>
+        </table>
+        <h2>Advantages</h2>
+        <ul>
+            <li>Promotes disciplined and progressive investment</li>
+            <li>Enhanced returns through systematic increments</li>
+            <li>Clear visualization of financial growth</li>
+            <li>Customizable investment plans</li>
+        </ul>
+        <h2>FAQ's</h2>
+
+        <div class="faq-container" style="background-color: transparent">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is a step-up SIP?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            It’s a SIP where you increase your investment amount
+                            annually by a fixed percentage or amount.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span> Can I stop a step-up SIP anytime? </span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Yes, you can pause or stop it, but check with your
+                            mutual fund provider for penalties.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span
+                        >How does a step-up SIP help in long-term goals?
+                    </span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            It allows you to invest more as your income grows,
+                            helping you achieve bigger financial goals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="moblie-search-bar-container">
         <div
             id="search-results"
@@ -276,51 +352,113 @@
 </div>
 
 <script>
-    $(document).ready(function () {
-        let cardWidth = $(".card").width();
+    function calculateFutureValue(P, r, t, m=12) {
 
-        $(".card").hover(
-            function () {
-                $(this)
-                    .find("img")
-                    .last()
-                    .attr("src", "/assets/calculator-arrow-hover.svg");
-            },
-            function () {
-                $(this)
-                    .find("img")
-                    .last()
-                    .attr("src", "/assets/calculator-arrow.svg");
-            }
-        );
+        let FV = 0;
 
-        function search(event) {
-            if (window.innerWidth < 1200) {
-                console.log('skipped')
-                return; // Do not execute the search function on mobile
-            }
-            const query = event.target.value.toLowerCase();
-            $(".cards").addClass("cards-grid-constant-gap"); // this is added to maintain the gap b/t cards
-            $(".card").each(function () {
-                const cardHeading = $(this).find(".card-heading").text();
-                const cardDescription = $(this)
-                    .find(".card-description")
-                    .text();
-                if (
-                    cardHeading.toLowerCase().includes(query) ||
-                    cardDescription.toLowerCase().includes(query)
-                ) {
-                    $(this).show();
-                    $(this).width(cardWidth);
-                } else {
-                    $(this).hide();
-                }
-            });
-            $("html, body").animate({ scrollTop: 0 }, 10);
+        for (let i = 0; i < t; i++) {
+            const annuityFactor = ((1 + r) ** m - 1) / r;
+            const compoundFactor = (1 + r) ** ((t - (i + 1)) * m);
+            FV += P * annuityFactor * compoundFactor;
         }
 
-        $("#search").on("input", search);
-        $("#search2").on("input", search);
+        return FV;
+    }
+    function calculateTotalInvestment(n, p, stepUpRate) {
+        let totalInvested = 0.0;
+
+        for (let year = 0; year < n; year++) {
+            const sipAmount = p * Math.pow(1 + stepUpRate, year);
+            for (let month = 0; month < 12; month++) {
+                totalInvested += sipAmount;
+            }
+        }
+        return totalInvested;
+    }
+
+    // function calculateFutureValue(P, r, n, t, S) {
+    //     const compoundFactor = Math.pow(1 + r / n, n * t);
+    //     const futureValuePrincipal = P * ((compoundFactor - 1) / (r / n));
+    //     const futureValueContributions = S * ((compoundFactor - 1) / (r / n));
+
+    //     const totalFutureValue =
+    //         futureValuePrincipal + futureValueContributions;
+    //     return totalFutureValue
+    // }
+
+    function updateValues() {
+        const investment = $("#investment-slider").val();
+        let increment = $("#increment-slider").val();
+        const raise = $("#raise-slider").val() / 100;
+        const returnRate = $("#return-slider").val() / 100;
+        const tenure = $("#tenure-slider").val();
+
+        increment = investment * raise;
+
+        // const returns = calculateFutureValue(
+        //     investment,
+        //     returnRate,
+        //     1,
+        //     tenure,
+        //     increment
+        // );
+
+        const returns = calculateFutureValue(investment, returnRate, tenure)
+
+        const total_investment = calculateTotalInvestment(
+            tenure,
+            investment,
+            raise
+        );
+
+        const total_amount = returns + total_investment;
+
+        $("#total-amount").text(
+            `₹${parseInt(total_amount).toLocaleString("en-IN")}`
+        );
+        $("#invested-amt").text(
+            `₹${parseInt(total_investment).toLocaleString("en-IN")}`
+        );
+        $("#returns").text(`₹${parseInt(returns).toLocaleString("en-IN")}`);
+    }
+
+    $(document).ready(function () {
+        function updateSliderBackground(slider) {
+            if (
+                slider.id == "investment-slider" ||
+                slider.id == "increment-slider"
+            ) {
+                $(`#${slider.id}-value`).text(
+                    `₹${parseInt(slider.value).toLocaleString("en-IN")}`
+                );
+            } else if (
+                slider.id == "return-slider" ||
+                slider.id == "raise-slider"
+            ) {
+                $(`#${slider.id}-value`).text(`${slider.value} %`);
+            } else if (slider.id == "tenure-slider") {
+                $(`#${slider.id}-value`).text(`${slider.value} Years`);
+            }
+
+            const value =
+                ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+            $(slider).css(
+                "background",
+                `linear-gradient(to right, #9b5de5 ${value}%, #d3bfff ${value}%)`
+            );
+        }
+
+        $(
+            "#investment-slider, #raise-slider, #tenure-slider, #return-slider, #increment-slider"
+        )
+            .each(function () {
+                updateSliderBackground(this);
+                updateValues();
+            })
+            .on("input", function () {
+                updateSliderBackground(this);
+                updateValues();
+            });
     });
 </script>
 

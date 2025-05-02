@@ -79,7 +79,7 @@
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
         ></script>
 
-        <title>Labh</title>
+        <title>Fixed Deposit Calculator</title>
     </head>
     <body>
         <nav>
@@ -102,162 +102,175 @@
             <ul>
                 <li><a href="/index.html">Home</a></li>
                 <li><img src="/assets/dote.svg" alt="dote" /></li>
-                <li><a href="#" class="active">Calculator</a></li>
+                 <li><a href="/calculator/">Calculator</a></li> <li><img src="/assets/dote-active.svg" alt="dote-active"></li> <li><a href="#" class="active">Fixed Deposit Calculator</a></li> 
             </ul>
         </div>
 
         
 <div class="main-container">
     <div class="contents">
-        <h1>Smart Investment Calculator</h1>
-        <p>
-            Make informed decisions with real-time insights on returns, risks,
-            and optimal investment strategies.
-        </p>
+        <h1>Fixed deposit return calculator</h1>
+        <p>Calculate FD maturity amount and interest earned.</p>
     </div>
-    <div class="cards">
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/retirement-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Retirement calculator</div>
-            <div class="card-description">
-                Estimate your savings for a secure retirement.
+    <div class="calculator-card fixed-deposit-calculator">
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <div class="calculator-card-contents">
+            <div>
+                <div class="cal-content">
+                    <label>Total Investment</label>
+                    <span id="investment-slider-value">Rs.5000</span>
+                </div>
+                <input
+                    type="range"
+                    id="investment-slider"
+                    min="5000"
+                    max="1000000"
+                    step="500"
+                    value="5000"
+                />
+
+                <div class="cal-content">
+                    <label>Time Period</label>
+                    <span id="period-slider-value">10 Years</span>
+                </div>
+                <input
+                    type="range"
+                    id="period-slider"
+                    min="1"
+                    max="40"
+                    step="1"
+                    value="10"
+                />
+
+                <div class="cal-content">
+                    <label>Rate of interest(p.a)</label>
+                    <span id="interest-slider-value">7%</span>
+                </div>
+                <input
+                    type="range"
+                    id="interest-slider"
+                    min="1"
+                    max="30"
+                    step=".5"
+                    value="7"
+                />
+            </div>
+            <div>
+                <div class="graph-container">
+                    <div class="graph"></div>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div
+                                class="legend-color"
+                                style="background-color: #9a5ced"
+                            ></div>
+                            <span>Est. Returns</span>
+                        </div>
+                        <div class="legend-item">
+                            <div
+                                class="legend-color"
+                                style="background-color: #e8d8fd"
+                            ></div>
+                            <span>Invested amt</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cal-content result">
+                    <label>Invested Amount</label>
+                    <span id="invested-amount">Rs 46,36,567</span>
+                </div>
+                <div class="cal-content result">
+                    <label>Est. returns</label>
+                    <span id="est-returns">Rs 12,67,346</span>
+                </div>
+                <hr class="calculator-hr" />
+
+                <div class="cal-content result">
+                    <label>Retirement Amt</label>
+                    <span class="total" id="total-amount">RS 59,85,385</span>
+                </div>
             </div>
         </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/education-fees-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Education fees calculator</div>
-            <div class="card-description">
-                Plan for your child’s education costs.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/sip-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">SIP returns calculator</div>
-            <div class="card-description">Estimate Your Investment Growth.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/fixed-deposit-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Fixed deposit return calculator</div>
-            <div class="card-description">
-                Calculate Your Fixed Deposit Growth.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/lumpsum-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Lumpsum calculator</div>
-            <div class="card-description">
-                Estimate Your Investment Returns.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/pf-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">PF calculators</div>
-            <div class="card-description">Estimate Your PF Growth.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/nps-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">NPS calculator</div>
-            <div class="card-description">Plan Your Retirement Savings.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/personal-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Personal loan calculator</div>
-            <div class="card-description">Calculate Your Loan EMI.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/credit-card-debit-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">
-                Credit card debt calculator calculator
-            </div>
-            <div class="card-description">Manage Your Debt Smartly.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/car-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Car loan calculator</div>
-            <div class="card-description">Estimate Your Monthly EMI.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/bike-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Bike cost calculator</div>
-            <div class="card-description">
-                Estimate Your Total Bike Expense.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/home-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">House calculator</div>
-            <div class="card-description">Estimate Your Home Investment.</div>
-        </div>
-        <!-- <div class="card" onclick="window.location.href='/calculator/stepup-sip-calculator/'">
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Sip step up calculator</div>
-            <div class="card-description">
-                Grow Your Investments with Incremental SIPs.
-            </div>
-        </div> -->
     </div>
+    <div class="guide">
+        <h2>How to Use?</h2>
+        <ul>
+            <li>Input deposit amount, interest rate, and tenure.</li>
+            <li>Select compounding frequency.</li>
+            <li>View maturity amount and total interest.</li>
+        </ul>
+
+        <h2>Formula</h2>
+        <p class="formula">A = P (1 + r/n)^(nt)</p>
+        <table>
+            <tr>
+                <td>A</td>
+                <td>The maturity amount or total amount after investment.</td>
+            </tr>
+            <tr>
+                <td>P</td>
+                <td>The principal amount or initial deposit.</td>
+            </tr>
+            <tr>
+                <td>r</td>
+                <td>Annual interest rate (in decimal form).</td>
+            </tr>
+            <tr>
+                <td>n</td>
+                <td>Number of times interest is compounded per year.</td>
+            </tr>
+            <tr>
+                <td>t</td>
+                <td>Investment duration in years.</td>
+            </tr>
+        </table>
+        <h2>Advantages</h2>
+        <ul>
+            <li>Clarity on returns</li>
+            <li>Easy comparison among banks</li>
+            <li>Flexible tenure planning</li>
+            <li>Interest compounding visibility</li>
+        </ul>
+        <h2>FAQ's</h2>
+
+        <div class="faq-container" style="background-color: transparent">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Are FD returns taxable?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Yes, FD interest is taxable as per your income tax
+                            slab.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I withdraw my FD before maturity? </span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Yes, but it may attract a penalty.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="moblie-search-bar-container">
         <div
             id="search-results"
@@ -276,51 +289,87 @@
 </div>
 
 <script>
-    $(document).ready(function () {
-        let cardWidth = $(".card").width();
+    const compoundingFrequency = 4;
 
-        $(".card").hover(
-            function () {
-                $(this)
-                    .find("img")
-                    .last()
-                    .attr("src", "/assets/calculator-arrow-hover.svg");
-            },
-            function () {
-                $(this)
-                    .find("img")
-                    .last()
-                    .attr("src", "/assets/calculator-arrow.svg");
-            }
+    function updateChart(returnsPercentage) {
+        const chart = document.querySelector(".graph");
+        chart.style.background = `conic-gradient(
+            #E8D8FD 0% ${returnsPercentage}%,
+            #9A5CED ${returnsPercentage}% 100%
+            )`;
+    }
+
+    function calculateFD(principal, annualRate, years, compoundingFrequency) {
+        let r = annualRate / 100;
+        let n = compoundingFrequency;
+        let t = years;
+
+        let amount = principal * Math.pow(1 + r / n, n * t);
+        return amount;
+    }
+    function updateValues() {
+        const principle = $("#investment-slider").val();
+        const years = $("#period-slider").val();
+        const rate = $("#interest-slider").val();
+
+        const maturityAmount = calculateFD(
+            principle,
+            rate,
+            years,
+            compoundingFrequency
         );
 
-        function search(event) {
-            if (window.innerWidth < 1200) {
-                console.log('skipped')
-                return; // Do not execute the search function on mobile
+        const returns = maturityAmount - principle;
+
+        const returnsPercentage = (principle / maturityAmount) * 100;
+        updateChart(returnsPercentage);
+
+        $("#invested-amount").text(
+            `RS.${parseInt(principle).toLocaleString("en-IN")}`
+        );
+        $("#est-returns").text(
+            `RS.${returns.toLocaleString("en-IN", {
+                maximumFractionDigits: 0,
+            })}`
+        );
+        $("#total-amount").text(
+            `RS.${maturityAmount.toLocaleString("en-IN", {
+                maximumFractionDigits: 0,
+            })}`
+        );
+    }
+
+    $(document).ready(function () {
+
+        function updateSliderBackground(slider) {
+            if (slider.id == "investment-slider") {
+                $(`#${slider.id}-value`).text(`Rs. ${parseInt(slider.value)}`);
+            } else if (slider.id == "period-slider") {
+                $(`#${slider.id}-value`).text(`${slider.value} Years`);
+            } else {
+                $(`#${slider.id}-value`).text(`${slider.value} %`);
             }
-            const query = event.target.value.toLowerCase();
-            $(".cards").addClass("cards-grid-constant-gap"); // this is added to maintain the gap b/t cards
-            $(".card").each(function () {
-                const cardHeading = $(this).find(".card-heading").text();
-                const cardDescription = $(this)
-                    .find(".card-description")
-                    .text();
-                if (
-                    cardHeading.toLowerCase().includes(query) ||
-                    cardDescription.toLowerCase().includes(query)
-                ) {
-                    $(this).show();
-                    $(this).width(cardWidth);
-                } else {
-                    $(this).hide();
-                }
-            });
-            $("html, body").animate({ scrollTop: 0 }, 10);
+
+            const value =
+                ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+            $(slider).css(
+                "background",
+                `linear-gradient(to right, #9b5de5 ${value}%, #d3bfff ${value}%)`
+            );
         }
 
-        $("#search").on("input", search);
-        $("#search2").on("input", search);
+        $("#investment-slider, #period-slider, #interest-slider")
+            .each(function () {
+                updateSliderBackground(this);
+                updateValues();
+            })
+            .on("input", function () {
+                updateSliderBackground(this);
+                updateValues();
+            });
+        $("#luxury, #good, #normal").on("change", function () {
+            updateValues();
+        });
     });
 </script>
 

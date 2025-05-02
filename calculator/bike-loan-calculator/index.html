@@ -79,7 +79,7 @@
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
         ></script>
 
-        <title>Labh</title>
+        <title>Bike Loan Calculator</title>
     </head>
     <body>
         <nav>
@@ -102,162 +102,213 @@
             <ul>
                 <li><a href="/index.html">Home</a></li>
                 <li><img src="/assets/dote.svg" alt="dote" /></li>
-                <li><a href="#" class="active">Calculator</a></li>
+                 <li><a href="/calculator/">Calculator</a></li> <li><img src="/assets/dote-active.svg" alt="dote-active"></li> <li><a href="#" class="active">Bike Loan Calculator</a></li> 
             </ul>
         </div>
 
         
 <div class="main-container">
     <div class="contents">
-        <h1>Smart Investment Calculator</h1>
-        <p>
-            Make informed decisions with real-time insights on returns, risks,
-            and optimal investment strategies.
-        </p>
+        <h1>Bike Loan calculators</h1>
+        <p>Estimate EMI and total interest payable for bike loans.</p>
     </div>
-    <div class="cards">
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/retirement-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Retirement calculator</div>
-            <div class="card-description">
-                Estimate your savings for a secure retirement.
+    <div class="calculator-card pf-calculator car-loan-calculator">
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <div class="calculator-card-contents">
+            <div>
+                <div class="cal-content">
+                    <label>Bike amount</label>
+                    <span id="loan-slider-value">Rs.200000</span>
+                </div>
+                <div class="input-limits">
+                    <div>1 Lac</div>
+                    <div>1 Crore</div>
+                </div>
+                <input
+                    type="range"
+                    id="loan-slider"
+                    min="100000"
+                    max="10000000"
+                    step="100000"
+                    value="200000"
+                />
+
+                <div class="cal-content">
+                    <label>Down Payment</label>
+                    <span id="downpayment-slider-value">Rs.100000</span>
+                </div>
+                <div class="input-limits">
+                    <div>1 Lac</div>
+                    <div>1 Crore</div>
+                </div>
+                <input
+                    type="range"
+                    id="downpayment-slider"
+                    min="100000"
+                    max="10000000"
+                    step="100000"
+                    value="100000"
+                />
+
+                <div class="cal-content">
+                    <label>Illustrative Interest Rate (p.a)*</label>
+                    <span id="interest-slider-value">10%</span>
+                </div>
+                <div class="input-limits">
+                    <div>1%</div>
+                    <div>30%</div>
+                </div>
+                <input
+                    type="range"
+                    id="interest-slider"
+                    min="1"
+                    max="30"
+                    step="1"
+                    value="10"
+                />
+            </div>
+            <div>
+                <div class="cal-content">
+                    <label>Loan Tenure(Months)</label>
+                    <span id="tenure-slider-value">23</span>
+                </div>
+                <div class="input-limits">
+                    <div>12</div>
+                    <div>120</div>
+                </div>
+                <input
+                    type="range"
+                    id="tenure-slider"
+                    min="12"
+                    max="120"
+                    step="1"
+                    value="23"
+                />
+
+                <div class="cal-content result">
+                    <label>EMI</label>
+                    <span id="monthly-emi" class="total">Rs.16,334</span>
+                </div>
+
+                <div class="cal-content result">
+                    <label>Down Payment</label>
+                    <span id="downpayment">Rs.50,0000</span>
+                </div>
+
+                <div class="cal-content result">
+                    <label>Principal Amount</label>
+                    <span id="principal-amount">Rs.50,0000</span>
+                </div>
+
+                <div class="cal-content result">
+                    <label>Total Interest Payable</label>
+                    <span id="interest">Rs.88,019</span>
+                </div>
+                <hr />
+                <div class="cal-content result">
+                    <label>Total Amount Payable</label>
+                    <span id="total-amount">Rs.5,88,019</span>
+                </div>
             </div>
         </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/education-fees-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Education fees calculator</div>
-            <div class="card-description">
-                Plan for your child’s education costs.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/sip-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">SIP returns calculator</div>
-            <div class="card-description">Estimate Your Investment Growth.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/fixed-deposit-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Fixed deposit return calculator</div>
-            <div class="card-description">
-                Calculate Your Fixed Deposit Growth.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/lumpsum-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Lumpsum calculator</div>
-            <div class="card-description">
-                Estimate Your Investment Returns.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/pf-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">PF calculators</div>
-            <div class="card-description">Estimate Your PF Growth.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/nps-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">NPS calculator</div>
-            <div class="card-description">Plan Your Retirement Savings.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/personal-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Personal loan calculator</div>
-            <div class="card-description">Calculate Your Loan EMI.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/credit-card-debit-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">
-                Credit card debt calculator calculator
-            </div>
-            <div class="card-description">Manage Your Debt Smartly.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/car-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Car loan calculator</div>
-            <div class="card-description">Estimate Your Monthly EMI.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/bike-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Bike cost calculator</div>
-            <div class="card-description">
-                Estimate Your Total Bike Expense.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/home-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">House calculator</div>
-            <div class="card-description">Estimate Your Home Investment.</div>
-        </div>
-        <!-- <div class="card" onclick="window.location.href='/calculator/stepup-sip-calculator/'">
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Sip step up calculator</div>
-            <div class="card-description">
-                Grow Your Investments with Incremental SIPs.
-            </div>
-        </div> -->
     </div>
+    <div class="guide">
+        <h2>How to Use?</h2>
+        <ul>
+            <li>Input loan amount, interest rate, and loan tenure.</li>
+            <li>Calculate to view monthly EMI and total payable interest.</li>
+        </ul>
+
+        <h2>Formula</h2>
+        <p class="formula">EMI = [P × r × (1 + r)^n] / [(1 + r)^n – 1]</p>
+        <table>
+            <tr>
+                <td>EMI (Equated Monthly Installment)</td>
+                <td>The fixed monthly repayment amount.</td>
+            </tr>
+            <tr>
+                <td>P</td>
+                <td>Principal amount of the home loan.</td>
+            </tr>
+            <tr>
+                <td>r</td>
+                <td>
+                    Monthly interest rate (annual interest rate divided by 12).
+                </td>
+            </tr>
+            <tr>
+                <td>n</td>
+                <td>
+                    Total number of monthly installments (loan tenure in months)
+                </td>
+            </tr>
+        </table>
+        <h2>Advantages</h2>
+        <ul>
+            <li>Simplified budget management</li>
+            <li>Transparent interest calculation</li>
+            <li>Transparent cost understanding</li>
+            <li>Facilitates loan comparison</li>
+            <li>Enhances financial planning</li>
+        </ul>
+        <h2>FAQ's</h2>
+
+        <div class="faq-container" style="background-color: transparent">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is the maximum tenure for a bike loan?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Most lenders offer a maximum tenure of 3-4 years
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I get a bike loan for a used bike? </span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Yes, but the interest rate may be higher compared to
+                            a new bike loan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span
+                        >Is bike loan interest eligible for tax benefits?</span
+                    >
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Yes, comprehensive insurance is usually required by
+                            lenders.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="moblie-search-bar-container">
         <div
             id="search-results"
@@ -276,51 +327,74 @@
 </div>
 
 <script>
-    $(document).ready(function () {
-        let cardWidth = $(".card").width();
+    function calculateEMI(principal, annualInterestRate, tenureInMonths) {
+        let monthlyInterestRate = annualInterestRate / (12 * 100);
+        let emi =
+            (principal *
+                monthlyInterestRate *
+                Math.pow(1 + monthlyInterestRate, tenureInMonths)) /
+            (Math.pow(1 + monthlyInterestRate, tenureInMonths) - 1);
+        return emi.toFixed(2);
+    }
 
-        $(".card").hover(
-            function () {
-                $(this)
-                    .find("img")
-                    .last()
-                    .attr("src", "/assets/calculator-arrow-hover.svg");
-            },
-            function () {
-                $(this)
-                    .find("img")
-                    .last()
-                    .attr("src", "/assets/calculator-arrow.svg");
-            }
+    function updateValues() {
+        const principal = $("#loan-slider").val();
+        const downpayment = $("#downpayment-slider").val();
+        const loanAmount = principal - downpayment;
+        const interest = $("#interest-slider").val();
+        const tenure = $("#tenure-slider").val();
+
+        const emi = calculateEMI(loanAmount, interest, tenure);
+
+        const totalPayable = emi * tenure;
+        const interestAmount = totalPayable - loanAmount;
+
+        $("#monthly-emi").text(`Rs.${parseInt(emi).toLocaleString("en-IN")}`);
+        $("#downpayment").text(`Rs.${downpayment.toLocaleString("en-IN")}`);
+        $("#principal-amount").text(`Rs.${loanAmount.toLocaleString("en-IN")}`);
+        $("#interest").text(
+            `Rs.${parseInt(interestAmount).toLocaleString("en-IN")}`
         );
+        $("#total-amount").text(
+            `Rs.${parseInt(totalPayable).toLocaleString("en-IN")}`
+        );
+    }
 
-        function search(event) {
-            if (window.innerWidth < 1200) {
-                console.log('skipped')
-                return; // Do not execute the search function on mobile
+    $(document).ready(function () {
+        function updateSliderBackground(slider) {
+            if (
+                slider.id == "loan-slider" ||
+                slider.id == "downpayment-slider"
+            ) {
+                $(`#${slider.id}-value`).text(
+                    `Rs.${parseInt(slider.value).toLocaleString("en-IN")}`
+                );
+            } else if (
+                slider.id == "interest-slider" ||
+                slider.id == "tenure-slider"
+            ) {
+                $(`#${slider.id}-value`).text(`${slider.value} %`);
+            } else if (slider.id == "age-slider") {
+                $(`#${slider.id}-value`).text(`${slider.value} Years`);
             }
-            const query = event.target.value.toLowerCase();
-            $(".cards").addClass("cards-grid-constant-gap"); // this is added to maintain the gap b/t cards
-            $(".card").each(function () {
-                const cardHeading = $(this).find(".card-heading").text();
-                const cardDescription = $(this)
-                    .find(".card-description")
-                    .text();
-                if (
-                    cardHeading.toLowerCase().includes(query) ||
-                    cardDescription.toLowerCase().includes(query)
-                ) {
-                    $(this).show();
-                    $(this).width(cardWidth);
-                } else {
-                    $(this).hide();
-                }
-            });
-            $("html, body").animate({ scrollTop: 0 }, 10);
+
+            const value =
+                ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+            $(slider).css(
+                "background",
+                `linear-gradient(to right, #9b5de5 ${value}%, #d3bfff ${value}%)`
+            );
         }
 
-        $("#search").on("input", search);
-        $("#search2").on("input", search);
+        $("#loan-slider, #interest-slider, #tenure-slider, #downpayment-slider")
+            .each(function () {
+                updateSliderBackground(this);
+                updateValues();
+            })
+            .on("input", function () {
+                updateSliderBackground(this);
+                updateValues();
+            });
     });
 </script>
 

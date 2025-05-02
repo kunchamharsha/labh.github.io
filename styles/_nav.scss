@@ -1,0 +1,169 @@
+$nav-margin-top: calculate-rem(75);
+$nav-margin-left: calculate-rem(40);
+$nav-margin-bottom: calculate-rem(42);
+$search-bar-width: calculate-rem(437);
+$search-bar-height: calculate-rem(60);
+
+nav {
+    background: black;
+    padding: $nav-margin-top;
+    padding: $nav-margin-left;
+    padding-right: $nav-margin-left;
+    padding-bottom: $nav-margin-bottom;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    width: 11.625rem;
+    aspect-ratio: 31 / 12;
+    align-items: center;
+
+    img {
+        width: 4.5rem;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+    span {
+        font-size: calculate-rem(40);
+        font-weight: 700;
+        margin-left: calculate-rem(16);
+    }
+}
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calculate-rem(652);
+    height: calculate-rem(60);
+    position: relative;
+
+    a {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-size: calculate-rem(20);
+        font-weight: 600;
+        width: calculate-rem(192);
+        height: calculate-rem(60);
+        border-radius: calculate-rem(40);
+        background: linear-gradient(
+            95.56deg,
+            #7c7a99 2.21%,
+            #cecbff 42.84%,
+            #7c7a99 95.18%
+        );
+    }
+
+    .search-dropdown {
+        position: absolute;
+        top: calc($search-bar-height / 2);
+        left: 0px;
+        padding-top: calc($search-bar-height / 2 + 14px);
+        padding-left: calculate-rem(15);
+        padding-right: calucate-rem(15);
+        border-radius: calculate-rem(32);
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        background: linear-gradient(
+            100.26deg,
+            #464556 -10.49%,
+            #767591 54.67%,
+            #464556 113.38%
+        );
+
+        width: $search-bar-width;
+        backdrop-filter: blur(41.900001525878906px);
+        z-index: 4;
+        font-size: calculate-rem(20);
+        color: white;
+
+        div {
+            width: 100%;
+            height: calculate-rem(41.42);
+            align-items: center;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            margin-bottom: calculate-rem(13);
+            gap: calculate-rem(10);
+
+            .no-results {
+                color: #A9C6FFB2;
+
+                span {
+                    color: #a9c6ff;
+                }
+            }
+        }
+    }
+}
+
+.search-bar {
+    background: linear-gradient(
+        95.56deg,
+        rgba(124, 122, 153, 0.32) 2.21%,
+        rgba(206, 203, 255, 0.32) 42.84%,
+        rgba(124, 122, 153, 0.32) 95.18%
+    );
+    border: 1px solid #cecbff66;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    backdrop-filter: blur(41.900001525878906px);
+    border-radius: calculate-rem(40);
+    padding: 0 calculate-rem(16);
+    width: $search-bar-width;
+    height: $search-bar-height;
+    display: flex;
+    align-items: center;
+    color: #b9bbbe;
+    font-family: Arial, sans-serif;
+    font-size: calculate-rem(16);
+    z-index: 5;
+
+    input {
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        height: 90%;
+        color: white;
+        font-size: calculate-rem(20);
+    }
+
+    input::placeholder {
+        font-size: calculate-rem(20);
+        color: #cecbff;
+    }
+    input:focus-visible {
+        outline: none;
+    }
+}
+
+.search-bar::before {
+    content: "";
+    background-image: url("../../assets/search-icon.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: calculate-rem(31);
+    height: calculate-rem(31);
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.search-bar:not(.hide-icon)::after {
+    content: url('/assets/cancel_icon.svg');
+    margin-top: calculate-rem(6);
+    height: fit-content;
+}
+
+.nav-hr {
+    width: 95%;
+    margin-left: 3%;
+    border: 1px solid #cecbff;
+    margin: auto;
+}

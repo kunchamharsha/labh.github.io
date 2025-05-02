@@ -79,7 +79,7 @@
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
         ></script>
 
-        <title>Labh</title>
+        <title>PF Calculator</title>
     </head>
     <body>
         <nav>
@@ -102,162 +102,211 @@
             <ul>
                 <li><a href="/index.html">Home</a></li>
                 <li><img src="/assets/dote.svg" alt="dote" /></li>
-                <li><a href="#" class="active">Calculator</a></li>
+                 <li><a href="/calculator/">Calculator</a></li> <li><img src="/assets/dote-active.svg" alt="dote-active"></li> <li><a href="#" class="active">PF Calculator</a></li> 
             </ul>
         </div>
 
         
 <div class="main-container">
     <div class="contents">
-        <h1>Smart Investment Calculator</h1>
-        <p>
-            Make informed decisions with real-time insights on returns, risks,
-            and optimal investment strategies.
+        <h1>PF calculators</h1>
+        <p>Calculate the total corpus accumulated in your EPF account.</p>
+    </div>
+    <div class="calculator-card pf-calculator">
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <div class="calculator-card-contents">
+            <div>
+                <div class="cal-content">
+                    <label>Monthly salary(Basic + DA)</label>
+                    <span id="salary-slider-value">Rs.40,000</span>
+                </div>
+                <div class="input-limits">
+                    <div>Rs.1000</div>
+                    <div>Rs.30 Lac</div>
+                </div>
+                <input
+                    type="range"
+                    id="salary-slider"
+                    min="1000"
+                    max="3000000"
+                    step="500"
+                    value="40000"
+                />
+
+                <div class="cal-content">
+                    <label>Your Age</label>
+                    <span id="age-slider-value">25 Years</span>
+                </div>
+                <div class="input-limits">
+                    <div>18</div>
+                    <div>48</div>
+                </div>
+                <input
+                    type="range"
+                    id="age-slider"
+                    min="18"
+                    max="48"
+                    step="1"
+                    value="23"
+                />
+
+                <div class="cal-content">
+                    <label>Your contribution to PF</label>
+                    <span id="contribution-slider-value">14%</span>
+                </div>
+                <div class="input-limits">
+                    <div>12%</div>
+                    <div>20%</div>
+                </div>
+                <input
+                    type="range"
+                    id="contribution-slider"
+                    min="0"
+                    max="20"
+                    step="1"
+                    value="14"
+                />
+            </div>
+            <div>
+                <div class="cal-content">
+                    <label>Annual salary increase</label>
+                    <span id="annual-increase-slider-value">9%</span>
+                </div>
+                <div class="input-limits">
+                    <div>0%</div>
+                    <div>15%</div>
+                </div>
+                <input
+                    type="range"
+                    id="annual-increase-slider"
+                    min="0"
+                    max="15"
+                    step="1"
+                    value="9"
+                />
+
+                <div class="cal-content">
+                    <label>Rate of interest %</label>
+                    <div class="rate-container">
+                        8.1%
+                    </div>
+                </div>
+
+                <div class="box-result">
+                    <span class="heading">You will have accumulated</span>
+                    <span class="amount" id="total-amount">Rs.15,652.55</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="guide">
+        <h2>How to Use?</h2>
+        <ul>
+            <li>
+                Enter basic monthly salary, current age, retirement age, and
+                current PF balance.
+            </li>
+            <li>Calculate to see retirement corpus.</li>
+        </ul>
+
+        <h2>Formula</h2>
+        <p class="formula">
+            $$ PF = \sum_{y=0}^{Y-1} \sum_{m=1}^{12} \left( PF_{y,m-1} \times
+            \left(1 + \frac{R}{12} \right) + S_0 \times (1 + i)^y \times r
+            \right) $$
         </p>
+        <table>
+            <tr>
+                <td>$$ PF_{y,m-1} $$</td>
+                <td>PF balance at previous month</td>
+            </tr>
+            <tr>
+                <td>$$ S_0 $$</td>
+                <td>Initial monthly salary</td>
+            </tr>
+            <tr>
+                <td>r</td>
+                <td>Contribution percentage (as decimal) </td>
+            </tr>
+            <tr>
+                <td>i</td>
+                <td>Annual salary increment percentage (as decimal)</td>
+            </tr>
+            <tr>
+                <td>R</td>
+                <td>Annual interest rate (as decimal)</td>
+            </tr>
+        </table>
+        <h2>Advantages</h2>
+        <ul>
+            <li>Easy tracking of retirement corpus</li>
+            <li>Clarity on employer and employee contributions</li>
+            <li>Future planning simplified</li>
+            <li>Encourages awareness of PF benefits</li>
+        </ul>
+        <h2>FAQ's</h2>
+
+        <div class="faq-container" style="background-color: transparent">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I add multiple children?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Labh is a research team that builds custom groups of
+                            mutual funds, designed to grow your money based on
+                            how much risk you’re comfortable taking. We do the
+                            research so you can invest with confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Does it calculate for international education?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Labh is a research team that builds custom groups of
+                            mutual funds, designed to grow your money based on
+                            how much risk you’re comfortable taking. We do the
+                            research so you can invest with confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What inflation rate should I use? </span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Labh is a research team that builds custom groups of
+                            mutual funds, designed to grow your money based on
+                            how much risk you’re comfortable taking. We do the
+                            research so you can invest with confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="cards">
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/retirement-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Retirement calculator</div>
-            <div class="card-description">
-                Estimate your savings for a secure retirement.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/education-fees-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Education fees calculator</div>
-            <div class="card-description">
-                Plan for your child’s education costs.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/sip-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">SIP returns calculator</div>
-            <div class="card-description">Estimate Your Investment Growth.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/fixed-deposit-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Fixed deposit return calculator</div>
-            <div class="card-description">
-                Calculate Your Fixed Deposit Growth.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/lumpsum-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Lumpsum calculator</div>
-            <div class="card-description">
-                Estimate Your Investment Returns.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/pf-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">PF calculators</div>
-            <div class="card-description">Estimate Your PF Growth.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/nps-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">NPS calculator</div>
-            <div class="card-description">Plan Your Retirement Savings.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/personal-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Personal loan calculator</div>
-            <div class="card-description">Calculate Your Loan EMI.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/credit-card-debit-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">
-                Credit card debt calculator calculator
-            </div>
-            <div class="card-description">Manage Your Debt Smartly.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/car-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Car loan calculator</div>
-            <div class="card-description">Estimate Your Monthly EMI.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/bike-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Bike cost calculator</div>
-            <div class="card-description">
-                Estimate Your Total Bike Expense.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/home-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">House calculator</div>
-            <div class="card-description">Estimate Your Home Investment.</div>
-        </div>
-        <!-- <div class="card" onclick="window.location.href='/calculator/stepup-sip-calculator/'">
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Sip step up calculator</div>
-            <div class="card-description">
-                Grow Your Investments with Incremental SIPs.
-            </div>
-        </div> -->
-    </div>
+
     <div class="moblie-search-bar-container">
         <div
             id="search-results"
@@ -275,52 +324,94 @@
     </div>
 </div>
 
+<div class="blur-effect display-none"></div>
+
 <script>
-    $(document).ready(function () {
-        let cardWidth = $(".card").width();
+    /*
+        - Every month, PF grows by adding the employee's contribution and earning interest.
+        - After every 12 months, salary increases by the annual increment percentage.
+        - Interest is compounded monthly on the running PF balance.
+        */
+    function calculatePF(
+        monthlySalary,
+        currentAge,
+        contributionPercent,
+        annualIncrementPercent,
+        interestRate
+    ) {
+        const retirementAge = 58;
+        let pfBalance = 0;
+        let monthlyContributionPercent = contributionPercent / 100;
+        let monthlyInterestRate = interestRate / 100 / 12;
 
-        $(".card").hover(
-            function () {
-                $(this)
-                    .find("img")
-                    .last()
-                    .attr("src", "/assets/calculator-arrow-hover.svg");
-            },
-            function () {
-                $(this)
-                    .find("img")
-                    .last()
-                    .attr("src", "/assets/calculator-arrow.svg");
+        for (let age = currentAge; age < retirementAge; age++) {
+            for (let month = 1; month <= 12; month++) {
+                let monthlyContribution =
+                    monthlySalary * monthlyContributionPercent;
+                pfBalance =
+                    pfBalance * (1 + monthlyInterestRate) + monthlyContribution;
             }
-        );
-
-        function search(event) {
-            if (window.innerWidth < 1200) {
-                console.log('skipped')
-                return; // Do not execute the search function on mobile
-            }
-            const query = event.target.value.toLowerCase();
-            $(".cards").addClass("cards-grid-constant-gap"); // this is added to maintain the gap b/t cards
-            $(".card").each(function () {
-                const cardHeading = $(this).find(".card-heading").text();
-                const cardDescription = $(this)
-                    .find(".card-description")
-                    .text();
-                if (
-                    cardHeading.toLowerCase().includes(query) ||
-                    cardDescription.toLowerCase().includes(query)
-                ) {
-                    $(this).show();
-                    $(this).width(cardWidth);
-                } else {
-                    $(this).hide();
-                }
-            });
-            $("html, body").animate({ scrollTop: 0 }, 10);
+            // After each year, increase salary
+            monthlySalary = monthlySalary * (1 + annualIncrementPercent / 100);
         }
 
-        $("#search").on("input", search);
-        $("#search2").on("input", search);
+        return pfBalance.toFixed(2);
+    }
+    function updateValues() {
+        const monthlySalary = $("#salary-slider").val();
+        const currentAge = $("#age-slider").val();
+        const contributionPercentage = $("#contribution-slider").val();
+        const annualIncrementPercent = $("#annual-increase-slider").val();
+        const interestRate = 8.1;
+
+        const finalPF = calculatePF(
+            monthlySalary,
+            currentAge,
+            contributionPercentage,
+            annualIncrementPercent,
+            interestRate
+        );
+
+        $("#total-amount").text(
+            `Rs.${parseInt(finalPF).toLocaleString("en-IN")}`
+        );
+    }
+
+    $(document).ready(function () {
+        function updateSliderBackground(slider) {
+            if (slider.id == "salary-slider") {
+                $(`#${slider.id}-value`).text(
+                    `Rs.${parseInt(slider.value).toLocaleString("en-IN")}`
+                );
+            } else if (
+                slider.id == "contribution-slider" ||
+                slider.id == "annual-increase-slider"
+            ) {
+                $(`#${slider.id}-value`).text(`${slider.value} %`);
+            } else if (slider.id == "age-slider") {
+                $(`#${slider.id}-value`).text(`${slider.value} Years`);
+            }
+
+            const value =
+                ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+            $(slider).css(
+                "background",
+                `linear-gradient(to right, #9b5de5 ${value}%, #d3bfff ${value}%)`
+            );
+        }
+
+        $(
+            "#salary-slider, #age-slider, #contribution-slider, #annual-increase-slider"
+        )
+            .each(function () {
+                updateSliderBackground(this);
+                updateValues();
+            })
+            .on("input", function () {
+                updateSliderBackground(this);
+                updateValues();
+            });
+
     });
 </script>
 

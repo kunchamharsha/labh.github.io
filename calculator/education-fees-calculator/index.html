@@ -79,7 +79,7 @@
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
         ></script>
 
-        <title>Labh</title>
+        <title>Education Fees Calculator</title>
     </head>
     <body>
         <nav>
@@ -102,162 +102,229 @@
             <ul>
                 <li><a href="/index.html">Home</a></li>
                 <li><img src="/assets/dote.svg" alt="dote" /></li>
-                <li><a href="#" class="active">Calculator</a></li>
+                 <li><a href="/calculator/">Calculator</a></li> <li><img src="/assets/dote-active.svg" alt="dote-active"></li> <li><a href="#" class="active">Education Fees Calculator</a></li> 
             </ul>
         </div>
 
         
 <div class="main-container">
     <div class="contents">
-        <h1>Smart Investment Calculator</h1>
+        <h1>Education Fees Calculator</h1>
         <p>
-            Make informed decisions with real-time insights on returns, risks,
-            and optimal investment strategies.
+            Calculate the future cost of your child's education considering
+            inflation and current fees
         </p>
     </div>
-    <div class="cards">
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/retirement-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Retirement calculator</div>
-            <div class="card-description">
-                Estimate your savings for a secure retirement.
+    <div class="calculator-card education-calculator">
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <div class="calculator-card-contents">
+            <div>
+                <div class="cal-content">
+                    <label>Current Child Age</label>
+                    <span id="age-slider-value">0 Years</span>
+                </div>
+                <div class="input-limits">
+                    <div>0</div>
+                    <div>20</div>
+                </div>
+                <input
+                    type="range"
+                    id="age-slider"
+                    min="0"
+                    max="20"
+                    step="1"
+                    value="0"
+                />
+
+                <div class="cal-content">
+                    <label>Child's course age</label>
+                    <span id="course-slider-value">19 Years</span>
+                </div>
+                <div class="input-limits">
+                    <div>18</div>
+                    <div>24</div>
+                </div>
+                <input
+                    type="range"
+                    id="course-slider"
+                    min="18"
+                    max="24"
+                    step="1"
+                    value="19"
+                />
+
+                <div class="cal-content">
+                    <label>Rate of Inflation</label>
+                    <span id="inflation-slider-value">9%</span>
+                </div>
+                <div class="input-limits">
+                    <div>0%</div>
+                    <div>25%</div>
+                </div>
+                <input
+                    type="range"
+                    id="inflation-slider"
+                    min="0"
+                    max="25"
+                    step="1"
+                    value="9"
+                />
+
+                <div class="cal-content">
+                    <label>Rate of return</label>
+                    <span id="return-slider-value">14%</span>
+                </div>
+                <div class="input-limits">
+                    <div>0%</div>
+                    <div>25%</div>
+                </div>
+                <input
+                    type="range"
+                    id="return-slider"
+                    min="0"
+                    max="25"
+                    step="1"
+                    value="14"
+                />
+            </div>
+            <div>
+                <div class="cal-content">
+                    <label>Choose a target course</label>
+                </div>
+
+                <div class="dropdown" id="customDropdown">
+                    <div class="dropdown-selected" id="dropdown">
+                        <span id="selected-cource">MBBS</span>
+                        <span
+                            ><img
+                                src="/assets/down-arroow.svg"
+                                alt="down-arrow"
+                                id="dropdown-arrow"
+                        /></span>
+                    </div>
+                    <div
+                        class="dropdown-options display-none"
+                        id="dropdownOptions"
+                    >
+                        <div data-value="Other">Other</div>
+                        <div data-value="Lawyer">Lawyer</div>
+                        <div data-value="Engineer">Engineer</div>
+                        <div data-value="MBA">MBA</div>
+                    </div>
+                </div>
+
+                <div class="cal-content">
+                    <label class="padding-4px" style="margin-bottom: 8px"
+                        >Have you estimated the cost of Education?</label
+                    >
+                </div>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input
+                            type="radio"
+                            id="yes"
+                            name="estimated"
+                            value="yes"
+                            checked
+                        />
+                        <label for="yes">Yes</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input
+                            type="radio"
+                            id="no"
+                            name="estimated"
+                            value="no"
+                        />
+                        <label for="no">No</label>
+                    </div>
+                </div>
+
+                <div class="current-fees">
+                    <div class="cal-content">
+                        <label>What is the current Education fee?</label>
+                    </div>
+                    <input
+                        type="number"
+                        name="current-fees"
+                        id="estimated-fees"
+                        placeholder=""
+                    />
+                </div>
+
+                <div class="box-result">
+                    <span class="heading">Amount you should save monthly</span>
+                    <span class="amount" id="total-amount">Rs.15,652.55</span>
+                </div>
             </div>
         </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/education-fees-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Education fees calculator</div>
-            <div class="card-description">
-                Plan for your child’s education costs.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/sip-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">SIP returns calculator</div>
-            <div class="card-description">Estimate Your Investment Growth.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/fixed-deposit-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Fixed deposit return calculator</div>
-            <div class="card-description">
-                Calculate Your Fixed Deposit Growth.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/lumpsum-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Lumpsum calculator</div>
-            <div class="card-description">
-                Estimate Your Investment Returns.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/pf-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">PF calculators</div>
-            <div class="card-description">Estimate Your PF Growth.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/nps-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">NPS calculator</div>
-            <div class="card-description">Plan Your Retirement Savings.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/personal-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Personal loan calculator</div>
-            <div class="card-description">Calculate Your Loan EMI.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/credit-card-debit-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">
-                Credit card debt calculator calculator
-            </div>
-            <div class="card-description">Manage Your Debt Smartly.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/car-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Car loan calculator</div>
-            <div class="card-description">Estimate Your Monthly EMI.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/bike-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Bike cost calculator</div>
-            <div class="card-description">
-                Estimate Your Total Bike Expense.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/home-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">House calculator</div>
-            <div class="card-description">Estimate Your Home Investment.</div>
-        </div>
-        <!-- <div class="card" onclick="window.location.href='/calculator/stepup-sip-calculator/'">
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Sip step up calculator</div>
-            <div class="card-description">
-                Grow Your Investments with Incremental SIPs.
-            </div>
-        </div> -->
     </div>
+    <div class="guide">
+        <h2>How to Use?</h2>
+        <ul>
+            <li>Input your child's current age and expected age at college.</li>
+            <li>Enter current education costs and expected inflation rate.</li>
+            <li>
+                Calculate to see future education expenses and required savings.
+            </li>
+        </ul>
+
+        <h2>Formula</h2>
+        <p class="formula">
+            Future Education Cost = Current Cost × (1 + Inflation Rate)^Years
+        </p>
+
+        <h2>Advantages</h2>
+        <ul>
+            <li>Accurate future cost projection</li>
+            <li>Helps systematic saving</li>
+            <li>Considers inflation impact</li>
+            <li>Customized financial goal setting</li>
+        </ul>
+        <h2>FAQ's</h2>
+
+        <div class="faq-container" style="background-color: transparent">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span
+                        >What if I don’t know the current cost of
+                        education?</span
+                    >
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Research the average cost of the course or use an
+                            estimated figure.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do I adjust for inflation?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Use an average education inflation rate (e.g.,
+                            10-12%).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="moblie-search-bar-container">
         <div
             id="search-results"
@@ -276,51 +343,154 @@
 </div>
 
 <script>
-    $(document).ready(function () {
-        let cardWidth = $(".card").width();
+    let course = null;
+    const other = 1000000;
+    const lawyer = 1500000;
+    const engineer = 2000000;
+    const mba = 2500000;
+    const mbbs = 5000000;
+    let course_value = mbbs;
 
-        $(".card").hover(
-            function () {
-                $(this)
-                    .find("img")
-                    .last()
-                    .attr("src", "/assets/calculator-arrow-hover.svg");
-            },
-            function () {
-                $(this)
-                    .find("img")
-                    .last()
-                    .attr("src", "/assets/calculator-arrow.svg");
-            }
-        );
+    function educationGoalCalculator(
+        currentAge,
+        goalAge,
+        currentCost,
+        inflationRate,
+        rateOfReturn,
+        currentSavings = 1
+    ) {
+        const yearsLeft = goalAge - currentAge;
+        const monthsLeft = yearsLeft * 12;
 
-        function search(event) {
-            if (window.innerWidth < 1200) {
-                console.log('skipped')
-                return; // Do not execute the search function on mobile
-            }
-            const query = event.target.value.toLowerCase();
-            $(".cards").addClass("cards-grid-constant-gap"); // this is added to maintain the gap b/t cards
-            $(".card").each(function () {
-                const cardHeading = $(this).find(".card-heading").text();
-                const cardDescription = $(this)
-                    .find(".card-description")
-                    .text();
-                if (
-                    cardHeading.toLowerCase().includes(query) ||
-                    cardDescription.toLowerCase().includes(query)
-                ) {
-                    $(this).show();
-                    $(this).width(cardWidth);
-                } else {
-                    $(this).hide();
-                }
-            });
-            $("html, body").animate({ scrollTop: 0 }, 10);
+        currentCost = parseInt(currentCost);
+
+        const futureCost =
+            currentCost *
+            Math.pow(1 + parseFloat(inflationRate) / 100, yearsLeft);
+
+        const futureValueOfSavings =
+            currentSavings * Math.pow(1 + rateOfReturn / 100, yearsLeft);
+
+        let amountNeeded = futureCost - futureValueOfSavings;
+
+        amountNeeded = Math.max(amountNeeded, 0);
+
+        const monthlyRate = rateOfReturn / 100 / 12;
+        let monthlyInvestment;
+
+        if (monthlyRate === 0) {
+            monthlyInvestment = amountNeeded / monthsLeft;
+        } else {
+            monthlyInvestment =
+                (amountNeeded * monthlyRate) /
+                (Math.pow(1 + monthlyRate, monthsLeft) - 1);
         }
 
-        $("#search").on("input", search);
-        $("#search2").on("input", search);
+        return (Math.round(monthlyInvestment * 100) / 100).toLocaleString(
+            "en-IN",
+            { maximumFractionDigits: 0 }
+        );
+    }
+
+    function updateValues() {
+        const currentAge = $("#age-slider").val();
+        const goalAge = $("#course-slider").val();
+        const inflationRate = $("#inflation-slider").val();
+        const rateOfReturn = $("#return-slider").val();
+        const estimatedFees =
+            $("#estimated-fees").val() == ""
+                ? course_value
+                : $("#estimated-fees").val();
+
+        const totalAmount = educationGoalCalculator(
+            currentAge,
+            goalAge,
+            estimatedFees,
+            inflationRate,
+            rateOfReturn
+        );
+
+        $("#total-amount").text("₹" + totalAmount);
+    }
+
+    $(document).ready(function () {
+        $("#estimated-fees").attr("placeholder", course_value);
+
+        $("#dropdown").click(function () {
+            $(".dropdown-selected").toggleClass("border-class");
+            $(".dropdown-options").toggleClass("display-none");
+            $("#dropdown-arrow").toggleClass("transform-y");
+        });
+
+        $("#dropdownOptions > div").on("click", function () {
+            const value = $(this).data("value");
+            course = value;
+
+            if (course == "Other") {
+                course_value = other;
+            } else if (course == "Lawyer") {
+                course_value = lawyer;
+            } else if (course == "Engineer") {
+                course_value = engineer;
+            } else if (course == "MBA") {
+                course_value = mba;
+            }
+
+            $(".dropdown-selected").toggleClass("border-class");
+            $("#selected-cource").text(value);
+            $(".dropdown-options").toggleClass("display-none");
+            $("#dropdown-arrow").toggleClass("transform-y");
+
+            updateValues();
+            $("#estimated-fees").attr("placeholder", course_value);
+        });
+
+        $("#estimated-fees").on("input", function () {
+            updateValues();
+        });
+
+        $('input[name="estimated"]').on("change", function () {
+            const value = $(this).val();
+
+            if (value == "yes") {
+                $(".current-fees").show();
+            } else {
+                $(".current-fees").hide();
+            }
+        });
+
+        function updateSliderBackground(slider) {
+            if (slider.id == "age-slider" || slider.id == "course-slider") {
+                $(`#${slider.id}-value`).text(
+                    `${parseInt(slider.value)} Years`
+                );
+            } else if (
+                slider.id == "return-slider" ||
+                slider.id == "inflation-slider"
+            ) {
+                $(`#${slider.id}-value`).text(`${slider.value} %`);
+            }
+
+            const value =
+                ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+            $(slider).css(
+                "background",
+                `linear-gradient(to right, #9b5de5 ${value}%, #d3bfff ${value}%)`
+            );
+        }
+
+        $("#age-slider, #course-slider, #inflation-slider, #return-slider")
+            .each(function () {
+                updateSliderBackground(this);
+                updateValues();
+            })
+            .on("input", function () {
+                updateSliderBackground(this);
+                updateValues();
+            });
+        $("#luxury, #good, #normal").on("change", function () {
+            updateValues();
+        });
     });
 </script>
 

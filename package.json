@@ -1,0 +1,16 @@
+{
+    "name": "labh.github.io",
+    "version": "1.0.0",
+    "description": "## Landing page",
+    "main": "main.js",
+    "scripts": {
+        "build": "eleventy",
+        "serve": "eleventy --serve"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@11ty/eleventy": "^3.0.0"
+    }
+}
