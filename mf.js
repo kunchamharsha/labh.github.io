@@ -169,30 +169,31 @@ $.get(
             responseData.lock_in_period ? responseData.lock_in_period : "N/A"
         );
 
-        // render top holdings
         const topHoldings = responseData.top_holdings;
-        topHoldings.forEach((holding) => {
-            const topHoldingCard = `
-                <div class="top-holding">
-                    <div class="header">
-                        ${holding["Company Name"]}
-                    </div>
-                    <div class="percentage-container d-flex align-items-center">
-                        <div class="holding-percentage">
-                            <div class="percentage-bar" style="width: ${holding["Holding Percentage"]}%"></div>
+        if (topHoldings.length > 0) {
+            // render top holdings
+            topHoldings.forEach((holding) => {
+                const topHoldingCard = `
+                    <div class="top-holding">
+                        <div class="header">
+                            ${holding["Company Name"]}
                         </div>
-                        <div>${holding["Holding Percentage"]}%</div>
+                        <div class="percentage-container d-flex align-items-center">
+                            <div class="holding-percentage">
+                                <div class="percentage-bar" style="width: ${holding["Holding Percentage"]}%"></div>
+                            </div>
+                            <div>${holding["Holding Percentage"]}%</div>
+                        </div>
                     </div>
-                </div>
-            `;
-            $("#top-holdings-list").append(topHoldingCard);
-        });
+                `;
+                $("#top-holdings-list").append(topHoldingCard);
+            });
 
-        // render top sectors
-        const topSectorsList = responseData.sector_allocation;
-        const topSectorKeys = Object.keys(topSectorsList);
-        topSectorKeys.forEach((sector) => {
-            const topSectorCard = `
+            // render top sectors
+            const topSectorsList = responseData.sector_allocation;
+            const topSectorKeys = Object.keys(topSectorsList);
+            topSectorKeys.forEach((sector) => {
+                const topSectorCard = `
                 <div class="top-holding">
                     <div class="header">
                         ${sector}
@@ -205,8 +206,11 @@ $.get(
                     </div>
                 </div>
             `;
-            $("#sectors").append(topSectorCard);
-        });
+                $("#sectors").append(topSectorCard);
+            });
+        } else {
+            $(".top-holdings").addClass("d-none");
+        }
     }
 ).done(function () {
     onload();
@@ -321,8 +325,52 @@ function replaceYears() {
 }
 
 $(window).on("load", function () {
+    let debounceTimer;
     replaceYears();
     $(window).resize(function () {
         replaceYears();
+    });
+
+    $("#search").on("input", function () {
+        const name = $(this).val().toLowerCase();
+
+        if (name.length > 0) {
+            $(".search-bar").removeClass("hide-icon");
+        } else {
+            $(".search-bar").addClass("hide-icon");
+            return;
+        }
+
+        clearTimeout(debounceTimer);
+
+        debounceTimer = setTimeout(function () {
+            $.get(
+                `https://devapi.labh.io/api/mutual-funds/all/?name=${name}`,
+                function (responseData) {
+                    if (responseData.count == 0) {
+                        $(".search-dropdown").empty();
+                        const dropdownItem = `
+                            <div>
+                                <span class='no-results'>No results for '<span>${name}<span>'</span>
+                            </div>
+                        `;
+                        $(".search-dropdown").append(dropdownItem);
+                        return;
+                    }
+                    $(".search-dropdown").empty();
+                    $(".search-dropdown").removeClass("display-none");
+                    const results = responseData.results;
+                    results.forEach((result) => {
+                        const dropdownItem = `
+                            <div onclick="window.location.href='/mutual-fund/?id=${result.id}'">
+                                <img src="/assets/search_dropdown_arrow.svg" alt="dropdown-arrow" />
+                                <span>${result.scheme_name}</span>
+                            </div>
+                        `;
+                        $(".search-dropdown").append(dropdownItem);
+                    });
+                }
+            );
+        }, 500);
     });
 });

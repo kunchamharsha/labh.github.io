@@ -1,5 +1,17 @@
+@use "sass:math";
 @function calculate-rem($size) {
     @return calc($size / 16) * 1rem;
+}
+
+.search-bar-container {
+    .search-dropdown {
+        span {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
 }
 
 .menu-bar {
@@ -170,7 +182,7 @@
     }
 
     $year-selector-height: calculate-rem(44);
-    $year-list-top-offset: $year-selector-height / 2;
+    $year-list-top-offset: math.div($year-selector-height, 2);
     .year-selector,
     .year-list {
         width: calculate-rem(119);

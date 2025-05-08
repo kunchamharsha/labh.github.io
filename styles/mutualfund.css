@@ -1,3 +1,10 @@
+.search-bar-container .search-dropdown span {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .menu-bar {
   margin-bottom: 2.5rem;
 }
