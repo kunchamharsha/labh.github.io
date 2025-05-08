@@ -1,0 +1,115 @@
+---
+layout: mutual-fund-base.njk
+title: Labh
+menu: '
+    <li><a href="/calculator/">Mutual Fund</a></li>
+    <li><img src="/assets/dote-active.svg" alt="dote-active"></li>
+    <li><a href="#" class="active" id="fund-name"></a></li>
+'
+other_scripts: '
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+'
+---
+
+<div class="main-container">
+    <div class="contents">
+        <h1 id="fund-name-heading"></h1>
+    </div>
+    <div class="mf-chart-container">
+        <div id="chart-loader" style="text-align: center; padding: 20px">
+            <p>Loading chart, please wait...</p>
+        </div>
+        <div id="chart"></div>
+        <div class="year-container">
+            <div class="years" id="years">
+                <span data-value="1" class="active">1 Year</span>
+                <span data-value="3">3 Year</span>
+                <span data-value="5">5 Year</span>
+                <span data-value="0">All</span>
+            </div>
+
+            <div class="years d-none" id="mobile-years">
+                <span data-value="1" class="active">1 Yr</span>
+                <span data-value="3">3 Yrs</span>
+                <span data-value="5">5 Yrs</span>
+            </div>
+            <a href="https://api.labh.io/get-app/">Invest Now</a>
+        </div>
+    </div>
+    <div class="mf-details-container">
+        <div class="details-1">
+            <div class="w-100 custom-margin">
+                <div class="detail">
+                    <div class="title">Basket Min Price</div>
+                    <div id="min-price"></div>
+                </div>
+                <div class="detail">
+                    <div class="title">Risk Analysis</div>
+                    <div id="risk-analysis"></div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="w-100">
+                <div class="detail">
+                    <div class="title">CAGR 5 year</div>
+                    <div id="cagr">N/A</div>
+                </div>
+                <div class="detail">
+                    <div class="title">Lock In Period</div>
+                    <div id="lock-in"></div>
+                </div>
+            </div>
+        </div>
+        <div class="details-2 calculator-card-contents">
+            <div class="detail custom-flex">
+                <div class="toggler">
+                    <span class="sip-span active" id="sip-span" onclick=""
+                        >Monthly SIP</span
+                    >
+                    <span class="lumpsum-span" id="lumpsum-span">One-Time</span>
+                </div>
+                <div class="year-selector center-algin position-relative">
+                    <img
+                        src="/assets/dropdown-arrow.svg"
+                        alt="dropdown-arrow"
+                    />
+                    <span id="sip-year">1 Year</span>
+                    <div class="year-list center-algin d-none">
+                        <span data-value="1" class="active">1 Year</span>
+                        <span data-value="3">3 Year</span>
+                        <span data-value="5">5 Year</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cal-content">
+                <label id="cal-label">Monthly Investment</label>
+                <span id="investment-slider-value">₹500</span>
+            </div>
+
+            <input
+                type="range"
+                id="investment-slider"
+                min="500"
+                max="100000"
+                step="500"
+                value="500"
+            />
+
+            <div class="cal-content mf-cal-content">
+                <div>Total Investment <span id="total-investment">₹</span></div>
+                <div>Returns <span id="total-returns">₹</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="top-holdings">
+        <h1>Top Holdings</h1>
+        <div class="top-holdings-list" id="top-holdings-list"></div>
+    </div>
+
+    <div class="top-holdings sector">
+        <h1>Sectors</h1>
+        <div class="top-holdings-list" id="sectors"></div>
+    </div>
+</div>
+
+<script src="/mf.js"></script>

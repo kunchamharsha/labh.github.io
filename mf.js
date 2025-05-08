@@ -1,0 +1,328 @@
+function getXaxisCategories(priceData) {
+    const xAxisCategories = [];
+    for (let i = 0; i < priceData.length; i++) {
+        const date = new Date(priceData[i][1]);
+        const month = date.toLocaleString("default", {
+            month: "short",
+            day: "numeric",
+        });
+        const year = date.getFullYear();
+        xAxisCategories.push(`${month} ${year}`);
+    }
+    return xAxisCategories;
+}
+
+function filterPriceData(year) {
+    lastDateAvailable = new Date(priceData.at(-1)[1]);
+    if (year === 0) {
+        return priceData;
+    }
+    const endDate = new Date(
+        new Date(lastDateAvailable).setFullYear(
+            new Date(lastDateAvailable).getFullYear() - year
+        )
+    );
+    const filteredData = priceData.filter((item) => {
+        const date = new Date(item[1]);
+        return date >= endDate;
+    });
+    return filteredData;
+}
+
+function renderChart(data, year) {
+    priceData = data.price_data;
+    series = filterPriceData(year);
+
+    const xAxisCategories = getXaxisCategories(series);
+
+    const fontSize = $(window).width() < 745 ? "8px" : "12px";
+
+    var options = {
+        series: [
+            {
+                name: "NAV",
+                data: series.map((item) => item[0]),
+            },
+        ],
+        chart: {
+            height: 440,
+            type: "line",
+            zoom: {
+                enabled: false,
+            },
+            toolbar: {
+                show: false,
+            },
+            events: {
+                mounted: function () {
+                    document.getElementById("chart-loader").style.display =
+                        "none";
+                },
+            },
+        },
+        dataLabels: {
+            enabled: false,
+        },
+        stroke: {
+            curve: "smooth",
+            width: 3,
+        },
+        grid: {
+            show: true,
+            borderColor: "#FFFFFF99",
+            xaxis: {
+                lines: {
+                    show: false,
+                },
+            },
+            yaxis: {
+                lines: {
+                    show: false,
+                },
+            },
+        },
+        tooltip: {
+            theme: "dark",
+        },
+        fill: {
+            colors: ["#63E4BF"],
+        },
+        xaxis: {
+            categories: xAxisCategories,
+            labels: {
+                show: false,
+            },
+            axisBorder: {
+                show: true,
+                color: "#FFFFFF99",
+                offsetX: 0,
+                offsetY: 0,
+                strokeDashArray: 4,
+            },
+            axisTicks: {
+                show: false,
+            },
+        },
+        yaxis: {
+            labels: {
+                style: {
+                    colors: "white",
+                    fontSize: fontSize,
+                },
+            },
+            axisBorder: {
+                show: true,
+                color: "white",
+                offsetX: 0,
+                offsetY: 0,
+            },
+            axisTicks: {
+                show: false,
+            },
+        },
+    };
+    if (chart == null) {
+        chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+    } else {
+        chart.updateOptions({
+            xaxis: {
+                categories: xAxisCategories,
+            },
+            series: [
+                {
+                    name: "NAV",
+                    data: series.map((item) => item[0]),
+                },
+            ],
+        });
+    }
+}
+
+const params = new URLSearchParams(window.location.search);
+const fundId = params.get("id");
+var priceData = [];
+let data = null;
+var chart = null;
+var sip = true;
+var year = 1;
+
+$.get(
+    `https://api.labh.io/api/mutual-funds/all/${fundId}/`,
+    function (responseData) {
+        data = responseData;
+        renderChart(responseData, 1);
+        $("#fund-name, #fund-name-heading").text(responseData.scheme_name);
+        $("#min-price").text(`₹ ${responseData.min_investment_value}`);
+
+        const riskInvolved = responseData.risk_involved
+            ? responseData.risk_involved
+            : "N/A";
+        $("#risk-analysis").text(riskInvolved);
+
+        const cagr = responseData.cagr;
+        if (cagr !== null) {
+            $("#cagr").text(`${cagr["5_years"]}%`);
+        }
+
+        $("#lock-in").text(
+            responseData.lock_in_period ? responseData.lock_in_period : "N/A"
+        );
+
+        // render top holdings
+        const topHoldings = responseData.top_holdings;
+        topHoldings.forEach((holding) => {
+            const topHoldingCard = `
+                <div class="top-holding">
+                    <div class="header">
+                        ${holding["Company Name"]}
+                    </div>
+                    <div class="percentage-container d-flex align-items-center">
+                        <div class="holding-percentage">
+                            <div class="percentage-bar" style="width: ${holding["Holding Percentage"]}%"></div>
+                        </div>
+                        <div>${holding["Holding Percentage"]}%</div>
+                    </div>
+                </div>
+            `;
+            $("#top-holdings-list").append(topHoldingCard);
+        });
+
+        // render top sectors
+        const topSectorsList = responseData.sector_allocation;
+        const topSectorKeys = Object.keys(topSectorsList);
+        topSectorKeys.forEach((sector) => {
+            const topSectorCard = `
+                <div class="top-holding">
+                    <div class="header">
+                        ${sector}
+                    </div>
+                    <div class="percentage-container d-flex align-items-center">
+                        <div class="holding-percentage">
+                            <div class="percentage-bar" style="width: ${topSectorsList[sector]}%"></div>
+                        </div>
+                        <div>${topSectorsList[sector]}%</div>
+                    </div>
+                </div>
+            `;
+            $("#sectors").append(topSectorCard);
+        });
+    }
+).done(function () {
+    onload();
+});
+
+function calculateLumpSumReturn(principal, rate, years) {
+    const finalAmount = principal * Math.pow(1 + rate / 100, years);
+
+    return finalAmount;
+}
+
+function calculateSIPReturn(monthlyInvestment, annualRate, years) {
+    const r = annualRate / 12 / 100;
+    const n = years * 12;
+
+    const futureValue =
+        (monthlyInvestment * ((Math.pow(1 + r, n) - 1) * (1 + r))) / r;
+
+    return futureValue;
+}
+
+function updateSliderBackground(slider) {
+    $(`#${slider.id}-value`).text(`₹${parseInt(slider.value)}`);
+    const value =
+        ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+    $(slider).css(
+        "background",
+        `linear-gradient(to right, #9b5de5 ${value}%, #d3bfff ${value}%)`
+    );
+}
+
+function updateValues() {
+    const principal = parseInt($("#investment-slider").val());
+    const annualRate = parseFloat(data.cagr["1_year"]);
+    var totalInvestment = 0;
+    var totalReturns = 0;
+
+    if (sip) {
+        const futureValue = calculateSIPReturn(principal, annualRate, year);
+        totalInvestment = principal * year * 12;
+        totalReturns = futureValue - totalInvestment;
+    } else {
+        const finalAmount = calculateLumpSumReturn(principal, annualRate, year);
+        totalInvestment = principal;
+        totalReturns = finalAmount - totalInvestment;
+    }
+    $("#total-investment").text(
+        `₹${totalInvestment.toLocaleString("en-IN", {
+            maximumFractionDigits: 0,
+        })}`
+    );
+    $("#total-returns").text(
+        `₹${totalReturns.toLocaleString("en-IN", { maximumFractionDigits: 0 })}`
+    );
+}
+
+function onload() {
+    $(".years span").click(function () {
+        $(".years span").removeClass("active");
+        $(this).addClass("active");
+        const value = $(this).data("value");
+        renderChart(data, value);
+    });
+
+    // toggler in calculator
+    $(".toggler span").click(function () {
+        $(".toggler span").removeClass("active");
+        $(this).addClass("active");
+        if ($(this).text() === "Monthly SIP") {
+            sip = true;
+            $("#cal-label").text("Monthly Investment");
+        } else {
+            sip = false;
+            $("#cal-label").text("Investment Amount");
+        }
+    });
+
+    $(".year-selector").click(function () {
+        $(".year-list").toggleClass("d-none");
+    });
+
+    $(".year-list span").click(function () {
+        const text = $(this).text();
+        year = $(this).data("value");
+        $("#sip-year").text(text);
+        updateValues();
+    });
+
+    $("#investment-slider")
+        .each(function () {
+            updateSliderBackground(this);
+            updateValues();
+        })
+        .on("input", function () {
+            updateSliderBackground(this);
+            updateValues();
+        });
+
+    $("#sinvestment-slider").on("change", function () {
+        updateValues();
+    });
+}
+
+function replaceYears() {
+    if ($(window).width() < 745) {
+        $("#years").addClass("d-none");
+        $("#mobile-years").removeClass("d-none");
+    } else {
+        $("#years").removeClass("d-none");
+        $("#mobile-years").addClass("d-none");
+    }
+}
+
+$(window).on("load", function () {
+    replaceYears();
+    $(window).resize(function () {
+        replaceYears();
+    });
+});
