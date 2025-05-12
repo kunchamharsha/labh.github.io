@@ -833,17 +833,17 @@ nav {
   }
   .faq-answer li,
   .faq-answer p {
-    font-size: 14px !important;
+    font-size: 0.875rem !important;
     color: rgba(255, 255, 255, 0.8);
   }
   .faq-answer ul {
     margin: 0px !important;
   }
   .faq-answer li {
-    line-height: 16px;
+    line-height: 1rem;
   }
   .open {
-    border-radius: 26px !important;
+    border-radius: 1.625rem !important;
   }
   .arrow img {
     width: 2.125rem;
@@ -855,12 +855,12 @@ nav {
     font-size: 4rem !important;
   }
   .faq-question {
-    font-size: 20px !important;
+    font-size: 1.25rem !important;
     margin-left: 0px;
   }
   .faq-answer p {
     margin-top: 20px;
-    font-size: 20px !important;
+    font-size: 1.25rem !important;
     margin-bottom: 20px;
   }
 }
