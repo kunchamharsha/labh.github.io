@@ -1,0 +1,108 @@
+@media (min-width: 0px) and (max-width: 744px) {
+    .main-container {
+        margin-top: calculate-rem(14);
+    }
+    .contents {
+        h1 {
+            font-size: calculate-rem(20);
+            margin-bottom: calculate-rem(4);
+        }
+        p {
+            font-size: calculate-rem(12);
+        }
+    }
+    .categories {
+        font-size: calculate-rem(12);
+        gap: calculate-rem(12);
+        margin: calculate-rem(24) 0;
+        .category {
+            max-width: calculate-rem(124);
+            flex: 1 1 calculate-rem(124);
+            height: calculate-rem(32);
+        }
+    }
+
+    .cards {
+        margin-bottom: calculate-rem(0);
+    }
+
+    .funds {
+        margin-top: calculate-rem(33);
+
+        h1 {
+            font-size: calculate-rem(20);
+            margin-bottom: calculate-rem(25);
+        }
+
+        .fund {
+            font-size: calculate-rem(14);
+
+            .risk {
+                width: 100%;
+                font-size: calculate-rem(12);
+            }
+        }
+    }
+}
+
+@media (min-width: 745px) and (max-width: 1200px) {
+    .menu-bar {
+        font-size: calculate-rem(16);
+    }
+    .main-container {
+        margin-top: calculate-rem(32);
+    }
+
+    .contents {
+        h1 {
+            font-size: calculate-rem(28);
+            margin-bottom: calculate-rem(8);
+        }
+        p {
+            font-size: calculate-rem(16);
+        }
+    }
+
+    .categories {
+        font-size: calculate-rem(17);
+        gap: calculate-rem(26);
+        margin: calculate-rem(32) 0;
+
+        .category {
+            max-width: calculate-rem(150);
+            height: calculate-rem(50);
+        }
+    }
+
+    .cards {
+        margin-top: calculate-rem(32);
+    }
+
+    .card {
+        .card-heading {
+            font-size: calculate-rem(20);
+        }
+        .card-description {
+            font-size: calculate-rem(16);
+            line-height: calculate-rem(22);
+        }
+    }
+
+    .funds {
+        margin-top: calculate-rem(32);
+        h1 {
+            font-size: calculate-rem(28);
+            margin-bottom: calculate-rem(40);
+        }
+
+        .fund {
+            font-size: calculate-rem(20);
+
+            .risk {
+                font-size: calculate-rem(16);
+                width: calculate-rem(143);
+                height: calulate-rem(34);
+            }
+        }
+    }
+}

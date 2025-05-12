@@ -3,18 +3,26 @@
     <head>
         {% include "head.njk" %}
         <link rel="stylesheet" href="/styles/mf_index.css" />
-        {{ other_scripts | safe}}
+        {{
+            other_scripts | safe
+        }}
         <title>{{ title }}</title>
     </head>
     <body>
         {% include "calculator-header.njk" %}
+
+        <div class="menu-bar">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                {{ menu | safe }}
+            </ul>
+        </div>
 
         {{ content | safe }}
 
         <div class="blur-effect display-none"></div>
 
         {% include "footer.njk" %}
-
     </body>
     <script src="/mf_index.js"></script>
 </html>
