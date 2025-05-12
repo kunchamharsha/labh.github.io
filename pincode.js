@@ -170,7 +170,90 @@ searchBar.addEventListener("input", function () {
                 `<b>${office.Name}</b> Pin Code is <b>${office.Pincode}</b>. ${office.Name} comes under <b>${office.District}</b> district.`;
             container.querySelector(".info-grid").innerHTML = infoHTML;
         }
-    }
+        //seo
+        document.title = `${office.Pincode} – ${office.Name} Pin Code | Labh`;
+        // ✅ Dynamically update meta description
+        let descriptionTag = document.querySelector('meta[name="description"]');
+        if (!descriptionTag) {
+            descriptionTag = document.createElement('meta');
+            descriptionTag.name = "description";
+            document.head.appendChild(descriptionTag);
+            }
+            descriptionTag.content = `${office.Name} (${office.Pincode}) is a post office located in ${office.District}, ${office.State}, India. Explore details like office type, region, and delivery status.`;
+
+            // ✅ Dynamically update canonical link
+            let canonicalLink = document.querySelector('link[rel="canonical"]');
+            if (!canonicalLink) {
+              canonicalLink = document.createElement('link');
+               canonicalLink.rel = "canonical";
+                document.head.appendChild(canonicalLink);
+            }
+            const currentURL = new URL(window.location.href);
+            const basePath = `${currentURL.origin}${currentURL.pathname}`;
+            canonicalLink.href = `${basePath}?pin=${office.Pincode}`;
+            function setOrUpdateMeta(property, content, isOG = true) {
+                const attr = isOG ? "property" : "name";
+                let metaTag = document.querySelector(`meta[${attr}="${property}"]`);
+                if (!metaTag) {
+                    metaTag = document.createElement('meta');
+                    metaTag.setAttribute(attr, property);
+                    document.head.appendChild(metaTag);
+                }
+                metaTag.setAttribute("content", content);
+            }
+            
+            // ✅ Set dynamic OG tags
+            setOrUpdateMeta("og:title", `${office.Name} Pin Code | ${office.District}, ${office.State}`);
+            setOrUpdateMeta("og:description", `${office.Name} has a pin code of ${office.Pincode}. Located in ${office.District}, ${office.State}.`);
+            setOrUpdateMeta("og:url", window.location.href);
+            setOrUpdateMeta("og:type", "website");
+            
+            // You can optionally update image too
+            setOrUpdateMeta("og:image", "https://labh.io/assets/logo_final.png");
+           
+            // ✅ Set dynamic Twitter Card tags
+            setOrUpdateMeta("twitter:card", "summary");
+            setOrUpdateMeta("twitter:title", `${office.Name} Pin Code | ${office.District}, ${office.State}`, false);
+            setOrUpdateMeta("twitter:description", `${office.Name} has a pin code of ${office.Pincode}. Located in ${office.District}, ${office.State}.`, false);
+            setOrUpdateMeta("twitter:image", "https://labh.io/assets/logo_final.png", false);
+            setOrUpdateMeta("twitter:url", window.location.href, false);
+
+            // ✅ Add structured data dynamically using JSON-LD
+            function addJsonLdPostalData(office) {
+             const scriptId = "structured-postoffice-data";
+
+             // Remove existing structured data if present
+                const existing = document.getElementById(scriptId);
+                if (existing) existing.remove();
+
+                const jsonLd = {
+                 "@context": "https://schema.org",
+                    "@type": "PostOffice",
+                    "name": office.Name,
+                    "address": {
+                     "@type": "PostalAddress",
+                     "addressLocality": office.Taluk || office.District,
+                     "addressRegion": office.State,
+                        "postalCode": office.Pincode,
+                    "addressCountry": office.Country
+                 },
+                    "telephone": office.Telephone || "Not available",
+                    "areaServed": office.Region,
+                    "branchCode": office.BranchType,
+                    "parentOrganization": office.Circle
+                };
+
+                const script = document.createElement("script");
+                 script.id = scriptId;
+                 script.type = "application/ld+json";
+                    script.textContent = JSON.stringify(jsonLd);
+                    document.head.appendChild(script);
+}
+
+        // 👇 Call this at the end of updateSearchResult()
+            addJsonLdPostalData(office);
+
+        }
 
     window.addEventListener("resize", () => {
         if (lastSelectedOffice) {
