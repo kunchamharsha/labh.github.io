@@ -132,6 +132,10 @@ body {
   width: 100%;
 }
 
+.search-input::-moz-placeholder {
+  color: #CEC3FE;
+}
+
 .search-input::placeholder {
   color: #CEC3FE;
 }
@@ -268,6 +272,54 @@ body {
   border-radius: 12px;
 }
 
+.sticky-qr-mobile {
+  display: none;
+}
+
+.sticky-qr {
+  position: fixed;
+  width: 328px;
+  height: 104px;
+  background: linear-gradient(99.76deg, rgba(124, 122, 153, 0.32) 1.27%, rgba(206, 203, 255, 0.32) 23.48%, rgba(124, 122, 153, 0.32) 49.02%, rgba(206, 203, 255, 0.32) 82.34%);
+  -webkit-backdrop-filter: blur(6px) saturate(140%);
+          backdrop-filter: blur(6px) saturate(140%);
+  top: 86vh;
+  right: 2.5vw;
+  z-index: 1;
+  border-radius: 16px;
+  padding: 13px 18px;
+}
+
+.qr-img {
+  border: 5px solid;
+  width: 80px;
+  height: 80px;
+  margin-right: 14px;
+}
+
+.sticky-qr p {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0px;
+  margin-right: 10px;
+}
+
+.download-now {
+  width: 18px;
+  height: 20px;
+  margin-top: 7px;
+}
+
+.playstore-app-store-icons {
+  margin-top: 9px;
+  width: 200px;
+  height: 35px;
+}
+
+.sticky-qr {
+  cursor: pointer;
+}
+
 @media (min-width: 744px) and (max-width: 1280px) {
   .navbar {
     display: none;
@@ -279,6 +331,9 @@ body {
     padding: 1rem;
     border-radius: 8px;
     z-index: 1000;
+  }
+  nav {
+    padding-top: 2.8125rem;
   }
   .pincode-info {
     display: none;
@@ -299,6 +354,7 @@ body {
     height: 35px;
   }
   .logo-title {
+    margin-top: 1.25rem;
     gap: 0.5rem;
   }
   .hamburger {
@@ -310,15 +366,15 @@ body {
   .search-results-container {
     display: none;
   }
-  .pincode-info {
-    display: block;
-  }
   .info-table div {
     gap: 1rem 0.5rem;
   }
   .search-bar {
     height: 2.18rem;
     border: rgba(206, 195, 254, 0.5019607843) 1px solid;
+  }
+  .search-bar input::-moz-placeholder {
+    font-size: 18px;
   }
   .search-bar input::placeholder {
     font-size: 18px;
@@ -336,8 +392,12 @@ body {
   }
 }
 nav {
-  margin-top: 2.5rem;
-  margin-bottom: 1.56rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+.search-bar::after {
+  content: none !important;
 }
 
 @media (min-width: 0px) and (max-width: 744px) and (max-width: 420px) {
@@ -369,6 +429,9 @@ nav {
   .search-bar {
     height: 2.18rem;
     border: rgba(206, 195, 254, 0.5019607843) 1px solid;
+  }
+  .search-bar input::-moz-placeholder {
+    font-size: 18px;
   }
   .search-bar input::placeholder {
     font-size: 18px;
@@ -405,9 +468,6 @@ nav {
   }
   .search-results-container {
     display: none;
-  }
-  .pincode-info {
-    display: block;
   }
   .info-table span {
     color: #A0A0A0;
@@ -462,10 +522,58 @@ nav {
     border-radius: 12px;
   }
 }
-@media (min-width: 1281px) {
-  nav {
-    margin-top: 3.75rem;
+@media (min-width: 0px) and (max-width: 744px) and (min-width: 0px) and (max-width: 480px) {
+  .sticky-qr-desktop {
+    display: none;
   }
+  .sticky-qr-mobile {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background: linear-gradient(92.23deg, rgba(255, 255, 255, 0.8) 0.14%, rgba(221, 219, 219, 0.8) 80.1%);
+    backdrop-filter: blur(41.9000015259px);
+    -webkit-backdrop-filter: blur(41.9000015259px);
+    z-index: 1;
+    border-radius: 16px;
+    bottom: 0px;
+    padding: 16px 10px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sticky-qr-mobile .s-logo {
+    height: 42px;
+    width: 42px;
+    margin: 0px 10px;
+  }
+  .s-close {
+    height: 22px;
+    width: 22px;
+  }
+  .s-heading {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px;
+    color: #111111;
+    letter-spacing: 2%;
+  }
+  .s-description {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0;
+    color: rgba(17, 17, 17, 0.6);
+    letter-spacing: 2%;
+  }
+  .s-get-app {
+    width: 75px;
+    height: 38px;
+    background: #a663ff;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 8px;
+  }
+}
+@media (min-width: 1281px) {
   .main-container h1 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -593,6 +701,9 @@ nav {
     color: #fff;
     font-size: 1.125rem;
     width: 100%;
+  }
+  .search-input::-moz-placeholder {
+    color: #CEC3FE;
   }
   .search-input::placeholder {
     color: #CEC3FE;
