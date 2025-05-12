@@ -1,3 +1,7 @@
+@function calculate-rem($size) {
+  @return calc($size / 16) * 1rem;
+}
+
 @media (min-width: 744px) and (max-width: 1280px) {
     
         .navbar {
@@ -10,6 +14,10 @@
             padding: 1rem;
             border-radius: 8px;
             z-index: 1000;
+        }
+
+        nav{
+          padding-top:calculate-rem(45);
         }
 
         .pincode-info{
@@ -39,6 +47,7 @@
         }
         
         .logo-title{
+          margin-top:calculate-rem(20);
           gap:0.5rem;
         }
         
@@ -89,8 +98,12 @@
 }
 
 nav{
-  margin-top:2.5rem;
-  margin-bottom:1.56rem;
+  margin-top:0rem;
+  margin-bottom:0rem;
+}
+
+.search-bar::after{
+  content:none !important;
 }
 
 
@@ -174,9 +187,9 @@ nav{
   .search-results-container {
     display: none;
   }
- .pincode-info{
-  display:block;
- }
+//  .pincode-info{
+//   display:block;
+//  }
 
  .info-table span {
   color: #A0A0A0;
@@ -243,10 +256,10 @@ nav{
   @function calculate-rem($size) {
     @return calc($size / 16) * 1rem;
   }
-  nav {
-    margin-top: calculate-rem(60);
+  // nav {
+  //   margin-top: calculate-rem(60);
   
-  }
+  // }
 
   .main-container h1 {
     font-size: calculate-rem(40);

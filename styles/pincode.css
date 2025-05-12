@@ -132,6 +132,10 @@ body {
   width: 100%;
 }
 
+.search-input::-moz-placeholder {
+  color: #CEC3FE;
+}
+
 .search-input::placeholder {
   color: #CEC3FE;
 }
@@ -280,6 +284,9 @@ body {
     border-radius: 8px;
     z-index: 1000;
   }
+  nav {
+    padding-top: 2.8125rem;
+  }
   .pincode-info {
     display: none;
   }
@@ -299,6 +306,7 @@ body {
     height: 35px;
   }
   .logo-title {
+    margin-top: 1.25rem;
     gap: 0.5rem;
   }
   .hamburger {
@@ -320,6 +328,9 @@ body {
     height: 2.18rem;
     border: rgba(206, 195, 254, 0.5019607843) 1px solid;
   }
+  .search-bar input::-moz-placeholder {
+    font-size: 18px;
+  }
   .search-bar input::placeholder {
     font-size: 18px;
   }
@@ -336,8 +347,12 @@ body {
   }
 }
 nav {
-  margin-top: 2.5rem;
-  margin-bottom: 1.56rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+.search-bar::after {
+  content: none !important;
 }
 
 @media (min-width: 0px) and (max-width: 744px) and (max-width: 420px) {
@@ -369,6 +384,9 @@ nav {
   .search-bar {
     height: 2.18rem;
     border: rgba(206, 195, 254, 0.5019607843) 1px solid;
+  }
+  .search-bar input::-moz-placeholder {
+    font-size: 18px;
   }
   .search-bar input::placeholder {
     font-size: 18px;
@@ -405,9 +423,6 @@ nav {
   }
   .search-results-container {
     display: none;
-  }
-  .pincode-info {
-    display: block;
   }
   .info-table span {
     color: #A0A0A0;
@@ -463,9 +478,6 @@ nav {
   }
 }
 @media (min-width: 1281px) {
-  nav {
-    margin-top: 3.75rem;
-  }
   .main-container h1 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -593,6 +605,9 @@ nav {
     color: #fff;
     font-size: 1.125rem;
     width: 100%;
+  }
+  .search-input::-moz-placeholder {
+    color: #CEC3FE;
   }
   .search-input::placeholder {
     color: #CEC3FE;
