@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const pinParam = params.get("pin");
     
     if (searchParam) {
-        fetch(`https://devapi.labh.io/post-office/${searchParam}`)
+        fetch(`https://api.labh.io/post-office/${searchParam}`)
             .then(res => res.json())
             .then(data => {
                 if (data[0].Status === "Success" && data[0].PostOffice && data[0].PostOffice.length > 0) {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
     } else if (pinParam) {
-        fetch(`https://devapi.labh.io/pin-code/${pinParam}`)
+        fetch(`https://api.labh.io/pin-code/${pinParam}`)
             .then(res => res.json())
             .then(data => {
                 if (data[0].Status === "Success" && data[0].PostOffice && data[0].PostOffice.length > 0) {
