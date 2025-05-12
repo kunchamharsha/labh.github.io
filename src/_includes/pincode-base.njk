@@ -2,7 +2,41 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+
+        <!-- Optimized Meta Description -->
+        <meta
+            name="description"
+            content="Labh provides advanced financial research tools for Indian retail investors. Discover the best mutual funds, and investment strategies for portfolio management and risk analysis."
+        />
+        <meta
+            name="google-site-verification"
+            content="9M5Nt9l9tBvol72sZsvPe1qht2CtU7N0-AM9Y64O6tA"
+        />
+        <!-- Additional Meta Keywords (Optional) -->
+        <meta
+            name="keywords"
+            content="pin code, post office, funds, financial research, portfolio management, Indian retail investors, investment strategies, risk management"
+        />
+
+        <!-- Open Graph Meta Tags (OG Tags) for Social Sharing -->
+        <meta
+            property="og:title"
+            content="Labh – Advanced Financial Research for Mutual Funds in India"
+        />
+        <meta
+            property="og:description"
+            content="Explore Labh's advanced financial tools to find the best mutual funds, and investment strategies for Indian retail investors."
+        />
+        <meta
+            property="og:image"
+            content="https://labh.io/assets/logo_final.png"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://labh.io" />
 
         <link rel="icon" href="/assets/logo.svg" type="image/x-icon" />
         <link
@@ -33,7 +67,6 @@
     <body>
         {% include "pincode-header.njk" %}
 
-
         {{ content | safe }}
         <div class="blur-effect display-none"></div>
 
@@ -42,22 +75,25 @@
         <script src="/pincode.js"></script>
         <script>
             function toggleMenu() {
-                console.log('clicked');
-                document.querySelector('.nav-menu').classList.toggle('active');
-               document.getElementById("nav-menu").classList.add("d-block");
-               document.addEventListener("click", function (event) {
-              const navMenu = document.querySelector(".nav-menu");
-               const hamburger = document.querySelector(".hamburger");
-               const isClickInside = navMenu.contains(event.target) || hamburger.contains(event.target);
+                console.log("clicked");
+                document.querySelector(".nav-menu").classList.toggle("active");
+                document.getElementById("nav-menu").classList.add("d-block");
+                document.addEventListener("click", function (event) {
+                    const navMenu = document.querySelector(".nav-menu");
+                    const hamburger = document.querySelector(".hamburger");
+                    const isClickInside =
+                        navMenu.contains(event.target) ||
+                        hamburger.contains(event.target);
 
-              if (!isClickInside) {
-                 navMenu.classList.remove("active");
-                 // Optionally, you can also remove the 'd-block' class if needed
-                 document.getElementById("nav-menu").classList.remove("d-block");
-                 }
-               });
+                    if (!isClickInside) {
+                        navMenu.classList.remove("active");
+                        // Optionally, you can also remove the 'd-block' class if needed
+                        document
+                            .getElementById("nav-menu")
+                            .classList.remove("d-block");
+                    }
+                });
             }
-          </script>
-          
+        </script>
     </body>
 </html>
