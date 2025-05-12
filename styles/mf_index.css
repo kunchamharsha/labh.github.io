@@ -13,14 +13,16 @@
   gap: 1.625rem;
   margin: 2.625rem 0rem;
   font-size: 1.25rem;
-  color: #cecbff;
 }
 .categories .category {
-  width: 17.1875rem;
+  color: #cecbff;
+  flex: 1 1 17.1875rem;
+  max-width: 17.1875rem;
   height: 3.75rem;
   background: linear-gradient(95.56deg, rgba(124, 122, 153, 0.32) 2.21%, rgba(206, 203, 255, 0.32) 42.84%, rgba(124, 122, 153, 0.32) 95.18%);
   border-radius: 2.5rem;
   border: 1px solid rgba(206, 203, 255, 0.4);
+  text-decoration: none;
 }
 .categories .active {
   background: linear-gradient(148.3deg, #e5d4fe 4.55%, #ffffff 52.27%, #e8dff4 95.45%);
@@ -56,7 +58,8 @@
   width: 32.25rem;
   font-size: 1.5rem;
   color: rgba(245, 245, 245, 0.8);
-  cursor: pointer;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
 }
 .funds .header {
   gap: 1rem;
@@ -67,7 +70,48 @@
 }
 .funds .risk {
   color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  margin-top: 1.25rem;
 }
 .funds .risk span {
+  margin-left: 1.25rem;
   color: white;
+}
+
+.pagination {
+  font-size: 1.5rem;
+  color: rgba(245, 245, 245, 0.8);
+  font-weight: 700;
+  margin-top: 7.375rem;
+}
+.pagination .goto,
+.pagination .items-per-page {
+  position: relative;
+}
+.pagination .goto span,
+.pagination .goto div,
+.pagination .items-per-page span,
+.pagination .items-per-page div {
+  width: 5.5rem;
+  background-color: rgba(206, 203, 255, 0.2);
+}
+.pagination .goto span,
+.pagination .items-per-page span {
+  display: block;
+  height: 3.0625rem;
+  margin-left: 0.8125rem;
+}
+.pagination .goto div,
+.pagination .items-per-page div {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  bottom: 3.0625rem;
+  height: 9.375rem;
+  overflow: scroll;
+}
+.pagination .goto div ul,
+.pagination .items-per-page div ul {
+  list-style-type: none;
 }/*# sourceMappingURL=mf_index.css.map */

@@ -17,10 +17,11 @@
     gap: calculate-rem(26);
     margin: calculate-rem(42) calculate-rem(0);
     font-size: calculate-rem(20);
-    color: #cecbff;
 
     .category {
-        width: calculate-rem(275);
+        color: #cecbff;
+        flex: 1 1 calculate-rem(275);
+        max-width: calculate-rem(275);
         height: calculate-rem(60);
         background: linear-gradient(
             95.56deg,
@@ -30,6 +31,7 @@
         );
         border-radius: calculate-rem(40);
         border: 1px solid #cecbff66;
+        text-decoration: none;
     }
 
     .active {
@@ -73,7 +75,8 @@
         width: calculate-rem(516);
         font-size: calculate-rem(24);
         color: #f5f5f5cc;
-        cursor: pointer;
+        margin-bottom: calculate-rem(24);
+        text-decoration: none;
     }
 
     .header {
@@ -87,9 +90,48 @@
 
     .risk {
         color: #ffffffcc;
+        font-weight: 400;
+        margin-top: calculate-rem(20);
 
         span {
+            margin-left: calculate-rem(20);
             color: white;
+        }
+    }
+}
+
+.pagination {
+    font-size: calculate-rem(24);
+    color: #f5f5f5cc;
+    font-weight: 700;
+    margin-top: calculate-rem(118);
+
+    .goto,
+    .items-per-page {
+        position: relative;
+        span,
+        div {
+            width: calculate-rem(88);
+            background-color: #cecbff33;
+        }
+        span {
+            display: block;
+            height: calculate-rem(49);
+            margin-left: calculate-rem(13);
+        }
+
+        div {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            right: 0;
+            bottom: calculate-rem(49);
+            height: calculate-rem(150);
+            overflow: scroll;
+
+            ul {
+                list-style-type: none;
+            }
         }
     }
 }
