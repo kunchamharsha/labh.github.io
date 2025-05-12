@@ -318,9 +318,6 @@ body {
   .search-results-container {
     display: none;
   }
-  .pincode-info {
-    display: block;
-  }
   .info-table div {
     gap: 1rem 0.5rem;
   }
