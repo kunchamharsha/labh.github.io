@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+        <link rel="icon" href="/assets/logo.svg" type="image/x-icon" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="/styles/main.css" />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+            integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+            crossorigin="anonymous"
+        ></script>
+        <script
+            id="MathJax-script"
+            async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+        ></script>
+
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        {% include "pincode-header.njk" %}
+
+
+        {{ content | safe }}
+        <div class="blur-effect display-none"></div>
+
+        {% include "footer.njk" %}
+
+        <script src="/pincode.js"></script>
+        <script>
+            function toggleMenu() {
+                console.log('clicked');
+                document.querySelector('.nav-menu').classList.toggle('active');
+               document.getElementById("nav-menu").classList.add("d-block");
+               document.addEventListener("click", function (event) {
+              const navMenu = document.querySelector(".nav-menu");
+               const hamburger = document.querySelector(".hamburger");
+               const isClickInside = navMenu.contains(event.target) || hamburger.contains(event.target);
+
+              if (!isClickInside) {
+                 navMenu.classList.remove("active");
+                 // Optionally, you can also remove the 'd-block' class if needed
+                 document.getElementById("nav-menu").classList.remove("d-block");
+                 }
+               });
+            }
+          </script>
+          
+    </body>
+</html>
