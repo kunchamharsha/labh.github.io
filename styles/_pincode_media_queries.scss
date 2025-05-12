@@ -249,6 +249,62 @@ nav{
   color: #f4edff;
   border-radius: 12px;
 }
+
+@media (min-width: 0px) and (max-width: 480px){
+  .sticky-qr-desktop {
+    display: none;
+}
+.sticky-qr-mobile {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background: linear-gradient(
+        92.23deg,
+        rgba(255, 255, 255, 0.8) 0.14%,
+        rgba(221, 219, 219, 0.8) 80.1%
+    );
+    backdrop-filter: blur(41.900001525878906px);
+    -webkit-backdrop-filter: blur(41.900001525878906px);
+    z-index: 1;
+    border-radius: 16px;
+    bottom: 0px;
+    padding: 16px 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+.sticky-qr-mobile .s-logo {
+    height: 42px;
+    width: 42px;
+    margin: 0px 10px;
+}
+.s-close {
+    height: 22px;
+    width: 22px;
+}
+.s-heading {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px;
+    color: #111111;
+    letter-spacing: 2%;
+}
+.s-description {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0;
+    color: #11111199;
+    letter-spacing: 2%;
+}
+.s-get-app {
+    width: 75px;
+    height: 38px;
+    background: #a663ff;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 8px;
+}
+}
 }
 
 @media (min-width: 1281px)
