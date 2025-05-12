@@ -41,7 +41,8 @@ nav {
 .logo-container img {
   width: 4.5rem;
   aspect-ratio: 1/1;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .logo-container span {
   font-size: 2.5rem;
@@ -89,6 +90,10 @@ nav {
   height: 90%;
   color: white;
   font-size: 1.25rem;
+}
+.search-bar input::-moz-placeholder {
+  font-size: 1.25rem;
+  color: #cecbff;
 }
 .search-bar input::placeholder {
   font-size: 1.25rem;
@@ -148,7 +153,8 @@ nav {
 .main-container h2 {
   font-weight: 700;
   background: linear-gradient(148.3deg, #e5d4fe 4.55%, #ffffff 52.27%, #e8dff4 95.45%);
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .main-container h1 {
@@ -276,6 +282,7 @@ nav {
   margin-bottom: 3.1875rem;
 }
 .calculator-card .toggler span {
+  height: -moz-fit-content;
   height: fit-content;
   display: flex;
   justify-content: center;
@@ -309,7 +316,9 @@ nav {
 }
 .calculator-card-contents input[type=range] {
   border-radius: 0.75rem;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   outline: none;
   width: 100%;
   margin-top: 1rem;
@@ -321,7 +330,8 @@ nav {
   border-radius: 5px;
 }
 .calculator-card-contents input[type=range]::-webkit-slider-thumb {
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
   height: 2.8125rem;
   width: 2.8125rem;
   background-image: url("../../assets/slider-thumb.svg");
@@ -333,7 +343,9 @@ nav {
   outline: none;
 }
 .calculator-card-contents input[type=radio] {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 22px;
   height: 22px;
   margin-top: 1rem;
@@ -772,16 +784,16 @@ nav {
   }
   .faq-answer li,
   .faq-answer p {
-    font-size: 14px !important;
+    font-size: 0.875rem !important;
   }
   .faq-answer ul {
     margin: 0px !important;
   }
   .faq-answer li {
-    line-height: 16px;
+    line-height: 1rem;
   }
   .open {
-    border-radius: 26px !important;
+    border-radius: 1.625rem !important;
   }
   .arrow img {
     width: 2.125rem;
@@ -793,11 +805,11 @@ nav {
     font-size: 4rem !important;
   }
   .faq-question {
-    font-size: 20px !important;
+    font-size: 1.25rem !important;
     margin-left: 0px;
   }
   .faq-answer p {
-    font-size: 20px !important;
+    font-size: 1.25rem !important;
   }
 }
 .footer-company {
@@ -1252,7 +1264,8 @@ nav {
   .logo-container img {
     width: 2.5rem;
     aspect-ratio: 1/1;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .logo-container span {
     font-size: 1.5rem;
@@ -1570,6 +1583,11 @@ nav {
     color: rgba(17, 17, 17, 0.6);
     font-size: 1rem;
     font-weight: 400;
+  }
+  .mobile-search-bar input::-moz-placeholder {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(17, 17, 17, 0.6);
   }
   .mobile-search-bar input::placeholder {
     font-size: 1rem;

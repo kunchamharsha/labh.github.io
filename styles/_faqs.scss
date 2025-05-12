@@ -128,16 +128,16 @@
     }
     .faq-answer li,
     .faq-answer p {
-        font-size: 14px !important;
+        font-size: calculate-rem(14) !important;
     }
     .faq-answer ul {
         margin: 0px !important;
     }
     .faq-answer li {
-        line-height: 16px;
+        line-height: calculate-rem(16);
     }
     .open {
-        border-radius: 26px !important;
+        border-radius: calculate-rem(26) !important;
     }
     .arrow {
         img {
@@ -152,10 +152,10 @@
         font-size: 4rem !important;
     }
     .faq-question {
-        font-size: 20px !important;
+        font-size: calculate-rem(20) !important;
         margin-left: 0px;
     }
     .faq-answer p {
-        font-size: 20px !important;
+        font-size: calculate-rem(20) !important;
     }
 }
