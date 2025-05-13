@@ -4,6 +4,8 @@ let pageSize = 10;
 
 let pageName = null;
 
+const domain = "https://devapi.labh.io"
+
 function updateURLParameter(url, key, value) {
     var newURL = new URL(url);
     newURL.searchParams.set(key, value);
@@ -94,35 +96,35 @@ $(document).ready(function () {
         $(".category:contains('Equity')").addClass("active");
         pageName = "equity";
         renderer(
-            `https://devapi.labh.io/api/mutual-funds/all/?name=equity&page=${page}&page_size=${pageSize}`
+            `${domain}/api/mutual-funds/all/?name=equity&page=${page}&page_size=${pageSize}`
         );
     } else if (path.includes("/debt")) {
         $(".category:contains('Debt')").addClass("active");
         pageName = "debt";
         renderer(
-            `https://devapi.labh.io/api/mutual-funds/all/?name=debt&page=${page}&page_size=${pageSize}`
+            `${domain}/api/mutual-funds/all/?name=debt&page=${page}&page_size=${pageSize}`
         );
     } else if (path.includes("/hybrid")) {
         $(".category:contains('Hybrid')").addClass("active");
         pageName = "hybrid";
         renderer(
-            `https://devapi.labh.io/api/mutual-funds/all/?name=hybrid&page=${page}&page_size=${pageSize}`
+            `${domain}/api/mutual-funds/all/?name=hybrid&page=${page}&page_size=${pageSize}`
         );
     } else if (path.includes("/solution")) {
         $(".category:contains('Solution')").addClass("active");
         pageName = "solution";
         renderer(
-            `https://devapi.labh.io/api/mutual-funds/all/?name=solution&page=${page}&page_size=${pageSize}`
+            `${domain}/api/mutual-funds/all/?name=solution&page=${page}&page_size=${pageSize}`
         );
     } else if (path.includes("/other")) {
         $(".category:contains('Other')").addClass("active");
         pageName = "other";
         renderer(
-            `https://devapi.labh.io/api/mutual-funds/all/?name=other&page=${page}&page_size=${pageSize}`
+            `${domain}/api/mutual-funds/all/?name=other&page=${page}&page_size=${pageSize}`
         );
     } else {
         $.get(
-            `https://devapi.labh.io/api/mutual-funds/all/?name=regular`,
+            `${domain}/api/mutual-funds/all/?name=regular`,
             function (responseData) {
                 const results = responseData.results;
                 results.slice(0, 6).forEach((result) => {
@@ -146,6 +148,28 @@ $(document).ready(function () {
                 });
             }
         );
+
+        $.get(
+            `${domain}/api/basket/`,
+            function (responseData) {
+                responseData.forEach((data) => {
+                    $(".cards").append(`
+                        <a href="/basket/?id=${data.id}" class="card">
+                            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+                            <img src="/assets/card-edge-image.svg" alt="edge-image" />
+                            <img
+                                src="/assets/calculator-arrow.svg"
+                                alt="calculator-arrow"
+                            />
+                            <div class="card-heading">${data.name}</div>
+                            <div class="card-description">
+                                ${data.short_description}
+                            </div>
+                        </a>
+                    `)
+                });
+            }
+        )
     }
 
     $(".goto span, .items-per-page span").on("click", function () {

@@ -69,8 +69,8 @@
     referrerpolicy="no-referrer"
 ></script>
 
-        <link rel="stylesheet" href="/styles/mf_index.css" />
-        
+        <link rel="stylesheet" href="/styles/mutualfund.css" />
+         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
         <title>Labh</title>
     </head>
     <body>
@@ -93,168 +93,35 @@
         <div class="menu-bar">
             <ul>
                 <li><a href="/index.html">Home</a></li>
-                 <li><img src="/assets/dote-active.svg" alt="dote-active" /></li> <li><a href="#" class="active">Mutual Funds</a></li> 
+                <li><img src="/assets/dote.svg" alt="dote" /></li>
+                 <li><a href="/mutual-funds/">Baskets</a></li> <li><img src="/assets/dote-active.svg" alt="dote-active"></li> <li><a href="#" class="active" id="basket-name"></a></li> 
             </ul>
         </div>
 
         
 <div class="main-container">
     <div class="contents">
-    <h1>Categories</h1>
-    <p>Select fund categories for you to start investing.</p>
-</div>
-<div class="categories d-flex justify-content-start flex-wrap w-100">
-    <a
-        href="/mutual-funds/equity/"
-        class="category d-flex justify-content-center align-items-center"
-        data-value="equity"
-    >
-        Equity
-    </a>
-
-    <a
-        href="/mutual-funds/debt/"
-        class="category d-flex justify-content-center align-items-center"
-        data-value="debt"
-    >
-        Debt
-    </a>
-    
-    <a
-        href="/mutual-funds/hybrid/"
-        class="category d-flex justify-content-center align-items-center"
-        data-value="hybrid"
-    >
-        Hybrid
-    </a>
-    <a
-        href="/mutual-funds/solution/"
-        class="category d-flex justify-content-center align-items-center"
-        data-value="solution"
-    >
-        Solution Oriented
-    </a>
-    <a
-        href="/mutual-funds/other/"
-        class="category d-flex justify-content-center align-items-center"
-        data-value="other"
-    >
-        Other
-    </a>
-</div>
-
-    <div id="index-contents">
-        <div class="contents">
-            <h1>Get started with Labh Mutual Fund Baskets</h1>
-            <p>
-                Select expertly picked mutual fund baskets tailored to your
-                goals.
-            </p>
+        <h1 id="basket-name-heading"></h1>
+        <p id="basket-description"></p>
+    </div>
+    <div class="mf-chart-container">
+        <div id="chart-loader" style="text-align: center; padding: 20px">
+            <p>Loading chart, please wait...</p>
         </div>
-
-        <div class="cards">
-            <!-- <div class="card" onclick="window.location.href='#'">
-                <img src="/assets/card-edge-image.svg" alt="edge-image" />
-                <img src="/assets/card-edge-image.svg" alt="edge-image" />
-                <img
-                    src="/assets/calculator-arrow.svg"
-                    alt="calculator-arrow"
-                />
-                <div class="card-heading">EDGE X</div>
-                <div class="card-description">
-                    A high-performing tax-saving portfolio combining ELSS funds
-                    with smart research to optimize savings and ensure steady
-                    growth.It offers solid returns while allowing tax savings on
-                    up to ₹1,50,000/- annually under Section 80C.
-                </div>
-            </div>
-            <div class="card" onclick="window.location.href='#'">
-                <img src="/assets/card-edge-image.svg" alt="edge-image" />
-                <img src="/assets/card-edge-image.svg" alt="edge-image" />
-                <img
-                    src="/assets/calculator-arrow.svg"
-                    alt="calculator-arrow"
-                />
-                <div class="card-heading">Tax Saver Basket</div>
-                <div class="card-description">
-                    A high-performing tax-saving portfolio combining ELSS funds
-                    with smart research to optimize savings and ensure steady
-                    growth.It offers solid returns while allowing tax savings on
-                    up to ₹1,50,000/- annually under Section 80C.
-                </div>
-            </div>
-            <div class="card" onclick="window.location.href='#'">
-                <img src="/assets/card-edge-image.svg" alt="edge-image" />
-                <img src="/assets/card-edge-image.svg" alt="edge-image" />
-                <img
-                    src="/assets/calculator-arrow.svg"
-                    alt="calculator-arrow"
-                />
-                <div class="card-heading">Hyper Debt Basket</div>
-                <div class="card-description">
-                    Lowest risk among all baskets, stable mutual funds with
-                    minimal volatility yet high-performing, offering consistent
-                    returns. Best suited for conservative investors.
-                </div>
-            </div>
-            <div class="card" onclick="window.location.href='#'">
-                <img src="/assets/card-edge-image.svg" alt="edge-image" />
-                <img src="/assets/card-edge-image.svg" alt="edge-image" />
-                <img
-                    src="/assets/calculator-arrow.svg"
-                    alt="calculator-arrow"
-                />
-                <div class="card-heading">Edge 3</div>
-                <div class="card-description">
-                    A high-performing combination of Infrastructure, Health, and
-                    Focused Funds, specifically designed for rapid wealth
-                    creation at a low cost while delivering high returns. Ideal
-                    for ambitious beginners seeking aggressive growth.
-                </div>
-            </div>
-            <div class="card" onclick="window.location.href='#'">
-                <img src="/assets/card-edge-image.svg" alt="edge-image" />
-                <img src="/assets/card-edge-image.svg" alt="edge-image" />
-                <img
-                    src="/assets/calculator-arrow.svg"
-                    alt="calculator-arrow"
-                />
-                <div class="card-heading">Hybrid Basket</div>
-                <div class="card-description">
-                    A well-diversified mix of equity and debt funds delivering
-                    promising returns, offering a balance between growth and
-                    stability. A decent start for first-time investors.
-                </div>
-            </div>
-
-            <div class="card" onclick="window.location.href='#'">
-                <img src="/assets/card-edge-image.svg" alt="edge-image" />
-                <img src="/assets/card-edge-image.svg" alt="edge-image" />
-                <img
-                    src="/assets/calculator-arrow.svg"
-                    alt="calculator-arrow"
-                />
-                <div class="card-heading">War Chest</div>
-                <div class="card-description">
-                    Short term Basket designed to invest in defense sector,
-                    pharma and gold.
-                </div>
-            </div> -->
-        </div>
-
-        <div class="funds">
-            <h1>Listed Funds</h1>
-            <div class="funds-list" id="funds-list"></div>
-        </div>
+        <div id="chart"></div>
+    </div>
+    <div class="top-holdings">
+        <h1>Top Holdings</h1>
+        <div class="top-holdings-list" id="top-holdings-list"></div>
     </div>
 
-    <div class="categories-fund-list d-none">
-        <div class="funds">
-            <h1>Listed Funds</h1>
-            <div class="funds-list" id="funds-list2"></div>
-        </div>
+    <div class="top-holdings sector">
+        <h1>Sectors</h1>
+        <div class="top-holdings-list" id="sectors"></div>
     </div>
 </div>
+
+<script src="/basket.js"></script>
 
 
         <div class="blur-effect display-none"></div>
@@ -565,6 +432,6 @@
     </div>
 </footer>
 
+
     </body>
-    <script src="/mf_index.js"></script>
 </html>

@@ -9,6 +9,10 @@
   font-size: 1.25rem;
 }
 
+.cards .card {
+  text-decoration: none;
+}
+
 .categories {
   gap: 1.625rem;
   margin: 2.625rem 0rem;

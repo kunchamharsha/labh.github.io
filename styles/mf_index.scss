@@ -13,6 +13,12 @@
     }
 }
 
+.cards {
+    .card {
+        text-decoration: none;
+    }
+}
+
 .categories {
     gap: calculate-rem(26);
     margin: calculate-rem(42) calculate-rem(0);
