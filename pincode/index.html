@@ -8,24 +8,36 @@
         />
 
         <!-- Optimized Meta Description -->
-         <meta name="description" content="Use our fixed deposit calculator to compute interest and maturity amount. Plan your savings smartly with accurate FD returns estimation."> <meta name="keywords" content="fixed deposit calculator, FD interest calculator, FD maturity calculator, bank FD calculator, investment calculator">
-<!-- Open Graph / Facebook --> <meta property="og:type" content="website"> <meta property="og:url" content="https://labh.io/calculator/fixed-deposit-calculator"> <meta property="og:title" content="Fixed Deposit Calculator – Calculate FD Interest & Maturity"> <meta property="og:description" content="Use our fixed deposit calculator to compute interest and maturity amount. Plan your savings smartly with accurate FD returns estimation.">
-<!-- Twitter --> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:url" content="https://labh.io/calculator/fixed-deposit-calculator"> <meta name="twitter:title" content="Fixed Deposit Calculator – Calculate FD Interest & Maturity"> <meta name="twitter:description" content="Use our fixed deposit calculator to compute interest and maturity amount. Plan your savings smartly with accurate FD returns estimation.">
-
-        <meta property="og:image" content="/assets/logo.svg">
+        <meta
+            name="description"
+            content="Labh provides advanced financial research tools for Indian retail investors. Discover the best mutual funds, and investment strategies for portfolio management and risk analysis."
+        />
         <meta
             name="google-site-verification"
             content="9M5Nt9l9tBvol72sZsvPe1qht2CtU7N0-AM9Y64O6tA"
         />
-        <meta property="og:type" content="website" />
-        <link rel="icon" href="assets/logo.svg" type="image/x-icon" />
-
-        <!-- Twitter Card Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image" />
+        <!-- Additional Meta Keywords (Optional) -->
         <meta
-            name="twitter:image"
-            content="/assets/logo.svg"
+            name="keywords"
+            content="pin code, post office, funds, financial research, portfolio management, Indian retail investors, investment strategies, risk management"
         />
+
+        <!-- Open Graph Meta Tags (OG Tags) for Social Sharing -->
+        <meta
+            property="og:title"
+            content="Labh – Advanced Financial Research for Mutual Funds in India"
+        />
+        <meta
+            property="og:description"
+            content="Explore Labh's advanced financial tools to find the best mutual funds, and investment strategies for Indian retail investors."
+        />
+        <meta
+            property="og:image"
+            content="https://labh.io/assets/logo_final.png"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://labh.io" />
+
         <link rel="icon" href="/assets/logo.svg" type="image/x-icon" />
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
@@ -40,10 +52,9 @@
             crossorigin="anonymous"
         ></script>
         <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+            integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
             crossorigin="anonymous"
-            referrerpolicy="no-referrer"
         ></script>
         <script
             id="MathJax-script"
@@ -51,301 +62,180 @@
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
         ></script>
 
-        <title>Fixed Deposit Calculator – Calculate FD Interest &amp; Maturity</title>
+        <title>Labh</title>
     </head>
     <body>
-        <nav>
-    <div class="logo-container">
-        <img src="/assets/LOGO.png" alt="logo" />
-        <span>Labh</span>
-    </div>
-    <div class="search-bar-container">
-        <div class="search-bar hide-icon">
-            <input type="text" placeholder="Search" id="search" autocomplete="off"/>
-        </div>
-        <div class="search-dropdown display-none "></div>
-        <a href="http://api.labh.io/get-app/">Download Now</a>
-    </div>
-</nav>
-<hr class="nav-hr" />
+        <link rel="stylesheet" href="/styles/pincode.css" />
+<link rel="stylesheet" href="/styles/_pincode_media_queries.css">
 
-
-        <div class="menu-bar">
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><img src="/assets/dote.svg" alt="dote" /></li>
-                 <li><a href="/calculator/">Calculator</a></li> <li><img src="/assets/dote-active.svg" alt="dote-active"></li> <li><a href="#" class="active">Fixed Deposit Calculator</a></li> 
-            </ul>
+<div>
+    <nav>
+        <div class="logo-container">
+            <img src="/assets/LOGO.png" alt="logo" />
+            <span>Labh</span>
         </div>
 
-        
+     <div class="navbar">
+        <a href="http://labh.io/#" class="nav-link active styled-box">Home</a>
+        <a href="http://labh.io/#aboutsection" class="nav-link ">About us</a>
+        <a href="http://labh.io/#pitch" class="nav-link ">Methodology</a>
+        <a href="https://blog.labh.io" class="nav-link ">Blog</a>
+        <a href="https://tawk.to/labh" class="nav-link ">Contact us</a>
+      </div>
+<!-- 
+      <div id="nav-menu" class="nav-menu">
+        <ul>
+          <li><a href="http://labh.io/#" >Home</a></li>
+          <li><a href="http://labh.io/#aboutsection">About us</a></li>
+          <li><a href="http://labh.io/#pitch">Methodology</a></li>
+          <li><a href="https://blog.labh.io">Blog</a></li>
+          <li><a href="https://tawk.to/labh">Contact us</a></li>
+        </ul>
+      </div> -->
+
+      <div class="hamburger" onclick="toggleMenu()" id="navmenu">
+        <img src="/assets/menu_bar.svg" alt="menu" class="menu1" />
+     </div>
+      
+    </nav>
+    <hr class="n1" />
+</div>
+
+
+  
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<div id="nav-menu" class="nav-menu">
+    <ul>
+      <li><a href="http://labh.io/#" >Home</a></li>
+      <li><a href="http://labh.io/#aboutsection">About us</a></li>
+      <li><a href="http://labh.io/#pitch">Methodology</a></li>
+      <li><a href="https://blog.labh.io">Blog</a></li>
+      <li><a href="https://tawk.to/labh">Contact us</a></li>
+    </ul>
+  </div>
+
+
 <div class="main-container">
-    <div class="contents">
-        <h1>Fixed deposit return calculator</h1>
-        <p>Calculate FD maturity amount and interest earned.</p>
+    <div class="logo-title">
+        <img src="/assets/Search.svg" alt="edge-image" />
+          <span class="logo-text"><h1>Pin Code Finder</h1></span>
     </div>
-    <div class="calculator-card fixed-deposit-calculator">
-        <img src="/assets/card-edge-image.svg" alt="edge-image" />
-        <img src="/assets/card-edge-image.svg" alt="edge-image" />
-        <div class="calculator-card-contents">
-            <div>
-                <div class="cal-content">
-                    <label>Total Investment</label>
-                    <span id="investment-slider-value">Rs.5000</span>
-                </div>
-                <input
-                    type="range"
-                    id="investment-slider"
-                    min="5000"
-                    max="1000000"
-                    step="500"
-                    value="5000"
-                />
+      
+      <p class="pin-para">India is a vast nation with 28 states and at least 718 districts. In order to identify regions, Indian postal department has allotted a unique code known as Pin Code to each district/village/town to aid delivery of postal services. Pin Code stands for Postal Index Number Code. Also known as Zip code or the area postal code, it holds importance as the entire postal system of the country works around it. </p>
+        
+      <div class="search-bar" style="position: relative;">
+        <i class="fas fa-search search-icon"></i>
+        <!-- <input type="text" placeholder="Search" class="search-input"> -->
+         <input class="search-input" type="text" id="searchBar" placeholder="Search"  autocomplete="off">
+          <ul id="suggestions" class="dropdown"></ul>
+          <div id="resultContainer"></div>
+      </div>
 
-                <div class="cal-content">
-                    <label>Time Period</label>
-                    <span id="period-slider-value">10 Years</span>
-                </div>
-                <input
-                    type="range"
-                    id="period-slider"
-                    min="1"
-                    max="40"
-                    step="1"
-                    value="10"
-                />
-
-                <div class="cal-content">
-                    <label>Rate of interest(p.a)</label>
-                    <span id="interest-slider-value">7%</span>
-                </div>
-                <input
-                    type="range"
-                    id="interest-slider"
-                    min="1"
-                    max="30"
-                    step=".5"
-                    value="7"
-                />
-            </div>
-            <div>
-                <div class="graph-container">
-                    <div class="graph"></div>
-                    <div class="legend">
-                        <div class="legend-item">
-                            <div
-                                class="legend-color"
-                                style="background-color: #9a5ced"
-                            ></div>
-                            <span>Est. Returns</span>
-                        </div>
-                        <div class="legend-item">
-                            <div
-                                class="legend-color"
-                                style="background-color: #e8d8fd"
-                            ></div>
-                            <span>Invested amt</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cal-content result">
-                    <label>Invested Amount</label>
-                    <span id="invested-amount">Rs 46,36,567</span>
-                </div>
-                <div class="cal-content result">
-                    <label>Est. returns</label>
-                    <span id="est-returns">Rs 12,67,346</span>
-                </div>
-                <hr class="calculator-hr" />
-
-                <div class="cal-content result">
-                    <label>Retirement Amt</label>
-                    <span class="total" id="total-amount">RS 59,85,385</span>
-                </div>
-            </div>
+    <div class="search-results-container">
+        <div class="search-results">
+            <p class="result1"><b>Kushalnagara</b> Pin Code is <b>744205.</b> Kushalnagara comes under <b>North And Middle Andaman</b> district. </p>
+        </div>
+        <div class="info-grid">
+            <div><span class="f1">Office</span><strong>Kaushalyanagar</strong></div>
+            <div><span class="f2">State</span><strong>ANDAMAN & NICOBAR ISLANDS</strong></div>
+            
+            <div><span class="f1">Pincode</span><strong>744205</strong></div>
+            <div><span class="f2">Country</span><strong>INDIA</strong></div>
+            
+            <div><span class="f1">Taluk</span><strong>Rangat</strong></div>
+            <div><span class="f2">Telephone No.</span><strong>NA</strong></div>
+            
+            <div><span class="f1">Divison</span><strong>A - N Islands</strong></div>
+            <div><span class="f2">Office Type</span><strong>B.O</strong></div>
+            
+            <div><span class="f1">District</span><strong>North And Middle Andaman</strong></div>
+            <div><span class="f2">Delivery Status</span><strong>Delivery</strong></div>
+            
+            <div><span class="f1">Region</span><strong>Calcutta HQ</strong></div>
+            <div><span class="f2">Related sub office</span><strong>Rangat S.O</strong></div>
+            
+            <div><span class="f1">Circle</span><strong>West Bengal</strong></div>
+            <div><span class="f2">Related Head Office</span><strong>Port Blair H.O</strong></div>
         </div>
     </div>
-    <div class="guide">
-        <h2>How to Use?</h2>
-        <ul>
-            <li>Input deposit amount, interest rate, and tenure.</li>
-            <li>Select compounding frequency.</li>
-            <li>View maturity amount and total interest.</li>
-        </ul>
-
-        <h2>Formula</h2>
-        <p class="formula">A = P (1 + r/n)^(nt)</p>
-        <table>
-            <tr>
-                <td>A</td>
-                <td>The maturity amount or total amount after investment.</td>
-            </tr>
-            <tr>
-                <td>P</td>
-                <td>The principal amount or initial deposit.</td>
-            </tr>
-            <tr>
-                <td>r</td>
-                <td>Annual interest rate (in decimal form).</td>
-            </tr>
-            <tr>
-                <td>n</td>
-                <td>Number of times interest is compounded per year.</td>
-            </tr>
-            <tr>
-                <td>t</td>
-                <td>Investment duration in years.</td>
-            </tr>
-        </table>
-        <h2>Advantages</h2>
-        <ul>
-            <li>Clarity on returns</li>
-            <li>Easy comparison among banks</li>
-            <li>Flexible tenure planning</li>
-            <li>Interest compounding visibility</li>
-        </ul>
-        <h2>FAQ's</h2>
-
-        <div class="faq-container" style="background-color: transparent">
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Are FD returns taxable?</span>
-                    <span class="arrow"
-                        ><img src="/assets/Frame 877 (1).png"
-                    /></span>
-                </div>
-                <div class="faq-answer">
-                    <div class="content">
-                        <p style="text-align: left">
-                            Yes, FD interest is taxable as per your income tax
-                            slab.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Can I withdraw my FD before maturity? </span>
-                    <span class="arrow"
-                        ><img src="/assets/Frame 877 (1).png"
-                    /></span>
-                </div>
-                <div class="faq-answer">
-                    <div class="content">
-                        <p style="text-align: left">
-                            Yes, but it may attract a penalty.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="moblie-search-bar-container">
-        <div
-            id="search-results"
-            class="cards display-none margin-bottom-none"
-        ></div>
-        <div class="black-container">
-            <div class="mobile-search-bar">
-                <input
-                    type="text"
-                    placeholder="Search for Calculator"
-                    id="search2"
-                />
-            </div>
-        </div>
+          
+    <div class="pincode-info">  
+        <p class="result2"><b>Kushalnagara</b> Pin Code is <b>744205.</b> Kushalnagara comes under <b>North And Middle Andaman</b> district. </p>
+     
+        <div class="info-table">
+              <div><span>Office</span><strong>Kaushalyanagar</strong></div>
+             <div><span>Pincode</span><strong>744205</strong></div>
+              <div><span>Taluk</span><strong>Rangat</strong></div>
+             <div><span>Divison</span><strong>A - N Islands</strong></div>
+             <div><span>District</span><strong>North And Middle Andaman</strong></div>
+             <div><span>Region</span><strong>Calcutta HQ</strong></div>
+             <div><span>Circle</span><strong>West Bengal</strong></div>
+             <div><span>State</span><strong>ANDAMAN & NICOBAR ISLANDS</strong></div>
+             <div><span>Country</span><strong>INDIA</strong></div>
+              <div><span>Telephone No.</span><strong>NA</strong></div>
+              <div><span>Office Type</span><strong>B.O</strong></div>
+              <div><span>Delivery Status</span><strong>Delivery</strong></div>
+              <div><span>Related sub office</span><strong>Rangat S.O</strong></div>
+              <div><span>Related Head Office</span><strong>Port Blair H.O</strong></div>
+       </div>
     </div>
 </div>
 
-<script>
-    const compoundingFrequency = 4;
-
-    function updateChart(returnsPercentage) {
-        const chart = document.querySelector(".graph");
-        chart.style.background = `conic-gradient(
-            #E8D8FD 0% ${returnsPercentage}%,
-            #9A5CED ${returnsPercentage}% 100%
-            )`;
-    }
-
-    function calculateFD(principal, annualRate, years, compoundingFrequency) {
-        let r = annualRate / 100;
-        let n = compoundingFrequency;
-        let t = years;
-
-        let amount = principal * Math.pow(1 + r / n, n * t);
-        return amount;
-    }
-    function updateValues() {
-        const principle = $("#investment-slider").val();
-        const years = $("#period-slider").val();
-        const rate = $("#interest-slider").val();
-
-        const maturityAmount = calculateFD(
-            principle,
-            rate,
-            years,
-            compoundingFrequency
-        );
-
-        const returns = maturityAmount - principle;
-
-        const returnsPercentage = (principle / maturityAmount) * 100;
-        updateChart(returnsPercentage);
-
-        $("#invested-amount").text(
-            `RS.${parseInt(principle).toLocaleString("en-IN")}`
-        );
-        $("#est-returns").text(
-            `RS.${returns.toLocaleString("en-IN", {
-                maximumFractionDigits: 0,
-            })}`
-        );
-        $("#total-amount").text(
-            `RS.${maturityAmount.toLocaleString("en-IN", {
-                maximumFractionDigits: 0,
-            })}`
-        );
-    }
-
-    $(document).ready(function () {
-
-        function updateSliderBackground(slider) {
-            if (slider.id == "investment-slider") {
-                $(`#${slider.id}-value`).text(`Rs. ${parseInt(slider.value)}`);
-            } else if (slider.id == "period-slider") {
-                $(`#${slider.id}-value`).text(`${slider.value} Years`);
-            } else {
-                $(`#${slider.id}-value`).text(`${slider.value} %`);
-            }
-
-            const value =
-                ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
-            $(slider).css(
-                "background",
-                `linear-gradient(to right, #9b5de5 ${value}%, #d3bfff ${value}%)`
-            );
-        }
-
-        $("#investment-slider, #period-slider, #interest-slider")
-            .each(function () {
-                updateSliderBackground(this);
-                updateValues();
-            })
-            .on("input", function () {
-                updateSliderBackground(this);
-                updateValues();
-            });
-        $("#luxury, #good, #normal").on("change", function () {
-            updateValues();
-        });
-    });
-</script>
+<div class="sticky-qr sticky-qr-desktop">
+  <div class="sticky-container d-flex">
+      <img
+          class="qr-img"
+          src="/assets/qr_code.png"
+          alt="qr_code"
+          srcset=""
+      />
+      <div>
+          <div class="d-flex">
+              <p>Download Now!</p>
+              <img
+                  class="download-now"
+                  src="/assets/download_now.svg"
+                  alt="download now"
+              />
+          </div>
+          <img
+              class="playstore-app-store-icons"
+              src="/assets/playstore_app_store_icons.svg"
+              alt="play store and app store icons"
+          />
+      </div>
+  </div>
+</div>
 
 
+<div class="sticky-qr-mobile">
+  <div class="d-flex" style="align-items: center">
+      <img
+          class="s-close"
+          src="/assets/close.svg"
+          alt="close"
+          srcset=""
+          id="close-sticky-qr-mobiile"
+      />
+      <img
+          class="s-logo"
+          src="/assets/logo.svg"
+          alt="qr_code"
+          srcset=""
+      />
+      <div>
+          <p class="s-heading">Labh - Mutual Funds</p>
+          <p class="s-description">
+              Invest in Hope, Harvest Success
+          </p>
+      </div>
+  </div>
+  <span class="s-get-app">Get App</span>
+</div>
+
+  
         <div class="blur-effect display-none"></div>
 
         <footer
@@ -655,6 +545,28 @@
 </footer>
 
 
-        <script src="/main.js"></script>
+        <script src="/pincode.js"></script>
+        <script>
+            function toggleMenu() {
+                console.log("clicked");
+                document.querySelector(".nav-menu").classList.toggle("active");
+                document.getElementById("nav-menu").classList.add("d-block");
+                document.addEventListener("click", function (event) {
+                    const navMenu = document.querySelector(".nav-menu");
+                    const hamburger = document.querySelector(".hamburger");
+                    const isClickInside =
+                        navMenu.contains(event.target) ||
+                        hamburger.contains(event.target);
+
+                    if (!isClickInside) {
+                        navMenu.classList.remove("active");
+                        // Optionally, you can also remove the 'd-block' class if needed
+                        document
+                            .getElementById("nav-menu")
+                            .classList.remove("d-block");
+                    }
+                });
+            }
+        </script>
     </body>
 </html>
