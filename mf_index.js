@@ -27,7 +27,9 @@ function rerenderPagination(count) {
     if (currentCount > count) {
         currentCount = count;
     }
+    
     $(".pages-left").text(`${currentCount} of ${count}`);
+    $(".pages-left-mobile").text(`${currentCount} of ${count}`);
 }
 
 function processPagination(responseData) {

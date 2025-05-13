@@ -89,13 +89,13 @@
     }
 
     .risk {
-        color: #F5F5F5CC;
+        color: #f5f5f5cc;
         font-weight: 400;
         margin-top: calculate-rem(16);
         font-size: calculate-rem(16);
         width: calculate-rem(145);
         height: calulate-rem(34);
-        background-color: #CECBFF33;
+        background-color: #cecbff33;
         border-radius: calculate-rem(32);
 
         span {
@@ -146,5 +146,12 @@
     }
 }
 
+.pages-left-mobile {
+    display: none;
+    text-align: right;
+    color: #f5f5f5cc;
+    font-size: calculate-rem(12);
+    margin-top: calculate-rem(8);
+}
 
 @import "mf_index_media_query";

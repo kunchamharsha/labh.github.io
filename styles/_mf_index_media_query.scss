@@ -43,6 +43,38 @@
             }
         }
     }
+
+    .pagination {
+        margin-top: calculate-rem(17);
+        font-size: calculate-rem(14);
+
+        .pages-left {
+            display: none;
+        }
+        .goto, .items-per-page {
+            div, span {
+                width: calculate-rem(47);
+            }
+
+            img {
+                width: calculate-rem(14);
+            }
+
+            ul{
+                padding: 0;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+            }
+        }
+    }
+
+    .pages-left-mobile {
+        display: block;
+    }
 }
 
 @media (min-width: 745px) and (max-width: 1200px) {
@@ -104,5 +136,9 @@
                 height: calulate-rem(34);
             }
         }
+    }
+
+    .pagination {
+        font-size: calculate-rem(20);
     }
 }
