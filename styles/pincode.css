@@ -132,6 +132,10 @@ body {
   width: 100%;
 }
 
+.search-input::-moz-placeholder {
+  color: #CEC3FE;
+}
+
 .search-input::placeholder {
   color: #CEC3FE;
 }
@@ -320,6 +324,9 @@ body {
     height: 2.18rem;
     border: rgba(206, 195, 254, 0.5019607843) 1px solid;
   }
+  .search-bar input::-moz-placeholder {
+    font-size: 18px;
+  }
   .search-bar input::placeholder {
     font-size: 18px;
   }
@@ -369,6 +376,9 @@ nav {
   .search-bar {
     height: 2.18rem;
     border: rgba(206, 195, 254, 0.5019607843) 1px solid;
+  }
+  .search-bar input::-moz-placeholder {
+    font-size: 18px;
   }
   .search-bar input::placeholder {
     font-size: 18px;
@@ -593,6 +603,9 @@ nav {
     color: #fff;
     font-size: 1.125rem;
     width: 100%;
+  }
+  .search-input::-moz-placeholder {
+    color: #CEC3FE;
   }
   .search-input::placeholder {
     color: #CEC3FE;

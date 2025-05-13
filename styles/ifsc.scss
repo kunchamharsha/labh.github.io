@@ -1,0 +1,31 @@
+@function calculate-rem($size) {
+    @return calc($size / 16) * 1rem;
+  }
+
+
+  .custom-select-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .custom-select-wrapper select {
+    width: 100%;
+    padding: 0.6rem 2.5rem 0.6rem 1rem;
+    border-radius: 999px;
+    border: none;
+    appearance: none;
+    background: linear-gradient(to right, #2c2b3f, #3a3752);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .custom-select-wrapper .custom-arrow {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    pointer-events: none;
+  }
+  
