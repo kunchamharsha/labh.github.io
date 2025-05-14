@@ -11,7 +11,7 @@
          <meta name="description" content="Use our retirement calculator to estimate how much you need to save for a secure retirement. Get insights on monthly savings and investment goals."> <meta name="keywords" content="retirement calculator, retirement planning calculator, pension calculator, future savings calculator, retirement corpus calculator">
 <!-- Open Graph / Facebook --> <meta property="og:type" content="website"> <meta property="og:url" content="https://labh.io/calculator/retirement-calculator"> <meta property="og:title" content="Retirement Calculator – Plan Your Financial Future Smartly"> <meta property="og:description" content="Use our retirement calculator to estimate how much you need to save for a secure retirement. Get insights on monthly savings and investment goals.">
 <!-- Twitter --> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:url" content="https://labh.io/calculator/retirement-calculator"> <meta name="twitter:title" content="Retirement Calculator – Plan Your Financial Future Smartly"> <meta name="twitter:description" content="Use our retirement calculator to estimate how much you need to save for a secure retirement. Get insights on monthly savings and investment goals."> 
-        <meta property="og:image" content="/assets/logo.svg">
+        <meta property="og:image" content="/assets/logo.svg" />
         <meta
             name="google-site-verification"
             content="9M5Nt9l9tBvol72sZsvPe1qht2CtU7N0-AM9Y64O6tA"
@@ -21,10 +21,7 @@
 
         <!-- Twitter Card Meta Tags -->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-            name="twitter:image"
-            content="/assets/logo.svg"
-        />
+        <meta name="twitter:image" content="/assets/logo.svg" />
         <link rel="icon" href="/assets/logo.svg" type="image/x-icon" />
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
@@ -776,4 +773,15 @@
 
         <script src="/main.js"></script>
     </body>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const view = params.get("view");
+        $(document).ready(function () {
+            if (view == "mobile") {
+                $("nav").addClass("d-none");
+                $("footer").addClass("d-none");
+            }
+        });
+    </script>
 </html>
