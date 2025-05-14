@@ -1,3 +1,13 @@
+function setMetaTag(attrName, attrValue, content) {
+    let tag = document.querySelector(`meta[${attrName}="${attrValue}"]`);
+    if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute(attrName, attrValue);
+        document.head.appendChild(tag);
+    }
+    tag.setAttribute("content", content);
+}
+
 function getXaxisCategories(priceData) {
     const xAxisCategories = [];
     for (let i = 0; i < priceData.length; i++) {
@@ -33,11 +43,11 @@ function filterPriceData(year) {
 }
 
 function toTitleCase(text) {
-  return text
-    .toLowerCase()
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
+    return text
+        .toLowerCase()
+        .split(" ")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
 }
 
 function renderChart(data, year) {
@@ -163,7 +173,9 @@ $.get(
     function (responseData) {
         data = responseData;
         renderChart(responseData, 1);
-        $("#fund-name, #fund-name-heading").text(toTitleCase(responseData.scheme_name));
+        $("#fund-name, #fund-name-heading").text(
+            toTitleCase(responseData.scheme_name)
+        );
         $("#min-price").text(`₹ ${responseData.min_investment_value}`);
 
         const riskInvolved = responseData.risk_involved
@@ -204,7 +216,7 @@ $.get(
             const topSectorsList = responseData.sector_allocation;
 
             if (Object.keys(topSectorsList).length === 0) {
-                $('#sector').addClass('d-none');
+                $("#sector").addClass("d-none");
             }
             const topSectorKeys = Object.keys(topSectorsList);
             topSectorKeys.slice(0, 10).forEach((sector) => {
@@ -226,6 +238,59 @@ $.get(
         } else {
             $(".top-holdings").addClass("d-none");
         }
+
+        document.title = `${data.scheme_name} – NAV ${data.cagr["1_year"]}`;
+
+        setMetaTag(
+            "name",
+            "description",
+            `Get the latest data on ${data.scheme_name} including NAV (${data.cagr["1_year"]}), 1-year return (${data.cagr["1_year"]}), and category insights. Compare performance and analyze fund history.`
+        );
+        setMetaTag(
+            "name",
+            "keywords",
+            `${
+                data.scheme_name
+            }, mutual fund NAV, mutual fund returns, SIP in ${
+                data.scheme_name
+            }, MF performance`
+        );
+
+        // Open Graph Meta Tags
+        setMetaTag("property", "og:type", "website");
+        setMetaTag(
+            "property",
+            "og:url",
+            `https://labh.io/calculator/mutual-fund/?id=${fundId}`
+        );
+        setMetaTag(
+            "property",
+            "og:title",
+            `${data.scheme_name} – NAV ${data.cagr["1_year"]}, 1Y Return ${data.cagr["1_year"]}`
+        );
+        setMetaTag(
+            "property",
+            "og:description",
+            `Get the latest data on ${data.scheme_name} including NAV (${data.cagr["1_year"]}), 1-year return (${data.cagr["1_year"]}), and category insights. Compare performance and analyze fund history.`
+        );
+
+        // Twitter Meta Tags
+        setMetaTag("name", "twitter:card", "summary_large_image");
+        setMetaTag(
+            "name",
+            "twitter:url",
+            `https://labh.io/calculator/mutual-fund/${fundId}`
+        );
+        setMetaTag(
+            "name",
+            "twitter:title",
+            `${data.scheme_name} – NAV ${data.cagr["1_year"]}, 1Y Return ${data.cagr["1_year"]} `
+        );
+        setMetaTag(
+            "name",
+            "twitter:description",
+            `Get the latest data on ${data.scheme_name} including NAV (${data.cagr["1_year"]}), 1-year return (${data.cagr["1_year"]}), and category insights. Compare performance and analyze fund history.`
+        );
     }
 ).done(function () {
     onload();

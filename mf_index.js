@@ -4,7 +4,10 @@ let pageSize = 10;
 
 let pageName = null;
 
-const domain = "https://devapi.labh.io"
+const domain = "https://devapi.labh.io";
+
+let fundHouses = [];
+let isViewMore = false;
 
 function updateURLParameter(url, key, value) {
     var newURL = new URL(url);
@@ -29,7 +32,7 @@ function rerenderPagination(count) {
     if (currentCount > count) {
         currentCount = count;
     }
-    
+
     $(".pages-left").text(`${currentCount} of ${count}`);
     $(".pages-left-mobile").text(`${currentCount} of ${count}`);
 }
@@ -41,6 +44,28 @@ function processPagination(responseData) {
     rerenderPagination(count);
 }
 
+function renderFundHouse() {
+    let start = 0;
+    let end = 9;
+    if (isViewMore == true) {
+        start = 0;
+        end = fundHouses.length;
+    }
+    $(".scheme-list").empty();
+    console.log({start, end})
+    fundHouses.slice(start, end).forEach((data) => {
+        const queryString = new URLSearchParams({
+            name: data.name,
+        }).toString();
+        $(".scheme-list").append(`
+                <a href="/mutual-funds/scheme/?${queryString}" class="scheme d-flex align-items-center">
+                    <img src="${data.image_url}" alt="scheme-image" />
+                    <span>${data.name}</span>
+                </div>
+            `);
+    });
+}
+
 function renderer(url) {
     $.get(url, function (responseData) {
         $("#index-contents").addClass("d-none");
@@ -50,16 +75,12 @@ function renderer(url) {
         results.forEach((result) => {
             $("#funds-list2").append(`
                     <a class="fund" href="/mutual-fund/?id=${result.id}">
-                        <div class="header d-flex justify-content-between">
+                        <div class="header d-flex">
                             <img src="${result.image_url}" alt="mf-image">
                             <div>${result.scheme_name}</div>
                         </div>
                         <div class="risk d-flex justify-content-center align-items-center">
-                            ${
-                                result.risk_involved
-                                    ? result.risk_involved
-                                    : "-"
-                            }
+                            ${result.risk_involved ? result.risk_involved : "-"}
                         </div>
                     </a>
                 `);
@@ -122,38 +143,21 @@ $(document).ready(function () {
         renderer(
             `${domain}/api/mutual-funds/all/?name=other&page=${page}&page_size=${pageSize}`
         );
-    } else {
-        $.get(
-            `${domain}/api/mutual-funds/all/?name=regular`,
-            function (responseData) {
-                const results = responseData.results;
-                results.slice(0, 6).forEach((result) => {
-                    $("#funds-list").append(`
-                    
-                    <a class="fund" href="/mutual-fund/?id=${result.id}'">
-                        <div class="header d-flex justify-content-between ">
-                            <img src="${result.image_url}" alt="mf-image">
-                            <div>${result.scheme_name}</div>
-                        </div>
-                        <div class="risk d-flex justify-content-center align-items-center">
-                            ${
-                                result.risk_involved
-                                    ? result.risk_involved
-                                    : "-"
-                            }
-                        </div>
-                    </a>
-                `);
-                });
-            }
+    } else if (path.includes("/scheme")) {
+        pageName = getQueryParam("name");
+        $("#scheme-name").text(pageName);
+        let keyword = pageName.split(" ")[0];
+        if (pageName == "Bank of India Mutual Fund") {
+            keyword = "Bank of India";
+        }
+        renderer(
+            `${domain}/api/mutual-funds/all/?name=${keyword}&page=${page}&page_size=${pageSize}`
         );
-
-        $.get(
-            `${domain}/api/basket/`,
-            function (responseData) {
-                responseData.forEach((data) => {
-                    $(".cards").append(`
-                        <a href="/basket/?id=${data.id}" class="card">
+    } else {
+        $.get(`${domain}/api/basket/`, function (responseData) {
+            responseData.forEach((data) => {
+                $(".cards").append(`
+                        <a href="#" class="card">
                             <img src="/assets/card-edge-image.svg" alt="edge-image" />
                             <img src="/assets/card-edge-image.svg" alt="edge-image" />
                             <img
@@ -165,10 +169,24 @@ $(document).ready(function () {
                                 ${data.description}
                             </div>
                         </a>
-                    `)
-                });
-            }
-        )
+                    `);
+            });
+        });
+
+        $.get(`${domain}/api/mutual-funds/fund-houses/`, function (response) {
+            fundHouses = response;
+            response.slice(0, 9).forEach((data) => {
+                const queryString = new URLSearchParams({
+                    name: data.name,
+                }).toString();
+                $(".scheme-list").append(`
+                        <a href="/mutual-funds/scheme/?${queryString}" class="scheme d-flex align-items-center">
+                            <img src="${data.image_url}" alt="scheme-image" />
+                            <span>${data.name}</span>
+                        </div>
+                    `);
+            });
+        });
     }
 
     $(".goto span, .items-per-page span").on("click", function () {
@@ -190,5 +208,66 @@ $(document).ready(function () {
             pageSize
         );
         window.location.href = updatedURL;
+    });
+
+    $(".view-more").on("click", function () {
+        if (isViewMore == true) {
+            $(this).text("Show More");
+            isViewMore = false;
+            renderFundHouse();
+        } else {
+            $(this).text("Hide");
+            isViewMore = true;
+            renderFundHouse();
+        }
+    });
+});
+
+
+
+$(window).on("load", function () {
+    let debounceTimer;
+
+    $("#search").on("input", function () {
+        const name = $(this).val().toLowerCase();
+
+        if (name.length > 0) {
+            $(".search-bar").removeClass("hide-icon");
+        } else {
+            $(".search-bar").addClass("hide-icon");
+            return;
+        }
+
+        clearTimeout(debounceTimer);
+
+        debounceTimer = setTimeout(function () {
+            $.get(
+                `https://devapi.labh.io/api/mutual-funds/all/?name=${name}`,
+                function (responseData) {
+                    if (responseData.count == 0) {
+                        $(".search-dropdown").empty();
+                        const dropdownItem = `
+                            <div>
+                                <span class='no-results'>No results for '<span>${name}<span>'</span>
+                            </div>
+                        `;
+                        $(".search-dropdown").append(dropdownItem);
+                        return;
+                    }
+                    $(".search-dropdown").empty();
+                    $(".search-dropdown").removeClass("display-none");
+                    const results = responseData.results;
+                    results.forEach((result) => {
+                        const dropdownItem = `
+                            <div onclick="window.location.href='/mutual-fund/?id=${result.id}'">
+                                <img src="/assets/search_dropdown_arrow.svg" alt="dropdown-arrow" />
+                                <span>${result.scheme_name}</span>
+                            </div>
+                        `;
+                        $(".search-dropdown").append(dropdownItem);
+                    });
+                }
+            );
+        }, 500);
     });
 });

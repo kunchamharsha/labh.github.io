@@ -87,6 +87,21 @@
         }
     }
 
+    .scheme-list {
+        gap: calculate-rem(1);
+        .scheme {
+            flex: 1 1 calculate-rem(262);
+            font-size: calculate-rem(12);
+            height: calculate-rem(40);
+            gap: calculate-rem(5);
+
+            img {
+                width: calculate-rem(34);
+                height: calculate-rem(34);
+            }
+        }
+    }
+
     .pages-left-mobile {
         display: block;
     }
@@ -119,6 +134,9 @@
             max-width: calculate-rem(150);
             height: calculate-rem(50);
         }
+        .solution-oriented {
+            max-width: calculate-rem(214);
+        }
     }
 
     .cards {
@@ -149,6 +167,18 @@
                 font-size: calculate-rem(16);
                 width: calculate-rem(143);
                 height: calulate-rem(34);
+            }
+        }
+    }
+
+    .scheme-list {
+        .scheme {
+            flex: 1 1 calculate-rem(262);
+            font-size: calculate-rem(18);
+
+            img {
+                width: calculate-rem(54);
+                height: calculate-rem(54);
             }
         }
     }

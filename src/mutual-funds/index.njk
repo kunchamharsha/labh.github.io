@@ -1,6 +1,22 @@
 ---
 layout: mutual-funds-index-base.njk
-title: Labh
+title: Mutual Fund Insights – Compare NAV, Returns, and Fund Performance
+mata: '
+<meta name="description" content="Explore detailed mutual fund information including NAV, historical returns, fund category comparisons, and performance tracking. Make informed investment decisions.">
+<meta name="keywords" content="mutual fund details, mutual fund NAV, mutual fund performance, compare mutual funds, fund returns, investment analysis, MF tracker">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://labh.io/mutual-funds">
+<meta property="og:title" content="Mutual Fund Insights – Compare NAV, Returns, and Fund Performance">
+<meta property="og:description" content="Explore detailed mutual fund information including NAV, historical returns, fund category comparisons, and performance tracking. Make informed investment decisions.">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://labh.io/mutual-funds">
+<meta name="twitter:title" content="Mutual Fund Insights – Compare NAV, Returns, and Fund Performance">
+<meta name="twitter:description" content="Explore detailed mutual fund information including NAV, historical returns, fund category comparisons, and performance tracking. Make informed investment decisions.">
+'
 menu: '
 <li><img src="/assets/dote-active.svg" alt="dote-active" /></li>
 <li><a href="#" class="active">Mutual Funds</a></li>
@@ -18,19 +34,15 @@ menu: '
             </p>
         </div>
 
-        <div class="cards">
-        </div>
+        <div class="cards"></div>
 
         <div class="funds">
             <h1>Schemes by Fund Houses</h1>
+            <div class="view-more d-flex align-items-center justify-content-center">Show More</div>
+            <div
+                class="scheme-list d-flex align-items-center justify-content-start flex-wrap"
+            ></div>
             <div class="funds-list" id="funds-list"></div>
-        </div>
-    </div>
-
-    <div class="categories-fund-list d-none">
-        <div class="funds">
-            <h1>Schemes by Fund Houses</h1>
-            <div class="funds-list" id="funds-list2"></div>
         </div>
     </div>
 </div>

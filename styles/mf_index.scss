@@ -1,5 +1,16 @@
 @import "equations";
 
+.search-bar-container {
+    .search-dropdown {
+        span {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
 .main-container {
     margin-top: calculate-rem(40);
 }
@@ -44,6 +55,16 @@
         }
     }
 
+    .category:hover {
+        background: linear-gradient(
+            148.3deg,
+            #e5d4fe 4.55%,
+            #ffffff 52.27%,
+            #e8dff4 95.45%
+        );
+        color: #161432;
+    }
+
     .active {
         background: linear-gradient(
             148.3deg,
@@ -78,10 +99,23 @@
 }
 
 .funds {
+    position: relative;
     margin-top: calculate-rem(80);
     h1 {
         font-size: calculate-rem(40);
         margin-bottom: calculate-rem(60);
+    }
+
+    .view-more {
+        position: absolute;
+        right: 0px;
+        top: calculate-rem(0);
+        width: calculate-rem(180);
+        height: calculate-rem(48);
+        border-radius: calculate-rem(100);
+        background-color: #cecbff29;
+        font-size: calculate-rem(20);
+        color: #cecbff;
     }
 
     .funds-list {
@@ -133,10 +167,45 @@
     }
 }
 
+.scheme-list {
+    gap: calculate-rem(44);
+
+    .scheme {
+        max-width: calculate-rem(290);
+        height: calculate-rem(64);
+        gap: calculate-rem(17);
+        color: white;
+        text-decoration: none;
+        font-size: calculate-rem(20);
+        flex: 1 1 calculate-rem(262);
+
+        img {
+            width: calculate-rem(64);
+            height: calculate-rem(64);
+            border-radius: calculate-rem(12);
+        }
+
+        span {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .scheme:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+    }
+}
+
 .pagination {
     font-size: calculate-rem(24);
     color: #f5f5f5cc;
-    font-weight: 700;
+    backdrop-filter: blur(6px) saturate(140%);
+    font-weight: 500;
     margin-top: calculate-rem(118);
 
     .goto,
@@ -145,7 +214,8 @@
         span,
         div {
             width: calculate-rem(88);
-            background-color: #cecbff33;
+            padding-top: calculate-rem(8);
+            background-color: #292933;
         }
         span {
             display: block;
@@ -171,6 +241,9 @@
                 }
             }
         }
+    }
+    .pages-left {
+        font-size: calculate-rem(18);
     }
 }
 
