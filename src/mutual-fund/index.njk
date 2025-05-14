@@ -68,12 +68,14 @@ other_scripts: '
                     >
                     <span class="lumpsum-span" id="lumpsum-span">One-Time</span>
                 </div>
-                <div class="year-selector center-algin position-relative">
-                    <img
-                        src="/assets/dropdown-arrow.svg"
-                        alt="dropdown-arrow"
-                    />
-                    <span id="sip-year">1 Year</span>
+                <div class="year-selector-wrapper">
+                    <div class="year-selector center-algin position-relative">
+                        <img
+                            src="/assets/dropdown-arrow.svg"
+                            alt="dropdown-arrow"
+                        />
+                        <span id="sip-year">1 Year</span>
+                    </div>
                     <div class="year-list center-algin d-none">
                         <span data-value="1" class="active">1 Year</span>
                         <span data-value="3">3 Year</span>
@@ -102,12 +104,12 @@ other_scripts: '
         </div>
     </div>
     <div class="top-holdings">
-        <h1>Top Holdings</h1>
+        <h1>Top 10 Holdings</h1>
         <div class="top-holdings-list" id="top-holdings-list"></div>
     </div>
 
-    <div class="top-holdings sector">
-        <h1>Sectors</h1>
+    <div class="top-holdings sector" id="sector">
+        <h1>Top 10 Sectors</h1>
         <div class="top-holdings-list" id="sectors"></div>
     </div>
 </div>

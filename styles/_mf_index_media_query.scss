@@ -20,10 +20,24 @@
             flex: 1 1 calculate-rem(124);
             height: calculate-rem(32);
         }
+
+        .active {
+            img {
+                width: calculate-rem(18);
+                height: calculate-rem(18);
+            }
+        }
+
+        .solution-oriented {
+            max-width: calculate-rem(156);
+        }
     }
 
     .cards {
         margin-bottom: calculate-rem(0);
+        .card-description {
+            line-height: calculate-rem(20);
+        }
     }
 
     .funds {
@@ -51,8 +65,10 @@
         .pages-left {
             display: none;
         }
-        .goto, .items-per-page {
-            div, span {
+        .goto,
+        .items-per-page {
+            div,
+            span {
                 width: calculate-rem(47);
             }
 
@@ -60,14 +76,13 @@
                 width: calculate-rem(14);
             }
 
-            ul{
+            ul {
                 padding: 0;
                 width: 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-
             }
         }
     }

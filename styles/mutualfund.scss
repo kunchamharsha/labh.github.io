@@ -90,6 +90,7 @@
     justify-content: space-between;
     font-size: calculate-rem(20);
     color: black;
+    gap: calculate-rem(40);
 
     .details-1,
     .details-2 {
@@ -113,7 +114,7 @@
     }
 
     .details-2 {
-        width: calculate-rem(746);
+        width: 72%;
         padding: calculate-rem(27) calculate-rem(31);
         background: linear-gradient(
             148.3deg,
@@ -183,6 +184,10 @@
 
     $year-selector-height: calculate-rem(44);
     $year-list-top-offset: math.div($year-selector-height, 2);
+    .year-selector-wrapper {
+        position: relative;
+        z-index: 2;
+    }
     .year-selector,
     .year-list {
         width: calculate-rem(119);
@@ -192,9 +197,9 @@
 
     .year-selector {
         height: $year-selector-height;
-        border: 1px solid #a663ff;
         gap: calculate-rem(16);
         z-index: 1;
+        border: 1px solid #a663ff;
     }
 
     .year-list {
@@ -204,6 +209,7 @@
         display: flex;
         flex-direction: column;
         z-index: -1;
+        background: #D1CEFF;
 
         span {
             margin-bottom: calculate-rem(8);
@@ -242,11 +248,13 @@
 
     .top-holding {
         width: calculate-rem(567);
+        flex: 1 1 calculate-rem(567);
+        margin-right: calculate-rem(50);
     }
 
     .percentage-container {
         gap: calculate-rem(10);
-        margin-top: calculate-rem(20);
+        margin-top: calculate-rem(4);
         margin-bottom: calculate-rem(36);
     }
 

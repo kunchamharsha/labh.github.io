@@ -110,6 +110,7 @@
         data-value="equity"
     >
         Equity
+        <img src="/assets/mf-cross.png" alt="cross" onclick="gotoHome(event)">
     </a>
 
     <a
@@ -118,6 +119,7 @@
         data-value="debt"
     >
         Debt
+        <img src="/assets/mf-cross.png" alt="cross" onclick="gotoHome(event)">
     </a>
     
     <a
@@ -126,13 +128,15 @@
         data-value="hybrid"
     >
         Hybrid
+        <img src="/assets/mf-cross.png" alt="cross" onclick="gotoHome(event)">
     </a>
     <a
         href="/mutual-funds/solution/"
-        class="category d-flex justify-content-center align-items-center"
+        class="category d-flex justify-content-center align-items-center solution-oriented"
         data-value="solution"
     >
         Solution Oriented
+        <img src="/assets/mf-cross.png" alt="cross" onclick="gotoHome(event)">
     </a>
     <a
         href="/mutual-funds/other/"
@@ -140,9 +144,15 @@
         data-value="other"
     >
         Other
+        <img src="/assets/mf-cross.png" alt="cross" onclick="gotoHome(event)">
     </a>
 </div>
-
+<script>
+    function gotoHome(event) {
+        event.preventDefault();
+        window.location.href = "/mutual-funds/";
+    }
+</script>
 
 <div class="categories-fund-list">
     <div class="funds">
@@ -240,26 +250,26 @@
 
             <div class="desktop-footer">
                 <div class="footer-links">
-                    <div class="footer-links-section">
+                    <div class="footer-links-section company">
                         <h4>Company</h4>
                         <ul>
                             <li>
                                 <a
-                                    href="#"
+                                    href="https://labh.io/#"
                                     
                                     >Home</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#aboutsection"
+                                    href="https://labh.io/#aboutsection"
                                     
                                     >About Us</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="https://blog.labh.io"
+                                    href="https://labh.io/#pitch"
                                     
                                     >Methodologies</a
                                 >
@@ -347,7 +357,7 @@
                         </ul>
                     </div>
                     <div class="footer-links-section">
-                        <h4>Explore Our Bloggs</h4>
+                        <h4>Explore Our Blogs</h4>
                         <ul>
                             <li>
                                 <a

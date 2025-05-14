@@ -13,6 +13,9 @@ function getXaxisCategories(priceData) {
 }
 
 function filterPriceData(year) {
+    if (priceData.length === 0) {
+        return [];
+    }
     lastDateAvailable = new Date(priceData.at(-1)[1]);
     if (year === 0) {
         return priceData;
@@ -27,6 +30,14 @@ function filterPriceData(year) {
         return date >= endDate;
     });
     return filteredData;
+}
+
+function toTitleCase(text) {
+  return text
+    .toLowerCase()
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
 }
 
 function renderChart(data, year) {
@@ -152,7 +163,7 @@ $.get(
     function (responseData) {
         data = responseData;
         renderChart(responseData, 1);
-        $("#fund-name, #fund-name-heading").text(responseData.scheme_name);
+        $("#fund-name, #fund-name-heading").text(toTitleCase(responseData.scheme_name));
         $("#min-price").text(`₹ ${responseData.min_investment_value}`);
 
         const riskInvolved = responseData.risk_involved
@@ -172,7 +183,7 @@ $.get(
         const topHoldings = responseData.top_holdings;
         if (topHoldings.length > 0) {
             // render top holdings
-            topHoldings.forEach((holding) => {
+            topHoldings.slice(0, 10).forEach((holding) => {
                 const topHoldingCard = `
                     <div class="top-holding">
                         <div class="header">
@@ -191,8 +202,12 @@ $.get(
 
             // render top sectors
             const topSectorsList = responseData.sector_allocation;
+
+            if (Object.keys(topSectorsList).length === 0) {
+                $('#sector').addClass('d-none');
+            }
             const topSectorKeys = Object.keys(topSectorsList);
-            topSectorKeys.forEach((sector) => {
+            topSectorKeys.slice(0, 10).forEach((sector) => {
                 const topSectorCard = `
                 <div class="top-holding">
                     <div class="header">

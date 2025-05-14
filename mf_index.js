@@ -50,7 +50,7 @@ function renderer(url) {
         results.forEach((result) => {
             $("#funds-list2").append(`
                     <a class="fund" href="/mutual-fund/?id=${result.id}">
-                        <div class="header d-flex justify-content-between align-items-center">
+                        <div class="header d-flex justify-content-between">
                             <img src="${result.image_url}" alt="mf-image">
                             <div>${result.scheme_name}</div>
                         </div>
@@ -129,10 +129,9 @@ $(document).ready(function () {
                 const results = responseData.results;
                 results.slice(0, 6).forEach((result) => {
                     $("#funds-list").append(`
-                    <a class="fund" onclick="window.location.href='/mutual-fund/?id=${
-                        result.id
-                    }'">
-                        <div class="header d-flex justify-content-between align-items-center">
+                    
+                    <a class="fund" href="/mutual-fund/?id=${result.id}'">
+                        <div class="header d-flex justify-content-between ">
                             <img src="${result.image_url}" alt="mf-image">
                             <div>${result.scheme_name}</div>
                         </div>
@@ -163,7 +162,7 @@ $(document).ready(function () {
                             />
                             <div class="card-heading">${data.name}</div>
                             <div class="card-description">
-                                ${data.short_description}
+                                ${data.description}
                             </div>
                         </a>
                     `)

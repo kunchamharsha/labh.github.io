@@ -22,6 +22,7 @@
     .mf-details-container {
         flex-direction: column;
         font-size: calculate-rem(16);
+        gap: 0px;
 
         .details-1, .details-2 {
             width: 100%;
@@ -124,6 +125,7 @@
     .mf-details-container {
         flex-direction: column;
         font-size: calculate-rem(16);
+
 
         .details-1 {
             margin-top: calculate-rem(34);

@@ -38,6 +38,10 @@
         border-radius: calculate-rem(40);
         border: 1px solid #cecbff66;
         text-decoration: none;
+
+        img {
+            display: none;
+        }
     }
 
     .active {
@@ -48,15 +52,25 @@
             #e8dff4 95.45%
         );
         color: #161432;
+
+        img {
+            display: block;
+            width: calculate-rem(26);
+            height: calculate-rem(26);
+            margin-left: calculate-rem(20);
+        }
     }
 }
 
-.card-description {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.card {
+    .card-description {
+        line-height: calculate-rem(36);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 
 .cards {
@@ -87,11 +101,19 @@
 
     .header {
         gap: calculate-rem(16);
+        cursor: pointer;
 
         img {
             width: calculate-rem(40);
             height: calculate-rem(40);
+            border-radius: calculate-rem(8);
         }
+    }
+
+    .header:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
     }
 
     .risk {
