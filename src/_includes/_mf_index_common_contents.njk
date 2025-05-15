@@ -1,0 +1,54 @@
+<div class="contents">
+    <h1>Categories</h1>
+    <p>Select fund categories for you to start investing.</p>
+</div>
+<div class="categories d-flex justify-content-start flex-wrap w-100">
+    <a
+        href="/mutual-funds/equity/"
+        class="category d-flex justify-content-center align-items-center"
+        data-value="equity"
+    >
+        Equity
+        <img src="/assets/mf-cross.png" alt="cross" onclick="gotoHome(event)">
+    </a>
+
+    <a
+        href="/mutual-funds/debt/"
+        class="category d-flex justify-content-center align-items-center"
+        data-value="debt"
+    >
+        Debt
+        <img src="/assets/mf-cross.png" alt="cross" onclick="gotoHome(event)">
+    </a>
+    
+    <a
+        href="/mutual-funds/hybrid/"
+        class="category d-flex justify-content-center align-items-center"
+        data-value="hybrid"
+    >
+        Hybrid
+        <img src="/assets/mf-cross.png" alt="cross" onclick="gotoHome(event)">
+    </a>
+    <a
+        href="/mutual-funds/solution/"
+        class="category d-flex justify-content-center align-items-center solution-oriented"
+        data-value="solution"
+    >
+        Solution Oriented
+        <img src="/assets/mf-cross.png" alt="cross" onclick="gotoHome(event)">
+    </a>
+    <a
+        href="/mutual-funds/other/"
+        class="category d-flex justify-content-center align-items-center"
+        data-value="other"
+    >
+        Other
+        <img src="/assets/mf-cross.png" alt="cross" onclick="gotoHome(event)">
+    </a>
+</div>
+<script>
+    function gotoHome(event) {
+        event.preventDefault();
+        window.location.href = "/mutual-funds/";
+    }
+</script>

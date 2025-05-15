@@ -1,0 +1,26 @@
+
+.margin-bottom-100 {
+    margin-bottom: calculate-rem(100) !important;
+}
+
+.margin-none {
+    margin: 0;
+}
+
+.margin-bottom-none {
+    margin-bottom: 0;
+}
+
+.transform-y {
+    transform: scaleY(-1);
+}
+
+.center-algin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-none {
+    display: none;
+}
