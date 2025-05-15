@@ -261,6 +261,11 @@
     width: 100%;
     font-size: 0.75rem;
   }
+  .funds .view-more {
+    font-size: 0.6875rem;
+    width: 5rem;
+    height: 1.75rem;
+  }
   .pagination {
     margin-top: 1.0625rem;
     font-size: 0.875rem;
