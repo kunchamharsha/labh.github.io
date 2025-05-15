@@ -66,7 +66,7 @@ function renderChart(data, year) {
             },
         ],
         chart: {
-            height: 440,
+            height: "100%",
             type: "line",
             zoom: {
                 enabled: false,
@@ -141,6 +141,16 @@ function renderChart(data, year) {
                 show: false,
             },
         },
+        responsive: [
+            {
+                breakpoint: 744,
+                options: {
+                    chart: {
+                        height: "266px",
+                    },
+                },
+            }
+        ]
     };
     if (chart == null) {
         chart = new ApexCharts(document.querySelector("#chart"), options);
@@ -374,9 +384,12 @@ function onload() {
 
     $(".year-list span").click(function () {
         const text = $(this).text();
+        $(".year-list span").removeClass("active");
         year = $(this).data("value");
+        $(this).addClass("active");
         $("#sip-year").text(text);
         updateValues();
+        $(".year-list").addClass("d-none");
     });
 
     $("#investment-slider")
@@ -453,4 +466,15 @@ $(window).on("load", function () {
             );
         }, 500);
     });
+});
+
+$(".search-bar").on("click", function (e) {
+    const rect = $(this)[0].getBoundingClientRect();
+    const x = e.clientX - rect.left;
+
+    if ((x > 390 && window.innerWidth > 1024) || true) {
+        $(".search-dropdown").addClass("display-none");
+        $(".search-bar").addClass("hide-icon");
+        $("#search").val("");
+    }
 });

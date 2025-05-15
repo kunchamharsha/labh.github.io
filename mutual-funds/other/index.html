@@ -54,10 +54,10 @@
     </head>
     <body>
         <nav>
-    <div class="logo-container">
+    <a href="/" class="logo-container">
         <img src="/assets/LOGO.png" alt="logo" />
         <span>Labh</span>
-    </div>
+    </a>
     <div class="search-bar-container">
         <div class="search-bar hide-icon">
             <input type="text" placeholder="Search" id="search" autocomplete="off"/>
@@ -71,8 +71,7 @@
 
         <div class="menu-bar">
             <ul>
-                <li><a href="/index.html">Home</a></li>
-                 <li><img src="/assets/dote.svg" alt="dote" /></li> <li><a href="/mutual-funds/">Mutual Funds</a></li> <li><img src="/assets/dote-active.svg" alt="dote-active" /></li> <li><a href="#" class="active">Other</a></li> 
+                 <li><a href="/mutual-funds/">Mutual Funds</a></li> <li><img src="/assets/dote-active.svg" alt="dote-active" /></li> <li><a href="#" class="active">Other</a></li> 
             </ul>
         </div>
 
@@ -135,7 +134,7 @@
 
 <div class="categories-fund-list">
     <div class="funds">
-        <h1>Listed Funds</h1>
+        <h1>Explore Mutual Funds</h1>
         <div class="funds-list" id="funds-list2"></div>
     </div>
 </div>
@@ -143,7 +142,7 @@
 <div class="pagination d-flex align-items-center justify-content-between">
     <div class="goto d-flex align-items-center justify-content-center">
         Go To:
-        <span class="d-flex align-items-center justify-content-center"
+        <span class="d-flex align-items-center justify-content-center items-per-page-span"
             >1 <img src="/assets/pagination-down-arrwo.svg" alt="down-arrow" />
         </span>
         <div class="d-none">
@@ -155,7 +154,7 @@
             class="items-per-page d-flex align-items-center justify-content-center"
         >
             Items per page:
-            <span class="d-flex align-items-center justify-content-center"
+            <span class="d-flex align-items-center justify-content-center items-per-page-span"
                 >10 <img src="/assets/pagination-down-arrwo.svg" alt="down-arrow" />
             </span>
             <div class="d-none">
@@ -460,7 +459,7 @@
     />
     <div
         class="download-app-footer"
-        style="flex: 1; justify-content: flex-end; gap: 20px"
+        style="flex: 1; justify-content: flex-start; gap: 20px"
         onclick="window.location.href = 'https://api.labh.io/get-app/'"
     >
         <div>

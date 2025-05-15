@@ -1,8 +1,11 @@
 @media (min-width: 0px) and (max-width: 744px) {
+    .nav-hr {
+        display: block;
+    }
     .mf-chart-container {
-
+        min-height: calculate-rem(270);
         .year-container {
-            margin-top: calculate-rem(25);
+            margin-top: calculate-rem(0);
             a {
                 width: calculate-rem(148);
                 height: calculate-rem(34);
@@ -11,7 +14,7 @@
             .years {
                 gap: calculate-rem(8);
                 span {
-                    width: calculate-rem(52);
+                    width: calculate-rem(58);
                     height: calculate-rem(26);
                     font-size: calculate-rem(14);
                 }
@@ -22,9 +25,11 @@
     .mf-details-container {
         flex-direction: column;
         font-size: calculate-rem(16);
+        font-weight: 500;
         gap: 0px;
 
-        .details-1, .details-2 {
+        .details-1,
+        .details-2 {
             width: 100%;
             border-radius: calculate-rem(16);
         }
@@ -67,9 +72,34 @@
             flex-direction: column;
         }
 
-        .year-selector {
+        .year-selector,
+        .year-list,
+        .year-list span {
             width: calculate-rem(94);
+        }
+
+        .year-selector {
             height: calculate-rem(34);
+        }
+
+        .year-list {
+            padding-top: calculate-rem(42);
+            padding-left: calculate-rem(5);
+            padding-right: calculate-rem(5);
+
+            span {
+                height: calculate-rem(26);
+                width: 100%;
+            }
+        }
+        .mf-cal-content {
+            flex-direction: inherit;
+            gap: calculate-rem(8);
+
+            div {
+                display: flex;
+                justify-content: space-between;
+            }
         }
     }
 
@@ -94,8 +124,6 @@
                 width: 10%;
             }
         }
-
-        
 
         .holding-percentage {
             width: 80%;
@@ -124,8 +152,8 @@
 
     .mf-details-container {
         flex-direction: column;
-        font-size: calculate-rem(16);
-
+        font-size: calculate-rem(20);
+        gap: 0px;
 
         .details-1 {
             margin-top: calculate-rem(34);
@@ -152,6 +180,12 @@
         .details-2 {
             margin-top: calculate-rem(24);
             width: 100%;
+        }
+
+        .detail {
+            div {
+                margin-bottom: calculate-rem(26);
+            }
         }
     }
 

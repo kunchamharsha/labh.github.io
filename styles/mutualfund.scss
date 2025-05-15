@@ -16,6 +16,11 @@
 
 .menu-bar {
     margin-bottom: calculate-rem(40);
+
+    a {
+        color: #FFFFFFCC;
+        font-weight: 500;
+    }
 }
 
 .contents {
@@ -205,14 +210,22 @@
     .year-list {
         position: absolute;
         top: 0;
-        padding-top: $year-selector-height;
+        padding-top: $year-selector-height + .5;
         display: flex;
         flex-direction: column;
         z-index: -1;
         background: #D1CEFF;
 
         span {
+            display: block;
             margin-bottom: calculate-rem(8);
+            width: calculate-rem(110);
+            height: calculate-rem(44);
+            border-radius: calculate-rem(24);
+        }
+
+        span:hover, .active {
+            background-color: #A663FF3D;
         }
     }
 
@@ -220,7 +233,7 @@
         width: 100%;
     }
     .mf-cal-content {
-        color: #111111cc;
+        color: rgba(17, 17, 17, 0.6);
 
         #total-investment {
             color: #111111e5;

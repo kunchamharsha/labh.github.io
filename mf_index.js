@@ -9,6 +9,8 @@ const domain = "https://devapi.labh.io";
 let fundHouses = [];
 let isViewMore = false;
 
+const windowWidth = $(window).width();
+
 function updateURLParameter(url, key, value) {
     var newURL = new URL(url);
     newURL.searchParams.set(key, value);
@@ -23,8 +25,18 @@ function getQueryParam(param) {
 function rerenderPagination(count) {
     $("#goto-ul").empty();
     for (let i = 1; i <= pages; i++) {
+        if (i == page) {
+            $("#goto-ul").append(
+                `<li class="active" data-value="${i}"><a href="/mutual-funds/${pageName}/?page=${i}&page_size=${pageSize}&name=${getQueryParam(
+                    "name"
+                )}">${i}</a></li>`
+            );
+            continue;
+        }
         $("#goto-ul").append(
-            `<li data-value="${i}"><a href="/mutual-funds/${pageName}/?page=${i}&page_size=${pageSize}">${i}</a></li>`
+            `<li data-value="${i}"><a href="/mutual-funds/${pageName}/?page=${i}&page_size=${pageSize}&name=${getQueryParam(
+                "name"
+            )}">${i}</a></li>`
         );
     }
 
@@ -35,6 +47,10 @@ function rerenderPagination(count) {
 
     $(".pages-left").text(`${currentCount} of ${count}`);
     $(".pages-left-mobile").text(`${currentCount} of ${count}`);
+    $("#items-per-page-ul li").removeClass("active");
+    $('#items-per-page-ul li[data-value="' + pageSize + '"]').addClass(
+        "active"
+    );
 }
 
 function processPagination(responseData) {
@@ -46,21 +62,26 @@ function processPagination(responseData) {
 
 function renderFundHouse() {
     let start = 0;
-    let end = 9;
+    let end = 10;
     if (isViewMore == true) {
         start = 0;
         end = fundHouses.length;
     }
+
     $(".scheme-list").empty();
-    console.log({start, end})
     fundHouses.slice(start, end).forEach((data) => {
         const queryString = new URLSearchParams({
             name: data.name,
         }).toString();
+        let name = data.name;
+        if (windowWidth < 768) {
+            console.log(true);
+            name = data.name.replace("Mutual Fund", "");
+        }
         $(".scheme-list").append(`
                 <a href="/mutual-funds/scheme/?${queryString}" class="scheme d-flex align-items-center">
                     <img src="${data.image_url}" alt="scheme-image" />
-                    <span>${data.name}</span>
+                    <span>${name}</span>
                 </div>
             `);
     });
@@ -144,10 +165,12 @@ $(document).ready(function () {
             `${domain}/api/mutual-funds/all/?name=other&page=${page}&page_size=${pageSize}`
         );
     } else if (path.includes("/scheme")) {
-        pageName = getQueryParam("name");
-        $("#scheme-name").text(pageName);
-        let keyword = pageName.split(" ")[0];
-        if (pageName == "Bank of India Mutual Fund") {
+        pageName = "scheme";
+        const name = getQueryParam("name");
+        $("#scheme-name").text(name);
+        $("#scheme-name-heading").text("Explore " + name + "s");
+        let keyword = name.split(" ")[0];
+        if (name == "Bank of India Mutual Fund") {
             keyword = "Bank of India";
         }
         renderer(
@@ -166,7 +189,7 @@ $(document).ready(function () {
                             />
                             <div class="card-heading">${data.name}</div>
                             <div class="card-description">
-                                ${data.description}
+                                ${data.short_description}
                             </div>
                         </a>
                     `);
@@ -175,17 +198,8 @@ $(document).ready(function () {
 
         $.get(`${domain}/api/mutual-funds/fund-houses/`, function (response) {
             fundHouses = response;
-            response.slice(0, 9).forEach((data) => {
-                const queryString = new URLSearchParams({
-                    name: data.name,
-                }).toString();
-                $(".scheme-list").append(`
-                        <a href="/mutual-funds/scheme/?${queryString}" class="scheme d-flex align-items-center">
-                            <img src="${data.image_url}" alt="scheme-image" />
-                            <span>${data.name}</span>
-                        </div>
-                    `);
-            });
+
+            renderFundHouse();
         });
     }
 
@@ -211,19 +225,28 @@ $(document).ready(function () {
     });
 
     $(".view-more").on("click", function () {
+        const windowWidth = $(window).width();
         if (isViewMore == true) {
-            $(this).text("Show More");
+            if (windowWidth < 768) {
+                $(this).html('<img src="/assets/arrow.svg" />');
+            } else {
+                $(this).html('Show More <img src="/assets/arrow.svg" />');
+            }
             isViewMore = false;
             renderFundHouse();
         } else {
-            $(this).text("Hide");
+            if (windowWidth < 768) {
+                $(this).html('<img src="/assets/arrow.svg" class="rotate" />');
+            } else {
+                $(this).html(
+                    'Hide <img src="/assets/arrow.svg" class="rotate" />'
+                );
+            }
             isViewMore = true;
             renderFundHouse();
         }
     });
 });
-
-
 
 $(window).on("load", function () {
     let debounceTimer;
@@ -270,4 +293,19 @@ $(window).on("load", function () {
             );
         }, 500);
     });
+
+    if (windowWidth < 768) {
+        $(".view-more").html('<img src="/assets/arrow.svg" />');
+    }
+});
+
+$(".search-bar").on("click", function (e) {
+    const rect = $(this)[0].getBoundingClientRect();
+    const x = e.clientX - rect.left;
+
+    if ((x > 390 && window.innerWidth > 1024) || true) {
+        $(".search-dropdown").addClass("display-none");
+        $(".search-bar").addClass("hide-icon");
+        $("#search").val("");
+    }
 });

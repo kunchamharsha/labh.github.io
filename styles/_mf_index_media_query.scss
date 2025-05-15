@@ -1,51 +1,69 @@
 @media (min-width: 0px) and (max-width: 744px) {
+    nav {
+        padding-top: calculate-rem(25);
+        padding-bottom: calculate-rem(25);
+    }
+    .nav-hr {
+        display: block;
+    }
     .main-container {
         margin-top: calculate-rem(14);
     }
     .contents {
         h1 {
-            font-size: calculate-rem(20);
+            font-size: calculate-rem(24);
             margin-bottom: calculate-rem(4);
         }
         p {
-            font-size: calculate-rem(12);
+            font-size: calculate-rem(16);
         }
     }
     .categories {
-        font-size: calculate-rem(12);
+        font-size: calculate-rem(16);
+        font-weight: 600;
         gap: calculate-rem(12);
-        margin: calculate-rem(24) 0;
+        margin: calculate-rem(40) 0;
         .category {
             max-width: calculate-rem(124);
             flex: 1 1 calculate-rem(124);
-            height: calculate-rem(32);
+            height: calculate-rem(45);
         }
 
         .active {
             img {
                 width: calculate-rem(18);
                 height: calculate-rem(18);
+                margin-left: calculate-rem(10);
             }
         }
 
         .solution-oriented {
-            max-width: calculate-rem(156);
+            min-width: calculate-rem(180);
         }
     }
 
     .cards {
         margin-bottom: calculate-rem(0);
+        gap: calculate-rem(14);
         .card-description {
             line-height: calculate-rem(20);
+        }
+        .card {
+            border-radius: calculate-rem(16);
+
+            .card-heading {
+                margin-bottom: calculate-rem(8);
+            }
         }
     }
 
     .funds {
         margin-top: calculate-rem(33);
+        font-weight: 500;
 
         h1 {
             font-size: calculate-rem(20);
-            margin-bottom: calculate-rem(25);
+            margin-bottom: calculate-rem(42);
         }
 
         .fund {
@@ -54,13 +72,17 @@
             .risk {
                 width: 100%;
                 font-size: calculate-rem(12);
+                font-weight: 500;
             }
         }
 
         .view-more {
-            font-size: calculate-rem(11);
-            width: calculate-rem(80);
-            height: calculate-rem(28);
+            width: calculate-rem(31);
+            height: calculate-rem(31);
+
+            img {
+                margin: auto;
+            }
         }
     }
 
@@ -78,6 +100,11 @@
                 width: calculate-rem(47);
             }
 
+            div {
+                top: calculate-rem(20);
+                padding-top: calculate-rem(10);
+            }
+
             img {
                 width: calculate-rem(14);
             }
@@ -90,20 +117,26 @@
                 justify-content: center;
                 align-items: center;
             }
+
+            .items-per-page-span {
+                border-radius: calculate-rem(10);
+                height: calculate-rem(26);
+            }
         }
     }
 
     .scheme-list {
-        gap: calculate-rem(1);
+        gap: calculate-rem(24);
         .scheme {
-            flex: 1 1 calculate-rem(262);
-            font-size: calculate-rem(12);
-            height: calculate-rem(40);
-            gap: calculate-rem(5);
+            flex: 1 1 calculate-rem(160);
+            font-size: calculate-rem(14);
+            height: calculate-rem(52);
+            gap: calculate-rem(12);
 
             img {
-                width: calculate-rem(34);
-                height: calculate-rem(34);
+                width: calculate-rem(52);
+                height: calculate-rem(52);
+                border-radius: calculate-rem(8);
             }
         }
     }
@@ -141,17 +174,19 @@
             height: calculate-rem(50);
         }
         .solution-oriented {
-            max-width: calculate-rem(214);
+            min-width: calculate-rem(214);
         }
     }
 
     .cards {
         margin-top: calculate-rem(32);
+        grid-template-columns: repeat(auto-fit, minmax(calculate-rem(330), 1fr));
     }
 
     .card {
         .card-heading {
             font-size: calculate-rem(20);
+            font-weight: 500;
         }
         .card-description {
             font-size: calculate-rem(16);
@@ -161,25 +196,36 @@
 
     .funds {
         margin-top: calculate-rem(32);
+
+        .funds-list {
+            gap: calculate-rem(30);
+        }
+
         h1 {
             font-size: calculate-rem(28);
             margin-bottom: calculate-rem(40);
         }
 
         .fund {
-            font-size: calculate-rem(20);
+            font-size: calculate-rem(16);
+            max-width: calculate-rem(320);
+            flex: 1 1 calculate-rem(350);
 
             .risk {
-                font-size: calculate-rem(16);
+                font-size: calculate-rem(12);
                 width: calculate-rem(143);
                 height: calulate-rem(34);
+                font-weight: 500;
             }
         }
     }
 
     .scheme-list {
+        gap: calculate-rem(16);
+
         .scheme {
-            flex: 1 1 calculate-rem(262);
+            max-width: calculate-rem(350);
+            flex: 1 1 calculate-rem(350);
             font-size: calculate-rem(18);
 
             img {
