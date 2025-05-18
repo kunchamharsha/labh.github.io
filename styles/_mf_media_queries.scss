@@ -2,6 +2,18 @@
     .nav-hr {
         display: block;
     }
+
+    #mutual-funds-link {
+        display: none;
+    }
+
+    #mutual-funds-link-mobile {
+        display: block;
+
+        img {
+            width: calculate-rem(12);
+        }
+    }
     .mf-chart-container {
         min-height: calculate-rem(270);
         .year-container {

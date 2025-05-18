@@ -14,11 +14,15 @@
     }
 }
 
+#mutual-funds-link-mobile {
+    display: none;
+}
+
 .menu-bar {
     margin-bottom: calculate-rem(40);
 
     a {
-        color: #FFFFFFCC;
+        color: #ffffffcc;
         font-weight: 500;
     }
 }
@@ -210,11 +214,11 @@
     .year-list {
         position: absolute;
         top: 0;
-        padding-top: $year-selector-height + .5;
+        padding-top: $year-selector-height + 0.5;
         display: flex;
         flex-direction: column;
         z-index: -1;
-        background: #D1CEFF;
+        background: #d1ceff;
 
         span {
             display: block;
@@ -224,8 +228,9 @@
             border-radius: calculate-rem(24);
         }
 
-        span:hover, .active {
-            background-color: #A663FF3D;
+        span:hover,
+        .active {
+            background-color: #a663ff3d;
         }
     }
 

@@ -6,6 +6,15 @@
     .nav-hr {
         display: block;
     }
+
+    #mutual-funds-link {
+        display: none;
+    }
+
+    #mutual-funds-link-mobile {
+        display: block;
+    }
+    
     .main-container {
         margin-top: calculate-rem(14);
     }
@@ -180,7 +189,10 @@
 
     .cards {
         margin-top: calculate-rem(32);
-        grid-template-columns: repeat(auto-fit, minmax(calculate-rem(330), 1fr));
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(calculate-rem(330), 1fr)
+        );
     }
 
     .card {

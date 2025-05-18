@@ -5,6 +5,10 @@
   text-overflow: ellipsis;
 }
 
+#mutual-funds-link-mobile {
+  display: none;
+}
+
 .menu-bar {
   margin-bottom: 2.5rem;
 }
@@ -166,7 +170,7 @@
   display: flex;
   flex-direction: column;
   z-index: -1;
-  background: #D1CEFF;
+  background: #d1ceff;
 }
 .mf-details-container .year-list span {
   display: block;
@@ -175,7 +179,8 @@
   height: 2.75rem;
   border-radius: 1.5rem;
 }
-.mf-details-container .year-list span:hover, .mf-details-container .year-list .active {
+.mf-details-container .year-list span:hover,
+.mf-details-container .year-list .active {
   background-color: rgba(166, 99, 255, 0.2392156863);
 }
 .mf-details-container .cal-content {
@@ -235,6 +240,15 @@
 @media (min-width: 0px) and (max-width: 744px) {
   .nav-hr {
     display: block;
+  }
+  #mutual-funds-link {
+    display: none;
+  }
+  #mutual-funds-link-mobile {
+    display: block;
+  }
+  #mutual-funds-link-mobile img {
+    width: 0.75rem;
   }
   .mf-chart-container {
     min-height: 16.875rem;

@@ -10,6 +10,10 @@
   border-radius: 2rem;
 }
 
+#mutual-funds-link-mobile {
+  display: none;
+}
+
 .main-container {
   margin-top: 2.5rem;
 }
@@ -270,6 +274,12 @@
     padding-bottom: 1.5625rem;
   }
   .nav-hr {
+    display: block;
+  }
+  #mutual-funds-link {
+    display: none;
+  }
+  #mutual-funds-link-mobile {
     display: block;
   }
   .main-container {
