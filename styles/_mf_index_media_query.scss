@@ -13,6 +13,10 @@
 
     #mutual-funds-link-mobile {
         display: block;
+
+        img {
+            width: calculate-rem(12);
+        }
     }
     
     .main-container {

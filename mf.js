@@ -183,7 +183,7 @@ $.get(
     function (responseData) {
         data = responseData;
         renderChart(responseData, 1);
-        $("#fund-name, #fund-name-heading").text(
+        $("#fund-name-heading").text(
             toTitleCase(responseData.scheme_name)
         );
         $("#min-price").text(`₹ ${responseData.min_investment_value}`);
