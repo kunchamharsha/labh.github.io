@@ -1,6 +1,8 @@
 @import "equations";
 
 .search-bar-container {
+    justify-content: flex-end;
+    
     .search-dropdown {
         span {
             width: 100%;
@@ -15,7 +17,12 @@
             border-radius: calculate-rem(32);
         }
     }
+
+    .search-bar {
+        display: none;
+    }
 }
+
 
 
 #mutual-funds-link-mobile {

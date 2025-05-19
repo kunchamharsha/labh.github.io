@@ -1,3 +1,6 @@
+.search-bar-container {
+  justify-content: flex-end;
+}
 .search-bar-container .search-dropdown span {
   width: 100%;
   overflow: hidden;
@@ -8,6 +11,9 @@
   cursor: pointer;
   background-color: rgba(206, 203, 255, 0.2);
   border-radius: 2rem;
+}
+.search-bar-container .search-bar {
+  display: none;
 }
 
 #mutual-funds-link-mobile {

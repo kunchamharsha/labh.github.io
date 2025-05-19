@@ -1,8 +1,14 @@
+.search-bar-container {
+  justify-content: flex-end;
+}
 .search-bar-container .search-dropdown span {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.search-bar-container .search-bar {
+  display: none;
 }
 
 #mutual-funds-link-mobile {

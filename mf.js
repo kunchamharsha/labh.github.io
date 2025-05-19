@@ -438,7 +438,7 @@ $(window).on("load", function () {
 
         debounceTimer = setTimeout(function () {
             $.get(
-                `https://devapi.labh.io/api/mutual-funds/all/?name=${name}`,
+                `https://api.labh.io/api/mutual-funds/all/?name=${name}`,
                 function (responseData) {
                     if (responseData.count == 0) {
                         $(".search-dropdown").empty();

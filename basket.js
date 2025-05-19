@@ -1,4 +1,4 @@
-const domain = "https://devapi.labh.io";
+const domain = "https://api.labh.io";
 
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
