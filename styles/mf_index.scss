@@ -1,7 +1,6 @@
 @import "equations";
 
 .search-bar-container {
-    justify-content: flex-end;
     
     .search-dropdown {
         span {
@@ -18,9 +17,6 @@
         }
     }
 
-    .search-bar {
-        display: none;
-    }
 }
 
 

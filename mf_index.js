@@ -4,7 +4,7 @@ let pageSize = 10;
 
 let pageName = null;
 
-const domain = "https://api.labh.io";
+const domain = "https://devapi.labh.io";
 
 let fundHouses = [];
 let isViewMore = false;
@@ -138,31 +138,31 @@ $(document).ready(function () {
         $(".category:contains('Equity')").addClass("active");
         pageName = "equity";
         renderer(
-            `${domain}/api/mutual-funds/all/?name=equity&page=${page}&page_size=${pageSize}`
+            `${domain}/search/mutual-funds/?scheme_name=equity&page=${page}&page_size=${pageSize}`
         );
     } else if (path.includes("/debt")) {
         $(".category:contains('Debt')").addClass("active");
         pageName = "debt";
         renderer(
-            `${domain}/api/mutual-funds/all/?name=debt&page=${page}&page_size=${pageSize}`
+            `${domain}/search/mutual-funds/?scheme_name=debt&page=${page}&page_size=${pageSize}`
         );
     } else if (path.includes("/hybrid")) {
         $(".category:contains('Hybrid')").addClass("active");
         pageName = "hybrid";
         renderer(
-            `${domain}/api/mutual-funds/all/?name=hybrid&page=${page}&page_size=${pageSize}`
+            `${domain}/search/mutual-funds/?scheme_name=hybrid&page=${page}&page_size=${pageSize}`
         );
     } else if (path.includes("/solution")) {
         $(".category:contains('Solution')").addClass("active");
         pageName = "solution";
         renderer(
-            `${domain}/api/mutual-funds/all/?name=solution&page=${page}&page_size=${pageSize}`
+            `${domain}/search/mutual-funds/?scheme_name=solution&page=${page}&page_size=${pageSize}`
         );
     } else if (path.includes("/other")) {
         $(".category:contains('Other')").addClass("active");
         pageName = "other";
         renderer(
-            `${domain}/api/mutual-funds/all/?name=other&page=${page}&page_size=${pageSize}`
+            `${domain}/search/mutual-funds/?scheme_name=other&page=${page}&page_size=${pageSize}`
         );
     } else if (path.includes("/scheme")) {
         pageName = "scheme";
@@ -174,7 +174,7 @@ $(document).ready(function () {
             keyword = "Bank of India";
         }
         renderer(
-            `${domain}/api/mutual-funds/all/?name=${keyword}&page=${page}&page_size=${pageSize}`
+            `${domain}/search/mutual-funds/?scheme_name=${keyword}&page=${page}&page_size=${pageSize}`
         );
     } else {
         $.get(`${domain}/api/basket/`, function (responseData) {
@@ -265,7 +265,7 @@ $(window).on("load", function () {
 
         debounceTimer = setTimeout(function () {
             $.get(
-                `https://api.labh.io/api/mutual-funds/all/?name=${name}`,
+                `${domain}/search/mutual-funds/?scheme_name=${name}&page=1&page_size=10`,
                 function (responseData) {
                     if (responseData.count == 0) {
                         $(".search-dropdown").empty();

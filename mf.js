@@ -1,3 +1,5 @@
+const domain = "https://devapi.labh.io";
+
 function setMetaTag(attrName, attrValue, content) {
     let tag = document.querySelector(`meta[${attrName}="${attrValue}"]`);
     if (!tag) {
@@ -179,7 +181,7 @@ var sip = true;
 var year = 1;
 
 $.get(
-    `https://api.labh.io/api/mutual-funds/all/${fundId}/`,
+    `${domain}/api/mutual-funds/all/${fundId}/`,
     function (responseData) {
         data = responseData;
         renderChart(responseData, 1);
@@ -438,7 +440,7 @@ $(window).on("load", function () {
 
         debounceTimer = setTimeout(function () {
             $.get(
-                `https://api.labh.io/api/mutual-funds/all/?name=${name}`,
+                `${domain}/search/mutual-funds/?scheme_name=${name}&page=1&page_size=10`,
                 function (responseData) {
                     if (responseData.count == 0) {
                         $(".search-dropdown").empty();
