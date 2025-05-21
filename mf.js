@@ -295,13 +295,15 @@ $.get(`${domain}/api/mutual-funds/all/${fundId}/`, function (responseData) {
         "twitter:description",
         `Get the latest data on ${data.scheme_name} including NAV (${data.cagr["1_year"]}), 1-year return (${data.cagr["1_year"]}), and category insights. Compare performance and analyze fund history.`
     );
-}).done(function () {
-    onload();
-}).fail(function (response) {
-    if (response.status == 404) {
-        window.location.href = "/404";
-    }
-});
+})
+    .done(function () {
+        onload();
+    })
+    .fail(function (response) {
+        if (response.status == 404) {
+            window.location.href = "/404";
+        }
+    });
 
 function calculateLumpSumReturn(principal, rate, years) {
     const finalAmount = principal * Math.pow(1 + rate / 100, years);
@@ -331,7 +333,12 @@ function updateSliderBackground(slider) {
 
 function updateValues() {
     const principal = parseInt($("#investment-slider").val());
-    const annualRate = parseFloat(data.cagr["1_year"]);
+    var annualRate = parseFloat(data.cagr["1_year"]);
+    if (year == 3) {
+        annualRate = parseFloat(data.cagr["3_years"]);
+    } else if (year == 5) {
+        annualRate = parseFloat(data.cagr["5_years"]);
+    }
     var totalInvestment = 0;
     var totalReturns = 0;
 
