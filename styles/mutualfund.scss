@@ -4,6 +4,8 @@
 }
 
 .search-bar-container {
+    justify-content: flex-end;
+
     .search-dropdown {
         span {
             width: 100%;
@@ -11,6 +13,10 @@
             white-space: nowrap;
             text-overflow: ellipsis;
         }
+    }
+
+    .search-bar {
+        display: none;
     }
 
 }
