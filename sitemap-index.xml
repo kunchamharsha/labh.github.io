@@ -5,11 +5,27 @@
         <lastmod>2025-05-20</lastmod>
     </sitemap>
     <sitemap>
-        <loc>https://labh.io/pin-sitemap.xml</loc>
+        <loc>https://labh.io/pin-sitemap-1.xml</loc>
         <lastmod>2025-05-20</lastmod>
     </sitemap>
     <sitemap>
-        <loc>https://labh.io/pin-sitemap-small.xml</loc>
+        <loc>https://labh.io/pin-sitemap-2.xml</loc>
+        <lastmod>2025-05-20</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://labh.io/pin-sitemap-3.xml</loc>
+        <lastmod>2025-05-20</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://labh.io/pin-sitemap-4.xml</loc>
+        <lastmod>2025-05-20</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://labh.io/pin-sitemap-5.xml</loc>
+        <lastmod>2025-05-20</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://labh.io/pin-sitemap-6.xml</loc>
         <lastmod>2025-05-20</lastmod>
     </sitemap>
 </sitemapindex>
