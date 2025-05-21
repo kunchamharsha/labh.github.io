@@ -1,3 +1,7 @@
+#baskets {
+  display: none;
+}
+
 .search-bar-container {
   justify-content: flex-end;
 }

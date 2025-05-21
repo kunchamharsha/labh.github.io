@@ -309,3 +309,9 @@ $(".search-bar").on("click", function (e) {
         $("#search").val("");
     }
 });
+
+$(document).on("click", function (event) {
+    if (!$(event.target).closest(".goto, .items-per-page").length) {
+        $(".goto, .items-per-page").find("div").addClass("d-none");
+    }
+});
