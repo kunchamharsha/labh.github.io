@@ -7,6 +7,7 @@ Sitemap: https://labh.io/sitemaps/pin-sitemap-2.xml
 Sitemap: https://labh.io/sitemaps/pin-sitemap-3.xml
 Sitemap: https://labh.io/sitemaps/pin-sitemap-4.xml
 Sitemap: https://labh.io/sitemaps/pin-sitemap-5.xml
+Sitemap: https://labh.io/sitemaps/pin-sitemap-6.xml
 Sitemap: https://labh.io/sitemaps/pin-sitemap-7.xml
 Sitemap: https://labh.io/sitemaps/pin-sitemap-8.xml
 Sitemap: https://labh.io/sitemaps/pin-sitemap-9.xml
