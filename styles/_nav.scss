@@ -20,6 +20,9 @@ nav {
     width: 11.625rem;
     aspect-ratio: 31 / 12;
     align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
 
     img {
         width: 4.5rem;
@@ -67,7 +70,7 @@ nav {
         left: 0px;
         padding-top: calc($search-bar-height / 2 + 14px);
         padding-left: calculate-rem(15);
-        padding-right: calucate-rem(15);
+        padding-right: calculate-rem(15);
         border-radius: calculate-rem(32);
         border-top-left-radius: 0;
         border-top-right-radius: 0;

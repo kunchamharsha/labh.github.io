@@ -1,0 +1,307 @@
+@use "sass:math";
+@function calculate-rem($size) {
+    @return calc($size / 16) * 1rem;
+}
+
+.search-bar-container {
+    justify-content: flex-end;
+
+    .search-dropdown {
+        span {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+}
+
+#mutual-funds-link-mobile {
+    display: none;
+}
+
+.menu-bar {
+    margin-bottom: calculate-rem(40);
+
+    a {
+        color: #ffffffcc;
+        font-weight: 500;
+    }
+}
+
+.contents {
+    h1 {
+        margin-bottom: calculate-rem(20);
+    }
+}
+
+.mf-chart-container {
+    min-height: calculate-rem(509);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    #chart {
+        width: 100%;
+    }
+
+    .year-container {
+        margin-top: calculate-rem(100);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .years {
+            display: flex;
+            gap: calculate-rem(24);
+
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: calculate-rem(128);
+                height: calculate-rem(48);
+                background-color: #cecbff33;
+                font-size: calculate-rem(24);
+                border-radius: calculate-rem(50);
+            }
+
+            .active {
+                background-color: #a663ff;
+                color: white;
+            }
+        }
+
+        a {
+            width: calculate-rem(375);
+            height: calculate-rem(66);
+            text-decoration: none;
+            display: flex;
+            font-size: calculate-rem(24);
+            font-weight: 700;
+            color: black;
+            justify-content: center;
+            align-items: center;
+            border-radius: calculate-rem(40);
+            background: linear-gradient(
+                96.7deg,
+                #7c7a99 2.6%,
+                #cecbff 52.91%,
+                #7c7a99 110.75%,
+                #cecbff 186.22%
+            );
+        }
+    }
+}
+
+.mf-details-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: calculate-rem(20);
+    color: black;
+    gap: calculate-rem(40);
+
+    .details-1,
+    .details-2 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        border-radius: calculate-rem(40);
+        margin-top: calculate-rem(86);
+    }
+
+    .details-1 {
+        width: calculate-rem(424);
+        padding: calculate-rem(40) calculate-rem(60);
+        background: #cecbff33;
+        color: white;
+
+        .custom-margin {
+            margin-bottom: calculate-rem(40);
+        }
+    }
+
+    .details-2 {
+        width: 72%;
+        padding: calculate-rem(27) calculate-rem(31);
+        background: linear-gradient(
+            148.3deg,
+            #e5d4fe 4.55%,
+            #ffffff 52.27%,
+            #e8dff4 95.45%
+        );
+    }
+
+    .detail {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        div {
+            margin-bottom: calculate-rem(40);
+        }
+
+        .title {
+            color: #f5f5f599;
+        }
+    }
+
+    .detail:last-of-type {
+        div {
+            margin-bottom: 0;
+        }
+    }
+
+    .toggler {
+        width: calculate-rem(307);
+        height: calculate-rem(52);
+        background-color: white;
+        border-radius: calculate-rem(20);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: calculate-rem(2);
+        margin-bottom: calculate-rem(51);
+
+        span {
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sip-span {
+            border-radius: calculate-rem(20);
+            width: calculate-rem(156);
+            height: calculate-rem(48);
+            padding-left: calculate-rem(10);
+            padding-right: calculate-rem(10);
+        }
+
+        .lumpsum-span {
+            width: calculate-rem(127);
+            height: calculate-rem(48);
+            border-radius: calculate-rem(20);
+        }
+
+        .active {
+            background-color: #a663ff;
+            color: white;
+        }
+    }
+
+    $year-selector-height: calculate-rem(44);
+    $year-list-top-offset: math.div($year-selector-height, 2);
+    .year-selector-wrapper {
+        position: relative;
+        z-index: 2;
+    }
+    .year-selector,
+    .year-list {
+        width: calculate-rem(119);
+        background: #cecbff99;
+        border-radius: calculate-rem(24);
+    }
+
+    .year-selector {
+        height: $year-selector-height;
+        gap: calculate-rem(16);
+        z-index: 1;
+        border: 1px solid #a663ff;
+    }
+
+    .year-list {
+        position: absolute;
+        top: 0;
+        padding-top: $year-selector-height + 0.5;
+        display: flex;
+        flex-direction: column;
+        z-index: -1;
+        background: #d1ceff;
+
+        span {
+            display: block;
+            margin-bottom: calculate-rem(8);
+            width: calculate-rem(110);
+            height: calculate-rem(44);
+            border-radius: calculate-rem(24);
+        }
+
+        span:hover,
+        .active {
+            background-color: #a663ff3d;
+        }
+    }
+
+    .cal-content {
+        width: 100%;
+    }
+    .mf-cal-content {
+        color: rgba(17, 17, 17, 0.6);
+
+        #total-investment {
+            color: #111111e5;
+        }
+
+        #total-returns {
+            color: #a663ff;
+        }
+    }
+}
+
+.top-holdings {
+    margin-top: calculate-rem(80);
+    h1 {
+        font-size: calculate-rem(32);
+        margin-bottom: calculate-rem(60);
+    }
+
+    .top-holdings-list {
+        display: flex;
+        gap: calculate-rem(10);
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .top-holding {
+        width: calculate-rem(567);
+        flex: 1 1 calculate-rem(567);
+        margin-right: calculate-rem(50);
+    }
+
+    .percentage-container {
+        gap: calculate-rem(10);
+        margin-top: calculate-rem(4);
+        margin-bottom: calculate-rem(36);
+    }
+
+    .holding-percentage,
+    .percentage-bar {
+        height: calculate-rem(16);
+        border-radius: calculate-rem(2);
+    }
+
+    .holding-percentage {
+        width: 100%;
+        background-color: #ffffff33;
+    }
+
+    .percentage-bar {
+        width: 30%;
+        background-color: #cecbff;
+    }
+}
+
+.sector {
+    margin-top: calculate-rem(40);
+}
+
+@import "_mf_media_queries";

@@ -84,7 +84,7 @@ searchBar.addEventListener("input", function () {
 
         const addedOffices = new Set();
 
-        fetch(`https://api.postalpincode.in/postoffice/${query}`)
+        fetch(`https://api.labh.io/post-office/${query}`)
             .then(res => res.json())
             .then(data => {
                 if (data[0].Status === "Success") {

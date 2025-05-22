@@ -54,10 +54,10 @@
     </head>
     <body>
         <nav>
-    <div class="logo-container">
+    <a href="/" class="logo-container">
         <img src="/assets/LOGO.png" alt="logo" />
         <span>Labh</span>
-    </div>
+    </a>
     <div class="search-bar-container">
         <div class="search-bar hide-icon">
             <input type="text" placeholder="Search" id="search" autocomplete="off"/>
@@ -88,7 +88,12 @@
         <img src="/assets/card-edge-image.svg" alt="edge-image" />
 
         <div class="toggler">
-            <span class="sip-span" id="sip-span" onclick="window.location.href='/calculator/sip-calculator/'">SIP</span>
+            <span
+                class="sip-span"
+                id="sip-span"
+                onclick="window.location.href='/calculator/sip-calculator/'"
+                >SIP</span
+            >
             <span class="lumpsum-span active" id="lumpsum-span">Lumpsum</span>
         </div>
         <div class="calculator-card-contents">
@@ -351,27 +356,16 @@
             )`;
     }
     function updateValues() {
-        const sipPerMonth = $("#lumpsum-investment-slider").val();
+        let investedAmount = $("#lumpsum-investment-slider").val();
         const years = $("#year-slider").val();
-        let investedAmount = sipPerMonth * (years * 12);
         let returns = 0;
         let totalReturns = 0;
-        if (sip == 1) {
-            totalReturns = calculateSIP(
-                sipPerMonth,
-                $("#return-slider").val(),
-                years
-            );
-            returns = totalReturns - investedAmount;
-        } else {
-            investedAmount = $("#lumpsum-investment-slider").val();
-            totalReturns = calculateLumpSum(
-                investedAmount,
-                $("#return-slider").val(),
-                years
-            );
-            returns = totalReturns - investedAmount;
-        }
+        totalReturns = calculateLumpSum(
+            investedAmount,
+            $("#return-slider").val(),
+            years
+        );
+        returns = totalReturns - investedAmount;
         $("#invested-amt").text(`Rs.${investedAmount.toLocaleString("en-IN")}`);
         $("#est-returns").text(
             `Rs.${returns.toLocaleString("en-IN", {
@@ -405,7 +399,6 @@
             sip = 0;
             updateValues();
         });
-
 
         function updateSliderBackground(slider) {
             if (
@@ -504,7 +497,7 @@
 
             <div class="desktop-footer">
                 <div class="footer-links">
-                    <div class="footer-links-section">
+                    <div class="footer-links-section company">
                         <h4>Company</h4>
                         <ul>
                             <li>
@@ -636,6 +629,48 @@
                             </li>
                         </ul>
                     </div>
+
+                    <div class="footer-links-section">
+                        <h4>Mutual Funds</h4>
+                        <ul>
+                            <li>
+                                <a
+                                    href="/mutual-funds/"
+                                    >All funds</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/mutual-funds/debt/"
+                                    >Debt funds</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/mutual-funds/equity/"
+                                    >Equity funds</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/mutual-funds/hybrid/"
+                                    >Hybird funds</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/mutual-funds/solution/"
+                                    >Solution Oriented funds</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/mutual-funds/other/"
+                                    >Other funds</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="footer-methodologies">
                     <div>
@@ -733,7 +768,7 @@
     />
     <div
         class="download-app-footer"
-        style="flex: 1; justify-content: flex-end; gap: 20px"
+        style="flex: 1; justify-content: flex-start; gap: 20px"
         onclick="window.location.href = 'https://api.labh.io/get-app/'"
     >
         <div>

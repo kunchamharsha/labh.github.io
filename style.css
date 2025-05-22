@@ -282,7 +282,8 @@ body {
 .footer-links {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 10rem;
 }
 
 .footer-links a {
