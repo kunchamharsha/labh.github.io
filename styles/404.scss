@@ -1,0 +1,31 @@
+@import "equations";
+
+hr {
+    display: none;
+}
+
+.container-404 {
+    height: 85vh;
+    background: black;
+
+    h1 {
+        font-size: calculate-rem(320);
+        background: linear-gradient(144.83deg, #cecbff 17.03%, #7c7a99 82.97%);
+        width: fit-content;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    p {
+        font-size: calculate-rem(60);
+        background: linear-gradient(144.83deg, rgba(206, 203, 255, 0.8) 17.03%, rgba(124, 122, 153, 0.8) 82.97%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    a {
+        color: #A663FF;
+        font-size: calculate-rem(32);
+        text-decoration: none;
+    }
+}

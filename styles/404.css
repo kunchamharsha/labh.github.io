@@ -1,0 +1,26 @@
+hr {
+  display: none;
+}
+
+.container-404 {
+  height: 85vh;
+  background: black;
+}
+.container-404 h1 {
+  font-size: 20rem;
+  background: linear-gradient(144.83deg, #cecbff 17.03%, #7c7a99 82.97%);
+  width: fit-content;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.container-404 p {
+  font-size: 3.75rem;
+  background: linear-gradient(144.83deg, rgba(206, 203, 255, 0.8) 17.03%, rgba(124, 122, 153, 0.8) 82.97%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.container-404 a {
+  color: #A663FF;
+  font-size: 2rem;
+  text-decoration: none;
+}/*# sourceMappingURL=404.css.map */
