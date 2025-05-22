@@ -8,9 +8,7 @@
         />
 
         <!-- Optimized Meta Description -->
-         <meta name="description" content="Use our retirement calculator to estimate how much you need to save for a secure retirement. Get insights on monthly savings and investment goals."> <meta name="keywords" content="retirement calculator, retirement planning calculator, pension calculator, future savings calculator, retirement corpus calculator">
-<!-- Open Graph / Facebook --> <meta property="og:type" content="website"> <meta property="og:url" content="https://labh.io/calculator/retirement-calculator"> <meta property="og:title" content="Retirement Calculator – Plan Your Financial Future Smartly"> <meta property="og:description" content="Use our retirement calculator to estimate how much you need to save for a secure retirement. Get insights on monthly savings and investment goals.">
-<!-- Twitter --> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:url" content="https://labh.io/calculator/retirement-calculator"> <meta name="twitter:title" content="Retirement Calculator – Plan Your Financial Future Smartly"> <meta name="twitter:description" content="Use our retirement calculator to estimate how much you need to save for a secure retirement. Get insights on monthly savings and investment goals."> 
+        
         <meta property="og:image" content="/assets/logo.svg">
         <meta
             name="google-site-verification"
@@ -50,15 +48,22 @@
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
         ></script>
 
-        <title>Retirement Calculator – Plan Your Financial Future Smartly</title>
+        <title>Public Provident Fund (PPF) – Long-term tax-saving investment with a 15-year lock-in and interest compounded annually.</title>
     </head>
     <body>
-        <nav>
+        <link rel="stylesheet" href="/styles/blog.css" />
+
+
+
+<nav>
     <div class="logo-container">
         <img src="/assets/LOGO.png" alt="logo" />
         <span>Labh</span>
     </div>
     <div class="search-bar-container">
+        <div class="search-bar1">
+            <img src="/assets/search-icon.svg">
+        </div>
         <div class="search-bar hide-icon">
             <input type="text" placeholder="Search" id="search" autocomplete="off"/>
         </div>
@@ -73,397 +78,235 @@
             <ul>
                 <li><a href="/index.html">Home</a></li>
                 <li><img src="/assets/dote.svg" alt="dote" /></li>
-                 <li><a href="/calculator/">Calculator</a></li> <li><img src="/assets/dote-active.svg" alt="dote-active"></li> <li><a href="#" class="active">Retierment Calculator</a></li> 
+                 <div class="breadcrumb-mobile"> <div class="back-wrapper"> <img src="/assets/Back.svg" alt="back icon" class="back-icon" /> <button class="back-link" onclick="handleBack()">Back</button> </div> </div> <li><a href="/savings-schemes/">Savings-schemes</a></li> <li><img src="/assets/dote-active.svg" alt="dote-active"></li> <li><a href="#" class="active">What is PPF?</a></li> 
             </ul>
+            <button class="share-btn"  onclick="sharePage()">
+                Share
+                <img src="/assets/share.svg" alt="Share" class="share-icon" />
+            </button>
         </div>
 
-        
-<div class="main-container">
-    <div class="contents">
-        <h1>Retirement calculator</h1>
+        <div class="main-container">
+    <div class="contents1">
+        <div class="blog-inner-container">
+          <h3 class="blogh3">PPF: A Smart Savings Companion</h3>
+          <p>If you're someone who believes in saving bit by bit to build a secure future, the Public Provident Fund (PPF) is a reliable option worth knowing. Whether you’re new to saving or looking to build a financial base for your family, the Public Provident Fund (PPF) could be your best financial friend. Let’s walk through everything you need to know.</p>
+          <br>
+          <h3 class="blogh3">What is PPF? </h3>
         <p>
-            Estimate the corpus you'll need post-retirement based on your
-            current income, expected returns, and inflation
+          The <b>Public Provident Fund</b> is a government-backed savings scheme designed to encourage long-term investment habits. It is open to all Indian citizens and offers <b>guaranteed, tax-free returns</b> over a fixed tenure of 15 years, extendable in blocks of 5 years.        </p>
+        <h3 class="blogh3">Key Features of PPF: </h3>
+        <p><b>Stable Interest Rate (Currently 7.1%) :</b> The government decides the PPF interest rate every three months. Right now, it’s 7.1% per year. This rate doesn’t depend on the stock market, so your money grows safely.        </p>
+        <p><b>Invest From ₹500 to ₹1.5 Lakh a Year :</b> Your money stays locked for 15 years. After that, you can withdraw it or extend the account in 5-year blocks. Great for long-term goals like retirement or kids' education.</p>
+        <p><b>15-Year Lock-In (Can Be Extended) :</b>₹1.5 lakh per year</p>
+        <p><b>Save Tax in Three Ways :</b> You save tax when you invest (Section 80C), when you earn interest, and even when you withdraw the full amount. Everything is tax-free!</p>
+        <p><b>Your Money Grows Every Year :</b>The interest you earn gets added to your account and earns more interest the next year. This "compounding" helps your savings grow faster over time.        </p>
+          <br>
+          <div class="side-image1" onclick="window.location.href='https:play.google.com/store/apps/details?id=com.labh.io&pcampaignid=web_share'">
+            <img src="/assets/for-mobile.svg" alt="Invest Now" />
+        </div>
+        <br>
+        <br>
+
+        <h3 class="blogh3">Is It Safe? </h3>
+        <p>
+          Absolutely. Since it is backed by the Government of India, PPF carries zero credit risk. Unlike stocks or mutual funds, your principal and interest are completely secure.
         </p>
-    </div>
-    <div class="calculator-card">
-        <img src="/assets/card-edge-image.svg" alt="edge-image" />
-        <img src="/assets/card-edge-image.svg" alt="edge-image" />
-        <div class="calculator-card-contents">
-            <div>
-                <div class="cal-content">
-                    <label>How old are you?</label>
-                    <span id="age-slider-value">25</span>
-                </div>
-                <input
-                    type="range"
-                    id="age-slider"
-                    min="18"
-                    max="59"
-                    step="1"
-                    value="25"
-                />
+        <br>
+        <h3 class="blogh3">Why Choose PPF?</h3>
+          <p>PPF is ideal for anyone who wants:</p>
+          <li>A disciplined long-term savings habit</li>
+          <li>Guaranteed returns without any risk</li>
+          <li>Tax deductions and tax-free interest </li>
+          <p>It is especially helpful for goal-based saving like children's education or retirement planning.</p>
+          <br>
+        <h3 class="blogh3">Eligibility Criteria to open a PPF account:</h3>
+         <li>You must be an Indian citizen</li>
+         <li>You should be 18 years or older</li>
+         <li>Minors can have a PPF account under guardian supervision</li>
+         <li>NRIs and HUFs (Hindu Undivided Families) are not eligible</li>
 
-                <div class="cal-content">
-                    <label>Spendings(Monthly)</label>
-                    <span id="spend-slider-value">25000</span>
-                </div>
-                <input
-                    type="range"
-                    id="spend-slider"
-                    min="10000"
-                    max="100000"
-                    step="500"
-                    value="25000"
-                />
+         <br>
+        <h3 class="blogh3">Pre-requisites:</h3>
+        <p>
+          Documents and information needed:</p>
+          <li>Aadhaar and PAN card</li>
+          <li>Recent passport-sized photo</li>
+          <li>Bank account details (for online PPF)</li>
+          <li>Initial deposit (minimum ₹500)</li>
+          <br>
 
-                <div class="cal-content custom-margin-want-to-retire">
-                    <label>How you want to retire?</label>
-                </div>
+        <h3 class="blogh3">Step-by-Step Process to Open a PPF Account:</h3>
+        <p>
+          <b>Online Method (via Netbanking):</b></p>
+          <ol>
+            <li>Log in to your bank's internet banking portal.</li>
+            <li>Navigate to 'Open PPF Account'.</li>
+            <li>Fill out the application and upload required documents .</li>
+            <li>Make your first deposit .</li>
+            <li>Receive account number confirmation.</li>
+          </ol>
+          <b>Option B: Open a PPF Account Offline (Bank/Post Office)</b>
+          <ol>
+            <li>Visit your preferred bank or nearby post office.</li>
+            <li>Request and fill Form A.</li>
+            <li>Attach self-attested copies of ID/address proof.</li>
+            <li>Deposit cash/cheque (minimum ₹500).</li>
+            <li>Receive passbook or receipt with account details.</li>
 
-                <div class="radio-group">
-                    <div class="radio-option">
-                        <input
-                            type="radio"
-                            id="luxury"
-                            name="retirement"
-                            value="luxury"
-                        />
-                        <label for="luxury">With Luxury</label>
-                    </div>
+          </ol>
+          <br>
+          <h3 class="blogh3">What Can ₹1.5 Lakh a Year Grow Into?</h3>
+          <p>If you invest ₹1.5 lakh every year in PPF for 15 years at the current interest rate of 7.1% per annum (compounded yearly), here’s what it looks like:</p>
+          <li><b>Yearly Investment: </b>₹1,50,000</li>
+          <li><b>Interest Rate: </b>7.1% per year</li>
+          <li><b>Tenure: </b>15 years</li>
+          <li><b>Total Amount Invested: </b> ₹22,50,000 (₹1.5 lakh x 15 years)</li>
+          <li><b>Maturity Value: </b> ₹40,68,209 (approx.)</li>
+          <p>So, your ₹22.5 lakhs turns into over ₹40.6 lakhs by the end of 15 years—without any market risk.</p>
+          <p>Try the <a href="">PPF Calculator</a> to explore how your savings can grow based on different annual contributions.</p>
+          <br>
 
-                    <div class="radio-option">
-                        <input
-                            type="radio"
-                            id="good"
-                            name="retirement"
-                            value="good"
-                        />
-                        <label for="good">Good</label>
-                    </div>
+          <h3 class="blogh3">PPF Withdrawal Rules (Know the Lock-In!)</h3>
+          <li><b>Lock-In Period:</b>15 years; full withdrawal allowed only after that.</li>
+          <li><b>Partial Withdrawals: </b> Permitted from the 7th financial year.</li>
+          <li><b>Loan Facility: </b>Available between the 3rd and 6th year.</li>
+          <li><b>Premature Closure: </b> Allowed after 5 years only for serious reasons (medical treatment, higher education).</li>
+          <br>
+          <h3 class="blogh3">Who Should Invest in PPF?</h3>
+          <p>PPF suits a variety of savers:</p>
+          <li>Salaried individuals wanting tax savings</li>
+          <li>Self-employed professionals with irregular income</li>
+          <li>Eligible Parents saving for their children's future</li>
+          <li>Eligible Retirees seeking safe investment options</li>
+          <br>
 
-                    <div class="radio-option">
-                        <input
-                            type="radio"
-                            id="normal"
-                            name="retirement"
-                            value="normal"
-                            checked
-                        />
-                        <label for="normal">Normal</label>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="cal-content result">
-                    <label>Monthly Investment</label>
-                    <span id="sip-required">Rs 19,200</span>
-                </div>
-                <div class="cal-content result">
-                    <label>Time Period</label>
-                    <span id="years-to-retirement">20 years</span>
-                </div>
-                <div class="cal-content result">
-                    <label>Est. returns%</label>
-                    <span id="annual-return-rate">15 %</span>
-                </div>
-                <hr class="calculator-hr" />
+          <h3 class="blogh3">Conclusion:</h3>
+          <p>PPF is not a quick wealth multiplier, but it’s a dependable, tax-friendly plan for those willing to save consistently over time. Whether you're saving for your child's college, your retirement, or just building financial discipline—PPF can be a part of your financial foundation.</p>
+          <br>
+          <div class="sources-container">
+            <h4 class="blogh2">Sources:</h4>
+            <ul>
+              <li onclick="window.location.href='https:www.nsiindia.gov.in/(S(ynlpb2zcu1lk34iyejs1e155))/Home.aspx'">
+                <span>National Savings Institute</span>
+                <img src="/assets/source-arrow.png">
+              </li>
+              <li onclick="window.location.href='https:incometaxindia.gov.in'">
+                <span>Income Tax India - Section 80C</span>
+                <img src="/assets/source-arrow.png">
+              </li>
+              <li onclick="window.location.href='https:www.rbi.org.in'">
+                <span>Reserve Bank of India</span>
+                <img src="/assets/source-arrow.png">
+              </li>
+            </ul>
 
-                <div class="cal-content result">
-                    <label>Retirement Amt</label>
-                    <span class="total" id="corpus-required">RS 59,85,385</span>
-                </div>
-
-                <a href="https://api.labh.io/get-app/" target="_blank"
-                    >Invest Now</a
-                >
-            </div>
+            
+          </div>
+          <br>
+          <br>
+          <h3 class="blogh3">Want More Finance Tips?</h3>
+            <p>For more stories, latest finance news, and to learn mutual funds in simple words—<a class="download" href='https:play.google.com/store/apps/details?id=com.labh.io&pcampaignid=web_share'>Download</a> the Labh app today and take your money knowledge to the next level.</p>
         </div>
-    </div>
-    <div class="guide">
-        <h2>How to Use?</h2>
-        <ul>
-            <li>Enter your current age.</li>
-            <li>
-                Provide current income, expenses, savings rate, and expected
-                returns.
-            </li>
-            <li>
-                Click calculate to see required corpus and monthly investment
-                needed.
-            </li>
-        </ul>
-
-        <h2>Formula</h2>
-        <p class="formula">
-            $$ \text{SIP} = \frac{[C \times (1 + r)^t \times 12 \times y] \times
-            i}{(1 + i)^n - 1} $$
-        </p>
-
-        <table>
-            <tr>
-                <td>C</td>
-                <td>Monthly expenses</td>
-            </tr>
-            <tr>
-                <td>r</td>
-                <td>Expected annual rate of return (interest).</td>
-            </tr>
-            <tr>
-                <td>t</td>
-                <td>Years until retirement</td>
-            </tr>
-            <tr>
-                <td>y</td>
-                <td>Years expected after retirement</td>
-            </tr>
-            <tr>
-                <td>i</td>
-                <td>Monthly return rate (e.g., 12% annual = 0.01 monthly)</td>
-            </tr>
-            <tr>
-                <td>n</td>
-                <td>Total number of months to invest (n = t × 12)</td>
-            </tr>
-        </table>
-
-        <h2>Advantages</h2>
-        <ul>
-            <li>Helps plan retirement effectively</li>
-            <li>Adjust for inflation and expected returns</li>
-            <li>Tailored personal financial planning</li>
-            <li>Provides investment clarity</li>
-        </ul>
-        <h2>FAQ's</h2>
-
-        <div class="faq-container" style="background-color: transparent">
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>How does Labh keep my investments safe?</span>
-                    <span class="arrow"
-                        ><img src="/assets/Frame 877 (1).png"
-                    /></span>
-                </div>
-                <div class="faq-answer">
-                    <div class="content">
-                        <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Can I adjust my retirement age later?</span>
-                    <span class="arrow"
-                        ><img src="/assets/Frame 877 (1).png"
-                    /></span>
-                </div>
-                <div class="faq-answer">
-                    <div class="content">
-                        <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Does the calculator consider pension income? </span>
-                    <span class="arrow"
-                        ><img src="/assets/Frame 877 (1).png"
-                    /></span>
-                </div>
-                <div class="faq-answer">
-                    <div class="content">
-                        <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
-                        </p>
-                    </div>
-                </div>
-            </div>
+       <div class="flex-col">
+        <div class="side-image" onclick="window.location.href='https:play.google.com/store/apps/details?id=com.labh.io&pcampaignid=web_share'">
+            <img src="/assets/blog-invest.svg" alt="Invest Now" />
         </div>
+        <div class="blog-suggestions">
+            <h3 class="blog-header">Explore More Savings-schemes</h3>
+            <ul>
+                <li onclick="window.location.href='/savings-schemes/Public-Provident-Fund'">
+                <span>What is PPF?</span>
+                <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+              </li>
+              <li onclick="window.location.href='/savings-schemes/Sukanya-Samriddhi-Yojana'">
+                <span>What is SSY?</span>
+                <button><img src="/assets/go-blog.svg"alt="Go" /></button>
+              </li>
+              <li onclick="window.location.href='/savings-schemes/Senior-Citizens-Savings-Scheme'">
+                <span>What is SCSS?</span>
+                <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+              </li>
+              <li onclick="window.location.href='/savings-schemes/National-Savings-Certificate'">
+                <span>What is NSC?</span>
+                <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+              </li>
+              <li onclick="window.location.href='/savings-schemes/Kisan-Vikas-Patra'">
+                <span>What is KVP?</span>
+                <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+              </li>
+              <li  onclick="window.location.href='/savings-schemes/Post-Office-Monthly-Income-Scheme'">
+                <span>What is POMIS?</span>
+                <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+              </li>
+              <li onclick="window.location.href='/savings-schemes/Pradhan-Mantri-Vaya-Vandana-Yojana'">
+                <span>What is PMVVY?</span>
+                <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+              </li>
+              <li onclick="window.location.href='/savings-schemes/Rural-Post-Office-Time-Deposit'">
+                <span>What is TD?</span>
+                <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+              </li>
+              <li onclick="window.location.href='/savings-schemes/Post-Office-Recurring-Deposit'">
+                <span>What is RD?</span>
+                <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+              </li>
+              <li onclick="window.location.href='/savings-schemes/Atal-Pension-Yojana'">
+                <span>What is APY?</span>
+                <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+              </li>
+            </ul>
+          </div>
+       </div>
+          
+        
     </div>
-
-    <div class="moblie-search-bar-container">
-        <div
-            id="search-results"
-            class="cards display-none margin-bottom-none"
-        ></div>
-        <div class="black-container">
-            <div class="mobile-search-bar">
-                <input
-                    type="text"
-                    placeholder="Search for Calculator"
-                    id="search2"
-                />
-            </div>
-        </div>
+    <div class="blog-suggestions1">
+      <h3 class="blog-header">Explore More Savings-schemes</h3>
+      <ul>
+          <li onclick="window.location.href='/savings-schemes/Public-Provident-Fund'">
+          <span>What is PPF?</span>
+          <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+        </li>
+        <li onclick="window.location.href='/savings-schemes/Sukanya-Samriddhi-Yojana'">
+          <span>What is SSY?</span>
+          <button><img src="/assets/go-blog.svg"alt="Go" /></button>
+        </li>
+        <li onclick="window.location.href='/savings-schemes/Senior-Citizens-Savings-Scheme'">
+          <span>What is SCSS?</span>
+          <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+        </li>
+        <li onclick="window.location.href='/savings-schemes/National-Savings-Certificate'">
+          <span>What is NSC?</span>
+          <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+        </li>
+        <li onclick="window.location.href='/savings-schemes/Kisan-Vikas-Patra'">
+          <span>What is KVP?</span>
+          <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+        </li>
+        <li  onclick="window.location.href='/savings-schemes/Post-Office-Monthly-Income-Scheme'">
+          <span>What is POMIS?</span>
+          <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+        </li>
+        <li onclick="window.location.href='/savings-schemes/Pradhan-Mantri-Vaya-Vandana-Yojana'">
+          <span>What is PMVVY?</span>
+          <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+        </li>
+        <li onclick="window.location.href='/savings-schemes/Rural-Post-Office-Time-Deposit'">
+          <span>What is TD?</span>
+          <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+        </li>
+        <li onclick="window.location.href='/savings-schemes/Post-Office-Recurring-Deposit'">
+          <span>What is RD?</span>
+          <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+        </li>
+        <li onclick="window.location.href='/savings-schemes/Atal-Pension-Yojana'">
+          <span>What is APY?</span>
+          <button><img src="/assets/go-blog.svg" alt="Go" /></button>
+        </li>
+      </ul>
     </div>
 </div>
-
-<script>
-    /*
-        How to calculate Retirement Plan Steps:
-        - Calculate how much your current monthly expenses will grow by retirement age.
-            - Future Expenses = Current Expenses × (1 + Inflation Rate) ^ Years to Retirement
-        - Multiply future monthly expenses by 12 to get yearly expenses.
-            - Annual Expenses = Future Expenses * 12
-        - Calculate total money needed for retirement years.
-            - Retirement Corpus = Annual Expenses * Retirement Years * coefficent (1, 1.5, 2)
-        - Find how much you need to invest monthly to reach the corpus.
-            - SIP = (Corpus × Monthly Return Rate) / ((1 + Monthly Return Rate) ^ Total Months - 1)
-        */
-
-    const retirementAge = 60;
-    const inflationRate = 0.06;
-    const yearsAfterRetirement = 20;
-    let yearsToRetirement = null;
-    const monthlyReturnRate = 0.01;
-    const annualReturnRate = (
-        (Math.pow(1 + monthlyReturnRate, 12) - 1) *
-        100
-    ).toFixed(2);
-    let currentExpenses = null;
-    let sipRequired = null;
-    let coefficent = 1;
-
-    function calculateFutureExpenses(
-        currentExpenses,
-        inflationRate,
-        yearsToRetirement
-    ) {
-        return currentExpenses * Math.pow(1 + inflationRate, yearsToRetirement);
-    }
-
-    function calculateRetirementCorpus(
-        annualExpensesAtRetirement,
-        yearsAfterRetirement
-    ) {
-        return annualExpensesAtRetirement * yearsAfterRetirement;
-    }
-
-    function calculateSIPRequired(
-        futureValue,
-        monthlyReturnRate,
-        monthsToInvest
-    ) {
-        return (
-            (futureValue * monthlyReturnRate) /
-            (Math.pow(1 + monthlyReturnRate, monthsToInvest) - 1)
-        );
-    }
-
-    function retirementPlan(
-        currentExpenses,
-        inflationRate,
-        yearsToRetirement,
-        yearsAfterRetirement,
-        monthlyReturnRate
-    ) {
-        const futureExpenses = calculateFutureExpenses(
-            currentExpenses,
-            inflationRate,
-            yearsToRetirement
-        );
-
-        const annualExpensesAtRetirement = futureExpenses * 12;
-
-        const corpusRequired =
-            calculateRetirementCorpus(
-                annualExpensesAtRetirement,
-                yearsAfterRetirement
-            ) * coefficent;
-
-        const monthsToInvest = yearsToRetirement * 12;
-        const sipRequired = calculateSIPRequired(
-            corpusRequired,
-            monthlyReturnRate,
-            monthsToInvest
-        );
-
-        return {
-            futureExpenses: futureExpenses.toLocaleString("en-IN", {
-                maximumFractionDigits: 0,
-            }),
-            annualExpensesAtRetirement:
-                annualExpensesAtRetirement.toLocaleString("en-IN", {
-                    maximumFractionDigits: 0,
-                }),
-            corpusRequired: corpusRequired.toLocaleString("en-IN", {
-                maximumFractionDigits: 0,
-            }),
-            sipRequired: sipRequired.toLocaleString("en-IN", {
-                maximumFractionDigits: 0,
-            }),
-        };
-    }
-
-    $(document).ready(function () {
-        function updateSliderBackground(slider) {
-            const value =
-                ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
-            $(slider).css(
-                "background",
-                `linear-gradient(to right, #9b5de5 ${value}%, #d3bfff ${value}%)`
-            );
-            $(`#${slider.id}-value`).text(slider.value);
-
-            if (slider.id == "age-slider") {
-                yearsToRetirement = retirementAge - slider.value;
-            } else {
-                currentExpenses = slider.value;
-            }
-        }
-
-        function updateValues() {
-            const howYouRetire = $('input[name="retirement"]:checked').val();
-            if (howYouRetire == "luxury") {
-                coefficent = 2;
-            } else if (howYouRetire == "good") {
-                coefficent = 1.5;
-            } else {
-                coefficent = 1;
-            }
-            const values = retirementPlan(
-                currentExpenses,
-                inflationRate,
-                yearsToRetirement,
-                yearsAfterRetirement,
-                monthlyReturnRate
-            );
-            $("#sip-required").text(`RS. ${values.sipRequired}`);
-            $("#years-to-retirement").text(`${yearsToRetirement} years`);
-            $("#annual-return-rate").text(`${annualReturnRate} %`);
-            $("#corpus-required").text(`Rs. ${values.corpusRequired}`);
-        }
-
-        $("#age-slider, #spend-slider")
-            .each(function () {
-                updateSliderBackground(this);
-                updateValues();
-            })
-            .on("input", function () {
-                updateSliderBackground(this);
-                updateValues();
-            });
-        $("#luxury, #good, #normal").on("change", function () {
-            updateValues();
-        });
-    });
-</script>
-
 
         <div class="blur-effect display-none"></div>
 
@@ -775,5 +618,6 @@
 
 
         <script src="/main.js"></script>
+        <script src="/blog.js"></script>
     </body>
 </html>

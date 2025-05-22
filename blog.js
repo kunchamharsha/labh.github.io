@@ -9,7 +9,17 @@ function sharePage() {
     }
   }
 
-  function investnow()
-  {
-    
+  function handleBack() {
+    const currentUrl = window.location.pathname;
+    const segments = currentUrl.split('/').filter(Boolean);
+  
+    if (segments.length <= 1) {
+      window.location.href = '/';
+      return;
+    }
+  
+    segments.pop();
+    const parentPath = '/' + segments.join('/');
+    window.location.href = parentPath;
   }
+  
