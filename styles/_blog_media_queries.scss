@@ -5,8 +5,14 @@
 
 @media (min-width: 0px) and (max-width: 744px)
 {
+
+  .cards{
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+
+  }
   .breadcrumb-mobile{
     display:block;
+    padding-left:0rem;
   }
 
   .menu-bar ul li{
@@ -49,6 +55,11 @@
     max-width:100%;
    }
 
+   .main-container{
+    margin-right:calculate-rem(20);
+    margin-left:calculate-rem(20);
+   }
+
 
     .main-container p,
     .main-container li {
@@ -83,6 +94,38 @@
     font-size: 20px !important;
    }
 
+   .sources-container span{
+      font-size:14px;
+   }
+
+   .blog-suggestions1{
+    font-size:14px;
+   }
+
+   .cards {
+    margin-bottom: calculate-rem(0);
+    gap: calculate-rem(14);
+    .card-description {
+        line-height: calculate-rem(20);
+    }
+    .card {
+        border-radius: calculate-rem(16);
+
+        .card-heading {
+            margin-bottom: calculate-rem(8);
+        }
+    }
+    .blog-suggestions li{
+      margin:0rem;
+      padding-top:0rem;
+     }
+    
+     .blog-suggestions1 li{
+      margin:0rem;
+      padding-top:0rem;
+     }
+}
+
 }
 
 
@@ -116,7 +159,19 @@
     font-size : 28px;
   }
 
+  .blog-suggestions li button img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(1.3);
+    background-color: none;
+}
+
+.blog-header{
+  margin-top:calculate-rem(20);
+}
+
   .side-image img{
+    margin-top:calculate-rem(32);
      width:220px;
      height:280px;
      padding-left:calculate-rem(40);
@@ -135,16 +190,73 @@
     margin-left: 20px;
 }
 
+.main-container{
+  margin-left:calculate-rem(32);
+  margin-right:calculate-rem(32);
+}
+
 .blogh2{
   font-size:28px !important;
 }
+
+.blog-suggestions1{
+  font-size:16px;
+ }
+
+ .blog-suggestions li{
+  margin:0rem;
+  padding-top:0rem;
+ }
+
+ .blog-suggestions1 li{
+  margin:0rem;
+  padding-top:0rem;
+ }
+
+.sources-container span{
+  font-size:16px;
+}
+.sources-container{
+  max-width:450px;
+}
+
+.cards {
+  margin-top: calculate-rem(32);
+  grid-template-columns: repeat(
+      auto-fit,
+      minmax(calculate-rem(330), 1fr)
+  );
+}
+
+.card {
+  .card-heading {
+      font-size: calculate-rem(20);
+      font-weight: 500;
+  }
+  .card-description {
+      font-size: calculate-rem(16);
+      line-height: calculate-rem(22);
+  }
+}
+
 }
 
 @media (min-width: 1281px) and (max-width: 1500px)
 {
+
+  .blog-suggestions1{
+    font-size:24px;
+   }
+  .sources-container span{
+    font-size:20px;
+  }
   .search-bar1
   {
      display:none;
+  }
+
+  .sources-container{
+    max-width:450px;
   }
 
 }
