@@ -64,6 +64,10 @@ nav {
         );
     }
 
+    .mobile-search-icon {
+        display: none;
+    }
+
     .search-dropdown {
         position: absolute;
         top: calc($search-bar-height / 2);

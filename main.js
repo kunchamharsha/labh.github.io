@@ -1,3 +1,4 @@
+const domain = "https://api.labh.io";
 const calculators = [
     {
         "card-heading": "Retirement calculator",
@@ -64,6 +65,17 @@ const calculators = [
     //     "card-description": "Grow Your Investments with Incremental SIPs.",
     //     url: "/calculator/stepup-sip-calculator/",
     // },
+];
+
+const blogs = [
+    {
+        heading: "How to invest",
+        url: "/blog/how-to-invest/",
+    },
+    {
+        heading: "What is sip",
+        url: "/blog/what-is-sip/",
+    },
 ];
 
 function filterCalculators(searchTerm) {
@@ -171,9 +183,198 @@ $(".search-bar").on("click", function (e) {
     const rect = $(this)[0].getBoundingClientRect();
     const x = e.clientX - rect.left;
 
-    if ((x > 390 && window.innerWidth > 1024) || true) {
+    if (x > 390 && window.innerWidth > 1024) {
         $(".search-dropdown").addClass("display-none");
         $(".search-bar").addClass("hide-icon");
         $("#search").val("");
     }
+});
+
+function saveSessionWithTimeout(key, value, timeoutMs) {
+    const now = Date.now();
+    const item = {
+        value: value,
+        expiry: now + timeoutMs,
+    };
+    sessionStorage.setItem(key, JSON.stringify(item));
+}
+
+function getSessionWithTimeout(key) {
+    const itemStr = sessionStorage.getItem(key);
+    if (!itemStr) return null;
+
+    const item = JSON.parse(itemStr);
+    const now = Date.now();
+
+    if (now > item.expiry) {
+        sessionStorage.removeItem(key);
+        return null;
+    }
+    return item.value;
+}
+
+function fetchBaskets() {
+    var baskets = getSessionWithTimeout("baskets");
+    if (baskets) {
+        return baskets;
+    }
+    $.get(`${domain}/api/basket/`, function (data) {
+        saveSessionWithTimeout("baskets", data, 86400000);
+        baskets = data;
+    });
+    return baskets;
+}
+
+const baskets = fetchBaskets();
+var searchSuggestion = "all";
+
+function renderSearchDropdown() {
+    $(".calculator-list").empty();
+    calculators.forEach((calculator) => {
+        $(".calculator-list").append(`
+                <div class="calculator" onclick="window.location.href='${calculator["url"]}'">
+                    <img src="/assets/search_dropdown_arrow.svg" alt="dropdown-arrow" />
+                    <span>${calculator["card-heading"]}</span>
+                </div>
+            `);
+    });
+}
+
+function renderSearchResults(results, queryText) {
+    $(".calculator-list").empty();
+    $(".search-dropdown-desktop").removeClass("d-none");
+    if (results.length == 0 && queryText.length > 0) {
+        $(".calculator-list").append(`
+            <div class="no-results">
+                <span>No results for '<span>${queryText}<span>'</span>
+            </div>
+        `);
+        return;
+    }
+    results.forEach((result) => {
+        $(".calculator-list").append(`
+                <div class="calculator" onclick="window.location.href='${result["url"]}'">
+                    <img src="/assets/search_dropdown_arrow.svg" alt="dropdown-arrow" />
+                    <span>${result["heading"]}</span>
+                </div>
+            `);
+    });
+}
+
+$("#search, #mobile-search").focus(function () {
+    $(".search-dropdown-desktop").removeClass("d-none");
+    renderSearchDropdown();
+});
+
+// $("#search").blur(function () {
+//     $(".search-dropdown-desktop").addClass("d-none");
+// });
+
+function fetchMutualFunds(searchQuery) {
+    let results = [];
+    if (searchQuery.length == 0) {
+        return results;
+    }
+    $.ajax({
+        url: `${domain}/search/mutual-funds/?scheme_name=${encodeURIComponent(
+            searchQuery
+        )}&page=1&page_size=10`,
+        method: "GET",
+        async: false,
+        success: function (responseData) {
+            results = responseData.results;
+        },
+        error: function (xhr, status, error) {
+            results = [];
+        },
+    });
+    return results;
+}
+
+function formatResutls(results) {
+    let formattedResults = [];
+    results.forEach((result) => {
+        if ("scheme_name" in result) {
+            formattedResults.push({
+                heading: result.scheme_name,
+                url: `/mutual-fund/?id=${result.id}`,
+            });
+        } else if ("card-heading" in result) {
+            formattedResults.push({
+                heading: result["card-heading"],
+                url: result.url,
+            });
+        } else {
+            formattedResults.push({
+                heading: result.heading,
+                url: result.url,
+            });
+        }
+    });
+    return formattedResults;
+}
+
+function search(queryText) {
+    const filteredCalculators = filterCalculators(searchTerm);
+    const filteredBlogs = blogs.filter((blog) =>
+        blog["heading"].toLowerCase().includes(queryText.toLowerCase())
+    );
+    let results = [
+        ...filteredCalculators.slice(0, 5),
+        ...filteredBlogs.slice(0, 5),
+    ];
+    if (searchSuggestion == "all") {
+        const mutualFunds = fetchMutualFunds(queryText);
+        const slice = 10 - results.length;
+        results = [...results, ...mutualFunds.slice(0, slice)];
+    } else if (searchSuggestion == "calculators") {
+        results = filteredCalculators;
+    } else if (searchSuggestion == "blogs") {
+        results = filteredBlogs;
+    } else if (searchSuggestion == "mutual-funds") {
+        results = fetchMutualFunds(queryText);
+    }
+    const formattedResults = formatResutls(results);
+    renderSearchResults(formattedResults, queryText);
+}
+
+let debounceTimer;
+let searchTerm;
+
+$("#search, #mobile-search").keyup(function () {
+    searchTerm = $(this).val();
+    if (searchTerm.length > 0) {
+        $(".suggestion").addClass("d-none");
+        $(".label").addClass("d-none");
+        $(".search-dropdown-desktop").addClass("d-none");
+        $(".basket-explore").addClass("d-none");
+        $(".search-suggestions").addClass("d-none");
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            search(searchTerm);
+        }, 500);
+    } else {
+        $(".suggestion").removeClass("d-none");
+        $(".label").removeClass("d-none");
+        $(".basket-explore").removeClass("d-none");
+        $(".search-suggestions").removeClass("d-none");
+    }
+});
+
+// this will set searchsuggestion
+$(".suggestion .suggestion-item, .search-suggestions .item").click(function () {
+    searchSuggestion = $(this).attr("d-value");
+    $(".suggestion .suggestion-item").removeClass("active");
+    $(".search-suggestions .item").removeClass("active");
+    $(this).addClass("active");
+});
+
+$(".mobile-search-input-container img").click(function () {
+    $(".search-mobile").addClass("d-none");
+    $(".search-dropdown-desktop").addClass("d-none");
+});
+
+$(".mobile-search-icon img").click(function () {
+    $(".search-mobile").removeClass("d-none");
+    $(".search-dropdown-desktop").addClass("d-none");
 });
