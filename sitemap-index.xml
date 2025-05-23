@@ -69,11 +69,19 @@
         <lastmod>2025-05-22</lastmod>
     </sitemap>
     <sitemap>
-        <loc>https://labh.io/mf-sitemap-1.xml</loc>
+        <loc>https://labh.io/mfsitemap-1.xml</loc>
         <lastmod>2025-05-22</lastmod>
     </sitemap>
     <sitemap>
-        <loc>https://labh.io/mf-sitemap-2.xml</loc>
+        <loc>https://labh.io/mfsitemap-2.xml</loc>
+        <lastmod>2025-05-22</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://labh.io/mfsitemap-3.xml</loc>
+        <lastmod>2025-05-22</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://labh.io/mfsitemap-4.xml</loc>
         <lastmod>2025-05-22</lastmod>
     </sitemap>
 </sitemapindex>
