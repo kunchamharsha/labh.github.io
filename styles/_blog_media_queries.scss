@@ -125,6 +125,7 @@
     }
     .card {
         border-radius: calculate-rem(16);
+        height: fit-content;
 
         .card-heading {
             margin-bottom: calculate-rem(8);
