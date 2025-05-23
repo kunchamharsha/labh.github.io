@@ -2,6 +2,10 @@
     @return calc($size / 16) * 1rem;
 }
 
+.search-bar-container{
+  justify-content: end;
+}
+
 .search-bar1{
   display:none;
 }
