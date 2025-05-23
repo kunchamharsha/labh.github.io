@@ -251,6 +251,9 @@
       auto-fit,
       minmax(calculate-rem(330), 1fr)
   );
+  .card {
+    height: calculate-rem(280);
+  }
 }
 
 .card {

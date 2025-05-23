@@ -102,8 +102,7 @@ a {
 
 .blogh3 {
   background: linear-gradient(148.3deg, #e5d4fe 4.55%, #ffffff 52.27%, #e8dff4 95.45%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 40px;
   color: card-1;
@@ -240,8 +239,7 @@ a {
 }
 .sources-container .blogh2 {
   background: linear-gradient(148.3deg, #e5d4fe 4.55%, #ffffff 52.27%, #e8dff4 95.45%);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 2.5rem;
   font-weight: 600;
@@ -610,6 +608,9 @@ ul li {
   .cards {
     margin-top: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(20.625rem, 1fr));
+  }
+  .cards .card {
+    height: 17.5rem;
   }
   .card .card-heading {
     font-size: 1.25rem;
