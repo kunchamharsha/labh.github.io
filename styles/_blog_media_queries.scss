@@ -135,6 +135,7 @@
         height: fit-content;
 
         .card-heading {
+          line-height:calculate-rem(25);
             margin-bottom: calculate-rem(8);
         }
     }
