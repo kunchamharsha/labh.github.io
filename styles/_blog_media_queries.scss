@@ -121,6 +121,7 @@
     gap: calculate-rem(14);
     .card-description {
         line-height: calculate-rem(20);
+        font-size: 1rem;
     }
     .card {
         border-radius: calculate-rem(16);
