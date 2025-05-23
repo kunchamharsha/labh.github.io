@@ -29,7 +29,8 @@
   font-size: 1rem;
   cursor: pointer;
   padding: 0;
-  color: rgba(255, 255, 255, 0.8);
+  color: #FFFFFF;
+  font-weight: 500;
 }
 
 .breadcrumb-mobile {
@@ -404,6 +405,10 @@ ul li {
 }
 
 @media (min-width: 0px) and (max-width: 744px) {
+  .sources-container ul li img {
+    width: 24px;
+    height: 24px;
+  }
   .search-bar1 {
     display: block;
   }
@@ -434,6 +439,7 @@ ul li {
     height: 30px;
     font-size: 14px !important;
     gap: 4px;
+    margin-right: 1.25rem;
   }
   .share-btn .share-icon {
     width: 14px;
@@ -478,6 +484,7 @@ ul li {
     width: 100%;
   }
   .side-image1 img {
+    margin-top: 1.875rem;
     width: 100%;
     margin-bottom: 1.25rem;
     cursor: pointer;

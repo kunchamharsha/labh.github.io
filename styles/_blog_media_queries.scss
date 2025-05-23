@@ -6,6 +6,11 @@
 @media (min-width: 0px) and (max-width: 744px)
 {
 
+  .sources-container ul li img {
+    width: 24px;
+    height: 24px;
+}
+
   .search-bar1{
     display:block;
   }
@@ -38,6 +43,7 @@
     height:30px;
     font-size:14px !important;
     gap:4px;
+    margin-right:calculate-rem(20);
   }
   .share-btn .share-icon {
     width: 14px;
@@ -90,6 +96,7 @@
       width:100%;
     }
     .side-image1 img{
+      margin-top:calculate-rem(30);
       width:100%;
       margin-bottom: calculate-rem(20);
       cursor: pointer;
