@@ -265,7 +265,7 @@ $.get(`${domain}/api/mutual-funds/all/${fundId}/`, function (responseData) {
     setMetaTag(
         "property",
         "og:url",
-        `https://labh.io/calculator/mutual-fund/?id=${fundId}`
+        `https://labh.io/mutual-fund/?id=${fundId}`
     );
     setMetaTag(
         "property",
@@ -283,7 +283,7 @@ $.get(`${domain}/api/mutual-funds/all/${fundId}/`, function (responseData) {
     setMetaTag(
         "name",
         "twitter:url",
-        `https://labh.io/calculator/mutual-fund/${fundId}`
+        `https://labh.io/mutual-fund/?id=${fundId}`
     );
     setMetaTag(
         "name",
@@ -295,6 +295,12 @@ $.get(`${domain}/api/mutual-funds/all/${fundId}/`, function (responseData) {
         "twitter:description",
         `Get the latest data on ${data.scheme_name} including NAV (${data.cagr["1_year"]}), 1-year return (${data.cagr["1_year"]}), and category insights. Compare performance and analyze fund history.`
     );
+
+    // canonical
+    tag = document.createElement("link");
+    tag.setAttribute("rel", "canonical");
+    tag.setAttribute("href", `https://labh.io/mutual-fund/?id=${fundId}`);
+    document.head.appendChild(tag);
 })
     .done(function () {
         onload();
