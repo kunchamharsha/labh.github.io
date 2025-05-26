@@ -4,6 +4,16 @@
 
   @media (min-width: 744px) and (max-width: 1279px) {
 
+    @media(max-width: 789px){
+      .main-container h1{
+        font-size: 25px !important;
+      }
+    }
+
+    .pin-para {
+      margin-top: calculate-rem(16);
+    }
+
     .custom-select-wrapper select {
       width: 100%;
       padding: 0.6rem 2.5rem 0.6rem 1rem;
@@ -56,7 +66,7 @@
     }
     
     .logo-title img{
-      margin-top:5px;
+      margin-top:2px;
       width:35px;
       height: 35px;
     }
@@ -93,13 +103,39 @@
     }
     .ifsc-btn-wrapper {
   width: 100%;
-  margin-left:calculate-rem(120);
+  // margin-left:calculate-rem(120);
+  margin-right:calculate-rem(50);
+}
+
+.find-ifsc-btn{
+  max-width: 400px;
+  width: 100%;
+}
+
+.custom-select-wrapper select {
+  width:100%;
+  max-width:400px;
+}
+
+.custom-arrow {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  margin-right:calculate-rem(50);
 }
   }
 
 
   @media (min-width: 0px) and (max-width: 744px)
 {
+
+  .pin-para {
+    margin-top: calculate-rem(16);
+  }
 
   @media (max-width: 420px) {
     .info-table span.f2 {
@@ -140,13 +176,13 @@
 }
 
 .logo-title img{
-  width:26px;
-  height: 22px;
-  margin-top:5px;
+  width:28px;
+  height: 28px;
+  margin-top:1px;
 }
 
 .logo-title{
-  gap:0.5rem;
+  gap:0.3rem;
 }
 
 .pin-para {
@@ -164,6 +200,17 @@
   }
   .search-results-container {
     display: none;
+  }
+
+  .custom-arrow {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 21px;
+    height: 21px;
+    pointer-events: none;
+
   }
 //  .pincode-info{
 //   display:block;
@@ -213,7 +260,7 @@
 .custom-select-wrapper select {
   width: 100%;
   padding: 0.6rem 2.5rem 0.6rem 1rem;
-  height: calculate-rem(35);
+  height: calculate-rem(40);
   border-radius: 999px;
   border: 1px solid #CECBFF66;
   appearance: none;
@@ -260,7 +307,7 @@
 
 /* Responsive button */
 .find-ifsc-btn {
-  width:300px;
+  width:297px !important;
   width: 100%; /* ❗ Ensures it follows container size */
   // padding: 16px;
   font-size: 16px;
@@ -278,10 +325,17 @@
 .find-ifsc-btn:hover {
   transform: scale(1.01);
 }
-@media (min-width: 0px) and (max-width: 410px){
+@media (min-width: 0px) and (max-width: 438px){
   .find-ifsc-btn{
     margin-left:0rem;
+    width:100% !important;
+    max-width:290px;
   }
+  .ifsc-btn-wrapper {
+    width: 100%;
+    margin-left:calculate-rem(90);
+  }
+  
 }
 
 
@@ -484,7 +538,7 @@
 
   
     .search-results-container{
-      padding-left: calculate-rem(23);
+      // padding-left: calculate-rem(23);
       padding-top: calculate-rem(60);
       padding-right:calculate-rem(10);
       font-size: calculate-rem(28);
@@ -597,7 +651,7 @@
     cursor: pointer;
     transition: transform 0.2s ease;
     box-sizing: border-box; /* ✅ Critical for padding-based shrinking */
-    margin-left:calculate-rem(10);
+    // margin-left:calculate-rem(10);
   }
   
   .find-ifsc-btn:hover {

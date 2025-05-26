@@ -181,8 +181,8 @@
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
+    width: 37px;
+    height: 37px;
     pointer-events: none;
   }
 
@@ -407,6 +407,7 @@
 /* Responsive button */
 .find-ifsc-btn {
   width: 100%; /* ❗ Ensures it follows container size */
+  max-width: calculate-rem(450);
   // padding: 16px;
   font-size: 16px;
   font-weight: 600;
@@ -417,7 +418,7 @@
   cursor: pointer;
   transition: transform 0.2s ease;
   box-sizing: border-box; /* ✅ Critical for padding-based shrinking */
-  margin-left:calculate-rem(10);
+  margin-left:calculate-rem(30);
 }
 
 .find-ifsc-btn:hover {

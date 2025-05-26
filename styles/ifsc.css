@@ -164,8 +164,8 @@ p.ifsc {
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
+  width: 37px;
+  height: 37px;
   pointer-events: none;
 }
 
@@ -355,6 +355,7 @@ p.ifsc {
 /* Responsive button */
 .find-ifsc-btn {
   width: 100%; /* ❗ Ensures it follows container size */
+  max-width: 28.125rem;
   font-size: 16px;
   font-weight: 600;
   color: #0A0A0A;
@@ -364,14 +365,22 @@ p.ifsc {
   cursor: pointer;
   transition: transform 0.2s ease;
   box-sizing: border-box; /* ✅ Critical for padding-based shrinking */
-  margin-left: 0.625rem;
+  margin-left: 1.875rem;
 }
 
 .find-ifsc-btn:hover {
   transform: scale(1.01);
 }
 
+@media (min-width: 744px) and (max-width: 1279px) and (max-width: 789px) {
+  .main-container h1 {
+    font-size: 25px !important;
+  }
+}
 @media (min-width: 744px) and (max-width: 1279px) {
+  .pin-para {
+    margin-top: 1rem;
+  }
   .custom-select-wrapper select {
     width: 100%;
     padding: 0.6rem 2.5rem 0.6rem 1rem;
@@ -414,7 +423,7 @@ p.ifsc {
     height: 20px;
   }
   .logo-title img {
-    margin-top: 5px;
+    margin-top: 2px;
     width: 35px;
     height: 35px;
   }
@@ -440,10 +449,31 @@ p.ifsc {
   }
   .ifsc-btn-wrapper {
     width: 100%;
-    margin-left: 7.5rem;
+    margin-right: 3.125rem;
+  }
+  .find-ifsc-btn {
+    max-width: 400px;
+    width: 100%;
+  }
+  .custom-select-wrapper select {
+    width: 100%;
+    max-width: 400px;
+  }
+  .custom-arrow {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    pointer-events: none;
+    margin-right: 3.125rem;
   }
 }
 @media (min-width: 0px) and (max-width: 744px) {
+  .pin-para {
+    margin-top: 1rem;
+  }
   /* Match wrapper style with select's wrapper */
   /* Responsive button */
 }
@@ -481,12 +511,12 @@ p.ifsc {
     height: 20px;
   }
   .logo-title img {
-    width: 26px;
-    height: 22px;
-    margin-top: 5px;
+    width: 28px;
+    height: 28px;
+    margin-top: 1px;
   }
   .logo-title {
-    gap: 0.5rem;
+    gap: 0.3rem;
   }
   .pin-para {
     font-size: 16px;
@@ -500,6 +530,15 @@ p.ifsc {
   }
   .search-results-container {
     display: none;
+  }
+  .custom-arrow {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 21px;
+    height: 21px;
+    pointer-events: none;
   }
   .info-table span {
     color: #A0A0A0;
@@ -538,7 +577,7 @@ p.ifsc {
   .custom-select-wrapper select {
     width: 100%;
     padding: 0.6rem 2.5rem 0.6rem 1rem;
-    height: 2.1875rem;
+    height: 2.5rem;
     border-radius: 999px;
     border: 1px solid rgba(206, 203, 255, 0.4);
     -webkit-appearance: none;
@@ -575,7 +614,7 @@ p.ifsc {
     font-size: 1.25rem;
   }
   .find-ifsc-btn {
-    width: 300px;
+    width: 297px !important;
     width: 100%; /* ❗ Ensures it follows container size */
     font-size: 16px;
     font-weight: 600;
@@ -592,9 +631,15 @@ p.ifsc {
     transform: scale(1.01);
   }
 }
-@media (min-width: 0px) and (max-width: 744px) and (min-width: 0px) and (max-width: 410px) {
+@media (min-width: 0px) and (max-width: 744px) and (min-width: 0px) and (max-width: 438px) {
   .find-ifsc-btn {
     margin-left: 0rem;
+    width: 100% !important;
+    max-width: 290px;
+  }
+  .ifsc-btn-wrapper {
+    width: 100%;
+    margin-left: 5.625rem;
   }
 }
 @media (min-width: 0px) and (max-width: 744px) and (min-width: 0px) and (max-width: 480px) {
@@ -755,7 +800,6 @@ p.ifsc {
     opacity: 80%;
   }
   .search-results-container {
-    padding-left: 1.4375rem;
     padding-top: 3.75rem;
     padding-right: 0.625rem;
     font-size: 1.75rem;
@@ -809,7 +853,6 @@ p.ifsc {
     cursor: pointer;
     transition: transform 0.2s ease;
     box-sizing: border-box; /* ✅ Critical for padding-based shrinking */
-    margin-left: 0.625rem;
   }
   .find-ifsc-btn:hover {
     transform: scale(1.01);
