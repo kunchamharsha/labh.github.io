@@ -9,14 +9,17 @@ hr {
 .container-404 h1 {
   font-size: 20rem;
   background: linear-gradient(144.83deg, #cecbff 17.03%, #7c7a99 82.97%);
+  width: -moz-fit-content;
   width: fit-content;
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .container-404 p {
   font-size: 3.75rem;
   background: linear-gradient(144.83deg, rgba(206, 203, 255, 0.8) 17.03%, rgba(124, 122, 153, 0.8) 82.97%);
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .container-404 a {
