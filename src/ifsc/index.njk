@@ -19,34 +19,72 @@ title: Labh
     <div class="logo-title">
         <img src="/assets/ifsc_head.svg" alt="edge-image" />
           <span class="logo-text"><h1>Need an IFSC Code? We’ve Got You Covered</h1></span>
-    </div>
+   </div>
       
-      <p class="pin-para">Enter your bank name and branch location (state, city, or area) to quickly get the correct IFSC code.Simply select the right options from the dropdowns, and we’ll fetch the details for you.</p>
-      <p class="ifsc">Check IFSC Code</p>
-        
-      <div class="custom-select-wrapper">
-        <select id="location">
-          <option value="">Location</option>
-        </select>
-        <img src="/assets/dropdown.svg" class="custom-arrow" alt="dropdown arrow" />
+    <p class="pin-para">Enter your bank name and branch location (state, city, or area) to quickly get the correct IFSC code.Simply select the right options from the dropdowns, and we’ll fetch the details for you.</p>
+    <p class="ifsc">Check IFSC Code</p>
+
+ <!-- for search -->
+      <div class="form-group">
+        <label for="location">Bank :</label>
+        <div class="custom-select-wrapper">
+          <select id="location">
+            <option value="">Bank Name</option>
+          </select>
+          <img src="/assets/dropdown.svg" class="custom-arrow" alt="dropdown arrow" />
+        </div>
       </div>
-      
-      <div class="custom-select-wrapper">
-        <select id="bank">
-          <option value="">Bank Name</option>
-        </select>
-        <img src="/assets/dropdown.svg" class="custom-arrow" alt="dropdown arrow" />
-      </div>
-      
       
 
+      <div class="form-group">
+        <label for="bank">State :</label>
+        <div class="custom-select-wrapper">
+          <select id="bank">
+            <option value="">Which state you belongs to</option>
+          </select>
+          <img src="/assets/dropdown.svg" class="custom-arrow" alt="dropdown arrow" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="bank">District :</label>
+        <div class="custom-select-wrapper">
+          <select id="bank">
+            <option value="">Choose District</option>
+          </select>
+          <img src="/assets/dropdown.svg" class="custom-arrow" alt="dropdown arrow" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="bank">Branch :</label>
+        <div class="custom-select-wrapper">
+          <select id="bank">
+            <option value="">Select your Bank Branch</option>
+          </select>
+          <img src="/assets/dropdown.svg" class="custom-arrow" alt="dropdown arrow" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="custom-select-wrapper ifsc-btn-wrapper">
+          <button class="find-ifsc-btn">Find IFSC code</button>
+        </div>
+      </div>
+      
+
+
+
+      
+      
+  <!-- search results -->
     <div class="search-results-container">
         <div class="search-results">
             <p class="result1"><b>Coromandel IFSC code of ICICI Bank</b></p>
         </div>
         <div class="info-grid">
             <div><span class="f1">BRANCH</span><strong>Delhi Nagrik Sehkari Bank IMPS</strong></div>
-            <div><span class="f2">IFSC</span><strong>YESB0DNB002</strong></div>
+            <div><span class="f2" >IFSC</span><strong style="color:#CECBFF">YESB0DNB002</strong></div>
             
             <div><span class="f1">CENTRE</span><strong>DELHI</strong></div>
             <div><span class="f2">BANK</span><strong>Delhi Nagrik Sehkari Bank</strong></div>
@@ -55,11 +93,11 @@ title: Labh
             <div><span class="f2">BANKCODE</span><strong>DENS</strong></div>
             
             <div><span class="f1">STATE</span><strong>MAHARASHTRA</strong></div>
-            <div><span class="f2">ADDRESS</span><strong>720  NEAR GHANTAGHAR, SUBZI MANDI, DELHI - 110007</strong></div>
+            <div><span class="f2">ADDRESS</span><strong style="padding-left:10px;">720  NEAR GHANTAGHAR, SUBZI MANDI, DELHI - 110007</strong></div>
             
             <div><span class="f1">City</span><strong>MUMBAI</strong></div>
             
-            <div><span class="f1">Circle</span><strong>West Bengal</strong></div>
+            <div><span class="f2">Circle</span><strong>West Bengal</strong></div>
         </div>
     </div>
           
@@ -73,7 +111,7 @@ title: Labh
              <div><span>STATE</span><strong>MAHARASHTRA</strong></div>
              <div><span>City</span><strong>MUMBAI</strong></div>
              <div><span>Circle</span><strong>West Bengal</strong></div>
-             <div><span>IFSC</span><strong>YESB0DNB002</strong></div>
+             <div><span>IFSC</span><strong style="color:#CECBFF">YESB0DNB002</strong></div>
              <div><span>BANK</span><strong>Delhi Nagrik Sehkari Bank</strong></div>
              <div><span>BANKCODE</span><strong>DENS</strong></div>
               <div><span>ADDRESS</span><strong>720  NEAR GHANTAGHAR, SUBZI MANDI, DELHI - 110007</strong></div>
@@ -82,5 +120,60 @@ title: Labh
 </div>
 
 
+
+
+<div class="sticky-qr sticky-qr-desktop">
+    <div class="sticky-container d-flex">
+        <img
+            class="qr-img"
+            src="/assets/qr_code.png"
+            alt="qr_code"
+            srcset=""
+        />
+        <div>
+            <div class="d-flex">
+                <p>Download Now!</p>
+                <img
+                    class="download-now"
+                    src="/assets/download_now.svg"
+                    alt="download now"
+                />
+            </div>
+            <img
+                class="playstore-app-store-icons"
+                src="/assets/playstore_app_store_icons.svg"
+                alt="play store and app store icons"
+            />
+        </div>
+    </div>
+  </div>
+  
+  
+  <div class="sticky-qr-mobile">
+    <div class="d-flex" style="align-items: center">
+        <img
+            class="s-close"
+            src="/assets/close.svg"
+            alt="close"
+            srcset=""
+            id="close-sticky-qr-mobiile"
+        />
+        <img
+            class="s-logo"
+            src="/assets/logo.svg"
+            alt="qr_code"
+            srcset=""
+        />
+        <div>
+            <p class="s-heading">Labh - Mutual Funds</p>
+            <p class="s-description">
+                Invest in Hope, Harvest Success
+            </p>
+        </div>
+    </div>
+    <span class="s-get-app">Get App</span>
+  </div>
+  
+    
 
   
