@@ -1,4 +1,4 @@
-const domain = "https://api.labh.io";
+const domain = "https://devapi.labh.io";
 const calculators = [
     {
         "card-heading": "Retirement calculator",
@@ -375,6 +375,31 @@ $(".mobile-search-input-container img").click(function () {
 });
 
 $(".mobile-search-icon img").click(function () {
+    fetchBasketsPerformance();
     $(".search-mobile").removeClass("d-none");
     $(".search-dropdown-desktop").addClass("d-none");
 });
+
+
+function fetchBasketsPerformance() {
+    let winWidth = window.innerWidth;
+
+    if (winWidth < 745) {
+        $.get(`${domain}/open/basket-returns`, function (response) {
+            $('.basket-explore').empty();
+            const keys = Object.keys(response);
+            console.log(response);
+            keys.forEach((key) => {
+                const component = `
+                    <div class="item">
+                        <div class="title">${key}</div>
+                        <div class="performance d-flex">
+                            Performance at <span>${response[key]}</span><img src="/assets/ant-design_stock-outlined.svg" alt="stock">
+                        </div>
+                    </div>
+                `
+                $('.basket-explore').append(component);
+            })
+        })
+    }
+}

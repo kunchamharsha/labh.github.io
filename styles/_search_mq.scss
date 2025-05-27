@@ -1,4 +1,10 @@
 @media (min-width: 0px) and (max-width: 744px) {
+
+    .search-container {
+        .search-dropdown-desktop {
+            display: none;
+        }
+    }
 }
 
 @media (min-width: 745px) and (max-width: 1200px) {
@@ -25,6 +31,10 @@
             width: $search-bar-width;
             font-size: calculate-rem(16);
         }
-        
+        .search-container {
+            .search-dropdown-desktop {
+                width: calculate-rem(306);
+            }
+        }
     }
 }

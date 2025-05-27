@@ -804,6 +804,7 @@ nav {
 .search-mobile .wrapper {
   padding: 0.625rem 1rem;
   height: 100%;
+  overflow-y: scroll;
 }
 .search-mobile .search-suggestions {
   overflow: scroll;
@@ -876,6 +877,40 @@ nav {
   -webkit-line-clamp: 1;
 }
 
+@media (min-width: 0px) and (max-width: 744px) {
+  .search-container .search-dropdown-desktop {
+    display: none;
+  }
+}
+@media (min-width: 745px) and (max-width: 1200px) {
+  .search-bar-container {
+    width: 29.0625rem;
+    justify-content: space-between;
+  }
+  .search-bar-container .search-bar {
+    width: 27.3125rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+  .search-bar-container .search-bar::before {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .search-bar-container a {
+    width: 8.6875rem;
+    height: 2.5rem;
+    font-size: 0.875rem;
+  }
+  .search-bar-container .search-dropdown {
+    top: 1.875rem;
+    padding-top: 1.875rem;
+    width: 27.3125rem;
+    font-size: 1rem;
+  }
+  .search-bar-container .search-container .search-dropdown-desktop {
+    width: 19.125rem;
+  }
+}
 #faq {
   background-color: #1a1a1a;
   color: white;
