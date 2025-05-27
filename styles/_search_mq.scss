@@ -5,6 +5,14 @@
             display: none;
         }
     }
+
+    .search-mobile {
+        .basket-explore {
+            .item {
+                font-size: calculate-rem(14);
+            }
+        }
+    }
 }
 
 @media (min-width: 745px) and (max-width: 1200px) {

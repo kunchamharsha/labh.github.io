@@ -1,4 +1,6 @@
-const domain = "https://devapi.labh.io";
+if (typeof domain == "undefined") {
+    window.domain = "https://devapi.labh.io";
+}
 const calculators = [
     {
         "card-heading": "Retirement calculator",
@@ -69,12 +71,20 @@ const calculators = [
 
 const blogs = [
     {
-        heading: "How to invest",
-        url: "/blog/how-to-invest/",
+        heading: "Atal Pension Yojana",
+        url: "/savings-schemes/Atal-Pension-Yojana",
     },
     {
-        heading: "What is sip",
-        url: "/blog/what-is-sip/",
+        heading: "Kisan Vikas Patra",
+        url: "/savings-schemes/Kisan-Vikas-Patra",
+    },
+    {
+        heading: "National Savings Certificate",
+        url: "/savings-schemes/National-Savings-Certificate",
+    },
+    {
+        heading: "Post Office Monthly Income Scheme",
+        url: "/savings-schemes/Post-Office-Monthly-Income-Scheme",
     },
 ];
 
@@ -266,9 +276,11 @@ $("#search, #mobile-search").focus(function () {
     renderSearchDropdown();
 });
 
-// $("#search").blur(function () {
-//     $(".search-dropdown-desktop").addClass("d-none");
-// });
+$(document).on("click", function (event) {
+    if (!$(event.target).closest(".search-bar-container").length) {
+        $(".search-dropdown-desktop").addClass("d-none");
+    }
+});
 
 function fetchMutualFunds(searchQuery) {
     let results = [];
@@ -341,6 +353,33 @@ function search(queryText) {
 let debounceTimer;
 let searchTerm;
 
+function renderDropdownWithSuggestion() {
+    if (searchSuggestion == "all") {
+        renderSearchDropdown();
+        $(".search-dropdown-desktop .label, .label-change").text("All");
+        $('.basket-explore').removeClass('d-none');
+        $('.label-explore').removeClass('d-none');
+    } else if (searchSuggestion == "mutual-funds") {
+        const mutualFunds = fetchMutualFunds("other");
+        const formattedResults = formatResutls(mutualFunds);
+        renderSearchResults(formattedResults, "other");
+        $(".search-dropdown-desktop .label, .label-change").text("Mutual Funds");
+        $('.basket-explore').addClass('d-none');
+        $('.label-explore').addClass('d-none');
+    } else if (searchSuggestion == "blogs") {
+        const formattedResults = formatResutls(blogs.slice(0, 5));
+        renderSearchResults(formattedResults, "other");
+        $(".search-dropdown-desktop .label, .label-change").text("Blogs");
+        $('.basket-explore').addClass('d-none');
+        $('.label-explore').addClass('d-none');
+    } else if (searchSuggestion == "calculators") {
+        renderSearchDropdown();
+        $(".search-dropdown-desktop .label, .label-change").text("Labh Calculators");
+        $('.basket-explore').addClass('d-none');
+        $('.label-explore').addClass('d-none');
+    }
+}
+
 $("#search, #mobile-search").keyup(function () {
     searchTerm = $(this).val();
     if (searchTerm.length > 0) {
@@ -367,6 +406,7 @@ $(".suggestion .suggestion-item, .search-suggestions .item").click(function () {
     $(".suggestion .suggestion-item").removeClass("active");
     $(".search-suggestions .item").removeClass("active");
     $(this).addClass("active");
+    renderDropdownWithSuggestion();
 });
 
 $(".mobile-search-input-container img").click(function () {
@@ -380,13 +420,12 @@ $(".mobile-search-icon img").click(function () {
     $(".search-dropdown-desktop").addClass("d-none");
 });
 
-
 function fetchBasketsPerformance() {
     let winWidth = window.innerWidth;
 
     if (winWidth < 745) {
         $.get(`${domain}/open/basket-returns`, function (response) {
-            $('.basket-explore').empty();
+            $(".basket-explore").empty();
             const keys = Object.keys(response);
             console.log(response);
             keys.forEach((key) => {
@@ -397,9 +436,9 @@ function fetchBasketsPerformance() {
                             Performance at <span>${response[key]}</span><img src="/assets/ant-design_stock-outlined.svg" alt="stock">
                         </div>
                     </div>
-                `
-                $('.basket-explore').append(component);
-            })
-        })
+                `;
+                $(".basket-explore").append(component);
+            });
+        });
     }
 }

@@ -48,27 +48,92 @@
             async
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
         ></script>
-
+        <link rel="stylesheet" href="/styles/blog.css" />
         <title>Post Office Recurring Deposit (RD) – Small monthly savings plan with quarterly compounded interest and a 5-year lock-in.</title>
     </head>
     <body>
-        <link rel="stylesheet" href="/styles/blog.css" />
-
-
-
-<nav>
-    <div class="logo-container">
+        <nav>
+    <a href="/" class="logo-container">
         <img src="/assets/LOGO.png" alt="logo" />
         <span>Labh</span>
-    </div>
+    </a>
     <div class="search-bar-container">
-        <!-- <div class="search-bar1">
-            <img src="/assets/search-icon.svg">
+        <div class="mobile-search-icon">
+            <img src="/assets/search-icon.svg" alt="search">
         </div>
-        <div class="search-bar hide-icon">
-            <input type="text" placeholder="Search" id="search" autocomplete="off"/>
+        <div class="search-container">
+    <div class="search-bar hide-icon">
+        <input
+            class="search-bar-input"
+            type="text"
+            placeholder="Search"
+            id="search"
+            autocomplete="off"
+        />
+    </div>
+    <div class="search-dropdown-desktop d-none">
+        <div
+            class="suggestion suggestion-desktop d-flex justify-content-between align-items-center"
+        >
+            <div
+                class="suggestion-item d-flex justify-content-center align-items-center active"
+                d-value="all"
+            >
+                <div class="heading">All</div>
+            </div>
+            <div
+                class="suggestion-item d-flex justify-content-center align-items-center"
+                d-value="mutual-funds"
+            >
+                <div class="heading">Mutual Funds</div>
+            </div>
+            <div
+                class="suggestion-item d-flex justify-content-center align-items-center"
+                d-value="calculators"
+            >
+                <div class="heading">Calculators</div>
+            </div>
+            <div
+                class="suggestion-item d-flex justify-content-center align-items-center"
+                d-value="blogs"
+            >
+                <div class="heading">Blogs</div>
+            </div>
         </div>
-        <div class="search-dropdown display-none "></div> -->
+        <div class="label">Labh Calculator</div>
+        <div class="calculator-list calculator-list-desktop"></div>
+    </div>
+</div>
+
+<div class="search-mobile d-none">
+    <div class="mobile-search-input-container d-flex align-items-center">
+        <img src="/assets/ep_back.svg" alt="back" />
+        <input
+            type="text"
+            class="search-bar-input"
+            placeholder="Search"
+            id="mobile-search"
+            autocomplete="off"
+        />
+    </div>
+    <div class="wrapper">
+        <div
+            class="search-suggestions d-flex justify-content-start align-items-center"
+        >
+            <div class="item active" d-value="all">All</div>
+            <div class="item" d-value="mutual-funds">Mutual Funds</div>
+            <div class="item" d-value="calculators">Calculators</div>
+            <div class="item" d-value="blogs">Blogs</div>
+        </div>
+        <div class="label label-explore">Explore our curated Baskets</div>
+        <div
+            class="basket-explore d-flex justify-content-between align-items-center flex-wrap"
+        ></div>
+        <div class="label label-change">Try to search calculator</div>
+        <div class="calculator-list"></div>
+    </div>
+</div>
+
         <a href="http://api.labh.io/get-app/">Download Now</a>
     </div>
 </nav>
@@ -681,5 +746,6 @@
 
         gtag("config", "G-WZBYHK4HSX");
     </script>
+    <script src="/main.js"></script>
     </body>
 </html>

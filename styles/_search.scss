@@ -51,7 +51,7 @@
             .suggestion-item:hover,
             .active {
                 border: 1px dotted #58576d;
-                background: #59586e;
+                background: #CECBFF33;
             }
         }
 
@@ -111,16 +111,18 @@
         width: 100%;
         gap: calculate-rem(10);
         margin-top: calculate-rem(24);
-        font-size: calculate-rem(12);
+        font-size: calculate-rem(14);
 
         .item {
             display: flex;
+            justify-content: center;
             align-items: center;
             height: calculate-rem(35);
             padding: calculate-rem(10) calculate-rem(10);
             border: 1px solid #f5f5f5;
             border-radius: calculate-rem(32);
             text-wrap-mode: nowrap;
+            min-width: calculate-rem(60);
         }
 
         .item:hover,
@@ -139,12 +141,13 @@
 
     .basket-explore {
         margin-top: calculate-rem(24);
-        font-size: calculate-rem(12);
+        font-size: calculate-rem(14);
         gap: calculate-rem(10);
-        width: 91vw;
+        // width: 91vw;
 
         .item {
-            width: calculate-rem(168);
+            min-width: calculate-rem(168);
+            width: 48.5%;
             border-radius: calculate-rem(12);
             padding: calculate-rem(16) calculate-rem(16);
             background: #cecbff33;
@@ -154,17 +157,30 @@
                 margin-bottom: calculate-rem(8);
             }
             .performance {
+                font-size: calculate-rem(12);
                 font-weight: 400;
                 text-wrap-mode: nowrap;
+                color: #F5F5F5CC;
                 span {
                     color: #63e4bf;
                     margin: 0 calculate-rem(4);
+                    font-weight: 500;
                 }
             }
         }
     }
     .calculator-list {
         margin-top: calculate-rem(24);
+
+        .calculator {
+            margin-top: calculate-rem(16);
+            background: #CECBFF33;
+            border-radius: calculate-rem(32);
+        }
+
+        .calculator:hover {
+            background: #56566B;
+        }
     }
 }
 
