@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        {{ meta }}
+        {{
+            meta
+        }}
         {% include "head.njk" %}
         <link rel="stylesheet" href="/styles/mf_index.css" />
         {{
@@ -14,7 +16,9 @@
 
         <div class="menu-bar">
             <ul>
-                {{ menu | safe }}
+                {{
+                    menu | safe
+                }}
             </ul>
         </div>
 
@@ -25,4 +29,18 @@
         {% include "footer.njk" %}
     </body>
     <script src="/mf_index.js"></script>
+
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-WZBYHK4HSX"
+    ></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-WZBYHK4HSX");
+    </script>
 </html>
