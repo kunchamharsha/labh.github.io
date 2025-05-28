@@ -1,3 +1,57 @@
+const urlParams = new URLSearchParams(window.location.search);
+const ifscParam = urlParams.get("code");
+
+if (ifscParam) {
+  fetch(`https://api.labh.io/ifsc/${ifscParam}`)
+    .then(res => res.json())
+    .then(data => {
+      if (!data?.IFSC) {
+        alert("Invalid IFSC code.");
+        return;
+      }
+
+      const ifscCode = data.IFSC;
+      const bankname = toTitleCase(data.BANK);
+      const branchname = toTitleCase(data.BRANCH);
+      const address = toTitleCase(data.ADDRESS);
+      const contact = data.CONTACT || "N/A";
+      const statename = toTitleCase(data.STATE);
+      const districtname = toTitleCase(data.DISTRICT || "N/A");
+      const cityName = toTitleCase(data.CITY || "N/A");
+      const center = toTitleCase(data.CENTRE  || cityName || "N/A");
+      const circle = statename;
+
+      const resultContainer = document.querySelector(".pincode-info");
+      resultContainer.classList.remove("d-none");
+      resultContainer.classList.add("d-block");
+
+      document.getElementById("headline").innerHTML = `<b>${branchname} IFSC code of ${bankname}</b>`;
+      document.getElementById("branch1").innerText = branchname;
+      document.getElementById("centre1").innerText = center;
+      document.getElementById("district1").innerText = districtname;
+      document.getElementById("state1").innerText = statename;
+      document.getElementById("city1").innerText = cityName;
+      document.getElementById("circle1").innerText = circle;
+      document.getElementById("ifsc1").innerText = ifscCode;
+      document.getElementById("bank1").innerText = bankname;
+      document.getElementById("Contact1").innerText = contact;
+      document.getElementById("address1").innerText = address;
+    })
+    .catch(err => {
+      console.error("IFSC fetch error:", err);
+      alert("Failed to fetch IFSC details.");
+    });
+}
+
+// helper
+function toTitleCase(str) {
+  return str.toLowerCase()
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const stickyQR = document.querySelector(".sticky-qr");
   const targetURL = "https://play.google.com/store/apps/details?id=com.labh.io&pcampaignid=web_share";
