@@ -2,23 +2,23 @@ const urlParams = new URLSearchParams(window.location.search);
 const ifscParam = urlParams.get("code");
 
 if (ifscParam) {
-  fetch(`https://api.labh.io/ifsc/${ifscParam}`)
+  fetch(`https://devapi.labh.io/open/ifsc/${ifscParam}`)
     .then(res => res.json())
     .then(data => {
-      if (!data?.IFSC) {
+      if (!data?.ifsc) {
         alert("Invalid IFSC code.");
         return;
       }
 
-      const ifscCode = data.IFSC;
-      const bankname = toTitleCase(data.BANK);
-      const branchname = toTitleCase(data.BRANCH);
-      const address = toTitleCase(data.ADDRESS);
-      const contact = data.CONTACT || "N/A";
-      const statename = toTitleCase(data.STATE);
-      const districtname = toTitleCase(data.DISTRICT || "N/A");
-      const cityName = toTitleCase(data.CITY || "N/A");
-      const center = toTitleCase(data.CENTRE  || cityName || "N/A");
+      const ifscCode = data.ifsc;
+      const bankname = toTitleCase(data.bank_name);
+      const branchname = toTitleCase(data.branch);
+      const address = toTitleCase(data.address);
+      const contact = data.contact || "N/A";
+      const statename = toTitleCase(data.state_name);
+      const districtname = toTitleCase(data.district_name || "N/A");
+      const cityName = toTitleCase(data.city_name || "N/A");
+      const center = toTitleCase(data.center  || cityName || "N/A");
       const circle = statename;
 
       const resultContainer = document.querySelector(".pincode-info");
@@ -247,9 +247,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .join(' '); 
 
       const resultContainer = document.querySelector(".pincode-info");
-      const container = document.querySelector(".search-results-container");
-      console.log(resultContainer);
-      console.log(container);
       resultContainer.classList.remove("d-none");
       resultContainer.classList.add("d-block");
       document.getElementById("headline").innerHTML = `<b>${branchname} IFSC code of ${bankname}</b>`;
@@ -271,3 +268,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+//seo
+  (function () {
+    const url = new URL(window.location.href);
+    const codeParam = url.searchParams.get("code");
+    if (codeParam) {
+      const canonicalLink = document.querySelector("#canonical-link");
+      if (canonicalLink) {
+        canonicalLink.setAttribute(
+          "href",
+          `https://labh.io/ifsc/?code=${encodeURIComponent(codeParam)}`
+        );
+      }
+    }
+  })();
+
