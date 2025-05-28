@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{
+            meta
+        }}
+        {% include "head.njk" %}
+        <link rel="stylesheet" href="/styles/mutualfund.css" />
+        {{
+            other_scripts | safe
+        }}
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        {% include "calculator-header.njk" %}
+
+        <div class="menu-bar">
+            <ul>
+                {{
+                    menu | safe
+                }}
+            </ul>
+        </div>
+
+        {{ content | safe }}
+
+        <div class="blur-effect display-none"></div>
+
+        {% include "footer.njk" %}
+    </body>
+
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-WZBYHK4HSX"
+    ></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-WZBYHK4HSX");
+    </script>
+</html>

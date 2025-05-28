@@ -1,0 +1,257 @@
+@media (min-width: 0px) and (max-width: 744px) {
+    nav {
+        padding-top: calculate-rem(25);
+        padding-bottom: calculate-rem(25);
+    }
+    .nav-hr {
+        display: block;
+    }
+
+    #mutual-funds-link {
+        display: none;
+    }
+
+    #mutual-funds-link-mobile {
+        display: block;
+
+        img {
+            width: calculate-rem(12);
+        }
+    }
+    
+    .main-container {
+        margin-top: calculate-rem(14);
+    }
+    .contents {
+        h1 {
+            font-size: calculate-rem(24);
+            margin-bottom: calculate-rem(4);
+        }
+        p {
+            font-size: calculate-rem(16);
+        }
+    }
+    .categories {
+        font-size: calculate-rem(16);
+        font-weight: 600;
+        gap: calculate-rem(12);
+        margin: calculate-rem(40) 0;
+        .category {
+            max-width: calculate-rem(124);
+            flex: 1 1 calculate-rem(124);
+            height: calculate-rem(45);
+        }
+
+        .active {
+            img {
+                width: calculate-rem(18);
+                height: calculate-rem(18);
+                margin-left: calculate-rem(10);
+            }
+        }
+
+        .solution-oriented {
+            min-width: calculate-rem(180);
+        }
+    }
+
+    .cards {
+        margin-bottom: calculate-rem(0);
+        gap: calculate-rem(14);
+        .card-description {
+            line-height: calculate-rem(20);
+        }
+        .card {
+            border-radius: calculate-rem(16);
+
+            .card-heading {
+                margin-bottom: calculate-rem(8);
+            }
+        }
+    }
+
+    .funds {
+        margin-top: calculate-rem(33);
+        font-weight: 500;
+
+        h1 {
+            font-size: calculate-rem(20);
+            margin-bottom: calculate-rem(42);
+        }
+
+        .fund {
+            font-size: calculate-rem(14);
+
+            .risk {
+                width: 100%;
+                font-size: calculate-rem(12);
+                font-weight: 500;
+            }
+        }
+
+        .view-more {
+            width: calculate-rem(31);
+            height: calculate-rem(31);
+
+            img {
+                margin: auto;
+            }
+        }
+    }
+
+    .pagination {
+        margin-top: calculate-rem(17);
+        font-size: calculate-rem(14);
+
+        .pages-left {
+            display: none;
+        }
+        .goto,
+        .items-per-page {
+            div,
+            span {
+                width: calculate-rem(47);
+            }
+
+            div {
+                top: calculate-rem(20);
+                padding-top: calculate-rem(10);
+            }
+
+            img {
+                width: calculate-rem(14);
+            }
+
+            ul {
+                padding: 0;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .items-per-page-span {
+                border-radius: calculate-rem(10);
+                height: calculate-rem(26);
+            }
+        }
+    }
+
+    .scheme-list {
+        gap: calculate-rem(24);
+        .scheme {
+            flex: 1 1 calculate-rem(160);
+            font-size: calculate-rem(14);
+            height: calculate-rem(52);
+            gap: calculate-rem(12);
+
+            img {
+                width: calculate-rem(52);
+                height: calculate-rem(52);
+                border-radius: calculate-rem(8);
+            }
+        }
+    }
+
+    .pages-left-mobile {
+        display: block;
+    }
+}
+
+@media (min-width: 745px) and (max-width: 1200px) {
+    .menu-bar {
+        font-size: calculate-rem(16);
+    }
+    .main-container {
+        margin-top: calculate-rem(32);
+    }
+
+    .contents {
+        h1 {
+            font-size: calculate-rem(28);
+            margin-bottom: calculate-rem(8);
+        }
+        p {
+            font-size: calculate-rem(16);
+        }
+    }
+
+    .categories {
+        font-size: calculate-rem(17);
+        gap: calculate-rem(26);
+        margin: calculate-rem(32) 0;
+
+        .category {
+            max-width: calculate-rem(150);
+            height: calculate-rem(50);
+        }
+        .solution-oriented {
+            min-width: calculate-rem(214);
+        }
+    }
+
+    .cards {
+        margin-top: calculate-rem(32);
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(calculate-rem(330), 1fr)
+        );
+    }
+
+    .card {
+        .card-heading {
+            font-size: calculate-rem(20);
+            font-weight: 500;
+        }
+        .card-description {
+            font-size: calculate-rem(16);
+            line-height: calculate-rem(22);
+        }
+    }
+
+    .funds {
+        margin-top: calculate-rem(32);
+
+        .funds-list {
+            gap: calculate-rem(30);
+        }
+
+        h1 {
+            font-size: calculate-rem(28);
+            margin-bottom: calculate-rem(40);
+        }
+
+        .fund {
+            font-size: calculate-rem(16);
+            max-width: calculate-rem(320);
+            flex: 1 1 calculate-rem(350);
+
+            .risk {
+                font-size: calculate-rem(12);
+                width: calculate-rem(143);
+                height: calulate-rem(34);
+                font-weight: 500;
+            }
+        }
+    }
+
+    .scheme-list {
+        gap: calculate-rem(16);
+
+        .scheme {
+            max-width: calculate-rem(350);
+            flex: 1 1 calculate-rem(350);
+            font-size: calculate-rem(18);
+
+            img {
+                width: calculate-rem(54);
+                height: calculate-rem(54);
+            }
+        }
+    }
+
+    .pagination {
+        font-size: calculate-rem(20);
+    }
+}

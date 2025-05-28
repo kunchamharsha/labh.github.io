@@ -8,52 +8,21 @@
         />
 
         <!-- Optimized Meta Description -->
-        <meta
-            name="description"
-            content="Labh provides advanced financial research tools for Indian retail investors. Discover the best mutual funds, and investment strategies for portfolio management and risk analysis."
-        />
+         <meta name="description" content="Use our fixed deposit calculator to compute interest and maturity amount. Plan your savings smartly with accurate FD returns estimation."> <meta name="keywords" content="fixed deposit calculator, FD interest calculator, FD maturity calculator, bank FD calculator, investment calculator">
+<!-- Open Graph / Facebook --> <meta property="og:type" content="website"> <meta property="og:url" content="https://labh.io/calculator/fixed-deposit-calculator"> <meta property="og:title" content="Fixed Deposit Calculator – Calculate FD Interest & Maturity"> <meta property="og:description" content="Use our fixed deposit calculator to compute interest and maturity amount. Plan your savings smartly with accurate FD returns estimation.">
+<!-- Twitter --> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:url" content="https://labh.io/calculator/fixed-deposit-calculator"> <meta name="twitter:title" content="Fixed Deposit Calculator – Calculate FD Interest & Maturity"> <meta name="twitter:description" content="Use our fixed deposit calculator to compute interest and maturity amount. Plan your savings smartly with accurate FD returns estimation.">
+
+        <meta property="og:image" content="/assets/logo.svg" />
         <meta
             name="google-site-verification"
             content="9M5Nt9l9tBvol72sZsvPe1qht2CtU7N0-AM9Y64O6tA"
         />
-        <!-- Additional Meta Keywords (Optional) -->
-        <meta
-            name="keywords"
-            content="mutual funds, financial research, portfolio management, Indian retail investors, investment strategies, risk management"
-        />
-
-        <!-- Open Graph Meta Tags (OG Tags) for Social Sharing -->
-        <meta
-            property="og:title"
-            content="Labh – Advanced Financial Research for Mutual Funds in India"
-        />
-        <meta
-            property="og:description"
-            content="Explore Labh's advanced financial tools to find the best mutual funds, and investment strategies for Indian retail investors."
-        />
-        <meta
-            property="og:image"
-            content="https://labh.io/assets/logo_final.png"
-        />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://labh.io" />
         <link rel="icon" href="assets/logo.svg" type="image/x-icon" />
 
         <!-- Twitter Card Meta Tags -->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-            name="twitter:title"
-            content="Labh – Best Mutual Funds Research for Indian Investors"
-        />
-        <meta
-            name="twitter:description"
-            content="Labh offers advanced financial research tools for mutual funds, and portfolio management for Indian retail investors."
-        />
-        <meta
-            name="twitter:image"
-            content="https://labh.io/assets/logo_final.png"
-        />
-
+        <meta name="twitter:image" content="/assets/logo.svg" />
         <link rel="icon" href="/assets/logo.svg" type="image/x-icon" />
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
@@ -79,14 +48,14 @@
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
         ></script>
 
-        <title>Fixed Deposit Calculator</title>
+        <title>Fixed Deposit Calculator – Calculate FD Interest &amp; Maturity</title>
     </head>
     <body>
         <nav>
-    <div class="logo-container">
+    <a href="/" class="logo-container">
         <img src="/assets/LOGO.png" alt="logo" />
         <span>Labh</span>
-    </div>
+    </a>
     <div class="search-bar-container">
         <div class="search-bar hide-icon">
             <input type="text" placeholder="Search" id="search" autocomplete="off"/>
@@ -431,7 +400,7 @@
 
             <div class="desktop-footer">
                 <div class="footer-links">
-                    <div class="footer-links-section">
+                    <div class="footer-links-section company">
                         <h4>Company</h4>
                         <ul>
                             <li>
@@ -538,7 +507,7 @@
                         </ul>
                     </div>
                     <div class="footer-links-section">
-                        <h4>Explore Our Blogs</h4>
+                        <h4>Explore Our Savings-schemes</h4>
                         <ul>
                             <li>
                                 <a
@@ -560,6 +529,48 @@
                             </li>
                             <li>
                                 <a href="https://blog.labh.io/">Read More</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links-section">
+                        <h4>Mutual Funds</h4>
+                        <ul>
+                            <li>
+                                <a
+                                    href="/mutual-funds/"
+                                    >All funds</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/mutual-funds/debt/"
+                                    >Debt funds</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/mutual-funds/equity/"
+                                    >Equity funds</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/mutual-funds/hybrid/"
+                                    >Hybird funds</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/mutual-funds/solution/"
+                                    >Solution Oriented funds</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/mutual-funds/other/"
+                                    >Other funds</a
+                                >
                             </li>
                         </ul>
                     </div>
@@ -660,7 +671,7 @@
     />
     <div
         class="download-app-footer"
-        style="flex: 1; justify-content: flex-end; gap: 20px"
+        style="flex: 1; justify-content: flex-start; gap: 20px"
         onclick="window.location.href = 'https://api.labh.io/get-app/'"
     >
         <div>
@@ -684,5 +695,19 @@
 
 
         <script src="/main.js"></script>
+
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-WZBYHK4HSX"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-WZBYHK4HSX");
+        </script>
     </body>
 </html>

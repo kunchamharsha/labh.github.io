@@ -38,6 +38,9 @@ nav {
   width: 11.625rem;
   aspect-ratio: 31/12;
   align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
 }
 .logo-container img {
   width: 4.5rem;
@@ -78,7 +81,7 @@ nav {
   left: 0px;
   padding-top: calc(1.875rem + 14px);
   padding-left: 0.9375rem;
-  padding-right: calucate-rem(15);
+  padding-right: 0.9375rem;
   border-radius: 2rem;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -921,7 +924,11 @@ nav {
 .footer-links {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 10rem;
+}
+.footer-links .company {
+  width: auto;
 }
 
 .footer-links a {
@@ -966,15 +973,18 @@ nav {
 .download-app-footer {
   display: flex;
   padding-top: 50px;
-  padding-right: 40px;
+  padding-left: 40px;
   padding-bottom: 55px;
   flex-wrap: wrap;
-  justify-content: space-between;
   width: 100%;
 }
 
 .download-app-footer img {
   width: 12.9375rem;
+}
+
+.contact-us-footer {
+  font-size: 1.5rem;
 }
 
 @media (min-width: 0px) and (max-width: 480px) {
@@ -1088,7 +1098,7 @@ nav {
     font-size: 1rem;
   }
   .footer-links-section h4 {
-    margin-top: 1.25rem;
+    margin-top: 0.3125rem;
     font-weight: 700;
   }
   .download-app-footer {
@@ -1103,6 +1113,10 @@ nav {
   }
   footer {
     margin-top: 1.25rem;
+  }
+  .footer-links {
+    gap: 2rem;
+    flex-direction: column;
   }
 }
 @media (min-width: 481px) and (max-width: 767px) {
@@ -1208,10 +1222,14 @@ nav {
   }
   .footer-links {
     font-size: 18px;
+    gap: 1.5625rem;
   }
   .footer-links h4,
   .footer-links li {
     font-size: 18px;
+  }
+  .footer-links-section h4 {
+    margin-top: 0.3125rem;
   }
   .download-app-footer {
     padding-top: 0;
@@ -1323,7 +1341,11 @@ nav {
   .download-app-footer {
     padding-top: 0;
     padding-bottom: 0;
+    padding-left: 0;
     margin: 0px !important;
+  }
+  .footer-links {
+    gap: 3.125rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
