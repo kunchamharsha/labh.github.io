@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const ifscParam = urlParams.get("code");
 
 if (ifscParam) {
-  fetch(`https://devapi.labh.io/open/ifsc/${ifscParam}`)
+  fetch(`https://api.labh.io/open/ifsc/${ifscParam}`)
     .then(res => res.json())
     .then(data => {
       if (!data?.ifsc) {
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let selectedDistrictId = null;
   let branchesList = [];
 
-  fetch("https://devapi.labh.io/open/api/banks")
+  fetch("https://api.labh.io/open/api/banks")
     .then(res => res.json())
     .then(data => {
       if (!data?.banks?.length) return;
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!selectedBankId) return;
 
-    fetch(`https://devapi.labh.io/open/api/bank/location?bank_id=${selectedBankId}`)
+    fetch(`https://api.labh.io/open/api/bank/location?bank_id=${selectedBankId}`)
       .then(res => res.json())
       .then(data => {
         if (!data?.states?.length) return;
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!selectedBankId || !selectedStateId) return;
 
-    fetch(`https://devapi.labh.io/open/api/bank/location?bank_id=${selectedBankId}&state_id=${selectedStateId}`)
+    fetch(`https://api.labh.io/open/api/bank/location?bank_id=${selectedBankId}&state_id=${selectedStateId}`)
       .then(res => res.json())
       .then(data => {
         if (!data?.districts?.length) return;
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!selectedBankId || !selectedStateId || !selectedDistrictId) return;
 
-    fetch(`https://devapi.labh.io/open/api/bank/location?bank_id=${selectedBankId}&state_id=${selectedStateId}&district_id=${selectedDistrictId}`)
+    fetch(`https://api.labh.io/open/api/bank/location?bank_id=${selectedBankId}&state_id=${selectedStateId}&district_id=${selectedDistrictId}`)
       .then(res => res.json())
       .then(data => {
         branchesList = data?.branches || [];
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const apiUrl = `https://devapi.labh.io/open/api/get-ifsc?state_id=${selectedStateId}&district_id=${selectedDistrictId}&bank_id=${selectedBankId}&branch=${encodeURIComponent(branch)}`;
+    const apiUrl = `https://api.labh.io/open/api/get-ifsc?state_id=${selectedStateId}&district_id=${selectedDistrictId}&bank_id=${selectedBankId}&branch=${encodeURIComponent(branch)}`;
 
     fetch(apiUrl)
     .then(res => res.json())
@@ -284,4 +284,25 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   })();
+
+  (function () {
+    const url = new URL(window.location.href);
+    const codeParam = url.searchParams.get("code");
+
+    if (codeParam) {
+      // Dynamically set the page <title>
+      document.title = `IFSC Code: ${codeParam} | Labh`;
+
+      // Optionally also update the canonical link
+      const canonicalLink = document.querySelector("#canonical-link");
+      if (canonicalLink) {
+        canonicalLink.setAttribute(
+          "href",
+          `https://labh.io/ifsc/?code=${encodeURIComponent(codeParam)}`
+        );
+      }
+    }
+  })();
+
+
 
