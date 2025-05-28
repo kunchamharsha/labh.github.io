@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="UTF-8" />
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+/>
+
+<!-- Optimized Meta Description -->
+
+<meta property="og:image" content="/assets/logo.svg" />
+<meta
+    name="google-site-verification"
+    content="9M5Nt9l9tBvol72sZsvPe1qht2CtU7N0-AM9Y64O6tA"
+/>
+<meta property="og:type" content="website" />
+<link rel="icon" href="assets/logo.svg" type="image/x-icon" />
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="/assets/logo.svg" />
+
+<link rel="icon" href="/assets/logo.svg" type="image/x-icon" />
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+    crossorigin="anonymous"
+/>
+
+<link rel="stylesheet" href="/styles/main.css" />
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"
+></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script>
+<script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+></script>
+
+        <link rel="stylesheet" href="/styles/mutualfund.css" />
+         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
+        <title>Labh</title>
+    </head>
+    <body>
+        <nav>
+    <a href="/" class="logo-container">
+        <img src="/assets/LOGO.png" alt="logo" />
+        <span>Labh</span>
+    </a>
+    <div class="search-bar-container">
+        <div class="search-bar hide-icon">
+            <input type="text" placeholder="Search" id="search" autocomplete="off"/>
+        </div>
+        <div class="search-dropdown display-none "></div>
+        <a href="http://api.labh.io/get-app/">Download Now</a>
+    </div>
+</nav>
+<hr class="nav-hr" />
+
+
+        <div class="menu-bar">
+            <ul>
+                 <li id="mutual-funds-link"><a href="/mutual-funds/" >Mutual Funds</a></li> <li id="mutual-funds-link-mobile"><a onclick="history.back()" > <img src="/assets/back-arrow.png" alt=""> Back  </a></li> 
+            </ul>
+        </div>
+
+        
+<div class="main-container">
+    <div class="contents">
+        <h1 id="fund-name-heading"></h1>
+    </div>
+    <div class="mf-chart-container">
+        <div id="chart-loader" style="text-align: center; padding: 20px">
+            <p>Loading chart, please wait...</p>
+        </div>
+        <div id="chart"></div>
+        <div class="year-container">
+            <div class="years" id="years">
+                <span data-value="1" class="active">1 Year</span>
+                <span data-value="3">3 Year</span>
+                <span data-value="5">5 Year</span>
+                <span data-value="0">All</span>
+            </div>
+
+            <div class="years d-none" id="mobile-years">
+                <span data-value="1" class="active">1 Yr</span>
+                <span data-value="3">3 Yrs</span>
+                <span data-value="5">5 Yrs</span>
+            </div>
+            <a href="https://api.labh.io/get-app/">Invest Now</a>
+        </div>
+    </div>
+    <div class="mf-details-container">
+        <div class="details-1">
+            <div class="w-100 custom-margin">
+                <!-- <div class="detail">
+                    <div class="title">Basket Min Price</div>
+                    <div id="min-price"></div>
+                </div> -->
+                <div class="detail">
+                    <div class="title">Risk Analysis</div>
+                    <div id="risk-analysis"></div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="w-100">
+                <div class="detail">
+                    <div class="title">CAGR 5 year</div>
+                    <div id="cagr">N/A</div>
+                </div>
+                <div class="detail">
+                    <div class="title">Lock In Period</div>
+                    <div id="lock-in"></div>
+                </div>
+            </div>
+        </div>
+        <div class="details-2 calculator-card-contents">
+            <div class="detail custom-flex">
+                <div class="toggler">
+                    <span class="sip-span active" id="sip-span" onclick=""
+                        >Monthly SIP</span
+                    >
+                    <span class="lumpsum-span" id="lumpsum-span">One-Time</span>
+                </div>
+                <div class="year-selector-wrapper">
+                    <div
+                        class="year-selector center-algin position-relative d-flex justify-content-center align-items-center"
+                    >
+                        <img
+                            src="/assets/dropdown-arrow.svg"
+                            alt="dropdown-arrow"
+                        />
+                        <span id="sip-year">1 Year</span>
+                    </div>
+                    <div
+                        class="year-list center-algin d-none justify-content-center align-items-center"
+                    >
+                        <span
+                            data-value="1"
+                            class="active d-flex justify-content-center align-items-center"
+                            >1 Year</span
+                        >
+                        <span
+                            data-value="3"
+                            class="d-flex justify-content-center align-items-center"
+                            >3 Year</span
+                        >
+                        <span
+                            data-value="5"
+                            class="d-flex justify-content-center align-items-center"
+                            >5 Year</span
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="cal-content">
+                <label id="cal-label">Monthly Investment</label>
+                <span id="investment-slider-value">₹500</span>
+            </div>
+
+            <input
+                type="range"
+                id="investment-slider"
+                min="500"
+                max="100000"
+                step="500"
+                value="500"
+            />
+
+            <div class="cal-content mf-cal-content">
+                <div>Total Investment <span id="total-investment">₹</span></div>
+                <div>Returns <span id="total-returns">₹</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="top-holdings">
+        <h1>Top 10 Holdings</h1>
+        <div class="top-holdings-list" id="top-holdings-list"></div>
+    </div>
+
+    <div class="top-holdings sector" id="sector">
+        <h1>Top 10 Sectors</h1>
+        <div class="top-holdings-list" id="sectors"></div>
+    </div>
+</div>
+
+<script src="/mf.js"></script>
+
+
+        <div class="blur-effect display-none"></div>
+
+        <footer
+    style="
+        background-color: #cec3fe;
+        font-family: Arial, sans-serif;
+        color: #000;
+    "
+>
+    <div
+        class="footercontainer"
+        style="
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-left: 24px;
+            margin-bottom: -30px;
+        "
+    >
+        <!-- Left Section -->
+        <div style="flex: 1; min-width: 250px; margin-bottom: 20px">
+            <div
+                class="footer-logo-wrapper"
+                style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    align-items: self-start;
+                    margin-top: 20px;
+                "
+            >
+                <img
+                    class="footer-icon"
+                    src="/assets/Frame 2.svg"
+                    alt="Labh Logo"
+                    style="width: 60px; margin-bottom: 10px"
+                />&nbsp;
+
+                <p class="company-address">
+                    Forty2 Enterprises is authorised entity registered with AMFI
+                    to sell mutual funds. AMFI License No. ARN-308230.
+                    <br />Same can be verified
+                    <a
+                        href="https://www.amfiindia.com/locate-your-nearest-mutual-fund-distributor-details"
+                        >here.</a
+                    ><br />
+                </p>
+                <p class="company-address">
+                    <strong>Address: </strong>Forty2 Enterprises,Andhra
+                    University Incubation council, Maddilapalem, Visakhapatnam,
+                    Andhra Pradesh - 530040
+                </p>
+            </div>
+
+            <div class="desktop-footer">
+                <div class="footer-links">
+                    <div class="footer-links-section company">
+                        <h4>Company</h4>
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://labh.io/#"
+                                    
+                                    >Home</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://labh.io/#aboutsection"
+                                    
+                                    >About Us</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://labh.io/#pitch"
+                                    
+                                    >Methodologies</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://tawk.to/labh"
+                                    
+                                    >Contact Us</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-section">
+                        <h4>Investor's toolkit</h4>
+                        <ul>
+                            <li><a href="/calculator/">All calculators</a></li>
+                            <li>
+                                <a href="/calculator/retirement-calculator/"
+                                    >Retirement calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/education-fees-calculator/"
+                                    >Education fees calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/sip-calculator/"
+                                    >Sip returns calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/fixed-deposit-calculator/"
+                                    >Fixed deposit return calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/fixed-deposit-calculator/"
+                                    >Lumpsum calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/pf-calculator/"
+                                    >PF calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/nps-calculator/"
+                                    >NPS calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/personal-loan-calculator/"
+                                    >Personal Loan calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/calculator/credit-card-debit-calculator/"
+                                    >Credit card debt calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/car-loan-calculator/"
+                                    >Car loan calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/bike-loan-calculator/"
+                                    >Bike cost calculator</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/calculator/home-loan-calculator/"
+                                    >House calculator</a
+                                >
+                            </li>
+                            <!-- <li>
+                                <a href="/calculator/stepup-sip-calculator/"
+                                    >Sip step up calculator</a
+                                >
+                            </li> -->
+                        </ul>
+                    </div>
+                    <div class="footer-links-section">
+                        <h4>Explore Our Savings-schemes</h4>
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://blog.labh.io/2024/06/funding-education-for-your-kids-with.html"
+                                    >Mutual Funds for Your Child’s Future</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://blog.labh.io/2024/11/Top%2010%20mutual%20funds%20to%20invest%20in%20India%202024.html"
+                                    >Best Mutual Funds to Invest</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://blog.labh.io/2024/07/comprehensive-financial-planning-guide_4.html"
+                                    >A Complete Financial Planning Guide</a
+                                >
+                            </li>
+                            <li>
+                                <a href="https://blog.labh.io/">Read More</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links-section">
+                        <h4>Mutual Funds</h4>
+                        <ul>
+                            <li>
+                                <a
+                                    href="/mutual-funds/"
+                                    >All funds</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/mutual-funds/debt/"
+                                    >Debt funds</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/mutual-funds/equity/"
+                                    >Equity funds</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/mutual-funds/hybrid/"
+                                    >Hybird funds</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/mutual-funds/solution/"
+                                    >Solution Oriented funds</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/mutual-funds/other/"
+                                    >Other funds</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-methodologies">
+                    <div>
+                        <h4
+                            class="social-media"
+                            style="font-size: 15px; font-weight: bold"
+                        >
+                            Find us on social media:
+                        </h4>
+                        <div
+                            class="footer-icons"
+                            style="display: flex; gap: 15px"
+                        >
+                            <a href="https://www.instagram.com/labh.io/">
+                                <img
+                                    class="insta-link"
+                                    src="/assets/instagram.png"
+                                    alt="Instagram"
+                                    style="
+                                        width: 60px;
+                                        height: 57px;
+                                        margin-top: 2px;
+                                    "
+                                />
+                            </a>
+                            <a href="https://in.linkedin.com/company/labh-io">
+                                <img
+                                    class="linkedin-link"
+                                    src="/assets/linkedin.png"
+                                    alt="LinkedIn"
+                                    style="width: 70px; height: 65px"
+                                />
+                            </a>
+                            <a
+                                href="https://www.facebook.com/people/Labh/61565477967568/"
+                            >
+                                <img
+                                    class="facebook-link"
+                                    src="/assets/facebook.png"
+                                    alt="Facebook"
+                                    style="width: 70px; height: 65px"
+                                />
+                            </a>
+                            <a href="https://x.com/labh_io">
+                                <img
+                                    class="x-link"
+                                    src="/assets/x.png"
+                                    alt="X"
+                                    style="
+                                        width: 60px;
+                                        height: 52px;
+                                        margin-top: 7px;
+                                    "
+                                />
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="footer-contact-us-wrapper"
+                        style="display: flex"
+                    >
+                        <div style="flex: 1">
+                            <strong
+                                class="contact-us-footer"
+                                style="margin-bottom: 20px"
+                                >Contact us on:</strong
+                            >
+                            <p
+                                class="support-email"
+                                style="
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 10px;
+                                    font-size: 23px;
+                                "
+                            >
+                                <img
+                                    src="/assets/mail.png"
+                                    alt="Email"
+                                    style="width: 75px; height: 75px"
+                                />
+                                support@labh.io
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+        </div>
+    </div>
+    <hr
+        class="hrs"
+        style="color: black; margin-top: -20px; margin-bottom: 20px"
+    />
+    <div
+        class="download-app-footer"
+        style="flex: 1; justify-content: flex-start; gap: 20px"
+        onclick="window.location.href = 'https://api.labh.io/get-app/'"
+    >
+        <div>
+            <img
+                class="get-app"
+                src="/assets/googleplay.png"
+                alst="Google Play"
+                style="width: 200px"
+            />
+        </div>
+        <div>
+            <img
+                class="get-app"
+                src="/assets/applestore.png"
+                alt="App Store"
+                style="width: 200px"
+            />
+        </div>
+    </div>
+</footer>
+
+    </body>
+
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-WZBYHK4HSX"
+    ></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-WZBYHK4HSX");
+    </script>
+</html>
