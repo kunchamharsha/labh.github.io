@@ -1,3 +1,57 @@
+const urlParams = new URLSearchParams(window.location.search);
+const ifscParam = urlParams.get("code");
+
+if (ifscParam) {
+  fetch(`https://devapi.labh.io/open/ifsc/${ifscParam}`)
+    .then(res => res.json())
+    .then(data => {
+      if (!data?.ifsc) {
+        alert("Invalid IFSC code.");
+        return;
+      }
+
+      const ifscCode = data.ifsc;
+      const bankname = toTitleCase(data.bank_name);
+      const branchname = toTitleCase(data.branch);
+      const address = toTitleCase(data.address);
+      const contact = data.contact || "N/A";
+      const statename = toTitleCase(data.state_name);
+      const districtname = toTitleCase(data.district_name || "N/A");
+      const cityName = toTitleCase(data.city_name || "N/A");
+      const center = toTitleCase(data.center  || cityName || "N/A");
+      const circle = statename;
+
+      const resultContainer = document.querySelector(".pincode-info");
+      resultContainer.classList.remove("d-none");
+      resultContainer.classList.add("d-block");
+
+      document.getElementById("headline").innerHTML = `<b>${branchname} IFSC code of ${bankname}</b>`;
+      document.getElementById("branch1").innerText = branchname;
+      document.getElementById("centre1").innerText = center;
+      document.getElementById("district1").innerText = districtname;
+      document.getElementById("state1").innerText = statename;
+      document.getElementById("city1").innerText = cityName;
+      document.getElementById("circle1").innerText = circle;
+      document.getElementById("ifsc1").innerText = ifscCode;
+      document.getElementById("bank1").innerText = bankname;
+      document.getElementById("Contact1").innerText = contact;
+      document.getElementById("address1").innerText = address;
+    })
+    .catch(err => {
+      console.error("IFSC fetch error:", err);
+      alert("Failed to fetch IFSC details.");
+    });
+}
+
+// helper
+function toTitleCase(str) {
+  return str.toLowerCase()
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const stickyQR = document.querySelector(".sticky-qr");
   const targetURL = "https://play.google.com/store/apps/details?id=com.labh.io&pcampaignid=web_share";
@@ -193,9 +247,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .join(' '); 
 
       const resultContainer = document.querySelector(".pincode-info");
-      const container = document.querySelector(".search-results-container");
-      console.log(resultContainer);
-      console.log(container);
       resultContainer.classList.remove("d-none");
       resultContainer.classList.add("d-block");
       document.getElementById("headline").innerHTML = `<b>${branchname} IFSC code of ${bankname}</b>`;
@@ -217,3 +268,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+//seo
+  (function () {
+    const url = new URL(window.location.href);
+    const codeParam = url.searchParams.get("code");
+    if (codeParam) {
+      const canonicalLink = document.querySelector("#canonical-link");
+      if (canonicalLink) {
+        canonicalLink.setAttribute(
+          "href",
+          `https://labh.io/ifsc/?code=${encodeURIComponent(codeParam)}`
+        );
+      }
+    }
+  })();
+
