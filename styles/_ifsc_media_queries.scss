@@ -45,9 +45,6 @@
       padding-top:calculate-rem(45);
     }
 
-    .pincode-info{
-      display:block;
-    }
 
     .result2{
       font-size: 20px;
@@ -127,11 +124,104 @@
   pointer-events: none;
   margin-right:calculate-rem(50);
 }
+.info-grid {
+  width: 100%;
+}
+
+.pincode-info .d-flex {
+  flex-direction: column !important;
+  gap: calculate-rem(12);
+}
+
+.info-grid div {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: calculate-rem(64);
+
+}
+
+.info-grid span {
+  color: #bbb;
+  font-weight: 500;
+  min-width: 100px;
+  display: inline-block;
+  font-size: calculate-rem(20);
+}
+
+.info-grid strong {
+  color: white;
+  font-weight: 500;
+  text-align: left;
+  flex: 1;
+  word-wrap: break-word;
+  letter-spacing: calculate-rem(0.5);
+  font-size: calculate-rem(20);
+}
+
+#headline {
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: calculate-rem(32);
+}
+
+#ifsc1 {
+  color: #cecbff;
+}
   }
 
 
   @media (min-width: 0px) and (max-width: 744px)
 {
+
+  .info-grid {
+    width: 100%;
+  }
+  
+  .pincode-info .d-flex {
+    flex-direction: column !important;
+    gap: calculate-rem(12);
+  }
+  
+  .info-grid div {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: calculate-rem(25);
+  }
+  
+  .info-grid span {
+    font-size: calculate-rem(16);
+    color: #bbb;
+    font-weight: 500;
+    min-width: 100px;
+    display: inline-block;
+  }
+  
+  .info-grid strong {
+    font-size: calculate-rem(16);
+    color: white;
+    font-weight: 500;
+    letter-spacing: calculate-rem(0.5);
+    text-align: left;
+    flex: 1;
+    word-wrap: break-word;
+  }
+
+  .main-container {
+    margin-bottom:calculate-rem(80);
+  }
+  
+  #headline {
+    font-size: calculate-rem(30);
+    text-align: left;
+    margin-bottom: calculate-rem(30);
+    line-height: 0.8;
+  }
+  
+  #ifsc1 {
+    color: #cecbff;
+  }
 
   .pin-para {
     margin-top: calculate-rem(16);
@@ -239,9 +329,7 @@
   margin:1px;
 }
 
-.pincode-info{
-  display:block;
-}
+
 
 .form-group {
   display: flex;
@@ -252,7 +340,7 @@
 .form-group label {
   width: 200px; /* You can adjust based on spacing needs */
   color: #FFFFFFCC;
-  font-weight: 400;
+  font-weight: 500;
   font-size: calculate-rem(16);
   opacity:80%;
 }
@@ -266,7 +354,7 @@
   appearance: none;
   background: linear-gradient(to right, #2c2b3f, #3a3752);
   color: #ffffff;
-  font-size: .75rem;
+  font-size: calculate-rem(14);
   cursor: pointer;
 }
 
@@ -307,6 +395,7 @@
 
 /* Responsive button */
 .find-ifsc-btn {
+  height:calculate-rem(48);
   width:297px !important;
   width: 100%; /* ❗ Ensures it follows container size */
   // padding: 16px;

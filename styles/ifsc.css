@@ -224,17 +224,6 @@ p.ifsc {
   color: rgb(255, 255, 255); /* Bold text full opacity */
 }
 
-.info-grid {
-  display: grid;
-  grid-template-columns: 2fr 2fr;
-  gap: 0.625rem 3.75rem;
-  padding: 2.5rem;
-  padding-top: 0rem;
-  margin: auto;
-  color: #fff;
-  font-family: "Inter", sans-serif;
-}
-
 .info-grid div {
   display: flex;
 }
@@ -372,6 +361,69 @@ p.ifsc {
   transform: scale(1.01);
 }
 
+.pincode-info {
+  display: none;
+}
+
+.pincode-info {
+  background-color: #000;
+  color: white;
+  padding-top: 24px;
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+  margin-top: 20px;
+}
+
+#headline {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-width: 250px;
+  font-family: "Inter", sans-serif;
+}
+
+.info-grid div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.info-grid span {
+  color: #bbb;
+  font-weight: 500;
+  width: 120px;
+  display: inline-block;
+}
+
+.info-grid strong {
+  color: white;
+  font-weight: 500;
+  flex: 1;
+  text-align: left;
+  word-wrap: break-word;
+  letter-spacing: 0.03125rem;
+}
+
+#ifsc1 {
+  color: #CECBFF;
+}
+
+.find-ifsc-btn {
+  height: 52px;
+}
+
+.custom-select-wrapper option {
+  background-color: #2c2b3f;
+}
+
 @media (min-width: 744px) and (max-width: 1279px) and (max-width: 789px) {
   .main-container h1 {
     font-size: 25px !important;
@@ -408,9 +460,6 @@ p.ifsc {
   }
   nav {
     padding-top: 2.8125rem;
-  }
-  .pincode-info {
-    display: block;
   }
   .result2 {
     font-size: 20px;
@@ -469,8 +518,86 @@ p.ifsc {
     pointer-events: none;
     margin-right: 3.125rem;
   }
+  .info-grid {
+    width: 100%;
+  }
+  .pincode-info .d-flex {
+    flex-direction: column !important;
+    gap: 0.75rem;
+  }
+  .info-grid div {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+  .info-grid span {
+    color: #bbb;
+    font-weight: 500;
+    min-width: 100px;
+    display: inline-block;
+    font-size: 1.25rem;
+  }
+  .info-grid strong {
+    color: white;
+    font-weight: 500;
+    text-align: left;
+    flex: 1;
+    word-wrap: break-word;
+    letter-spacing: 0.03125rem;
+    font-size: 1.25rem;
+  }
+  #headline {
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+  #ifsc1 {
+    color: #cecbff;
+  }
 }
 @media (min-width: 0px) and (max-width: 744px) {
+  .info-grid {
+    width: 100%;
+  }
+  .pincode-info .d-flex {
+    flex-direction: column !important;
+    gap: 0.75rem;
+  }
+  .info-grid div {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5625rem;
+  }
+  .info-grid span {
+    font-size: 1rem;
+    color: #bbb;
+    font-weight: 500;
+    min-width: 100px;
+    display: inline-block;
+  }
+  .info-grid strong {
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 0.03125rem;
+    text-align: left;
+    flex: 1;
+    word-wrap: break-word;
+  }
+  .main-container {
+    margin-bottom: 5rem;
+  }
+  #headline {
+    font-size: 1.875rem;
+    text-align: left;
+    margin-bottom: 1.875rem;
+    line-height: 0.8;
+  }
+  #ifsc1 {
+    color: #cecbff;
+  }
   .pin-para {
     margin-top: 1rem;
   }
@@ -559,9 +686,6 @@ p.ifsc {
   .dropdown {
     margin: 1px;
   }
-  .pincode-info {
-    display: block;
-  }
   .form-group {
     display: flex;
     align-items: center;
@@ -570,7 +694,7 @@ p.ifsc {
   .form-group label {
     width: 200px; /* You can adjust based on spacing needs */
     color: rgba(255, 255, 255, 0.8);
-    font-weight: 400;
+    font-weight: 500;
     font-size: 1rem;
     opacity: 80%;
   }
@@ -585,7 +709,7 @@ p.ifsc {
             appearance: none;
     background: linear-gradient(to right, #2c2b3f, #3a3752);
     color: #ffffff;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     cursor: pointer;
   }
   .find-ifsc-btn {
@@ -614,6 +738,7 @@ p.ifsc {
     font-size: 1.25rem;
   }
   .find-ifsc-btn {
+    height: 3rem;
     width: 297px !important;
     width: 100%; /* ❗ Ensures it follows container size */
     font-size: 16px;

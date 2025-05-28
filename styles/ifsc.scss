@@ -250,16 +250,16 @@
   }
   
 
-  .info-grid {
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-    gap: calculate-rem(10) calculate-rem(60);
-    padding: calculate-rem(40);
-    padding-top:0rem;
-    margin: auto;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-  }
+  // .info-grid {
+  //   display: grid;
+  //   grid-template-columns: 2fr 2fr;
+  //   gap: calculate-rem(10) calculate-rem(60);
+  //   padding: calculate-rem(40);
+  //   padding-top:0rem;
+  //   margin: auto;
+  //   color: #fff;
+  //   font-family: 'Inter', sans-serif;
+  // }
   
   .info-grid div {
     display: flex;
@@ -425,6 +425,69 @@
   transform: scale(1.01);
 }
 
+.pincode-info{
+  display:none;
+}
+
+
+.pincode-info {
+  background-color: #000;
+  color: white;
+  padding-top: 24px;
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+  margin-top: 20px;
+}
+
+#headline {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: calculate-rem(32);
+}
+
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-width: 250px;
+  font-family: 'Inter', sans-serif;
+}
+
+.info-grid div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.info-grid span {
+  color: #bbb;
+  font-weight: 500;
+  width: 120px;
+  display: inline-block;
+}
+
+.info-grid strong {
+  color: white;
+  font-weight: 500;
+  flex: 1;
+  text-align: left;
+  word-wrap: break-word;
+  letter-spacing: calculate-rem(0.5);
+}
+
+#ifsc1 {
+  color: #CECBFF;
+}
+
+.find-ifsc-btn{
+  height: 52px;
+}
+
+.custom-select-wrapper option{
+  background-color: #2c2b3f
+}
   
   
 @import "ifsc_media_queries";
