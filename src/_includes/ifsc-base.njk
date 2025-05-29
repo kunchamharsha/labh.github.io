@@ -32,6 +32,7 @@
             crossorigin="anonymous"
         />
         <link rel="stylesheet" href="/styles/main.css" />
+        <link rel="stylesheet" href="/styles/ifsc.css" />
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
@@ -52,42 +53,47 @@
         <title>{{ title }}</title>
     </head>
     <body>
-        {% include "blog-header.njk" %}
-
-        <div class="menu-bar">
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><img src="/assets/dote.svg" alt="dote" /></li>
-                {{
-                    menu | safe
-                }}
-            </ul>
-            <button class="share-btn"  onclick="sharePage()">
-                Share
-                <img src="/assets/share.svg" alt="Share" class="share-icon" />
-            </button>
-        </div>
+        {% include "ifsc-header.njk" %}
 
         {{ content | safe }}
-
         <div class="blur-effect display-none"></div>
 
         {% include "footer.njk" %}
 
-        <script src="/main.js"></script>
-        <script src="/blog.js"></script>
-        <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-WZBYHK4HSX"
-    ></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
+        <script src="/ifsc.js"></script>
+        <script>
+            function toggleMenu() {
+                document.querySelector(".nav-menu").classList.toggle("active");
+                document.getElementById("nav-menu").classList.add("d-block");
+                document.addEventListener("click", function (event) {
+                    const navMenu = document.querySelector(".nav-menu");
+                    const hamburger = document.querySelector(".hamburger");
+                    const isClickInside =
+                        navMenu.contains(event.target) ||
+                        hamburger.contains(event.target);
 
-        gtag("config", "G-WZBYHK4HSX");
-    </script>
+                    if (!isClickInside) {
+                        navMenu.classList.remove("active");
+                        // Optionally, you can also remove the 'd-block' class if needed
+                        document
+                            .getElementById("nav-menu")
+                            .classList.remove("d-block");
+                    }
+                });
+            }
+        </script>
     </body>
+    <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-WZBYHK4HSX"
+></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-WZBYHK4HSX");
+</script>
 </html>

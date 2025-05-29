@@ -449,8 +449,8 @@ nav {
     height: 20px;
   }
   .logo-title img {
-    width: 26px;
-    height: 22px;
+    width: 28px;
+    height: 28px;
     margin-top: 5px;
   }
   .logo-title {
@@ -794,5 +794,13 @@ nav {
   .search-bar {
     border: rgba(206, 195, 254, 0.5019607843) 1px solid;
     height: 3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .form-group {
+    max-width: 540px;
+  }
+  .find-ifsc-btn {
+    max-width: 540px;
   }
 }/*# sourceMappingURL=pincode.css.map */
