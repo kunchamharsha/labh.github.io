@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const ifscParam = urlParams.get("code");
 
 if (ifscParam) {
-  fetch(`https://devapi.labh.io/open/ifsc/${ifscParam}`)
+  fetch(`https://api.labh.io/open/ifsc/${ifscParam}`)
     .then(res => res.json())
     .then(data => {
       if (!data?.ifsc) {
@@ -67,7 +67,7 @@ $("#close-sticky-qr-mobiile").click(function () {
   $(".sticky-qr-mobile").addClass("d-none");
 });
 $(".s-get-app, .sticky-qr-desktop").click(function () {
-  window.open("https://devapi.labh.io/get-app/", "_blank");
+  window.open("https://api.labh.io/get-app/", "_blank");
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let branchesList = [];
 
   // Load Bank Names
-  fetch("https://devapi.labh.io/open/api/banks")
+  fetch("https://api.labh.io/open/api/banks")
     .then(res => res.json())
     .then(data => {
       if (!data?.banks?.length) return;
@@ -103,7 +103,8 @@ document.addEventListener("DOMContentLoaded", function () {
   bankSelect.addEventListener("change", function () {
     selectedBank = this.value;
 
-    stateSelect.innerHTML = `<option value="">Which state you belongs to</option>`;
+
+    stateSelect.innerHTML = `<option value="">Loading States...</option>`;
     districtSelect.innerHTML = `<option value="">Choose District</option>`;
     branchSelect.innerHTML = `<option value="">Select your Bank Branch</option>`;
     branchesList = [];
@@ -112,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     resultContainer.classList.remove("d-block");
     resultContainer.classList.add("d-none");
 
-    fetch(`https://devapi.labh.io/open/api/bank/location?bank=${selectedBank}`)
+    fetch(`https://api.labh.io/open/api/bank/location?bank=${selectedBank}`)
       .then(res => res.json())
       .then(data => {
         if (!data?.states?.length) return;
@@ -138,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
     districtSelect.innerHTML = `<option value="">Loading Districts...</option>`;
     branchSelect.innerHTML = `<option value="">Select your Bank Branch</option>`;
 
-    fetch(`https://devapi.labh.io/open/api/bank/location?bank=${selectedBank}&state=${selectedState}`)
+    fetch(`https://api.labh.io/open/api/bank/location?bank=${selectedBank}&state=${selectedState}`)
       .then(res => res.json())
       .then(data => {
         const options = ['<option value="">Choose District</option>'];
@@ -163,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!selectedBank || !selectedState || !selectedDistrict) return;
 
-    fetch(`https://devapi.labh.io/open/api/bank/location?bank=${selectedBank}&state=${selectedState}&district=${selectedDistrict}`)
+    fetch(`https://api.labh.io/open/api/bank/location?bank=${selectedBank}&state=${selectedState}&district=${selectedDistrict}`)
       .then(res => res.json())
       .then(data => {
         branchesList = data?.branches || [];
@@ -189,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const apiUrl = `https://devapi.labh.io/open/api/get-ifsc?state=${selectedState}&district=${selectedDistrict}&bank=${selectedBank}&branch=${encodeURIComponent(branchname)}`;
+    const apiUrl = `https://api.labh.io/open/api/get-ifsc?state=${selectedState}&district=${selectedDistrict}&bank=${selectedBank}&branch=${encodeURIComponent(branchname)}`;
 
     fetch(apiUrl)
       .then(res => res.json())
