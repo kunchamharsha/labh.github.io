@@ -86,6 +86,30 @@ const blogs = [
         heading: "Post Office Monthly Income Scheme",
         url: "/savings-schemes/Post-Office-Monthly-Income-Scheme",
     },
+    {
+        heading: "Post Office Recurring Deposit Scheme",
+        url: "/savings-schemes/Post-Office-Recurring-Deposit",
+    },
+    {
+        heading: "Pradhan Mantri Vaya Vandana Yojana Scheme",
+        url: "/savings-schemes/Pradhan-Mantri-Vaya-Vandana-Yojana",
+    },
+    {
+        heading: "Public Provident Fund Scheme",
+        url: "/savings-schemes/Public-Provident-Fund",
+    },
+    {
+        heading: "Rural Post Office Time Deposit Scheme",
+        url: "/savings-schemes/Rural-Post-Office-Time-Deposit",
+    },
+    {
+        heading: "Senior Citizens Savings Scheme Scheme",
+        url: "/savings-schemes/Senior-Citizens-Savings-Scheme",
+    },
+ {
+        heading: "Sukanya Samriddhi Yojana Scheme",
+        url: "/savings-schemes/Sukanya-Samriddhi-Yojana",
+    }
 ];
 
 function filterCalculators(searchTerm) {
