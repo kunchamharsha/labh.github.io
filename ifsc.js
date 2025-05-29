@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const ifscParam = urlParams.get("code");
 
 if (ifscParam) {
-  fetch(`https://api.labh.io/open/ifsc/${ifscParam}`)
+  fetch(`https://devapi.labh.io/open/ifsc/${ifscParam}`)
     .then(res => res.json())
     .then(data => {
       if (!data?.ifsc) {
@@ -67,7 +67,7 @@ $("#close-sticky-qr-mobiile").click(function () {
   $(".sticky-qr-mobile").addClass("d-none");
 });
 $(".s-get-app, .sticky-qr-desktop").click(function () {
-  window.open("https://api.labh.io/get-app/", "_blank");
+  window.open("https://devapi.labh.io/get-app/", "_blank");
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -77,57 +77,53 @@ document.addEventListener("DOMContentLoaded", function () {
   const branchSelect = document.getElementById("branch");
   const findBtn = document.querySelector(".find-ifsc-btn");
 
-  let selectedBankId = null;
-  let selectedStateId = null;
-  let selectedDistrictId = null;
+  let selectedBank = "";
+  let selectedState = "";
+  let selectedDistrict = "";
   let branchesList = [];
 
-  fetch("https://api.labh.io/open/api/banks")
+  // Load Bank Names
+  fetch("https://devapi.labh.io/open/api/banks")
     .then(res => res.json())
     .then(data => {
       if (!data?.banks?.length) return;
+
       const options = ['<option value="">Bank Name</option>'];
-      data.banks.forEach(bank => {
-        const [name, id] = bank;
-        if (name) {
-          options.push(`<option value="${id}">${name}</option>`);
-        }
+      data.banks.forEach(bankName => {
+        options.push(`<option value="${bankName}">${bankName}</option>`);
       });
-      bankSelect.innerHTML = options.join('');
+
+      bankSelect.innerHTML = options.join("");
     })
     .catch(err => {
       console.error("Bank API error:", err);
     });
 
+  // Bank Select Change
   bankSelect.addEventListener("change", function () {
-    selectedBankId = this.value;
-  stateSelect.innerHTML = `<option value="">Which state you belongs to</option>`;
-  districtSelect.innerHTML = `<option value="">Choose District</option>`;
-  branchSelect.innerHTML = `<option value="">Select your Bank Branch</option>`;
+    selectedBank = this.value;
 
-  selectedStateId = null;
-  selectedDistrictId = null;
-  branchesList = [];
+    stateSelect.innerHTML = `<option value="">Which state you belongs to</option>`;
+    districtSelect.innerHTML = `<option value="">Choose District</option>`;
+    branchSelect.innerHTML = `<option value="">Select your Bank Branch</option>`;
+    branchesList = [];
 
-  const resultContainer = document.querySelector(".pincode-info");
-  resultContainer.classList.remove("d-block");
-  resultContainer.classList.add("d-none");
+    const resultContainer = document.querySelector(".pincode-info");
+    resultContainer.classList.remove("d-block");
+    resultContainer.classList.add("d-none");
 
-    if (!selectedBankId) return;
-
-    fetch(`https://api.labh.io/open/api/bank/location?bank_id=${selectedBankId}`)
+    fetch(`https://devapi.labh.io/open/api/bank/location?bank=${selectedBank}`)
       .then(res => res.json())
       .then(data => {
         if (!data?.states?.length) return;
+
         const options = ['<option value="">Which state you belongs to</option>'];
         data.states
-          .sort((a, b) => a[0].localeCompare(b[0]))
-          .forEach(state => {
-            const [name, id] = state;
-            if (name) {
-              options.push(`<option value="${id}">${name}</option>`);
-            }
+          .sort((a, b) => a.localeCompare(b))
+          .forEach(stateName => {
+            options.push(`<option value="${stateName}">${stateName}</option>`);
           });
+
         stateSelect.innerHTML = options.join('');
       })
       .catch(err => {
@@ -135,26 +131,23 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 
+  // State Select Change
   stateSelect.addEventListener("change", function () {
-    selectedStateId = this.value;
+    selectedState = this.value;
+
     districtSelect.innerHTML = `<option value="">Loading Districts...</option>`;
     branchSelect.innerHTML = `<option value="">Select your Bank Branch</option>`;
 
-    if (!selectedBankId || !selectedStateId) return;
-
-    fetch(`https://api.labh.io/open/api/bank/location?bank_id=${selectedBankId}&state_id=${selectedStateId}`)
+    fetch(`https://devapi.labh.io/open/api/bank/location?bank=${selectedBank}&state=${selectedState}`)
       .then(res => res.json())
       .then(data => {
-        if (!data?.districts?.length) return;
         const options = ['<option value="">Choose District</option>'];
         data.districts
-          .sort((a, b) => a[0].localeCompare(b[0]))
-          .forEach(district => {
-            const [name, id] = district;
-            if (name) {
-              options.push(`<option value="${id}">${name}</option>`);
-            }
+          .sort((a, b) => a.localeCompare(b))
+          .forEach(districtName => {
+            options.push(`<option value="${districtName}">${districtName}</option>`);
           });
+
         districtSelect.innerHTML = options.join('');
       })
       .catch(err => {
@@ -162,13 +155,15 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 
+  // District Select Change
   districtSelect.addEventListener("change", function () {
-    selectedDistrictId = this.value;
+    selectedDistrict = this.value;
+
     branchSelect.innerHTML = `<option value="">Loading Branches...</option>`;
 
-    if (!selectedBankId || !selectedStateId || !selectedDistrictId) return;
+    if (!selectedBank || !selectedState || !selectedDistrict) return;
 
-    fetch(`https://api.labh.io/open/api/bank/location?bank_id=${selectedBankId}&state_id=${selectedStateId}&district_id=${selectedDistrictId}`)
+    fetch(`https://devapi.labh.io/open/api/bank/location?bank=${selectedBank}&state=${selectedState}&district=${selectedDistrict}`)
       .then(res => res.json())
       .then(data => {
         branchesList = data?.branches || [];
@@ -185,89 +180,65 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 
+  // Find IFSC Button
   findBtn.addEventListener("click", function () {
-    const bank = bankSelect.options[bankSelect.selectedIndex].text;
-    const state = stateSelect.options[stateSelect.selectedIndex].text;
-    const district = districtSelect.options[districtSelect.selectedIndex].text;
-    const branch = branchSelect.options[branchSelect.selectedIndex].text;
+    const branchname = branchSelect.value;
 
-    const branchId = branchSelect.value;
-
-    if (!selectedBankId || !selectedStateId || !selectedDistrictId || !branchId) {
+    if (!selectedBank || !selectedState || !selectedDistrict || !branchname) {
       alert("Please select all fields to find IFSC code.");
       return;
     }
 
-    const apiUrl = `https://api.labh.io/open/api/get-ifsc?state_id=${selectedStateId}&district_id=${selectedDistrictId}&bank_id=${selectedBankId}&branch=${encodeURIComponent(branch)}`;
+    const apiUrl = `https://devapi.labh.io/open/api/get-ifsc?state=${selectedState}&district=${selectedDistrict}&bank=${selectedBank}&branch=${encodeURIComponent(branchname)}`;
 
     fetch(apiUrl)
-    .then(res => res.json())
-    .then(data => {
-      if (!data?.ifsc) {
-        alert("No IFSC data found.");
-        return;
-      }
+      .then(res => res.json())
+      .then(data => {
+        if (!data?.ifsc) {
+          alert("No IFSC data found.");
+          return;
+        }
+        console.log("IFSC data:", data);
+        const ifscCode = data.ifsc;
+        const format = str =>
+          str?.toLowerCase()
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ') || "N/A";
 
-      const ifscCode = data.ifsc;
-      const bankname = data.bank_name.toLowerCase()
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-      const branchname = data.branch.toLowerCase()
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-      const address = data.address.toLowerCase()
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-      const contact = data.contact.toLowerCase()
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ') || "N/A";
-      const statename = data.state_name.toLowerCase()
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-      const districtname = data.district_name.toLowerCase()
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-      const cityName = data.city_name.toLowerCase()
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-      const center = data.center.toLowerCase()
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ') || cityName || "N/A";
-      const circle = statename.toLowerCase()
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' '); 
+        const bankname = format(data.bank);
+        const branchname = format(data.branch);
+        const address = format(data.address);
+        const contact = format(data.contact);
+        const statename = format(data.state);
+        const districtname = format(data.district);
+        const cityName = format(data.city);
+        const center = format(data.center) || cityName;
+        const circle = format(statename);
 
-      const resultContainer = document.querySelector(".pincode-info");
-      resultContainer.classList.remove("d-none");
-      resultContainer.classList.add("d-block");
-      document.getElementById("headline").innerHTML = `<b>${branchname} IFSC code of ${bankname}</b>`;
-      // resultContainer.innerHTML = document.getElementById("branch").innerText = branchName;
-      document.getElementById("branch1").innerText = branchname;
-      document.getElementById("centre1").innerText = center;
-      document.getElementById("district1").innerText = districtname;
-      document.getElementById("state1").innerText = statename;
-      document.getElementById("city1").innerText = cityName;
-      document.getElementById("circle1").innerText = circle;
-      document.getElementById("ifsc1").innerText = ifscCode;
-      document.getElementById("bank1").innerText = bankname;
-      document.getElementById("Contact1").innerText = contact;
-      document.getElementById("address1").innerText = address;     
-    })
-    .catch(err => {
-      console.error("IFSC API error:", err);
-      alert("Failed to fetch IFSC details.");
-    });
+        const resultContainer = document.querySelector(".pincode-info");
+        resultContainer.classList.remove("d-none");
+        resultContainer.classList.add("d-block");
+
+        document.getElementById("headline").innerHTML = `<b>${branchname} IFSC code of ${bankname}</b>`;
+        document.getElementById("branch1").innerText = branchname;
+        document.getElementById("centre1").innerText = center;
+        document.getElementById("district1").innerText = districtname;
+        document.getElementById("state1").innerText = statename;
+        document.getElementById("city1").innerText = cityName;
+        document.getElementById("circle1").innerText = circle;
+        document.getElementById("ifsc1").innerText = ifscCode;
+        document.getElementById("bank1").innerText = bankname;
+        document.getElementById("Contact1").innerText = contact;
+        document.getElementById("address1").innerText = address;
+      })
+      .catch(err => {
+        console.error("IFSC API error:", err);
+        alert("Failed to fetch IFSC details.");
+      });
   });
 });
+
 
 
 //seo
