@@ -380,7 +380,7 @@ let searchTerm;
 function renderDropdownWithSuggestion() {
     if (searchSuggestion == "all") {
         renderSearchDropdown();
-        $(".search-dropdown-desktop .label, .label-change").text("All");
+        $(".search-dropdown-desktop .label, .label-change").text("Labh Calculators");
         $('.basket-explore').removeClass('d-none');
         $('.label-explore').removeClass('d-none');
     } else if (searchSuggestion == "mutual-funds") {
@@ -436,12 +436,14 @@ $(".suggestion .suggestion-item, .search-suggestions .item").click(function () {
 $(".mobile-search-input-container img").click(function () {
     $(".search-mobile").addClass("d-none");
     $(".search-dropdown-desktop").addClass("d-none");
+    $('.main-container').css('overflow', 'auto');
 });
 
-$(".mobile-search-icon img").click(function () {
+$(".mobile-search-icon img").click(function () {  // this is close
     fetchBasketsPerformance();
     $(".search-mobile").removeClass("d-none");
     $(".search-dropdown-desktop").addClass("d-none");
+    $('.main-container').css('overflow', 'hidden');
 });
 
 function fetchBasketsPerformance() {
