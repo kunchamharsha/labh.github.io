@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+
   const dropdownBtn = document.getElementById('dropdownBtn');
   const dropdownOptions = document.getElementById('dropdownOptions');
   const dropdownLabel = document.getElementById('dropdownLabel');

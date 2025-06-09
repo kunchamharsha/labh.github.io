@@ -1,0 +1,52 @@
+@function calculate-rem($size) {
+  @return calc($size / 16) * 1rem;
+}
+
+@media (min-width: 744px) and (max-width: 1280px) {
+
+
+   
+    .unsubscribe {
+        height: 570px !important;
+        width: 100%;
+        background-color: #a663ff33;
+        border-radius: calculate-rem(16);
+
+        .info {
+            margin-top: calculate-rem(50);
+            width: calculate-rem(847);
+            span {
+                width:calculate-rem(284);
+                height: calculate-rem(44);
+                background-color: white;
+                color: black;
+                padding: calculate-rem(10) calculate-rem(32);
+                border-radius: calculate-rem(100);
+                margin-bottom: calculate-rem(25);
+            }
+            h3 {
+                font-weight: 600;
+                font-size: calculate-rem(26);
+            }
+        }
+
+        .text-center {
+            color: #F5F5F5CC;
+            font-size: calculate-rem(16);
+            margin-top: calculate-rem(20);
+            margin-bottom: calculate-rem(25);
+        }
+
+        #reason {
+            width: calculate-rem(467);
+            height: calculate-rem(124);
+            border-radius: calculate-rem(32);
+            color: #111111B2;
+        }
+
+        .dropdown-btn{
+            height:calculate-rem(48);
+            width: calculate-rem(467) !important;
+        }
+    }
+}
