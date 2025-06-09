@@ -198,8 +198,7 @@
 .pagination {
   font-size: 1.5rem;
   color: rgba(245, 245, 245, 0.8);
-  -webkit-backdrop-filter: blur(6px) saturate(140%);
-          backdrop-filter: blur(6px) saturate(140%);
+  backdrop-filter: blur(6px) saturate(140%);
   font-weight: 500;
   margin-top: 3.125rem;
 }

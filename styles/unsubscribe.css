@@ -1,0 +1,31 @@
+body {
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 5.3125rem 7.5rem;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.unsubscribe {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(166, 99, 255, 0.2);
+  border-radius: 1rem;
+  padding: 4.25rem 8.1875rem;
+}
+.unsubscribe .info {
+  width: 52.9375rem;
+}
+.unsubscribe .info span {
+  height: 3rem;
+  background-color: white;
+  color: black;
+  padding: 0.625rem 2rem;
+  border-radius: 6.25rem;
+}
+.unsubscribe .info h4 {
+  font-weight: 600;
+  font-size: 2rem;
+}/*# sourceMappingURL=unsubscribe.css.map */

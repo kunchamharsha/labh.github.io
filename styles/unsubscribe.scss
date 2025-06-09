@@ -1,0 +1,34 @@
+@import "equations";
+
+body {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: calculate-rem(85) calculate-rem(120);
+    color: white;
+    font-size: calculate-rem(20);
+}
+
+.unsubscribe {
+    width: 100%;
+    height: 100%;
+    background-color: #a663ff33;
+    border-radius: calculate-rem(16);
+    padding: calculate-rem(68) calculate-rem(131);
+
+    .info {
+        width: calculate-rem(847);
+        span {
+            height: calculate-rem(48);
+            background-color: white;
+            color: black;
+            padding: calculate-rem(10) calculate-rem(32);
+            border-radius: calculate-rem(100);
+        }
+        h4 {
+            font-weight: 600;
+            font-size: calculate-rem(32);
+        }
+    }
+}
