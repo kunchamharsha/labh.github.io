@@ -8,14 +8,19 @@ body {
   font-size: 1.25rem;
 }
 
+.unsub {
+  margin-bottom: 0rem;
+}
+
 .unsubscribe {
+  height: 580px !important;
   width: 100%;
   height: 100%;
   background-color: rgba(166, 99, 255, 0.2);
   border-radius: 1rem;
-  padding: 4.25rem 8.1875rem;
 }
 .unsubscribe .info {
+  margin-top: 3.125rem;
   width: 52.9375rem;
 }
 .unsubscribe .info span {
@@ -24,8 +29,106 @@ body {
   color: black;
   padding: 0.625rem 2rem;
   border-radius: 6.25rem;
+  margin-bottom: 1.5625rem;
 }
 .unsubscribe .info h4 {
   font-weight: 600;
   font-size: 2rem;
+}
+.unsubscribe .text-center {
+  color: rgba(245, 245, 245, 0.8);
+  font-size: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.5625rem;
+}
+.unsubscribe #reason {
+  width: 37.5rem;
+  height: 6.875rem;
+  border-radius: 2rem;
+  color: rgba(17, 17, 17, 0.6980392157);
+}
+.unsubscribe body {
+  background-color: #1e0e34;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.unsubscribe .form-container {
+  width: 600px;
+}
+.unsubscribe .custom-dropdown {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: #ececef; /* light gray background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.unsubscribe .dropdown-icon {
+  height: 2rem;
+  width: 2rem;
+}
+.unsubscribe .dropdown-btn {
+  background-color: #b265f7;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+  align-items: center;
+  border: none;
+  border-radius: 40px;
+  height: 60px;
+  line-height: 1;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+}
+.unsubscribe .dropdown-btn::after {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+.unsubscribe .dropdown-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f4f4f4;
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 99;
+  overflow: hidden;
+}
+.unsubscribe .dropdown-options div {
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+}
+.unsubscribe .dropdown-options div:hover {
+  background-color: rgba(166, 99, 255, 0.2);
+  border-radius: 999px;
+}
+.unsubscribe textarea {
+  width: 100%;
+  height: 120px;
+  margin-top: 0.625rem;
+  border-radius: 30px;
+  border: none;
+  padding: 1.25rem;
+  font-size: 1.25rem;
+  resize: none;
+}
+.unsubscribe .underline-button {
+  margin-top: 1.25rem;
+  color: #FFA7A7;
 }/*# sourceMappingURL=unsubscribe.css.map */

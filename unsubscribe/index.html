@@ -29,29 +29,40 @@
             <div class="contents  d-flex flex-column justify-content-center align-items-center">
                 <div class="info d-flex flex-column justify-content-center align-items-center">
                     <span id="email">test@gmail.com</span>
-                    <h3>Unsubscribe from Promotional Emails</h3>
+                    <h3 class="unsub">Unsubscribe from Promotional Emails</h3>
                     <div class="text-center">
                         We're sorry to see you go. You’ve chosen to unsubscribe
-                        from future promotional emails from Labh. To help us
+                        from future promotional <br> emails from Labh. To help us
                         improve our services, we would be grateful if you could
-                        tell us why:
+                        tell <br> us why:
                     </div>
                 </div>
-                <form method="post">
-                    <div class="dropdown">
-                        Please select a reason:
-                        <div class="dropdown-content">I’m receiving too many emails</div>
-                        <div class="dropdown-content">The emails are not relevant to me</div>
-                        <div class="dropdown-content">The content is not useful or engaging</div>
-                        <div class="dropdown-content">The emails are too long</div>
-                        <div class="dropdown-content">This is not my email ID</div>
-                        <div class="dropdown-content">I’ve changed my email ID</div>
-                        <div class="dropdown-content">I don't understand the content</div>
-                        <div class="dropdown-content">Other reasons</div>
-                    </div>
-                    <textarea name="reason" id="reason"></textarea>
-                </form>
+<form class="form-container">
+    <div class="custom-dropdown">
+<button type="button" class="dropdown-btn" id="dropdownBtn">
+  <span id="dropdownLabel">Please Select reason</span>
+  <img src="/assets/dropdown-unsub.svg" alt="dropdown icon" class="dropdown-icon">
+</button>
+
+      <div class="dropdown-options" id="dropdownOptions">
+        <div>I’m receiving too many emails</div>
+        <div>The emails are not relevant to me</div>
+        <div>The content is not useful or engaging</div>
+        <div>The emails are too long</div>
+        <div>This is not my email ID</div>
+        <div>I’ve changed my email ID</div>
+        <div>I don't understand the content</div>
+        <div>Other reasons</div>
+      </div>
+    </div>
+    <textarea name="reason" id="reason" placeholder="Enter reason"></textarea>
+
+            <div class="d-flex justify-content-center align-items-center">
+            <a href="#" class="underline-button">Unsubscribe</a>
+            </div>
+  </form>
             </div>
         </div>
+        <script src="/unsubscribe.js"></script>
     </body>
 </html>
