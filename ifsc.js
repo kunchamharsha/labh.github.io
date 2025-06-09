@@ -11,13 +11,13 @@ if (ifscParam) {
       }
 
       const ifscCode = data.ifsc;
-      const bankname = toTitleCase(data.bank_name);
+      const bankname = toTitleCase(data.bank);
       const branchname = toTitleCase(data.branch);
       const address = toTitleCase(data.address);
       const contact = data.contact || "N/A";
-      const statename = toTitleCase(data.state_name);
-      const districtname = toTitleCase(data.district_name || "N/A");
-      const cityName = toTitleCase(data.city_name || "N/A");
+      const statename = toTitleCase(data.state);
+      const districtname = toTitleCase(data.district || "N/A");
+      const cityName = toTitleCase(data.city || "N/A");
       const center = toTitleCase(data.center  || cityName || "N/A");
       const circle = statename;
 
