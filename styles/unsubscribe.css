@@ -3,9 +3,12 @@ body {
   width: 100%;
   height: 100vh;
   margin: 0;
-  padding: 5.3125rem 7.5rem;
+  padding: 0 7.5rem;
   color: white;
   font-size: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .unsub {
@@ -13,15 +16,10 @@ body {
 }
 
 .unsubscribe {
-  height: 600px !important;
   width: 100%;
-  height: 100%;
+  height: 37.4375rem;
   background-color: rgba(166, 99, 255, 0.2);
   border-radius: 1rem;
-}
-.unsubscribe .info {
-  margin-top: 3.125rem;
-  width: 52.9375rem;
 }
 .unsubscribe #email {
   text-align: center;
@@ -49,7 +47,7 @@ body {
   padding: 0 1rem;
 }
 .unsubscribe #reason {
-  width: 37.5rem;
+  width: 100%;
   height: 6.875rem;
   border-radius: 2rem;
   color: rgba(17, 17, 17, 0.6980392157);
@@ -62,18 +60,18 @@ body {
   margin-top: 50px;
 }
 .unsubscribe .form-container {
-  width: 100%;
-  max-width: 600px;
+  width: 37.5rem;
 }
 .unsubscribe .custom-dropdown {
   position: relative;
+  width: 100%;
 }
 .unsubscribe .dropdown-icon {
   height: 2rem;
   width: 2rem;
 }
 .unsubscribe .dropdown-btn {
-  width: 37.5rem !important;
+  width: 100%;
   background-color: #b265f7;
   color: white;
   padding: 20px;
@@ -101,7 +99,7 @@ body {
 }
 .unsubscribe .dropdown-options {
   display: none;
-  margin-top: -30px;
+  margin-top: -25px;
   position: absolute;
   top: 100%;
   left: 0;
@@ -149,120 +147,96 @@ body {
   margin-top: 2.5rem;
 }
 
-@media (min-width: 745px) and (max-width: 1280px) and (min-width: 744px) and (max-width: 900px) {
-  .text-center {
+@media (min-width: 0px) and (max-width: 744px) {
+  .unsubscribe {
+    height: 36rem;
+    padding: 0 1.25rem;
+  }
+  .unsubscribe .info,
+  .unsubscribe .contents {
     width: 100%;
-    max-width: 555px !important;
-    text-align: center;
-    color: rgba(245, 245, 245, 0.8);
-    font-size: 0.875rem !important;
-    margin: 1.25rem auto 1.5625rem;
-    padding: 0 1rem;
+  }
+  .unsubscribe #email {
+    width: 15.8125rem;
+    max-height: 2.125rem;
+    font-size: 0.875rem;
+    font-weight: 31.25rem;
+  }
+  .unsubscribe h4 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .unsubscribe .text-center {
+    max-width: 100%;
+    height: auto;
+    font-size: 0.875rem;
+  }
+  .unsubscribe .form-container {
+    width: 17.375rem;
+  }
+  .unsubscribe .form-container .dropdown-btn {
+    width: 100%;
+    height: 2.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  .unsubscribe .form-container .dropdown-btn img {
+    width: 1.375rem;
+  }
+  .unsubscribe .form-container #reason {
+    height: 8.625rem;
+  }
+  .unsubscribe .form-container #reason::placeholder {
+    font-size: 0.875rem;
+  }
+  .unsubscribe .underline-button {
+    font-size: 1rem;
+    font-weight: 600;
   }
 }
-@media (min-width: 745px) and (max-width: 1280px) {
+@media (min-width: 745px) and (max-width: 1200px) {
   .unsubscribe {
-    height: 570px !important;
-    width: 100%;
-    background-color: rgba(166, 99, 255, 0.2);
-    border-radius: 1rem;
+    height: 35.5rem;
+    padding: 0 1.875rem;
   }
-  .unsubscribe .info {
-    margin-top: 3.125rem;
-    width: 52.9375rem;
-  }
-  .unsubscribe .info span {
+  .unsubscribe #email {
     width: 17.75rem;
     height: 2.75rem;
-    background-color: white;
-    color: black;
-    padding: 0.625rem 2rem;
-    border-radius: 6.25rem;
-    margin-bottom: 1.5625rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
   }
-  .unsubscribe .info h3 {
-    font-weight: 600;
+  .unsubscribe h4 {
     font-size: 1.625rem;
+    font-weight: 600;
   }
   .unsubscribe .text-center {
-    width: 100%;
-    max-width: 700px;
-    text-align: center;
-    color: rgba(245, 245, 245, 0.8);
     font-size: 1rem;
-    margin: 1.25rem auto 1.5625rem;
-    padding: 0 1rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
   }
-  .unsubscribe #reason {
-    width: 29.1875rem;
-    height: 7.75rem;
-    border-radius: 2rem;
-    color: rgba(17, 17, 17, 0.6980392157);
-  }
-  .unsubscribe .dropdown-btn {
-    height: 3rem;
+  .unsubscribe .form-container {
     width: 29.1875rem !important;
   }
-}
-@media (min-width: 0px) and (max-width: 744px) {
-  body {
-    padding: 0rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .unsubscribe {
-    margin: -20px;
-    height: 570px !important;
-    max-width: 350px;
-    width: 100%;
-    background-color: rgba(166, 99, 255, 0.2);
-    border-radius: 1rem;
-  }
-  .unsubscribe .info {
-    margin-top: 3.125rem;
-    width: 52.9375rem;
-  }
-  .unsubscribe .info span {
-    width: 15.875rem;
-    height: 2.75rem;
-    background-color: white;
-    color: black;
-    padding: 0.625rem 2rem;
-    border-radius: 6.25rem;
-    margin-bottom: 1.5625rem;
-  }
-  .unsubscribe .info h3 {
+  .unsubscribe .form-container .dropdown-btn {
+    height: 3rem;
+    font-size: 1rem;
     font-weight: 600;
+  }
+  .unsubscribe .form-container .dropdown-btn img {
+    width: 1.625rem;
+  }
+  .unsubscribe .form-container #reason::placeholder {
     font-size: 1rem;
   }
-  .unsubscribe .text-center {
-    width: 100%;
-    max-width: 350px;
-    text-align: center;
-    color: rgba(245, 245, 245, 0.8);
-    font-size: 0.75rem;
-    margin: 1.25rem auto 1.5625rem;
-    padding: 0 1rem;
-  }
-  .unsubscribe #reason {
-    width: 17.375rem;
-    height: 8.125rem;
-    border-radius: 2rem;
-    color: rgba(17, 17, 17, 0.6980392157);
-    margin-top: 1.875rem !important;
-  }
-  .unsubscribe .dropdown-btn {
-    height: 3rem;
-    width: 17.375rem !important;
+  .unsubscribe .underline-button {
+    margin-top: 2.75rem;
+    font-size: 1rem;
+    font-weight: 600;
   }
 }
 @media (min-width: 0px) and (max-width: 744px) {
   body {
-    padding: 0.625rem 1.25rem;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+    padding: 0 1.25rem;
   }
   .success img {
     width: 9.0625rem;
@@ -285,9 +259,6 @@ body {
 @media (min-width: 745px) and (max-width: 1200px) {
   body {
     padding: 0 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .success img {
     margin-top: calculat-rem(118);
