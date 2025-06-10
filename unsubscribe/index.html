@@ -26,13 +26,20 @@
         <title>Labh Email Unsubscribe</title>
     </head>
     <body>
-        <div class="unsubscribe d-flex flex-column justify-content-center align-items-center">
+        <div
+            class="unsubscribe d-flex flex-column justify-content-center align-items-center"
+        >
             <div
                 class="contents d-flex flex-column justify-content-center align-items-center"
             >
                 <div
                     class="info d-flex flex-column justify-content-center align-items-center"
                 >
+                    <img
+                        class="unsub-logo"
+                        src="/assets/unsubscribe-logo.png"
+                        alt="unsubscribe logo"
+                    />
                     <span id="email">test@gmail.com</span>
                     <h4 class="unsub">Unsubscribe from Promotional Emails</h4>
                     <div class="text-center">
@@ -73,6 +80,7 @@
                         </div>
                     </div>
                     <textarea
+                        class="d-none"
                         name="reason"
                         id="reason"
                         placeholder="Enter reason"
@@ -81,9 +89,16 @@
                     <div
                         class="d-flex justify-content-center align-items-center"
                     >
-                        <a id="submit" href="#" class="underline-button">Unsubscribe</a>
+                        <a id="submit" href="#" class="underline-button d-flex justify-content-center align-items-center"
+                            >Unsubscribe</a
+                        >
                     </div>
                 </form>
+                <div class="note">
+                    <span>Note:</span> If you're an existing Labh investor, you
+                    will continue to receive important transaction-related
+                    updates and account notifications.
+                </div>
             </div>
         </div>
         <script src="/unsubscribe.js"></script>

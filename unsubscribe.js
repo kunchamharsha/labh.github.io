@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         option.addEventListener("click", () => {
             dropdownLabel.textContent = option.textContent;
             reason = option.textContent;
+            checkReason();
             dropdownOptions.style.display = "none";
         });
     });
@@ -39,6 +40,12 @@ const token = getQueryParam("token");
 
 $("#email").text(email);
 
+function checkReason() {
+  if(reason == 'Other reasons') {
+    $('#reason').removeClass('d-none');
+  }
+}
+
 function submit() {
     if (!reason) {
         alert("Please select a reason");
@@ -59,3 +66,7 @@ function submit() {
 }
 
 $("#submit").click(submit);
+
+$("#reason").on('input', function() {
+  reason = $(this).val();
+})

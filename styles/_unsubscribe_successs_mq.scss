@@ -5,6 +5,7 @@
     }
     .success {
         img {
+            margin-top: calculate-rem(60);
             width: calculate-rem(145);
         }
         #email {
