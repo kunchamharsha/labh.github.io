@@ -9,7 +9,7 @@
     
         .text-center {
               width: 100%;
-  max-width: 580px !important; // or whatever fits nicely
+  max-width: 555px !important; // or whatever fits nicely
   text-align: center;
   color: #F5F5F5CC;
   font-size: calculate-rem(14) !important;
@@ -70,9 +70,23 @@
 
 @media (min-width: 0px) and (max-width: 744px)
 {
+
+    // body{
+    //     padding-top: calculate-rem(120);
+    //     padding-bottom: calculate-rem(120);
+    //     padding-right: calculate-rem(20);
+    // }
+
+    body{
+        padding:0rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
   
    
     .unsubscribe {
+        margin: -20px;
         height: 570px !important;
         max-width: 350px;
         width: 100%;
@@ -110,9 +124,10 @@
 
         #reason {
             width: calculate-rem(278);
-            height: calculate-rem(100);
+            height: calculate-rem(130);
             border-radius: calculate-rem(32);
             color: #111111B2;
+            margin-top:calculate-rem(30) !important;
         }
 
         .dropdown-btn{

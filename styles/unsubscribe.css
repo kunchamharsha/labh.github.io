@@ -143,7 +143,7 @@ body {
 @media (min-width: 745px) and (max-width: 1280px) and (min-width: 744px) and (max-width: 900px) {
   .text-center {
     width: 100%;
-    max-width: 580px !important;
+    max-width: 555px !important;
     text-align: center;
     color: rgba(245, 245, 245, 0.8);
     font-size: 0.875rem !important;
@@ -196,7 +196,14 @@ body {
   }
 }
 @media (min-width: 0px) and (max-width: 744px) {
+  body {
+    padding: 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .unsubscribe {
+    margin: -20px;
     height: 570px !important;
     max-width: 350px;
     width: 100%;
@@ -231,9 +238,10 @@ body {
   }
   .unsubscribe #reason {
     width: 17.375rem;
-    height: 6.25rem;
+    height: 8.125rem;
     border-radius: 2rem;
     color: rgba(17, 17, 17, 0.6980392157);
+    margin-top: 1.875rem !important;
   }
   .unsubscribe .dropdown-btn {
     height: 3rem;
