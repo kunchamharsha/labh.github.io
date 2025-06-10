@@ -25,6 +25,8 @@ body {
         margin-top: calculate-rem(50);
         width: calculate-rem(847);
         span {
+          text-align: center;
+          width: calculate-rem(340);
             height: calculate-rem(48);
             background-color: white;
             color: black;
@@ -38,12 +40,16 @@ body {
         }
     }
 
-    .text-center{
-        color:#F5F5F5CC;
-        font-size: calculate-rem(20);
-        margin-top: calculate-rem(20);
-        margin-bottom:calculate-rem(25);
-    }
+.text-center {
+  width: 100%;
+  max-width: 847px; // or whatever fits nicely
+  text-align: center;
+  color: #F5F5F5CC;
+  font-size: calculate-rem(20);
+  margin: calculate-rem(20) auto calculate-rem(25);
+  padding: 0 1rem; // Add padding for mobile
+}
+
 
     #reason{
         width:calculate-rem(600);
@@ -61,7 +67,8 @@ body {
     }
 
     .form-container {
-      width: 600px;
+      width:100%;
+      max-width: 600px;
     }
 
 

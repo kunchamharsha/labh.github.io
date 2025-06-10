@@ -2,8 +2,21 @@
   @return calc($size / 16) * 1rem;
 }
 
-@media (min-width: 744px) and (max-width: 1280px) {
+@media (min-width: 745px) and (max-width: 1280px) {
 
+
+    @media (min-width:744px) and (max-width: 900px) {
+    
+        .text-center {
+              width: 100%;
+  max-width: 580px !important; // or whatever fits nicely
+  text-align: center;
+  color: #F5F5F5CC;
+  font-size: calculate-rem(14) !important;
+  margin: calculate-rem(20) auto calculate-rem(25);
+  padding: 0 1rem; 
+        }
+    }
 
    
     .unsubscribe {
@@ -30,12 +43,16 @@
             }
         }
 
-        .text-center {
-            color: #F5F5F5CC;
-            font-size: calculate-rem(16);
-            margin-top: calculate-rem(20);
-            margin-bottom: calculate-rem(25);
-        }
+.text-center {
+  width: 100%;
+  max-width: 700px; // or whatever fits nicely
+  text-align: center;
+  color: #F5F5F5CC;
+  font-size: calculate-rem(16);
+  margin: calculate-rem(20) auto calculate-rem(25);
+  padding: 0 1rem; // Add padding for mobile
+}
+
 
         #reason {
             width: calculate-rem(467);
@@ -49,4 +66,59 @@
             width: calculate-rem(467) !important;
         }
     }
+}
+
+@media (min-width: 0px) and (max-width: 744px)
+{
+  
+   
+    .unsubscribe {
+        height: 570px !important;
+        max-width: 350px;
+        width: 100%;
+        background-color: #a663ff33;
+        border-radius: calculate-rem(16);
+
+        .info {
+            margin-top: calculate-rem(50);
+            width: calculate-rem(847);
+            span {
+                width:calculate-rem(254);
+                height: calculate-rem(44);
+                background-color: white;
+                color: black;
+                padding: calculate-rem(10) calculate-rem(32);
+                border-radius: calculate-rem(100);
+                margin-bottom: calculate-rem(25);
+            }
+            h3 {
+                font-weight: 600;
+                font-size: calculate-rem(16);
+            }
+        }
+
+.text-center {
+  width: 100%;
+  max-width: 350px; // or whatever fits nicely
+  text-align: center;
+  color: #F5F5F5CC;
+  font-size: calculate-rem(12);
+  margin: calculate-rem(20) auto calculate-rem(25);
+  padding: 0 1rem; // Add padding for mobile
+}
+
+
+        #reason {
+            width: calculate-rem(278);
+            height: calculate-rem(100);
+            border-radius: calculate-rem(32);
+            color: #111111B2;
+        }
+
+        .dropdown-btn{
+            height:calculate-rem(48);
+            width: calculate-rem(278) !important;
+        }
+    }
+
 }
