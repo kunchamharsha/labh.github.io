@@ -23,17 +23,19 @@ body {
   margin-top: 3.125rem;
   width: 52.9375rem;
 }
-.unsubscribe .info span {
+.unsubscribe #email {
   text-align: center;
   width: 21.25rem;
   height: 3rem;
   background-color: white;
   color: black;
-  padding: 0.625rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 6.25rem;
   margin-bottom: 1.5625rem;
 }
-.unsubscribe .info h4 {
+.unsubscribe h4 {
   font-weight: 600;
   font-size: 2rem;
 }
@@ -137,7 +139,14 @@ body {
 }
 .unsubscribe .underline-button {
   margin-top: 1.25rem;
-  color: #FFA7A7;
+  color: #ffa7a7;
+}
+
+.success img {
+  margin-top: 6.6875rem;
+}
+.success #email {
+  margin-top: 2.5rem;
 }
 
 @media (min-width: 745px) and (max-width: 1280px) and (min-width: 744px) and (max-width: 900px) {
@@ -238,5 +247,58 @@ body {
   .unsubscribe .dropdown-btn {
     height: 3rem;
     width: 17.375rem !important;
+  }
+}
+@media (min-width: 0px) and (max-width: 744px) {
+  body {
+    padding: 0.625rem 1.25rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .success img {
+    width: 9.0625rem;
+  }
+  .success #email {
+    font-size: 0.875rem;
+    width: 15.8125rem;
+    height: 2.125rem;
+    margin-bottom: 0;
+  }
+  .success h4 {
+    margin-top: 1.25rem;
+    font-size: 1rem;
+  }
+  .success .description {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 745px) and (max-width: 1200px) {
+  body {
+    padding: 0 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .success img {
+    margin-top: calculat-rem(118);
+    width: 10.25rem;
+  }
+  .success #email {
+    width: 17.75rem;
+    height: 2.75rem;
+    margin-top: 1.6875rem;
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  .success h4 {
+    font-size: 1.625rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  .success .description {
+    margin-top: 0.25rem;
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=unsubscribe.css.map */
