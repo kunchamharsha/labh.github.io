@@ -1,0 +1,283 @@
+body {
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0 7.5rem;
+  color: white;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.unsub {
+  margin-bottom: 0rem;
+}
+
+.unsubscribe {
+  width: 100%;
+  height: 37.4375rem;
+  background-color: rgba(166, 99, 255, 0.2);
+  border-radius: 1rem;
+}
+.unsubscribe #email {
+  text-align: center;
+  width: 21.25rem;
+  height: 3rem;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6.25rem;
+  margin-bottom: 1.5625rem;
+}
+.unsubscribe h4 {
+  font-weight: 600;
+  font-size: 2rem;
+}
+.unsubscribe .text-center {
+  width: 100%;
+  max-width: 847px;
+  text-align: center;
+  color: rgba(245, 245, 245, 0.8);
+  font-size: 1.25rem;
+  margin: 1.25rem auto 1.5625rem;
+  padding: 0 1rem;
+}
+.unsubscribe #reason {
+  width: 100%;
+  height: 6.875rem;
+  border-radius: 2rem;
+  color: rgba(17, 17, 17, 0.6980392157);
+}
+.unsubscribe body {
+  background-color: #1e0e34;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.unsubscribe .form-container {
+  width: 37.5rem;
+}
+.unsubscribe .custom-dropdown {
+  position: relative;
+  width: 100%;
+}
+.unsubscribe .dropdown-icon {
+  height: 2rem;
+  width: 2rem;
+}
+.unsubscribe .dropdown-btn {
+  width: 100%;
+  background-color: #b265f7;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+  align-items: center;
+  border: none;
+  border-radius: 40px;
+  height: 60px;
+  line-height: 1;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  z-index: 100;
+}
+.unsubscribe .dropdown-btn::after {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+.unsubscribe .dropdown-options {
+  display: none;
+  margin-top: -25px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #f4f4f4;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 99;
+  overflow: hidden;
+}
+.unsubscribe .first {
+  margin-top: 2.5rem;
+}
+.unsubscribe .dropdown-options div {
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+}
+.unsubscribe .dropdown-options div:hover {
+  background-color: rgba(166, 99, 255, 0.2);
+  border-radius: 999px;
+  margin-left: 0.625rem;
+  margin-right: 0.625rem;
+}
+.unsubscribe textarea {
+  width: 100%;
+  height: 120px;
+  margin-top: 0.625rem;
+  border-radius: 30px;
+  border: none;
+  padding: 1.25rem;
+  font-size: 1.25rem;
+  resize: none;
+}
+.unsubscribe .underline-button {
+  margin-top: 1.25rem;
+  color: #ffa7a7;
+}
+
+.success img {
+  margin-top: 6.6875rem;
+}
+.success #email {
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 0px) and (max-width: 744px) {
+  .unsubscribe {
+    height: 36rem;
+    padding: 0 1.25rem;
+  }
+  .unsubscribe .info,
+  .unsubscribe .contents {
+    width: 100%;
+  }
+  .unsubscribe #email {
+    width: 15.8125rem;
+    max-height: 2.125rem;
+    font-size: 0.875rem;
+    font-weight: 31.25rem;
+  }
+  .unsubscribe h4 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .unsubscribe .text-center {
+    max-width: 100%;
+    height: auto;
+    font-size: 0.875rem;
+  }
+  .unsubscribe .form-container {
+    width: 17.375rem;
+  }
+  .unsubscribe .form-container .dropdown-btn {
+    width: 100%;
+    height: 2.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  .unsubscribe .form-container .dropdown-btn img {
+    width: 1.375rem;
+  }
+  .unsubscribe .form-container #reason {
+    height: 8.625rem;
+  }
+  .unsubscribe .form-container #reason::placeholder {
+    font-size: 0.875rem;
+  }
+  .unsubscribe .underline-button {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+@media (min-width: 745px) and (max-width: 1200px) {
+  .unsubscribe {
+    height: 35.5rem;
+    padding: 0 1.875rem;
+  }
+  .unsubscribe #email {
+    width: 17.75rem;
+    height: 2.75rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .unsubscribe h4 {
+    font-size: 1.625rem;
+    font-weight: 600;
+  }
+  .unsubscribe .text-center {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  .unsubscribe .form-container {
+    width: 29.1875rem !important;
+  }
+  .unsubscribe .form-container .dropdown-btn {
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .unsubscribe .form-container .dropdown-btn img {
+    width: 1.625rem;
+  }
+  .unsubscribe .form-container #reason::placeholder {
+    font-size: 1rem;
+  }
+  .unsubscribe .underline-button {
+    margin-top: 2.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+@media (min-width: 0px) and (max-width: 744px) {
+  body {
+    padding: 0 1.25rem;
+  }
+  .success img {
+    width: 9.0625rem;
+  }
+  .success #email {
+    font-size: 0.875rem;
+    width: 15.8125rem;
+    height: 2.125rem;
+    margin-bottom: 0;
+  }
+  .success h4 {
+    margin-top: 1.25rem;
+    font-size: 1rem;
+  }
+  .success .description {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 745px) and (max-width: 1200px) {
+  body {
+    padding: 0 3rem;
+  }
+  .success img {
+    margin-top: calculat-rem(118);
+    width: 10.25rem;
+  }
+  .success #email {
+    width: 17.75rem;
+    height: 2.75rem;
+    margin-top: 1.6875rem;
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  .success h4 {
+    font-size: 1.625rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  .success .description {
+    margin-top: 0.25rem;
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=unsubscribe.css.map */

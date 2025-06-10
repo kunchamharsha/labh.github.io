@@ -1,0 +1,56 @@
+@media (min-width: 0px) and (max-width: 744px) {
+    body {
+        padding: 0 calculate-rem(20);
+
+    }
+    .success {
+        img {
+            width: calculate-rem(145);
+        }
+        #email {
+            font-size: calculate-rem(14);
+            width: calculate-rem(253);
+            height: calculate-rem(34);
+            margin-bottom: 0;
+        }
+        h4  {
+            margin-top: calculate-rem(20);
+            font-size: calculate-rem(16);
+        }
+        .description {
+            margin-top: calculate-rem(8);
+            font-size: calculate-rem(12);
+        }
+    }
+}
+
+@media (min-width: 745px) and (max-width: 1200px) {
+    body {
+        padding: 0 calculate-rem(48);
+    }
+
+    .success {
+        img {
+            margin-top: calculat-rem(118);
+            width: calculate-rem(164);
+        }
+
+        #email {
+            width: calculate-rem(284);
+            height: calculate-rem(44);
+            margin-top: calculate-rem(27);
+            font-size: calculate-rem(16);
+            margin-bottom: 0;
+        }
+
+        h4 {
+            font-size: calculate-rem(26);
+            font-weight: 600;
+            margin-top: calculate-rem(8);
+        }
+        .description {
+            margin-top: calculate-rem(4);
+            font-size: calculate-rem(16);
+        }
+    }
+}
