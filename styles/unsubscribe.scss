@@ -19,10 +19,9 @@ body {
 
 .unsubscribe {
     width: 100%;
-    height: calculate-rem(599);
+    height: calculate-rem(721);
     background-color: #a663ff33;
     border-radius: calculate-rem(16);
-
 
     #email {
         text-align: center;
@@ -35,6 +34,7 @@ body {
         align-items: center;
         border-radius: calculate-rem(100);
         margin-bottom: calculate-rem(25);
+        margin-top: calculate-rem(32);
     }
 
     h4 {
@@ -50,6 +50,11 @@ body {
         font-size: calculate-rem(20);
         margin: calculate-rem(20) auto calculate-rem(25);
         padding: 0 1rem; // Add padding for mobile
+    }
+
+    .unsub-logo {
+        width: calculate-rem(126);
+        height: calculate-rem(40);
     }
 
     #reason {
@@ -155,13 +160,41 @@ body {
 
     .underline-button {
         margin-top: calculate-rem(20);
-        color: #ffa7a7;
+        background-color: #ffa7a7;
+        width: calculate-rem(186);
+        height: calculate-rem(41);
+        border-radius: calculate-rem(100);
+        font-size: calculate-rem(20);
+        font-weight: 600;
+        text-decoration: none;
+        color: black;
+    }
+
+    .note {
+        margin-top: calculate-rem(32);
+        font-size: calculate-rem(16);
+        font-weight: 600;
+        text-align: center;
+        color: rgba(245, 245, 245, 0.8);
+        padding: 0 calculate-rem(60);
+        span {
+            font-weight: 700;
+        }
+    }
+    .subscribe-btn {
+        width: calculate-rem(186);
+        height: calculate-rem(41);
+        background-color: #63E4BF;
+        font-size: calculate-rem(20);
+        font-weight: 600;
+        border-radius: calculate-rem(100);
+        color: black;
     }
 }
 
 .success {
     img {
-        margin-top: calculate-rem(107);
+        margin-top: calculate-rem(80);
     }
 
     #email {

@@ -1,7 +1,12 @@
 @media (min-width: 0px) and (max-width: 744px) {
     .unsubscribe {
-        height: calculate-rem(576);
+        height: calculate-rem(629);
         padding: 0 calculate-rem(20);
+
+        .unsub-logo {
+            width: calculate-rem(85);
+            height: calculate-rem(28);
+        }
 
         .info,
         .contents {
@@ -51,13 +56,29 @@
             font-size: calculate-rem(16);
             font-weight: 600;
         }
+        .note {
+            font-size: calculate-rem(12);
+            font-weight: 500;
+            padding: 0;
+        }
+
+        .subscribe {
+            width: calculate-rem(168);
+            height: calculate-rem(41);
+            font-size: calculate-rem(16);
+        }
     }
 }
 
 @media (min-width: 745px) and (max-width: 1200px) {
     .unsubscribe {
-        height: calculate-rem(568);
+        height: calculate-rem(648);
         padding: 0 calculate-rem(30);
+
+        .unsub-logo {
+            width: calculate-rem(85);
+            height: calculate-rem(28);
+        }
 
         #email {
             width: calculate-rem(284);
@@ -98,6 +119,12 @@
             margin-top: calculate-rem(44);
             font-size: calculate-rem(16);
             font-weight: 600;
+        }
+
+        .subscribe {
+            width: calculate-rem(168);
+            height: calculate-rem(41);
+            font-size: calculate-rem(16);
         }
     }
 }
