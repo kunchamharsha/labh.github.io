@@ -33,6 +33,16 @@ document.addEventListener("DOMContentLoaded", function () {
         // this js is using in success and subscribe so there is no drowpdown
         console.log(error);
     }
+
+    if (window.location.pathname == "/unsubscribe/") {
+        $.get(
+            `${domain}/open/api/news-letter/unsubscribe/?email=${email}`
+        ).fail(function(error) {
+            if (error.responseJSON.error == "User already unsubscribed") {
+                window.location.href = "/unsubscribe/subscribe?email=" + email + "&token=" + token;
+            }
+        });
+    }
 });
 
 function getQueryParam(param) {
