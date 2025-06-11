@@ -37,9 +37,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.location.pathname == "/unsubscribe/") {
         $.get(
             `${domain}/open/api/news-letter/unsubscribe/?email=${email}`
-        ).fail(function(error) {
+        ).fail(function (error) {
             if (error.responseJSON.error == "User already unsubscribed") {
-                window.location.href = "/unsubscribe/subscribe/?email=" + email + "&token=" + token;
+                window.location.href =
+                    "/unsubscribe/subscribe/?email=" +
+                    email +
+                    "&token=" +
+                    token;
             }
         });
     }
@@ -75,9 +79,19 @@ function submit() {
             reason: reason,
         },
         function success(response) {
-            window.location.href = "/unsubscribe/success?email=" + email;
+            window.location.href =
+                "/unsubscribe/success/?email=" + email + "&token=" + token;
         }
-    );
+    ).fail(function (response) {
+        if (
+            response.responseJSON.email[0] ==
+            "unsubscribed with this email already exists."
+        ) {
+            alert("You are already unsubscribed");
+            window.location.href =
+                "/unsubscribe/subscribe/?email=" + email + "&token=" + token;
+        }
+    });
 }
 
 $("#submit").click(submit);
@@ -91,7 +105,11 @@ $("#subscribe").on("click", function () {
         url: `${domain}/open/api/news-letter/unsubscribe/?email=${email}&token=${token}`,
         type: "DELETE",
         success: function (result) {
-            $("#subscribe").text("Subscribed");
+            $(".unsub").text("Subscribed");
+            $("#description").text(
+                "You will receive emails from us. Thankyou for subscribing."
+            );
+            $("#subscribe").addClass("d-none");
         },
     });
 });
