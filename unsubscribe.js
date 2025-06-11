@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `${domain}/open/api/news-letter/unsubscribe/?email=${email}`
         ).fail(function(error) {
             if (error.responseJSON.error == "User already unsubscribed") {
-                window.location.href = "/unsubscribe/subscribe?email=" + email + "&token=" + token;
+                window.location.href = "/unsubscribe/subscribe/?email=" + email + "&token=" + token;
             }
         });
     }
