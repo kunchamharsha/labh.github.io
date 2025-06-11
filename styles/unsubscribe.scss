@@ -181,6 +181,15 @@ body {
             font-weight: 700;
         }
     }
+    .subscribe-btn {
+        width: calculate-rem(186);
+        height: calculate-rem(41);
+        background-color: #63E4BF;
+        font-size: calculate-rem(20);
+        font-weight: 600;
+        border-radius: calculate-rem(100);
+        color: black;
+    }
 }
 
 .success {

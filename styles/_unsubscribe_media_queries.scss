@@ -61,6 +61,12 @@
             font-weight: 500;
             padding: 0;
         }
+
+        .subscribe {
+            width: calculate-rem(168);
+            height: calculate-rem(41);
+            font-size: calculate-rem(16);
+        }
     }
 }
 
@@ -113,6 +119,12 @@
             margin-top: calculate-rem(44);
             font-size: calculate-rem(16);
             font-weight: 600;
+        }
+
+        .subscribe {
+            width: calculate-rem(168);
+            height: calculate-rem(41);
+            font-size: calculate-rem(16);
         }
     }
 }

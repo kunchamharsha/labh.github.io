@@ -162,6 +162,15 @@ body {
 .unsubscribe .note span {
   font-weight: 700;
 }
+.unsubscribe .subscribe-btn {
+  width: 11.625rem;
+  height: 2.5625rem;
+  background-color: #63E4BF;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-radius: 6.25rem;
+  color: black;
+}
 
 .success img {
   margin-top: 5rem;
@@ -225,6 +234,11 @@ body {
     font-weight: 500;
     padding: 0;
   }
+  .unsubscribe .subscribe {
+    width: 10.5rem;
+    height: 2.5625rem;
+    font-size: 1rem;
+  }
 }
 @media (min-width: 745px) and (max-width: 1200px) {
   .unsubscribe {
@@ -268,6 +282,11 @@ body {
     margin-top: 2.75rem;
     font-size: 1rem;
     font-weight: 600;
+  }
+  .unsubscribe .subscribe {
+    width: 10.5rem;
+    height: 2.5625rem;
+    font-size: 1rem;
   }
 }
 @media (min-width: 0px) and (max-width: 744px) {
