@@ -297,7 +297,7 @@ function renderSearchResults(results, queryText) {
 
 $("#search, #mobile-search").focus(function () {
     $(".search-dropdown-desktop").removeClass("d-none");
-    renderSearchDropdown();
+    renderDropdownWithSuggestion();
 });
 
 $(document).on("click", function (event) {
@@ -314,7 +314,7 @@ function fetchMutualFunds(searchQuery) {
     $.ajax({
         url: `${domain}/search/mutual-funds/?scheme_name=${encodeURIComponent(
             searchQuery
-        )}&page=1&page_size=10`,
+        )}&page=1&page_size=7`,
         method: "GET",
         async: false,
         success: function (responseData) {
@@ -435,12 +435,14 @@ $(".suggestion .suggestion-item, .search-suggestions .item").click(function () {
 
 $(".mobile-search-input-container img").click(function () {
     $(".search-mobile").addClass("d-none");
+    document.body.style.overflow = 'auto';
     $(".search-dropdown-desktop").addClass("d-none");
     $('.main-container').css('overflow', 'auto');
 });
 
 $(".mobile-search-icon img").click(function () {  // this is close
     fetchBasketsPerformance();
+    document.body.style.overflow = 'hidden';
     $(".search-mobile").removeClass("d-none");
     $(".search-dropdown-desktop").addClass("d-none");
     $('.main-container').css('overflow', 'hidden');

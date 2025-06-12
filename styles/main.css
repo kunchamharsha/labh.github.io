@@ -736,6 +736,8 @@ nav {
   color: white;
   max-height: 31.25rem;
   overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .search-container .search-dropdown-desktop .stats {
   display: none;
@@ -744,6 +746,8 @@ nav {
   width: 100%;
   overflow: scroll;
   gap: 0.75rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .search-container .search-dropdown-desktop .suggestion-desktop .suggestion-item {
   width: fit-content;
@@ -777,7 +781,7 @@ nav {
   background: black;
   backdrop-filter: blur(41.9000015259px);
   z-index: 1000;
-  font-size: 1rem;
+  font-size: 0.875rem;
 }
 .search-mobile .mobile-search-input-container {
   width: 100%;
@@ -868,12 +872,12 @@ nav {
   margin-top: 1.5rem;
 }
 .search-mobile .calculator-list .calculator {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   background: rgba(206, 203, 255, 0.2);
   border-radius: 2rem;
 }
 .search-mobile .calculator-list .calculator:hover {
-  background: #56566B;
+  background: #56566b;
 }
 
 .search-mobile .calculator:hover,

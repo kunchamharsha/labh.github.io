@@ -28,6 +28,8 @@
         color: white;
         max-height: calculate-rem(500);
         overflow: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
 
         .stats {
             display: none;
@@ -37,6 +39,8 @@
             width: 100%;
             overflow: scroll;
             gap: calculate-rem(12);
+            scrollbar-width: none;
+            -ms-overflow-style: none;
 
             .suggestion-item {
                 width: fit-content;
@@ -51,7 +55,7 @@
             .suggestion-item:hover,
             .active {
                 border: 1px dotted #58576d;
-                background: #CECBFF33;
+                background: #cecbff33;
             }
         }
 
@@ -76,7 +80,7 @@
     background: black;
     backdrop-filter: blur(41.900001525878906px);
     z-index: 1000;
-    font-size: calculate-rem(16);
+    font-size: calculate-rem(14);
 
     .mobile-search-input-container {
         width: 100%;
@@ -161,7 +165,7 @@
                 font-size: calculate-rem(12);
                 font-weight: 400;
                 text-wrap-mode: nowrap;
-                color: #F5F5F5CC;
+                color: #f5f5f5cc;
                 span {
                     color: #63e4bf;
                     margin: 0 calculate-rem(4);
@@ -175,13 +179,13 @@
         margin-top: calculate-rem(24);
 
         .calculator {
-            margin-top: calculate-rem(16);
-            background: #CECBFF33;
+            margin-top: calculate-rem(12);
+            background: #cecbff33;
             border-radius: calculate-rem(32);
         }
 
         .calculator:hover {
-            background: #56566B;
+            background: #56566b;
         }
     }
 }
@@ -202,7 +206,6 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 1;
     }
-
 }
 
-@import 'search_mq.scss';
+@import "search_mq.scss";
