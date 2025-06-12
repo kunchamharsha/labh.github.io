@@ -61,6 +61,7 @@ $("#email").text(email);
 
 function checkReason() {
     if (reason == "Other reasons") {
+        reason = null;
         $("#reason").removeClass("d-none");
     }
 }
