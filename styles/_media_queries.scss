@@ -30,9 +30,18 @@
 
     .search-bar-container {
         a {
-            font-size: calculate-rem(14);
-            width: calculate-rem(160);
-            height: calculate-rem(35);
+            font-size: calculate-rem(12);
+            width: calculate-rem(109);
+            height: calculate-rem(30);
+        }
+
+        .mobile-search-icon {
+            display: block;
+            margin-right: calculate-rem(14);
+            img {
+                width: calculate-rem(26);
+                height: calculate-rem(26);
+            }
         }
     }
 
@@ -420,7 +429,7 @@
             font-size: calculate-rem(20);
         }
     }
-    
+
     .sip-calculator {
         .calculator-card-contents {
             height: auto;

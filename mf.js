@@ -1,4 +1,4 @@
-const domain = "https://api.labh.io";
+const domain = "https://devapi.labh.io";
 
 function setMetaTag(attrName, attrValue, content) {
     let tag = document.querySelector(`meta[${attrName}="${attrValue}"]`);

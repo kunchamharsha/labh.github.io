@@ -4,7 +4,7 @@ let pageSize = 10;
 
 let pageName = null;
 
-const domain = "https://api.labh.io";
+let domain = "https://devapi.labh.io";
 
 let fundHouses = [];
 let isViewMore = false;
@@ -75,7 +75,6 @@ function renderFundHouse() {
         }).toString();
         let name = data.name;
         if (windowWidth < 768) {
-            console.log(true);
             name = data.name.replace("Mutual Fund", "");
         }
         $(".scheme-list").append(`

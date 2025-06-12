@@ -4,7 +4,6 @@
 }
 
 .search-bar-container {
-    justify-content: flex-end;
 
     .search-dropdown {
         span {
@@ -14,11 +13,6 @@
             text-overflow: ellipsis;
         }
     }
-
-    .search-bar {
-        display: none;
-    }
-
 }
 
 #mutual-funds-link-mobile {

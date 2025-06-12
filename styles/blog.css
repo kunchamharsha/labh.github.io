@@ -1,8 +1,4 @@
 @charset "UTF-8";
-.search-bar-container {
-  justify-content: end;
-}
-
 .search-bar1 {
   display: none;
 }
