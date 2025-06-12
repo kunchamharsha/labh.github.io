@@ -442,6 +442,8 @@ $(".mobile-search-input-container img").click(function () {
 
 $(".mobile-search-icon img").click(function () {  // this is close
     fetchBasketsPerformance();
+    renderDropdownWithSuggestion();
+
     document.body.style.overflow = 'hidden';
     $(".search-mobile").removeClass("d-none");
     $(".search-dropdown-desktop").addClass("d-none");
