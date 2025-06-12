@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+            crossorigin="anonymous"
+        />
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <link rel="stylesheet" href="/styles/unsubscribe.css" />
+        <link rel="icon" href="/assets/logo.svg" type="image/x-icon" />
+        <title>Labh Email Unsubscribe</title>
+    </head>
+    <body>
+        <div
+            class="unsubscribe d-flex flex-column justify-content-center align-items-center"
+        >
+            <div
+                class="contents d-flex flex-column justify-content-center align-items-center"
+            >
+                <div
+                    class="info d-flex flex-column justify-content-center align-items-center"
+                >
+                    <img
+                        class="unsub-logo"
+                        src="/assets/unsubscribe-logo.png"
+                        alt="unsubscribe logo"
+                    />
+                    <span id="email">test@gmail.com</span>
+                    <h4 class="unsub">You’re Unsubscribed</h4>
+                    <div class="text-center" id="description">
+                        It looks like you're currently unsubscribed. To
+                        resubscribe and get our latest updates, just subscribe!
+                    </div>
+                </div>
+            </div>
+            <div
+                id="subscribe"
+                class="subscribe-btn d-flex justify-content-center align-items-center"
+            >
+                Subscribe
+            </div>
+        </div>
+        <script src="/unsubscribe.js"></script>
+    </body>
+</html>

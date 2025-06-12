@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+            crossorigin="anonymous"
+        />
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <link rel="stylesheet" href="/styles/unsubscribe.css" />
+        <link rel="icon" href="/assets/logo.svg" type="image/x-icon" />
+        <title>Labh Email Unsubscribe</title>
+    </head>
+    <body>
+        <div
+            class="unsubscribe d-flex flex-column justify-content-center align-items-center"
+        >
+            <div
+                class="contents d-flex flex-column justify-content-center align-items-center"
+            >
+                <div
+                    class="info d-flex flex-column justify-content-center align-items-center"
+                >
+                    <img
+                        class="unsub-logo"
+                        src="/assets/unsubscribe-logo.png"
+                        alt="unsubscribe logo"
+                    />
+                    <span id="email">test@gmail.com</span>
+                    <h4 class="unsub">Unsubscribe from Promotional Emails</h4>
+                    <div class="text-center">
+                        We're sorry to see you go. You’ve chosen to unsubscribe
+                        from future promotional emails from Labh. To help us
+                        improve our services, we would be grateful if you could
+                        tell us why:
+                    </div>
+                </div>
+                <form
+                    class="form-container d-flex flex-column justify-content-center align-items-center"
+                >
+                    <div class="custom-dropdown">
+                        <button
+                            type="button"
+                            class="dropdown-btn"
+                            id="dropdownBtn"
+                        >
+                            <span id="dropdownLabel">Please Select reason</span>
+                            <img
+                                src="/assets/dropdown-unsub.svg"
+                                alt="dropdown icon"
+                                class="dropdown-icon"
+                            />
+                        </button>
+
+                        <div class="dropdown-options" id="dropdownOptions">
+                            <div class="first">
+                                I’m receiving too many emails
+                            </div>
+                            <div>The emails are not relevant to me</div>
+                            <div>The content is not useful or engaging</div>
+                            <div>The emails are too long</div>
+                            <div>This is not my email ID</div>
+                            <div>I’ve changed my email ID</div>
+                            <div>I don't understand the content</div>
+                            <div>Other reasons</div>
+                        </div>
+                    </div>
+                    <textarea
+                        class="d-none"
+                        name="reason"
+                        id="reason"
+                        placeholder="Enter reason"
+                    ></textarea>
+
+                    <div
+                        class="d-flex justify-content-center align-items-center"
+                    >
+                        <a id="submit" href="#" class="underline-button d-flex justify-content-center align-items-center"
+                            >Unsubscribe</a
+                        >
+                    </div>
+                </form>
+                <div class="note">
+                    <span>Note:</span> If you're an existing Labh investor, you
+                    will continue to receive important transaction-related
+                    updates and account notifications.
+                </div>
+            </div>
+        </div>
+        <script src="/unsubscribe.js"></script>
+    </body>
+</html>

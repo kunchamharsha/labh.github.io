@@ -1,0 +1,226 @@
+---
+layout: ifsc-base.njk
+title: Labh
+meta: '
+<title id="dynamic-title">Labh - IFSC Code Finder</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Quickly find IFSC codes by selecting your bank, state, district, and branch. Accurate and easy-to-use IFSC search by Labh." />
+<meta name="keywords" content="IFSC, IFSC Code Finder, Bank Codes, Bank Branch Locator, Labh, Indian Banks" />
+<meta name="author" content="Labh" />
+
+
+
+<link rel="canonical" href="" id="canonical-link" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Find IFSC Codes Instantly | Labh" />
+<meta property="og:description" content="Enter bank and branch info to instantly get the correct IFSC code. Labh makes it easy and fast." />
+<meta property="og:image" content="https://labh.io/assets/logo.svg" />
+<meta property="og:url" content="https://labh.io/ifsc" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Find IFSC Codes Instantly | Labh" />
+<meta name="twitter:description" content="Get IFSC codes quickly and easily. Just select your bank and branch details." />
+<meta name="twitter:image" content="https://labh.io/assets/logo.svg" />
+'
+---
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+  rel="stylesheet"
+/>
+
+<div id="nav-menu" class="nav-menu">
+  <ul>
+    <li><a href="http://labh.io/#">Home</a></li>
+    <li><a href="http://labh.io/#aboutsection">About us</a></li>
+    <li><a href="http://labh.io/#pitch">Methodology</a></li>
+    <li><a href="https://blog.labh.io">Blog</a></li>
+    <li><a href="https://tawk.to/labh">Contact us</a></li>
+  </ul>
+</div>
+
+<div class="main-container">
+  <div class="logo-title">
+    <img src="/assets/ifsc_head.svg" alt="edge-image" />
+    <span class="logo-text"
+      ><h1>Need an IFSC Code? We’ve Got You Covered</h1></span
+    >
+  </div>
+
+  <p class="pin-para">
+    Enter your bank name and branch location (state, city, or area) to quickly
+    get the correct IFSC code.Simply select the right options from the
+    dropdowns, and we’ll fetch the details for you.
+  </p>
+  <p class="ifsc">Check IFSC Code</p>
+
+  <!-- for search -->
+  <div class="form-group">
+    <label for="location">Bank :</label>
+    <div class="custom-select-wrapper">
+      <select id="bank-name">
+        <option value="">Bank Name</option>
+      </select>
+      <img
+        src="/assets/dropdown.svg"
+        class="custom-arrow"
+        alt="dropdown arrow"
+      />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="bank">State :</label>
+    <div class="custom-select-wrapper">
+      <select id="state">
+        <option value="">Which state you belongs to</option>
+      </select>
+      <img
+        src="/assets/dropdown.svg"
+        class="custom-arrow"
+        alt="dropdown arrow"
+      />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="bank">District :</label>
+    <div class="custom-select-wrapper">
+      <select id="district">
+        <option value="">Choose District</option>
+      </select>
+      <img
+        src="/assets/dropdown.svg"
+        class="custom-arrow"
+        alt="dropdown arrow"
+      />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="bank">Branch :</label>
+    <div class="custom-select-wrapper">
+      <select id="branch">
+        <option value="">Select your Bank Branch</option>
+      </select>
+      <img
+        src="/assets/dropdown.svg"
+        class="custom-arrow"
+        alt="dropdown arrow"
+      />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div
+      class="custom-select-wrapper ifsc-btn-wrapper d-flex justify-content-end"
+    >
+      <button class="find-ifsc-btn">Find IFSC code</button>
+    </div>
+  </div>
+
+  <!-- search results -->
+  <!-- <div class="search-results-container">
+    <div class="search-results">
+      <p class="result1"><b>Coromandel IFSC code of ICICI Bank</b></p>
+    </div>
+    <div class="info-grid">
+      <div>
+        <span class="f1">BRANCH</span
+        ><strong>Delhi Nagrik Sehkari Bank IMPS</strong>
+      </div>
+      <div>
+        <span class="f2">IFSC</span
+        ><strong style="color: #cecbff">YESB0DNB002</strong>
+      </div>
+
+      <div><span class="f1">CENTRE</span><strong>DELHI</strong></div>
+      <div>
+        <span class="f2">BANK</span><strong>Delhi Nagrik Sehkari Bank</strong>
+      </div>
+
+      <div><span class="f1">DISTRICT</span><strong>DELHI</strong></div>
+      <div><span class="f2">CONTACT</span><strong>+91 983678632</strong></div>
+
+      <div><span class="f1">STATE</span><strong>MAHARASHTRA</strong></div>
+      <div>
+        <span class="f2">ADDRESS</span
+        ><strong style="padding-left: 10px"
+          >720 NEAR GHANTAGHAR, SUBZI MANDI, DELHI - 110007</strong
+        >
+      </div> -->
+<!-- 
+      <div><span class="f1">City</span><strong>MUMBAI</strong></div>
+
+      <div><span class="f2">Circle</span><strong>West Bengal</strong></div>
+    </div>
+  </div> -->
+
+  <div class="pincode-info">
+    <p class="result2" id="headline">
+      <b>Coromandel IFSC code of ICICI Bank</b>
+    </p>
+
+    <div class=" d-flex justify-content-between">
+      <div class="info-grid">
+        <div><span>Branch</span><strong id="branch1"></strong></div>
+        <div><span>Centre</span><strong id="centre1"></strong></div>
+        <div><span>District</span><strong id="district1"></strong></div>
+        <div><span>State</span><strong id="state1"></strong></div>
+        <div><span>City</span><strong id="city1"></strong></div>
+      </div>
+      <div class="info-grid">
+        <div><span>Circle</span><strong id="circle1"></strong></div>
+        <div>
+          <span>IFSC</span><strong style="color: #cecbff" id="ifsc1"></strong>
+        </div>
+        <div><span>Bank</span><strong id="bank1"></strong></div>
+        <div><span>Contact</span><strong id="Contact1"></strong></div>
+        <div><span>Address</span><strong id="address1"></strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sticky-qr sticky-qr-desktop">
+  <div class="sticky-container d-flex">
+    <img class="qr-img" src="/assets/qr_code.png" alt="qr_code" srcset="" />
+    <div>
+      <div class="d-flex">
+        <p>Download Now!</p>
+        <img
+          class="download-now"
+          src="/assets/download_now.svg"
+          alt="download now"
+        />
+      </div>
+      <img
+        class="playstore-app-store-icons"
+        src="/assets/playstore_app_store_icons.svg"
+        alt="play store and app store icons"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="sticky-qr-mobile">
+  <div class="d-flex" style="align-items: center">
+    <img
+      class="s-close"
+      src="/assets/close.svg"
+      alt="close"
+      srcset=""
+      id="close-sticky-qr-mobiile"
+    />
+    <img class="s-logo" src="/assets/logo.svg" alt="qr_code" srcset="" />
+    <div>
+      <p class="s-heading">Labh - Mutual Funds</p>
+      <p class="s-description">Invest in Hope, Harvest Success</p>
+    </div>
+  </div>
+  <span class="s-get-app">Get App</span>
+</div>
