@@ -133,34 +133,34 @@ function filterCalculators(searchTerm) {
 // why window.innerWidth < 1024
 // because we want to show this in the mobile view of the calculator index page
 if (window.location.pathname != "/calculator/" || window.innerWidth < 1200) {
-    // $("#search").on("input", function () {
-    //     const searchTerm = $(this).val();
-    //     const filteredCalculators = filterCalculators(searchTerm);
-    //     $(".search-dropdown").empty();
-    //     $(".search-bar").removeClass("hide-icon");
-    //     if (filteredCalculators.length != 0) {
-    //         $(".search-dropdown").removeClass("display-none");
-    //         filteredCalculators.forEach((calculator) => {
-    //             const dropdownItem = `
-    //                 <div onclick="window.location.href='${calculator["url"]}'">
-    //                     <img src="/assets/search_dropdown_arrow.svg" alt="dropdown-arrow" />
-    //                     <span>${calculator["card-heading"]}</span>
-    //                 </div>
-    //             `;
-    //             $(".search-dropdown").append(dropdownItem);
-    //         });
-    //     } else if (searchTerm.length == 0) {
-    //         $(".search-dropdown").addClass("display-none");
-    //     } else {
-    //         $(".search-dropdown").removeClass("display-none");
-    //         const dropdownItem = `
-    //                 <div>
-    //                     <span class='no-results'>No results for '<span>${searchTerm}<span>'</span>
-    //                 </div>
-    //             `;
-    //         $(".search-dropdown").append(dropdownItem);
-    //     }
-    // });
+    $("#search").on("input", function () {
+        const searchTerm = $(this).val();
+        const filteredCalculators = filterCalculators(searchTerm);
+        $(".search-dropdown").empty();
+        $(".search-bar").removeClass("hide-icon");
+        if (filteredCalculators.length != 0) {
+            $(".search-dropdown").removeClass("display-none");
+            filteredCalculators.forEach((calculator) => {
+                const dropdownItem = `
+                    <div onclick="window.location.href='${calculator["url"]}'">
+                        <img src="/assets/search_dropdown_arrow.svg" alt="dropdown-arrow" />
+                        <span>${calculator["card-heading"]}</span>
+                    </div>
+                `;
+                $(".search-dropdown").append(dropdownItem);
+            });
+        } else if (searchTerm.length == 0) {
+            $(".search-dropdown").addClass("display-none");
+        } else {
+            $(".search-dropdown").removeClass("display-none");
+            const dropdownItem = `
+                    <div>
+                        <span class='no-results'>No results for '<span>${searchTerm}<span>'</span>
+                    </div>
+                `;
+            $(".search-dropdown").append(dropdownItem);
+        }
+    });
 
     $("#search2").on("input", function () {
         const searchTerm = $(this).val();
