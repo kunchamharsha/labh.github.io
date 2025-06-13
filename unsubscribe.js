@@ -1,4 +1,4 @@
-const domain = "https://devapi.labh.io";
+const domain = "https://api.labh.io";
 let reason = null;
 
 document.addEventListener("DOMContentLoaded", function () {
