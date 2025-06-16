@@ -67,6 +67,11 @@ const calculators = [
         "card-description": "Estimate Your PPF Growth.",
         url: "/calculator/ppf-calculator/",
     },
+    {
+        "card-heading": "Senior Citizen Savings Scheme Calculator",
+        "card-description": "Estimate Your PPF Growth.",
+        url: "/calculator/senior_citizen_savings_scheme/",
+    },
     // {
     //     "card-heading": "Sip step up calculator",
     //     "card-description": "Grow Your Investments with Incremental SIPs.",
@@ -108,7 +113,7 @@ const blogs = [
         url: "/savings-schemes/Rural-Post-Office-Time-Deposit",
     },
     {
-        heading: "Senior Citizens Savings Scheme Scheme",
+        heading: "Senior Citizens Savings Scheme",
         url: "/savings-schemes/Senior-Citizens-Savings-Scheme",
     },
  {

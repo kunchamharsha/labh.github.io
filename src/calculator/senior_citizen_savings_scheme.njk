@@ -1,35 +1,40 @@
 ---
 layout: calculator-base.njk
-title: Sukanya Samriddhi Yojana Calculator - Calculate Returns Online | Labh
+title: SCSS Calculator - Senior Citizen Savings Scheme | Labh
 meta: '
-<meta name="description" content="Use Labh Sukanya Samriddhi Maturity Calculator to easily calculate the maturity amount, interest earned & total investment based on your monthly contributions.">
-<meta name="keywords" content="Sukanya Samriddhi Calculator, Maturity Calculator, SSY Calculator, Sukanya Interest Calculator, Sukanya Yojana Returns, Labh Calculator">
+<meta name="description" content="Use the SCSS Calculator by Labh to estimate your returns under the Senior Citizen Savings Scheme. Get details on interest rates, eligibility, maturity amount, and tax benefits.">
+<meta name="keywords" content="SCSS Calculator, Senior Citizen Savings Scheme, SCSS Interest Rate, SCSS Eligibility, SCSS Maturity, SCSS Tax Benefits, Investment for Senior Citizens, Labh SCSS Calculator">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://labh.io/calculator/sukanya-samriddhi-yojana-calculator">
-<meta property="og:title" content="Sukanya Samriddhi Maturity Calculator - Calculate Returns Online | Labh">
-<meta property="og:description" content="Use Labh Sukanya Samriddhi Maturity Calculator to easily calculate the maturity amount, interest earned & total investment based on your monthly contributions.">
+<meta property="og:url" content="https://labh.io/calculator/senior_citizen_savings_scheme">
+<meta property="og:title" content="SCSS Calculator - Senior Citizen Savings Scheme | Labh">
+<meta property="og:description" content="Calculate your returns from SCSS using Labh’s calculator. Get complete details on interest, maturity, and eligibility for senior citizens in India.">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://labh.io/calculator/sukanya-samriddhi-yojana-calculator">
-<meta name="twitter:title" content="Sukanya Samriddhi Maturity Calculator - Calculate Returns Online | Labh">
-<meta name="twitter:description" content="Use Labh Sukanya Samriddhi Maturity Calculator to easily calculate the maturity amount, interest earned & total investment based on your monthly contributions.">
+<meta name="twitter:url" content="https://labh.io/calculator/senior_citizen_savings_scheme">
+<meta name="twitter:title" content="SCSS Calculator - Senior Citizen Savings Scheme | Labh">
+<meta name="twitter:description" content="Estimate your SCSS returns with Labh’s smart calculator. Designed for senior citizens to understand maturity and benefits.">
 '
 menu: '
     <li><a href="/calculator/">Calculator</a></li>
     <li><img src="/assets/dote-active.svg" alt="dote-active"></li>
-    <li><a href="#" class="active">Sukanya Samriddhi Yojana Calculator</a></li>
+    <li><a href="#" class="active">Senior Citizen Savings Scheme Calculator</a></li>
 '
 ---
 
 <div class="main-container">
     <div class="contents">
-        <h1>Sukanya Samriddhi Yojana Calculator</h1>
-        <p>Compute potential returns from regular monthly SIP investments.</p>
+        <h1>Senior Citizen Savings Scheme Calculator</h1>
+        <p>
+            The SCSS Calculator helps retirees plan their income by calculating
+            interest earned on fixed deposits under this scheme.
+        </p>
     </div>
-    <div class="calculator-card sip-calculator d-flex justify-content-between align-items-center">
+    <div
+        class="calculator-card sip-calculator d-flex justify-content-between align-items-center"
+    >
         <img src="/assets/card-edge-image.svg" alt="edge-image" />
         <img src="/assets/card-edge-image.svg" alt="edge-image" />
 
@@ -55,17 +60,13 @@ menu: '
                     <div class="rate-container">8.2%</div>
                 </div>
                 <div class="cal-content">
-                    <label>Deposit Years</label>
-                    <div class="rate-container">15</div>
-                </div>
-                <div class="cal-content">
-                    <label>Maturity Years</label>
-                    <div class="rate-container">21</div>
+                    <label>Tenure in years</label>
+                    <div class="rate-container">5</div>
                 </div>
             </div>
 
             <div>
-                <div class="graph-container">
+                <div class="graph-container d-flex justify-content-center align-items-center">
                     <div class="graph"></div>
                     <div class="legend">
                         <div class="legend-item">
@@ -87,16 +88,20 @@ menu: '
 
                 <div class="cal-content result">
                     <label>Invested Amt</label>
-                    <span id="invested-amt">Rs.46,36,567</span>
+                    <span id="invested-amt">-</span>
                 </div>
                 <div class="cal-content result">
-                    <label>Returns</label>
-                    <span id="est-returns">Rs.12,67,346</span>
+                    <label>Quarterly Interest</label>
+                    <span id="quarterly-interest">-</span>
+                </div>
+                <div class="cal-content result">
+                    <label>Total Interest</label>
+                    <span id="est-returns">-</span>
                 </div>
                 <hr class="calculator-hr" />
                 <div class="cal-content result">
                     <label>Total Value</label>
-                    <span id="total-value">Rs.59,85,385</span>
+                    <span id="total-value">-</span>
                 </div>
             </div>
         </div>
@@ -104,54 +109,43 @@ menu: '
     <div class="guide">
         <h2>How to Use?</h2>
         <ul>
-            <li>Enter your monthly investment amount.</li>
-            <li>Set the investment period and expected returns rate.</li>
-            <li>View accumulated corpus and returns.</li>
+            <li>Enter your investment amount.</li>
+            <li>Get quarterly interest payout values.</li>
         </ul>
 
         <h2>Formula</h2>
         <p class="formula">
-            $$ FV = P \times \left( \frac{(1 + r)^n - 1}{r} \right) \times (1 +
-            r) $$
+            $$ \text{Quarterly Interest} = \frac{P \times R}{4 \times 100} $$ $$
+            \text{Total Interest} = \frac{P \times R \times T}{100} $$
         </p>
 
         <table>
             <tr>
-                <td>FV (Future Value):</td>
-                <td>The accumulated amount after investing via SIP.</td>
-            </tr>
-            <tr>
                 <td>P :</td>
-                <td>Monthly investment amount.</td>
+                <td>Principal amount.</td>
             </tr>
             <tr>
                 <td>r :</td>
-                <td>
-                    Expected monthly return rate (annual rate divided by 12).
-                </td>
+                <td>Expected Quarterly return rate.</td>
             </tr>
             <tr>
-                <td>n :</td>
-                <td>
-                    Total number of monthly installments (years multiplied by
-                    12).
-                </td>
+                <td>T :</td>
+                <td>Tenure</td>
             </tr>
         </table>
 
         <h2>Advantages</h2>
         <ul>
-            <li>Encourages disciplined investing</li>
-            <li>Provides expected growth clarity</li>
-            <li>Easy comparison of returns</li>
-            <li>Tailored investment planning</li>
+            <li>Guaranteed income for seniors</li>
+            <li>Tax benefit under 80C</li>
+            <li>Government-backed safety</li>
         </ul>
         <h2>FAQ's</h2>
 
         <div class="faq-container" style="background-color: transparent">
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>What is a good SIP amount to start with?</span>
+                    <span>Can I open multiple SCSS accounts?</span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -159,8 +153,7 @@ menu: '
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Start with an amount you’re comfortable with, even
-                            if it’s small.
+                            Yes, but within the total ₹30 lakh limit.
                         </p>
                     </div>
                 </div>
@@ -168,7 +161,7 @@ menu: '
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Can I change my SIP amount later?</span>
+                    <span> Is early withdrawal allowed?</span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -176,27 +169,7 @@ menu: '
                 <div class="faq-answer">
                     <div class="content">
                         <p style="text-align: left">
-                            Yes, most SIPs allow you to increase or decrease
-                            your contribution.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Is SIP safe? </span>
-                    <span class="arrow"
-                        ><img src="/assets/Frame 877 (1).png"
-                    /></span>
-                </div>
-                <div class="faq-answer">
-                    <div class="content">
-                        <p style="text-align: left">
-                            Labh is a research team that builds custom groups of
-                            mutual funds, designed to grow your money based on
-                            how much risk you’re comfortable taking. We do the
-                            research so you can invest with confidence.
+                            Yes, with applicable penalties.
                         </p>
                     </div>
                 </div>
@@ -222,18 +195,11 @@ menu: '
 </div>
 
 <script>
-    function sukanyaSamriddhiMaturityCalculator(
-        annualInvestment,
-        interestRate,
-        depositYears,
-        maturityYears
-    ) {
-        const r = interestRate / 100;
-        const fv15 =
-            annualInvestment * ((Math.pow(1 + r, depositYears) - 1) / r);
-        const maturityValue =
-            fv15 * Math.pow(1 + r, maturityYears - depositYears);
-        return Math.round(maturityValue * 100) / 100;
+    function calculateQuarterlyInterest(principal, annualRate) {
+        return (principal * annualRate) / (4 * 100);
+    }
+    function calculateTotalInterest(principal, annualRate, years = 5) {
+        return (principal * annualRate * years) / 100;
     }
 
     function updateChart(returnsPercentage) {
@@ -246,19 +212,21 @@ menu: '
     function updateValues() {
         const yearlyInvestment = $("#investment-slider").val();
         const interestRate = 8.2;
-        const depositYears = 15;
-        const matuirtyYears = 21;
-        let investedAmount = yearlyInvestment * depositYears;
+        const tenure = 5;
+        let investedAmount = yearlyInvestment * 5;
 
-        const totalReturns = sukanyaSamriddhiMaturityCalculator(yearlyInvestment, interestRate, depositYears, matuirtyYears)
-        const returns = totalReturns - investedAmount;
+        const returns = calculateTotalInterest(yearlyInvestment, interestRate, tenure);
+        const quarterlyInterest = calculateQuarterlyInterest(yearlyInvestment, interestRate);
+
+        const totalReturns = returns + investedAmount;
 
         const returnsPercentage = (investedAmount / totalReturns) * 100;
 
         updateChart(returnsPercentage);
-        $('#invested-amt').text(`Rs.${investedAmount.toLocaleString("en-IN")}`);
+        $("#invested-amt").text(`Rs.${investedAmount.toLocaleString("en-IN")}`);
         $("#est-returns").text(`Rs.${returns.toLocaleString("en-IN")}`);
-        $('#total-value').text(`Rs.${totalReturns.toLocaleString("en-IN")}`);
+        $("#quarterly-interest").text(`Rs.${quarterlyInterest.toLocaleString("en-IN")}`);
+        $("#total-value").text(`Rs.${totalReturns.toLocaleString("en-IN")}`);
     }
 
     $(document).ready(function () {

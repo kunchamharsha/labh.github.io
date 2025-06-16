@@ -8,10 +8,9 @@
         />
 
         <!-- Optimized Meta Description -->
-         <meta name="description" content="Explore a wide range of free online financial calculators including loan EMI calculators, SIP, FD, NPS, retirement planning, and more. Simplify your financial planning."> <meta name="keywords" content="financial calculators, loan calculators, SIP calculator, FD calculator, NPS calculator, retirement calculator, EMI calculator, investment tools, tax calculator, money management">
-<!-- Open Graph / Facebook --> <meta property="og:type" content="website"> <meta property="og:url" content="https://labh.io/calculator"> <meta property="og:title" content="Online Financial Calculators – Loan, SIP, FD, Tax & Retirement Tools"> <meta property="og:description" content="Explore a wide range of free online financial calculators including loan EMI calculators, SIP, FD, NPS, retirement planning, and more. Simplify your financial planning.">
-<!-- Twitter --> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:url" content="https://labh.io/calculator"> <meta name="twitter:title" content="Online Financial Calculators – Loan, SIP, FD, Tax & Retirement Tools"> <meta name="twitter:description" content="Explore a wide range of free online financial calculators including loan EMI calculators, SIP, FD, NPS, retirement planning, and more. Simplify your financial planning.">
-
+         <meta name="description" content="Use the SCSS Calculator by Labh to estimate your returns under the Senior Citizen Savings Scheme. Get details on interest rates, eligibility, maturity amount, and tax benefits."> <meta name="keywords" content="SCSS Calculator, Senior Citizen Savings Scheme, SCSS Interest Rate, SCSS Eligibility, SCSS Maturity, SCSS Tax Benefits, Investment for Senior Citizens, Labh SCSS Calculator">
+<!-- Open Graph / Facebook --> <meta property="og:type" content="website"> <meta property="og:url" content="https://labh.io/calculator/senior_citizen_savings_scheme"> <meta property="og:title" content="SCSS Calculator - Senior Citizen Savings Scheme | Labh"> <meta property="og:description" content="Calculate your returns from SCSS using Labh’s calculator. Get complete details on interest, maturity, and eligibility for senior citizens in India.">
+<!-- Twitter --> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:url" content="https://labh.io/calculator/senior_citizen_savings_scheme"> <meta name="twitter:title" content="SCSS Calculator - Senior Citizen Savings Scheme | Labh"> <meta name="twitter:description" content="Estimate your SCSS returns with Labh’s smart calculator. Designed for senior citizens to understand maturity and benefits."> 
         <meta property="og:image" content="/assets/logo.svg" />
         <meta
             name="google-site-verification"
@@ -48,7 +47,7 @@
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
         ></script>
 
-        <title>Online Financial Calculators – Loan, SIP, FD, Tax &amp; Retirement Tools</title>
+        <title>SCSS Calculator - Senior Citizen Savings Scheme | Labh</title>
     </head>
     <body>
         <nav>
@@ -143,183 +142,164 @@
             <ul>
                 <li><a href="/index.html">Home</a></li>
                 <li><img src="/assets/dote.svg" alt="dote" /></li>
-                <li><a href="#" class="active">Calculator</a></li>
+                 <li><a href="/calculator/">Calculator</a></li> <li><img src="/assets/dote-active.svg" alt="dote-active"></li> <li><a href="#" class="active">Senior Citizen Savings Scheme Calculator</a></li> 
             </ul>
         </div>
 
         
 <div class="main-container">
     <div class="contents">
-        <h1>Smart Investment Calculator</h1>
+        <h1>Senior Citizen Savings Scheme Calculator</h1>
         <p>
-            Make informed decisions with real-time insights on returns, risks,
-            and optimal investment strategies.
+            The SCSS Calculator helps retirees plan their income by calculating
+            interest earned on fixed deposits under this scheme.
         </p>
     </div>
-    <div class="cards">
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/retirement-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Retirement calculator</div>
-            <div class="card-description">
-                Estimate your savings for a secure retirement.
+    <div
+        class="calculator-card sip-calculator d-flex justify-content-between align-items-center"
+    >
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+
+        <div class="calculator-card-contents w-100">
+            <div>
+                <div class="sip-content">
+                    <div class="cal-content">
+                        <label>Yearly Investment</label>
+                        <span id="investment-slider-value">Rs.500</span>
+                    </div>
+                    <input
+                        type="range"
+                        id="investment-slider"
+                        min="500"
+                        max="150000"
+                        step="500"
+                        value="5000"
+                    />
+                </div>
+
+                <div class="cal-content">
+                    <label>Rate of interest %</label>
+                    <div class="rate-container">8.2%</div>
+                </div>
+                <div class="cal-content">
+                    <label>Tenure in years</label>
+                    <div class="rate-container">5</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="graph-container d-flex justify-content-center align-items-center">
+                    <div class="graph"></div>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div
+                                class="legend-color"
+                                style="background-color: #9a5ced"
+                            ></div>
+                            <span>Est. Returns</span>
+                        </div>
+                        <div class="legend-item">
+                            <div
+                                class="legend-color"
+                                style="background-color: #e8d8fd"
+                            ></div>
+                            <span>Invested amt</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cal-content result">
+                    <label>Invested Amt</label>
+                    <span id="invested-amt">-</span>
+                </div>
+                <div class="cal-content result">
+                    <label>Quarterly Interest</label>
+                    <span id="quarterly-interest">-</span>
+                </div>
+                <div class="cal-content result">
+                    <label>Total Interest</label>
+                    <span id="est-returns">-</span>
+                </div>
+                <hr class="calculator-hr" />
+                <div class="cal-content result">
+                    <label>Total Value</label>
+                    <span id="total-value">-</span>
+                </div>
             </div>
         </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/education-fees-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Education fees calculator</div>
-            <div class="card-description">
-                Plan for your child’s education costs.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/sip-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">SIP returns calculator</div>
-            <div class="card-description">Estimate Your Investment Growth.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/fixed-deposit-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Fixed deposit return calculator</div>
-            <div class="card-description">
-                Calculate Your Fixed Deposit Growth.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/lumpsum-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Lumpsum calculator</div>
-            <div class="card-description">
-                Estimate Your Investment Returns.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/pf-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">PF calculators</div>
-            <div class="card-description">Estimate Your PF Growth.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/nps-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">NPS calculator</div>
-            <div class="card-description">Plan Your Retirement Savings.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/personal-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Personal loan calculator</div>
-            <div class="card-description">Calculate Your Loan EMI.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/credit-card-debit-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">
-                Credit card debt calculator calculator
-            </div>
-            <div class="card-description">Manage Your Debt Smartly.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/car-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Car loan calculator</div>
-            <div class="card-description">Estimate Your Monthly EMI.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/bike-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Bike cost calculator</div>
-            <div class="card-description">
-                Estimate Your Total Bike Expense.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/home-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">House calculator</div>
-            <div class="card-description">Estimate Your Home Investment.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/ppf-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">PPF calculator</div>
-            <div class="card-description">Estimate Your Home Investment.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/ppf-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Senior Citizen Savings Scheme calculator</div>
-            <div class="card-description">Estimate Your Home Investment.</div>
-        </div>
-        
-        <!-- <div class="card" onclick="window.location.href='/calculator/stepup-sip-calculator/'">
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Sip step up calculator</div>
-            <div class="card-description">
-                Grow Your Investments with Incremental SIPs.
-            </div>
-        </div> -->
     </div>
+    <div class="guide">
+        <h2>How to Use?</h2>
+        <ul>
+            <li>Enter your investment amount.</li>
+            <li>Get quarterly interest payout values.</li>
+        </ul>
+
+        <h2>Formula</h2>
+        <p class="formula">
+            $$ \text{Quarterly Interest} = \frac{P \times R}{4 \times 100} $$ $$
+            \text{Total Interest} = \frac{P \times R \times T}{100} $$
+        </p>
+
+        <table>
+            <tr>
+                <td>P :</td>
+                <td>Principal amount.</td>
+            </tr>
+            <tr>
+                <td>r :</td>
+                <td>Expected Quarterly return rate.</td>
+            </tr>
+            <tr>
+                <td>T :</td>
+                <td>Tenure</td>
+            </tr>
+        </table>
+
+        <h2>Advantages</h2>
+        <ul>
+            <li>Guaranteed income for seniors</li>
+            <li>Tax benefit under 80C</li>
+            <li>Government-backed safety</li>
+        </ul>
+        <h2>FAQ's</h2>
+
+        <div class="faq-container" style="background-color: transparent">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I open multiple SCSS accounts?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Yes, but within the total ₹30 lakh limit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span> Is early withdrawal allowed?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Yes, with applicable penalties.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="moblie-search-bar-container">
         <div
             id="search-results"
@@ -338,51 +318,95 @@
 </div>
 
 <script>
+    function calculateQuarterlyInterest(principal, annualRate) {
+        return (principal * annualRate) / (4 * 100);
+    }
+    function calculateTotalInterest(principal, annualRate, years = 5) {
+        return (principal * annualRate * years) / 100;
+    }
+
+    function updateChart(returnsPercentage) {
+        const chart = document.querySelector(".graph");
+        chart.style.background = `conic-gradient(
+            #E8D8FD 0% ${returnsPercentage}%,
+            #9A5CED ${returnsPercentage}% 100%
+            )`;
+    }
+    function updateValues() {
+        const yearlyInvestment = $("#investment-slider").val();
+        const interestRate = 8.2;
+        const tenure = 5;
+        let investedAmount = yearlyInvestment * 5;
+
+        const returns = calculateTotalInterest(yearlyInvestment, interestRate, tenure);
+        const quarterlyInterest = calculateQuarterlyInterest(yearlyInvestment, interestRate);
+
+        const totalReturns = returns + investedAmount;
+
+        const returnsPercentage = (investedAmount / totalReturns) * 100;
+
+        updateChart(returnsPercentage);
+        $("#invested-amt").text(`Rs.${investedAmount.toLocaleString("en-IN")}`);
+        $("#est-returns").text(`Rs.${returns.toLocaleString("en-IN")}`);
+        $("#quarterly-interest").text(`Rs.${quarterlyInterest.toLocaleString("en-IN")}`);
+        $("#total-value").text(`Rs.${totalReturns.toLocaleString("en-IN")}`);
+    }
+
     $(document).ready(function () {
-        let cardWidth = $(".card").width();
+        $("#sip-span").click(function () {
+            $(".lumpsum-content").addClass("display-none");
+            $(".sip-content").removeClass("display-none");
+            $("#sip-span").addClass("active");
+            $("#lumpsum-span").removeClass("active");
+            sip = 1;
+            updateValues();
+        });
 
-        $(".card").hover(
-            function () {
-                $(this)
-                    .find("img")
-                    .last()
-                    .attr("src", "/assets/calculator-arrow-hover.svg");
-            },
-            function () {
-                $(this)
-                    .find("img")
-                    .last()
-                    .attr("src", "/assets/calculator-arrow.svg");
-            }
-        );
+        $("#lumpsum-span").click(function () {
+            $(".lumpsum-content").removeClass("display-none");
+            $(".sip-content").addClass("display-none");
+            $("#lumpsum-span").addClass("active");
+            $("#sip-span").removeClass("active");
+            sip = 0;
+            updateValues();
+        });
 
-        function search(event) {
-            if (window.innerWidth < 1200) {
-                console.log('skipped')
-                return; // Do not execute the search function on mobile
+        function updateSliderBackground(slider) {
+            if (
+                slider.id == "investment-slider" ||
+                slider.id == "lumpsum-investment-slider"
+            ) {
+                $(`#${slider.id}-value`).text(
+                    `Rs.${parseInt(slider.value).toLocaleString("en-IN")}`
+                );
+            } else if (slider.id == "year-slider") {
+                $(`#${slider.id}-value`).text(`${slider.value} years`);
+            } else if (slider.id == "return-slider") {
+                $(`#${slider.id}-value`).text(`${slider.value} %`);
             }
-            const query = event.target.value.toLowerCase();
-            $(".cards").addClass("cards-grid-constant-gap"); // this is added to maintain the gap b/t cards
-            $(".card").each(function () {
-                const cardHeading = $(this).find(".card-heading").text();
-                const cardDescription = $(this)
-                    .find(".card-description")
-                    .text();
-                if (
-                    cardHeading.toLowerCase().includes(query) ||
-                    cardDescription.toLowerCase().includes(query)
-                ) {
-                    $(this).show();
-                    $(this).width(cardWidth);
-                } else {
-                    $(this).hide();
-                }
-            });
-            $("html, body").animate({ scrollTop: 0 }, 10);
+
+            const value =
+                ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+            $(slider).css(
+                "background",
+                `linear-gradient(to right, #9b5de5 ${value}%, #d3bfff ${value}%)`
+            );
         }
 
-        // $("#search").on("input", search);
-        $("#search2").on("input", search);
+        $(
+            "#investment-slider, #lumpsum-investment-slider, #year-slider, #return-slider"
+        )
+            .each(function () {
+                updateSliderBackground(this);
+                updateValues();
+            })
+            .on("input", function () {
+                updateSliderBackground(this);
+                updateValues();
+            });
+        $("#luxury, #good, #normal").on("change", function () {
+            updateValues();
+        });
     });
 </script>
 
