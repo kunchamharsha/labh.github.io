@@ -62,6 +62,11 @@ const calculators = [
         "card-description": "Estimate Your Home Investment.",
         url: "/calculator/home-loan-calculator/",
     },
+    {
+        "card-heading": "PPF Calculator",
+        "card-description": "Estimate Your PPF Growth.",
+        url: "/calculator/ppf-calculator/",
+    },
     // {
     //     "card-heading": "Sip step up calculator",
     //     "card-description": "Grow Your Investments with Incremental SIPs.",

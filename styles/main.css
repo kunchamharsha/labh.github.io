@@ -652,6 +652,10 @@ nav {
   appearance: textfield;
 }
 
+.ppf-calculator .calculator-card-contents .box-result {
+  width: 25.6875rem;
+}
+
 .car-loan-calculator .graph-container {
   color: rgba(0, 0, 0, 0.6);
   flex-direction: column;

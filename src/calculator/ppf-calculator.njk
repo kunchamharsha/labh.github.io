@@ -1,0 +1,268 @@
+---
+layout: calculator-base.njk
+title: PPF Calculator – Calculate Your Public Provident Fund Returns | Labh
+meta: '
+<meta name="description" content="Use the free PPF Calculator by Labh to estimate your Public Provident Fund maturity amount based on annual investment, interest rate, and duration. Start planning your long-term savings with confidence.">
+<meta name="keywords" content="PPF Calculator, Public Provident Fund Calculator, PPF maturity calculator, PPF interest calculator, PPF return calculator, PPF calculation online, PPF account calculator, Calculate PPF returns, PPF investment calculator, PPF maturity amount online, Long-term investment calculator, PPF tax savings calculator, Labh PPF calculator, Labh financial tools, PPF calculator Labh">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://labh.io/calculator/pf-calculator">
+<meta property="og:title" content="PPF Calculator – Calculate Your Public Provident Fund Returns | Labh">
+<meta property="og:description" content="Use the free PPF Calculator by Labh to estimate your Public Provident Fund maturity amount based on annual investment, interest rate, and duration. Start planning your long-term savings with confidence.">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://labh.io/calculator/pf-calculator">
+<meta name="twitter:title" content="PPF Calculator – Calculate Your Public Provident Fund Returns | Labh">
+<meta name="twitter:description" content="Use the free PPF Calculator by Labh to estimate your Public Provident Fund maturity amount based on annual investment, interest rate, and duration. Start planning your long-term savings with confidence.">
+'
+menu: '
+    <li><a href="/calculator/">Calculator</a></li>
+    <li><img src="/assets/dote-active.svg" alt="dote-active"></li>
+    <li><a href="#" class="active">PPF Calculator</a></li>
+'
+---
+
+<div class="main-container">
+    <div class="contents">
+        <h1>PPF calculators</h1>
+        <p>
+            Use our free PPF Calculator to estimate your Public Provident Fund
+            returns and maturity amount based on your annual investment,
+            interest rate, and tenure. Plan your long-term savings efficiently
+            with accurate results.
+        </p>
+    </div>
+    <div class="calculator-card pf-calculator ppf-calculator">
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <div class="calculator-card-contents">
+            <div>
+                <div class="cal-content">
+                    <label>Yearly Investment</label>
+                    <span id="investment-slider-value">Rs.40,000</span>
+                </div>
+                <div class="input-limits">
+                    <div>Rs.1000</div>
+                    <div>Rs.30 Lac</div>
+                </div>
+                <input
+                    type="range"
+                    id="investment-slider"
+                    min="1000"
+                    max="3000000"
+                    step="500"
+                    value="40000"
+                />
+
+                <div class="cal-content">
+                    <label>Time Period</label>
+                    <span id="year-slider-value">23 Years</span>
+                </div>
+                <div class="input-limits">
+                    <div>15</div>
+                    <div>50</div>
+                </div>
+                <input
+                    type="range"
+                    id="year-slider"
+                    min="15"
+                    max="50"
+                    step="1"
+                    value="23"
+                />
+
+                <div class="cal-content">
+                    <label>Rate of interest %</label>
+                    <div class="rate-container">7.1%</div>
+                </div>
+            </div>
+            <div>
+                <div class="box-result">
+                    <span class="heading">You will have accumulated</span>
+                    <span class="amount" id="total-amount">Rs.15,652.55</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="guide">
+        <h2>How to Use?</h2>
+        <ul>
+            <li>Enter Yearly Investment and Time Period.</li>
+        </ul>
+
+        <h2>Formula</h2>
+        <p class="formula">
+            $$ A = P \times \frac{(1 + r)^n - 1}{r} \times (1 + r) $$
+        </p>
+        <table>
+            <tr>
+                <td>$$ A $$</td>
+                <td>Maturity amount</td>
+            </tr>
+            <tr>
+                <td>$$ P $$</td>
+                <td>Annual payment made at the beginning of each year</td>
+            </tr>
+            <tr>
+                <td>$$ r $$</td>
+                <td>Annual interest rate (in decimal)</td>
+            </tr>
+            <tr>
+                <td>$$ n $$</td>
+                <td>Number of years</td>
+            </tr>
+        </table>
+        <h2>Advantages</h2>
+        <ul>
+            <li>
+                Accurately estimates your PPF maturity amount based on your
+                inputs.
+            </li>
+            <li>
+                Saves time by automating complex compound interest calculations.
+            </li>
+            <li>
+                Helps in planning long-term financial goals like retirement or
+                education.
+            </li>
+            <li>
+                Lets you experiment with different investment amounts and
+                durations.
+            </li>
+        </ul>
+        <h2>FAQ's</h2>
+
+        <div class="faq-container" style="background-color: transparent">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I add multiple children?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Labh is a research team that builds custom groups of
+                            mutual funds, designed to grow your money based on
+                            how much risk you’re comfortable taking. We do the
+                            research so you can invest with confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Does it calculate for international education?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Labh is a research team that builds custom groups of
+                            mutual funds, designed to grow your money based on
+                            how much risk you’re comfortable taking. We do the
+                            research so you can invest with confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What inflation rate should I use? </span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Labh is a research team that builds custom groups of
+                            mutual funds, designed to grow your money based on
+                            how much risk you’re comfortable taking. We do the
+                            research so you can invest with confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="moblie-search-bar-container">
+        <div
+            id="search-results"
+            class="cards display-none margin-bottom-none"
+        ></div>
+        <div class="black-container">
+            <div class="mobile-search-bar">
+                <input
+                    type="text"
+                    placeholder="Search for Calculator"
+                    id="search2"
+                />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="blur-effect display-none"></div>
+
+<script>
+    function calculatePPFMaturity(annualContribution, annualRate, years) {
+        const r = annualRate / 100;
+        const maturityAmount =
+            annualContribution * (((Math.pow(1 + r, years) - 1) / r) * (1 + r));
+        return parseFloat(maturityAmount.toFixed(2));
+    }
+
+    function updateValues() {
+        const investment = $("#investment-slider").val();
+        const years = $("#year-slider").val();
+        const interestRate = 7.1;
+
+        const finalPF = calculatePPFMaturity(
+            investment,
+            interestRate,
+            years,
+        );
+
+        $("#total-amount").text(
+            `Rs.${parseInt(finalPF).toLocaleString("en-IN")}`
+        );
+    }
+
+    $(document).ready(function () {
+        function updateSliderBackground(slider) {
+            if (slider.id == "investment-slider") {
+                $(`#${slider.id}-value`).text(
+                    `Rs.${parseInt(slider.value).toLocaleString("en-IN")}`
+                );
+            } else if (slider.id == "year-slider") {
+                $(`#${slider.id}-value`).text(`${slider.value} Years`);
+            }
+
+            const value =
+                ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+            $(slider).css(
+                "background",
+                `linear-gradient(to right, #9b5de5 ${value}%, #d3bfff ${value}%)`
+            );
+        }
+
+        $("#investment-slider, #year-slider")
+            .each(function () {
+                updateSliderBackground(this);
+                updateValues();
+            })
+            .on("input", function () {
+                updateSliderBackground(this);
+                updateValues();
+            });
+    });
+</script>

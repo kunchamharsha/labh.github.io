@@ -29,7 +29,6 @@ body {
 @import "nav";
 @import "menu_bar";
 
-
 .main-container {
     margin-left: $nav-margin-left;
     margin-right: $nav-margin-left;
@@ -581,6 +580,14 @@ body {
         /* Remove arrows in Firefox */
         input[type="number"] {
             appearance: textfield;
+        }
+    }
+}
+
+.ppf-calculator {
+    .calculator-card-contents {
+        .box-result {
+            width: calculate-rem(411);
         }
     }
 }

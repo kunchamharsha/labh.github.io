@@ -8,10 +8,9 @@
         />
 
         <!-- Optimized Meta Description -->
-         <meta name="description" content="Explore a wide range of free online financial calculators including loan EMI calculators, SIP, FD, NPS, retirement planning, and more. Simplify your financial planning."> <meta name="keywords" content="financial calculators, loan calculators, SIP calculator, FD calculator, NPS calculator, retirement calculator, EMI calculator, investment tools, tax calculator, money management">
-<!-- Open Graph / Facebook --> <meta property="og:type" content="website"> <meta property="og:url" content="https://labh.io/calculator"> <meta property="og:title" content="Online Financial Calculators – Loan, SIP, FD, Tax & Retirement Tools"> <meta property="og:description" content="Explore a wide range of free online financial calculators including loan EMI calculators, SIP, FD, NPS, retirement planning, and more. Simplify your financial planning.">
-<!-- Twitter --> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:url" content="https://labh.io/calculator"> <meta name="twitter:title" content="Online Financial Calculators – Loan, SIP, FD, Tax & Retirement Tools"> <meta name="twitter:description" content="Explore a wide range of free online financial calculators including loan EMI calculators, SIP, FD, NPS, retirement planning, and more. Simplify your financial planning.">
-
+         <meta name="description" content="Use the free PPF Calculator by Labh to estimate your Public Provident Fund maturity amount based on annual investment, interest rate, and duration. Start planning your long-term savings with confidence."> <meta name="keywords" content="PPF Calculator, Public Provident Fund Calculator, PPF maturity calculator, PPF interest calculator, PPF return calculator, PPF calculation online, PPF account calculator, Calculate PPF returns, PPF investment calculator, PPF maturity amount online, Long-term investment calculator, PPF tax savings calculator, Labh PPF calculator, Labh financial tools, PPF calculator Labh">
+<!-- Open Graph / Facebook --> <meta property="og:type" content="website"> <meta property="og:url" content="https://labh.io/calculator/pf-calculator"> <meta property="og:title" content="PPF Calculator – Calculate Your Public Provident Fund Returns | Labh"> <meta property="og:description" content="Use the free PPF Calculator by Labh to estimate your Public Provident Fund maturity amount based on annual investment, interest rate, and duration. Start planning your long-term savings with confidence.">
+<!-- Twitter --> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:url" content="https://labh.io/calculator/pf-calculator"> <meta name="twitter:title" content="PPF Calculator – Calculate Your Public Provident Fund Returns | Labh"> <meta name="twitter:description" content="Use the free PPF Calculator by Labh to estimate your Public Provident Fund maturity amount based on annual investment, interest rate, and duration. Start planning your long-term savings with confidence."> 
         <meta property="og:image" content="/assets/logo.svg" />
         <meta
             name="google-site-verification"
@@ -48,7 +47,7 @@
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
         ></script>
 
-        <title>Online Financial Calculators – Loan, SIP, FD, Tax &amp; Retirement Tools</title>
+        <title>PPF Calculator – Calculate Your Public Provident Fund Returns | Labh</title>
     </head>
     <body>
         <nav>
@@ -143,172 +142,181 @@
             <ul>
                 <li><a href="/index.html">Home</a></li>
                 <li><img src="/assets/dote.svg" alt="dote" /></li>
-                <li><a href="#" class="active">Calculator</a></li>
+                 <li><a href="/calculator/">Calculator</a></li> <li><img src="/assets/dote-active.svg" alt="dote-active"></li> <li><a href="#" class="active">PPF Calculator</a></li> 
             </ul>
         </div>
 
         
 <div class="main-container">
     <div class="contents">
-        <h1>Smart Investment Calculator</h1>
+        <h1>PPF calculators</h1>
         <p>
-            Make informed decisions with real-time insights on returns, risks,
-            and optimal investment strategies.
+            Use our free PPF Calculator to estimate your Public Provident Fund
+            returns and maturity amount based on your annual investment,
+            interest rate, and tenure. Plan your long-term savings efficiently
+            with accurate results.
         </p>
     </div>
-    <div class="cards">
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/retirement-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Retirement calculator</div>
-            <div class="card-description">
-                Estimate your savings for a secure retirement.
+    <div class="calculator-card pf-calculator ppf-calculator">
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <div class="calculator-card-contents">
+            <div>
+                <div class="cal-content">
+                    <label>Yearly Investment</label>
+                    <span id="investment-slider-value">Rs.40,000</span>
+                </div>
+                <div class="input-limits">
+                    <div>Rs.1000</div>
+                    <div>Rs.30 Lac</div>
+                </div>
+                <input
+                    type="range"
+                    id="investment-slider"
+                    min="1000"
+                    max="3000000"
+                    step="500"
+                    value="40000"
+                />
+
+                <div class="cal-content">
+                    <label>Time Period</label>
+                    <span id="year-slider-value">23 Years</span>
+                </div>
+                <div class="input-limits">
+                    <div>15</div>
+                    <div>50</div>
+                </div>
+                <input
+                    type="range"
+                    id="year-slider"
+                    min="15"
+                    max="50"
+                    step="1"
+                    value="23"
+                />
+
+                <div class="cal-content">
+                    <label>Rate of interest %</label>
+                    <div class="rate-container">7.1%</div>
+                </div>
+            </div>
+            <div>
+                <div class="box-result">
+                    <span class="heading">You will have accumulated</span>
+                    <span class="amount" id="total-amount">Rs.15,652.55</span>
+                </div>
             </div>
         </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/education-fees-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Education fees calculator</div>
-            <div class="card-description">
-                Plan for your child’s education costs.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/sip-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">SIP returns calculator</div>
-            <div class="card-description">Estimate Your Investment Growth.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/fixed-deposit-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Fixed deposit return calculator</div>
-            <div class="card-description">
-                Calculate Your Fixed Deposit Growth.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/lumpsum-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Lumpsum calculator</div>
-            <div class="card-description">
-                Estimate Your Investment Returns.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/pf-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">PF calculators</div>
-            <div class="card-description">Estimate Your PF Growth.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/nps-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">NPS calculator</div>
-            <div class="card-description">Plan Your Retirement Savings.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/personal-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Personal loan calculator</div>
-            <div class="card-description">Calculate Your Loan EMI.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/credit-card-debit-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">
-                Credit card debt calculator calculator
-            </div>
-            <div class="card-description">Manage Your Debt Smartly.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/car-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Car loan calculator</div>
-            <div class="card-description">Estimate Your Monthly EMI.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/bike-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Bike cost calculator</div>
-            <div class="card-description">
-                Estimate Your Total Bike Expense.
-            </div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/home-loan-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">House calculator</div>
-            <div class="card-description">Estimate Your Home Investment.</div>
-        </div>
-        <div
-            class="card"
-            onclick="window.location.href='/calculator/ppf-calculator/'"
-        >
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">PPF calculator</div>
-            <div class="card-description">Estimate Your Home Investment.</div>
-        </div>
-        <!-- <div class="card" onclick="window.location.href='/calculator/stepup-sip-calculator/'">
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/card-edge-image.svg" alt="edge-image" />
-            <img src="/assets/calculator-arrow.svg" alt="calculator-arrow" />
-            <div class="card-heading">Sip step up calculator</div>
-            <div class="card-description">
-                Grow Your Investments with Incremental SIPs.
-            </div>
-        </div> -->
     </div>
+    <div class="guide">
+        <h2>How to Use?</h2>
+        <ul>
+            <li>Enter Yearly Investment and Time Period.</li>
+        </ul>
+
+        <h2>Formula</h2>
+        <p class="formula">
+            $$ A = P \times \frac{(1 + r)^n - 1}{r} \times (1 + r) $$
+        </p>
+        <table>
+            <tr>
+                <td>$$ A $$</td>
+                <td>Maturity amount</td>
+            </tr>
+            <tr>
+                <td>$$ P $$</td>
+                <td>Annual payment made at the beginning of each year</td>
+            </tr>
+            <tr>
+                <td>$$ r $$</td>
+                <td>Annual interest rate (in decimal)</td>
+            </tr>
+            <tr>
+                <td>$$ n $$</td>
+                <td>Number of years</td>
+            </tr>
+        </table>
+        <h2>Advantages</h2>
+        <ul>
+            <li>
+                Accurately estimates your PPF maturity amount based on your
+                inputs.
+            </li>
+            <li>
+                Saves time by automating complex compound interest calculations.
+            </li>
+            <li>
+                Helps in planning long-term financial goals like retirement or
+                education.
+            </li>
+            <li>
+                Lets you experiment with different investment amounts and
+                durations.
+            </li>
+        </ul>
+        <h2>FAQ's</h2>
+
+        <div class="faq-container" style="background-color: transparent">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I add multiple children?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Labh is a research team that builds custom groups of
+                            mutual funds, designed to grow your money based on
+                            how much risk you’re comfortable taking. We do the
+                            research so you can invest with confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Does it calculate for international education?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Labh is a research team that builds custom groups of
+                            mutual funds, designed to grow your money based on
+                            how much risk you’re comfortable taking. We do the
+                            research so you can invest with confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What inflation rate should I use? </span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Labh is a research team that builds custom groups of
+                            mutual funds, designed to grow your money based on
+                            how much risk you’re comfortable taking. We do the
+                            research so you can invest with confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="moblie-search-bar-container">
         <div
             id="search-results"
@@ -326,52 +334,59 @@
     </div>
 </div>
 
-<script>
-    $(document).ready(function () {
-        let cardWidth = $(".card").width();
+<div class="blur-effect display-none"></div>
 
-        $(".card").hover(
-            function () {
-                $(this)
-                    .find("img")
-                    .last()
-                    .attr("src", "/assets/calculator-arrow-hover.svg");
-            },
-            function () {
-                $(this)
-                    .find("img")
-                    .last()
-                    .attr("src", "/assets/calculator-arrow.svg");
-            }
+<script>
+    function calculatePPFMaturity(annualContribution, annualRate, years) {
+        const r = annualRate / 100;
+        const maturityAmount =
+            annualContribution * (((Math.pow(1 + r, years) - 1) / r) * (1 + r));
+        return parseFloat(maturityAmount.toFixed(2));
+    }
+
+    function updateValues() {
+        const investment = $("#investment-slider").val();
+        const years = $("#year-slider").val();
+        const interestRate = 7.1;
+
+        const finalPF = calculatePPFMaturity(
+            investment,
+            interestRate,
+            years,
         );
 
-        function search(event) {
-            if (window.innerWidth < 1200) {
-                console.log('skipped')
-                return; // Do not execute the search function on mobile
+        $("#total-amount").text(
+            `Rs.${parseInt(finalPF).toLocaleString("en-IN")}`
+        );
+    }
+
+    $(document).ready(function () {
+        function updateSliderBackground(slider) {
+            if (slider.id == "investment-slider") {
+                $(`#${slider.id}-value`).text(
+                    `Rs.${parseInt(slider.value).toLocaleString("en-IN")}`
+                );
+            } else if (slider.id == "year-slider") {
+                $(`#${slider.id}-value`).text(`${slider.value} Years`);
             }
-            const query = event.target.value.toLowerCase();
-            $(".cards").addClass("cards-grid-constant-gap"); // this is added to maintain the gap b/t cards
-            $(".card").each(function () {
-                const cardHeading = $(this).find(".card-heading").text();
-                const cardDescription = $(this)
-                    .find(".card-description")
-                    .text();
-                if (
-                    cardHeading.toLowerCase().includes(query) ||
-                    cardDescription.toLowerCase().includes(query)
-                ) {
-                    $(this).show();
-                    $(this).width(cardWidth);
-                } else {
-                    $(this).hide();
-                }
-            });
-            $("html, body").animate({ scrollTop: 0 }, 10);
+
+            const value =
+                ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+            $(slider).css(
+                "background",
+                `linear-gradient(to right, #9b5de5 ${value}%, #d3bfff ${value}%)`
+            );
         }
 
-        // $("#search").on("input", search);
-        $("#search2").on("input", search);
+        $("#investment-slider, #year-slider")
+            .each(function () {
+                updateSliderBackground(this);
+                updateValues();
+            })
+            .on("input", function () {
+                updateSliderBackground(this);
+                updateValues();
+            });
     });
 </script>
 
