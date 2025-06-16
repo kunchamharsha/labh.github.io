@@ -571,6 +571,13 @@ nav {
 .calculator-card-contents .cal-content span {
   font-weight: 600;
 }
+.calculator-card-contents .rate-container {
+  width: 4.6875rem;
+  height: 2.5rem;
+  background-color: rgba(166, 99, 255, 0.2);
+  height: fit-content;
+  text-align: center;
+}
 
 .sip-calculator {
   height: 42.0625rem;
@@ -632,13 +639,6 @@ nav {
 .pf-calculator .calculator-card-contents .box-result {
   width: auto;
   margin-top: 2.5rem;
-}
-.pf-calculator .calculator-card-contents .rate-container {
-  width: 4.6875rem;
-  height: 2.5rem;
-  background-color: rgba(166, 99, 255, 0.2);
-  height: fit-content;
-  text-align: center;
 }
 .pf-calculator .calculator-card-contents #rate:focus {
   outline: none;

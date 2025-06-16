@@ -1,0 +1,317 @@
+---
+layout: calculator-base.njk
+title: Sukanya Samriddhi Yojana Calculator - Calculate Returns Online | Labh
+meta: '
+<meta name="description" content="Use Labh Sukanya Samriddhi Maturity Calculator to easily calculate the maturity amount, interest earned & total investment based on your monthly contributions.">
+<meta name="keywords" content="Sukanya Samriddhi Calculator, Maturity Calculator, SSY Calculator, Sukanya Interest Calculator, Sukanya Yojana Returns, Labh Calculator">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://labh.io/calculator/sip-calculator">
+<meta property="og:title" content="Sukanya Samriddhi Maturity Calculator - Calculate Returns Online | Labh">
+<meta property="og:description" content="Use Labh Sukanya Samriddhi Maturity Calculator to easily calculate the maturity amount, interest earned & total investment based on your monthly contributions.">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://labh.io/calculator/sip-calculator">
+<meta name="twitter:title" content="Sukanya Samriddhi Maturity Calculator - Calculate Returns Online | Labh">
+<meta name="twitter:description" content="Use Labh Sukanya Samriddhi Maturity Calculator to easily calculate the maturity amount, interest earned & total investment based on your monthly contributions.">
+'
+menu: '
+    <li><a href="/calculator/">Calculator</a></li>
+    <li><img src="/assets/dote-active.svg" alt="dote-active"></li>
+    <li><a href="#" class="active">Sukanya Samriddhi Yojana Calculator</a></li>
+'
+---
+
+<div class="main-container">
+    <div class="contents">
+        <h1>Sukanya Samriddhi Yojana Calculator</h1>
+        <p>Compute potential returns from regular monthly SIP investments.</p>
+    </div>
+    <div class="calculator-card sip-calculator">
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+        <img src="/assets/card-edge-image.svg" alt="edge-image" />
+
+        <div class="calculator-card-contents">
+            <div>
+                <div class="sip-content">
+                    <div class="cal-content">
+                        <label>Yearly Investment</label>
+                        <span id="investment-slider-value">Rs.500</span>
+                    </div>
+                    <input
+                        type="range"
+                        id="investment-slider"
+                        min="500"
+                        max="150000"
+                        step="500"
+                        value="5000"
+                    />
+                </div>
+
+                <div class="cal-content">
+                    <label>Rate of interest %</label>
+                    <div class="rate-container">8.2%</div>
+                </div>
+                <div class="cal-content">
+                    <label>Deposit Years</label>
+                    <div class="rate-container">15</div>
+                </div>
+                <div class="cal-content">
+                    <label>Maturity Years</label>
+                    <div class="rate-container">21</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="graph-container">
+                    <div class="graph"></div>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div
+                                class="legend-color"
+                                style="background-color: #9a5ced"
+                            ></div>
+                            <span>Est. Returns</span>
+                        </div>
+                        <div class="legend-item">
+                            <div
+                                class="legend-color"
+                                style="background-color: #e8d8fd"
+                            ></div>
+                            <span>Invested amt</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cal-content result">
+                    <label>Invested Amt</label>
+                    <span id="invested-amt">Rs.46,36,567</span>
+                </div>
+                <div class="cal-content result">
+                    <label>Est. returns</label>
+                    <span id="est-returns">Rs.12,67,346</span>
+                </div>
+                <hr class="calculator-hr" />
+                <div class="cal-content result">
+                    <label>Total Value</label>
+                    <span id="total-value">Rs.59,85,385</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="guide">
+        <h2>How to Use?</h2>
+        <ul>
+            <li>Enter your monthly investment amount.</li>
+            <li>Set the investment period and expected returns rate.</li>
+            <li>View accumulated corpus and returns.</li>
+        </ul>
+
+        <h2>Formula</h2>
+        <p class="formula">
+            $$ FV = P \times \left( \frac{(1 + r)^n - 1}{r} \right) \times (1 +
+            r) $$
+        </p>
+
+        <table>
+            <tr>
+                <td>FV (Future Value):</td>
+                <td>The accumulated amount after investing via SIP.</td>
+            </tr>
+            <tr>
+                <td>P :</td>
+                <td>Monthly investment amount.</td>
+            </tr>
+            <tr>
+                <td>r :</td>
+                <td>
+                    Expected monthly return rate (annual rate divided by 12).
+                </td>
+            </tr>
+            <tr>
+                <td>n :</td>
+                <td>
+                    Total number of monthly installments (years multiplied by
+                    12).
+                </td>
+            </tr>
+        </table>
+
+        <h2>Advantages</h2>
+        <ul>
+            <li>Encourages disciplined investing</li>
+            <li>Provides expected growth clarity</li>
+            <li>Easy comparison of returns</li>
+            <li>Tailored investment planning</li>
+        </ul>
+        <h2>FAQ's</h2>
+
+        <div class="faq-container" style="background-color: transparent">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is a good SIP amount to start with?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Start with an amount you’re comfortable with, even
+                            if it’s small.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I change my SIP amount later?</span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Yes, most SIPs allow you to increase or decrease
+                            your contribution.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is SIP safe? </span>
+                    <span class="arrow"
+                        ><img src="/assets/Frame 877 (1).png"
+                    /></span>
+                </div>
+                <div class="faq-answer">
+                    <div class="content">
+                        <p style="text-align: left">
+                            Labh is a research team that builds custom groups of
+                            mutual funds, designed to grow your money based on
+                            how much risk you’re comfortable taking. We do the
+                            research so you can invest with confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="moblie-search-bar-container">
+        <div
+            id="search-results"
+            class="cards display-none margin-bottom-none"
+        ></div>
+        <div class="black-container">
+            <div class="mobile-search-bar">
+                <input
+                    type="text"
+                    placeholder="Search for Calculator"
+                    id="search2"
+                />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function sukanyaSamriddhiMaturityCalculator(
+        annualInvestment,
+        interestRate,
+        depositYears,
+        maturityYears
+    ) {
+        const r = interestRate / 100;
+        const fv15 =
+            annualInvestment * ((Math.pow(1 + r, depositYears) - 1) / r);
+        const maturityValue =
+            fv15 * Math.pow(1 + r, maturityYears - depositYears);
+        return Math.round(maturityValue * 100) / 100;
+    }
+
+    function updateChart(returnsPercentage) {
+        const chart = document.querySelector(".graph");
+        chart.style.background = `conic-gradient(
+            #E8D8FD 0% ${returnsPercentage}%,
+            #9A5CED ${returnsPercentage}% 100%
+            )`;
+    }
+    function updateValues() {
+        const yearlyInvestment = $("#investment-slider").val();
+        const interestRate = 8.2;
+        const depositYears = 15;
+        const matuirtyYears = 21;
+        let investedAmount = yearlyInvestment * depositYears;
+
+        const totalReturns = sukanyaSamriddhiMaturityCalculator(yearlyInvestment, interestRate, depositYears, matuirtyYears)
+
+        const returnsPercentage = (investedAmount / totalReturns) * 100;
+        updateChart(returnsPercentage);
+        $('#invested-amt').text(`Rs.${investedAmount.toLocaleString("en-IN")}`);
+        $('#total-value').text(`Rs.${totalReturns.toLocaleString("en-IN")}`);
+    }
+
+    $(document).ready(function () {
+        $("#sip-span").click(function () {
+            $(".lumpsum-content").addClass("display-none");
+            $(".sip-content").removeClass("display-none");
+            $("#sip-span").addClass("active");
+            $("#lumpsum-span").removeClass("active");
+            sip = 1;
+            updateValues();
+        });
+
+        $("#lumpsum-span").click(function () {
+            $(".lumpsum-content").removeClass("display-none");
+            $(".sip-content").addClass("display-none");
+            $("#lumpsum-span").addClass("active");
+            $("#sip-span").removeClass("active");
+            sip = 0;
+            updateValues();
+        });
+
+        function updateSliderBackground(slider) {
+            if (
+                slider.id == "investment-slider" ||
+                slider.id == "lumpsum-investment-slider"
+            ) {
+                $(`#${slider.id}-value`).text(
+                    `Rs.${parseInt(slider.value).toLocaleString("en-IN")}`
+                );
+            } else if (slider.id == "year-slider") {
+                $(`#${slider.id}-value`).text(`${slider.value} years`);
+            } else if (slider.id == "return-slider") {
+                $(`#${slider.id}-value`).text(`${slider.value} %`);
+            }
+
+            const value =
+                ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+            $(slider).css(
+                "background",
+                `linear-gradient(to right, #9b5de5 ${value}%, #d3bfff ${value}%)`
+            );
+        }
+
+        $(
+            "#investment-slider, #lumpsum-investment-slider, #year-slider, #return-slider"
+        )
+            .each(function () {
+                updateSliderBackground(this);
+                updateValues();
+            })
+            .on("input", function () {
+                updateSliderBackground(this);
+                updateValues();
+            });
+        $("#luxury, #good, #normal").on("change", function () {
+            updateValues();
+        });
+    });
+</script>

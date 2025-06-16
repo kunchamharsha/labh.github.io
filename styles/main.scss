@@ -488,6 +488,14 @@ body {
             font-weight: 600;
         }
     }
+    
+    .rate-container {
+        width: calculate-rem(75);
+        height: calculate-rem(40);
+        background-color: #a663ff33;
+        height: fit-content;
+        text-align: center;
+    }
 }
 
 .sip-calculator {
@@ -559,13 +567,6 @@ body {
         .box-result {
             width: auto;
             margin-top: calculate-rem(40);
-        }
-        .rate-container {
-            width: calculate-rem(75);
-            height: calculate-rem(40);
-            background-color: #a663ff33;
-            height: fit-content;
-            text-align: center;
         }
 
         #rate:focus {
