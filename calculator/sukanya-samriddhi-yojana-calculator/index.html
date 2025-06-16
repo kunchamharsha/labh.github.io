@@ -152,11 +152,11 @@
         <h1>Sukanya Samriddhi Yojana Calculator</h1>
         <p>Compute potential returns from regular monthly SIP investments.</p>
     </div>
-    <div class="calculator-card sip-calculator">
+    <div class="calculator-card sip-calculator d-flex justify-content-between align-items-center">
         <img src="/assets/card-edge-image.svg" alt="edge-image" />
         <img src="/assets/card-edge-image.svg" alt="edge-image" />
 
-        <div class="calculator-card-contents">
+        <div class="calculator-card-contents w-100">
             <div>
                 <div class="sip-content">
                     <div class="cal-content">
@@ -213,7 +213,7 @@
                     <span id="invested-amt">Rs.46,36,567</span>
                 </div>
                 <div class="cal-content result">
-                    <label>Est. returns</label>
+                    <label>Returns</label>
                     <span id="est-returns">Rs.12,67,346</span>
                 </div>
                 <hr class="calculator-hr" />
@@ -374,10 +374,13 @@
         let investedAmount = yearlyInvestment * depositYears;
 
         const totalReturns = sukanyaSamriddhiMaturityCalculator(yearlyInvestment, interestRate, depositYears, matuirtyYears)
+        const returns = totalReturns - investedAmount;
 
         const returnsPercentage = (investedAmount / totalReturns) * 100;
+
         updateChart(returnsPercentage);
         $('#invested-amt').text(`Rs.${investedAmount.toLocaleString("en-IN")}`);
+        $("#est-returns").text(`Rs.${returns.toLocaleString("en-IN")}`);
         $('#total-value').text(`Rs.${totalReturns.toLocaleString("en-IN")}`);
     }
 
