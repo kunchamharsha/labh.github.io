@@ -1,0 +1,490 @@
+@import "equations";
+.search-bar-container .search-dropdown span {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#mutual-funds-link-mobile {
+  display: none;
+}
+
+.menu-bar {
+  margin-bottom: 2.5rem;
+}
+.menu-bar a {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.contents h1 {
+  margin-bottom: 0rem;
+}
+
+.mf-chart-container {
+  min-height: 31.8125rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.mf-chart-container #chart {
+  width: 100%;
+}
+.mf-chart-container .year-container {
+  margin-top: 6.25rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mf-chart-container .year-container .years {
+  display: flex;
+  gap: 1.5rem;
+}
+.mf-chart-container .year-container .years span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8rem;
+  height: 3rem;
+  background-color: rgba(206, 203, 255, 0.2);
+  font-size: 1.5rem;
+  border-radius: 3.125rem;
+}
+.mf-chart-container .year-container .years .active {
+  background-color: #a663ff;
+  color: white;
+}
+.mf-chart-container .year-container a {
+  width: 23.4375rem;
+  height: 4.125rem;
+  text-decoration: none;
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5rem;
+  background: linear-gradient(96.7deg, #7c7a99 2.6%, #cecbff 52.91%, #7c7a99 110.75%, #cecbff 186.22%);
+}
+
+.mf-details-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  color: black;
+  gap: 1.25rem;
+}
+.mf-details-container .details-1,
+.mf-details-container .details-2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2.5rem;
+  margin-top: 5.375rem;
+}
+.mf-details-container .details-1 {
+  width: 26.5rem;
+  padding: 2rem 2.75rem;
+  background: rgba(206, 203, 255, 0.2);
+  color: white;
+}
+.mf-details-container .details-1 .custom-margin {
+  margin-bottom: 1.5rem;
+}
+// .mf-details-container .details-2 {
+//   width: 72%;
+//   padding: 1.6875rem 1.9375rem;
+//   background: linear-gradient(148.3deg, #e5d4fe 4.55%, #ffffff 52.27%, #e8dff4 95.45%);
+// }
+.mf-details-container .detail {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+// .mf-details-container .detail div {
+//   margin-bottom: 2.5rem;
+// }
+.mf-details-container .detail .title {
+  color: rgba(245, 245, 245, 0.6);
+}
+.mf-details-container .detail:last-of-type div {
+  margin-bottom: 0;
+}
+.mf-details-container .toggler {
+  width: 19.1875rem;
+  height: 3.25rem;
+  background-color: white;
+  border-radius: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.125rem;
+  margin-bottom: 3.1875rem;
+}
+.mf-details-container .toggler span {
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mf-details-container .toggler .sip-span {
+  border-radius: 1.25rem;
+  width: 9.75rem;
+  height: 3rem;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+.mf-details-container .toggler .lumpsum-span {
+  width: 7.9375rem;
+  height: 3rem;
+  border-radius: 1.25rem;
+}
+.mf-details-container .toggler .active {
+  background-color: #a663ff;
+  color: white;
+}
+.mf-details-container .year-selector-wrapper {
+  position: relative;
+  z-index: 2;
+}
+.mf-details-container .year-selector,
+.mf-details-container .year-list {
+  width: 7.4375rem;
+  background: rgba(206, 203, 255, 0.6);
+  border-radius: 1.5rem;
+}
+.mf-details-container .year-selector {
+  height: 2.75rem;
+  gap: 1rem;
+  z-index: 1;
+  border: 1px solid #a663ff;
+}
+.mf-details-container .year-list {
+  position: absolute;
+  top: 0;
+  padding-top: 3.25rem;
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+  background: #d1ceff;
+}
+.mf-details-container .year-list span {
+  display: block;
+  margin-bottom: 0.5rem;
+  width: 6.875rem;
+  height: 2.75rem;
+  border-radius: 1.5rem;
+}
+.mf-details-container .year-list span:hover,
+.mf-details-container .year-list .active {
+  background-color: rgba(166, 99, 255, 0.2392156863);
+}
+.mf-details-container .cal-content {
+  width: 100%;
+}
+.mf-details-container .mf-cal-content {
+  color: rgba(17, 17, 17, 0.6);
+}
+.mf-details-container .mf-cal-content #total-investment {
+  color: rgba(17, 17, 17, 0.8980392157);
+}
+.mf-details-container .mf-cal-content #total-returns {
+  color: #a663ff;
+}
+
+.top-holdings {
+  margin-top: 5rem;
+}
+.top-holdings h1 {
+  font-size: 2rem;
+  margin-bottom: 3.75rem;
+}
+.top-holdings .top-holdings-list {
+  display: flex;
+  gap: 0.625rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.top-holdings .top-holding {
+  width: 35.4375rem;
+  flex: 1 1 35.4375rem;
+  margin-right: 3.125rem;
+}
+.top-holdings .percentage-container {
+  gap: 0.625rem;
+  margin-top: 0.25rem;
+  margin-bottom: 2.25rem;
+}
+.top-holdings .holding-percentage,
+.top-holdings .percentage-bar {
+  height: 1rem;
+  border-radius: 0.125rem;
+}
+.top-holdings .holding-percentage {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.top-holdings .percentage-bar {
+  width: 30%;
+  background-color: #cecbff;
+}
+
+.sector {
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 0px) and (max-width: 744px) {
+
+  @media (min-width: 0px) and (max-width: 420px) {
+    .time-option
+    {
+      padding: 0.25rem 0.75rem !important;
+    }
+  }
+
+  .time-options {
+    padding:0;
+  }
+  .time-option {
+
+    padding: 0.5rem 1.0rem;
+  }
+
+  .basket-header {
+    font-size: calculate-rem(16);
+    max-height: 90px;
+    height: 100%;
+    max-width: 1600px;
+    width: 100%;
+    display:block;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+  .basket-header h1{
+    font-size: calculate-rem(24);
+    margin-bottom: calculate-rem(10);
+  }
+
+.performance-indicator {
+
+  height: 32px;
+  width: 150px;
+  gap: 4px;
+}
+
+.performance-indicator img{
+
+  height: 14px;
+  width: 14px;
+}
+
+.performance-value {
+    font-size: calculate-rem(10);
+}
+
+
+.performance-text {
+    opacity: 0.8;
+    font-size: calculate-rem(10);
+}
+
+  .nav-hr {
+    display: block;
+  }
+  #mutual-funds-link {
+    display: none;
+  }
+  #mutual-funds-link-mobile {
+    display: block;
+  }
+  #mutual-funds-link-mobile img {
+    width: 0.75rem;
+  }
+  .mf-chart-container {
+    min-height: 16.875rem;
+  }
+  .mf-chart-container .year-container {
+    margin-top: 0rem;
+  }
+  .mf-chart-container .year-container a {
+    width: 9.25rem;
+    height: 2.125rem;
+    font-size: 1rem;
+  }
+  .mf-chart-container .year-container .years {
+    gap: 0.5rem;
+  }
+  .mf-chart-container .year-container .years span {
+    width: 3.625rem;
+    height: 1.625rem;
+    font-size: 0.875rem;
+  }
+  .mf-details-container {
+    flex-direction: column;
+    font-size: 1rem;
+    font-weight: 500;
+    gap: 0px;
+  }
+  .mf-details-container .details-1,
+  .mf-details-container .details-2 {
+    width: 100%;
+    border-radius: 1rem;
+  }
+  .mf-details-container .details-1 {
+    margin-top: 1.6875rem;
+    padding: 1rem 1.6875rem;
+  }
+  .mf-details-container .details-1 .custom-margin {
+    margin-bottom: 1rem;
+  }
+  .mf-details-container .detail div {
+    margin-bottom: 1rem;
+  }
+  .mf-details-container .details-2 {
+    margin-top: 1rem;
+  }
+  .mf-details-container .toggler {
+    width: 14.1875rem;
+    height: 2.375rem;
+  }
+  .mf-details-container .toggler .sip-span {
+    width: 7.3125rem;
+    height: 2.125rem;
+  }
+  .mf-details-container .toggler .lumpsum-span {
+    width: 6.375rem;
+    height: 2.125rem;
+  }
+  .mf-details-container .custom-flex {
+    flex-direction: column;
+  }
+  .mf-details-container .year-selector,
+  .mf-details-container .year-list,
+  .mf-details-container .year-list span {
+    width: 5.875rem;
+  }
+  .mf-details-container .year-selector {
+    height: 2.125rem;
+  }
+  .mf-details-container .year-list {
+    padding-top: 2.625rem;
+    padding-left: 0.3125rem;
+    padding-right: 0.3125rem;
+  }
+  .mf-details-container .year-list span {
+    height: 1.625rem;
+    width: 100%;
+  }
+  .mf-details-container .mf-cal-content {
+    flex-direction: inherit;
+    gap: 0.5rem;
+  }
+  .mf-details-container .mf-cal-content div {
+    display: flex;
+    justify-content: space-between;
+  }
+  .top-holdings {
+    margin-top: 1.0625rem;
+    font-size: 0.75rem;
+  }
+  .top-holdings h1 {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .top-holdings .top-holding {
+    width: 100%;
+  }
+  .top-holdings .percentage-container {
+    height: 0.5rem;
+    margin-top: 0.625rem;
+    margin-bottom: 1.25rem;
+    justify-content: space-between;
+  }
+  .top-holdings .percentage-container div:last-of-type {
+    width: 10%;
+  }
+  .top-holdings .holding-percentage {
+    width: 80%;
+  }
+}
+@media (min-width: 745px) and (max-width: 1280px) {
+
+  .mf-details-container .details-1{
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+    padding-top:0rem !important;
+    padding-bottom: 0rem !important;
+}
+
+
+
+
+  .mf-chart-container .year-container {
+    margin-top: 4.375rem;
+  }
+  .mf-chart-container .year-container .years span {
+    width: 5.875rem;
+    height: 2.75rem;
+    font-size: 1rem;
+  }
+  .mf-chart-container .year-container a {
+    width: 9.625rem;
+    height: 2.5rem;
+    font-size: 0.875rem;
+  }
+  .mf-details-container {
+    flex-direction: column;
+    font-size: 1.25rem;
+    gap: 0px;
+  }
+  .mf-details-container .details-1 {
+    height: 200px;
+    margin-top: 2.125rem;
+    width: 100%;
+    border-radius: 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: calculate-rem(20);
+  }
+  .mf-details-container .details-1 .custom-margin {
+    margin-bottom: 0;
+  }
+  .mf-details-container .details-1 .w-100 {
+    width: calculate-rem(400) !important;
+  }
+
+  .mf-details-container .details-2 {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+  .mf-details-container .detail div {
+    margin-bottom: 1.625rem;
+  }
+  .top-holdings {
+    margin-top: 3.75rem;
+  }
+  .top-holdings h1 {
+    font-size: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .top-holdings .top-holding {
+    width: 100%;
+  }
+}/*# sourceMappingURL=mutualfund.css.map */
+
+
+@media (min-width: 1281px) {
+.mf-details-container .details-2{
+     height: calculate-rem(380) !important;
+}
+
+
+
+}

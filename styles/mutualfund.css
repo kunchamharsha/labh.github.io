@@ -126,6 +126,7 @@
   margin-bottom: 3.1875rem;
 }
 .mf-details-container .toggler span {
+  height: -moz-fit-content;
   height: fit-content;
   display: flex;
   justify-content: center;

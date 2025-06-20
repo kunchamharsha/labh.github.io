@@ -4,7 +4,7 @@ let pageSize = 10;
 
 let pageName = null;
 
-let domain = "https://api.labh.io";
+let domain = "https://devapi.labh.io";
 
 let fundHouses = [];
 let isViewMore = false;
@@ -179,7 +179,7 @@ $(document).ready(function () {
         $.get(`${domain}/api/basket/`, function (responseData) {
             responseData.forEach((data) => {
                 $(".cards").append(`
-                        <a href="#" class="card">
+                        <a href="/basket/?name=${data.name}" class="card">
                             <img src="/assets/card-edge-image.svg" alt="edge-image" />
                             <img src="/assets/card-edge-image.svg" alt="edge-image" />
                             <img

@@ -2,36 +2,120 @@
 layout: mutual-fund-base.njk
 title: Labh
 menu: '
-    <li><a href="/index.html/">Home</a></li>
+    <!-- <li><a href="/index.html/">Home</a></li>
     <li><img src="/assets/dote-active.svg" alt="dote-active"></li>
+        <li id="mutual-funds-link-mobile"><a onclick="history.back()" >
+        <img src="/assets/back-arrow.png" alt="">
+        Back 
+        </a></li> -->
     <li><a href="/mutual-funds/">Mutual Funds</a></li>
-    <li><img src="/assets/dote-active.svg" alt="dote-active"></li>
-    <li><a href="#" class="active" id="basket-name"></a></li>
+    <!-- <li><img src="/assets/dote-active.svg" alt="dote-active"></li> -->
 '
 other_scripts: '
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 '
 ---
 
+<link rel="stylesheet" href="/styles/basket.css" />
+
 <div class="main-container">
     <div class="contents">
-        <h1 id="basket-name-heading"></h1>
+<div class="basket-header">
+    <h1 id="basket-name-heading"></h1>
+    <div class="performance-indicator">
+        <span class="performance-text">Performing at</span>
+        <span id="performance-value" class="performance-value"></span>
+        <img src="/assets/performing.svg" alt="arrow-up" />
+    </div>
+</div>
         <p id="basket-description"></p>
     </div>
     <div class="mf-chart-container">
         <div id="chart-loader" style="text-align: center; padding: 20px">
             <p>Loading chart, please wait...</p>
         </div>
-        <div id="chart"></div>
-    </div>
-    <div class="top-holdings">
-        <h1>Top Holdings</h1>
-        <div class="top-holdings-list" id="top-holdings-list"></div>
+        <div id="chart"></div>   
     </div>
 
-    <div class="top-holdings sector">
+    <!-- we have to update these -->
+
+    <div class="mf-details-container">
+        <div class="details-1">
+            <div class="w-100 custom-margin d1">
+                <div class="detail">
+                    <div class="title">Min Investment Amt</div>
+                    <div id="min-price"></div>
+                </div>
+                <div class="detail">
+                    <div class="title">Risk Analysis</div>
+                    <div id="risk-analysis"></div>
+                </div>
+                 <div class="detail">
+                    <div class="title">Exit Load</div>
+                    <div id="exit-load"></div>
+                </div>
+            </div>
+
+            <div class="w-100 d2">
+                <div class="detail">
+                    <div class="title">CAGR 5 year</div>
+                    <div id="cagr">N/A</div>
+                </div>
+                <div class="detail">
+                    <div class="title">Lock In Period</div>
+                    <div id="lock-in"></div>
+                </div>
+                 <div class="detail">
+                    <div class="title">Expense Ration</div>
+                    <div id="expense-ratio"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="investment-card details-2 calculator-card-contents">
+    <div class="investment-header">
+        <span>Your</span>
+        <span class="investment-amount">₹1,00,000</span>
+        <span>investment today, will be</span>
+    </div>
+    
+    <div class="projected-value">
+        <span class="currency">₹</span><span id="projected-amount">--</span>
+    </div>
+    
+
+    
+    <div class="time-selector">
+        <span class="time-label">in</span>
+        <div class="time-options">
+            <button class="time-option active" data-years="1">1 years</button>
+            <button class="time-option" data-years="3">3 years</button>
+            <button class="time-option" data-years="5">5 years</button>
+        </div>
+    </div>
+  </div>
+    </div>
+    <div class="top-holdings">
+        <h1>Basket Allocation</h1>
+            <a href="https://play.google.com/store/apps/details?id=com.labh.io&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/basket-allocation.png" alt="basket-allocation" loading="lazy"/>
+    </a>
+    </div>
+
+    <div class="top-holdings" >
         <h1>Sectors</h1>
-        <div class="top-holdings-list" id="sectors"></div>
+            <a href="https://play.google.com/store/apps/details?id=com.labh.io&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/basket-allocation.png" alt="basket-allocation" loading="lazy"/>
+    </a>
+
+    </div>
+
+     <div class="top-holdings" >
+        <h1>Scheme Documents</h1>
+            <a href="https://play.google.com/store/apps/details?id=com.labh.io&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/basket-allocation.png" alt="basket-allocation" loading="lazy"/>
+    </a>
+
     </div>
 </div>
 

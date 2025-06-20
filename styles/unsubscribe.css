@@ -222,6 +222,9 @@ body {
   .unsubscribe .form-container #reason {
     height: 8.625rem;
   }
+  .unsubscribe .form-container #reason::-moz-placeholder {
+    font-size: 0.875rem;
+  }
   .unsubscribe .form-container #reason::placeholder {
     font-size: 0.875rem;
   }
@@ -274,6 +277,9 @@ body {
   }
   .unsubscribe .form-container .dropdown-btn img {
     width: 1.625rem;
+  }
+  .unsubscribe .form-container #reason::-moz-placeholder {
+    font-size: 1rem;
   }
   .unsubscribe .form-container #reason::placeholder {
     font-size: 1rem;
