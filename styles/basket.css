@@ -124,7 +124,8 @@
 .mf-details-container .details-2 {
   width: 72%;
   padding: 1.6875rem 1.9375rem;
-  background: linear-gradient(148.3deg, #e5d4fe 4.55%, #ffffff 52.27%, #e8dff4 95.45%);
+  border: 0.8px solid rgba(186, 151, 255, 0.34);
+  align-items: flex-start !important;
 }
 
 .mf-details-container .detail {
@@ -548,7 +549,7 @@
 }
 
 .currency {
-  font-size: 32px;
+  font-size: 24px;
   margin-right: 4px;
 }
 
@@ -864,6 +865,14 @@
   margin-top: 2.5rem;
 }
 
+@media (min-width: 0px) and (max-width: 744px) {
+  .time-selector {
+    gap: 16px;
+  }
+  .time-label {
+    padding-top: 5px;
+  }
+}
 @media (min-width: 0px) and (max-width: 744px) and (min-width: 0px) and (max-width: 420px) {
   .time-option {
     padding: 0.25rem 0.75rem !important;
@@ -872,6 +881,7 @@
 @media (min-width: 0px) and (max-width: 744px) {
   .time-options {
     padding: 0;
+    width: auto;
   }
   .time-option {
     padding: 0.5rem 1rem;
@@ -892,7 +902,7 @@
   }
   .performance-indicator {
     height: 32px;
-    width: 150px;
+    width: 155px;
     gap: 4px;
   }
   .performance-indicator img {
@@ -904,7 +914,7 @@
   }
   .performance-text {
     opacity: 0.8;
-    font-size: 0.625rem;
+    font-size: 0.75rem;
   }
   .nav-hr {
     display: block;
@@ -960,6 +970,21 @@
   }
   .mf-details-container .details-2 {
     margin-top: 1rem;
+    height: auto;
+  }
+  .investment-header {
+    font-size: 12px;
+    margin-bottom: 0px;
+  }
+  .projected-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d3c9f1;
+    margin-bottom: 0px;
+  }
+  #projected-amount {
+    font-size: 48px;
+    font-weight: bold;
   }
   .mf-details-container .toggler {
     width: 14.1875rem;
@@ -1032,6 +1057,12 @@
     padding-top: 0rem !important;
     padding-bottom: 0rem !important;
   }
+  #projected-amount {
+    font-size: 80px;
+  }
+  .currency {
+    font-size: 48px;
+  }
   .mf-chart-container .year-container {
     margin-top: 4.375rem;
   }
@@ -1049,6 +1080,12 @@
     flex-direction: column;
     font-size: 1.25rem;
     gap: 0px;
+  }
+  .time-option {
+    font-size: 28px;
+  }
+  .time-label {
+    padding-top: 20px;
   }
   .mf-details-container .details-1 {
     height: 200px;
@@ -1086,6 +1123,12 @@
 @media (min-width: 1281px) {
   .mf-details-container .details-2 {
     height: 23.75rem !important;
+  }
+  .currency {
+    font-size: 48px;
+  }
+  #projected-amount {
+    font-size: 80px;
   }
 }
 /*# sourceMappingURL=basket.css.map */

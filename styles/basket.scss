@@ -116,7 +116,9 @@
 .mf-details-container .details-2 {
   width: 72%;
   padding: 1.6875rem 1.9375rem;
-  background: linear-gradient(148.3deg, #e5d4fe 4.55%, #ffffff 52.27%, #e8dff4 95.45%);
+  border: 0.8px solid rgba(186, 151, 255, 0.34);
+          align-items: flex-start !important;
+  
 }
 .mf-details-container .detail {
   display: flex;
@@ -521,9 +523,11 @@
 }
 
 .currency {
-  font-size: 32px;
+  font-size: 24px;
   margin-right: 4px;
 }
+
+
 
 .time-selector {
   margin-top: 1rem;

@@ -6,18 +6,12 @@ function getQueryParam(param) {
 }
 
 $(document).ready(function () {
-  /* ---------------------------------------------
-   * 0. REDIRECT if ?name param is missing
-   * --------------------------------------------- */
   const name = getQueryParam("name");
   if (!name) {
     window.location.replace("https://labh.io/404/");
     return;
   }
 
-  /* ---------------------------------------------
-   * 1. Fetch Performance Return %
-   * --------------------------------------------- */
   $.get(`${domain}/open/basket-returns`)
     .done((resp) => {
       const key = Object.keys(resp).find(
@@ -33,9 +27,6 @@ $(document).ready(function () {
       console.error("basket-returns fetch failed");
     });
 
-  /* ---------------------------------------------
-   * 2. Main Basket Data & Chart
-   * --------------------------------------------- */
   $.get(`${domain}/api/basket/`)
     .done((resp) => {
       const basket = resp.find((b) => b.name && b.name.trim() === name.trim());
@@ -49,7 +40,6 @@ $(document).ready(function () {
 
       const isTaxBasket = basket.name.toLowerCase().includes("tax");
 
-      // DETAILS PANEL
       const detailsMap = {
         "min-price": "min_amount",
         "risk-analysis": "riskometer_rating",
@@ -64,13 +54,15 @@ $(document).ready(function () {
           if (m.attribute_name === key) {
             let val = m.attribute_value;
             if (key === "min_amount") val = `₹${parseFloat(val).toLocaleString("en-IN")}`;
+            if (key === "lock_in_period") val = `${val} yrs`;
+            if (key === "5_year_cagr") val = `${val}%`;
             if (key === "expense_ratio") val = `${val}%`;
-            document.getElementById(id).innerText = val;
+             if (key === "exit_load") val = val ? `${val}%`:"Download the app to see";
+            document.getElementById(id).innerText = val || "N/A";
           }
         }
       });
 
-      // CHART
       const basketArr = basket.matrics.filter((m) => m.attribute_name === "basket_returns");
       let benchArr = basket.matrics.filter((m) => m.attribute_name === "nifty_returns");
       let benchLabel = "Nifty Returns";
@@ -82,72 +74,90 @@ $(document).ready(function () {
 
       if (!basketArr.length || !benchArr.length) return;
 
-      try {
-        const basketData = JSON.parse(basketArr[0].attribute_value);
-        const benchData = JSON.parse(benchArr[0].attribute_value);
-        const categories = dateArr.length ? JSON.parse(dateArr[0].attribute_value) : [];
+   try {
+  const basketData = JSON.parse(basketArr[0].attribute_value);
+  const benchData = JSON.parse(benchArr[0].attribute_value);
+  const categories = dateArr.length ? JSON.parse(dateArr[0].attribute_value) : [];
 
-        const fontSize = $(window).width() < 745 ? "8px" : "12px";
+  const isSmallScreen = $(window).width() < 745;
+  const fontSize = isSmallScreen ? "8px" : "12px";
+  
+  // Keep ALL data - don't filter any data points
+  const filteredBasketData = basketData;
+  const filteredBenchData = benchData;
 
-        new ApexCharts(document.querySelector("#chart"), {
-          series: [
-            { name: basket.name || "Basket", data: basketData },
-            { name: benchLabel, data: benchData },
-          ],
-          chart: {
-            height: 440,
-            type: "line",
-            zoom: { enabled: false },
-            toolbar: { show: false },
-            events: { mounted: () => $("#chart-loader").hide() },
-          },
-          dataLabels: { enabled: false },
-          stroke: { curve: "straight", width: 3 },
-          grid: {
-            show: true,
-            borderColor: "#FFFFFF99",
-            xaxis: { lines: { show: false } },
-            yaxis: { lines: { show: false } },
-          },
-          tooltip: { theme: "dark" },
-          colors: ["#63E4BF", "#6394E4"],
-          xaxis: {
-            categories,
-            labels: {
-              show: true,
-              style: { colors: "white", fontSize },
-              rotate: 0,
-            },
-            axisBorder: {
-              show: true,
-              color: "#FFFFFF99",
-              strokeDashArray: 4,
-            },
-            axisTicks: { show: true, color: "#FFFFFF99" },
-            title: { text: "Years", style: { color: "#CECBFF", fontSize } },
-          },
-          yaxis: {
-            labels: {
-              style: { colors: "white", fontSize },
-              formatter: (val) => `${val.toFixed(0)}%`,
-            },
-            axisBorder: { show: true, color: "white" },
-            title: { text: "Returns", style: { color: "#CECBFF", fontSize } },
-          },
-          legend: {
-            show: true,
-            position: "bottom",
-            offsetY: 20,
-            markers: { shape: "square", width: 12, height: 12 },
-            labels: { colors: "white", style: { fontSize: "24px" } },
-            itemMargin: { horizontal: 10, vertical: 5 },
-          },
-        }).render();
-      } catch (e) {
-        console.error("Chart parse error", e);
-      }
-
-      // INVESTMENT CARD
+  new ApexCharts(document.querySelector("#chart"), {
+    series: [
+      { name: basket.name || "Basket", data: filteredBasketData },
+      { name: benchLabel, data: filteredBenchData },
+    ],
+    chart: {
+      height: 440,
+      type: "line",
+      zoom: { enabled: false },
+      toolbar: { show: false },
+      events: { mounted: () => $("#chart-loader").hide() },
+    },
+    dataLabels: { enabled: false },
+    stroke: { curve: "straight", width: 3 },
+    grid: {
+      show: true,
+      borderColor: "#FFFFFF99",
+      xaxis: { lines: { show: false } },
+      yaxis: { lines: { show: false } },
+    },
+    tooltip: { theme: "dark" },
+    colors: ["#63E4BF", "#6394E4"],
+    xaxis: {
+      categories: categories, // Use all categories for data points
+      labels: {
+        show: true,
+        style: { colors: "white", fontSize },
+        rotate: 0,
+        maxHeight: isSmallScreen ? 40 : undefined,
+        formatter: function(value, timestamp, opts) {
+          // Hide alternative labels on small screens
+          if (isSmallScreen) {
+            return (opts.dataPointIndex % 2 === 0) ? value : '';
+          }
+          return value;
+        }
+      },
+      axisBorder: {
+        show: true,
+        color: "#FFFFFF99",
+        strokeDashArray: 4,
+      },
+      axisTicks: { 
+        show: true, 
+        color: "#FFFFFF99"
+      },
+      title: { text: "Years", style: { color: "#CECBFF", fontSize } },
+    },
+    yaxis: {
+      labels: {
+        style: { colors: "white", fontSize },
+        formatter: (val) => `${val.toFixed(0)}%`,
+      },
+      axisBorder: {
+        show: true,
+        color: "#FFFFFF99",
+        strokeDashArray: 4,
+      },
+      title: { text: "Returns", style: { color: "#CECBFF", fontSize } },
+    },
+    legend: {
+      show: true,
+      position: "bottom",
+      offsetY: 20,
+      markers: { shape: "square", width: 12, height: 12 },
+      labels: { colors: "white", style: { fontSize: "24px" } },
+      itemMargin: { horizontal: 10, vertical: 5 },
+    },
+  }).render();
+} catch (e) {
+  console.error("Chart parse error", e);
+}
       const yearsList = isTaxBasket ? [3, 6, 9] : [1, 3, 5];
       const projectedReturns = {};
       yearsList.forEach((yr) => {
@@ -190,9 +200,7 @@ $(document).ready(function () {
       window.location.replace("https://labh.io/404/");
     });
 
-  /* ---------------------------------------------
-   * 3. Responsive Image (tablet/mobile/desktop)
-   * --------------------------------------------- */
+
   $(".top-holdings img").attr("loading", "lazy");
   const allocationImg = $(".top-holdings img");
   function setResponsiveImage() {

@@ -240,6 +240,13 @@
 }
 
 @media (min-width: 0px) and (max-width: 744px) {
+  .time-selector {
+    gap: 16px;
+  }
+
+.time-label {
+    padding-top: 5px;
+}
 
   @media (min-width: 0px) and (max-width: 420px) {
     .time-option
@@ -250,6 +257,7 @@
 
   .time-options {
     padding:0;
+    width: auto;
   }
   .time-option {
 
@@ -275,7 +283,7 @@
 .performance-indicator {
 
   height: 32px;
-  width: 150px;
+  width: 155px;
   gap: 4px;
 }
 
@@ -292,7 +300,7 @@
 
 .performance-text {
     opacity: 0.8;
-    font-size: calculate-rem(10);
+    font-size: calculate-rem(12);
 }
 
   .nav-hr {
@@ -349,7 +357,29 @@
   }
   .mf-details-container .details-2 {
     margin-top: 1rem;
+    height: auto;
   }
+
+  .investment-header {
+    font-size: 12px;
+    margin-bottom:0px;
+
+}
+
+.projected-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d3c9f1;
+    margin-bottom:0px;
+}
+
+#projected-amount {
+    font-size: 48px;
+    font-weight: bold;
+
+
+}
+
   .mf-details-container .toggler {
     width: 14.1875rem;
     height: 2.375rem;
@@ -425,6 +455,15 @@
 
 
 
+#projected-amount {
+    font-size: 80px;
+
+}
+
+.currency {
+    font-size: 48px;
+}
+
 
   .mf-chart-container .year-container {
     margin-top: 4.375rem;
@@ -444,6 +483,15 @@
     font-size: 1.25rem;
     gap: 0px;
   }
+
+  .time-option{
+    font-size: 28px;
+  }
+
+  .time-label{
+    padding-top:20px;
+  }
+
   .mf-details-container .details-1 {
     height: 200px;
     margin-top: 2.125rem;
@@ -485,6 +533,13 @@
      height: calculate-rem(380) !important;
 }
 
+.currency{
+  font-size: 48px;
 
+}
+
+#projected-amount {
+  font-size: 80px;
+}
 
 }
