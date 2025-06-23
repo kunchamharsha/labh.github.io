@@ -449,10 +449,15 @@
 
 }
 
+.performance-indicator img{
+  width:25px;
+  height:20px;
+}
+
 .performance-indicator {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     background-color: rgba(206, 203, 255, 0.2);    
     padding: 8px 16px;
     border-radius: 20px;
@@ -462,11 +467,13 @@
 
 .performance-text {
     opacity: 0.8;
+    font-size: 16px;
 }
 
 .performance-value {
-    font-weight: 600;
+    font-weight: 400;
     color: #63E4BF;
+    font-size: 16px;
 }
 
 .performance-trend {
@@ -509,7 +516,7 @@
 
 .investment-amount {
   background-color: #0e0e0e;
-  color: white;
+  color: rgba(206, 203, 255, 1);
   padding: 4px 12px;
   border-radius: 20px;
   font-weight: 600;
@@ -545,7 +552,6 @@
   display: flex;
   background-color: #d5d4f9;
   border-radius: 50px;
-  padding: 0.25rem;
   position: relative;
   z-index: 0;
 }
@@ -585,7 +591,13 @@
   font-size: 24px;
 }
 
+//apex
 
+.apexcharts-legend-series .apexcharts-legend-marker {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 4px !important; /* to keep it square, not circle */
+}
 
   @import "basket_media_queries";
 /*# sourceMappingURL=mutualfund.css.map */

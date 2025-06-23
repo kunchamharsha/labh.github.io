@@ -240,6 +240,46 @@
 }
 
 @media (min-width: 0px) and (max-width: 744px) {
+
+  .time-options {
+  width:230px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d5d4f7;
+  border-radius: 999px;
+  padding: 6px;
+  position: relative;
+  z-index: 0;
+  overflow: visible; /* ✅ Ensure no clipping */
+}
+
+.time-option {
+  flex: 1;
+  text-align: center;
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 99px;
+  color: black;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.time-option.active {
+  flex: 1;
+  width: auto;
+  background-color: #3c82f6;
+  color: white;
+  z-index: 2;
+  transform: scale(1.2) translateY(30px) translateY(-30px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+}
+
   .time-selector {
     gap: 16px;
   }
@@ -525,12 +565,60 @@
   .top-holdings .top-holding {
     width: 100%;
   }
+
+
+  .time-options {
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d5d4f7;
+  border-radius: 999px;
+  padding: 6px;
+  position: relative;
+  z-index: 0;
+  overflow: visible; /* ✅ Ensure no clipping */
+}
+
+.time-option {
+  flex: 1;
+  text-align: center;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 99px;
+  color: black;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.time-option.active {
+  flex: 1;
+  width: 90px;
+  background-color: #3c82f6;
+  color: white;
+  z-index: 2;
+  transform: scale(1.4) translateY(30px) translateY(-30px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+}
 }/*# sourceMappingURL=mutualfund.css.map */
 
 
 @media (min-width: 1281px) {
 .mf-details-container .details-2{
      height: calculate-rem(380) !important;
+     max-width: calculate-rem(1000) !important;
+     width:100%;
+}
+
+.mf-details-container .details-1{
+     height: calculate-rem(380) !important;
+     max-width: calculate-rem(500) !important;
+     width:100%;
 }
 
 .currency{
@@ -541,5 +629,55 @@
 #projected-amount {
   font-size: 80px;
 }
+
+.performance-text {
+    opacity: 0.8;
+    font-size: 20px ;
+}
+.performance-value {
+    font-weight: 400;
+    color: #63E4BF;
+}
+
+.time-options {
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d5d4f7;
+  border-radius: 999px;
+  padding: 6px;
+  position: relative;
+  z-index: 0;
+  overflow: visible; /* ✅ Ensure no clipping */
+}
+
+.time-option {
+  flex: 1;
+  text-align: center;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 99px;
+  color: black;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.time-option.active {
+  flex: 1;
+  width: 90px;
+  background-color: #3c82f6;
+  color: white;
+  z-index: 2;
+  transform: scale(1.4) translateY(30px) translateY(-30px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+}
+
+
 
 }

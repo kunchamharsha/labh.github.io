@@ -5,6 +5,9 @@ function getQueryParam(param) {
   return urlParams.get(param);
 }
 
+const isSmallScreen = window.innerWidth < 1000;
+const isTabScreen = window.innerWidth < 768;
+
 $(document).ready(function () {
   const name = getQueryParam("name");
   if (!name) {
@@ -109,19 +112,24 @@ $(document).ready(function () {
     tooltip: { theme: "dark" },
     colors: ["#63E4BF", "#6394E4"],
     xaxis: {
-      categories: categories, // Use all categories for data points
+      categories: categories,
       labels: {
         show: true,
         style: { colors: "white", fontSize },
         rotate: 0,
         maxHeight: isSmallScreen ? 40 : undefined,
-        formatter: function(value, timestamp, opts) {
-          // Hide alternative labels on small screens
-          if (isSmallScreen) {
-            return (opts.dataPointIndex % 2 === 0) ? value : '';
-          }
-          return value;
-        }
+       formatter: function (value, index) {
+  if (typeof value === "undefined") {
+    console.warn("Missing x-axis label at index:", index);
+    return "";
+  }
+
+  if (isSmallScreen) {
+    return index % 2 === 0 ? value : "";
+  }
+  return value;
+}
+
       },
       axisBorder: {
         show: true,
@@ -132,7 +140,7 @@ $(document).ready(function () {
         show: true, 
         color: "#FFFFFF99"
       },
-      title: { text: "Years", style: { color: "#CECBFF", fontSize } },
+      title: { text: "Years", style: { color: "#CECBFF", fontSize: isSmallScreen ? "14px": "20px" } },
     },
     yaxis: {
       labels: {
@@ -144,16 +152,55 @@ $(document).ready(function () {
         color: "#FFFFFF99",
         strokeDashArray: 4,
       },
-      title: { text: "Returns", style: { color: "#CECBFF", fontSize } },
+      title: { text: "Returns", margin : 20, offsetX: -10, style: { color: "#CECBFF", fontSize: isSmallScreen ? "14px": "20px"} },
     },
-    legend: {
-      show: true,
-      position: "bottom",
-      offsetY: 20,
-      markers: { shape: "square", width: 12, height: 12 },
-      labels: { colors: "white", style: { fontSize: "24px" } },
-      itemMargin: { horizontal: 10, vertical: 5 },
-    },
+legend: {
+  show: true,
+  position: "bottom",
+  offsetY: 30,
+  fontSize: isSmallScreen ? "14px": "20px",
+  labels: {
+    colors: "rgba(255, 255, 255, 0.8)",
+  },
+  markers: {
+    shape: "square",
+    size: 10,
+    offsetX: -5,
+    strokeWidth: 0,
+  },
+  itemMargin: {
+    horizontal: 10,
+    vertical: 5
+  }
+},
+    responsive: [
+    {
+      breakpoint: 1280,
+      options: {
+        legend: {
+          fontSize: "14px",  // smaller legend labels
+          markers: {
+            width: 10,
+            height: 10
+          }
+        }
+      }
+    }
+  ],
+      responsive: [
+    {
+      breakpoint: 745,
+      options: {
+        legend: {
+          fontSize: "12px",  // smaller legend labels
+          markers: {
+            width: 10,
+            height: 10
+          }
+        }
+      }
+    }
+  ],
   }).render();
 } catch (e) {
   console.error("Chart parse error", e);
