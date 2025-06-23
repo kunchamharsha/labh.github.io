@@ -924,7 +924,9 @@ nav {
     display: none;
   }
   .search-mobile .basket-explore .item {
+    flex: 1 1 48.5%;
     font-size: 0.875rem;
+    width: 48.5%;
   }
 }
 @media (min-width: 745px) and (max-width: 1200px) {

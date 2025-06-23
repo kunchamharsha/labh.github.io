@@ -9,7 +9,9 @@
     .search-mobile {
         .basket-explore {
             .item {
+                flex: 1 1 48.5%;
                 font-size: calculate-rem(14);
+                width: 48.5%;
             }
         }
     }

@@ -4,7 +4,7 @@ let pageSize = 10;
 
 let pageName = null;
 
-let domain = "https://devapi.labh.io";
+let domain = "https://api.labh.io";
 
 let fundHouses = [];
 let isViewMore = false;

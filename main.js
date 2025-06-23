@@ -1,5 +1,5 @@
 if (typeof domain == "undefined") {
-    window.domain = "https://devapi.labh.io";
+    window.domain = "https://api.labh.io";
 }
 const calculators = [
     {
