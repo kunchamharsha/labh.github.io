@@ -35,9 +35,19 @@ body {
     }
 }
 
+$padding-lef-right: calculate-rem(28);
+
 .contents {
-    padding: calculate-rem(0) calculate-rem(28);
+    padding: calculate-rem(0) $padding-lef-right;
     height: 65vh;
+
+    .button-container {
+        position: fixed;
+        bottom: calculate-rem(20);
+        left: 0;
+        width: 100%;
+        padding: 0 $padding-lef-right;
+    }
 
     .button {
         width: -webkit-fill-available;
@@ -46,7 +56,6 @@ body {
         border-radius: calculate-rem(40);
         font-size: calculate-rem(14);
         font-weight: 600;
-        margin-top: calculate-rem(36);
     }
 }
 
@@ -77,7 +86,6 @@ body {
 }
 
 .bank-form {
-    margin-bottom: calculate-rem(353);
     .title {
         font-weight: 600;
         font-size: calculate-rem(14);

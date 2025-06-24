@@ -34,6 +34,13 @@ body {
   padding: 0rem 1.75rem;
   height: 65vh;
 }
+.contents .button-container {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 0;
+  width: 100%;
+  padding: 0 1.75rem;
+}
 .contents .button {
   width: -webkit-fill-available;
   height: 2.875rem;
@@ -41,7 +48,6 @@ body {
   border-radius: 2.5rem;
   font-size: 0.875rem;
   font-weight: 600;
-  margin-top: 2.25rem;
 }
 
 .no-accounts-view .banner {
@@ -68,9 +74,6 @@ body {
   text-align: center;
 }
 
-.bank-form {
-  margin-bottom: 22.0625rem;
-}
 .bank-form .title {
   font-weight: 600;
   font-size: 0.875rem;
