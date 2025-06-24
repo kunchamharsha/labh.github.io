@@ -4,13 +4,34 @@ title: Bank
 ---
 
 <div class="contents">
-    <div class="no-accounts-view d-flex align-items-center justify-content-between flex-column">
-        <img class="banner" src="/assets/mobile-webview/Group 2367.png" alt="no account banner">
+    <div class="no-accounts-view d-flex align-items-center justify-content-between flex-column d-none">
+        <img class="banner" src="/assets/mobile-webview/Group 2367.png" alt="no account banner" />
         <div class="helper-container d-flex flex-column align-items-center justify-content-center">
-            <img class="exclamation" src="/assets/mobile-webview/Vector.png" alt="exclamation">
+            <img class="exclamation" src="/assets/mobile-webview/Vector.png" alt="exclamation" />
             <span>Action Required</span>
-            <div class="help">Please set up your Bank Account to process the orders</div>
+            <div class="help">
+                Please set up your Bank Account to process the orders
+            </div>
         </div>
+    </div>
+    <div class="bank-form d-none">
+        <form>
+            <div class="form-group">
+                <div class="title">
+                    Enter Bank Details
+                </div>
+
+                <div class="form-group">
+                    <input type="number" class="form-control" id="account-number" placeholder="Enter Account Number">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="account-number-confirm" placeholder="Confirm Account Number">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="ifsc-code" placeholder="IFSC Code">
+                </div>
+            </div>
+        </form>
     </div>
     <div class="button d-flex align-items-center justify-content-center">
         Set up your Bank Account

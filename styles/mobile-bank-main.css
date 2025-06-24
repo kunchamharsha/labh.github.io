@@ -37,7 +37,7 @@ body {
 .contents .button {
   width: -webkit-fill-available;
   height: 2.875rem;
-  background-color: #A663FF;
+  background-color: #a663ff;
   border-radius: 2.5rem;
   font-size: 0.875rem;
   font-weight: 600;
@@ -56,7 +56,7 @@ body {
 .no-accounts-view span {
   font-weight: 600;
   font-size: 0.875rem;
-  color: #FFA443;
+  color: #ffa443;
 }
 .no-accounts-view .helper-container {
   margin-top: 2.375rem;
@@ -66,4 +66,33 @@ body {
   font-size: 0.875rem;
   color: rgba(245, 245, 245, 0.8);
   text-align: center;
+}
+
+.bank-form {
+  margin-bottom: 22.0625rem;
+}
+.bank-form .title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 1.5625rem;
+  margin-top: 2.375rem;
+}
+.bank-form input {
+  border-radius: 2.5rem;
+  height: 2.5625rem;
+  background-color: rgba(206, 203, 255, 0.2);
+  border: 0px;
+  margin-bottom: 0.875rem;
+  color: #cecbff;
+}
+.bank-form input::placeholder {
+  color: #cecbff;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.bank-form input:focus {
+  background-color: rgba(206, 203, 255, 0.2);
+  outline: none;
+  color: #cecbff;
+  font-weight: 600;
 }/*# sourceMappingURL=mobile-bank-main.css.map */

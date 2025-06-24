@@ -29,7 +29,7 @@ body {
             .b {
                 font-weight: 500;
                 font-size: calculate-rem(12);
-                color: #FFFFFFB2;
+                color: #ffffffb2;
             }
         }
     }
@@ -42,7 +42,7 @@ body {
     .button {
         width: -webkit-fill-available;
         height: calculate-rem(46);
-        background-color: #A663FF;
+        background-color: #a663ff;
         border-radius: calculate-rem(40);
         font-size: calculate-rem(14);
         font-weight: 600;
@@ -63,7 +63,7 @@ body {
     span {
         font-weight: 600;
         font-size: calculate-rem(14);
-        color: #FFA443;
+        color: #ffa443;
     }
     .helper-container {
         margin-top: calculate-rem(38);
@@ -71,7 +71,36 @@ body {
     .help {
         font-weight: 500;
         font-size: calculate-rem(14);
-        color: #F5F5F5CC;
+        color: #f5f5f5cc;
         text-align: center;
+    }
+}
+
+.bank-form {
+    margin-bottom: calculate-rem(353);
+    .title {
+        font-weight: 600;
+        font-size: calculate-rem(14);
+        margin-bottom: calculate-rem(25);
+        margin-top: calculate-rem(38);
+    }
+    input {
+        border-radius: calculate-rem(40);
+        height: calculate-rem(41);
+        background-color: #cecbff33;
+        border: 0px;
+        margin-bottom: calculate-rem(14);
+        color: #cecbff;
+    }
+    input::placeholder {
+        color: #cecbff;
+        font-weight: 600;
+        font-size: calculate-rem(14);
+    }
+    input:focus {
+        background-color: #cecbff33;
+        outline: none;
+        color: #cecbff;
+        font-weight: 600;
     }
 }

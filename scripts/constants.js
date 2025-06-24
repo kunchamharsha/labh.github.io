@@ -1,0 +1,1 @@
+const DOMAIN = "https://devapi.labh.io";
