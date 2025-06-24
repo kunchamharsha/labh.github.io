@@ -1,0 +1,77 @@
+@import "equations";
+body {
+    background-color: #000000;
+    color: white;
+    height: 100vh;
+}
+
+.header {
+    padding-top: calculate-rem(38);
+    padding-left: calculate-rem(20);
+    .logo {
+        img {
+            width: calculate-rem(107);
+            height: calculate-rem(37);
+        }
+    }
+    .go-back {
+        margin-top: calculate-rem(46);
+        img {
+            width: calculate-rem(21);
+            height: calculate-rem(21);
+            margin-right: calculate-rem(13);
+        }
+        .details {
+            .h {
+                font-weight: 600;
+                font-size: calculate-rem(14);
+            }
+            .b {
+                font-weight: 500;
+                font-size: calculate-rem(12);
+                color: #FFFFFFB2;
+            }
+        }
+    }
+}
+
+.contents {
+    padding: calculate-rem(0) calculate-rem(28);
+    height: 65vh;
+
+    .button {
+        width: -webkit-fill-available;
+        height: calculate-rem(46);
+        background-color: #A663FF;
+        border-radius: calculate-rem(40);
+        font-size: calculate-rem(14);
+        font-weight: 600;
+        margin-top: calculate-rem(36);
+    }
+}
+
+.no-accounts-view {
+    .banner {
+        margin-top: calculate-rem(140);
+        width: calculate-rem(263);
+        height: calculate-rem(267);
+    }
+    .exclamation {
+        width: calculate-rem(22);
+        height: calculate-rem(22);
+    }
+    span {
+        font-weight: 600;
+        font-size: calculate-rem(14);
+        color: #FFA443;
+    }
+    .helper-container {
+        margin-top: calculate-rem(38);
+    }
+    .help {
+        font-weight: 500;
+        font-size: calculate-rem(14);
+        color: #F5F5F5CC;
+        text-align: center;
+    }
+}

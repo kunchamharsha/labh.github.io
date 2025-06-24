@@ -1,0 +1,69 @@
+body {
+  background-color: #000000;
+  color: white;
+  height: 100vh;
+}
+
+.header {
+  padding-top: 2.375rem;
+  padding-left: 1.25rem;
+}
+.header .logo img {
+  width: 6.6875rem;
+  height: 2.3125rem;
+}
+.header .go-back {
+  margin-top: 2.875rem;
+}
+.header .go-back img {
+  width: 1.3125rem;
+  height: 1.3125rem;
+  margin-right: 0.8125rem;
+}
+.header .go-back .details .h {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.header .go-back .details .b {
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6980392157);
+}
+
+.contents {
+  padding: 0rem 1.75rem;
+  height: 65vh;
+}
+.contents .button {
+  width: -webkit-fill-available;
+  height: 2.875rem;
+  background-color: #A663FF;
+  border-radius: 2.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-top: 2.25rem;
+}
+
+.no-accounts-view .banner {
+  margin-top: 8.75rem;
+  width: 16.4375rem;
+  height: 16.6875rem;
+}
+.no-accounts-view .exclamation {
+  width: 1.375rem;
+  height: 1.375rem;
+}
+.no-accounts-view span {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #FFA443;
+}
+.no-accounts-view .helper-container {
+  margin-top: 2.375rem;
+}
+.no-accounts-view .help {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: rgba(245, 245, 245, 0.8);
+  text-align: center;
+}/*# sourceMappingURL=mobile-bank-main.css.map */
