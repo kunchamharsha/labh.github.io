@@ -160,7 +160,6 @@ function deleteBankAccount(id) {
         },
         success: function (response) {
             $(".loader-overlay").hide();
-            console.log("Success:", response);
             renderBankAccounts();
             showBankDeleteSuccessModal();
         },
