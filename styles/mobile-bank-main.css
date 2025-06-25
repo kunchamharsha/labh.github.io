@@ -98,4 +98,62 @@ body {
   outline: none;
   color: #cecbff;
   font-weight: 600;
+}
+
+.bank-list {
+  margin-top: 1.5625rem;
+  padding-bottom: 5rem;
+}
+.bank-list .bank {
+  width: 100%;
+  height: 11.6875rem;
+  border-radius: 1.25rem;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(117.03deg, rgba(64, 18, 124, 0.3) 15.67%, rgba(166, 99, 255, 0.3) 47.49%, rgba(64, 18, 124, 0.3) 84.33%);
+  border: 0.8px solid #cecbff;
+  padding: 1.25rem 1rem;
+}
+.bank-list .d {
+  margin-bottom: 1.25rem;
+}
+.bank-list .d span {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.bank-list .d img {
+  width: 1.625rem;
+  height: 1.625rem;
+}
+.bank-list .d .verified img {
+  width: 0.9375rem;
+  height: 0.9375rem;
+}
+.bank-list .d .verified span {
+  font-weight: 400;
+  font-size: 0.625rem;
+}
+.bank-list .u-d {
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-bottom: 1.25rem;
+}
+.bank-list .d-button {
+  width: 100%;
+  height: 2.5625rem;
+  background: rgba(206, 203, 255, 0.2078431373);
+  border-radius: 0.5rem;
+}
+.bank-list .d-button img {
+  width: 1.1875rem;
+  height: 1.1875rem;
+}
+.bank-list .d-button span {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: rgba(245, 245, 245, 0.8);
+}
+
+.modal {
+  position: fixed;
+  height: 100%;
 }/*# sourceMappingURL=mobile-bank-main.css.map */

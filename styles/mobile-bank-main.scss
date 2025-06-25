@@ -112,3 +112,76 @@ $padding-lef-right: calculate-rem(28);
         font-weight: 600;
     }
 }
+
+.bank-list {
+    margin-top: calculate-rem(25);
+    padding-bottom: calculate-rem(80);
+
+    .bank {
+        width: 100%;
+        height: calculate-rem(187);
+        border-radius: calculate-rem(20);
+        margin-bottom: calculate-rem(12);
+        background: linear-gradient(
+            117.03deg,
+            rgba(64, 18, 124, 0.3) 15.67%,
+            rgba(166, 99, 255, 0.3) 47.49%,
+            rgba(64, 18, 124, 0.3) 84.33%
+        );
+        border: 0.8px solid #cecbff;
+        padding: calculate-rem(20) calculate-rem(16);
+    }
+
+    .d {
+        margin-bottom: calculate-rem(20);
+        span {
+            font-weight: 700;
+            font-size: calculate-rem(16);
+        }
+
+        img {
+            width: calculate-rem(26);
+            height: calculate-rem(26);
+        }
+
+        .verified {
+            img {
+                width: calculate-rem(15);
+                height: calculate-rem(15);
+            }
+            span {
+                font-weight: 400;
+                font-size: calculate-rem(10);
+            }
+        }
+    }
+
+    .u-d {
+        font-size: calculate-rem(14);
+        font-weight: 400;
+        margin-bottom: calculate-rem(20);
+    }
+
+    .d-button {
+        width: 100%;
+        height: calculate-rem(41);
+        background: #cecbff35;
+        border-radius: calculate-rem(8);
+
+        img {
+            width: calculate-rem(19);
+            height: calculate-rem(19);
+        }
+
+        span {
+            font-weight: 600;
+            font-size: calculate-rem(14);
+            color: #f5f5f5cc;
+        }
+    }
+}
+
+.modal {
+    position: fixed;
+    height: 100%;
+}
