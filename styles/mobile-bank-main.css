@@ -153,7 +153,55 @@ body {
   color: rgba(245, 245, 245, 0.8);
 }
 
-.modal {
+.modal-container {
   position: fixed;
-  height: 100%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4392156863);
+  z-index: 10;
+}
+.modal-container .c-modal {
+  padding: 0 2rem;
+  padding-top: 2.25rem;
+  height: 14.8125rem;
+  width: 100%;
+  background: white;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+.modal-container .c-modal h4 {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+.modal-container .c-modal img {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+.modal-container .c-modal .contents {
+  padding: 0;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: rgba(17, 17, 17, 0.6980392157);
+}
+.modal-container .c-modal .button-container .button {
+  background: rgba(17, 17, 17, 0.1215686275);
+  color: #111111;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.modal-container .c-modal .button-container .remove {
+  background: #FF615F;
+  color: #FFFFFF;
+}
+.modal-container .c-modal .button-container .normal {
+  background: #A663FF;
+  color: #FFFFFF;
+}
+.modal-container .remove h4 {
+  color: #FF615F;
+}
+.modal-container .success h4 {
+  color: #168465;
 }/*# sourceMappingURL=mobile-bank-main.css.map */
