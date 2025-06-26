@@ -170,7 +170,7 @@ body {
 .list-screen .section div {
   font-weight: 500;
   font-size: 0.875rem;
-  color: #F5F5F5;
+  color: rgba(245, 245, 245, 0.5450980392);
 }
 .list-screen .section span {
   margin-left: 0.75rem;
