@@ -1,0 +1,28 @@
+@import "mobile_view_main";
+
+.c-warning {
+    margin-top: calculate-rem(445);
+}
+
+.list-screen {
+    .nominee-details {
+        margin-bottom: calculate-rem(24);
+    }
+    .section {
+        div {
+            font-weight: 500;
+            font-size: calculate-rem(14);
+            color: #F5F5F5;
+        }
+        span {
+            margin-left: calculate-rem(12);
+            font-weight: 600;
+            font-size: calculate-rem(16);
+            color: #F5F5F5;
+        }
+    }
+
+    .c-button {
+        width: 50%;
+    }
+}

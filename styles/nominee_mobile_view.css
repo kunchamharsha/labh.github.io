@@ -1,0 +1,183 @@
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4392156863);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ccc;
+  border-top-color: #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+body {
+  background-color: #000000;
+  color: white;
+  height: 100vh;
+}
+
+.header {
+  padding-top: 2.375rem;
+  padding-left: 1.25rem;
+}
+.header .logo img {
+  width: 6.6875rem;
+  height: 2.3125rem;
+}
+.header .go-back {
+  margin-top: 2.875rem;
+}
+.header .go-back img {
+  width: 1.3125rem;
+  height: 1.3125rem;
+  margin-right: 0.8125rem;
+}
+.header .go-back .details .h {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.header .go-back .details .b {
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6980392157);
+}
+
+.contents {
+  padding: 0rem 1.75rem;
+  height: 65vh;
+}
+.contents .button-container {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 0;
+  width: 100%;
+  padding: 0 1.75rem;
+}
+.contents .button {
+  width: -webkit-fill-available;
+  height: 2.875rem;
+  background-color: #a663ff;
+  border-radius: 2.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.c-warning .exclamation {
+  width: 1.375rem;
+  height: 1.375rem;
+}
+.c-warning span {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #ffa443;
+}
+.c-warning .helper-container {
+  margin-top: 2.375rem;
+}
+.c-warning .help {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: rgba(245, 245, 245, 0.8);
+  text-align: center;
+}
+
+.form-screen .title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 1.5625rem;
+  margin-top: 2.375rem;
+}
+.form-screen input {
+  border-radius: 2.5rem;
+  height: 2.5625rem;
+  background-color: rgba(206, 203, 255, 0.2);
+  border: 0px;
+  margin-bottom: 0.875rem;
+  color: #cecbff;
+}
+.form-screen input::placeholder {
+  color: #cecbff;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.form-screen input:focus {
+  background-color: rgba(206, 203, 255, 0.2);
+  outline: none;
+  color: #cecbff;
+  font-weight: 600;
+}
+
+.list-screen {
+  margin-top: 1.5625rem;
+  padding-bottom: 5rem;
+}
+.list-screen .list {
+  width: 100%;
+  border-radius: 1.25rem;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(117.03deg, rgba(64, 18, 124, 0.3) 15.67%, rgba(166, 99, 255, 0.3) 47.49%, rgba(64, 18, 124, 0.3) 84.33%);
+  border: 0.8px solid #cecbff;
+  padding: 1.25rem 1rem;
+}
+.list-screen .d {
+  margin-bottom: 1.25rem;
+}
+.list-screen .d span {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.list-screen .d img {
+  width: 1.625rem;
+  height: 1.625rem;
+}
+.list-screen .c-button {
+  height: 2.5625rem;
+  background: rgba(206, 203, 255, 0.2078431373);
+  border-radius: 0.5rem;
+}
+.list-screen .c-button img {
+  width: 1.1875rem;
+  height: 1.1875rem;
+}
+.list-screen .c-button span {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: rgba(245, 245, 245, 0.8);
+}
+
+.c-warning {
+  margin-top: 27.8125rem;
+}
+
+.list-screen .nominee-details {
+  margin-bottom: 1.5rem;
+}
+.list-screen .section div {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #F5F5F5;
+}
+.list-screen .section span {
+  margin-left: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #F5F5F5;
+}
+.list-screen .c-button {
+  width: 50%;
+}/*# sourceMappingURL=nominee_mobile_view.css.map */
