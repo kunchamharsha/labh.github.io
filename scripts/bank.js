@@ -1,9 +1,10 @@
 const pages = ["home", "banklist", "bankform"];
 var page = "home";
+var prevPage = undefined
 var bankAccounts = [];
 var bankId = undefined;
 
-const headerHeight = $(".header").outerHeight(true);
+const headerHeight = $(".go-back").outerHeight(true);
 const modalHeight = window.innerHeight - headerHeight;
 $(".modal-container").css("height", modalHeight);
 
@@ -14,10 +15,11 @@ function getCookie(name) {
 }
 
 function hideAllScreens() {
-    $(".no-accounts-view, .bank-list, .bank-form").addClass("d-none");
+    $(".c-warning, .list-screen, .form-screen").addClass("d-none");
 }
 
-function renderBankAccounts(bankAcconts) {
+function renderBankAccounts() {
+    $(".loader-overlay").show();
     $.ajax({
         url: DOMAIN + "/api/kyc/bank",
         type: "GET",
@@ -36,26 +38,31 @@ function renderBankAccounts(bankAcconts) {
 
             hideAllScreens();
             $(".no-accounts-view").addClass("d-none");
-            $(".bank-list").removeClass("d-none");
+            $(".list-screen").removeClass("d-none");
 
+            prevPage = prevPage ? page : undefined;
             page = pages[1];
             $("#button").text("Add Bank Account");
-            $(".bank-list").empty();
+            $(".list-screen").empty();
             response.forEach((account) => {
                 const verifyCard = `
-                    <div class="verified d-flex align-items-center justify-content-left gap-1">
+                    <div class="verified d-flex justify-content-left gap-1">
                         <img src="${ASSETS_URL}/assets/mobile-webview/Group 2369.png" alt="verified image">
-                        <span>Verified</span>
+                        <span>Primary</span>
                     </div>
                 `;
                 const bankCard = `
-                    <div class="bank">
-                        <div class="d d-flex align-items-center justify-content-left gap-3">
-                            <div class="d-flex align-items-center justify-content-left gap-1">
+                    <div class="list">
+                        <div class="d d-flex justify-content-between gap-3">
+                            <div class="d-flex justify-content-left gap-2">
                                 <img src="https://cms-labh-bucket.s3.ap-south-2.amazonaws.com/mobile-webview-assets/default-bank.svg" alt="logo">
                                 <span>${account.bank_name}</span>
                             </div>
-                            ${account.is_verified ? verifyCard : "<div></div>"}
+                            ${
+                                account.is_default === "Y"
+                                    ? verifyCard
+                                    : "<div></div>"
+                            }
                             
                         </div>
                         <div class="u-d">
@@ -66,7 +73,7 @@ function renderBankAccounts(bankAcconts) {
                                 account.account_number
                             }</div>
                         </div>
-                        <div class="d-button d-flex align-items-center justify-content-center  gap-2" onclick="deleteBankAccountPrompt(${
+                        <div class="c-button d-flex align-items-center justify-content-center  gap-2" onclick="deleteBankAccountPrompt(${
                             account.id
                         })">
                             <img src="${ASSETS_URL}/assets/mobile-webview/delete-vector.png" alt="delete-icon">
@@ -74,19 +81,42 @@ function renderBankAccounts(bankAcconts) {
                         </div>
                     </div>
                 `;
-                $(".bank-list").append(bankCard);
+                $(".list-screen").append(bankCard);
             });
         },
         error: function (xhr, status, error) {
+            $(".loader-overlay").hide();
             console.error("Error:", error);
         },
     });
 }
 
+
+function renderHomeScreen() {
+    hideAllScreens();
+    $(".c-warning").removeClass("d-none");
+}
+
+function back() {
+    switch (prevPage) {
+        case pages[1]:
+            renderBankAccounts();
+            break;
+        case pages[2]:
+            renderBankForm();
+            break;
+        case page[0]:
+            renderHomeScreen();
+            break;
+    }
+}
+
+
 function renderBankForm() {
+    prevPage = page;
     page = pages[2];
     hideAllScreens();
-    $(".bank-form").removeClass("d-none");
+    $(".form-screen").removeClass("d-none");
 }
 
 function submitBankForm() {
@@ -132,21 +162,36 @@ function submitBankForm() {
 function deleteBankAccountPrompt(id) {
     bankId = id;
     hideModals();
-    $(".modal-container").removeClass("d-none");
-    $("#remove-account-modal").removeClass("d-none");
+    setTimeout(() => {
+        $(".modal-container").removeClass("d-none");
+        $("#remove-account-modal").removeClass("d-none");
+        setTimeout(() => {
+            $(".c-modal").addClass("show");
+        }, 10);
+    }, 100);
 }
 
 function showBankAccountSuccessModal() {
     bankId = undefined;
     hideModals();
-    $(".modal-container").removeClass("d-none");
-    $("#success-modal").removeClass("d-none");
+    setTimeout(() => {
+        $(".modal-container").removeClass("d-none");
+        $("#success-modal").removeClass("d-none");
+        setTimeout(() => {
+            $(".c-modal").addClass("show");
+        }, 10);
+    }, 100);
 }
 
 function showBankDeleteSuccessModal() {
     hideModals();
-    $(".modal-container").removeClass("d-none");
-    $("#account-removed-modal").removeClass("d-none");
+    setTimeout(() => {
+        $(".modal-container").removeClass("d-none");
+        $("#account-removed-modal").removeClass("d-none");
+        setTimeout(() => {
+            $(".c-modal").addClass("show");
+        }, 10);
+    }, 100);
 }
 
 function deleteBankAccount(id) {
@@ -171,20 +216,27 @@ function deleteBankAccount(id) {
 }
 
 function showErrors(heading, description) {
-    $(".c-modal").addClass("d-none");  // first we want to hide other c-modals.
+    $(".c-modal").addClass("d-none"); // first we want to hide other c-modals.
     $(".modal-container").removeClass("d-none");
     $("#error-modal").removeClass("d-none");
     $("#error-heading").text(heading);
     $("#error-description").text(description);
+    setTimeout(() => {
+        $(".c-modal").addClass("show");
+    }, 10);
 }
 
 function hideModals() {
-    $(".c-modal").addClass("d-none");  // this will first hide all the c-modals
-    $(".modal-container").addClass("d-none");
+    $(".c-modal").removeClass("show"); // this is needed for animation
+    setTimeout(() => {
+        $(".c-modal").addClass("d-none"); // this will first hide all the c-modals
+        $(".modal-container").addClass("d-none");
+    }, 100);
 }
 
 $("#button").on("click", function () {
     if (page === pages[1]) {
+        
         renderBankForm();
     } else if (page === pages[2]) {
         // showErrors("Error", "Please fill all the fields");
@@ -196,8 +248,8 @@ $(".c-close").on("click", function () {
     hideModals();
 });
 
-$('#remove-account').on('click', function () {
+$("#remove-account").on("click", function () {
     deleteBankAccount(bankId);
-})
+});
 
 renderBankAccounts();

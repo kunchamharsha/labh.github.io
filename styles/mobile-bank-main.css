@@ -34,6 +34,7 @@ body {
 .header {
   padding-top: 2.375rem;
   padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 .header .logo img {
   width: 6.6875rem;
@@ -41,6 +42,8 @@ body {
 }
 .header .go-back {
   margin-top: 2.875rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 0.5px solid grey;
 }
 .header .go-back img {
   width: 1.3125rem;
@@ -77,37 +80,32 @@ body {
   font-weight: 600;
 }
 
-.no-accounts-view .banner {
-  margin-top: 8.75rem;
-  width: 16.4375rem;
-  height: 16.6875rem;
-}
-.no-accounts-view .exclamation {
+.c-warning .exclamation {
   width: 1.375rem;
   height: 1.375rem;
 }
-.no-accounts-view span {
+.c-warning span {
   font-weight: 600;
   font-size: 0.875rem;
   color: #ffa443;
 }
-.no-accounts-view .helper-container {
+.c-warning .helper-container {
   margin-top: 2.375rem;
 }
-.no-accounts-view .help {
+.c-warning .help {
   font-weight: 500;
   font-size: 0.875rem;
   color: rgba(245, 245, 245, 0.8);
   text-align: center;
 }
 
-.bank-form .title {
+.form-screen .title {
   font-weight: 600;
   font-size: 0.875rem;
   margin-bottom: 1.5625rem;
   margin-top: 2.375rem;
 }
-.bank-form input {
+.form-screen input {
   border-radius: 2.5rem;
   height: 2.5625rem;
   background-color: rgba(206, 203, 255, 0.2);
@@ -115,66 +113,86 @@ body {
   margin-bottom: 0.875rem;
   color: #cecbff;
 }
-.bank-form input::placeholder {
+.form-screen input::placeholder {
   color: #cecbff;
   font-weight: 600;
   font-size: 0.875rem;
 }
-.bank-form input:focus {
+.form-screen input:focus {
   background-color: rgba(206, 203, 255, 0.2);
   outline: none;
   color: #cecbff;
   font-weight: 600;
 }
 
-.bank-list {
+.list-screen {
   margin-top: 1.5625rem;
   padding-bottom: 5rem;
 }
-.bank-list .bank {
+.list-screen .list {
   width: 100%;
-  height: 11.6875rem;
   border-radius: 1.25rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   background: linear-gradient(117.03deg, rgba(64, 18, 124, 0.3) 15.67%, rgba(166, 99, 255, 0.3) 47.49%, rgba(64, 18, 124, 0.3) 84.33%);
-  border: 0.8px solid #cecbff;
+  border: 0.4px solid rgba(167, 99, 255, 0.5215686275);
   padding: 1.25rem 1rem;
 }
-.bank-list .d {
+.list-screen .d {
   margin-bottom: 1.25rem;
 }
-.bank-list .d span {
-  font-weight: 700;
+.list-screen .d span {
+  font-weight: 600;
   font-size: 1rem;
 }
-.bank-list .d img {
+.list-screen .d img {
   width: 1.625rem;
   height: 1.625rem;
 }
-.bank-list .d .verified img {
+.list-screen .c-button {
+  height: 2.5625rem;
+  background: rgba(206, 203, 255, 0.2078431373);
+  border-radius: 0.5rem;
+}
+.list-screen .c-button img {
+  width: 1.1875rem;
+  height: 1.1875rem;
+}
+.list-screen .c-button span {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: rgba(245, 245, 245, 0.8);
+}
+
+.c-warning .banner {
+  margin-top: 8.75rem;
+  width: 16.4375rem;
+  height: 16.6875rem;
+}
+
+.list-screen .d .verified img {
   width: 0.9375rem;
   height: 0.9375rem;
 }
-.bank-list .d .verified span {
+.list-screen .d .verified span {
   font-weight: 400;
   font-size: 0.625rem;
 }
-.bank-list .u-d {
+.list-screen .u-d {
   font-size: 0.875rem;
   font-weight: 400;
   margin-bottom: 1.25rem;
 }
-.bank-list .d-button {
+.list-screen .c-button {
   width: 100%;
   height: 2.5625rem;
   background: rgba(206, 203, 255, 0.2078431373);
   border-radius: 0.5rem;
 }
-.bank-list .d-button img {
+.list-screen .c-button img {
   width: 1.1875rem;
   height: 1.1875rem;
 }
-.bank-list .d-button span {
+.list-screen .c-button span {
   font-weight: 600;
   font-size: 0.875rem;
   color: rgba(245, 245, 245, 0.8);
@@ -185,7 +203,7 @@ body {
   width: 100%;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.4392156863);
+  background-color: #000000;
   z-index: 10;
 }
 .modal-container .c-modal {
@@ -196,6 +214,8 @@ body {
   background: white;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
+  transform: translateY(100%);
+  transition: transform 0.1s ease-out;
 }
 .modal-container .c-modal h4 {
   font-weight: 600;
@@ -231,4 +251,11 @@ body {
 }
 .modal-container .success h4 {
   color: #168465;
+}
+
+.modal-container .show {
+  transform: translateY(0);
+}
+.modal-container .hide {
+  transform: translateY(100%);
 }/*# sourceMappingURL=mobile-bank-main.css.map */

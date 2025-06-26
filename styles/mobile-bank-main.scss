@@ -1,151 +1,15 @@
-@import "equations";
-@import "loader";
+@import "mobile_view_main";
 
-body {
-    background-color: #000000;
-    color: white;
-    height: 100vh;
-}
-
-.header {
-    padding-top: calculate-rem(38);
-    padding-left: calculate-rem(20);
-    .logo {
-        img {
-            width: calculate-rem(107);
-            height: calculate-rem(37);
-        }
-    }
-    .go-back {
-        margin-top: calculate-rem(46);
-        img {
-            width: calculate-rem(21);
-            height: calculate-rem(21);
-            margin-right: calculate-rem(13);
-        }
-        .details {
-            .h {
-                font-weight: 600;
-                font-size: calculate-rem(14);
-            }
-            .b {
-                font-weight: 500;
-                font-size: calculate-rem(12);
-                color: #ffffffb2;
-            }
-        }
-    }
-}
-
-$padding-lef-right: calculate-rem(28);
-
-.contents {
-    padding: calculate-rem(0) $padding-lef-right;
-    height: 65vh;
-
-    .button-container {
-        position: fixed;
-        bottom: calculate-rem(20);
-        left: 0;
-        width: 100%;
-        padding: 0 $padding-lef-right;
-    }
-
-    .button {
-        width: -webkit-fill-available;
-        height: calculate-rem(46);
-        background-color: #a663ff;
-        border-radius: calculate-rem(40);
-        font-size: calculate-rem(14);
-        font-weight: 600;
-    }
-}
-
-.no-accounts-view {
+.c-warning {
     .banner {
         margin-top: calculate-rem(140);
         width: calculate-rem(263);
         height: calculate-rem(267);
     }
-    .exclamation {
-        width: calculate-rem(22);
-        height: calculate-rem(22);
-    }
-    span {
-        font-weight: 600;
-        font-size: calculate-rem(14);
-        color: #ffa443;
-    }
-    .helper-container {
-        margin-top: calculate-rem(38);
-    }
-    .help {
-        font-weight: 500;
-        font-size: calculate-rem(14);
-        color: #f5f5f5cc;
-        text-align: center;
-    }
 }
 
-.bank-form {
-    .title {
-        font-weight: 600;
-        font-size: calculate-rem(14);
-        margin-bottom: calculate-rem(25);
-        margin-top: calculate-rem(38);
-    }
-    input {
-        border-radius: calculate-rem(40);
-        height: calculate-rem(41);
-        background-color: #cecbff33;
-        border: 0px;
-        margin-bottom: calculate-rem(14);
-        color: #cecbff;
-    }
-    input::placeholder {
-        color: #cecbff;
-        font-weight: 600;
-        font-size: calculate-rem(14);
-    }
-    input:focus {
-        background-color: #cecbff33;
-        outline: none;
-        color: #cecbff;
-        font-weight: 600;
-    }
-}
-
-.bank-list {
-    margin-top: calculate-rem(25);
-    padding-bottom: calculate-rem(80);
-
-    .bank {
-        width: 100%;
-        height: calculate-rem(187);
-        border-radius: calculate-rem(20);
-        margin-bottom: calculate-rem(12);
-        background: linear-gradient(
-            117.03deg,
-            rgba(64, 18, 124, 0.3) 15.67%,
-            rgba(166, 99, 255, 0.3) 47.49%,
-            rgba(64, 18, 124, 0.3) 84.33%
-        );
-        border: 0.8px solid #cecbff;
-        padding: calculate-rem(20) calculate-rem(16);
-    }
-
+.list-screen {
     .d {
-        margin-bottom: calculate-rem(20);
-        span {
-            font-weight: 700;
-            font-size: calculate-rem(16);
-        }
-
-        img {
-            width: calculate-rem(26);
-            height: calculate-rem(26);
-        }
-
         .verified {
             img {
                 width: calculate-rem(15);
@@ -164,7 +28,7 @@ $padding-lef-right: calculate-rem(28);
         margin-bottom: calculate-rem(20);
     }
 
-    .d-button {
+    .c-button {
         width: 100%;
         height: calculate-rem(41);
         background: #cecbff35;
@@ -188,7 +52,7 @@ $padding-lef-right: calculate-rem(28);
     width: 100%;
     bottom: 0;
     left: 0;
-    background-color: #00000070;
+    background-color: #000000;
     z-index: 10;
 
     .c-modal {
@@ -199,6 +63,8 @@ $padding-lef-right: calculate-rem(28);
         background: white;
         border-top-left-radius: calculate-rem(32);
         border-top-right-radius: calculate-rem(32);
+        transform: translateY(100%);
+        transition: transform 0.1s ease-out;
 
         
         h4 {
@@ -252,3 +118,6 @@ $padding-lef-right: calculate-rem(28);
         }
     }
 }
+
+
+@import "important";
