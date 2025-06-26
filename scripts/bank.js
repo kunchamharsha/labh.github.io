@@ -52,7 +52,7 @@ function renderBankAccounts(bankAcconts) {
                     <div class="bank">
                         <div class="d d-flex align-items-center justify-content-left gap-3">
                             <div class="d-flex align-items-center justify-content-left gap-1">
-                                <img src="{{ static_url }}/assets/mobile-webview/image 17.png" alt="logo">
+                                <img src="https://cms-labh-bucket.s3.ap-south-2.amazonaws.com/mobile-webview-assets/default-bank.svg" alt="logo">
                                 <span>${account.bank_name}</span>
                             </div>
                             ${account.is_verified ? verifyCard : "<div></div>"}
