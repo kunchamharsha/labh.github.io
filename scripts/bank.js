@@ -1,6 +1,6 @@
 const pages = ["home", "banklist", "bankform"];
 var page = "home";
-var prevPage = undefined
+var prevPages = [];
 var bankAccounts = [];
 var bankId = undefined;
 
@@ -18,7 +18,22 @@ function hideAllScreens() {
     $(".c-warning, .list-screen, .form-screen").addClass("d-none");
 }
 
-function renderBankAccounts() {
+// we don't want to save pages that render with backbutton
+// so if a page is rendered with backend button then we need to remove that page
+function updatePrevPages(currentPage, remove = false) {
+    if (remove) {
+        prevPages.pop()
+        return;
+    }
+
+    if (currentPage == pages[0] && prevPages.length > 0) {
+        prevPages.push(currentPage);
+    } else if (currentPage != pages[0]) {
+        prevPages.push(currentPage);
+    }
+}
+
+function renderBankAccounts(addHistory=true) {
     $(".loader-overlay").show();
     $.ajax({
         url: DOMAIN + "/api/kyc/bank",
@@ -40,7 +55,7 @@ function renderBankAccounts() {
             $(".no-accounts-view").addClass("d-none");
             $(".list-screen").removeClass("d-none");
 
-            prevPage = prevPage ? page : undefined;
+            addHistory ? updatePrevPages(page) : null;  // this fetch is working asyncronously
             page = pages[1];
             $("#button").text("Add Bank Account");
             $(".list-screen").empty();
@@ -91,29 +106,34 @@ function renderBankAccounts() {
     });
 }
 
-
 function renderHomeScreen() {
     hideAllScreens();
     $(".c-warning").removeClass("d-none");
 }
 
 function back() {
-    switch (prevPage) {
+    const backPage = prevPages.pop();
+    switch (backPage) {
         case pages[1]:
-            renderBankAccounts();
+            renderBankAccounts(addHistory=false);
+            updatePrevPages(page, true);
             break;
         case pages[2]:
             renderBankForm();
+            updatePrevPages(page, true);
             break;
         case page[0]:
             renderHomeScreen();
+            updatePrevPages(page, true);
+            break;
+        default:
+            window.location.href = "https://api.labh.io/profile";
             break;
     }
 }
 
-
 function renderBankForm() {
-    prevPage = page;
+    updatePrevPages(page);
     page = pages[2];
     hideAllScreens();
     $(".form-screen").removeClass("d-none");
@@ -236,7 +256,6 @@ function hideModals() {
 
 $("#button").on("click", function () {
     if (page === pages[1]) {
-        
         renderBankForm();
     } else if (page === pages[2]) {
         // showErrors("Error", "Please fill all the fields");
