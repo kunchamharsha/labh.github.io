@@ -96,13 +96,22 @@ body {
   text-align: center;
 }
 
+.form-screen form {
+  padding-bottom: 4.375rem;
+  margin-top: 2.5rem;
+}
+.form-screen label {
+  color: rgba(245, 245, 245, 0.8);
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+}
 .form-screen .title {
   font-weight: 600;
   font-size: 0.875rem;
   margin-bottom: 1.5625rem;
   margin-top: 2.375rem;
 }
-.form-screen input {
+.form-screen input, .form-screen textarea {
   border-radius: 2.5rem;
   height: 2.5625rem;
   background-color: rgba(206, 203, 255, 0.2);
@@ -110,16 +119,20 @@ body {
   margin-bottom: 0.875rem;
   color: #cecbff;
 }
-.form-screen input::placeholder {
-  color: #cecbff;
+.form-screen input::placeholder, .form-screen textarea::placeholder {
+  color: rgba(206, 203, 255, 0.4);
   font-weight: 600;
   font-size: 0.875rem;
 }
-.form-screen input:focus {
+.form-screen input:focus, .form-screen textarea:focus {
   background-color: rgba(206, 203, 255, 0.2);
   outline: none;
   color: #cecbff;
   font-weight: 600;
+}
+.form-screen textarea {
+  height: 6.8125rem;
+  border-radius: 1.25rem;
 }
 
 .list-screen {

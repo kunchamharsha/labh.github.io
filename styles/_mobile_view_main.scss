@@ -61,7 +61,6 @@ $padding-lef-right: calculate-rem(28);
     }
 }
 
-
 .c-warning {
     .exclamation {
         width: calculate-rem(22);
@@ -84,13 +83,22 @@ $padding-lef-right: calculate-rem(28);
 }
 
 .form-screen {
-        .title {
+    form {
+        padding-bottom: calculate-rem(70);
+        margin-top: calculate-rem(40);
+    }
+    label {
+        color: #F5F5F5CC;
+        margin-bottom: calculate-rem(12);
+        font-size: calculate-rem(14);
+    }
+    .title {
         font-weight: 600;
         font-size: calculate-rem(14);
         margin-bottom: calculate-rem(25);
         margin-top: calculate-rem(38);
     }
-    input {
+    input, textarea {
         border-radius: calculate-rem(40);
         height: calculate-rem(41);
         background-color: #cecbff33;
@@ -98,16 +106,20 @@ $padding-lef-right: calculate-rem(28);
         margin-bottom: calculate-rem(14);
         color: #cecbff;
     }
-    input::placeholder {
-        color: #cecbff;
+    input::placeholder, textarea::placeholder {
+        color: #CECBFF66;
         font-weight: 600;
         font-size: calculate-rem(14);
     }
-    input:focus {
+    input:focus, textarea:focus {
         background-color: #cecbff33;
         outline: none;
         color: #cecbff;
         font-weight: 600;
+    }
+    textarea {
+        height: calculate-rem(109);
+        border-radius: calculate-rem(20);
     }
 }
 

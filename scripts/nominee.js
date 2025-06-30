@@ -16,6 +16,7 @@ function fetchNominees() {
         success: function (response) {
             $(".loader-overlay").hide();
             renderNomineeList(response);
+            renderForm();
         },
         error: function (xhr, status, error) {
             $(".loader-overlay").hide();
@@ -27,7 +28,7 @@ function fetchNominees() {
 function renderNomineeList(response) {
     hideAllScreens();
     $(".list-screen").removeClass("d-none");
-    $('.list-screen').empty();
+    $(".list-screen").empty();
     response.forEach((nominee) => {
         const list = `
             <div class="list">
@@ -60,9 +61,17 @@ function renderNomineeList(response) {
                 </div>
             </div>
         `;
-        $('.list-screen').append(list);
-
+        $(".list-screen").append(list);
     });
 }
 
 fetchNominees();
+
+function renderForm() {
+    hideAllScreens();
+    $(".form-screen").removeClass("d-none");
+}
+
+$("#button").on("click", function () {
+    renderForm();
+});
