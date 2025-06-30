@@ -132,6 +132,19 @@ $padding-lef-right: calculate-rem(28);
         padding: calculate-rem(20) calculate-rem(16);
     }
 
+    .l-header {
+        margin-bottom: calculate-rem(20);
+        .verified {
+            img {
+                width: calculate-rem(15);
+                height: calculate-rem(15);
+            }
+            span {
+                font-size: calculate-rem(12);
+            }
+        }
+    }
+
     .d {
         margin-bottom: calculate-rem(20);
         span {
@@ -144,6 +157,14 @@ $padding-lef-right: calculate-rem(28);
             height: calculate-rem(26);
         }
     }
+    
+    .delete {
+        img {
+            width: calculate-rem(19);
+            height: calculate-rem(19);
+        }
+    }
+
 
     .c-button {
         height: calculate-rem(41);

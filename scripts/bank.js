@@ -22,7 +22,7 @@ function hideAllScreens() {
 // so if a page is rendered with backend button then we need to remove that page
 function updatePrevPages(currentPage, remove = false) {
     if (remove) {
-        prevPages.pop()
+        prevPages.pop();
         return;
     }
 
@@ -33,7 +33,7 @@ function updatePrevPages(currentPage, remove = false) {
     }
 }
 
-function renderBankAccounts(addHistory=true) {
+function renderBankAccounts(addHistory = true) {
     $(".loader-overlay").show();
     $.ajax({
         url: DOMAIN + "/api/kyc/bank",
@@ -55,44 +55,50 @@ function renderBankAccounts(addHistory=true) {
             $(".no-accounts-view").addClass("d-none");
             $(".list-screen").removeClass("d-none");
 
-            addHistory ? updatePrevPages(page) : null;  // this fetch is working asyncronously
+            addHistory ? updatePrevPages(page) : null; // this fetch is working asyncronously
             page = pages[1];
             $("#button").text("Add Bank Account");
             $(".list-screen").empty();
             response.forEach((account) => {
                 const verifyCard = `
-                    <div class="verified d-flex justify-content-left gap-1">
-                        <img src="${ASSETS_URL}/assets/mobile-webview/Group 2369.png" alt="verified image">
-                        <span>Primary</span>
+                    <div class="l-header d-flex justify-content-between">
+                        <div class="verified d-flex justify-content-left align-items-center gap-1">
+                            <img src="${ASSETS_URL}/assets/mobile-webview/Group 2369.png" alt="verified image">
+                            <span>Primary</span>
+                        </div>
+                        <div class="delete" onclick="deleteBankAccountPrompt(${account.id})">
+                            <img src="${ASSETS_URL}/assets/mobile-webview/delete-vector.png" alt="delete-icon">
+                        </div>
+                    </div>
+                `;
+                const deleteButton = `
+                    <div class="delete" onclick="deleteBankAccountPrompt(${account.id})">
+                        <img src="${ASSETS_URL}/assets/mobile-webview/delete-vector.png" alt="delete-icon">
                     </div>
                 `;
                 const bankCard = `
                     <div class="list">
+                        ${
+                            account.is_default === "Y"
+                                ? verifyCard
+                                : "<div></div>"
+                        }
                         <div class="d d-flex justify-content-between gap-3">
                             <div class="d-flex justify-content-left gap-2">
                                 <img src="https://cms-labh-bucket.s3.ap-south-2.amazonaws.com/mobile-webview-assets/default-bank.svg" alt="logo">
                                 <span>${account.bank_name}</span>
                             </div>
                             ${
-                                account.is_default === "Y"
-                                    ? verifyCard
+                                account.is_default === "N"
+                                    ? deleteButton
                                     : "<div></div>"
                             }
-                            
                         </div>
                         <div class="u-d">
-                            <div class="name">${
-                                account.name_at_bank || "-"
-                            }</div>
                             <div class="account-number">${
                                 account.account_number
                             }</div>
-                        </div>
-                        <div class="c-button d-flex align-items-center justify-content-center  gap-2" onclick="deleteBankAccountPrompt(${
-                            account.id
-                        })">
-                            <img src="${ASSETS_URL}/assets/mobile-webview/delete-vector.png" alt="delete-icon">
-                            <span>Delete</span>
+                            <div class="ifsc-code">${account.ifsc_code}</div>
                         </div>
                     </div>
                 `;
@@ -115,7 +121,7 @@ function back() {
     const backPage = prevPages.pop();
     switch (backPage) {
         case pages[1]:
-            renderBankAccounts(addHistory=false);
+            renderBankAccounts((addHistory = false));
             updatePrevPages(page, true);
             break;
         case pages[2]:
@@ -263,12 +269,23 @@ $("#button").on("click", function () {
     }
 });
 
-$(".c-close").on("click", function () {
+$(".close-modal").on("click", function () {
     hideModals();
 });
 
 $("#remove-account").on("click", function () {
     deleteBankAccount(bankId);
+});
+
+$(".modal-container").on("click", function (e) {
+    console.log($(".c-modal").is(e.target));
+    console.log($(".c-modal").has(e.target).length);
+    if (
+        !$(".c-modal").is(e.target) &&
+        $(".c-modal").has(e.target).length === 0
+    ) {
+        hideModals();
+    }
 });
 
 renderBankAccounts();

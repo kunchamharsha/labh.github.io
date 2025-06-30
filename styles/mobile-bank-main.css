@@ -137,6 +137,16 @@ body {
   border: 0.4px solid rgba(167, 99, 255, 0.5215686275);
   padding: 1.25rem 1rem;
 }
+.list-screen .l-header {
+  margin-bottom: 1.25rem;
+}
+.list-screen .l-header .verified img {
+  width: 0.9375rem;
+  height: 0.9375rem;
+}
+.list-screen .l-header .verified span {
+  font-size: 0.75rem;
+}
 .list-screen .d {
   margin-bottom: 1.25rem;
 }
@@ -147,6 +157,10 @@ body {
 .list-screen .d img {
   width: 1.625rem;
   height: 1.625rem;
+}
+.list-screen .delete img {
+  width: 1.1875rem;
+  height: 1.1875rem;
 }
 .list-screen .c-button {
   height: 2.5625rem;
@@ -180,7 +194,6 @@ body {
 .list-screen .u-d {
   font-size: 0.875rem;
   font-weight: 400;
-  margin-bottom: 1.25rem;
 }
 .list-screen .c-button {
   width: 100%;
@@ -203,7 +216,7 @@ body {
   width: 100%;
   bottom: 0;
   left: 0;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.6705882353);
   z-index: 10;
 }
 .modal-container .c-modal {
