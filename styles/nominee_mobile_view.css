@@ -238,8 +238,20 @@ body {
   color: #168465;
 }
 
-.list-screen .nominee-details {
-  margin-bottom: 1.5rem;
+.list-screen .header {
+  padding: 0;
+  background: none;
+}
+.list-screen .header .section span {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: underline;
+  margin-left: 0.3125rem;
+  color: #cecbff;
+}
+.list-screen .header img {
+  width: 1.1875rem;
+  height: 1.1875rem;
 }
 .list-screen .section div {
   font-weight: 400;
@@ -254,6 +266,38 @@ body {
 }
 .list-screen .c-button {
   width: 50%;
+}
+.list-screen .d {
+  margin-bottom: 0.75rem;
+}
+
+.nominee-error .button {
+  width: 7.8125rem;
+  height: 2rem;
+  border-radius: 0.75rem;
+  border: 0.0375rem solid #cecbff;
+  background: black;
+}
+.nominee-error .button span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #CECBFF;
+}
+.nominee-error .error {
+  background: rgba(251, 137, 84, 0.3215686275);
+  border-radius: 1rem;
+  padding: 1rem 0.9375rem;
+  margin-top: 1.25rem;
+}
+.nominee-error .error img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.nominee-error .error span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(245, 245, 245, 0.8);
+  text-wrap: wrap;
 }
 
 .form-screen .status-container {

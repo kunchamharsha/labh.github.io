@@ -5,8 +5,24 @@
 }
 
 .list-screen {
-    .nominee-details {
-        margin-bottom: calculate-rem(24);
+    .header {
+        padding: 0;
+        background: none;
+
+        .section {
+            span {
+                font-size: calculate-rem(14);
+                font-weight: 600;
+                text-decoration: underline;
+                margin-left: calculate-rem(5);
+                color: #cecbff;
+            }
+        }
+
+        img {
+            width: calculate-rem(19);
+            height: calculate-rem(19);
+        }
     }
     .section {
         div {
@@ -24,6 +40,44 @@
 
     .c-button {
         width: 50%;
+    }
+
+    .d {
+        margin-bottom: calculate-rem(12);
+    }
+}
+
+.nominee-error {
+    .button {
+        width: calculate-rem(125);
+        height: calculate-rem(32);
+        border-radius: calculate-rem(12);
+        border: calculate-rem(0.6) solid #cecbff;
+        background: black;
+
+        span {
+            font-size: calculate-rem(12);
+            font-weight: 600;
+            color: #CECBFF;
+        }
+    }
+    .error {
+        background: #FB895452;
+        border-radius: calculate-rem(16);
+        padding: calculate-rem(16) calculate-rem(15);
+        margin-top: calculate-rem(20);
+
+        img {
+            width: calculate-rem(24);
+            height: calculate-rem(24);
+        }
+
+        span {
+            font-size: calculate-rem(12);
+            font-weight: 500;
+            color: #F5F5F5CC;
+            text-wrap: wrap;
+        }
     }
 }
 

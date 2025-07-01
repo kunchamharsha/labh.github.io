@@ -3,7 +3,13 @@ var page = "home";
 var prevPages = [];
 var relativeChoices = [];
 var selectedRelative = undefined;
-var nominees = [];
+var nominees = ["test"];
+var availableNominees = [];
+var allocationPercentage = 10;
+
+const headerHeight = $(".go-back").outerHeight(true);
+const modalHeight = window.innerHeight - headerHeight;
+$(".modal-container").css("height", modalHeight);
 
 function capitalizeWords(text) {
     return text
@@ -17,6 +23,13 @@ function hideAllScreens() {
     $(".c-warning").addClass("d-none");
     $(".form-screen").addClass("d-none");
     $(".list-screen").addClass("d-none");
+    $(".nominee-error").addClass("d-none");
+    $("#button").css("background", "rgba(166, 99, 255)");
+    $("#button").css("color", "rgba(255, 255, 255)");
+}
+
+function removePaddingFromListScreen() {
+    $(".list-screen").css("padding-bottom", "0");
 }
 
 function fetchNominees() {
@@ -31,7 +44,6 @@ function fetchNominees() {
         success: function (response) {
             $(".loader-overlay").hide();
             renderNomineeList(response);
-            renderForm();
         },
         error: function (xhr, status, error) {
             $(".loader-overlay").hide();
@@ -60,14 +72,32 @@ function fetchRelativeChoices() {
     });
 }
 
+function renderNomineeError() {
+    $(".nominee-error").removeClass("d-none");
+    $("#button").css("background", "rgba(166, 99, 255, 0.6)");
+    $("#button").css("color", "rgba(255, 255, 255, 0.6)");
+}
+
 function renderNomineeList(response) {
+    availableNominees = response;
     hideAllScreens();
     page = pages[1];
     $(".list-screen").removeClass("d-none");
     $(".list-screen").empty();
+    nominees.length > 0 ? removePaddingFromListScreen() : undefined;
+    allocationPercentage != 100 ? renderNomineeError() : undefined;
     response.forEach((nominee) => {
         const list = `
             <div class="list">
+                <div class="d d-flex align-items-center justify-content-between header">
+                    <div class="section">
+                        <img src="${ASSETS_URL}/assets/mobile-webview/edit-nominee.png" alt="edit" />
+                        <span onclick="renderForm(${nominee.id})">Edit details </span>
+                    </div>
+                    <div class="section">
+                        <img src="${ASSETS_URL}/assets/mobile-webview/delete-vector.png" alt="delete" />
+                    </div>
+                </div>
                 <div class="d d-flex align-items-center justify-content-left gap-3">
                     <div class="d-flex align-items-center justify-content-left gap-1">
                         <img src="${ASSETS_URL}/assets/mobile-webview/iconamoon_profile-circle-fill.png" alt="logo">
@@ -85,16 +115,6 @@ function renderNomineeList(response) {
                         <span>${nominee.share_percentage}</span>
                     </div>
                 </div>
-                <div class="list-button-container d-flex align-items-center justify-content-between gap-3">
-                    <div class="c-button d-flex align-items-center justify-content-center gap-2">
-                        <img src="${ASSETS_URL}/assets/mobile-webview/delete-vector.png" alt="delete-icon">
-                        <span>Delete</span>
-                    </div>
-                    <div class="c-button d-flex align-items-center justify-content-center gap-2">
-                        <img src="${ASSETS_URL}/assets/mobile-webview/update-icon.png" alt="update-icon">
-                        <span>Update</span>
-                    </div>
-                </div>
             </div>
         `;
         $(".list-screen").append(list);
@@ -103,10 +123,27 @@ function renderNomineeList(response) {
 
 fetchNominees();
 
-function renderForm() {
+function showValuesInForm(nominee) {
+    $("#nominee-name").val(nominee.name);
+    $("#nominee-pan").val(nominee.pan);
+    $("#dob").val(nominee.date_of_birth);
+    $("#relation").val(nominee.relationship);
+    $("#phone").val(nominee.phone_number);
+    $("#email").val(nominee.email);
+    $("#pin").val(nominee.pin_code);
+    $("#country").val(nominee.country);
+    $("#address").val(nominee.address);
+    $("#percentage").val(nominee.share_percentage);
+}
+
+function renderForm(id = undefined) {
     hideAllScreens();
     page = pages[2];
     $(".form-screen").removeClass("d-none");
+    if (id != undefined) {
+        nominee = availableNominees.filter((nominee) => nominee.id == id);
+        showValuesInForm(nominee[0]);
+    }
 }
 
 function hideModals() {
@@ -119,6 +156,7 @@ function hideModals() {
 
 function renderHome() {
     hideAllScreens();
+    page = pages[0];
     $(".home-screen").removeClass("d-none");
     $(".c-warning").removeClass("d-none");
 }
@@ -184,6 +222,18 @@ function showErrorModal(heading, message) {
     }, 100);
 }
 
+function showErrorModalWithExit(heading, message) {
+    hideModals();
+    $("#error-modal-with-exit h4").text(heading);
+    $("#error-modal-with-exit .contents").text(message);
+    setTimeout(() => {
+        $(".modal-container").removeClass("d-none");
+        $("#error-modal-with-exit").removeClass("d-none");
+        setTimeout(() => {
+            $(".c-modal").addClass("show");
+        }, 10);
+    }, 100);
+}
 function renderRelativeModal() {
     fetchRelativeChoices();
 }
@@ -203,7 +253,6 @@ function submitForm(event) {
 
     if (Object.keys(errors).length > 0) {
         Object.keys(errors).forEach((key) => {
-            console.log(key);
             $(`#${key}`).addClass("error");
         });
         showErrorModal("Incomplete", "You've to fill all the data!");
@@ -213,8 +262,14 @@ function submitForm(event) {
 $("#button").on("click", function () {
     if (page == "form") {
         $("#form").submit();
+        return;
+    } else if (page == "list") {
+        showErrorModalWithExit(
+            "Nominee Details Not Saved",
+            "Your nominee shares don’t add up to 100%. If you leave now, your changes will be lost."
+        );
+        return;
     }
-    renderForm();
 });
 
 $("#save-and-continue, .go-back").on("click", function () {
@@ -223,6 +278,27 @@ $("#save-and-continue, .go-back").on("click", function () {
 
 $("#relation").on("click", function () {
     showRelativeModal();
+});
+
+$("input").on("click", function () {
+    $("input").removeClass("error");
+});
+
+$(".close-modal").on("click", function () {
+    hideModals();
+});
+
+$(".nominee-error .button").on("click", function () {
+    renderForm();
+});
+
+$(".modal-container").on("click", function (e) {
+    if (
+        !$(".c-modal").is(e.target) &&
+        $(".c-modal").has(e.target).length === 0
+    ) {
+        hideModals();
+    }
 });
 
 renderLottie();
