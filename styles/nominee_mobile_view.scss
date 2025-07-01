@@ -1,7 +1,7 @@
 @import "mobile_view_main";
 
 .c-warning {
-    margin-top: calculate-rem(445);
+    // margin-top: calculate-rem(445);
 }
 
 .list-screen {
@@ -18,7 +18,7 @@
             margin-left: calculate-rem(12);
             font-weight: 600;
             font-size: calculate-rem(16);
-            color: #F5F5F5;
+            color: #f5f5f5;
         }
     }
 
@@ -26,3 +26,67 @@
         width: 50%;
     }
 }
+
+.form-screen {
+    .status-container {
+        margin-bottom: calculate-rem(12);
+        label {
+            margin-bottom: 0;
+        }
+        span {
+            color: #cecbff;
+        }
+    }
+}
+
+.modal-container {
+    .c-modal-nominee {
+        height: auto;
+        background: black;
+        padding: 0;
+        padding-top: calculate-rem(10);
+    }
+    .go-back {
+        margin-left: calculate-rem(32);
+    }
+    .relative-modal-inner-container {
+        padding: calculate-rem(32) calculate-rem(32);
+        background: linear-gradient(
+            117.03deg,
+            rgba(64, 18, 124, 0.3) 15.67%,
+            rgba(166, 99, 255, 0.3) 47.49%,
+            rgba(64, 18, 124, 0.3) 84.33%
+        );
+        border-top-left-radius: calculate-rem(32);
+        border-top-right-radius: calculate-rem(32);
+        h3 {
+            font-size: calculate-rem(18);
+            font-weight: 600;
+            margin-bottom: calculate-rem(28);
+        }
+        img {
+            width: calculate-rem(28);
+            height: calculate-rem(28);
+        }
+    }
+    .choices {
+        max-height: 55vh;
+        overflow: scroll;
+        margin-bottom: calculate-rem(10);
+        .choice {
+            height: calculate-rem(42);
+            background: #cecbff33;
+            color: #cecbff;
+            border-radius: calculate-rem(40);
+            font-size: calculate-rem(14);
+            font-weight: 600;
+            margin-bottom: calculate-rem(12);
+        }
+        .active {
+            background: #ffffff;
+            color: #a663ff;
+        }
+    }
+}
+
+@import "important";

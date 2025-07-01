@@ -34,6 +34,10 @@ body {
 .header {
   padding-top: 2.375rem;
   padding-left: 1.25rem;
+  padding-bottom: 0.625rem;
+  position: sticky;
+  top: 0;
+  background: black;
 }
 .header .logo img {
   width: 6.6875rem;
@@ -111,7 +115,8 @@ body {
   margin-bottom: 1.5625rem;
   margin-top: 2.375rem;
 }
-.form-screen input, .form-screen textarea {
+.form-screen input,
+.form-screen textarea {
   border-radius: 2.5rem;
   height: 2.5625rem;
   background-color: rgba(206, 203, 255, 0.2);
@@ -119,12 +124,14 @@ body {
   margin-bottom: 0.875rem;
   color: #cecbff;
 }
-.form-screen input::placeholder, .form-screen textarea::placeholder {
+.form-screen input::placeholder,
+.form-screen textarea::placeholder {
   color: rgba(206, 203, 255, 0.4);
   font-weight: 600;
   font-size: 0.875rem;
 }
-.form-screen input:focus, .form-screen textarea:focus {
+.form-screen input:focus,
+.form-screen textarea:focus {
   background-color: rgba(206, 203, 255, 0.2);
   outline: none;
   color: #cecbff;
@@ -133,6 +140,9 @@ body {
 .form-screen textarea {
   height: 6.8125rem;
   border-radius: 1.25rem;
+}
+.form-screen .error {
+  border: 1px solid red;
 }
 
 .list-screen {
@@ -173,8 +183,59 @@ body {
   color: rgba(245, 245, 245, 0.8);
 }
 
-.c-warning {
-  margin-top: 27.8125rem;
+.modal-container {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6705882353);
+  z-index: 10;
+}
+.modal-container .c-modal {
+  padding: 0 2rem;
+  padding-top: 2.25rem;
+  height: 14.8125rem;
+  width: 100%;
+  background: white;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  transform: translateY(100%);
+  transition: transform 0.1s ease-out;
+}
+.modal-container .c-modal h4 {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+.modal-container .c-modal img {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+.modal-container .c-modal .contents {
+  padding: 0;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: rgba(17, 17, 17, 0.6980392157);
+}
+.modal-container .c-modal .button-container .button {
+  background: rgba(17, 17, 17, 0.1215686275);
+  color: #111111;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.modal-container .c-modal .button-container .remove {
+  background: #ff615f;
+  color: #ffffff;
+}
+.modal-container .c-modal .button-container .normal {
+  background: #a663ff;
+  color: #ffffff;
+}
+.modal-container .remove h4 {
+  color: #ff615f;
+}
+.modal-container .success h4 {
+  color: #168465;
 }
 
 .list-screen .nominee-details {
@@ -189,8 +250,68 @@ body {
   margin-left: 0.75rem;
   font-weight: 600;
   font-size: 1rem;
-  color: #F5F5F5;
+  color: #f5f5f5;
 }
 .list-screen .c-button {
   width: 50%;
+}
+
+.form-screen .status-container {
+  margin-bottom: 0.75rem;
+}
+.form-screen .status-container label {
+  margin-bottom: 0;
+}
+.form-screen .status-container span {
+  color: #cecbff;
+}
+
+.modal-container .c-modal-nominee {
+  height: auto;
+  background: black;
+  padding: 0;
+  padding-top: 0.625rem;
+}
+.modal-container .go-back {
+  margin-left: 2rem;
+}
+.modal-container .relative-modal-inner-container {
+  padding: 2rem 2rem;
+  background: linear-gradient(117.03deg, rgba(64, 18, 124, 0.3) 15.67%, rgba(166, 99, 255, 0.3) 47.49%, rgba(64, 18, 124, 0.3) 84.33%);
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+.modal-container .relative-modal-inner-container h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1.75rem;
+}
+.modal-container .relative-modal-inner-container img {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+.modal-container .choices {
+  max-height: 55vh;
+  overflow: scroll;
+  margin-bottom: 0.625rem;
+}
+.modal-container .choices .choice {
+  height: 2.625rem;
+  background: rgba(206, 203, 255, 0.2);
+  color: #cecbff;
+  border-radius: 2.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.modal-container .choices .active {
+  background: #ffffff;
+  color: #a663ff;
+}
+
+.modal-container .show {
+  transform: translateY(0);
+}
+.modal-container .hide {
+  transform: translateY(100%);
 }/*# sourceMappingURL=nominee_mobile_view.css.map */
