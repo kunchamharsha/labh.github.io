@@ -1,0 +1,483 @@
+const pages = ["home", "list", "form"];
+var page = "home";
+var prevPages = [];
+var relativeChoices = [];
+var selectedRelative = undefined;
+var nominees = [];
+var availableNominees = [];
+var allocationPercentage = 0;
+
+const headerHeight = $(".go-back").outerHeight(true);
+const modalHeight = window.innerHeight - headerHeight;
+$(".modal-container").css("height", modalHeight);
+
+function capitalizeWords(text) {
+    return text
+        .toLowerCase()
+        .split(" ")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+}
+
+function isValidPAN(pan) {
+    const panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]$/;
+    return panRegex.test(pan);
+}
+
+function isValidDOB(dob) {
+    const regex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/(19|20)\d{2}$/;
+    if (!regex.test(dob)) return false;
+
+    const [month, day, year] = dob.split("/").map(Number);
+
+    const date = new Date(year, month - 1, day);
+
+    return (
+        date.getFullYear() === year &&
+        date.getMonth() === month - 1 &&
+        date.getDate() === day
+    );
+}
+
+function hideAllScreens() {
+    $(".c-warning").addClass("d-none");
+    $(".form-screen").addClass("d-none");
+    $(".list-screen").addClass("d-none");
+    $(".nominee-error").addClass("d-none");
+    $("#button").css("background", "rgba(166, 99, 255)");
+    $("#button").css("color", "rgba(255, 255, 255)");
+}
+
+function removePaddingFromListScreen() {
+    $(".list-screen").css("padding-bottom", "0");
+}
+
+function fetchNominees(addHistory = true) {
+    $(".loader-overlay").show();
+    $.ajax({
+        url: DOMAIN + "/api/kyc/nominee",
+        type: "GET",
+        headers: {
+            "access-token": getCookie("access-token"),
+            "device-id": getCookie("device-id"),
+        },
+        success: function (response) {
+            $(".loader-overlay").hide();
+            if (response.length > 0) renderNomineeList(response, addHistory);
+        },
+        error: function (xhr, status, error) {
+            $(".loader-overlay").hide();
+            console.error("Error:", error);
+        },
+    });
+}
+
+function fetchRelativeChoices() {
+    $(".loader-overlay").show();
+    $.ajax({
+        url: DOMAIN + "/api/kyc/nominee",
+        type: "OPTIONS",
+        headers: {
+            "access-token": getCookie("access-token"),
+            "device-id": getCookie("device-id"),
+        },
+        success: function (response) {
+            $(".loader-overlay").hide();
+            relativeChoices = response["relationships"];
+        },
+        error: function (xhr, status, error) {
+            $(".loader-overlay").hide();
+            console.error("Error:", error);
+        },
+    });
+}
+
+function renderNomineeError() {
+    $(".nominee-error").removeClass("d-none");
+    $("#button").css("background", "rgba(166, 99, 255, 0.6)");
+    $("#button").css("color", "rgba(255, 255, 255, 0.6)");
+}
+
+function renderNomineeList(response, addHistory = true) {
+    nominees = response;
+    hideAllScreens();
+    page = pages[1];
+    addHistory ? updatePrevPages(page) : null;
+    $(".list-screen").removeClass("d-none");
+    $(".list-screen").empty();
+    nominees.length > 0 ? removePaddingFromListScreen() : undefined;
+    allocationPercentage = calculatePercentage();
+    allocationPercentage != 100 ? renderNomineeError() : undefined;
+    response.forEach((nominee) => {
+        if (nominee.is_active) {
+            const list = `
+            <div class="list">
+                <div class="d d-flex align-items-center justify-content-between header">
+                    <div class="section">
+                        <img src="${ASSETS_URL}/assets/mobile-webview/edit-nominee.png" alt="edit" />
+                        <span onclick="renderForm(${nominee.id})">Edit details </span>
+                    </div>
+                    <div class="section">
+                        <img src="${ASSETS_URL}/assets/mobile-webview/delete-vector.png" alt="delete" onclick="showDeleteNomineeModal(${nominee.id})" />
+                    </div>
+                </div>
+                <div class="d d-flex align-items-center justify-content-left gap-3">
+                    <div class="d-flex align-items-center justify-content-left gap-1">
+                        <img src="${ASSETS_URL}/assets/mobile-webview/iconamoon_profile-circle-fill.png" alt="logo">
+                        <span>${nominee.name}</span>
+                    </div>
+
+                </div>
+                <div class="nominee-details d-flex align-items-center justify-content-between">
+                    <div class="section d-flex align-items-center justify-content-between">
+                        <div>Relationsip:</div>
+                        <span>${nominee.relationship}</span>
+                    </div>
+                    <div class="section d-flex align-items-center justify-content-between">
+                        <div>Allocation %:</div>
+                        <span>${nominee.share_percentage}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+            $(".list-screen").append(list);
+        }
+    });
+}
+
+fetchNominees();
+
+function showValuesInForm(nominee) {
+    $("#name").val(nominee.name);
+    $("#pan").val(nominee.pan);
+    $("#date_of_birth").val(nominee.date_of_birth);
+    $("#relationship").val(nominee.relationship);
+    $("#phone_number").val(nominee.phone_number);
+    $("#email").val(nominee.email);
+    $("#pin_code").val(nominee.pin_code);
+    $("#country").val(nominee.country);
+    $("#address").val(nominee.address);
+    $("#share_percentage").val(nominee.share_percentage);
+}
+
+function renderForm(id = undefined) {
+    hideAllScreens();
+    updatePrevPages(page);
+    page = pages[2];
+    $(".form-screen").removeClass("d-none");
+    $("#allocation-percentage").text(
+        100 - allocationPercentage + "% remaining"
+    );
+    if (id != undefined) {
+        nominee = nominees.filter((nominee) => nominee.id == id);
+        $("#button").text("Update");
+        showValuesInForm(nominee[0]);
+        $("#form")
+            .off("submit")
+            .on("submit", function (e) {
+                submitForm(e, nominee[0]);
+            });
+    } else {
+        // this will avoid giving same nominee over again and again in the form
+        $("#form")
+            .off("submit")
+            .on("submit", function (e) {
+                submitForm(e);
+            });
+        $("#button").text("Save and Continue");
+    }
+}
+
+function hideModals() {
+    $(".c-modal").removeClass("show"); // this is needed for animation
+    setTimeout(() => {
+        $(".c-modal").addClass("d-none"); // this will first hide all the c-modals
+        $(".modal-container").addClass("d-none");
+    }, 100);
+}
+
+function renderHome() {
+    hideAllScreens();
+    page = pages[0];
+    $(".home-screen").removeClass("d-none");
+    $(".c-warning").removeClass("d-none");
+}
+
+function renderLottie() {
+    lottie.loadAnimation({
+        container: document.getElementById("banner"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "https://cms-labh-bucket.s3.ap-south-2.amazonaws.com/cms_images/AppAnimations/nominee.json",
+    });
+}
+
+function deleteNominee(id) {
+    nominees = nominees.map((nominee) => {
+        if (nominee.id == id) {
+            nominee.is_active = false;
+            return nominee;
+        }
+        return nominee;
+    });
+    hideModals();
+    renderNomineeList(nominees);
+}
+
+function showRelativeModal() {
+    bankId = undefined;
+    hideModals();
+
+    // append the choices
+    $(".choices").empty();
+    relativeChoices.forEach(function (choice) {
+        if (choice == selectedRelative) {
+            $(".choices").append(`
+            <div class="choice d-flex justify-content-center align-items-center active" data-value="${choice}">${capitalizeWords(
+                choice
+            )}</div>
+        `);
+        } else {
+            $(".choices").append(`
+            <div class="choice d-flex justify-content-center align-items-center" data-value="${choice}">${capitalizeWords(
+                choice
+            )}</div>
+        `);
+        }
+    });
+
+    $(".choice").on("click", function () {
+        selectedRelative = $(this).data("value");
+        $(".choice").removeClass("active");
+        $(this).addClass("active");
+        $("#relationship").val(capitalizeWords(selectedRelative));
+    });
+
+    setTimeout(() => {
+        $(".modal-container").removeClass("d-none");
+        $("#relative-choice-modal").removeClass("d-none");
+        setTimeout(() => {
+            $(".c-modal").addClass("show");
+        }, 100);
+    }, 100);
+}
+
+function showErrorModal(heading, message) {
+    hideModals();
+    $("#error-modal h4").text(heading);
+    $("#error-modal .contents").text(message);
+    setTimeout(() => {
+        $(".modal-container").removeClass("d-none");
+        $("#error-modal").removeClass("d-none");
+        setTimeout(() => {
+            $(".c-modal").addClass("show");
+        }, 10);
+    }, 100);
+}
+
+function showErrorModalWithExit(heading, message) {
+    hideModals();
+    $("#error-modal-with-exit h4").text(heading);
+    $("#error-modal-with-exit .contents").text(message);
+    setTimeout(() => {
+        $(".modal-container").removeClass("d-none");
+        $("#error-modal-with-exit").removeClass("d-none");
+        setTimeout(() => {
+            $(".c-modal").addClass("show");
+        }, 10);
+    }, 100);
+}
+
+function showDeleteNomineeModal(id) {
+    hideModals();
+    setTimeout(() => {
+        $(".modal-container").removeClass("d-none");
+        $("#delete-nominee-modal").removeClass("d-none");
+        setTimeout(() => {
+            $(".c-modal").addClass("show");
+        }, 10);
+    }, 100);
+    $("#delete").off("click").on("click", function () {
+        deleteNominee(id);
+    });
+}
+
+function showSuccessNomineeModal() {
+    hideModals();
+    setTimeout(() => {
+        $(".modal-container").removeClass("d-none");
+        $("#nominee-update-modal").removeClass("d-none");
+        setTimeout(() => {
+            $(".c-modal").addClass("show");
+        }, 10);
+    }, 100);
+}
+
+function renderRelativeModal() {
+    fetchRelativeChoices();
+}
+
+function calculatePercentage() {
+    let totalPercentage = 0;
+    nominees.forEach((nominee) => {
+        if (nominee.is_active)
+            totalPercentage += parseInt(nominee.share_percentage);
+    });
+    return totalPercentage;
+}
+
+function submitForm(event, nominee = {}) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const errors = {};
+    for (const [key, value] of formData.entries()) {
+        $(`#${key}`).removeClass("error");
+        nominee[key] = value;
+
+        if (key == "pan") {
+            if (!isValidPAN(value)) {
+                $("#nominee-pan").addClass("error");
+                showErrorModal(
+                    "Invalid PAN",
+                    "Please enter a valid PAN number."
+                );
+                return;
+            }
+        }
+        if (key == "dob") {
+            if (!isValidDOB(value)) {
+                $("#dob").addClass("error");
+                showErrorModal("Invalid Date", "Please enter a valid date.");
+                return;
+            }
+        }
+        if (!value) {
+            errors[key] = "This field is required";
+        }
+    }
+
+    if (Object.keys(errors).length > 0) {
+        Object.keys(errors).forEach((key) => {
+            $(`#${key}`).addClass("error");
+        });
+        showErrorModal("Incomplete", "You've to fill all the data!");
+    }
+    if (!("id" in nominee)) {
+        nominee["id"] = nominees.length + 1;
+        nominee["is_active"] = true;
+        nominee["country_code"] = "91";
+        nominees.push(nominee);
+    }
+    allocationPercentage = calculatePercentage();
+    renderNomineeList(nominees);
+}
+
+function submitNominee() {
+    $(".loader-overlay").show();
+    $.ajax({
+        url: DOMAIN + "/api/kyc/nominee/update",
+        type: "PUT",
+        headers: {
+            "access-token": getCookie("access-token"),
+            "device-id": getCookie("device-id"),
+            "Content-Type": "application/json",
+        },
+        data: JSON.stringify(nominees.filter((nominee) => nominee.is_active)),
+        success: function (response) {
+            $(".loader-overlay").hide();
+            showSuccessNomineeModal();
+        },
+        error: function (response) {
+            $(".loader-overlay").hide();
+            showErrorModal("Error", response.responseJSON.error);
+        },
+    });
+}
+
+// we don't want to save pages that render with backbutton
+// so if a page is rendered with backend button then we need to remove that page
+function updatePrevPages(currentPage, remove = false) {
+    if (remove) {
+        prevPages.pop();
+        return;
+    }
+
+    if (currentPage == pages[0] && prevPages.length > 0) {
+        prevPages.push(currentPage);
+    } else if (currentPage != pages[0]) {
+        prevPages.push(currentPage);
+    }
+}
+
+function back() {
+    const backPage = prevPages.pop();
+    switch (backPage) {
+        case pages[1]:
+            renderNomineeList(nominees, (addHistory = false));
+            updatePrevPages(page, true);
+            break;
+        case pages[2]:
+            renderForm();
+            updatePrevPages(page, true);
+            break;
+        case page[0]:
+            renderHome();
+            updatePrevPages(page, true);
+            break;
+        default:
+            window.location.href = "https://api.labh.io/profile";
+            break;
+    }
+}
+
+$("#button").on("click", function () {
+    if (page == "form") {
+        $("#form").submit();
+        return;
+    } else if (page == "list") {
+        if (allocationPercentage == 100) {
+            submitNominee();
+        } else {
+            showErrorModalWithExit(
+                "Nominee Details Not Saved",
+                "Your nominee shares don’t add up to 100%. If you leave now, your changes will be lost."
+            );
+        }
+        return;
+    } else {
+        renderForm();
+    }
+});
+
+$("#save-and-continue, .go-back").on("click", function () {
+    hideModals();
+});
+
+$("#relationship").on("click", function () {
+    showRelativeModal();
+});
+
+$("input").on("click", function () {
+    $("input").removeClass("error");
+});
+
+$(".close-modal").on("click", function () {
+    hideModals();
+});
+
+$(".nominee-error .button").on("click", function () {
+    renderForm();
+});
+
+$(".modal-container").on("click", function (e) {
+    if (
+        !$(".c-modal").is(e.target) &&
+        $(".c-modal").has(e.target).length === 0
+    ) {
+        hideModals();
+    }
+});
+
+renderLottie();
+fetchRelativeChoices(); // this will fetch the relative choices

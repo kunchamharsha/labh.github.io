@@ -1,0 +1,8 @@
+.modal-container {
+    .show {
+        transform: translateY(0);
+    }
+    .hide {
+        transform: translateY(100%);
+    }
+}
