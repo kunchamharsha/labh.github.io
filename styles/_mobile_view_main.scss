@@ -20,7 +20,7 @@ body {
     .go-back {
         margin-top: calculate-rem(46);
         padding-bottom: calculate-rem(20);
-        border-bottom: .5px solid grey;
+        border-bottom: 0.5px solid grey;
         img {
             width: calculate-rem(21);
             height: calculate-rem(21);
@@ -64,7 +64,6 @@ $padding-lef-right: calculate-rem(28);
     }
 }
 
-
 .c-warning {
     .exclamation {
         width: calculate-rem(22);
@@ -87,7 +86,16 @@ $padding-lef-right: calculate-rem(28);
 }
 
 .form-screen {
-        .title {
+    form {
+        padding-bottom: calculate-rem(70);
+        margin-top: calculate-rem(40);
+    }
+    label {
+        color: #f5f5f5cc;
+        margin-bottom: calculate-rem(12);
+        font-size: calculate-rem(14);
+    }
+    .title {
         font-weight: 600;
         font-size: calculate-rem(14);
         margin-bottom: calculate-rem(25);
@@ -102,7 +110,7 @@ $padding-lef-right: calculate-rem(28);
         color: #cecbff;
     }
     input::placeholder {
-        color: #cecbff;
+        color: #cecbff66;
         font-weight: 600;
         font-size: calculate-rem(14);
     }
@@ -157,14 +165,13 @@ $padding-lef-right: calculate-rem(28);
             height: calculate-rem(26);
         }
     }
-    
+
     .delete {
         img {
             width: calculate-rem(19);
             height: calculate-rem(19);
         }
     }
-
 
     .c-button {
         height: calculate-rem(41);

@@ -15,7 +15,9 @@ function getCookie(name) {
 }
 
 function hideAllScreens() {
-    $(".c-warning, .list-screen, .form-screen").addClass("d-none");
+    $(".c-warning, .list-screen, .form-screen, .success-screen").addClass(
+        "d-none"
+    );
 }
 
 // we don't want to save pages that render with backbutton
@@ -31,6 +33,19 @@ function updatePrevPages(currentPage, remove = false) {
     } else if (currentPage != pages[0]) {
         prevPages.push(currentPage);
     }
+}
+
+function renderHomeScreenBottomButton() {
+    $("#button")
+        .html(
+            `<img src="${ASSETS_URL}/assets/mobile-webview/mdi_bank-outline.png" alt="add-bank-icon">
+                Add New Bank Account`
+        )
+        .addClass("bank-add-button");
+}
+
+function renderFormScreenBottomButton() {
+    $("#button").text("Add Bank").removeClass("bank-add-button");
 }
 
 function renderBankAccounts(addHistory = true) {
@@ -57,7 +72,7 @@ function renderBankAccounts(addHistory = true) {
 
             addHistory ? updatePrevPages(page) : null; // this fetch is working asyncronously
             page = pages[1];
-            $("#button").text("Add Bank Account");
+            renderHomeScreenBottomButton();
             $(".list-screen").empty();
             response.forEach((account) => {
                 const verifyCard = `
@@ -95,9 +110,11 @@ function renderBankAccounts(addHistory = true) {
                             }
                         </div>
                         <div class="u-d">
+                            <div class="label">Account Number: </div>
                             <div class="account-number">${
                                 account.account_number
                             }</div>
+                            <div class="label">IFSC: </div>
                             <div class="ifsc-code">${account.ifsc_code}</div>
                         </div>
                     </div>
@@ -115,6 +132,11 @@ function renderBankAccounts(addHistory = true) {
 function renderHomeScreen() {
     hideAllScreens();
     $(".c-warning").removeClass("d-none");
+}
+
+function renderSuccessScreen() {
+    hideAllScreens();
+    $(".success-screen").removeClass("d-none");
 }
 
 function back() {
@@ -143,21 +165,14 @@ function renderBankForm() {
     page = pages[2];
     hideAllScreens();
     $(".form-screen").removeClass("d-none");
+    renderFormScreenBottomButton();
 }
 
 function submitBankForm() {
     const acccountNumber = $("#account-number").val();
-    const confirmAccountNumber = $("#account-number-confirm").val();
     const ifsc = $("#ifsc-code").val();
-    if (acccountNumber === "" || confirmAccountNumber === "" || ifsc === "") {
+    if (acccountNumber === "" || ifsc === "") {
         showErrors("Error", "Please fill all the fields");
-        return;
-    }
-    if (acccountNumber !== confirmAccountNumber) {
-        showErrors(
-            "Error",
-            "Account number and confirm account number do not match"
-        );
         return;
     }
     const data = {
@@ -288,4 +303,6 @@ $(".modal-container").on("click", function (e) {
     }
 });
 
-renderBankAccounts();
+// renderBankAccounts();
+
+renderSuccessScreen();

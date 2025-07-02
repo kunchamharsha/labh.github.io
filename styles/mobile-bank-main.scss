@@ -1,5 +1,35 @@
 @import "mobile_view_main";
 
+.contents {
+    .bank-add-button {
+        background: #cecbff33;
+        color: #cecbff;
+        img {
+            width: calculate-rem(24);
+            height: calculate-rem(24);
+            margin-right: calculate-rem(5);
+        }
+    }
+}
+
+.success-screen {
+    height: calculate-rem(470);
+    background: linear-gradient(
+        117.03deg,
+        rgba(64, 18, 124, 0.3) 15.67%,
+        rgba(166, 99, 255, 0.3) 47.49%,
+        rgba(64, 18, 124, 0.3) 84.33%
+    );
+    padding: 0 calculate-rem(20);
+    border-radius: calculate-rem(20);
+    border: calculate-rem(0.8) solid
+        linear-gradient(
+            114.64deg,
+            rgba(166, 99, 255, 0.34) 14.2%,
+            rgba(206, 203, 255, 0.34) 85.8%
+        );
+}
+
 .c-warning {
     .banner {
         margin-top: calculate-rem(140);
@@ -25,6 +55,12 @@
     .u-d {
         font-size: calculate-rem(14);
         font-weight: 400;
+        color: rgba(245, 245, 245, 0.8);
+        // letter-spacing: calculate-rem(4);
+        .label {
+            font-size: calculate-rem(12);
+            font-weight: 600;
+        }
     }
 
     .c-button {
@@ -65,7 +101,6 @@
         transform: translateY(100%);
         transition: transform 0.1s ease-out;
 
-        
         h4 {
             font-weight: 600;
             font-size: calculate-rem(18);
@@ -81,33 +116,32 @@
             padding: 0;
             font-weight: 500;
             font-size: calculate-rem(14);
-            color: #111111B2;
+            color: #111111b2;
         }
 
         .button-container {
             .button {
-                background: #1111111F;
+                background: #1111111f;
                 color: #111111;
                 font-size: calculate-rem(14);
                 font-weight: 600;
             }
 
             .remove {
-                background: #FF615F;
-                color: #FFFFFF;
+                background: #ff615f;
+                color: #ffffff;
             }
 
             .normal {
-                background: #A663FF;
-                color: #FFFFFF;
+                background: #a663ff;
+                color: #ffffff;
             }
         }
-
     }
 
     .remove {
         h4 {
-            color: #FF615F;
+            color: #ff615f;
         }
     }
 
@@ -117,6 +151,5 @@
         }
     }
 }
-
 
 @import "important";

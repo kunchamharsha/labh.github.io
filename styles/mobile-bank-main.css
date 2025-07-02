@@ -99,6 +99,15 @@ body {
   text-align: center;
 }
 
+.form-screen form {
+  padding-bottom: 4.375rem;
+  margin-top: 2.5rem;
+}
+.form-screen label {
+  color: rgba(245, 245, 245, 0.8);
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+}
 .form-screen .title {
   font-weight: 600;
   font-size: 0.875rem;
@@ -114,7 +123,7 @@ body {
   color: #cecbff;
 }
 .form-screen input::placeholder {
-  color: #cecbff;
+  color: rgba(206, 203, 255, 0.4);
   font-weight: 600;
   font-size: 0.875rem;
 }
@@ -177,6 +186,24 @@ body {
   color: rgba(245, 245, 245, 0.8);
 }
 
+.contents .bank-add-button {
+  background: rgba(206, 203, 255, 0.2);
+  color: #cecbff;
+}
+.contents .bank-add-button img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.3125rem;
+}
+
+.success-screen {
+  height: 29.375rem;
+  background: linear-gradient(117.03deg, rgba(64, 18, 124, 0.3) 15.67%, rgba(166, 99, 255, 0.3) 47.49%, rgba(64, 18, 124, 0.3) 84.33%);
+  padding: 0 1.25rem;
+  border-radius: 1.25rem;
+  border: 0.05rem solid linear-gradient(114.64deg, rgba(166, 99, 255, 0.34) 14.2%, rgba(206, 203, 255, 0.34) 85.8%);
+}
+
 .c-warning .banner {
   margin-top: 8.75rem;
   width: 16.4375rem;
@@ -194,6 +221,11 @@ body {
 .list-screen .u-d {
   font-size: 0.875rem;
   font-weight: 400;
+  color: rgba(245, 245, 245, 0.8);
+}
+.list-screen .u-d .label {
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 .list-screen .c-button {
   width: 100%;
@@ -252,15 +284,15 @@ body {
   font-weight: 600;
 }
 .modal-container .c-modal .button-container .remove {
-  background: #FF615F;
-  color: #FFFFFF;
+  background: #ff615f;
+  color: #ffffff;
 }
 .modal-container .c-modal .button-container .normal {
-  background: #A663FF;
-  color: #FFFFFF;
+  background: #a663ff;
+  color: #ffffff;
 }
 .modal-container .remove h4 {
-  color: #FF615F;
+  color: #ff615f;
 }
 .modal-container .success h4 {
   color: #168465;
