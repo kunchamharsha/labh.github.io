@@ -195,6 +195,9 @@ body {
   height: 1.5rem;
   margin-right: 0.3125rem;
 }
+.contents #banner svg {
+  height: 25rem !important;
+}
 
 .success-screen {
   margin-top: 1.25rem;

@@ -10,6 +10,12 @@
             margin-right: calculate-rem(5);
         }
     }
+
+    #banner {
+        svg {
+            height: calculate-rem(400) !important;
+        }
+    }
 }
 
 .success-screen {

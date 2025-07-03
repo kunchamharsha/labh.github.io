@@ -133,12 +133,23 @@ function renderBankAccounts(addHistory = true) {
 function renderHomeScreen() {
     hideAllScreens();
     $(".c-warning").removeClass("d-none");
+    $("#button").removeClass("bank-add-button");
 }
 
 function renderSuccessScreen() {
     hideAllScreens();
     $(".success-screen").removeClass("d-none");
     $("#button").addClass("d-none");
+}
+
+function renderLottie() {
+    lottie.loadAnimation({
+        container: document.getElementById("banner"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "https://cms-labh-bucket.s3.ap-south-2.amazonaws.com/cms_images/AppAnimations/anual income.json",
+    });
 }
 
 function back() {
@@ -192,12 +203,20 @@ function submitBankForm() {
         data: data,
         success: function (response) {
             $(".loader-overlay").hide();
-            renderBankAccounts();
-            showBankAccountSuccessModal();
+            renderSuccessScreen();
+            // showBankAccountSuccessModal();
         },
-        error: function (xhr, status, error) {
+        error: function (error) {
             $(".loader-overlay").hide();
-            showErrors("Error", error);
+            console.error("Error:", error);
+            response = error.responseJSON;
+            if (response.account_number) {
+                showErrors("Error", response.account_number);
+            } else if (response.ifsc_code) {
+                showErrors("Error", response.ifsc_code);
+            } else {
+                showErrors("Error", response);
+            }
         },
     });
 }
@@ -251,9 +270,14 @@ function deleteBankAccount(id) {
             renderBankAccounts();
             showBankDeleteSuccessModal();
         },
-        error: function (xhr, status, error) {
+        error: function (error) {
             $(".loader-overlay").hide();
-            showErrors("Error", error);
+            response = error.responseJSON;
+            if (response.error) {
+                showErrors("Error", response.error);
+            } else {
+                showErrors("Error", "Something went wrong!");
+            }
         },
     });
 }
@@ -278,7 +302,7 @@ function hideModals() {
 }
 
 $("#button").on("click", function () {
-    if (page === pages[1]) {
+    if (page === pages[1] || page == pages[0]) {
         renderBankForm();
     } else if (page === pages[2]) {
         // showErrors("Error", "Please fill all the fields");
@@ -310,5 +334,5 @@ $("#done").on("click", function () {
 });
 
 $(".loader-overlay").hide();
-// renderBankAccounts();
-renderSuccessScreen();
+renderBankAccounts();
+renderLottie();
