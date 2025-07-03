@@ -1,4 +1,4 @@
-const pages = ["home", "banklist", "bankform"];
+const pages = ["home", "banklist", "bankform", "success"];
 var page = "home";
 var prevPages = [];
 var bankAccounts = [];
@@ -41,7 +41,8 @@ function renderHomeScreenBottomButton() {
             `<img src="${ASSETS_URL}/assets/mobile-webview/mdi_bank-outline.png" alt="add-bank-icon">
                 Add New Bank Account`
         )
-        .addClass("bank-add-button");
+        .addClass("bank-add-button")
+        .removeClass("d-none");
 }
 
 function renderFormScreenBottomButton() {
@@ -137,6 +138,7 @@ function renderHomeScreen() {
 function renderSuccessScreen() {
     hideAllScreens();
     $(".success-screen").removeClass("d-none");
+    $("#button").addClass("d-none");
 }
 
 function back() {
@@ -303,6 +305,10 @@ $(".modal-container").on("click", function (e) {
     }
 });
 
-// renderBankAccounts();
+$("#done").on("click", function () {
+    renderBankAccounts();
+});
 
+$(".loader-overlay").hide();
+// renderBankAccounts();
 renderSuccessScreen();

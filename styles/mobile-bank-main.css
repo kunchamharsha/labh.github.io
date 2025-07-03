@@ -197,11 +197,15 @@ body {
 }
 
 .success-screen {
+  margin-top: 1.25rem;
   height: 29.375rem;
   background: linear-gradient(117.03deg, rgba(64, 18, 124, 0.3) 15.67%, rgba(166, 99, 255, 0.3) 47.49%, rgba(64, 18, 124, 0.3) 84.33%);
   padding: 0 1.25rem;
   border-radius: 1.25rem;
   border: 0.05rem solid linear-gradient(114.64deg, rgba(166, 99, 255, 0.34) 14.2%, rgba(206, 203, 255, 0.34) 85.8%);
+}
+.success-screen span {
+  margin-bottom: 1.25rem;
 }
 
 .c-warning .banner {

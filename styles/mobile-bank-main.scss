@@ -13,6 +13,7 @@
 }
 
 .success-screen {
+    margin-top: calculate-rem(20);
     height: calculate-rem(470);
     background: linear-gradient(
         117.03deg,
@@ -28,6 +29,10 @@
             rgba(166, 99, 255, 0.34) 14.2%,
             rgba(206, 203, 255, 0.34) 85.8%
         );
+    
+    span {
+        margin-bottom: calculate-rem(20);
+    }
 }
 
 .c-warning {
