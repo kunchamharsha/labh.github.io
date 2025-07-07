@@ -1,2 +1,2 @@
-const DOMAIN = "http://localhost:8000";
-const ASSETS_URL = "http://localhost:8080";
+const DOMAIN = "https://devapi.labh.io";
+const ASSETS_URL = "https://labh.io";
