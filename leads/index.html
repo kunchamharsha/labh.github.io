@@ -195,6 +195,7 @@
               });
           alert("Form submitted successfully!");
           form.reset();
+          window.location.href = `https://api.labh.io/get-app/?campaign=leads&source=leads-page&medium=web&status=redirect&email=${data.email}`
         } else {
           response.json().then(data => {
             alert(data.error || "Something went wrong. Please try again.");
