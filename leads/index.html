@@ -135,6 +135,16 @@
               <option value="1Cr+">₹1Cr+</option>
             </select>
           </div>
+          <div>
+            <label class="block font-medium mb-1">Language Preference</label>
+            <select name="language" class="w-full border p-2 pl-4 rounded-2xl" required>
+              <option value="">Select the language</option>
+              <option value="english">English</option>
+              <option value="hindi">Hindi</option>
+              <option value="telugu">Telugu</option>
+              <option value="malayalam">Malayalam</option>
+            </select>
+          </div>
           <div class="text-center">
             <button type="submit"
               class="w-full max-w-xs md:w-auto text-white font-bold px-6 py-3 mt-4 mb-4 rounded-2xl transition mx-auto"
@@ -164,11 +174,12 @@
         phone_number: form.phone_number.value,
         email: form.email.value,
         amount: form.amount.value,
-        portfolio_size: form.portfolio_size.value
+        portfolio_size: form.portfolio_size.value,
+        language: form.language.value,
       };
 
       try {
-        const response = await fetch("https://api.labh.io/open/api/leads", {
+        const response = await fetch("https://devapi.labh.io/open/api/leads", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
