@@ -45,8 +45,21 @@ function renderHomeScreenBottomButton() {
         .removeClass("d-none");
 }
 
+function clearFrom() {
+    $("#bank-form")
+        .find("input, select, textarea")
+        .each(function () {
+            if ($(this).is(":checkbox") || $(this).is(":radio")) {
+                $(this).prop("checked", false);
+            } else {
+                $(this).val("");
+            }
+        });
+}
+
 function renderFormScreenBottomButton() {
     $("#button").text("Add Bank").removeClass("bank-add-button");
+    clearFrom();
 }
 
 function renderBankAccounts(addHistory = true) {
@@ -76,20 +89,25 @@ function renderBankAccounts(addHistory = true) {
             renderHomeScreenBottomButton();
             $(".list-screen").empty();
             response.forEach((account) => {
+                console.log(account.is_default);
+
+                const deleteButton = `
+                    <div class="delete" onclick="deleteBankAccountPrompt(${account.id})">
+                        <img src="${ASSETS_URL}/assets/mobile-webview/delete-vector.png" alt="delete-icon">
+                    </div>
+                `;
                 const verifyCard = `
                     <div class="l-header d-flex justify-content-between">
                         <div class="verified d-flex justify-content-left align-items-center gap-1">
                             <img src="${ASSETS_URL}/assets/mobile-webview/Group 2369.png" alt="verified image">
                             <span>Primary</span>
                         </div>
-                        <div class="delete" onclick="deleteBankAccountPrompt(${account.id})">
-                            <img src="${ASSETS_URL}/assets/mobile-webview/delete-vector.png" alt="delete-icon">
-                        </div>
-                    </div>
-                `;
-                const deleteButton = `
-                    <div class="delete" onclick="deleteBankAccountPrompt(${account.id})">
-                        <img src="${ASSETS_URL}/assets/mobile-webview/delete-vector.png" alt="delete-icon">
+                        ${
+                            account.is_default === "N" ||
+                            account.is_default === null
+                                ? deleteButton
+                                : "<div></div>"
+                        }
                     </div>
                 `;
                 const bankCard = `
@@ -105,7 +123,8 @@ function renderBankAccounts(addHistory = true) {
                                 <span>${account.bank_name}</span>
                             </div>
                             ${
-                                account.is_default === "N"
+                                account.is_default === "N" ||
+                                account.is_default === null
                                     ? deleteButton
                                     : "<div></div>"
                             }
