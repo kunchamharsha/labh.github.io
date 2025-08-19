@@ -14,6 +14,7 @@ body {
     position: sticky;
     top: 0;
     background: black;
+    padding-right: calculate-rem(20);
     .logo {
         img {
             width: calculate-rem(107);
@@ -22,6 +23,8 @@ body {
     }
     .go-back {
         margin-top: calculate-rem(46);
+        padding-bottom: calculate-rem(20);
+        border-bottom: 0.5px solid grey;
         img {
             width: calculate-rem(21);
             height: calculate-rem(21);
@@ -151,16 +154,36 @@ $padding-lef-right: calculate-rem(28);
         padding: calculate-rem(20) calculate-rem(16);
     }
 
+    .l-header {
+        margin-bottom: calculate-rem(20);
+        .verified {
+            img {
+                width: calculate-rem(15);
+                height: calculate-rem(15);
+            }
+            span {
+                font-size: calculate-rem(12);
+            }
+        }
+    }
+
     .d {
         margin-bottom: calculate-rem(20);
         span {
-            font-weight: 700;
+            font-weight: 600;
             font-size: calculate-rem(16);
         }
 
         img {
             width: calculate-rem(26);
             height: calculate-rem(26);
+        }
+    }
+
+    .delete {
+        img {
+            width: calculate-rem(19);
+            height: calculate-rem(19);
         }
     }
 

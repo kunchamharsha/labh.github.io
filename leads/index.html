@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/assets/logo.svg" type="image/x-icon" />
+    <title>Labh | 2000% Backtested Returns</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+    select {
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg fill='%23666' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.8rem center; 
+      background-size: 1.2em;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-right: 2.5rem; 
+    }
+  </style>
+  </head>
+  <body class="bg-white font-sans text-gray-900">
+    <!-- Header -->
+    <header class="flex justify-between items-center px-6 py-4 bg-purple-100">
+      <div class="absolute left-1/2 transform -translate-x-1/2 mt-6 flex items-center gap-2 text-2xl font-bold text-black-600">
+        <img src="https://cms-labh-bucket.s3.ap-south-2.amazonaws.com/cms_images/LOGO.png" alt="Labh Logo" class="w-8 h-8" />
+        Labh
+      </div>
+      <div class="w-8 h-8"></div>
+      <a href="#cta" class="hidden md:inline-block text-purple-600 font-medium border border-purple-600 mt-6 px-4 py-1 rounded-full hover:bg-purple-200 transition">
+        Get started
+      </a>
+    </header>
+
+    <!-- Hero -->
+    <section class="bg-purple-100 py-8 px-6">
+      <h1 class="text-4xl font-bold mb-4 text-center">2000% Back Tested Returns vs 673% Nifty Returns</h1>
+      <p class="text-lg mb-6 text-center">Mutual Fund Baskets That Actually Work - Built by PhDs, CFAs, and Quant Engineers.</p>
+
+      <div class="flex flex-col items-center gap-4">
+        <a href="#cta"
+          class="w-full max-w-xs md:w-auto text-white px-6 py-3 rounded-lg font-bold transition text-center"
+          style="background-color: #A663FF;"
+          onmouseover="this.style.backgroundColor='#944DFF'"
+          onmouseout="this.style.backgroundColor='#A663FF'">
+          Start Investing Now
+        </a>
+
+        <!-- Get Started (mobile only) -->
+        <a href="#cta"
+          class="w-full max-w-xs md:hidden text-purple-600 font-medium border border-purple-600 px-6 py-3 rounded-lg hover:bg-purple-200 transition text-center">
+          Get started
+        </a>
+      </div>
+    </section>
+
+
+    <section class="py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div class="bg-white rounded-xl shadow p-6 border">
+        <h3 class="text-lg font-semibold flex items-center gap-2">
+          <img src="/assets/basket_icon.png" alt="Basket Icon" class="w-5 h-5" />
+          Edge 3 Basket
+        </h3>
+        <p class="mt-2 text-gray-800 opacity-80 font-bold">Backtested returns: <span class="text-purple-600 opacity-80">2000%</span></p>
+        <p class="text-gray-600">₹1 lakh → ₹21 lakh in 16 years</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6 border">
+        <h3 class="text-lg font-semibold flex items-center gap-2">
+          <img src="/assets/basket_icon.png" alt="Basket Icon" class="w-5 h-5" />
+          Edge X Basket
+        </h3>
+        <p class="mt-2 text-gray-800 opacity-80 font-bold">Backtested returns: <span class="text-purple-600 opacity-80">1800%</span></p>
+        <p class="text-gray-600">₹1 lakh → ₹19 lakh in 16 years</p>
+      </div>
+    </section>
+
+    <section class="py-12 bg-white text-center px-6">
+      <h2 class="text-2xl font-bold mb-6">Why Invest With Labh?</h2>
+      <ul class="text-left w-full max-w-md mx-auto space-y-3 text-gray-700">
+        <li class="flex items-start gap-2">
+          <span class="mt-1">✔</span>
+          <span>Mutual Funds curated by advanced quantitative research</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="mt-1">✔</span>
+          <span>Auto-Rebalancing portfolios for best returns</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="mt-1">✔</span>
+          <span>AMFI-registered distributed & SEBI - compliant research</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="mt-1">✔</span>
+          <span>Easy investing via our secure app</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CTA Form -->
+    <section id="cta" class="text-white py-12" style="background-color: #A663FF;">
+      <div class="max-w-2xl mx-auto px-6 sm:px-8">
+        <h2 class="text-2xl font-bold mb-2 text-center">Get A Personalized Basket Recommendation</h2>
+        <p class="mb-6 text-center">Fill in your details and our team will reach out with a custom plan.</p>
+        <form action="#" method="POST" class="bg-white text-gray-900 rounded-2xl p-4 sm:p-6 space-y-4 shadow">
+          <div>
+            <label class="block font-medium mb-1 mt-4">Name</label>
+            <input type="text" name="name" placeholder="Enter Your Full Name" class="w-full border p-2 pl-4 rounded-2xl" required />
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Phone Number</label>
+            <input type="tel" name="phone_number" pattern="[0-9]{10}" placeholder="10-Digit Mobile Number" class="w-full border p-2 pl-4 rounded-2xl" required />
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Enter Email ID</label>
+            <input type="email" name="email" placeholder="Example@Gmail.Com" class="w-full border p-2 pl-4 rounded-2xl" required />
+          </div>
+          <div>
+            <label class="block font-medium mb-1">How Much Do You Want To Invest?</label>
+            <select name="amount" class="w-full border p-2 pl-4 rounded-2xl" required>
+              <option value="">Select Account</option>
+              <option value="1L-5L">₹1L – ₹5L</option>
+              <option value="5L-10L">₹5L – ₹10L</option>
+              <option value="10L-25L">₹10L – ₹25L</option>
+              <option value="25L+">₹25L+</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-medium mb-1">What is your current portfolio size?</label>
+            <select name="portfolio_size" class="w-full border p-2 pl-4 rounded-2xl" required>
+              <option value="">Select Portfolio Size</option>
+              <option value="0-5L">₹0 - ₹5L</option>
+              <option value="5L-25L">₹5L - ₹25L</option>
+              <option value="25L-1Cr">₹25L - ₹1Cr</option>
+              <option value="1Cr+">₹1Cr+</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Language Preference</label>
+            <select name="language" class="w-full border p-2 pl-4 rounded-2xl" required>
+              <option value="">Select the language</option>
+              <option value="english">English</option>
+              <option value="hindi">Hindi</option>
+              <option value="telugu">Telugu</option>
+              <option value="malayalam">Malayalam</option>
+            </select>
+          </div>
+          <div class="text-center">
+            <button type="submit"
+              class="w-full max-w-xs md:w-auto text-white font-bold px-6 py-3 mt-4 mb-4 rounded-2xl transition mx-auto"
+              style="background-color: #A663FF;"
+              onmouseover="this.style.backgroundColor='#944DFF'"
+              onmouseout="this.style.backgroundColor='#A663FF'">
+              Submit & Get Basket
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="bg-gray-100 py-4 text-center text-sm text-gray-600">
+      © 2025 Labh. All rights reserved. <br />
+      Mutual fund investments are subject to market risks. Past performance is not indicative of future returns.
+    </footer>
+  </body>
+  <script>
+    document.querySelector("form").addEventListener("submit", async function (e) {
+      e.preventDefault(); 
+
+      const form = e.target;
+
+      const data = {
+        name: form.name.value,
+        phone_number: form.phone_number.value,
+        email: form.email.value,
+        amount: form.amount.value,
+        portfolio_size: form.portfolio_size.value,
+        language: form.language.value,
+      };
+
+      try {
+        const response = await fetch("https://api.labh.io/open/api/leads", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            gtag("event", "conversion", {
+                  send_to: "AW-16592797832/Xg7XCKiBhPIaEIiBiOg9",
+                  value: 1.0,
+                  currency: "INR",
+              });
+          alert("Form submitted successfully!");
+          form.reset();
+          window.location.href = `https://api.labh.io/get-app/?campaign=leads&source=leads-page&medium=web&status=redirect&email=${data.email}`
+        } else {
+          response.json().then(data => {
+            alert(data.error || "Something went wrong. Please try again.");
+          });
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("Something went wrong. Please try again later.");
+      }
+    });
+  </script>
+  
+  <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-WZBYHK4HSX"
+  ></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-WZBYHK4HSX");
+    </script>
+</html>
