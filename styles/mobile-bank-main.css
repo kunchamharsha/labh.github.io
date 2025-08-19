@@ -34,6 +34,10 @@ body {
 .header {
   padding-top: 2.375rem;
   padding-left: 1.25rem;
+  padding-bottom: 0.625rem;
+  position: sticky;
+  top: 0;
+  background: black;
   padding-right: 1.25rem;
 }
 .header .logo img {
@@ -66,7 +70,7 @@ body {
 }
 .contents .button-container {
   position: fixed;
-  bottom: 1.25rem;
+  bottom: 2.5rem;
   left: 0;
   width: 100%;
   padding: 0 1.75rem;
@@ -75,7 +79,7 @@ body {
   width: -webkit-fill-available;
   height: 2.875rem;
   background-color: #a663ff;
-  border-radius: 2.5rem;
+  border-radius: 1.25rem;
   font-size: 0.875rem;
   font-weight: 600;
 }
@@ -91,6 +95,10 @@ body {
 }
 .c-warning .helper-container {
   margin-top: 2.375rem;
+}
+.c-warning .helper-container img,
+.c-warning .helper-container span {
+  margin-bottom: 0.6875rem;
 }
 .c-warning .help {
   font-weight: 500;
@@ -114,7 +122,8 @@ body {
   margin-bottom: 1.5625rem;
   margin-top: 2.375rem;
 }
-.form-screen input {
+.form-screen input,
+.form-screen textarea {
   border-radius: 2.5rem;
   height: 2.5625rem;
   background-color: rgba(206, 203, 255, 0.2);
@@ -122,16 +131,25 @@ body {
   margin-bottom: 0.875rem;
   color: #cecbff;
 }
-.form-screen input::placeholder {
+.form-screen input::placeholder,
+.form-screen textarea::placeholder {
   color: rgba(206, 203, 255, 0.4);
   font-weight: 600;
   font-size: 0.875rem;
 }
-.form-screen input:focus {
+.form-screen input:focus,
+.form-screen textarea:focus {
   background-color: rgba(206, 203, 255, 0.2);
   outline: none;
   color: #cecbff;
   font-weight: 600;
+}
+.form-screen textarea {
+  height: 6.8125rem;
+  border-radius: 1.25rem;
+}
+.form-screen .error {
+  border: 1px solid red;
 }
 
 .list-screen {
@@ -166,6 +184,7 @@ body {
 .list-screen .d img {
   width: 1.625rem;
   height: 1.625rem;
+  border-radius: 0.25rem;
 }
 .list-screen .delete img {
   width: 1.1875rem;
@@ -186,8 +205,65 @@ body {
   color: rgba(245, 245, 245, 0.8);
 }
 
-.contents .bank-add-button {
+.modal-container {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6705882353);
+  z-index: 10;
+}
+.modal-container .c-modal {
+  padding: 0 2rem;
+  padding-top: 2.25rem;
+  height: 14.8125rem;
+  width: 100%;
+  background: white;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  transform: translateY(100%);
+  transition: transform 0.1s ease-out;
+}
+.modal-container .c-modal h4 {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+.modal-container .c-modal img {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+.modal-container .c-modal .contents {
+  padding: 0;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: rgba(17, 17, 17, 0.6980392157);
+}
+.modal-container .c-modal .button-container .button {
+  background: rgba(17, 17, 17, 0.1215686275);
+  color: #111111;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.modal-container .c-modal .button-container .remove {
+  background: #ff615f;
+  color: #ffffff;
+}
+.modal-container .c-modal .button-container .normal {
+  background: #a663ff;
+  color: #ffffff;
+}
+.modal-container .remove h4 {
+  color: #ff615f;
+}
+.modal-container .success h4 {
+  color: #168465;
+}
+
+.contents .secondary-button {
   background: rgba(206, 203, 255, 0.2);
+}
+.contents .bank-add-button {
   color: #cecbff;
 }
 .contents .bank-add-button img {
@@ -196,7 +272,8 @@ body {
   margin-right: 0.3125rem;
 }
 .contents #banner svg {
-  height: 25rem !important;
+  height: 39.25rem !important;
+  margin-top: -5rem;
 }
 
 .success-screen {
@@ -215,6 +292,12 @@ body {
   margin-top: 8.75rem;
   width: 16.4375rem;
   height: 16.6875rem;
+}
+.c-warning .helper-container {
+  margin-top: -4rem;
+}
+.c-warning .help {
+  padding: 0 1.25rem;
 }
 
 .list-screen .d .verified img {

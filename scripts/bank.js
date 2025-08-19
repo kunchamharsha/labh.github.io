@@ -41,7 +41,7 @@ function renderHomeScreenBottomButton() {
             `<img src="${ASSETS_URL}/assets/mobile-webview/mdi_bank-outline.png" alt="add-bank-icon">
                 Add New Bank Account`
         )
-        .addClass("bank-add-button")
+        .addClass("bank-add-button secondary-button")
         .removeClass("d-none");
 }
 

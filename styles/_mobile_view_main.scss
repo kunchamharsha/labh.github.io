@@ -52,7 +52,7 @@ $padding-lef-right: calculate-rem(28);
 
     .button-container {
         position: fixed;
-        bottom: calculate-rem(20);
+        bottom: calculate-rem(40);
         left: 0;
         width: 100%;
         padding: 0 $padding-lef-right;
@@ -62,7 +62,7 @@ $padding-lef-right: calculate-rem(28);
         width: -webkit-fill-available;
         height: calculate-rem(46);
         background-color: #a663ff;
-        border-radius: calculate-rem(40);
+        border-radius: calculate-rem(20);
         font-size: calculate-rem(14);
         font-weight: 600;
     }
@@ -80,6 +80,10 @@ $padding-lef-right: calculate-rem(28);
     }
     .helper-container {
         margin-top: calculate-rem(38);
+        img,
+        span {
+            margin-bottom: calculate-rem(11);
+        }
     }
     .help {
         font-weight: 500;
@@ -177,6 +181,7 @@ $padding-lef-right: calculate-rem(28);
         img {
             width: calculate-rem(26);
             height: calculate-rem(26);
+            border-radius: calculate-rem(4);
         }
     }
 

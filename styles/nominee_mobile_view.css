@@ -38,6 +38,7 @@ body {
   position: sticky;
   top: 0;
   background: black;
+  padding-right: 1.25rem;
 }
 .header .logo img {
   width: 6.6875rem;
@@ -45,6 +46,8 @@ body {
 }
 .header .go-back {
   margin-top: 2.875rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 0.5px solid grey;
 }
 .header .go-back img {
   width: 1.3125rem;
@@ -67,7 +70,7 @@ body {
 }
 .contents .button-container {
   position: fixed;
-  bottom: 1.25rem;
+  bottom: 2.5rem;
   left: 0;
   width: 100%;
   padding: 0 1.75rem;
@@ -76,7 +79,7 @@ body {
   width: -webkit-fill-available;
   height: 2.875rem;
   background-color: #a663ff;
-  border-radius: 2.5rem;
+  border-radius: 1.25rem;
   font-size: 0.875rem;
   font-weight: 600;
 }
@@ -92,6 +95,10 @@ body {
 }
 .c-warning .helper-container {
   margin-top: 2.375rem;
+}
+.c-warning .helper-container img,
+.c-warning .helper-container span {
+  margin-bottom: 0.6875rem;
 }
 .c-warning .help {
   font-weight: 500;
@@ -157,16 +164,31 @@ body {
   border: 0.4px solid rgba(167, 99, 255, 0.5215686275);
   padding: 1.25rem 1rem;
 }
+.list-screen .l-header {
+  margin-bottom: 1.25rem;
+}
+.list-screen .l-header .verified img {
+  width: 0.9375rem;
+  height: 0.9375rem;
+}
+.list-screen .l-header .verified span {
+  font-size: 0.75rem;
+}
 .list-screen .d {
   margin-bottom: 1.25rem;
 }
 .list-screen .d span {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1rem;
 }
 .list-screen .d img {
   width: 1.625rem;
   height: 1.625rem;
+  border-radius: 0.25rem;
+}
+.list-screen .delete img {
+  width: 1.1875rem;
+  height: 1.1875rem;
 }
 .list-screen .c-button {
   height: 2.5625rem;

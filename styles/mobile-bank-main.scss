@@ -1,8 +1,10 @@
 @import "mobile_view_main";
 
 .contents {
-    .bank-add-button {
+    .secondary-button {
         background: #cecbff33;
+    }
+    .bank-add-button {
         color: #cecbff;
         img {
             width: calculate-rem(24);
@@ -13,7 +15,8 @@
 
     #banner {
         svg {
-            height: calculate-rem(400) !important;
+            height: calculate-rem(628) !important;
+            margin-top: calculate-rem(-80);
         }
     }
 }
@@ -46,6 +49,14 @@
         margin-top: calculate-rem(140);
         width: calculate-rem(263);
         height: calculate-rem(267);
+    }
+
+    .helper-container {
+        margin-top: calculate-rem(-64);
+    }
+
+    .help {
+        padding: 0 calculate-rem(20);
     }
 }
 
