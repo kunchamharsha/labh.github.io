@@ -10,6 +10,10 @@ body {
 .header {
     padding-top: calculate-rem(38);
     padding-left: calculate-rem(20);
+    padding-bottom: calculate-rem(10);
+    position: sticky;
+    top: 0;
+    background: black;
     padding-right: calculate-rem(20);
     .logo {
         img {
@@ -101,7 +105,8 @@ $padding-lef-right: calculate-rem(28);
         margin-bottom: calculate-rem(25);
         margin-top: calculate-rem(38);
     }
-    input {
+    input,
+    textarea {
         border-radius: calculate-rem(40);
         height: calculate-rem(41);
         background-color: #cecbff33;
@@ -109,16 +114,25 @@ $padding-lef-right: calculate-rem(28);
         margin-bottom: calculate-rem(14);
         color: #cecbff;
     }
-    input::placeholder {
+    input::placeholder,
+    textarea::placeholder {
         color: #cecbff66;
         font-weight: 600;
         font-size: calculate-rem(14);
     }
-    input:focus {
+    input:focus,
+    textarea:focus {
         background-color: #cecbff33;
         outline: none;
         color: #cecbff;
         font-weight: 600;
+    }
+    textarea {
+        height: calculate-rem(109);
+        border-radius: calculate-rem(20);
+    }
+    .error {
+        border: 1px solid red;
     }
 }
 
@@ -187,6 +201,75 @@ $padding-lef-right: calculate-rem(28);
             font-weight: 600;
             font-size: calculate-rem(14);
             color: #f5f5f5cc;
+        }
+    }
+}
+
+.modal-container {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #000000ab;
+    z-index: 10;
+    .c-modal {
+        padding: 0 calculate-rem(32);
+        padding-top: calculate-rem(36);
+        height: calculate-rem(237);
+        width: 100%;
+        background: white;
+        border-top-left-radius: calculate-rem(32);
+        border-top-right-radius: calculate-rem(32);
+        transform: translateY(100%);
+        transition: transform 0.1s ease-out;
+
+        h4 {
+            font-weight: 600;
+            font-size: calculate-rem(18);
+        }
+
+        img {
+            width: calculate-rem(28);
+            height: calculate-rem(28);
+            margin-bottom: calculate-rem(20);
+        }
+
+        .contents {
+            padding: 0;
+            font-weight: 500;
+            font-size: calculate-rem(14);
+            color: #111111b2;
+        }
+
+        .button-container {
+            .button {
+                background: #1111111f;
+                color: #111111;
+                font-size: calculate-rem(14);
+                font-weight: 600;
+            }
+
+            .remove {
+                background: #ff615f;
+                color: #ffffff;
+            }
+
+            .normal {
+                background: #a663ff;
+                color: #ffffff;
+            }
+        }
+    }
+
+    .remove {
+        h4 {
+            color: #ff615f;
+        }
+    }
+
+    .success {
+        h4 {
+            color: #168465;
         }
     }
 }
