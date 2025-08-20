@@ -41,16 +41,31 @@ function renderHomeScreenBottomButton() {
             `<img src="${ASSETS_URL}/assets/mobile-webview/mdi_bank-outline.png" alt="add-bank-icon">
                 Add New Bank Account`
         )
-        .addClass("bank-add-button")
+        .addClass("bank-add-button secondary-button")
         .removeClass("d-none");
+}
+
+function clearFrom() {
+    $("#bank-form")
+        .find("input, select, textarea")
+        .each(function () {
+            if ($(this).is(":checkbox") || $(this).is(":radio")) {
+                $(this).prop("checked", false);
+            } else {
+                $(this).val("");
+            }
+        });
 }
 
 function renderFormScreenBottomButton() {
     $("#button").text("Add Bank").removeClass("bank-add-button");
+    clearFrom();
 }
 
 function renderBankAccounts(addHistory = true) {
     $(".loader-overlay").show();
+    $("#bottom-button").addClass("d-none");
+    $("#add-account-button").removeClass("d-none");
     $.ajax({
         url: DOMAIN + "/api/kyc/bank",
         type: "GET",
@@ -76,20 +91,25 @@ function renderBankAccounts(addHistory = true) {
             renderHomeScreenBottomButton();
             $(".list-screen").empty();
             response.forEach((account) => {
+                console.log(account.is_default);
+
+                const deleteButton = `
+                    <div class="delete d-flex align-items-center" onclick="deleteBankAccountPrompt(${account.id})">
+                        <img src="${ASSETS_URL}/assets/mobile-webview/delete-vector.png" alt="delete-icon">
+                    </div>
+                `;
                 const verifyCard = `
                     <div class="l-header d-flex justify-content-between">
                         <div class="verified d-flex justify-content-left align-items-center gap-1">
                             <img src="${ASSETS_URL}/assets/mobile-webview/Group 2369.png" alt="verified image">
                             <span>Primary</span>
                         </div>
-                        <div class="delete" onclick="deleteBankAccountPrompt(${account.id})">
-                            <img src="${ASSETS_URL}/assets/mobile-webview/delete-vector.png" alt="delete-icon">
-                        </div>
-                    </div>
-                `;
-                const deleteButton = `
-                    <div class="delete" onclick="deleteBankAccountPrompt(${account.id})">
-                        <img src="${ASSETS_URL}/assets/mobile-webview/delete-vector.png" alt="delete-icon">
+                        ${
+                            account.is_default === "N" ||
+                            account.is_default === null
+                                ? deleteButton
+                                : "<div></div>"
+                        }
                     </div>
                 `;
                 const bankCard = `
@@ -100,12 +120,13 @@ function renderBankAccounts(addHistory = true) {
                                 : "<div></div>"
                         }
                         <div class="d d-flex justify-content-between gap-3">
-                            <div class="d-flex justify-content-left gap-2">
-                                <img src="https://cms-labh-bucket.s3.ap-south-2.amazonaws.com/mobile-webview-assets/default-bank.svg" alt="logo">
+                            <div class="d-flex justify-content-left align-items-center gap-2">
+                                <img src="${account.image_url}" alt="logo">
                                 <span>${account.bank_name}</span>
                             </div>
                             ${
-                                account.is_default === "N"
+                                account.is_default === "N" ||
+                                account.is_default === null
                                     ? deleteButton
                                     : "<div></div>"
                             }
@@ -175,6 +196,9 @@ function back() {
 
 function renderBankForm() {
     updatePrevPages(page);
+    $("#bottom-button").removeClass("d-none");
+    $("#bottom-button .button").removeClass("secondary-button")
+    $("#add-account-button").addClass("d-none");
     page = pages[2];
     hideAllScreens();
     $(".form-screen").removeClass("d-none");
@@ -312,6 +336,10 @@ $("#button").on("click", function () {
 
 $(".close-modal").on("click", function () {
     hideModals();
+});
+
+$("#add-account-button").on("click", function () {
+    renderBankForm();
 });
 
 $("#remove-account").on("click", function () {
