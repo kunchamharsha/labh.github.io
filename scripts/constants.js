@@ -1,5 +1,5 @@
 const DOMAIN = "https://devapi.labh.io";
-const ASSETS_URL = "https://devapi.labh.io";
+const ASSETS_URL = "https://labh.io";
 
 
 function getCookie(name) {
