@@ -125,17 +125,18 @@ body {
 .form-screen input,
 .form-screen textarea {
   border-radius: 2.5rem;
-  height: 2.5625rem;
+  height: 3.1875rem;
   background-color: rgba(206, 203, 255, 0.2);
   border: 0px;
   margin-bottom: 0.875rem;
   color: #cecbff;
+  padding-left: 1.5rem;
 }
 .form-screen input::placeholder,
 .form-screen textarea::placeholder {
   color: rgba(206, 203, 255, 0.4);
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
 }
 .form-screen input:focus,
 .form-screen textarea:focus {

@@ -66,6 +66,8 @@ function renderBankAccounts(addHistory = true) {
     $(".loader-overlay").show();
     $("#bottom-button").addClass("d-none");
     $("#add-account-button").removeClass("d-none");
+
+    $(".go-back").css("opacity", "1");
     $.ajax({
         url: DOMAIN + "/api/kyc/bank",
         type: "GET",
@@ -161,6 +163,7 @@ function renderSuccessScreen() {
     hideAllScreens();
     $(".success-screen").removeClass("d-none");
     $("#button").addClass("d-none");
+    $(".go-back").css("opacity", "0");
 }
 
 function renderLottie() {
@@ -209,7 +212,7 @@ function submitBankForm() {
     const acccountNumber = $("#account-number").val();
     const ifsc = $("#ifsc-code").val();
     if (acccountNumber === "" || ifsc === "") {
-        showErrors("Error", "Please fill all the fields");
+        showErrors("Missing Information", "Please fill in all the required fields to continue", "Enter Details");
         return;
     }
     const data = {
@@ -235,11 +238,11 @@ function submitBankForm() {
             console.error("Error:", error);
             response = error.responseJSON;
             if (response.account_number) {
-                showErrors("Error", response.account_number);
+                showErrors("Invalid Bank Details", "The account number or IFSC code seems incorrect. Please check and try again.", "Try Again");
             } else if (response.ifsc_code) {
-                showErrors("Error", response.ifsc_code);
+                showErrors("Invalid Bank Details", "The account number or IFSC code seems incorrect. Please check and try again.", "Try Again");
             } else {
-                showErrors("Error", "Something went wrong!");
+                showErrors("Error", "Something went wrong!", "Try Again");
             }
         },
     });
@@ -306,12 +309,18 @@ function deleteBankAccount(id) {
     });
 }
 
-function showErrors(heading, description) {
+function showErrors(heading, description, close_text) {
+    if (heading == "Missing Information") {
+        $('.c-modal').css("height", "14.8125rem")
+    } else {
+        $('.c-modal').css("height", "16.8125rem")
+    }
     $(".c-modal").addClass("d-none"); // first we want to hide other c-modals.
     $(".modal-container").removeClass("d-none");
     $("#error-modal").removeClass("d-none");
     $("#error-heading").text(heading);
     $("#error-description").text(description);
+    $("#close").text(close_text)
     setTimeout(() => {
         $(".c-modal").addClass("show");
     }, 10);
