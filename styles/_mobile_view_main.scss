@@ -113,17 +113,18 @@ $padding-lef-right: calculate-rem(28);
     input,
     textarea {
         border-radius: calculate-rem(40);
-        height: calculate-rem(41);
+        height: calculate-rem(51);
         background-color: #cecbff33;
         border: 0px;
         margin-bottom: calculate-rem(14);
         color: #cecbff;
+        padding-left: calculate-rem(24);
     }
     input::placeholder,
     textarea::placeholder {
         color: #cecbff66;
         font-weight: 600;
-        font-size: calculate-rem(14);
+        font-size: calculate-rem(15);
     }
     input:focus,
     textarea:focus {
