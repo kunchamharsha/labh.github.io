@@ -58,7 +58,7 @@ body {
   font-size: 1rem;
 }
 .header .go-back .details .b {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.6980392157);
 }
@@ -113,7 +113,8 @@ body {
 .form-screen label {
   color: rgba(245, 245, 245, 0.8);
   margin-bottom: 0.75rem;
-  font-size: 0.875rem;
+  font-size: 1.0625rem;
+  font-weight: 500;
 }
 .form-screen .title {
   font-weight: 600;

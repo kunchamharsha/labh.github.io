@@ -136,7 +136,7 @@ function renderBankAccounts(addHistory = true) {
                             <div class="account-number">${
                                 account.account_number
                             }</div>
-                            <div class="label">IFSC: </div>
+                            <div class="label" style='margin-top: 10px;'>IFSC: </div>
                             <div class="ifsc-code">${account.ifsc_code}</div>
                         </div>
                     </div>
@@ -239,7 +239,7 @@ function submitBankForm() {
             } else if (response.ifsc_code) {
                 showErrors("Error", response.ifsc_code);
             } else {
-                showErrors("Error", response);
+                showErrors("Error", "Something went wrong!");
             }
         },
     });
@@ -362,5 +362,6 @@ $("#done").on("click", function () {
 });
 
 $(".loader-overlay").hide();
+renderHomeScreen();
 renderBankAccounts();
 renderLottie();

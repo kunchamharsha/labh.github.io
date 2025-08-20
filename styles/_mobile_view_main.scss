@@ -36,7 +36,7 @@ body {
                 font-size: calculate-rem(16);
             }
             .b {
-                font-weight: 400;
+                font-weight: 500;
                 font-size: calculate-rem(14);
                 color: #ffffffb2;
             }
@@ -101,7 +101,8 @@ $padding-lef-right: calculate-rem(28);
     label {
         color: #f5f5f5cc;
         margin-bottom: calculate-rem(12);
-        font-size: calculate-rem(14);
+        font-size: calculate-rem(17);
+        font-weight: 500;
     }
     .title {
         font-weight: 600;

@@ -53,6 +53,7 @@
 
     .helper-container {
         margin-top: calculate-rem(-64);
+        margin-bottom: calculate-rem(20);
     }
 
     .help {
@@ -75,12 +76,12 @@
     }
 
     .u-d {
-        font-size: calculate-rem(16);
+        font-size: calculate-rem(18);
         font-weight: 600;
         color: rgba(245, 245, 245, 0.8);
         // letter-spacing: calculate-rem(4);
         .label {
-            font-size: calculate-rem(12);
+            font-size: calculate-rem(14);
             font-weight: 700;
         }
     }
@@ -115,7 +116,7 @@
     .c-modal {
         padding: 0 calculate-rem(32);
         padding-top: calculate-rem(36);
-        height: calculate-rem(237);
+        height: calculate-rem(269);
         width: 100%;
         background: #211433;
         border-top-left-radius: calculate-rem(32);
@@ -142,7 +143,7 @@
         }
 
         .button-container {
-            bottom: calculate-rem(20);
+            bottom: calculate-rem(40);
             .button {
                 background: #FFFFFF1F;
                 color: #FFFFFF;
