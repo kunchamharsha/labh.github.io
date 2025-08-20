@@ -34,7 +34,6 @@ body {
 .header {
   padding-top: 2.375rem;
   padding-left: 1.25rem;
-  padding-bottom: 0.625rem;
   position: sticky;
   top: 0;
   background: black;
@@ -50,17 +49,17 @@ body {
   border-bottom: 0.5px solid grey;
 }
 .header .go-back img {
-  width: 1.3125rem;
-  height: 1.3125rem;
+  width: 1.5625rem;
+  height: 1.5625rem;
   margin-right: 0.8125rem;
 }
 .header .go-back .details .h {
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 .header .go-back .details .b {
-  font-weight: 500;
-  font-size: 0.75rem;
+  font-weight: 400;
+  font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.6980392157);
 }
 
@@ -140,8 +139,8 @@ body {
 .form-screen input:focus,
 .form-screen textarea:focus {
   background-color: rgba(206, 203, 255, 0.2);
-  outline: none;
   color: #cecbff;
+  box-shadow: none;
   font-weight: 600;
 }
 .form-screen textarea {
@@ -154,7 +153,7 @@ body {
 
 .list-screen {
   margin-top: 1.5625rem;
-  padding-bottom: 5rem;
+  padding-bottom: 0.625rem;
 }
 .list-screen .list {
   width: 100%;
@@ -179,16 +178,16 @@ body {
 }
 .list-screen .d span {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 .list-screen .d img {
-  width: 1.625rem;
-  height: 1.625rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 0.25rem;
 }
 .list-screen .delete img {
-  width: 1.1875rem;
-  height: 1.1875rem;
+  width: 0.9375rem;
+  height: 1rem;
 }
 .list-screen .c-button {
   height: 2.5625rem;

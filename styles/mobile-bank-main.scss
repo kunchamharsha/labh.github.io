@@ -75,13 +75,13 @@
     }
 
     .u-d {
-        font-size: calculate-rem(14);
-        font-weight: 400;
+        font-size: calculate-rem(16);
+        font-weight: 600;
         color: rgba(245, 245, 245, 0.8);
         // letter-spacing: calculate-rem(4);
         .label {
             font-size: calculate-rem(12);
-            font-weight: 600;
+            font-weight: 700;
         }
     }
 
@@ -117,7 +117,7 @@
         padding-top: calculate-rem(36);
         height: calculate-rem(237);
         width: 100%;
-        background: white;
+        background: #211433;
         border-top-left-radius: calculate-rem(32);
         border-top-right-radius: calculate-rem(32);
         transform: translateY(100%);
@@ -138,13 +138,14 @@
             padding: 0;
             font-weight: 500;
             font-size: calculate-rem(14);
-            color: #111111b2;
+            color: #FFFFFFB2;
         }
 
         .button-container {
+            bottom: calculate-rem(20);
             .button {
-                background: #1111111f;
-                color: #111111;
+                background: #FFFFFF1F;
+                color: #FFFFFF;
                 font-size: calculate-rem(14);
                 font-weight: 600;
             }

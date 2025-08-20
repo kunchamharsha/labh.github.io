@@ -10,7 +10,7 @@ body {
 .header {
     padding-top: calculate-rem(38);
     padding-left: calculate-rem(20);
-    padding-bottom: calculate-rem(10);
+    // padding-bottom: calculate-rem(10);
     position: sticky;
     top: 0;
     background: black;
@@ -26,18 +26,18 @@ body {
         padding-bottom: calculate-rem(20);
         border-bottom: 0.5px solid grey;
         img {
-            width: calculate-rem(21);
-            height: calculate-rem(21);
+            width: calculate-rem(25);
+            height: calculate-rem(25);
             margin-right: calculate-rem(13);
         }
         .details {
             .h {
                 font-weight: 600;
-                font-size: calculate-rem(14);
+                font-size: calculate-rem(16);
             }
             .b {
-                font-weight: 500;
-                font-size: calculate-rem(12);
+                font-weight: 400;
+                font-size: calculate-rem(14);
                 color: #ffffffb2;
             }
         }
@@ -127,8 +127,8 @@ $padding-lef-right: calculate-rem(28);
     input:focus,
     textarea:focus {
         background-color: #cecbff33;
-        outline: none;
         color: #cecbff;
+        box-shadow: none;
         font-weight: 600;
     }
     textarea {
@@ -142,7 +142,7 @@ $padding-lef-right: calculate-rem(28);
 
 .list-screen {
     margin-top: calculate-rem(25);
-    padding-bottom: calculate-rem(80);
+    padding-bottom: calculate-rem(10);
 
     .list {
         width: 100%;
@@ -175,20 +175,20 @@ $padding-lef-right: calculate-rem(28);
         margin-bottom: calculate-rem(20);
         span {
             font-weight: 600;
-            font-size: calculate-rem(16);
+            font-size: calculate-rem(18);
         }
 
         img {
-            width: calculate-rem(26);
-            height: calculate-rem(26);
+            width: calculate-rem(24);
+            height: calculate-rem(24);
             border-radius: calculate-rem(4);
         }
     }
 
     .delete {
         img {
-            width: calculate-rem(19);
-            height: calculate-rem(19);
+            width: calculate-rem(15);
+            height: calculate-rem(16);
         }
     }
 

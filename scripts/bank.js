@@ -64,6 +64,8 @@ function renderFormScreenBottomButton() {
 
 function renderBankAccounts(addHistory = true) {
     $(".loader-overlay").show();
+    $("#bottom-button").addClass("d-none");
+    $("#add-account-button").removeClass("d-none");
     $.ajax({
         url: DOMAIN + "/api/kyc/bank",
         type: "GET",
@@ -92,7 +94,7 @@ function renderBankAccounts(addHistory = true) {
                 console.log(account.is_default);
 
                 const deleteButton = `
-                    <div class="delete" onclick="deleteBankAccountPrompt(${account.id})">
+                    <div class="delete d-flex align-items-center" onclick="deleteBankAccountPrompt(${account.id})">
                         <img src="${ASSETS_URL}/assets/mobile-webview/delete-vector.png" alt="delete-icon">
                     </div>
                 `;
@@ -118,8 +120,8 @@ function renderBankAccounts(addHistory = true) {
                                 : "<div></div>"
                         }
                         <div class="d d-flex justify-content-between gap-3">
-                            <div class="d-flex justify-content-left gap-2">
-                                <img src="https://cms-labh-bucket.s3.ap-south-2.amazonaws.com/mobile-webview-assets/default-bank.svg" alt="logo">
+                            <div class="d-flex justify-content-left align-items-center gap-2">
+                                <img src="${account.image_url}" alt="logo">
                                 <span>${account.bank_name}</span>
                             </div>
                             ${
@@ -194,6 +196,9 @@ function back() {
 
 function renderBankForm() {
     updatePrevPages(page);
+    $("#bottom-button").removeClass("d-none");
+    $("#bottom-button .button").removeClass("secondary-button")
+    $("#add-account-button").addClass("d-none");
     page = pages[2];
     hideAllScreens();
     $(".form-screen").removeClass("d-none");
@@ -331,6 +336,10 @@ $("#button").on("click", function () {
 
 $(".close-modal").on("click", function () {
     hideModals();
+});
+
+$("#add-account-button").on("click", function () {
+    renderBankForm();
 });
 
 $("#remove-account").on("click", function () {
