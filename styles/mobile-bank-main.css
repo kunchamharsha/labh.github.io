@@ -173,6 +173,7 @@ body {
   height: 0.9375rem;
 }
 .list-screen .l-header .verified span {
+  font-weight: 600;
   font-size: 0.75rem;
 }
 .list-screen .d {
@@ -313,11 +314,12 @@ body {
 .list-screen .u-d {
   font-size: 1.0625rem;
   font-weight: 600;
-  color: rgba(245, 245, 245, 0.8);
+  color: rgb(245, 245, 245);
 }
 .list-screen .u-d .label {
   font-size: 0.875rem;
   font-weight: 700;
+  color: rgba(245, 245, 245, 0.6);
 }
 .list-screen .c-button {
   width: 100%;

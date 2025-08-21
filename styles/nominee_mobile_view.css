@@ -173,6 +173,7 @@ body {
   height: 0.9375rem;
 }
 .list-screen .l-header .verified span {
+  font-weight: 600;
   font-size: 0.75rem;
 }
 .list-screen .d {

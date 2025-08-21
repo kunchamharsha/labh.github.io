@@ -168,6 +168,7 @@ $padding-lef-right: calculate-rem(28);
                 height: calculate-rem(15);
             }
             span {
+                font-weight: 600;
                 font-size: calculate-rem(12);
             }
         }

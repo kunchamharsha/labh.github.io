@@ -78,11 +78,12 @@
     .u-d {
         font-size: calculate-rem(17);
         font-weight: 600;
-        color: rgba(245, 245, 245, 0.8);
         // letter-spacing: calculate-rem(4);
+        color: rgba(245, 245, 245);
         .label {
             font-size: calculate-rem(14);
             font-weight: 700;
+            color: rgba(245, 245, 245, 0.6);
         }
     }
 
