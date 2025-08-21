@@ -138,7 +138,7 @@ function renderBankAccounts(addHistory = true) {
                             <div class="account-number">${
                                 account.account_number
                             }</div>
-                            <div class="label" style='margin-top: 10px;'>IFSC: </div>
+                            <div class="label" style='margin-top: 6px;'>IFSC: </div>
                             <div class="ifsc-code">${account.ifsc_code}</div>
                         </div>
                     </div>

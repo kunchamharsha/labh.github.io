@@ -79,7 +79,7 @@ body {
   height: 2.875rem;
   background-color: #a663ff;
   border-radius: 1.25rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -287,6 +287,7 @@ body {
 }
 .success-screen span {
   margin-bottom: 1.25rem;
+  font-weight: 600;
 }
 
 .c-warning .banner {
