@@ -125,6 +125,7 @@ body {
 .form-screen input,
 .form-screen textarea {
   border-radius: 2.5rem;
+  font-weight: 600;
   height: 3.1875rem;
   background-color: rgba(206, 203, 255, 0.2);
   border: 0px;
@@ -143,6 +144,7 @@ body {
   background-color: rgba(206, 203, 255, 0.2);
   color: #cecbff;
   box-shadow: none;
+  font-weight: 600;
 }
 .form-screen textarea {
   height: 6.8125rem;

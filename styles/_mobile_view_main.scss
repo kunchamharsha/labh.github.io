@@ -113,6 +113,7 @@ $padding-lef-right: calculate-rem(28);
     input,
     textarea {
         border-radius: calculate-rem(40);
+        font-weight: 600;
         height: calculate-rem(51);
         background-color: #cecbff33;
         border: 0px;
@@ -131,6 +132,7 @@ $padding-lef-right: calculate-rem(28);
         background-color: #cecbff33;
         color: #cecbff;
         box-shadow: none;
+        font-weight: 600;
     }
     textarea {
         height: calculate-rem(109);
