@@ -22,7 +22,7 @@ body {
         }
     }
     .go-back {
-        margin-top: calculate-rem(46);
+        margin-top: calculate-rem(32);
         padding-bottom: calculate-rem(20);
         border-bottom: 0.5px solid grey;
         img {
@@ -131,7 +131,6 @@ $padding-lef-right: calculate-rem(28);
         background-color: #cecbff33;
         color: #cecbff;
         box-shadow: none;
-        font-weight: 600;
     }
     textarea {
         height: calculate-rem(109);
