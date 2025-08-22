@@ -213,7 +213,7 @@ function back() {
 
 function renderBankForm() {
     updatePrevPages(page);
-    $("#bottom-button").removeClass("d-none");
+    $("#bottom-button").addClass("d-none");
     $("#bottom-button .button").removeClass("secondary-button")
     $("#add-account-button").addClass("d-none");
     page = pages[2];
@@ -354,7 +354,7 @@ function hideModals() {
     }, 100);
 }
 
-$("#button").on("click", function () {
+$("#button, #add-bank").on("click", function () {
     if (page === pages[1] || page == pages[0]) {
         renderBankForm();
     } else if (page === pages[2]) {
