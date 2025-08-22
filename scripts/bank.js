@@ -68,6 +68,10 @@ function renderBankAccounts(addHistory = true) {
     $("#add-account-button").removeClass("d-none");
 
     $(".go-back").css("opacity", "1");
+
+    $(".help").addClass("d-none");
+
+    $("#banner").addClass("d-none");
     $.ajax({
         url: DOMAIN + "/api/kyc/bank",
         type: "GET",
@@ -148,6 +152,7 @@ function renderBankAccounts(addHistory = true) {
         },
         error: function (xhr, status, error) {
             $(".loader-overlay").hide();
+            renderHomeScreen();
             console.error("Error:", error);
         },
     });
@@ -155,8 +160,17 @@ function renderBankAccounts(addHistory = true) {
 
 function renderHomeScreen() {
     hideAllScreens();
+
+    updatePrevPages(page);
     $(".c-warning").removeClass("d-none");
     $("#button").removeClass("bank-add-button");
+
+    $("#bottom-button").removeClass("d-none");
+    $("#add-account-button").addClass("d-none");
+
+    $(".help").removeClass("d-none");
+
+    $("#banner").removeClass("d-none");
 }
 
 function renderSuccessScreen() {
@@ -238,9 +252,11 @@ function submitBankForm() {
             console.error("Error:", error);
             response = error.responseJSON;
             if (response.account_number) {
-                showErrors("Invalid Bank Details", "The account number or IFSC code seems incorrect. Please check and try again.", "Try Again");
+                showErrors("Invalid Bank Details", response.account_number, "Try Again");
             } else if (response.ifsc_code) {
-                showErrors("Invalid Bank Details", "The account number or IFSC code seems incorrect. Please check and try again.", "Try Again");
+                showErrors("Invalid Bank Details", response.ifsc_code, "Try Again");
+            } else if (response.non_field_errors) {
+                showErrors("Invalid Bank Details", response.non_field_errors, "Try Again");
             } else {
                 showErrors("Error", "Something went wrong!", "Try Again");
             }
@@ -371,6 +387,17 @@ $("#done").on("click", function () {
 });
 
 $(".loader-overlay").hide();
-renderHomeScreen();
-renderBankAccounts();
+
+$("#ifsc-code").on("input", function () {
+    let value = $(this).val();
+
+    value = value.toUpperCase();
+
+    value = value.replace(/[^A-Z0-9]/g, '');
+
+    $(this).val(value);
+});
+
+// renderHomeScreen();
 renderLottie();
+renderBankAccounts();
