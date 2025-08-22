@@ -400,6 +400,11 @@ body {
   color: #168465;
 }
 
+@media (min-height: 640px) and (max-height: 844px) {
+  .contents #banner svg {
+    height: 25.25rem !important;
+  }
+}
 .modal-container .show {
   transform: translateY(0);
 }

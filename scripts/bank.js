@@ -402,6 +402,6 @@ $("#ifsc-code").on("input", function () {
     $(this).val(value);
 });
 
-// renderHomeScreen();
+renderHomeScreen();
 renderLottie();
-renderBankAccounts();
+// renderBankAccounts();
