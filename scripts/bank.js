@@ -397,11 +397,11 @@ $("#ifsc-code").on("input", function () {
 
     value = value.toUpperCase();
 
-    value = value.replace(/[^A-Z0-9]/gi, "").toUpperCase();
+    // value = value.replace(/[^A-Z0-9]/gi, "").toUpperCase();
 
     $(this).val(value);
 });
 
-renderHomeScreen();
+// renderHomeScreen();
 renderLottie();
-// renderBankAccounts();
+renderBankAccounts();
