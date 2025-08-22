@@ -23,6 +23,9 @@ function hideAllScreens() {
 // we don't want to save pages that render with backbutton
 // so if a page is rendered with backend button then we need to remove that page
 function updatePrevPages(currentPage, remove = false) {
+    if (prevPages.includes(currentPage)) {
+        return;
+    }
     if (remove) {
         prevPages.pop();
         return;
@@ -175,6 +178,7 @@ function renderHomeScreen() {
 
 function renderSuccessScreen() {
     hideAllScreens();
+    page = pages[2];
     $(".success-screen").removeClass("d-none");
     $("#button").addClass("d-none");
     $(".go-back").css("opacity", "0");
@@ -214,7 +218,7 @@ function back() {
 function renderBankForm() {
     updatePrevPages(page);
     $("#bottom-button").addClass("d-none");
-    $("#bottom-button .button").removeClass("secondary-button")
+    $("#bottom-button .button").removeClass("secondary-button");
     $("#add-account-button").addClass("d-none");
     page = pages[2];
     hideAllScreens();
@@ -226,7 +230,11 @@ function submitBankForm() {
     const acccountNumber = $("#account-number").val();
     const ifsc = $("#ifsc-code").val();
     if (acccountNumber === "" || ifsc === "") {
-        showErrors("Missing Information", "Please fill in all the required fields to continue", "Enter Details");
+        showErrors(
+            "Missing Information",
+            "Please fill in all the required fields to continue",
+            "Enter Details"
+        );
         return;
     }
     const data = {
@@ -253,14 +261,30 @@ function submitBankForm() {
             response = error.responseJSON;
             if (response.account_number) {
                 if (response.account_number == "Account already exists") {
-                    showErrors("Duplicate Bank Details", "This bank is already added. Please add a different bank.", "Try Again");
+                    showErrors(
+                        "Duplicate Bank Details",
+                        "This bank is already added. Please add a different bank.",
+                        "Try Again"
+                    );
                 } else {
-                    showErrors("Invalid Bank Details", "The account number or IFSC code seems incorrect. Please check and try again.", "Try Again");
+                    showErrors(
+                        "Invalid Bank Details",
+                        "The account number or IFSC code seems incorrect. Please check and try again.",
+                        "Try Again"
+                    );
                 }
             } else if (response.ifsc_code) {
-                showErrors("Invalid Bank Details", "The account number or IFSC code seems incorrect. Please check and try again.", "Try Again");
+                showErrors(
+                    "Invalid Bank Details",
+                    "The account number or IFSC code seems incorrect. Please check and try again.",
+                    "Try Again"
+                );
             } else if (response.non_field_errors) {
-                showErrors("Invalid Bank Details", response.non_field_errors, "Try Again");
+                showErrors(
+                    "Invalid Bank Details",
+                    response.non_field_errors,
+                    "Try Again"
+                );
             } else {
                 showErrors("Error", "Something went wrong!", "Try Again");
             }
@@ -331,16 +355,16 @@ function deleteBankAccount(id) {
 
 function showErrors(heading, description, close_text) {
     if (heading == "Missing Information") {
-        $('.c-modal').css("height", "14.8125rem")
+        $(".c-modal").css("height", "14.8125rem");
     } else {
-        $('.c-modal').css("height", "16.8125rem")
+        $(".c-modal").css("height", "16.8125rem");
     }
     $(".c-modal").addClass("d-none"); // first we want to hide other c-modals.
     $(".modal-container").removeClass("d-none");
     $("#error-modal").removeClass("d-none");
     $("#error-heading").text(heading);
     $("#error-description").text(description);
-    $("#close").text(close_text)
+    $("#close").text(close_text);
     setTimeout(() => {
         $(".c-modal").addClass("show");
     }, 10);
