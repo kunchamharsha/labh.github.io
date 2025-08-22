@@ -1,6 +1,9 @@
 @import "mobile_view_main";
 
 .contents {
+    #add-account-button {
+        margin-top: calculate-rem(20);
+    }
     .secondary-button {
         background: #cecbff33;
     }

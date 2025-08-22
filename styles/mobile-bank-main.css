@@ -155,7 +155,7 @@ body {
 }
 
 .list-screen {
-  margin-top: 1.5625rem;
+  margin-top: 1rem;
   padding-bottom: 0.625rem;
 }
 .list-screen .list {
@@ -263,6 +263,9 @@ body {
   color: #168465;
 }
 
+.contents #add-account-button {
+  margin-top: 1.25rem;
+}
 .contents .secondary-button {
   background: rgba(206, 203, 255, 0.2);
 }
