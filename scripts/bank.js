@@ -393,7 +393,7 @@ $("#ifsc-code").on("input", function () {
 
     value = value.toUpperCase();
 
-    value = value.replace(/[^A-Z0-9]/g, '');
+    value = value.replace(/[^A-Z0-9]/gi, "").toUpperCase();
 
     $(this).val(value);
 });
