@@ -252,9 +252,13 @@ function submitBankForm() {
             console.error("Error:", error);
             response = error.responseJSON;
             if (response.account_number) {
-                showErrors("Invalid Bank Details", response.account_number, "Try Again");
+                if (response.account_number == "Account already exists") {
+                    showErrors("Duplicate Bank Details", "This bank is already added. Please add a different bank.", "Try Again");
+                } else {
+                    showErrors("Invalid Bank Details", "The account number or IFSC code seems incorrect. Please check and try again.", "Try Again");
+                }
             } else if (response.ifsc_code) {
-                showErrors("Invalid Bank Details", response.ifsc_code, "Try Again");
+                showErrors("Invalid Bank Details", "The account number or IFSC code seems incorrect. Please check and try again.", "Try Again");
             } else if (response.non_field_errors) {
                 showErrors("Invalid Bank Details", response.non_field_errors, "Try Again");
             } else {
