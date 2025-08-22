@@ -264,7 +264,7 @@ body {
 }
 
 .contents #add-account-button {
-  margin-top: 1.25rem;
+  margin-top: 2rem;
 }
 .contents .secondary-button {
   background: rgba(206, 203, 255, 0.2);
@@ -373,7 +373,7 @@ body {
 .modal-container .c-modal .contents {
   padding: 0;
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.6980392157);
 }
 .modal-container .c-modal .button-container {
