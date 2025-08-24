@@ -355,7 +355,7 @@ function deleteBankAccount(id) {
 
 function showErrors(heading, description, close_text) {
     if (heading == "Missing Information") {
-        $(".c-modal").css("height", "14.8125rem");
+        $(".c-modal").css("height", "15.8125rem");
     } else {
         $(".c-modal").css("height", "16.8125rem");
     }
