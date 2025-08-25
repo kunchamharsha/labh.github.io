@@ -265,17 +265,17 @@ function submitBankForm() {
                         "Bank Details Already Existing",
                         "We couldn’t add your bank account. Please contact our support team to quickly resolve this.",
                         "Contact us",
-                        "contact us",
+                        "contact us"
                     );
-                } else if (response.account_number == "User already has this account") {
+                } else if (
+                    response.account_number == "User already has this account"
+                ) {
                     showErrors(
                         "Bank Details Already Existing",
                         "This bank account is already linked to your profile. Please add a different bank.",
                         "Try Again"
                     );
-
-                }
-                 else {
+                } else {
                     showErrors(
                         "Invalid Bank Details",
                         "The account number or IFSC code seems incorrect. Please check and try again.",
@@ -289,7 +289,10 @@ function submitBankForm() {
                     "Try Again"
                 );
             } else if (response.non_field_errors) {
-                if (response.non_field_errors == "You cannot add more than 5 accounts") {
+                if (
+                    response.non_field_errors ==
+                    "You cannot add more than 5 accounts"
+                ) {
                     showErrors(
                         "Account Limit Reached",
                         response.non_field_errors,
@@ -371,16 +374,11 @@ function deleteBankAccount(id) {
 }
 
 function contactUs() {
-    window.location.href='mailto:tech@labh.io?subject=Issue Adding Bank Details'
+    window.location.href =
+        "mailto:tech@labh.io?subject=Issue Adding Bank Details";
 }
 
-
-function showErrors(heading, description, close_text, primary_action='back') {
-    if (heading == "Missing Information") {
-        $(".c-modal").css("height", "16.8125rem");
-    } else {
-        $(".c-modal").css("height", "16.8125rem");
-    }
+function showErrors(heading, description, close_text, primary_action = "back") {
     $(".c-modal").addClass("d-none"); // first we want to hide other c-modals.
     $(".modal-container").removeClass("d-none");
     $("#error-modal").removeClass("d-none");
@@ -391,7 +389,7 @@ function showErrors(heading, description, close_text, primary_action='back') {
         if (primary_action == "contact us") {
             contactUs();
         }
-    })
+    });
     setTimeout(() => {
         $(".c-modal").addClass("show");
     }, 10);
@@ -441,15 +439,17 @@ $("#done").on("click", function () {
 
 $(".loader-overlay").hide();
 
-// $("#ifsc-code").on("input", function () {
-//     let value = $(this).val();
+const input = document.getElementById("ifsc-code");
 
-//     value = value.toUpperCase();
+input.addEventListener("input", function () {
+    this.value = this.value.replace(/[^A-Z0-9]/gi, "").toUpperCase();
+});
 
-//     value = value.replace(/[^A-Z0-9]/gi, "").toUpperCase();
+const input2 = document.getElementById("account-number");
 
-//     $(this).val(value);
-// });
+input2.addEventListener("input", function () {
+    this.value = this.value.replace(/[^A-Z0-9]/gi, "");
+});
 
 // renderHomeScreen();
 renderLottie();

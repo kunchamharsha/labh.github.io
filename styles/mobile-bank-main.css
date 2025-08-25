@@ -354,6 +354,7 @@ body {
   padding: 0 2rem;
   padding-top: 2.25rem;
   min-height: 16.8125rem;
+  height: auto;
   width: 100%;
   background: #211433;
   border-top-left-radius: 2rem;
