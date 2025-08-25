@@ -448,7 +448,7 @@ input.addEventListener("input", function () {
 const input2 = document.getElementById("account-number");
 
 input2.addEventListener("input", function () {
-    this.value = this.value.replace(/[^A-Z0-9]/gi, "");
+    this.value = String(this.value).replace(/[^A-Z0-9]/gi, "");
 });
 
 // renderHomeScreen();
