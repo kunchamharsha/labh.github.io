@@ -121,7 +121,7 @@
     .c-modal {
         padding: 0 calculate-rem(32);
         padding-top: calculate-rem(36);
-        height: calculate-rem(269);
+        min-height: calculate-rem(269);
         width: 100%;
         background: #211433;
         border-top-left-radius: calculate-rem(32);
@@ -145,10 +145,12 @@
             font-weight: 500;
             font-size: calculate-rem(16);
             color: #FFFFFFB2;
+            height: auto;
+            margin-bottom: calculate-rem(24);
         }
 
-        .button-container {
-            bottom: calculate-rem(40);
+
+        .error-button-container, .button-container {
             .button {
                 background: #FFFFFF1F;
                 color: #FFFFFF;
@@ -165,6 +167,10 @@
                 background: #a663ff;
                 color: #ffffff;
             }
+        }
+
+        .error-button-container {
+            margin-bottom: calculate-rem(40);
         }
     }
 
