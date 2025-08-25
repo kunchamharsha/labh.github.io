@@ -262,11 +262,20 @@ function submitBankForm() {
             if (response.account_number) {
                 if (response.account_number == "Account already exists") {
                     showErrors(
-                        "Duplicate Bank Details",
-                        "This bank is already added. Please add a different bank.",
+                        "Bank Details Already Existing",
+                        "We couldn’t add your bank account. Please contact our support team to quickly resolve this.",
+                        "Contact us",
+                        "contact us",
+                    );
+                } else if (response.account_number == "User already has this account") {
+                    showErrors(
+                        "Bank Details Already Existing",
+                        "This bank account is already linked to your profile. Please add a different bank.",
                         "Try Again"
                     );
-                } else {
+
+                }
+                 else {
                     showErrors(
                         "Invalid Bank Details",
                         "The account number or IFSC code seems incorrect. Please check and try again.",
@@ -280,11 +289,19 @@ function submitBankForm() {
                     "Try Again"
                 );
             } else if (response.non_field_errors) {
-                showErrors(
-                    "Invalid Bank Details",
-                    response.non_field_errors,
-                    "Try Again"
-                );
+                if (response.non_field_errors == "You cannot add more than 5 accounts") {
+                    showErrors(
+                        "Account Limit Reached",
+                        response.non_field_errors,
+                        "Try Again"
+                    );
+                } else {
+                    showErrors(
+                        "Invalid Bank Details",
+                        response.non_field_errors,
+                        "Try Again"
+                    );
+                }
             } else {
                 showErrors("Error", "Something went wrong!", "Try Again");
             }
@@ -353,9 +370,14 @@ function deleteBankAccount(id) {
     });
 }
 
-function showErrors(heading, description, close_text) {
+function contactUs() {
+    window.location.href='mailto:tech@labh.io?subject=Issue Adding Bank Details'
+}
+
+
+function showErrors(heading, description, close_text, primary_action='back') {
     if (heading == "Missing Information") {
-        $(".c-modal").css("height", "14.8125rem");
+        $(".c-modal").css("height", "16.8125rem");
     } else {
         $(".c-modal").css("height", "16.8125rem");
     }
@@ -365,6 +387,11 @@ function showErrors(heading, description, close_text) {
     $("#error-heading").text(heading);
     $("#error-description").text(description);
     $("#close").text(close_text);
+    $("#close").on("click", function () {
+        if (primary_action == "contact us") {
+            contactUs();
+        }
+    })
     setTimeout(() => {
         $(".c-modal").addClass("show");
     }, 10);
@@ -400,8 +427,6 @@ $("#remove-account").on("click", function () {
 });
 
 $(".modal-container").on("click", function (e) {
-    console.log($(".c-modal").is(e.target));
-    console.log($(".c-modal").has(e.target).length);
     if (
         !$(".c-modal").is(e.target) &&
         $(".c-modal").has(e.target).length === 0
@@ -416,15 +441,15 @@ $("#done").on("click", function () {
 
 $(".loader-overlay").hide();
 
-$("#ifsc-code").on("input", function () {
-    let value = $(this).val();
+// $("#ifsc-code").on("input", function () {
+//     let value = $(this).val();
 
-    value = value.toUpperCase();
+//     value = value.toUpperCase();
 
-    // value = value.replace(/[^A-Z0-9]/gi, "").toUpperCase();
+//     value = value.replace(/[^A-Z0-9]/gi, "").toUpperCase();
 
-    $(this).val(value);
-});
+//     $(this).val(value);
+// });
 
 // renderHomeScreen();
 renderLottie();

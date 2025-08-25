@@ -353,7 +353,7 @@ body {
 .modal-container .c-modal {
   padding: 0 2rem;
   padding-top: 2.25rem;
-  height: 16.8125rem;
+  min-height: 16.8125rem;
   width: 100%;
   background: #211433;
   border-top-left-radius: 2rem;
@@ -375,23 +375,25 @@ body {
   font-weight: 500;
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.6980392157);
+  height: auto;
+  margin-bottom: 1.5rem;
 }
-.modal-container .c-modal .button-container {
-  bottom: 2.5rem;
-}
-.modal-container .c-modal .button-container .button {
+.modal-container .c-modal .error-button-container .button, .modal-container .c-modal .button-container .button {
   background: rgba(255, 255, 255, 0.1215686275);
   color: #FFFFFF;
   font-size: 0.875rem;
   font-weight: 600;
 }
-.modal-container .c-modal .button-container .remove {
+.modal-container .c-modal .error-button-container .remove, .modal-container .c-modal .button-container .remove {
   background: #ff615f;
   color: #ffffff;
 }
-.modal-container .c-modal .button-container .normal {
+.modal-container .c-modal .error-button-container .normal, .modal-container .c-modal .button-container .normal {
   background: #a663ff;
   color: #ffffff;
+}
+.modal-container .c-modal .error-button-container {
+  margin-bottom: 2.5rem;
 }
 .modal-container .remove h4 {
   color: #ff615f;
