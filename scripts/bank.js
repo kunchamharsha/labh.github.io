@@ -442,13 +442,13 @@ $(".loader-overlay").hide();
 const input = document.getElementById("ifsc-code");
 
 input.addEventListener("input", function () {
-    this.value = this.value.replace(/[^A-Z0-9]/gi, "").toUpperCase();
+    this.value = String(this.value).replace(/[^A-Z0-9]/gi, "").toUpperCase();
 });
 
 const input2 = document.getElementById("account-number");
 
 input2.addEventListener("input", function () {
-    this.value = String(this.value).replace(/[^A-Z0-9]/gi, "");
+    this.value = this.value.replace(/[^A-Z0-9]/gi, "");
 });
 
 // renderHomeScreen();
