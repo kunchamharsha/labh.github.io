@@ -2,10 +2,13 @@
 
 .c-warning {
     // margin-top: calculate-rem(445);
+    .helper-container {
+        margin-top: 0px;
+    }
 }
 
 .list-screen {
-    .header {
+    .list-header {
         padding: 0;
         background: none;
 
@@ -14,6 +17,7 @@
                 font-size: calculate-rem(14);
                 font-weight: 600;
                 text-decoration: underline;
+                text-underline-offset: 4px;
                 margin-left: calculate-rem(5);
                 color: #cecbff;
             }
@@ -43,7 +47,7 @@
     }
 
     .d {
-        margin-bottom: calculate-rem(12);
+        margin-bottom: calculate-rem(24);
     }
 }
 
@@ -58,11 +62,11 @@
         span {
             font-size: calculate-rem(12);
             font-weight: 600;
-            color: #CECBFF;
+            color: #cecbff;
         }
     }
     .error {
-        background: #FB895452;
+        background: #fb895452;
         border-radius: calculate-rem(16);
         padding: calculate-rem(16) calculate-rem(15);
         margin-top: calculate-rem(20);
@@ -75,7 +79,7 @@
         span {
             font-size: calculate-rem(12);
             font-weight: 500;
-            color: #F5F5F5CC;
+            color: #f5f5f5cc;
             text-wrap: wrap;
         }
     }
@@ -104,7 +108,7 @@
         margin-left: calculate-rem(32);
     }
     .relative-modal-inner-container {
-        padding: calculate-rem(32) calculate-rem(32);
+        padding: calculate-rem(32) calculate-rem(25);
         background: linear-gradient(
             117.03deg,
             rgba(64, 18, 124, 0.3) 15.67%,
@@ -128,6 +132,7 @@
         overflow: scroll;
         margin-bottom: calculate-rem(10);
         .choice {
+            padding-left: calculate-rem(20);
             height: calculate-rem(42);
             background: #cecbff33;
             color: #cecbff;
@@ -137,8 +142,23 @@
             margin-bottom: calculate-rem(12);
         }
         .active {
-            background: #ffffff;
-            color: #a663ff;
+            border: 1px solid #a663ff;
+            background: linear-gradient(
+                117.03deg,
+                rgba(64, 18, 124, 0.3) 15.67%,
+                rgba(166, 99, 255, 0.3) 47.49%,
+                rgba(64, 18, 124, 0.3) 84.33%
+            );
+        }
+    }
+}
+
+@media (min-height: 640px) and (max-height: 844px) {
+    .contents {
+        #banner {
+            svg {
+                height: calculate-rem(300) !important;
+            }
         }
     }
 }

@@ -111,18 +111,10 @@
 }
 
 .modal-container {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    background-color: #000000ab;
-    z-index: 10;
 
     .c-modal {
         padding: 0 calculate-rem(32);
         padding-top: calculate-rem(36);
-        min-height: calculate-rem(269);
-        height: auto;
         width: 100%;
         background: #211433;
         border-top-left-radius: calculate-rem(32);
@@ -130,49 +122,6 @@
         transform: translateY(100%);
         transition: transform 0.1s ease-out;
 
-        h4 {
-            font-weight: 600;
-            font-size: calculate-rem(18);
-        }
-
-        img {
-            width: calculate-rem(28);
-            height: calculate-rem(28);
-            margin-bottom: calculate-rem(20);
-        }
-
-        .contents {
-            padding: 0;
-            font-weight: 500;
-            font-size: calculate-rem(16);
-            color: #FFFFFFB2;
-            height: auto;
-            margin-bottom: calculate-rem(24);
-        }
-
-
-        .error-button-container, .button-container {
-            .button {
-                background: #FFFFFF1F;
-                color: #FFFFFF;
-                font-size: calculate-rem(14);
-                font-weight: 600;
-            }
-
-            .remove {
-                background: #ff615f;
-                color: #ffffff;
-            }
-
-            .normal {
-                background: #a663ff;
-                color: #ffffff;
-            }
-        }
-
-        .error-button-container {
-            margin-bottom: calculate-rem(40);
-        }
     }
 
     .remove {

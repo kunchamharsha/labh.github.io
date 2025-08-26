@@ -219,9 +219,10 @@ body {
 .modal-container .c-modal {
   padding: 0 2rem;
   padding-top: 2.25rem;
-  height: 14.8125rem;
+  min-height: 16.8125rem;
+  height: auto;
   width: 100%;
-  background: white;
+  background: #211433;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   transform: translateY(100%);
@@ -239,22 +240,30 @@ body {
 .modal-container .c-modal .contents {
   padding: 0;
   font-weight: 500;
-  font-size: 0.875rem;
-  color: rgba(17, 17, 17, 0.6980392157);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6980392157);
+  height: auto;
+  margin-bottom: 1.5rem;
 }
+.modal-container .c-modal .error-button-container .button,
 .modal-container .c-modal .button-container .button {
-  background: rgba(17, 17, 17, 0.1215686275);
-  color: #111111;
+  background: rgba(255, 255, 255, 0.1215686275);
+  color: #ffffff;
   font-size: 0.875rem;
   font-weight: 600;
 }
+.modal-container .c-modal .error-button-container .remove,
 .modal-container .c-modal .button-container .remove {
   background: #ff615f;
   color: #ffffff;
 }
+.modal-container .c-modal .error-button-container .normal,
 .modal-container .c-modal .button-container .normal {
   background: #a663ff;
   color: #ffffff;
+}
+.modal-container .c-modal .error-button-container {
+  margin-bottom: 2.5rem;
 }
 .modal-container .remove h4 {
   color: #ff615f;
@@ -342,59 +351,15 @@ body {
   color: rgba(245, 245, 245, 0.8);
 }
 
-.modal-container {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6705882353);
-  z-index: 10;
-}
 .modal-container .c-modal {
   padding: 0 2rem;
   padding-top: 2.25rem;
-  min-height: 16.8125rem;
-  height: auto;
   width: 100%;
   background: #211433;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   transform: translateY(100%);
   transition: transform 0.1s ease-out;
-}
-.modal-container .c-modal h4 {
-  font-weight: 600;
-  font-size: 1.125rem;
-}
-.modal-container .c-modal img {
-  width: 1.75rem;
-  height: 1.75rem;
-  margin-bottom: 1.25rem;
-}
-.modal-container .c-modal .contents {
-  padding: 0;
-  font-weight: 500;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.6980392157);
-  height: auto;
-  margin-bottom: 1.5rem;
-}
-.modal-container .c-modal .error-button-container .button, .modal-container .c-modal .button-container .button {
-  background: rgba(255, 255, 255, 0.1215686275);
-  color: #FFFFFF;
-  font-size: 0.875rem;
-  font-weight: 600;
-}
-.modal-container .c-modal .error-button-container .remove, .modal-container .c-modal .button-container .remove {
-  background: #ff615f;
-  color: #ffffff;
-}
-.modal-container .c-modal .error-button-container .normal, .modal-container .c-modal .button-container .normal {
-  background: #a663ff;
-  color: #ffffff;
-}
-.modal-container .c-modal .error-button-container {
-  margin-bottom: 2.5rem;
 }
 .modal-container .remove h4 {
   color: #ff615f;
