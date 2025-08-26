@@ -219,9 +219,10 @@ body {
 .modal-container .c-modal {
   padding: 0 2rem;
   padding-top: 2.25rem;
-  height: 14.8125rem;
+  min-height: 16.8125rem;
+  height: auto;
   width: 100%;
-  background: white;
+  background: #211433;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   transform: translateY(100%);
@@ -239,22 +240,30 @@ body {
 .modal-container .c-modal .contents {
   padding: 0;
   font-weight: 500;
-  font-size: 0.875rem;
-  color: rgba(17, 17, 17, 0.6980392157);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6980392157);
+  height: auto;
+  margin-bottom: 1.5rem;
 }
+.modal-container .c-modal .error-button-container .button,
 .modal-container .c-modal .button-container .button {
-  background: rgba(17, 17, 17, 0.1215686275);
-  color: #111111;
+  background: rgba(255, 255, 255, 0.1215686275);
+  color: #ffffff;
   font-size: 0.875rem;
   font-weight: 600;
 }
+.modal-container .c-modal .error-button-container .remove,
 .modal-container .c-modal .button-container .remove {
   background: #ff615f;
   color: #ffffff;
 }
+.modal-container .c-modal .error-button-container .normal,
 .modal-container .c-modal .button-container .normal {
   background: #a663ff;
   color: #ffffff;
+}
+.modal-container .c-modal .error-button-container {
+  margin-bottom: 2.5rem;
 }
 .modal-container .remove h4 {
   color: #ff615f;
@@ -263,18 +272,23 @@ body {
   color: #168465;
 }
 
-.list-screen .header {
+.c-warning .helper-container {
+  margin-top: 0px;
+}
+
+.list-screen .list-header {
   padding: 0;
   background: none;
 }
-.list-screen .header .section span {
+.list-screen .list-header .section span {
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: underline;
+  text-underline-offset: 4px;
   margin-left: 0.3125rem;
   color: #cecbff;
 }
-.list-screen .header img {
+.list-screen .list-header img {
   width: 1.1875rem;
   height: 1.1875rem;
 }
@@ -293,7 +307,7 @@ body {
   width: 50%;
 }
 .list-screen .d {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .nominee-error .button {
@@ -306,7 +320,7 @@ body {
 .nominee-error .button span {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #CECBFF;
+  color: #cecbff;
 }
 .nominee-error .error {
   background: rgba(251, 137, 84, 0.3215686275);
@@ -345,7 +359,7 @@ body {
   margin-left: 2rem;
 }
 .modal-container .relative-modal-inner-container {
-  padding: 2rem 2rem;
+  padding: 2rem 1.5625rem;
   background: linear-gradient(117.03deg, rgba(64, 18, 124, 0.3) 15.67%, rgba(166, 99, 255, 0.3) 47.49%, rgba(64, 18, 124, 0.3) 84.33%);
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
@@ -365,6 +379,7 @@ body {
   margin-bottom: 0.625rem;
 }
 .modal-container .choices .choice {
+  padding-left: 1.25rem;
   height: 2.625rem;
   background: rgba(206, 203, 255, 0.2);
   color: #cecbff;
@@ -374,10 +389,15 @@ body {
   margin-bottom: 0.75rem;
 }
 .modal-container .choices .active {
-  background: #ffffff;
-  color: #a663ff;
+  border: 1px solid #a663ff;
+  background: linear-gradient(117.03deg, rgba(64, 18, 124, 0.3) 15.67%, rgba(166, 99, 255, 0.3) 47.49%, rgba(64, 18, 124, 0.3) 84.33%);
 }
 
+@media (min-height: 640px) and (max-height: 844px) {
+  .contents #banner svg {
+    height: 18.75rem !important;
+  }
+}
 .modal-container .show {
   transform: translateY(0);
 }

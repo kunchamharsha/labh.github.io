@@ -67,6 +67,7 @@ function fetchNominees(addHistory = true) {
         },
         error: function (xhr, status, error) {
             $(".loader-overlay").hide();
+            renderHome();
             console.error("Error:", error);
         },
     });
@@ -112,7 +113,7 @@ function renderNomineeList(response, addHistory = true) {
         if (nominee.is_active) {
             const list = `
             <div class="list">
-                <div class="d d-flex align-items-center justify-content-between header">
+                <div class="d d-flex align-items-center justify-content-between list-header">
                     <div class="section">
                         <img src="${ASSETS_URL}/assets/mobile-webview/edit-nominee.png" alt="edit" />
                         <span onclick="renderForm(${nominee.id})">Edit details </span>
@@ -145,11 +146,11 @@ function renderNomineeList(response, addHistory = true) {
     });
 }
 
-fetchNominees();
-
 function showValuesInForm(nominee) {
+    selectedRelative = nominee.relationship.toLowerCase();
     $("#name").val(nominee.name);
     $("#pan").val(nominee.pan);
+    $("#city").val(nominee.city);
     $("#date_of_birth").val(nominee.date_of_birth);
     $("#relationship").val(nominee.relationship);
     $("#phone_number").val(nominee.phone_number);
@@ -179,6 +180,7 @@ function renderForm(id = undefined) {
             });
     } else {
         // this will avoid giving same nominee over again and again in the form
+        $("#form")[0].reset();
         $("#form")
             .off("submit")
             .on("submit", function (e) {
@@ -199,8 +201,9 @@ function hideModals() {
 function renderHome() {
     hideAllScreens();
     page = pages[0];
-    $(".home-screen").removeClass("d-none");
-    $(".c-warning").removeClass("d-none");
+    $(".helper-container, #banner, .home-screen, .c-warning").removeClass(
+        "d-none"
+    );
 }
 
 function renderLottie() {
@@ -234,13 +237,13 @@ function showRelativeModal() {
     relativeChoices.forEach(function (choice) {
         if (choice == selectedRelative) {
             $(".choices").append(`
-            <div class="choice d-flex justify-content-center align-items-center active" data-value="${choice}">${capitalizeWords(
+            <div class="choice d-flex align-items-center active" data-value="${choice}">${capitalizeWords(
                 choice
             )}</div>
         `);
         } else {
             $(".choices").append(`
-            <div class="choice d-flex justify-content-center align-items-center" data-value="${choice}">${capitalizeWords(
+            <div class="choice d-flex align-items-center" data-value="${choice}">${capitalizeWords(
                 choice
             )}</div>
         `);
@@ -298,9 +301,11 @@ function showDeleteNomineeModal(id) {
             $(".c-modal").addClass("show");
         }, 10);
     }, 100);
-    $("#delete").off("click").on("click", function () {
-        deleteNominee(id);
-    });
+    $("#delete")
+        .off("click")
+        .on("click", function () {
+            deleteNominee(id);
+        });
 }
 
 function showSuccessNomineeModal() {
@@ -478,6 +483,8 @@ $(".modal-container").on("click", function (e) {
         hideModals();
     }
 });
+
+fetchNominees();
 
 renderLottie();
 fetchRelativeChoices(); // this will fetch the relative choices

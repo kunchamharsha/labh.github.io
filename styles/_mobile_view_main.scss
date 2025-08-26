@@ -224,9 +224,10 @@ $padding-lef-right: calculate-rem(20);
     .c-modal {
         padding: 0 calculate-rem(32);
         padding-top: calculate-rem(36);
-        height: calculate-rem(237);
+        min-height: calculate-rem(269);
+        height: auto;
         width: 100%;
-        background: white;
+        background: #211433;
         border-top-left-radius: calculate-rem(32);
         border-top-right-radius: calculate-rem(32);
         transform: translateY(100%);
@@ -246,14 +247,17 @@ $padding-lef-right: calculate-rem(20);
         .contents {
             padding: 0;
             font-weight: 500;
-            font-size: calculate-rem(14);
-            color: #111111b2;
+            font-size: calculate-rem(16);
+            color: #ffffffb2;
+            height: auto;
+            margin-bottom: calculate-rem(24);
         }
 
+        .error-button-container,
         .button-container {
             .button {
-                background: #1111111f;
-                color: #111111;
+                background: #ffffff1f;
+                color: #ffffff;
                 font-size: calculate-rem(14);
                 font-weight: 600;
             }
@@ -267,6 +271,10 @@ $padding-lef-right: calculate-rem(20);
                 background: #a663ff;
                 color: #ffffff;
             }
+        }
+
+        .error-button-container {
+            margin-bottom: calculate-rem(40);
         }
     }
 
