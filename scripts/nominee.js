@@ -484,6 +484,13 @@ $(".modal-container").on("click", function (e) {
     }
 });
 
+if (DEBUG) {
+    showErrorModalWithExit(
+        "Debug",
+        getCookie("access-token") + "device-id" + getCookie("device-id")
+    );
+}
+
 fetchNominees();
 
 renderLottie();
