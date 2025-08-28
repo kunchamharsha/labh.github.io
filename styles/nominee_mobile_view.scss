@@ -18,19 +18,19 @@
                 font-weight: 600;
                 text-decoration: underline;
                 text-underline-offset: 4px;
-                margin-left: calculate-rem(5);
+                margin-left: calculate-rem(0);
                 color: #cecbff;
             }
         }
 
         img {
-            width: calculate-rem(19);
-            height: calculate-rem(19);
+            width: calculate-rem(15);
+            height: calculate-rem(16);
         }
     }
     .section {
         div {
-            font-weight: 400;
+            font-weight: 600;
             font-size: calculate-rem(14);
             color: #f5f5f58b;
         }

@@ -375,7 +375,7 @@ function deleteBankAccount(id) {
 
 function contactUs() {
     window.location.href =
-        "mailto:tech@labh.io?subject=Issue Adding Bank Details";
+        "mailto:support@labh.io?subject=Issue Adding Bank Details";
 }
 
 function showErrors(heading, description, close_text, primary_action = "back") {

@@ -38,6 +38,7 @@ body {
   top: 0;
   background: black;
   padding-right: 1.25rem;
+  z-index: 10;
 }
 .header .logo img {
   width: 6.6875rem;
@@ -69,7 +70,7 @@ body {
 }
 .contents .button-container {
   position: fixed;
-  bottom: 2.5rem;
+  bottom: 3.125rem;
   left: 0;
   width: 100%;
   padding: 0 1.25rem;
@@ -107,7 +108,7 @@ body {
 }
 
 .form-screen form {
-  padding-bottom: 5rem;
+  padding-bottom: 5.625rem;
   margin-top: 2.5rem;
 }
 .form-screen label {
@@ -121,6 +122,13 @@ body {
   font-size: 0.875rem;
   margin-bottom: 1.5625rem;
   margin-top: 2.375rem;
+}
+.form-screen .form-group .error-message {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #ff615f;
+  position: relative;
+  bottom: 0.625rem;
 }
 .form-screen input,
 .form-screen textarea {
@@ -151,7 +159,7 @@ body {
   border-radius: 1.25rem;
 }
 .form-screen .error {
-  border: 1px solid red;
+  border: 1px solid #ff615f;
 }
 
 .list-screen {
@@ -285,15 +293,15 @@ body {
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 4px;
-  margin-left: 0.3125rem;
+  margin-left: 0rem;
   color: #cecbff;
 }
 .list-screen .list-header img {
-  width: 1.1875rem;
-  height: 1.1875rem;
+  width: 0.9375rem;
+  height: 1rem;
 }
 .list-screen .section div {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 0.875rem;
   color: rgba(245, 245, 245, 0.5450980392);
 }
