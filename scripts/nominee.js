@@ -6,6 +6,8 @@ var selectedRelative = undefined;
 var nominees = [];
 var availableNominees = [];
 var allocationPercentage = 0;
+var isError = false;
+var isNewNominee = false;
 
 const headerHeight = $(".go-back").outerHeight(true);
 const modalHeight = window.innerHeight - headerHeight;
@@ -108,6 +110,13 @@ function renderNomineeList(response, addHistory = true) {
     $(".list-screen").empty();
     nominees.length > 0 ? removePaddingFromListScreen() : undefined;
     allocationPercentage = calculatePercentage();
+
+    if (parseInt(allocationPercentage) == 100 && !isNewNominee) {
+        $(".button-container").addClass("d-none");
+    } else {
+        $(".button-container").removeClass("d-none");
+    }
+
     allocationPercentage != 100 ? renderNomineeError() : undefined;
     response.forEach((nominee) => {
         if (nominee.is_active) {
@@ -116,10 +125,14 @@ function renderNomineeList(response, addHistory = true) {
                 <div class="d d-flex align-items-center justify-content-between list-header">
                     <div class="section">
                         <img src="${ASSETS_URL}/assets/mobile-webview/edit-nominee.png" alt="edit" />
-                        <span onclick="renderForm(${nominee.id})">Edit details </span>
+                        <span onclick="renderForm(${
+                            nominee.id
+                        })">Edit details </span>
                     </div>
                     <div class="section">
-                        <img src="${ASSETS_URL}/assets/mobile-webview/delete-vector.png" alt="delete" onclick="showDeleteNomineeModal(${nominee.id})" />
+                        <img src="${ASSETS_URL}/assets/mobile-webview/delete-vector.png" alt="delete" onclick="showDeleteNomineeModal(${
+                nominee.id
+            })" />
                     </div>
                 </div>
                 <div class="d d-flex align-items-center justify-content-left gap-3">
@@ -136,7 +149,7 @@ function renderNomineeList(response, addHistory = true) {
                     </div>
                     <div class="section d-flex align-items-center justify-content-between">
                         <div>Allocation %:</div>
-                        <span>${nominee.share_percentage}</span>
+                        <span>${parseInt(nominee.share_percentage)}</span>
                     </div>
                 </div>
             </div>
@@ -166,6 +179,7 @@ function renderForm(id = undefined) {
     updatePrevPages(page);
     page = pages[2];
     $(".form-screen").removeClass("d-none");
+    $(".button-container").addClass("d-none");
     $("#allocation-percentage").text(
         100 - allocationPercentage + "% remaining"
     );
@@ -334,6 +348,14 @@ function calculatePercentage() {
 
 function submitForm(event, nominee = {}) {
     event.preventDefault();
+
+    if (isError) {
+        showErrorModal(
+            "Error",
+            "Please check the details, there are some errors."
+        );
+        return;
+    }
     const formData = new FormData(event.target);
     const errors = {};
     for (const [key, value] of formData.entries()) {
@@ -373,6 +395,7 @@ function submitForm(event, nominee = {}) {
         nominee["is_active"] = true;
         nominee["country_code"] = "91";
         nominees.push(nominee);
+        isNewNominee = true
     }
     allocationPercentage = calculatePercentage();
     renderNomineeList(nominees);
@@ -391,6 +414,7 @@ function submitNominee() {
         data: JSON.stringify(nominees.filter((nominee) => nominee.is_active)),
         success: function (response) {
             $(".loader-overlay").hide();
+            isNewNominee = false;
             showSuccessNomineeModal();
         },
         error: function (response) {
@@ -436,20 +460,13 @@ function back() {
     }
 }
 
-$("#button").on("click", function () {
+$("#button, #bottom-button").on("click", function () {
     if (page == "form") {
         $("#form").submit();
-        return;
-    } else if (page == "list") {
-        if (allocationPercentage == 100) {
-            submitNominee();
-        } else {
-            showErrorModalWithExit(
-                "Nominee Details Not Saved",
-                "Your nominee shares don’t add up to 100%. If you leave now, your changes will be lost."
-            );
-        }
-        return;
+    } else if (page == "list" && allocationPercentage < 100) {
+        renderForm();
+    } else if (page == "list" && isNewNominee) {
+        submitNominee();
     } else {
         renderForm();
     }
@@ -484,14 +501,75 @@ $(".modal-container").on("click", function (e) {
     }
 });
 
+const input = document.getElementById("pan");
+
+input.addEventListener("input", function () {
+    this.value = String(this.value)
+        .replace(/[^A-Z0-9]/gi, "")
+        .toUpperCase()
+        .substring(0, 10);
+});
+
+function name_validator(value, input_id) {
+    const regex = /^[A-Za-z\s]{1,100}$/;
+    const img = ASSETS_URL + "/assets/mobile-webview/jam_alert-f.svg";
+
+    if (!value) {
+        $(`#${input_id}-error`).html(`<img src=${img} />` + "Name is required");
+        $(`#${input_id}`).addClass("error");
+        isError = true;
+    } else if (!regex.test(value.trim())) {
+        $(`#${input_id}-error`).html(
+            `<img src=${img} />` +
+                "Please enter a valid name (letters and spaces only)"
+        );
+        $(`#${input_id}`).addClass("error");
+        isError = true;
+    } else {
+        $(`#${input_id}-error`).text("");
+        $(`#${input_id}`).removeClass("error");
+        isError = false;
+    }
+}
+
+function share_percentage_validator(value, input_id) {
+    const img = ASSETS_URL + "/assets/mobile-webview/jam_alert-f.svg";
+    if (parseInt(value) > allocationPercentage) {
+        $(`#${input_id}-error`).html(
+            `<img src=${img} />` + `You only have ${allocationPercentage}% left`
+        );
+        $(`#${input_id}`).addClass("error");
+        isError = true;
+    } else {
+        $(`#${input_id}-error`).html("");
+        $(`#${input_id}`).removeClass("error");
+        isError = false;
+    }
+}
+
+$("#pan, #name, #share_percentage, #phone_number").on("input", function () {
+    if (this.id == "pan") {
+        this.value = String(this.value)
+            .replace(/[^A-Z0-9]/gi, "")
+            .toUpperCase()
+            .substring(0, 10);
+    } else if (this.id == "name") {
+        name_validator(this.value, this.id);
+    } else if (this.id == "phone_number") {
+        if (this.value.length > 10) {
+            this.value = this.value.slice(0, 10);
+        }
+    } else if (this.id == "share_percentage") {
+        share_percentage_validator(this.value, this.id);
+    }
+});
+
 if (DEBUG) {
-    showErrorModalWithExit(
-        "Debug",
-        document.cookie
-    );
+    showErrorModalWithExit("Debug", document.cookie);
 }
 
 fetchNominees();
 
 renderLottie();
 fetchRelativeChoices(); // this will fetch the relative choices
+

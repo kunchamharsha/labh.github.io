@@ -15,6 +15,7 @@ body {
     top: 0;
     background: black;
     padding-right: calculate-rem(20);
+    z-index: 10;
     .logo {
         img {
             width: calculate-rem(107);
@@ -52,7 +53,7 @@ $padding-lef-right: calculate-rem(20);
 
     .button-container {
         position: fixed;
-        bottom: calculate-rem(40);
+        bottom: calculate-rem(50);
         left: 0;
         width: 100%;
         padding: 0 $padding-lef-right;
@@ -95,7 +96,7 @@ $padding-lef-right: calculate-rem(20);
 
 .form-screen {
     form {
-        padding-bottom: calculate-rem(80);
+        padding-bottom: calculate-rem(90);
         margin-top: calculate-rem(40);
     }
     label {
@@ -109,6 +110,15 @@ $padding-lef-right: calculate-rem(20);
         font-size: calculate-rem(14);
         margin-bottom: calculate-rem(25);
         margin-top: calculate-rem(38);
+    }
+    .form-group {
+        .error-message {
+            font-size: calculate-rem(12);
+            font-weight: 500;
+            color: #ff615f;
+            position: relative;
+            bottom: calculate-rem(10);
+        }
     }
     input,
     textarea {
@@ -139,7 +149,7 @@ $padding-lef-right: calculate-rem(20);
         border-radius: calculate-rem(20);
     }
     .error {
-        border: 1px solid red;
+        border: 1px solid #ff615f;
     }
 }
 
