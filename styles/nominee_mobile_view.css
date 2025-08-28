@@ -289,11 +289,11 @@ body {
   color: #cecbff;
 }
 .list-screen .list-header img {
-  width: 1.1875rem;
-  height: 1.1875rem;
+  width: 0.9375rem;
+  height: 1rem;
 }
 .list-screen .section div {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 0.875rem;
   color: rgba(245, 245, 245, 0.5450980392);
 }
