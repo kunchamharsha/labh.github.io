@@ -148,11 +148,11 @@ function renderNomineeList(response, addHistory = true) {
                 </div>
                 <div class="nominee-details d-flex justify-content-between">
                     <div class="section d-flex flex-column w-50">
-                        <div>Relationsip:</div>
+                        <div>Relationsip</div>
                         <span>${nominee.relationship}</span>
                     </div>
                     <div class="section d-flex flex-column w-auto">
-                        <div>Allocation %:</div>
+                        <div>Allocation %</div>
                         <span>${parseInt(nominee.share_percentage)}</span>
                     </div>
                 </div>
@@ -245,6 +245,18 @@ function deleteNominee(id) {
     });
     hideModals();
     renderNomineeList(nominees);
+}
+
+function showIncompleteAllocationModal() {
+    hideModals();
+
+    setTimeout(() => {
+        $(".modal-container").removeClass("d-none");
+        $("#incomplete-allocation-modal").removeClass("d-none");
+        setTimeout(() => {
+            $(".c-modal").addClass("show");
+        }, 10);
+    }, 100);
 }
 
 function showRelativeModal() {
@@ -475,6 +487,7 @@ function back() {
 }
 
 $("#button, #bottom-button, #list-bottom-button").on("click", function () {
+    console.log("clicked");
     if (page == "form") {
         $("#form").submit();
     } else if (
@@ -483,6 +496,7 @@ $("#button, #bottom-button, #list-bottom-button").on("click", function () {
         !isNewNominee &&
         !isUpdate
     ) {
+        showIncompleteAllocationModal();
         renderForm();
     } else if (page == "list" && (isNewNominee || isUpdate)) {
         submitNominee();
