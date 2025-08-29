@@ -8,6 +8,7 @@ var availableNominees = [];
 var allocationPercentage = 0;
 var isError = false;
 var isNewNominee = false;
+var isUpdate = false;
 
 const headerHeight = $(".go-back").outerHeight(true);
 const modalHeight = window.innerHeight - headerHeight;
@@ -111,13 +112,16 @@ function renderNomineeList(response, addHistory = true) {
     nominees.length > 0 ? removePaddingFromListScreen() : undefined;
     allocationPercentage = calculatePercentage();
 
-    if (parseInt(allocationPercentage) == 100 && !isNewNominee) {
-        $(".button-container").addClass("d-none");
+    if (isUpdate) {
+        $("#list-bottom-button").removeClass("d-none");
+    } else if (allocationPercentage == 100 && !isNewNominee) {
+        $("#list-bottom-button").addClass("d-none");
     } else {
-        $(".button-container").removeClass("d-none");
+        $("#list-bottom-button").removeClass("d-none");
     }
 
     allocationPercentage != 100 ? renderNomineeError() : undefined;
+
     response.forEach((nominee) => {
         if (nominee.is_active) {
             const list = `
@@ -143,11 +147,11 @@ function renderNomineeList(response, addHistory = true) {
 
                 </div>
                 <div class="nominee-details d-flex align-items-center justify-content-between">
-                    <div class="section d-flex align-items-center justify-content-between">
+                    <div class="section d-flex flex-column w-50">
                         <div>Relationsip:</div>
                         <span>${nominee.relationship}</span>
                     </div>
-                    <div class="section d-flex align-items-center justify-content-between">
+                    <div class="section d-flex flex-column w-50">
                         <div>Allocation %:</div>
                         <span>${parseInt(nominee.share_percentage)}</span>
                     </div>
@@ -178,6 +182,7 @@ function renderForm(id = undefined) {
     hideAllScreens();
     updatePrevPages(page);
     page = pages[2];
+    $('#list-bottom-button').addClass('d-none')
     $(".form-screen").removeClass("d-none");
     $(".button-container").addClass("d-none");
     $("#allocation-percentage").text(
@@ -395,7 +400,9 @@ function submitForm(event, nominee = {}) {
         nominee["is_active"] = true;
         nominee["country_code"] = "91";
         nominees.push(nominee);
-        isNewNominee = true
+        isNewNominee = true;
+    } else {
+        isUpdate = true;
     }
     allocationPercentage = calculatePercentage();
     renderNomineeList(nominees);
@@ -460,12 +467,12 @@ function back() {
     }
 }
 
-$("#button, #bottom-button").on("click", function () {
+$("#button, #bottom-button, #list-bottom-button").on("click", function () {
     if (page == "form") {
         $("#form").submit();
-    } else if (page == "list" && allocationPercentage < 100) {
+    } else if (page == "list" && allocationPercentage < 100 && !isNewNominee && !isUpdate) {
         renderForm();
-    } else if (page == "list" && isNewNominee) {
+    } else if (page == "list" && (isNewNominee || isUpdate)) {
         submitNominee();
     } else {
         renderForm();
@@ -568,8 +575,10 @@ if (DEBUG) {
     showErrorModalWithExit("Debug", document.cookie);
 }
 
+$(".button-container").addClass("d-none");
+$("#list-bottom-button").addClass("d-none");
+
 fetchNominees();
 
 renderLottie();
 fetchRelativeChoices(); // this will fetch the relative choices
-

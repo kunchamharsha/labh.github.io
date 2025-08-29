@@ -49,7 +49,7 @@ $padding-lef-right: calculate-rem(20);
 
 .contents {
     padding: calculate-rem(0) $padding-lef-right;
-    height: 65vh;
+    margin-bottom: calculate-rem(10);
 
     .button-container {
         position: fixed;
