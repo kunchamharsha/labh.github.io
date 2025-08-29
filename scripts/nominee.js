@@ -148,11 +148,11 @@ function renderNomineeList(response, addHistory = true) {
                 </div>
                 <div class="nominee-details d-flex justify-content-between">
                     <div class="section d-flex flex-column w-50">
-                        <div>Relationsip:</div>
+                        <div>Relationsip</div>
                         <span>${nominee.relationship}</span>
                     </div>
                     <div class="section d-flex flex-column w-auto">
-                        <div>Allocation %:</div>
+                        <div>Allocation %</div>
                         <span>${parseInt(nominee.share_percentage)}</span>
                     </div>
                 </div>
@@ -182,7 +182,7 @@ function renderForm(id = undefined) {
     hideAllScreens();
     updatePrevPages(page);
     page = pages[2];
-    $('#list-bottom-button').addClass('d-none')
+    $("#list-bottom-button").addClass("d-none");
     $(".form-screen").removeClass("d-none");
     $(".button-container").addClass("d-none");
     $("#allocation-percentage").text(
@@ -245,6 +245,18 @@ function deleteNominee(id) {
     });
     hideModals();
     renderNomineeList(nominees);
+}
+
+function showIncompleteAllocationModal() {
+    hideModals();
+
+    setTimeout(() => {
+        $(".modal-container").removeClass("d-none");
+        $("#incomplete-allocation-modal").removeClass("d-none");
+        setTimeout(() => {
+            $(".c-modal").addClass("show");
+        }, 10);
+    }, 100);
 }
 
 function showRelativeModal() {
@@ -368,19 +380,22 @@ function submitForm(event, nominee = {}) {
         nominee[key] = value;
 
         if (key == "pan") {
-            if (!isValidPAN(value)) {
-                $("#nominee-pan").addClass("error");
+            if (!isValidPAN(value) && value != "") {
+                $("#pan").addClass("error");
                 showErrorModal(
-                    "Invalid PAN",
-                    "Please enter a valid PAN number."
+                    "Incorrect Details",
+                    "Please review the highlighted fields and re-enter the details correctly."
                 );
                 return;
             }
         }
-        if (key == "dob") {
+        if (key == "date_of_birth") {
             if (!isValidDOB(value)) {
-                $("#dob").addClass("error");
-                showErrorModal("Invalid Date", "Please enter a valid date.");
+                $("#date_of_birth").addClass("error");
+                showErrorModal(
+                    "Invalid Date",
+                    "Please review the highlighted fields and re-enter the details correctly."
+                );
                 return;
             }
         }
@@ -393,7 +408,11 @@ function submitForm(event, nominee = {}) {
         Object.keys(errors).forEach((key) => {
             $(`#${key}`).addClass("error");
         });
-        showErrorModal("Incomplete", "You've to fill all the data!");
+        showErrorModal(
+            "Form filled partially",
+            "Some fields are missing. Please fill in all required details before saving."
+        );
+        return;
     }
     if (!("id" in nominee)) {
         nominee["id"] = nominees.length + 1;
@@ -468,9 +487,16 @@ function back() {
 }
 
 $("#button, #bottom-button, #list-bottom-button").on("click", function () {
+    console.log("clicked");
     if (page == "form") {
         $("#form").submit();
-    } else if (page == "list" && allocationPercentage < 100 && !isNewNominee && !isUpdate) {
+    } else if (
+        page == "list" &&
+        allocationPercentage < 100 &&
+        !isNewNominee &&
+        !isUpdate
+    ) {
+        showIncompleteAllocationModal();
         renderForm();
     } else if (page == "list" && (isNewNominee || isUpdate)) {
         submitNominee();
@@ -488,7 +514,7 @@ $("#relationship").on("click", function () {
 });
 
 $("input").on("click", function () {
-    $("input").removeClass("error");
+    $("input, textarea").removeClass("error");
 });
 
 $(".close-modal").on("click", function () {
