@@ -146,12 +146,12 @@ function renderNomineeList(response, addHistory = true) {
                     </div>
 
                 </div>
-                <div class="nominee-details d-flex align-items-center justify-content-between">
+                <div class="nominee-details d-flex justify-content-between">
                     <div class="section d-flex flex-column w-50">
                         <div>Relationsip:</div>
                         <span>${nominee.relationship}</span>
                     </div>
-                    <div class="section d-flex flex-column w-50">
+                    <div class="section d-flex flex-column w-auto">
                         <div>Allocation %:</div>
                         <span>${parseInt(nominee.share_percentage)}</span>
                     </div>

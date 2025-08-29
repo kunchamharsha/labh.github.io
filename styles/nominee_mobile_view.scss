@@ -1,5 +1,13 @@
 @import "mobile_view_main";
 
+.header {
+    .go-back {
+        .header-icon {
+            height: calculate-rem(21);
+        }
+    }
+}
+
 .c-warning {
     // margin-top: calculate-rem(445);
     .helper-container {
@@ -47,7 +55,7 @@
     }
 
     .d {
-        margin-bottom: calculate-rem(24);
+        margin-bottom: calculate-rem(12);
     }
 }
 
@@ -64,7 +72,7 @@
         background: black;
 
         span {
-            font-size: calculate-rem(12);
+            font-size: calculate-rem(13);
             font-weight: 600;
             color: #cecbff;
         }
@@ -72,7 +80,7 @@
     .error {
         background: #fb895452;
         border-radius: calculate-rem(16);
-        padding: calculate-rem(16) calculate-rem(15);
+        padding: calculate-rem(10) calculate-rem(10);
         margin-top: calculate-rem(20);
         margin-bottom: calculate-rem(20);
 
@@ -82,7 +90,7 @@
         }
 
         span {
-            font-size: calculate-rem(12);
+            font-size: calculate-rem(13);
             font-weight: 500;
             color: #f5f5f5cc;
             text-wrap: wrap;

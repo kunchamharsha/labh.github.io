@@ -66,7 +66,7 @@ body {
 
 .contents {
   padding: 0rem 1.25rem;
-  margin-bottom: 0.625rem;
+  margin-bottom: 1.25rem;
 }
 .contents .button-container {
   position: fixed;
@@ -280,6 +280,10 @@ body {
   color: #168465;
 }
 
+.header .go-back .header-icon {
+  height: 1.3125rem;
+}
+
 .c-warning .helper-container {
   margin-top: 0px;
 }
@@ -317,7 +321,7 @@ body {
   width: 50%;
 }
 .list-screen .d {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 #list-bottom-button {
@@ -332,14 +336,14 @@ body {
   background: black;
 }
 .nominee-error .button span {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: #cecbff;
 }
 .nominee-error .error {
   background: rgba(251, 137, 84, 0.3215686275);
   border-radius: 1rem;
-  padding: 1rem 0.9375rem;
+  padding: 0.625rem 0.625rem;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
@@ -348,7 +352,7 @@ body {
   height: 1.5rem;
 }
 .nominee-error .error span {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: rgba(245, 245, 245, 0.8);
   text-wrap: wrap;
