@@ -28,10 +28,8 @@ function isValidPAN(pan) {
 }
 
 function isValidDOB(dob) {
-    const regex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/(19|20)\d{2}$/;
-    if (!regex.test(dob)) return false;
 
-    const [month, day, year] = dob.split("/").map(Number);
+    const [year, month, day] = dob.split("-").map(Number);
 
     const date = new Date(year, month - 1, day);
 
@@ -66,6 +64,10 @@ function fetchNominees(addHistory = true) {
         },
         success: function (response) {
             $(".loader-overlay").hide();
+            if (Object.keys(response).length === 0) {
+                renderForm();
+                return;
+            }
             if (response.length > 0) renderNomineeList(response, addHistory);
         },
         error: function (xhr, status, error) {
@@ -128,7 +130,7 @@ function renderNomineeList(response, addHistory = true) {
             <div class="list">
                 <div class="d d-flex align-items-center justify-content-between list-header">
                     <div class="section">
-                        <img src="${ASSETS_URL}/assets/mobile-webview/edit-nominee.png" alt="edit" />
+                        <img src="${ASSETS_URL}/assets/mobile-webview/edit-nominee.png" alt="edit" class="edit-icon" />
                         <span onclick="renderForm(${
                             nominee.id
                         })">Edit details </span>
@@ -175,7 +177,7 @@ function showValuesInForm(nominee) {
     $("#pin_code").val(nominee.pin_code);
     $("#country").val(nominee.country);
     $("#address").val(nominee.address);
-    $("#share_percentage").val(nominee.share_percentage);
+    $("#share_percentage").val(parseInt(nominee.share_percentage));
 }
 
 function renderForm(id = undefined) {
@@ -190,7 +192,7 @@ function renderForm(id = undefined) {
     );
     if (id != undefined) {
         nominee = nominees.filter((nominee) => nominee.id == id);
-        $("#button").text("Update");
+        $("#button").text("Update Nominee");
         showValuesInForm(nominee[0]);
         $("#form")
             .off("submit")
@@ -389,7 +391,9 @@ function submitForm(event, nominee = {}) {
             }
         }
         if (key == "date_of_birth") {
+            console.log('birtuday')
             if (!isValidDOB(value)) {
+                console.log("invalid")
                 $("#date_of_birth").addClass("error");
                 showErrorModal(
                     "Invalid Date",
