@@ -386,7 +386,6 @@ function submitForm(event, nominee = {}) {
                     "Incorrect Details",
                     "Please review the highlighted fields and re-enter the details correctly."
                 );
-                return;
             }
         }
         if (key == "date_of_birth") {
@@ -396,7 +395,6 @@ function submitForm(event, nominee = {}) {
                     "Invalid Date",
                     "Please review the highlighted fields and re-enter the details correctly."
                 );
-                return;
             }
         }
         if (!value) {
@@ -567,7 +565,7 @@ function name_validator(value, input_id) {
 
 function share_percentage_validator(value, input_id) {
     const img = ASSETS_URL + "/assets/mobile-webview/jam_alert-f.svg";
-    if (parseInt(value) > allocationPercentage) {
+    if (parseInt(value) > allocationPercentage && nominees.length !== 1) {
         $(`#${input_id}-error`).html(
             `<img src=${img} />` + `You only have ${allocationPercentage}% left`
         );
