@@ -122,6 +122,12 @@ function renderNomineeList(response, addHistory = true) {
     }
 
     allocationPercentage != 100 ? renderNomineeError() : undefined;
+    allocationPercentage != 100
+        ? $("#list-bottom-button").addClass("opacity")
+        : undefined;
+    allocationPercentage == 100
+        ? $("#list-bottom-button").removeClass("opacity")
+        : undefined;
 
     response.forEach((nominee) => {
         if (nominee.is_active) {
@@ -376,8 +382,11 @@ function submitForm(event, nominee = {}) {
     }
     const formData = new FormData(event.target);
     const errors = {};
-    for (const [key, value] of formData.entries()) {
+    for (var [key, value] of formData.entries()) {
         $(`#${key}`).removeClass("error");
+        if (key == "phone_number" && value != "") {
+            value = value.trim().split("+91")[1];
+        }
         nominee[key] = value;
 
         if (key == "pan") {
@@ -390,7 +399,7 @@ function submitForm(event, nominee = {}) {
             }
         }
         if (key == "date_of_birth") {
-            if (!isValidDOB(value)) {
+            if (!isValidDOB(value) & value != "") {
                 $("#date_of_birth").addClass("error");
                 showErrorModal(
                     "Invalid Date",
@@ -498,6 +507,12 @@ function back() {
 }
 
 $("#button, #bottom-button, #list-bottom-button").on("click", function () {
+    if (
+        "list-bottom-button" == this.id &&
+        $(this).hasClass("opacity")
+    ) {
+        return;
+    }
     if (page == "form") {
         $("#form").submit();
     } else if (
@@ -614,8 +629,8 @@ $("#pan, #name, #share_percentage, #phone_number").on("input", function () {
     } else if (this.id == "name") {
         name_validator(this.value, this.id);
     } else if (this.id == "phone_number") {
-        if (this.value.length > 10) {
-            this.value = this.value.slice(0, 10);
+        if (this.value.length > 13) {
+            this.value = this.value.slice(0, 13);
         }
     } else if (this.id == "share_percentage") {
         share_percentage_validator(this.value, this.id);
