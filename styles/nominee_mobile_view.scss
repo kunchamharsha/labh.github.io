@@ -111,6 +111,19 @@
             color: #cecbff;
         }
     }
+    .relationship-container {
+        width: 100%;
+        position: relative;
+        display: inline-block;
+        img {
+            position: absolute;
+            right: 10px;
+            top: 40%;
+            transform: translateY(-50%);
+            width: calculate-rem(20);
+            height: calculate-rem(24);
+        }
+    }
 }
 
 .modal-container {

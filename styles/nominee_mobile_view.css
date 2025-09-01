@@ -370,6 +370,19 @@ body {
 .form-screen .status-container span {
   color: #cecbff;
 }
+.form-screen .relationship-container {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+.form-screen .relationship-container img {
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.5rem;
+}
 
 .modal-container .c-modal-nominee {
   height: auto;
