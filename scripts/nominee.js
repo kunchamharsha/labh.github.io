@@ -28,7 +28,6 @@ function isValidPAN(pan) {
 }
 
 function isValidDOB(dob) {
-
     const [year, month, day] = dob.split("-").map(Number);
 
     const date = new Date(year, month - 1, day);
@@ -391,9 +390,7 @@ function submitForm(event, nominee = {}) {
             }
         }
         if (key == "date_of_birth") {
-            console.log('birtuday')
             if (!isValidDOB(value)) {
-                console.log("invalid")
                 $("#date_of_birth").addClass("error");
                 showErrorModal(
                     "Invalid Date",
@@ -447,7 +444,19 @@ function submitNominee() {
         },
         error: function (response) {
             $(".loader-overlay").hide();
-            showErrorModal("Nominee Details Not Saved", response.responseJSON.error);
+            if (
+                response.responseJSON.error == "You can't provide your own PAN"
+            ) {
+                showErrorModal(
+                    "Nominee Details Cannot be Saved",
+                    "You cannot add yourself as a nominee. Please add a family member or relative."
+                );
+            } else {
+                showErrorModal(
+                    "Nominee Details Not Saved",
+                    response.responseJSON.error
+                );
+            }
         },
     });
 }
@@ -489,7 +498,6 @@ function back() {
 }
 
 $("#button, #bottom-button, #list-bottom-button").on("click", function () {
-    console.log("clicked");
     if (page == "form") {
         $("#form").submit();
     } else if (
@@ -549,6 +557,10 @@ function name_validator(value, input_id) {
     const regex = /^[A-Za-z\s]{1,100}$/;
     const img = ASSETS_URL + "/assets/mobile-webview/jam_alert-f.svg";
 
+    if (value == "") {
+        return;
+    }
+
     if (!value) {
         $(`#${input_id}-error`).html(`<img src=${img} />` + "Name is required");
         $(`#${input_id}`).addClass("error");
@@ -569,7 +581,18 @@ function name_validator(value, input_id) {
 
 function share_percentage_validator(value, input_id) {
     const img = ASSETS_URL + "/assets/mobile-webview/jam_alert-f.svg";
-    if (parseInt(value) > allocationPercentage && nominees.length !== 1) {
+    if (value == "") {
+        return;
+    }
+    if (value > 100) {
+        $(`#${input_id}-error`).html(
+            `<img src=${img} />` + "Please enter a valid percentage"
+        );
+        $(`#${input_id}`).addClass("error");
+        isError = true;
+        return;
+    }
+    if (!parseInt(value) > allocationPercentage) {
         $(`#${input_id}-error`).html(
             `<img src=${img} />` + `You only have ${allocationPercentage}% left`
         );
