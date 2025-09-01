@@ -93,7 +93,7 @@ function fetchRelativeChoices() {
         },
         error: function (xhr, status, error) {
             $(".loader-overlay").hide();
-            console.error("Error:", error);
+            console.error("Nominee Details Not Saved", error);
         },
     });
 }
