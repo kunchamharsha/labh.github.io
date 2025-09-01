@@ -447,7 +447,7 @@ function submitNominee() {
         },
         error: function (response) {
             $(".loader-overlay").hide();
-            showErrorModal("Error", response.responseJSON.error);
+            showErrorModal("Nominee Details Not Saved", response.responseJSON.error);
         },
     });
 }
