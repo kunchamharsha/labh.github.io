@@ -428,6 +428,10 @@ body {
   background: linear-gradient(117.03deg, rgba(64, 18, 124, 0.3) 15.67%, rgba(166, 99, 255, 0.3) 47.49%, rgba(64, 18, 124, 0.3) 84.33%);
 }
 
+.opacity {
+  opacity: 60%;
+}
+
 @media (min-height: 640px) and (max-height: 844px) {
   .contents #banner svg {
     height: 18.75rem !important;

@@ -122,6 +122,12 @@ function renderNomineeList(response, addHistory = true) {
     }
 
     allocationPercentage != 100 ? renderNomineeError() : undefined;
+    allocationPercentage != 100
+        ? $("#list-bottom-button").addClass("opacity")
+        : undefined;
+    allocationPercentage == 100
+        ? $("#list-bottom-button").removeClass("opacity")
+        : undefined;
 
     response.forEach((nominee) => {
         if (nominee.is_active) {
@@ -171,7 +177,7 @@ function showValuesInForm(nominee) {
     $("#city").val(nominee.city);
     $("#date_of_birth").val(nominee.date_of_birth);
     $("#relationship").val(nominee.relationship);
-    $("#phone_number").val(nominee.phone_number);
+    $("#phone_number").val("+91" + nominee.phone_number);
     $("#email").val(nominee.email);
     $("#pin_code").val(nominee.pin_code);
     $("#country").val(nominee.country);
@@ -376,8 +382,11 @@ function submitForm(event, nominee = {}) {
     }
     const formData = new FormData(event.target);
     const errors = {};
-    for (const [key, value] of formData.entries()) {
+    for (var [key, value] of formData.entries()) {
         $(`#${key}`).removeClass("error");
+        if (key == "phone_number" && value != "") {
+            value = value.trim().split("+91")[1];
+        }
         nominee[key] = value;
 
         if (key == "pan") {
@@ -387,15 +396,17 @@ function submitForm(event, nominee = {}) {
                     "Incorrect Details",
                     "Please review the highlighted fields and re-enter the details correctly."
                 );
+                return; // this is needed
             }
         }
         if (key == "date_of_birth") {
-            if (!isValidDOB(value)) {
+            if (!isValidDOB(value) & value != "") {
                 $("#date_of_birth").addClass("error");
                 showErrorModal(
                     "Invalid Date",
                     "Please review the highlighted fields and re-enter the details correctly."
                 );
+                return; // this is needed
             }
         }
         if (!value) {
@@ -448,7 +459,7 @@ function submitNominee() {
                 response.responseJSON.error == "You can't provide your own PAN"
             ) {
                 showErrorModal(
-                    "Nominee Details Cannot be Saved",
+                    "Pan Number cannot be yours",
                     "You cannot add yourself as a nominee. Please add a family member or relative."
                 );
             } else {
@@ -498,6 +509,12 @@ function back() {
 }
 
 $("#button, #bottom-button, #list-bottom-button").on("click", function () {
+    if (
+        "list-bottom-button" == this.id &&
+        $(this).hasClass("opacity")
+    ) {
+        return;
+    }
     if (page == "form") {
         $("#form").submit();
     } else if (
@@ -614,8 +631,8 @@ $("#pan, #name, #share_percentage, #phone_number").on("input", function () {
     } else if (this.id == "name") {
         name_validator(this.value, this.id);
     } else if (this.id == "phone_number") {
-        if (this.value.length > 10) {
-            this.value = this.value.slice(0, 10);
+        if (this.value.length > 13) {
+            this.value = this.value.slice(0, 13);
         }
     } else if (this.id == "share_percentage") {
         share_percentage_validator(this.value, this.id);
