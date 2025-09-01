@@ -99,6 +99,9 @@
 }
 
 .form-screen {
+    form {
+        padding-bottom: calculate-rem(45);
+    }
     .status-container {
         margin-bottom: calculate-rem(12);
         label {
