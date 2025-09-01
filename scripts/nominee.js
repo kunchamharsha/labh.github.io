@@ -177,7 +177,7 @@ function showValuesInForm(nominee) {
     $("#city").val(nominee.city);
     $("#date_of_birth").val(nominee.date_of_birth);
     $("#relationship").val(nominee.relationship);
-    $("#phone_number").val(nominee.phone_number);
+    $("#phone_number").val("+91" + nominee.phone_number);
     $("#email").val(nominee.email);
     $("#pin_code").val(nominee.pin_code);
     $("#country").val(nominee.country);
@@ -396,6 +396,7 @@ function submitForm(event, nominee = {}) {
                     "Incorrect Details",
                     "Please review the highlighted fields and re-enter the details correctly."
                 );
+                return; // this is needed
             }
         }
         if (key == "date_of_birth") {
@@ -405,6 +406,7 @@ function submitForm(event, nominee = {}) {
                     "Invalid Date",
                     "Please review the highlighted fields and re-enter the details correctly."
                 );
+                return; // this is needed
             }
         }
         if (!value) {
@@ -457,7 +459,7 @@ function submitNominee() {
                 response.responseJSON.error == "You can't provide your own PAN"
             ) {
                 showErrorModal(
-                    "Nominee Details Cannot be Saved",
+                    "Pan Number cannot be yours",
                     "You cannot add yourself as a nominee. Please add a family member or relative."
                 );
             } else {
