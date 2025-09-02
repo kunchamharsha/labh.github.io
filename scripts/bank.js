@@ -95,7 +95,7 @@ function renderBankAccounts(addHistory = true) {
             $(".no-accounts-view").addClass("d-none");
             $(".list-screen").removeClass("d-none");
 
-            addHistory ? updatePrevPages(page) : null; // this fetch is working asyncronously
+            addHistory ? updatePrevPages(page) : null;
             page = pages[1];
             renderHomeScreenBottomButton();
             $(".list-screen").empty();
@@ -385,13 +385,15 @@ function showErrors(heading, description, close_text, primary_action = "back") {
     $("#error-heading").text(heading);
     $("#error-description").text(description);
     $("#close").text(close_text);
-    $("#close").off("click").on("click", function () {
-        if (primary_action == "contact us") {
-            contactUs();
-        } else {
-            hideModals();
-        }
-    });
+    $("#close")
+        .off("click")
+        .on("click", function () {
+            if (primary_action == "contact us") {
+                contactUs();
+            } else {
+                hideModals();
+            }
+        });
     setTimeout(() => {
         $(".c-modal").addClass("show");
     }, 10);
@@ -436,7 +438,8 @@ $(".modal-container").on("click", function (e) {
 });
 
 $("#done").on("click", function () {
-    renderBankAccounts();
+    prevPages = [];
+    renderBankAccounts((addHistory = false));
 });
 
 $(".loader-overlay").hide();
@@ -444,7 +447,9 @@ $(".loader-overlay").hide();
 const input = document.getElementById("ifsc-code");
 
 input.addEventListener("input", function () {
-    this.value = String(this.value).replace(/[^A-Z0-9]/gi, "").toUpperCase();
+    this.value = String(this.value)
+        .replace(/[^A-Z0-9]/gi, "")
+        .toUpperCase();
 });
 
 const input2 = document.getElementById("account-number");
