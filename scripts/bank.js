@@ -116,7 +116,7 @@ function renderBankAccounts(addHistory = true) {
                         ${
                             account.is_default === "N" ||
                             account.is_default === null
-                                ? deleteButton
+                                ? "<div></div>"
                                 : "<div></div>"
                         }
                     </div>
@@ -136,7 +136,7 @@ function renderBankAccounts(addHistory = true) {
                             ${
                                 account.is_default === "N" ||
                                 account.is_default === null
-                                    ? deleteButton
+                                    ? "<div></div>"
                                     : "<div></div>"
                             }
                         </div>
