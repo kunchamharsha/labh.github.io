@@ -177,7 +177,7 @@ function showValuesInForm(nominee) {
     $("#city").val(nominee.city);
     $("#date_of_birth").val(nominee.date_of_birth);
     $("#relationship").val(nominee.relationship);
-    $("#phone_number").val("+91" + nominee.phone_number);
+    $("#phone_number").val(nominee.phone_number);
     $("#email").val(nominee.email);
     $("#pin_code").val(nominee.pin_code);
     $("#country").val(nominee.country);
@@ -384,9 +384,6 @@ function submitForm(event, nominee = {}) {
     const errors = {};
     for (var [key, value] of formData.entries()) {
         $(`#${key}`).removeClass("error");
-        if (key == "phone_number" && value != "") {
-            value = value.trim().split("+91")[1];
-        }
         nominee[key] = value;
 
         if (key == "pan") {
@@ -631,7 +628,7 @@ $("#pan, #name, #share_percentage, #phone_number").on("input", function () {
     } else if (this.id == "name") {
         name_validator(this.value, this.id);
     } else if (this.id == "phone_number") {
-        if (this.value.length > 13) {
+        if (this.value.length > 10) {
             this.value = this.value.slice(0, 13);
         }
     } else if (this.id == "share_percentage") {
