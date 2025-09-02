@@ -186,6 +186,7 @@ function showValuesInForm(nominee) {
 }
 
 function renderForm(id = undefined) {
+    selectedRelative = undefined;
     hideAllScreens();
     updatePrevPages(page);
     page = pages[2];
@@ -293,6 +294,7 @@ function showRelativeModal() {
         $(".choice").removeClass("active");
         $(this).addClass("active");
         $("#relationship").val(capitalizeWords(selectedRelative));
+        hideModals();
     });
 
     setTimeout(() => {
@@ -629,7 +631,7 @@ $("#pan, #name, #share_percentage, #phone_number").on("input", function () {
         name_validator(this.value, this.id);
     } else if (this.id == "phone_number") {
         if (this.value.length > 10) {
-            this.value = this.value.slice(0, 13);
+            this.value = this.value.slice(0, 10);
         }
     } else if (this.id == "share_percentage") {
         share_percentage_validator(this.value, this.id);
