@@ -385,9 +385,11 @@ function showErrors(heading, description, close_text, primary_action = "back") {
     $("#error-heading").text(heading);
     $("#error-description").text(description);
     $("#close").text(close_text);
-    $("#close").on("click", function () {
+    $("#close").off("click").on("click", function () {
         if (primary_action == "contact us") {
             contactUs();
+        } else {
+            hideModals();
         }
     });
     setTimeout(() => {
