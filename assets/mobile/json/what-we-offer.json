@@ -1,0 +1,47 @@
+[
+    {
+        "heading": "Quant Models",
+        "content": "Mutual Funds backed by advanced quant research and 16 years of back-testing.",
+        "img": "https://labh.io/assets/mobile/Quant%20Research%20-%20Illustration.svg",
+        "description": [
+            {
+                "heading": "How We Select Funds for Your Portfolio",
+                "content": "At Labh, your investments are powered by advanced quantitative models designed to find the best mutual funds for you."
+            },
+            {
+                "heading": "Diverse Fund Universe",
+                "content": "Our portfolio includes a wide range of equity, debt, and ELSS mutual funds from top Asset Management Companies (AMCs). You gain exposure across categories like small-cap, large-cap, mid-cap, healthcare, value, multi-cap, flexi-cap, liquid funds, government and corporate bonds, credit risk funds, and more."
+            }
+        ]
+    },
+    {
+        "heading": "Expertly Monitored",
+        "content": "Smart monitoring that protects your wealth in uncertain markets",
+        "img": "https://labh.io/assets/mobile/Expertly%20Monitored%20-%20Illustration.svg",
+        "description": [
+            {
+                "heading": "How We Select Funds for Your Portfolio",
+                "content": "At Labh, your investments are powered by advanced quantitative models designed to find the best mutual funds for you."
+            },
+            {
+                "heading": "Diverse Fund Universe",
+                "content": "Our portfolio includes a wide range of equity, debt, and ELSS mutual funds from top Asset Management Companies (AMCs). You gain exposure across categories like small-cap, large-cap, mid-cap, healthcare, value, multi-cap, flexi-cap, liquid funds, government and corporate bonds, credit risk funds, and more."
+            }
+        ]
+    },
+    {
+        "heading": "Auto Rebalancing",
+        "content": "Mutual Fund baskets auto rebalanced to make your portfolio meet market trends and expectations",
+        "img": "https://labh.io/assets/mobile/Rebalance%20-%20Illustration.svg",
+        "description": [
+            {
+                "heading": "How We Select Funds for Your Portfolio",
+                "content": "At Labh, your investments are powered by advanced quantitative models designed to find the best mutual funds for you."
+            },
+            {
+                "heading": "Diverse Fund Universe",
+                "content": "Our portfolio includes a wide range of equity, debt, and ELSS mutual funds from top Asset Management Companies (AMCs). You gain exposure across categories like small-cap, large-cap, mid-cap, healthcare, value, multi-cap, flexi-cap, liquid funds, government and corporate bonds, credit risk funds, and more."
+            }
+        ]
+    }
+]
