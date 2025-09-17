@@ -5,12 +5,12 @@
         "img": "https://labh.io/assets/mobile/Quant%20Research%20-%20Illustration.svg",
         "description": [
             {
-                "heading": "How We Select Funds for Your Portfolio",
-                "content": "At Labh, your investments are powered by advanced quantitative models designed to find the best mutual funds for you."
+                "heading": "",
+                "content": "At Labh, we use advanced quantitative models to pick the best mutual funds for your portfolio. We start by screening a broad universe of funds across categories, ranking them based on risk-adjusted returns and consistent performance."
             },
             {
-                "heading": "Diverse Fund Universe",
-                "content": "Our portfolio includes a wide range of equity, debt, and ELSS mutual funds from top Asset Management Companies (AMCs). You gain exposure across categories like small-cap, large-cap, mid-cap, healthcare, value, multi-cap, flexi-cap, liquid funds, government and corporate bonds, credit risk funds, and more."
+                "heading": "",
+                "content": "Only the top-ranked funds make it into your basket with capital allocated according to model-generated weights. Backtested rigorously over 16 years, our PhD-driven models help deliver smarter, data-backed investment choices."
             }
         ]
     },
@@ -20,12 +20,8 @@
         "img": "https://labh.io/assets/mobile/Expertly%20Monitored%20-%20Illustration.svg",
         "description": [
             {
-                "heading": "How We Select Funds for Your Portfolio",
-                "content": "At Labh, your investments are powered by advanced quantitative models designed to find the best mutual funds for you."
-            },
-            {
-                "heading": "Diverse Fund Universe",
-                "content": "Our portfolio includes a wide range of equity, debt, and ELSS mutual funds from top Asset Management Companies (AMCs). You gain exposure across categories like small-cap, large-cap, mid-cap, healthcare, value, multi-cap, flexi-cap, liquid funds, government and corporate bonds, credit risk funds, and more."
+                "heading": "",
+                "content": "Labh continuously tracks thousands of mutual funds with 24/7 algorithms that analyze performance and market conditions. We quickly identify weak performers and focus on top funds offering the best risk-adjusted opportunities. By relying on quantitative analysis rather than emotions, we deliver consistent performance through all market cycles, protecting your investments during uncertain times while targeting optimal growth with data-driven discipline."
             }
         ]
     },
@@ -35,12 +31,12 @@
         "img": "https://labh.io/assets/mobile/Rebalance%20-%20Illustration.svg",
         "description": [
             {
-                "heading": "How We Select Funds for Your Portfolio",
-                "content": "At Labh, your investments are powered by advanced quantitative models designed to find the best mutual funds for you."
+                "heading": "",
+                "content": "Labh automatically adjusts your investment baskets using smart indicators to match changing market conditions. When one fund performs better than another, our system selects the stronger fund and updates your portfolio weights accordingly."
             },
             {
-                "heading": "Diverse Fund Universe",
-                "content": "Our portfolio includes a wide range of equity, debt, and ELSS mutual funds from top Asset Management Companies (AMCs). You gain exposure across categories like small-cap, large-cap, mid-cap, healthcare, value, multi-cap, flexi-cap, liquid funds, government and corporate bonds, credit risk funds, and more."
+                "heading": "",
+                "content": "During rebalancing, fund weights are optimized based on returns and risk levels. This allows your portfolio to naturally adapt to market changes, keeping you invested in the best-performing funds."
             }
         ]
     }
