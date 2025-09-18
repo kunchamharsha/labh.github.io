@@ -3,41 +3,18 @@
         "heading": "Quant Models",
         "content": "Mutual Funds backed by advanced quant research and 16 years of back-testing.",
         "img": "https://labh.io/assets/mobile/Quant%20Research%20-%20Illustration.svg",
-        "description": [
-            {
-                "heading": "",
-                "content": "At Labh, we use advanced quantitative models to pick the best mutual funds for your portfolio. We start by screening a broad universe of funds across categories, ranking them based on risk-adjusted returns and consistent performance."
-            },
-            {
-                "heading": "",
-                "content": "Only the top-ranked funds make it into your basket with capital allocated according to model-generated weights. Backtested rigorously over 16 years, our PhD-driven models help deliver smarter, data-backed investment choices."
-            }
-        ]
+        "description": "At Labh, we use advanced quantitative models to pick the best mutual funds for your portfolio. We start by screening a broad universe of funds across categories, ranking them based on risk-adjusted returns and consistent performance. \n Only the top-ranked funds make it into your basket with capital allocated according to model-generated weights. Backtested rigorously over 16 years, our PhD-driven models help deliver smarter, data-backed investment choices."
     },
     {
         "heading": "Expertly Monitored",
         "content": "Smart monitoring that protects your wealth in uncertain markets",
         "img": "https://labh.io/assets/mobile/Expertly%20Monitored%20-%20Illustration.svg",
-        "description": [
-            {
-                "heading": "",
-                "content": "Labh continuously tracks thousands of mutual funds with 24/7 algorithms that analyze performance and market conditions. We quickly identify weak performers and focus on top funds offering the best risk-adjusted opportunities. By relying on quantitative analysis rather than emotions, we deliver consistent performance through all market cycles, protecting your investments during uncertain times while targeting optimal growth with data-driven discipline."
-            }
-        ]
+        "description": "Labh continuously tracks thousands of mutual funds with 24/7 algorithms that analyze performance and market conditions. We quickly identify weak performers and focus on top funds offering the best risk-adjusted opportunities. By relying on quantitative analysis rather than emotions, we deliver consistent performance through all market cycles, protecting your investments during uncertain times while targeting optimal growth with data-driven discipline."
     },
     {
         "heading": "Auto Rebalancing",
         "content": "Mutual Fund baskets auto rebalanced to make your portfolio meet market trends and expectations",
         "img": "https://labh.io/assets/mobile/Rebalance%20-%20Illustration.svg",
-        "description": [
-            {
-                "heading": "",
-                "content": "Labh automatically adjusts your investment baskets using smart indicators to match changing market conditions. When one fund performs better than another, our system selects the stronger fund and updates your portfolio weights accordingly."
-            },
-            {
-                "heading": "",
-                "content": "During rebalancing, fund weights are optimized based on returns and risk levels. This allows your portfolio to naturally adapt to market changes, keeping you invested in the best-performing funds."
-            }
-        ]
+        "description": "Labh automatically adjusts your investment baskets using smart indicators to match changing market conditions. When one fund performs better than another, our system selects the stronger fund and updates your portfolio weights accordingly. \n During rebalancing, fund weights are optimized based on returns and risk levels. This allows your portfolio to naturally adapt to market changes, keeping you invested in the best-performing funds."
     }
 ]
