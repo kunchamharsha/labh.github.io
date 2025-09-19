@@ -3,7 +3,7 @@
         "heading": "Quant Models",
         "content": "Quant-backed Mutual Funds, proven by 16 years of back-testing",
         "img": "https://labh.io/assets/mobile/Quant%20Research%20-%20Illustration.svg",
-        "description": "At Labh, we use advanced quantitative models to pick the best mutual funds for your portfolio. We start by screening a broad universe of funds across categories, ranking them based on risk-adjusted returns and consistent performance. \n Only the top-ranked funds make it into your basket with capital allocated according to model-generated weights. Backtested rigorously over 16 years, our PhD-driven models help deliver smarter, data-backed investment choices."
+        "description": "At Labh, we use advanced quantitative models to pick the best mutual funds for your portfolio. We start by screening a broad universe of funds across categories, ranking them based on risk-adjusted returns and consistent performance.\n\nOnly the top-ranked funds make it into your basket with capital allocated according to model-generated weights. Backtested rigorously over 16 years, our PhD-driven models help deliver smarter, data-backed investment choices."
     },
     {
         "heading": "Expertly Monitored",
@@ -15,6 +15,6 @@
         "heading": "Auto Rebalancing",
         "content": "Smart Portfolio Auto-rebalanced for Growth",
         "img": "https://labh.io/assets/mobile/Rebalance%20-%20Illustration.svg",
-        "description": "Labh automatically adjusts your investment baskets using smart indicators to match changing market conditions. When one fund performs better than another, our system selects the stronger fund and updates your portfolio weights accordingly. \n During rebalancing, fund weights are optimized based on returns and risk levels. This allows your portfolio to naturally adapt to market changes, keeping you invested in the best-performing funds."
+        "description": "Labh automatically adjusts your investment baskets using smart indicators to match changing market conditions. When one fund performs better than another, our system selects the stronger fund and updates your portfolio weights accordingly.\n\nDuring rebalancing, fund weights are optimized based on returns and risk levels. This allows your portfolio to naturally adapt to market changes, keeping you invested in the best-performing funds."
     }
 ]
