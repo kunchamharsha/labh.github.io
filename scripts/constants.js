@@ -1,4 +1,4 @@
-const DOMAIN = "https://devapi.labh.io";
+const DOMAIN = "https://api.labh.io";
 const ASSETS_URL = "https://labh.io";
 const DEBUG = false;
 
