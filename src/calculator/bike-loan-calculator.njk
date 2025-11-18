@@ -1,33 +1,33 @@
 ---
 layout: calculator-base.njk
-title: Bike Loan Calculator – Calculate EMI for Two-Wheelers
+title: Two-Wheeler loan Calculator – Calculate EMI for Two-Wheelers
 meta: '
-<meta name="description" content="Calculate your bike loan EMI instantly. Use our free online bike loan calculator to estimate monthly payments, interest, and total loan cost.">
-<meta name="keywords" content="bike loan calculator, two-wheeler EMI calculator, motorcycle loan EMI, bike EMI calculator online, bike finance calculator">
+<meta name="description" content="Calculate your Two-Wheeler loan EMI instantly. Use our free online Two-Wheeler loan calculator to estimate monthly payments, interest, and total loan cost.">
+<meta name="keywords" content="Two-Wheeler loan calculator, two-wheeler EMI calculator, motorcycle loan EMI, bike EMI calculator online, bike finance calculator">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://labh.io/calculator/bike-loan-calculator">
-<meta property="og:title" content="Bike Loan Calculator – Calculate EMI for Two-Wheelers">
-<meta property="og:description" content="Calculate your bike loan EMI instantly. Use our free online bike loan calculator to estimate monthly payments, interest, and total loan cost.">
+<meta property="og:title" content="Two-Wheeler loan Calculator – Calculate EMI for Two-Wheelers">
+<meta property="og:description" content="Calculate your Two-Wheeler loan EMI instantly. Use our free online Two-Wheeler loan calculator to estimate monthly payments, interest, and total loan cost.">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://labh.io/calculator/bike-loan-calculator">
-<meta name="twitter:title" content="Bike Loan Calculator – Calculate EMI for Two-Wheelers">
-<meta name="twitter:description" content="Calculate your bike loan EMI instantly. Use our free online bike loan calculator to estimate monthly payments, interest, and total loan cost.">
+<meta name="twitter:title" content="Two-Wheeler loan Calculator – Calculate EMI for Two-Wheelers">
+<meta name="twitter:description" content="Calculate your Two-Wheeler loan EMI instantly. Use our free online Two-Wheeler loan calculator to estimate monthly payments, interest, and total loan cost.">
 '
 menu: '
     <li><a href="/calculator/">Calculator</a></li>
     <li><img src="/assets/dote-active.svg" alt="dote-active"></li>
-    <li><a href="#" class="active">Bike Loan Calculator - Free Online EMI Calculator for Bike Loans</a></li>
+    <li><a href="#" class="active">Two-Wheeler loan Calculator - Free Online EMI Calculator for Two-Wheeler loans</a></li>
 '
 ---
 
 <div class="main-container">
     <div class="contents">
-        <h1>Bike Loan calculators</h1>
-        <p>Estimate EMI and total interest payable for bike loans.</p>
+        <h1>Two-Wheeler loan calculators</h1>
+        <p>Estimate EMI and total interest payable for Two-Wheeler loans.</p>
     </div>
     <div class="calculator-card pf-calculator car-loan-calculator">
         <img src="/assets/card-edge-image.svg" alt="edge-image" />
@@ -56,16 +56,16 @@ menu: '
                     <span id="downpayment-slider-value">Rs.100000</span>
                 </div>
                 <div class="input-limits">
-                    <div>1 Lac</div>
-                    <div>1 Crore</div>
+                    <div>20K</div>
+                    <div>20 Lakhs</div>
                 </div>
                 <input
                     type="range"
                     id="downpayment-slider"
-                    min="100000"
-                    max="10000000"
-                    step="100000"
-                    value="100000"
+                    min="20000"
+                    max="2000000"
+                    step="10000"
+                    value="20000"
                 />
 
                 <div class="cal-content">
@@ -81,14 +81,14 @@ menu: '
                     id="interest-slider"
                     min="1"
                     max="30"
-                    step="1"
+                    step="0.1"
                     value="10"
                 />
             </div>
             <div>
                 <div class="cal-content">
                     <label>Loan Tenure(Months)</label>
-                    <span id="tenure-slider-value">23 Years</span>
+                    <span id="tenure-slider-value">23 Months</span>
                 </div>
                 <div class="input-limits">
                     <div>12</div>
@@ -174,7 +174,7 @@ menu: '
         <div class="faq-container" style="background-color: transparent">
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>What is the maximum tenure for a bike loan?</span>
+                    <span>What is the maximum tenure for a Two-Wheeler loan?</span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -190,7 +190,7 @@ menu: '
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Can I get a bike loan for a used bike? </span>
+                    <span>Can I get a Two-Wheeler loan for a used bike? </span>
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
                     /></span>
@@ -199,7 +199,7 @@ menu: '
                     <div class="content">
                         <p style="text-align: left">
                             Yes, but the interest rate may be higher compared to
-                            a new bike loan.
+                            a new Two-Wheeler loan.
                         </p>
                     </div>
                 </div>
@@ -208,7 +208,7 @@ menu: '
             <div class="faq-item">
                 <div class="faq-question">
                     <span
-                        >Is bike loan interest eligible for tax benefits?</span
+                        >Is Two-Wheeler loan interest eligible for tax benefits?</span
                     >
                     <span class="arrow"
                         ><img src="/assets/Frame 877 (1).png"
@@ -289,7 +289,7 @@ menu: '
             } else if (slider.id == "interest-slider") {
                 $(`#${slider.id}-value`).text(`${slider.value} %`);
             } else if (slider.id == "tenure-slider") {
-                $(`#${slider.id}-value`).text(`${slider.value} Years`);
+                $(`#${slider.id}-value`).text(`${slider.value} Months`);
             }
 
             const value =
