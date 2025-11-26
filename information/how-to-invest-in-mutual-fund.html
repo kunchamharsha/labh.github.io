@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to Invest in Mutual Funds in India | Labh</title>
+  <meta name="description" content="Step-by-step guide on how to invest in mutual funds in India. Learn how to start SIPs, choose the right funds, and invest smartly with Labh." />
+  <meta name="keywords" content="how to invest in mutual funds, mutual funds india, SIP investment, start investing in mutual funds, best way to invest in mutual funds, mutual fund guide india, Labh" />
+
+  <style>
+    :root {
+      --bg: #050506;
+      --bg-alt: #0c0c10;
+      --card: #111119;
+      --muted: #a3a8b0;
+      --accent: #22e3b3;
+      --border-subtle: rgba(255,255,255,0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111322 0, #050506 55%, #020203 100%);
+      color: #f5f7fa;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 32px;
+      border-bottom: 1px solid var(--border-subtle);
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(5,5,6,0.96), rgba(5,5,6,0.85));
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 20% 0%, #ffffff 0, #22e3b3 35%, #047857 90%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      color: #00100b;
+    }
+
+    .brand-text-title {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .brand-text-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    nav a {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      border-color: var(--border-subtle);
+      color: #f9fafb;
+    }
+
+    .nav-cta {
+      border-radius: 999px;
+      padding: 8px 16px;
+      background: var(--accent);
+      color: #02130f;
+      font-weight: 600;
+      border: none;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 20px 48px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 32px;
+      margin-top: 12px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        padding: 14px 16px;
+      }
+      nav {
+        display: none;
+      }
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    h1 {
+      font-size: 38px;
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+
+    h2 {
+      font-size: 26px;
+      margin: 0 0 10px;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+      color: #9ca3af;
+      margin-bottom: 6px;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, rgba(34,227,179,0.25), transparent 50%),
+                  var(--bg-alt);
+      border-radius: 18px;
+      padding: 26px 24px 24px;
+      border: 1px solid rgba(148,163,184,0.35);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.6);
+    }
+
+    .hero-actions {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #02130f;
+      font-weight: 700;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .hero-meta {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.25);
+    }
+
+    .side-card {
+      background: rgba(15,23,42,0.9);
+      border-radius: 18px;
+      padding: 20px 18px;
+      border: 1px solid rgba(148,163,184,0.35);
+    }
+
+    .side-meter {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .meter-bar {
+      margin-top: 6px;
+      width: 100%;
+      height: 7px;
+      border-radius: 999px;
+      background: #020617;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.4);
+    }
+
+    .meter-fill {
+      height: 100%;
+      width: 68%;
+      background: linear-gradient(90deg,#22e3b3,#3b82f6);
+    }
+
+    .section {
+      margin-top: 36px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 22px 20px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .step {
+      padding: 14px 13px;
+      border-radius: 12px;
+      background: #090814;
+      border: 1px solid rgba(148,163,184,0.25);
+    }
+
+    .step-number {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(34,197,94,0.14);
+      color: #bbf7d0;
+      margin-bottom: 6px;
+    }
+
+    .benefits-grid,
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #020617;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      font-size: 11px;
+      color: var(--muted);
+      margin-right: 6px;
+      margin-bottom: 4px;
+    }
+
+    .faq-item {
+      padding: 14px 12px;
+      border-radius: 12px;
+      background: #050815;
+      border: 1px solid rgba(148,163,184,0.25);
+    }
+
+    .faq-q {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .faq-a {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .cta-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 40px;
+      padding-top: 18px;
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+        <img src="../assets/LOGO.png" alt="Labh Logo" style="
+                        height: 50px;
+                        width: 50px;
+                        color: #a663ff;
+                        margin-right: 3px;
+                    ">
+      <!-- <div class="brand-badge">L</div> -->
+      <div>
+        <div class="brand-text-title">Labh</div>
+        <div class="brand-text-sub">Serious research for everyday investors</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#how-to">How to invest</a>
+      <a href="#beginner">Beginner tips</a>
+      <a href="#faq">FAQ</a>
+      <button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">
+        Start with Labh
+      </button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">Mutual Funds · Step-by-step guide</div>
+        <h1>How to Invest in Mutual Funds in India</h1>
+        <p>
+          New to mutual funds or restarting after a break? This simple guide walks you
+          through exactly how to start: from choosing the right fund and completing KYC,
+          to starting your first SIP with confidence.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('how-to').scrollIntoView({behavior:'smooth'})">
+            View 5-Step Process
+          </button>
+          <button class="btn-secondary" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">
+            Talk to an expert on Labh
+          </button>
+        </div>
+
+        <div class="hero-meta">
+          <span class="hero-tag">✔ For Indian investors</span>
+          <span class="hero-tag">✔ Works for SIP & lumpsum</span>
+          <span class="hero-tag">✔ No prior market knowledge needed</span>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <h3>Quick snapshot: what you need</h3>
+        <p>
+          To start investing in mutual funds, you typically need:
+        </p>
+        <ul style="margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:13px; line-height:1.6;">
+          <li>PAN & Aadhaar (linked)</li>
+          <li>Bank account with netbanking/UPI</li>
+          <li>Completed KYC (can be done online)</li>
+        </ul>
+        <div class="side-meter">
+          You are <strong>one weekend</strong> away from your first investment.
+          <div class="meter-bar">
+            <div class="meter-fill"></div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- HOW TO INVEST SECTION -->
+    <section class="section" id="how-to">
+      <div class="card">
+        <h2>5 Simple Steps to Invest in Mutual Funds</h2>
+        <p>
+          Whether you are investing for retirement, children’s education or wealth
+          creation, the basic process is the same. Here’s a clear roadmap:
+        </p>
+
+        <div class="steps-grid">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Define your goal & time horizon</h3>
+            <p>
+              Decide why you are investing: retirement, house, education or general wealth.
+              Also note how long you can stay invested (3, 5, 10+ years). This decides
+              whether you should pick equity, debt or hybrid funds.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Complete your KYC</h3>
+            <p>
+              KYC (Know Your Customer) is mandatory for all mutual fund investors in India.
+              With Labh, you can complete your KYC digitally in a few steps using your PAN,
+              Aadhaar and bank details.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Choose the right fund type</h3>
+            <p>
+              Match your risk profile and goals:
+              equity funds for growth, debt funds for stability, and hybrid funds for
+              balance. Labh’s research engine helps you shortlist SEBI-registered funds
+              suited to your profile.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Decide SIP vs lump sum</h3>
+            <p>
+              You can invest a fixed amount every month via SIP or invest a larger amount
+              at once as lump sum. SIPs help average out market ups and downs and build
+              discipline.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">5</div>
+            <h3>Invest & track regularly</h3>
+            <p>
+              Once invested, review your portfolio once or twice a year—no need to react
+              to every market swing. Labh helps you track performance and rebalance when
+              needed.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">+</div>
+            <h3>Stay invested for the long term</h3>
+            <p>
+              Mutual funds work best when you give them time. Allow compounding to do the
+              heavy lifting instead of chasing quick, short-term returns.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section class="section" id="beginner">
+      <div class="card">
+        <h2>Why Mutual Funds Are a Smart Way to Start Investing</h2>
+        <p>
+          Instead of picking individual stocks on your own, mutual funds allow you to invest
+          in a ready-made basket of assets managed by professionals.
+        </p>
+
+        <div class="benefits-grid">
+          <div class="step">
+            <h3>Diversification from day one</h3>
+            <p>
+              Your money is spread across many companies and sectors. This reduces the
+              impact if one stock performs poorly.
+            </p>
+            <span class="pill">Lower single-stock risk</span>
+          </div>
+          <div class="step">
+            <h3>Professional management</h3>
+            <p>
+              Fund managers and research analysts track markets, sectors and companies on
+              your behalf so you don’t have to.
+            </p>
+            <span class="pill">Save time & effort</span>
+          </div>
+          <div class="step">
+            <h3>Start small, grow big</h3>
+            <p>
+              Begin with SIPs as low as a few hundred rupees. Increase your contribution as
+              your income grows.
+            </p>
+            <span class="pill">Perfect for first-time investors</span>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;">
+          <span class="badge">Equity funds</span>
+          <span class="badge">Debt funds</span>
+          <span class="badge">Hybrid funds</span>
+          <span class="badge">Index funds</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section" id="faq">
+      <div class="card">
+        <h2>Common Questions About Investing in Mutual Funds</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-q">How much money do I need to start?</div>
+            <div class="faq-a">
+              Many mutual funds allow you to start a SIP with a few hundred rupees per month.
+              You don’t need a large lump sum to begin.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Is it safe to invest through apps like Labh?</div>
+            <div class="faq-a">
+              Labh connects you to SEBI-regulated mutual funds and uses secure payment and
+              banking channels. Your units are held with the fund house/registrar, not inside
+              the app.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Can I withdraw my money anytime?</div>
+            <div class="faq-a">
+              Most open-ended mutual funds allow you to redeem units on any business day.
+              Some categories (like ELSS) have a lock-in. Labh clearly shows this before you
+              invest.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section" id="cta">
+      <div class="card cta-banner">
+        <div>
+          <h2>Ready to make your first mutual fund investment?</h2>
+          <p>
+            Labh helps you go from “I should start investing” to “My SIP is live” in a
+            guided, research-backed journey. No jargon, no noise — just clear, data-driven
+            recommendations tailored to your goals.
+          </p>
+        </div>
+        <div>
+          <a class="btn-primary" href="https://api.labh.io/get-app">Download Labh App</a>
+          <a class="btn-secondary" href="https://calendar.app.google/3TWCQDaoEaMC6Hha6">Schedule a free 15-min call</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>© Labh — Advanced financial research for Indian retail investors.</span>
+      <span>Mutual funds are subject to market risks. Please read all scheme-related documents carefully before investing.</span>
+    </footer>
+  </main>
+
+</body>
+</html>
