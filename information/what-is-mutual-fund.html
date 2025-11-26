@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Labh | What Are Mutual Funds?</title>
+     <link
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+  <style>
+    #navbarNav {
+  display: flex;
+  flex-direction: row-reverse;
+}
+    :root { --bg:#0b0b0c; --card:#131315; --muted:#a8b0b3; --accent:#2dd4bf; }
+    body { margin:0; font-family:Inter, sans-serif; background:var(--bg); color:white; }
+    header { padding:22px 34px; border-bottom:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center; }
+    .brand { font-size:24px; font-weight:700; }
+    nav a { color:var(--muted); margin-left:24px; text-decoration:none; font-size:14px; }
+    .container { max-width:1100px; margin:0 auto; padding:34px 20px; }
+
+    h1 { font-size:40px; margin:0 0 14px; }
+    h2 { font-size:26px; margin:0 0 12px; }
+    p { color:var(--muted); line-height:1.7; }
+
+    .card { background:var(--card); padding:26px; border-radius:12px; border:1px solid rgba(255,255,255,0.05); margin-top:26px; }
+    .cta { background:var(--accent); padding:12px 18px; border-radius:8px; color:black; font-weight:700; text-decoration:none; display:inline-block; }
+    .secondary { border:1px solid rgba(255,255,255,0.1); padding:10px 16px; border-radius:8px; color:var(--muted); text-decoration:none; margin-left:10px; }
+
+    .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:14px; }
+    .item { background:#15171a; padding:16px; border-radius:10px; border:1px solid rgba(255,255,255,0.06); }
+
+    footer { margin-top:40px; padding:28px 0; border-top:1px solid rgba(255,255,255,0.08); color:var(--muted); font-size:14px; }
+
+    @media (max-width:900px) { .grid-3 { grid-template-columns:1fr; } h1{font-size:32px;} }
+  </style>
+</head>
+<body>
+
+<header>
+  
+<nav class="navbar navbar-expand-lg navbar-light" style="
+                position: sticky;
+                top: 0;
+                z-index: 900;
+                background: rgba(1, 1, 1, 0.8);
+                backdrop-filter: blur(6px) saturate(140%);
+                height: 70px;
+                width: 100%;
+            ">
+            <a class="navbar-brand" href="#" style="margin-left: 3px">
+                <img src="../assets/LOGO.png" alt="Labh Logo" style="
+                        height: 50px;
+                        width: 50px;
+                        color: #a663ff;
+                        margin-right: 3px;
+                    ">
+                <span style="
+                        margin-left: 2px;
+                        font-size: 32px;
+                        vertical-align: middle;
+                        color: white;
+                        font-weight: bold;
+                        letter-spacing: 1px;
+                    ">Labh</span>
+            </a>
+            <img class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" src="assets/Group 2225.svg" alt="navbar-toggler">
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <!-- <li class="nav-item active">
+                        <a onclick="home()" class="nav-link" href="#" id="home" style="font-size: 1.25rem; color: #6b6b7b">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a onclick="about()" class="nav-link" href="#aboutsection" id="about" style="
+                                color: #6b6b7b;
+                                font-size: 1.25rem;
+                                margin-left: 1.25rem;
+                            ">About Us</a>
+                    </li> -->
+                      <li class="nav-item active"><a href="#intro">What are Mutual Funds?</a></li>
+                    <li class="nav-item"><a href="#why">Why Choose</a></li>
+                    <li class="nav-item"><a href="#types">Types</a></li>
+                    <li class="nav-item"><a href="#cta">Get Started</a></li>
+                </ul>
+            </div>
+        </nav>
+  <!--nav>
+      <a class="navbar-brand" href="#" style="margin-left: 3px;display: inline;!important;">
+        <img src="assets/LOGO.png" alt="Labh Logo" style="
+                height: 50px;
+                width: 50px;
+                color: #a663ff;
+                margin-right: 3px;
+            ">
+        <div style="margin-left: 2px;font-size: 32px;color: white;letter-spacing: 1px;">Labh</div>
+    </a>
+    <a href="#intro">What are Mutual Funds?</a>
+    <a href="#why">Why Choose</a>
+    <a href="#types">Types</a>
+    <a href="#cta">Get Started</a>
+  </nav-->
+</header>
+
+<section class="container" id="intro">
+  <div class="card">
+    <h1>What Are Mutual Funds?</h1>
+    <p>Mutual funds are one of the simplest and most trusted ways for Indian investors to grow and protect their wealth. Instead of managing the market yourself, your money is handled by expert fund managers who invest it across stocks, bonds and other financial instruments on your behalf. The goal is simple: long‑term, steady and stress‑free growth.</p>
+    <div style="margin-top:18px;">
+      <a class="cta" href="https://api.labh.io/get-app">Start Planning with Labh</a>
+      <a class="secondary" href="#types">Explore Types</a>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="why">
+  <div class="card">
+    <h2>Why Mutual Funds Make Sense for Investors Above 45</h2>
+    <p>At this stage of life, stability, safety and predictable growth become top priorities. Mutual funds offer professionally managed diversification, transparent regulation and the flexibility to invest at your comfort. They help you grow your savings without the need to constantly track the market.</p>
+
+    <div class="grid-3" style="margin-top:22px;">
+      <div class="item">
+        <strong>Professional Management</strong>
+        <p>Experienced fund managers handle your investments so you don’t have to.</p>
+      </div>
+      <div class="item">
+        <strong>Diversified & Balanced</strong>
+        <p>Your money is spread across sectors, reducing overall risk.</p>
+      </div>
+      <div class="item">
+        <strong>Ideal for Retirement Goals</strong>
+        <p>Build and protect your long-term wealth with discipline and ease.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="types">
+  <div class="card">
+    <h2>Types of Mutual Funds</h2>
+    <div class="grid-3">
+      <div class="item">
+        <strong>Equity Funds</strong>
+        <p>Invest mainly in stocks. Best for long-term growth and higher returns.</p>
+      </div>
+      <div class="item">
+        <strong>Debt Funds</strong>
+        <p>Invest in bonds and government securities. Lower risk and more stability.</p>
+      </div>
+      <div class="item">
+        <strong>Hybrid Funds</strong>
+        <p>A mix of equity + debt. Balanced for steady, dependable growth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="cta">
+  <div class="card" style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
+    <div>
+      <h2>Plan Your Financial Future with Confidence</h2>
+      <p>Labh helps you compare mutual funds, understand risk levels and choose investments that match your retirement and family goals — all in one trusted, easy-to-use platform.</p>
+    </div>
+    <div style="display: inline-block!important; width: 100%;">
+      <a class="cta" href="https://api.labh.io/get-app/">Download the Labh App</a>
+      <a class="secondary" href="https://calendar.app.google/bwsSKqtXQ8zyQcv27">Speak to a Labh Advisor</a>
+    </div>
+  </div>
+</section>
+
+<footer class="container">
+  © Labh — Smarter Investing for Indian Families
+</footer>
+
+</body>
+</html>
