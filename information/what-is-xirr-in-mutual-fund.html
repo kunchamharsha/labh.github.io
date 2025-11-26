@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What is XIRR in Mutual Funds? | Labh</title>
+  <meta name="description" content="Understand what XIRR means in mutual funds, why it is important for SIP returns, and how to read your mutual fund performance the right way.">
+  <meta name="keywords" content="what is xirr, xirr mutual fund, xirr sip, mutual fund returns, calculate xirr, sip performance, labh, indian investors">
+
+  <style>
+    :root {
+      --bg: #050506;
+      --bg-alt: #0b0c10;
+      --card: #121219;
+      --muted: #9da3b0;
+      --accent: #22e3b3;
+      --border-subtle: rgba(148,163,184,0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 50%, #000 100%);
+      color: #f9fafb;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 32px;
+      border-bottom: 1px solid rgba(15,23,42,0.7);
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(3,7,18,0.98), rgba(3,7,18,0.90));
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 15% 0%, #fff 0, #22e3b3 40%, #0f766e 95%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #001b16;
+      font-size: 18px;
+    }
+
+    .brand-title {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    nav a {
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      border: 1px solid transparent;
+    }
+
+    nav a:hover {
+      border-color: rgba(148,163,184,0.4);
+      color: #f9fafb;
+    }
+
+    .nav-cta {
+      border-radius: 999px;
+      padding: 8px 16px;
+      background: var(--accent);
+      color: #02130f;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 20px 48px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+      gap: 32px;
+      margin-top: 10px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 900px) {
+      header { padding: 14px 16px; }
+      nav { display: none; }
+      .hero { grid-template-columns: 1fr; }
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+      color: #9ca3af;
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 36px;
+      line-height: 1.1;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+    }
+
+    h3 {
+      margin: 0 0 6px;
+      font-size: 17px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .hero-card {
+      background:
+        radial-gradient(circle at top left, rgba(34,227,179,0.25), transparent 55%),
+        var(--bg-alt);
+      border-radius: 18px;
+      padding: 26px 24px 22px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 22px 60px rgba(15,23,42,0.8);
+    }
+
+    .hero-actions {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #02130f;
+      font-weight: 700;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .hero-meta {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid rgba(148,163,184,0.35);
+    }
+
+    .side-card {
+      background: #020617;
+      border-radius: 18px;
+      padding: 18px 18px 20px;
+      border: 1px solid rgba(31,41,55,0.9);
+    }
+
+    .side-highlight {
+      margin-top: 10px;
+      padding: 10px 10px;
+      border-radius: 10px;
+      background: #030712;
+      border: 1px dashed rgba(148,163,184,0.45);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      font-size: 11px;
+      color: var(--muted);
+      margin-right: 4px;
+      margin-top: 6px;
+    }
+
+    .section {
+      margin-top: 34px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 22px 20px;
+      border: 1px solid rgba(30,64,175,0.4);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    .block {
+      padding: 14px 13px;
+      border-radius: 12px;
+      background: #020617;
+      border: 1px solid rgba(30,64,175,0.45);
+    }
+
+    .pill {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #020617;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .example-box {
+      padding: 12px;
+      border-radius: 10px;
+      background: #030712;
+      border: 1px dashed rgba(148,163,184,0.5);
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .faq-item {
+      padding: 12px 12px;
+      border-radius: 12px;
+      background: #020617;
+      border: 1px solid rgba(51,65,85,0.9);
+      font-size: 13px;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #e5e7eb;
+      font-size: 14px;
+    }
+
+    .cta-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      border-top: 1px solid rgba(15,23,42,0.8);
+      margin-top: 40px;
+      padding-top: 18px;
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+         <img src="../assets/LOGO.png" alt="Labh Logo" style="
+                        height: 50px;
+                        width: 50px;
+                        color: #a663ff;
+                        margin-right: 3px;
+                    ">
+      <!-- <div class="brand-badge">L</div> -->
+      <div>
+        <div class="brand-title">Labh</div>
+        <div class="brand-sub">Advanced financial research for Indian investors</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#what">What is XIRR?</a>
+      <a href="#why">Why it matters</a>
+      <a href="#example">Example</a>
+      <a href="#faq">FAQ</a>
+      <button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">
+        Get the Labh app
+      </button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">Mutual Funds · XIRR explained</div>
+        <h1>What is XIRR in Mutual Funds?</h1>
+        <p>
+          XIRR (Extended Internal Rate of Return) is the return calculation that
+          correctly accounts for your actual cash flows — every SIP, top-up and
+          redemption — along with the dates on which they happened. It is the most
+          accurate way to understand your true mutual fund returns, especially when
+          you invest via SIPs.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="https://api.labh.io/get-app" target="_blank" rel="noopener noreferrer">
+            Download Labh App
+          </a>
+          <a class="btn-secondary" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1CXpxTezdf5b0UFuznRClTEdGkyd6Cs7NksPBSRmexdA1T9jpaf-O_htli-EgCXz2lYnfKUdIL"
+             target="_blank" rel="noopener noreferrer">
+            Schedule a 1:1 call
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span class="hero-tag">Ideal for SIP investors</span>
+          <span class="hero-tag">More accurate than simple CAGR</span>
+          <span class="hero-tag">Used by professionals to judge performance</span>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <h3>In one line</h3>
+        <p>
+          XIRR tells you: “Given all the money I actually put in and took out,
+          on these exact dates, what annual return did I really earn?”
+        </p>
+        <div class="side-highlight">
+          <strong>Why you see XIRR in your app statement:</strong><br>
+          Because mutual fund investing is rarely a one-time lump sum. XIRR adjusts
+          for your staggered SIPs, making your return figure honest and comparable.
+        </div>
+        <div>
+          <span class="badge">SIP performance</span>
+          <span class="badge">Multiple cash flows</span>
+          <span class="badge">Date-sensitive returns</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- WHAT SECTION -->
+    <section class="section" id="what">
+      <div class="card">
+        <h2>So, what exactly is XIRR?</h2>
+        <p>
+          XIRR is a formula that answers this question: <strong>“At what annual rate
+          did my investment grow, considering all the dates and amounts of my investments
+          and withdrawals?”</strong> It extends the normal IRR concept to irregular
+          cash flows, which is exactly how most mutual fund investments work.
+        </p>
+
+        <div class="grid-3">
+          <div class="block">
+            <h3>Works with irregular SIPs</h3>
+            <p>
+              You may invest ₹5,000 this month, ₹7,000 three months later, skip a few
+              instalments and redeem some units. XIRR handles all of this cleanly.
+            </p>
+            <span class="pill">Real-life investing pattern</span>
+          </div>
+          <div class="block">
+            <h3>Annualised return</h3>
+            <p>
+              XIRR gives you a <strong>per-year</strong> return number. That makes it
+              easy to compare across funds, FDs, PPF, NPS and other products.
+            </p>
+            <span class="pill">Apple-to-apple comparison</span>
+          </div>
+          <div class="block">
+            <h3>Used by analysts & advisors</h3>
+            <p>
+              Professionals rely on XIRR to judge the quality of a portfolio or a
+              strategy because it respects the timing of every rupee invested.
+            </p>
+            <span class="pill">Industry standard metric</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY IT MATTERS -->
+    <section class="section" id="why">
+      <div class="card">
+        <h2>Why XIRR matters for your mutual fund decisions</h2>
+        <p>
+          Looking only at “total profit” or simple percentage change can be misleading
+          when money moved in and out at different times. XIRR gives you a clear,
+          time-adjusted picture so you don’t overestimate or underestimate your returns.
+        </p>
+
+        <div class="grid-2">
+          <div class="block">
+            <h3>1. SIPs vs lump sum – fair comparison</h3>
+            <p>
+              A lump sum invested 5 years ago and a SIP started 18 months ago cannot be
+              compared using just “total gain”. XIRR normalises both into annual returns
+              so you can see which truly did better.
+            </p>
+          </div>
+          <div class="block">
+            <h3>2. Performance across funds & goals</h3>
+            <p>
+              When you have multiple funds for different goals (retirement, kids’
+              education, house down-payment), XIRR helps you quickly see which portfolio
+              is compounding well and which needs attention.
+            </p>
+          </div>
+        </div>
+
+        <div class="example-box" id="example">
+          <strong>Simple example (conceptual):</strong><br>
+          • You invest ₹5,000 every month for 2 years.<br>
+          • You occasionally add an extra lump sum of ₹10,000.<br>
+          • At the end, your value is ₹1,60,000.<br><br>
+          XIRR takes every instalment date and amount, plus the final value,
+          and solves for a single annual return number (say, for example,
+          <em>11.8% per annum</em>). That is your real performance, not just
+          “amount invested vs amount today”.
+        </div>
+      </div>
+    </section>
+
+    <!-- XIRR vs OTHER METRICS -->
+    <section class="section">
+      <div class="card">
+        <h2>XIRR vs CAGR vs Absolute Return</h2>
+        <div class="grid-3">
+          <div class="block">
+            <h3>Absolute Return</h3>
+            <p>
+              <strong>(Current Value – Invested Amount) / Invested Amount</strong>.<br>
+              Ignores how long you stayed invested and when money went in/out. OK for a
+              quick view, not great for decisions.
+            </p>
+          </div>
+          <div class="block">
+            <h3>CAGR</h3>
+            <p>
+              Assumes one-time investment and one-time final value. Works well for
+              lump sum investments held continuously, but <strong>not</strong> designed
+              for SIPs or irregular flows.
+            </p>
+          </div>
+          <div class="block">
+            <h3>XIRR</h3>
+            <p>
+              Handles multiple investments and withdrawals on different dates, and gives
+              you an <strong>annualised return</strong>. This is what you should rely on
+              for mutual fund SIPs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="card">
+        <h2>Frequently asked questions about XIRR</h2>
+        <div class="grid-3">
+          <div class="faq-item">
+            <div class="faq-q">Do I need to calculate XIRR manually?</div>
+            <div class="faq-a">
+              No. Apps like Labh calculate XIRR for each fund and for your total portfolio
+              using all your transaction data. You only need to interpret the number.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Why is my XIRR negative even though markets went up?</div>
+            <div class="faq-a">
+              If a large portion of your investment came in recently and markets fell
+              soon after, your time-weighted return can be negative in the short term.
+              XIRR is honest about timing effects.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">What is a “good” XIRR for equity mutual funds?</div>
+            <div class="faq-a">
+              It depends on time horizon and market phase. Rather than chasing a fixed
+              number, compare your XIRR with relevant benchmarks and category averages.
+              Labh helps you see this in context.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" id="cta">
+      <div class="card cta-banner">
+        <div>
+          <h2>See your true mutual fund returns with XIRR, in one tap</h2>
+          <p>
+            Labh automatically computes XIRR for every fund and goal, so you can stop
+            guessing and start making data-backed decisions. Track, compare and tidy up
+            your portfolio with professional-grade analytics built for Indian investors.
+          </p>
+        </div>
+        <div>
+          <a class="btn-primary" href="https://api.labh.io/get-app" target="_blank" rel="noopener noreferrer">
+            Download the Labh App
+          </a><br /><br />
+          <a class="btn-secondary"
+             href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1CXpxTezdf5b0UFuznRClTEdGkyd6Cs7NksPBSRmexdA1T9jpaf-O_htli-EgCXz2lYnfKUdIL"
+             target="_blank" rel="noopener noreferrer">
+            Book a free XIRR review call
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>© Labh — Serious research, simple decisions.</span>
+      <span>Mutual fund investments are subject to market risks. Please read all scheme related documents carefully before investing.</span>
+    </footer>
+  </main>
+
+</body>
+</html>
