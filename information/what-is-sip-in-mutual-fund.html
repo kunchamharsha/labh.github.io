@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What is SIP in Mutual Fund? | Labh</title>
+  <meta name="description" content="Understand what SIP (Systematic Investment Plan) in mutual funds is, how it works, and how investors above 45 can use it to build and protect wealth in a disciplined way.">
+  <meta name="keywords" content="what is sip, sip in mutual fund, systematic investment plan, sip for retirement, sip for 45 plus, monthly investment mutual fund, indian investors, Labh">
+
+  <style>
+    :root {
+      --bg: #050506;
+      --bg-alt: #0b0c11;
+      --card: #11121a;
+      --muted: #a5acb7;
+      --accent: #22e3b3;
+      --border-subtle: rgba(148,163,184,0.4);
+      --text-main: #f9fafb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 52%, #000 100%);
+      color: var(--text-main);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(15,23,42,0.7);
+      backdrop-filter: blur(12px);
+      background: linear-gradient(to bottom, rgba(3,7,18,0.97), rgba(3,7,18,0.9));
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 20% 0, #ffffff 0, #22e3b3 40%, #0f766e 95%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      color: #00110d;
+    }
+
+    .brand-title {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    nav a {
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      border-color: rgba(148,163,184,0.5);
+      color: var(--text-main);
+    }
+
+    .nav-cta {
+      border-radius: 999px;
+      padding: 8px 14px;
+      background: var(--accent);
+      color: #02130f;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    /* LAYOUT */
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 18px 40px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 28px;
+      margin-top: 10px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        padding-inline: 14px;
+      }
+      nav {
+        display: none; /* Simple compact header on mobile */
+      }
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.25;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    h3 {
+      margin: 0 0 6px;
+      font-size: 17px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+      color: #9ca3af;
+      margin-bottom: 6px;
+    }
+
+    /* CARDS & BLOCKS */
+
+    .hero-card {
+      background:
+        radial-gradient(circle at top left, rgba(34,227,179,0.22), transparent 55%),
+        var(--bg-alt);
+      border-radius: 18px;
+      padding: 22px 20px 20px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 18px 50px rgba(15,23,42,0.8);
+    }
+
+    .side-card {
+      background: #020617;
+      border-radius: 18px;
+      padding: 18px 16px 18px;
+      border: 1px solid rgba(31,41,55,0.9);
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 20px 18px;
+      border: 1px solid rgba(30,64,175,0.4);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .block {
+      padding: 12px 11px;
+      border-radius: 12px;
+      background: #020617;
+      border: 1px solid rgba(30,64,175,0.5);
+    }
+
+    .pill {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #020617;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.45);
+      font-size: 11px;
+      color: var(--muted);
+      margin-right: 4px;
+      margin-top: 6px;
+    }
+
+    .example-box {
+      padding: 11px;
+      border-radius: 10px;
+      background: #030712;
+      border: 1px dashed rgba(148,163,184,0.6);
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* HERO ACTIONS */
+
+    .hero-actions {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #02130f;
+      font-weight: 700;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .hero-meta {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .hero-tag {
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid rgba(148,163,184,0.4);
+    }
+
+    .side-highlight {
+      margin-top: 10px;
+      padding: 10px 9px;
+      border-radius: 10px;
+      background: #030712;
+      border: 1px dashed rgba(148,163,184,0.55);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* FAQ & CTA */
+
+    .faq-item {
+      padding: 11px 11px;
+      border-radius: 12px;
+      background: #020617;
+      border: 1px solid rgba(51,65,85,0.95);
+      font-size: 13px;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #e5e7eb;
+      font-size: 14px;
+    }
+
+    .cta-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      border-top: 1px solid rgba(15,23,42,0.9);
+      margin-top: 34px;
+      padding-top: 14px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <!-- <div class="brand-badge">L</div> -->
+          <img src="../assets/LOGO.png" alt="Labh Logo" style="
+                        height: 50px;
+                        width: 50px;
+                        color: #a663ff;
+                        margin-right: 3px;
+                    ">
+      <div>
+        <div class="brand-title">Labh</div>
+        <div class="brand-sub">Disciplined investing for Indian families</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#what">What is SIP?</a>
+      <a href="#how">How it works</a>
+      <a href="#why">Why use SIP after 45</a>
+      <a href="#faq">FAQ</a>
+      <button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">
+        Get started
+      </button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">Mutual Funds · Monthly investing</div>
+        <h1>What is SIP in Mutual Fund?</h1>
+        <p>
+          SIP (Systematic Investment Plan) is a simple way to invest a fixed amount in
+          mutual funds at regular intervals — usually every month. Instead of putting a
+          big lump sum at once, you spread your investment over time, which can help
+          reduce risk and build wealth steadily, especially important after 45.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="https://api.labh.io/get-app?medium=website&amp;campaign=what-is-sip" target="_blank" rel="noopener noreferrer">
+            Download Labh App
+          </a>
+          <a class="btn-secondary" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1CXpxTezdf5b0UFuznRClTEdGkyd6Cs7NksPBSRmexdA1T9jpaf-O_htli-EgCXz2lYnfKUdIL"
+             target="_blank" rel="noopener noreferrer">
+            Schedule a 1:1 SIP call
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span class="hero-tag">Invest monthly instead of lump sum</span>
+          <span class="hero-tag">Helps manage market ups and downs</span>
+          <span class="hero-tag">Ideal for building retirement corpus</span>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <h3>In simple words</h3>
+        <p>
+          SIP is like setting up a standing instruction to invest every month. Just like
+          your electricity bill is paid regularly, your investment is also made regularly
+          — automatically.
+        </p>
+        <div class="side-highlight">
+          <strong>Example:</strong><br>
+          You choose to invest ₹10,000 every month in a balanced mutual fund through SIP.
+          On your chosen date, ₹10,000 is auto-debited and invested. Over 10–15 years,
+          this can grow into a substantial retirement corpus.
+        </div>
+        <div>
+          <span class="badge">Disciplined investing</span>
+          <span class="badge">Rupee-cost averaging</span>
+          <span class="badge">Long-term wealth creation</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- WHAT IS SIP -->
+    <section class="section" id="what">
+      <div class="card">
+        <h2>What exactly is SIP (Systematic Investment Plan)?</h2>
+        <p>
+          SIP is an arrangement where you invest a fixed amount at regular intervals
+          (monthly, quarterly, etc.) in a mutual fund scheme. Instead of trying to “time”
+          the market, SIP allows you to invest consistently, through market highs and lows.
+        </p>
+
+        <div class="grid-3">
+          <div class="block">
+            <h3>Invest fixed amounts</h3>
+            <p>
+              You decide an amount that is comfortable (₹5,000, ₹10,000, etc.) and the
+              date each month. The rest runs on auto-pilot.
+            </p>
+            <span class="pill">Easy on cash flow</span>
+          </div>
+          <div class="block">
+            <h3>Units at different prices</h3>
+            <p>
+              When markets are high, your SIP buys fewer units; when markets are low, it
+              buys more units. Over time, your purchase price averages out.
+            </p>
+            <span class="pill">Rupee-cost averaging</span>
+          </div>
+          <div class="block">
+            <h3>Built for long-term goals</h3>
+            <p>
+              SIPs are most effective when you stay invested for many years, allowing
+              compounding to work in your favour.
+            </p>
+            <span class="pill">Retirement, children, legacy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+      <div class="card">
+        <h2>How does SIP work in practice?</h2>
+        <p>
+          Here is a simple step-by-step view of how SIP fits into your financial life
+          after 45:
+        </p>
+
+        <div class="grid-2">
+          <div class="block">
+            <h3>1. Choose your goal & fund</h3>
+            <p>
+              Decide the purpose: retirement at 60, child’s education, or creating an
+              additional corpus. Then select a suitable mutual fund category (equity,
+              hybrid, etc.) based on risk tolerance and time horizon.
+            </p>
+          </div>
+          <div class="block">
+            <h3>2. Select SIP amount & date</h3>
+            <p>
+              Fix a monthly amount that fits your income and expenses. Choose a date
+              close to salary credit or pension receipt for convenience.
+            </p>
+          </div>
+          <div class="block">
+            <h3>3. Auto-debit & unit allocation</h3>
+            <p>
+              On the chosen date, the SIP amount is auto-debited from your bank account
+              and units of the fund are allotted at that day’s NAV (price).
+            </p>
+          </div>
+          <div class="block">
+            <h3>4. Stay invested & review annually</h3>
+            <p>
+              You don’t need to watch markets daily. A yearly review is usually enough
+              to check whether you are on track for your goals.
+            </p>
+          </div>
+        </div>
+
+        <div class="example-box">
+          <strong>Illustrative example (simplified):</strong><br>
+          • Age: 47<br>
+          • SIP: ₹15,000 per month in a balanced or conservative equity fund<br>
+          • Tenure: 13 years (till age 60)<br><br>
+          If the investment earns an average of, say, 10–12% per year over this period,
+          the final corpus at 60 could be significantly larger than total money invested.
+          Exact numbers vary with market performance, but the discipline and structure
+          remain the same.
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY SIP AFTER 45 -->
+    <section class="section" id="why">
+      <div class="card">
+        <h2>Why SIP still makes sense after 45</h2>
+        <p>
+          Many people feel SIP is “only for youngsters”. In reality, investors in their
+          late 40s and 50s can use SIP to strengthen retirement planning and bridge any
+          gap in their corpus.
+        </p>
+
+        <div class="grid-3">
+          <div class="block">
+            <h3>Catch up on retirement savings</h3>
+            <p>
+              If you started late or had breaks in your investing journey, SIP helps you
+              systematically add to your retirement fund every month.
+            </p>
+          </div>
+          <div class="block">
+            <h3>Balance safety and growth</h3>
+            <p>
+              By choosing appropriate funds (hybrid, large-cap, etc.), you can aim for
+              better growth than FDs while managing risk carefully.
+            </p>
+          </div>
+          <div class="block">
+            <h3>Build a future SWP corpus</h3>
+            <p>
+              SIP in your 40s and early 50s can create the corpus from which you later
+              draw a monthly income using SWP (Systematic Withdrawal Plan).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="card">
+        <h2>Common questions about SIP</h2>
+        <div class="grid-3">
+          <div class="faq-item">
+            <div class="faq-q">Can I change or stop my SIP later?</div>
+            <div class="faq-a">
+              Yes. You can increase, decrease, pause or stop SIPs. This flexibility
+              helps you adjust if your income or expenses change.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Is SIP safe? Will my money be guaranteed?</div>
+            <div class="faq-a">
+              SIP is a way of investing in market-linked mutual funds, not a guarantee.
+              It reduces risk through averaging and discipline, but returns can fluctuate.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">How long should I run my SIP?</div>
+            <div class="faq-a">
+              Ideally, for at least 5–10 years for growth-oriented goals. The longer you
+              stay invested, the more you benefit from compounding and averaging.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" id="cta">
+      <div class="card cta-banner">
+        <div>
+          <h2>Want to design a SIP plan that fits your age and goals?</h2>
+          <p>
+            Labh helps you choose funds, decide SIP amounts and map them to specific
+            goals like retirement, children’s future and legacy planning. No jargon,
+            just clear numbers and research-backed recommendations.
+          </p>
+        </div>
+        <div>
+          <a class="btn-primary" href="https://api.labh.io/get-app?medium=website&amp;campaign=what-is-sip" target="_blank" rel="noopener noreferrer">
+            Start SIP with Labh
+          </a><br /><br />
+          <a class="btn-secondary" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1CXpxTezdf5b0UFuznRClTEdGkyd6Cs7NksPBSRmexdA1T9jpaf-O_htli-EgCXz2lYnfKUdIL"
+             target="_blank" rel="noopener noreferrer">
+            Book a free SIP planning call
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>© Labh — Helping Indian investors invest with discipline and clarity.</span>
+      <span>Mutual fund investments are subject to market risks. Please read all scheme related documents carefully before investing.</span>
+    </footer>
+  </main>
+
+</body>
+</html>

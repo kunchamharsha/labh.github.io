@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What is SWP in Mutual Fund? | Labh</title>
+  <meta name="description" content="Understand what SWP (Systematic Withdrawal Plan) in mutual funds is, how it works, and how investors above 45 can use it for monthly income.">
+  <meta name="keywords" content="what is swp, swp in mutual fund, systematic withdrawal plan, monthly income from mutual funds, retirement income, indian investors, 45 plus, Labh">
+
+  <style>
+    :root {
+      --bg: #050506;
+      --bg-alt: #0b0b11;
+      --card: #11121a;
+      --muted: #a5acb7;
+      --accent: #22e3b3;
+      --border-subtle: rgba(148,163,184,0.4);
+      --text-main: #f9fafb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 52%, #000 100%);
+      color: var(--text-main);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(15,23,42,0.7);
+      backdrop-filter: blur(12px);
+      background: linear-gradient(to bottom, rgba(3,7,18,0.97), rgba(3,7,18,0.9));
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 20% 0, #ffffff 0, #22e3b3 40%, #0f766e 95%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      color: #00110d;
+    }
+
+    .brand-title {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    nav a {
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      border-color: rgba(148,163,184,0.5);
+      color: var(--text-main);
+    }
+
+    .nav-cta {
+      border-radius: 999px;
+      padding: 8px 14px;
+      background: var(--accent);
+      color: #02130f;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    /* LAYOUT */
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 18px 40px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 28px;
+      margin-top: 10px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        padding-inline: 14px;
+      }
+      nav {
+        display: none; /* simple mobile header */
+      }
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.25;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    h3 {
+      margin: 0 0 6px;
+      font-size: 17px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+      color: #9ca3af;
+      margin-bottom: 6px;
+    }
+
+    /* CARDS & BLOCKS */
+
+    .hero-card {
+      background:
+        radial-gradient(circle at top left, rgba(34,227,179,0.22), transparent 55%),
+        var(--bg-alt);
+      border-radius: 18px;
+      padding: 22px 20px 20px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 18px 50px rgba(15,23,42,0.8);
+    }
+
+    .side-card {
+      background: #020617;
+      border-radius: 18px;
+      padding: 18px 16px 18px;
+      border: 1px solid rgba(31,41,55,0.9);
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 20px 18px;
+      border: 1px solid rgba(30,64,175,0.4);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .block {
+      padding: 12px 11px;
+      border-radius: 12px;
+      background: #020617;
+      border: 1px solid rgba(30,64,175,0.5);
+    }
+
+    .pill {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #020617;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.45);
+      font-size: 11px;
+      color: var(--muted);
+      margin-right: 4px;
+      margin-top: 6px;
+    }
+
+    .example-box {
+      padding: 11px;
+      border-radius: 10px;
+      background: #030712;
+      border: 1px dashed rgba(148,163,184,0.6);
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* HERO ACTIONS */
+
+    .hero-actions {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #02130f;
+      font-weight: 700;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .hero-meta {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .hero-tag {
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid rgba(148,163,184,0.4);
+    }
+
+    .side-highlight {
+      margin-top: 10px;
+      padding: 10px 9px;
+      border-radius: 10px;
+      background: #030712;
+      border: 1px dashed rgba(148,163,184,0.55);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* FAQ & CTA */
+
+    .faq-item {
+      padding: 11px 11px;
+      border-radius: 12px;
+      background: #020617;
+      border: 1px solid rgba(51,65,85,0.95);
+      font-size: 13px;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #e5e7eb;
+      font-size: 14px;
+    }
+
+    .cta-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      border-top: 1px solid rgba(15,23,42,0.9);
+      margin-top: 34px;
+      padding-top: 14px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <img src="../assets/LOGO.png" alt="Labh Logo" style="
+                        height: 50px;
+                        width: 50px;
+                        color: #a663ff;
+                        margin-right: 3px;
+                    ">
+      <div>
+        <div class="brand-title">Labh</div>
+        <div class="brand-sub">Planning income from your investments</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#what">What is SWP?</a>
+      <a href="#how">How it works</a>
+      <a href="#who">Who should use it</a>
+      <a href="#faq">FAQ</a>
+      <button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">
+        Talk to an advisor
+      </button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">Mutual Funds · Income planning</div>
+        <h1>What is SWP in Mutual Fund?</h1>
+        <p>
+          SWP (Systematic Withdrawal Plan) is a feature in mutual funds that allows you
+          to receive a fixed amount of money at regular intervals (monthly, quarterly, etc.)
+          from your existing investment. It is widely used by investors above 45 to convert
+          their accumulated corpus into a steady income stream.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('what').scrollIntoView({behavior:'smooth'})">
+            Understand SWP in 2 minutes
+          </button>
+          <button class="btn-secondary" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">
+            See how SWP fits my plan
+          </button>
+        </div>
+
+        <div class="hero-meta">
+          <span class="hero-tag">Monthly income from mutual funds</span>
+          <span class="hero-tag">Designed for post-retirement cash flow</span>
+          <span class="hero-tag">Keeps the rest of your money invested</span>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <h3>In simple words</h3>
+        <p>
+          Think of SWP as a “salary” from your mutual fund. Your main investment stays
+          in the fund, and a fixed amount is transferred to your bank account regularly.
+        </p>
+        <div class="side-highlight">
+          <strong>Example:</strong><br>
+          You have ₹20 lakh in a debt or hybrid mutual fund and set up an SWP of
+          ₹20,000 per month. Every month, you receive ₹20,000 in your bank account,
+          while the remaining money continues to be invested.
+        </div>
+        <div>
+          <span class="badge">Retirement income</span>
+          <span class="badge">Tax-efficient withdrawals</span>
+          <span class="badge">Flexible & controllable</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- WHAT IS SWP -->
+    <section class="section" id="what">
+      <div class="card">
+        <h2>What exactly is SWP (Systematic Withdrawal Plan)?</h2>
+        <p>
+          With an SWP, you instruct the mutual fund to redeem a certain amount or a
+          certain number of units at regular intervals. The proceeds are credited to
+          your bank account. It is the opposite of SIP: instead of <em>putting</em>
+          money in every month, you are <em>taking</em> money out in a planned way.
+        </p>
+
+        <div class="grid-3">
+          <div class="block">
+            <h3>Fixed, predictable cash flow</h3>
+            <p>
+              You decide how much you wish to receive (for example, ₹15,000 per month)
+              and the date on which it should be credited.
+            </p>
+            <span class="pill">Helps manage monthly expenses</span>
+          </div>
+          <div class="block">
+            <h3>Investment continues to work</h3>
+            <p>
+              Only a small part is withdrawn regularly. The remaining corpus stays
+              invested and can continue to grow over time.
+            </p>
+            <span class="pill">Potential to beat inflation</span>
+          </div>
+          <div class="block">
+            <h3>Fully flexible</h3>
+            <p>
+              You can change the withdrawal amount, pause the SWP, or stop it entirely
+              whenever your needs change.
+            </p>
+            <span class="pill">You stay in control</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+      <div class="card">
+        <h2>How does SWP work in practice?</h2>
+        <p>
+          Here is a simple step-by-step view of how a Systematic Withdrawal Plan can
+          support you in your 50s, 60s and beyond:
+        </p>
+
+        <div class="grid-2">
+          <div class="block">
+            <h3>1. Build or move your corpus</h3>
+            <p>
+              First, you need a mutual fund investment (often in debt or conservative
+              hybrid funds). You can move a part of your retirement corpus here.
+            </p>
+          </div>
+          <div class="block">
+            <h3>2. Decide how much & how often</h3>
+            <p>
+              You choose the withdrawal amount (for example, ₹10,000 or ₹25,000 per
+              month) and frequency (monthly, quarterly, etc.).
+            </p>
+          </div>
+          <div class="block">
+            <h3>3. Units are redeemed automatically</h3>
+            <p>
+              On the chosen date, the fund redeems enough units to pay you the
+              specified amount. You do not have to place manual redemption requests.
+            </p>
+          </div>
+          <div class="block">
+            <h3>4. Money comes to your bank account</h3>
+            <p>
+              The amount is credited to your bank account, similar to a pension or
+              regular income, while the remaining units continue to stay invested.
+            </p>
+          </div>
+        </div>
+
+        <div class="example-box">
+          <strong>Illustrative example (simplified):</strong><br>
+          • Corpus: ₹30,00,000 in a conservative hybrid fund<br>
+          • SWP: ₹25,000 per month starting next month<br><br>
+          Each month, units worth ₹25,000 are sold and paid to you. If the fund earns
+          more than what you withdraw on average, your corpus can sustain for many years.
+          SWP design should always be done carefully with risk and return in mind.
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO SHOULD CONSIDER SWP -->
+    <section class="section" id="who">
+      <div class="card">
+        <h2>Is SWP right for you?</h2>
+        <p>
+          SWP can be a powerful tool for investors aged 45 and above who are moving from
+          a “wealth building” phase to a “income + preservation” phase.
+        </p>
+
+        <div class="grid-3">
+          <div class="block">
+            <h3>Post-retirement income</h3>
+            <p>
+              If your salary has stopped or reduced and you want a stable monthly amount
+              for household expenses, an SWP can complement your pension and interest income.
+            </p>
+          </div>
+          <div class="block">
+            <h3>Bridge between 50 and 60</h3>
+            <p>
+              Many investors use SWP to support early retirement, sabbaticals or phased
+              slowdown from full-time work while keeping money growing.
+            </p>
+          </div>
+          <div class="block">
+            <h3>Tax-aware withdrawals</h3>
+            <p>
+              SWP withdrawals are treated as redemptions, and tax is applicable only on
+              gains, not on the entire amount like some traditional products. Tax rules
+              change, so design carefully.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="card">
+        <h2>Common questions about SWP</h2>
+        <div class="grid-3">
+          <div class="faq-item">
+            <div class="faq-q">Will my money get finished with SWP?</div>
+            <div class="faq-a">
+              If you withdraw very high amounts compared to what the fund is earning,
+              the corpus will reduce faster. If withdrawals are planned sensibly,
+              SWP can support many years of income. The key is to choose the right
+              withdrawal rate.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Is SWP guaranteed like a pension?</div>
+            <div class="faq-a">
+              No. Mutual funds are market-linked. SWP gives you controlled withdrawals,
+              but returns are not guaranteed. It should be planned with your risk
+              tolerance and time horizon in mind.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Can I stop or change SWP later?</div>
+            <div class="faq-a">
+              Yes. You can modify the amount, frequency or stop the SWP completely.
+              This flexibility is one of the main advantages compared to traditional
+              annuity products.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" id="cta">
+      <div class="card cta-banner">
+        <div>
+          <h2>Want to design an SWP for your retirement income?</h2>
+          <p>
+            Labh helps you run scenarios, test different withdrawal amounts and build
+            a mutual fund income plan that supports your lifestyle while keeping an eye
+            on risk, taxes and inflation.
+          </p>
+        </div>
+        <div>
+          <!-- Replace '#' with your actual app download / calendar links -->
+          <a class="btn-primary" href="https://api.labh.io/get-app?medium=website" target="_blank" rel="noopener noreferrer">
+            Start with Labh
+          </a><br /><br />
+          <a class="btn-secondary" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1CXpxTezdf5b0UFuznRClTEdGkyd6Cs7NksPBSRmexdA1T9jpaf-O_htli-EgCXz2lYnfKUdIL" target="_blank" rel="noopener noreferrer">
+            Book a 1:1 SWP discussion
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>© Labh — Helping Indian investors turn savings into income.</span>
+      <span>Mutual fund investments are subject to market risks. Please read all scheme related documents carefully before investing.</span>
+    </footer>
+  </main>
+
+</body>
+</html>
