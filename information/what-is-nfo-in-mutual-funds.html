@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What is NFO in Mutual Fund? | Labh</title>
+  <meta name="description" content="Understand what NFO (New Fund Offer) in mutual funds is, how it works, and when investors above 45 should or should not invest in an NFO.">
+  <meta name="keywords" content="what is nfo, nfo in mutual fund, new fund offer, mutual fund nfo meaning, should I invest in NFO, 45 plus investors, retirement planning, Labh">
+
+  <style>
+    :root {
+      --bg: #050506;
+      --bg-alt: #0b0c11;
+      --card: #11121a;
+      --muted: #a5acb7;
+      --accent: #22e3b3;
+      --border-subtle: rgba(148,163,184,0.4);
+      --text-main: #f9fafb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 52%, #000 100%);
+      color: var(--text-main);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(15,23,42,0.7);
+      backdrop-filter: blur(12px);
+      background: linear-gradient(to bottom, rgba(3,7,18,0.97), rgba(3,7,18,0.9));
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 20% 0, #ffffff 0, #22e3b3 40%, #0f766e 95%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      color: #00110d;
+    }
+
+    .brand-title {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    nav a {
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      border-color: rgba(148,163,184,0.5);
+      color: var(--text-main);
+    }
+
+    .nav-cta {
+      border-radius: 999px;
+      padding: 8px 14px;
+      background: var(--accent);
+      color: #02130f;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    /* LAYOUT */
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 18px 40px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 28px;
+      margin-top: 10px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        padding-inline: 14px;
+      }
+      nav {
+        display: none; /* compact header on mobile */
+      }
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.25;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    h3 {
+      margin: 0 0 6px;
+      font-size: 17px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+      color: #9ca3af;
+      margin-bottom: 6px;
+    }
+
+    /* CARDS & BLOCKS */
+
+    .hero-card {
+      background:
+        radial-gradient(circle at top left, rgba(34,227,179,0.22), transparent 55%),
+        var(--bg-alt);
+      border-radius: 18px;
+      padding: 22px 20px 20px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 18px 50px rgba(15,23,42,0.8);
+    }
+
+    .side-card {
+      background: #020617;
+      border-radius: 18px;
+      padding: 18px 16px 18px;
+      border: 1px solid rgba(31,41,55,0.9);
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 20px 18px;
+      border: 1px solid rgba(30,64,175,0.4);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .block {
+      padding: 12px 11px;
+      border-radius: 12px;
+      background: #020617;
+      border: 1px solid rgba(30,64,175,0.5);
+    }
+
+    .pill {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #020617;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.45);
+      font-size: 11px;
+      color: var(--muted);
+      margin-right: 4px;
+      margin-top: 6px;
+    }
+
+    .example-box {
+      padding: 11px;
+      border-radius: 10px;
+      background: #030712;
+      border: 1px dashed rgba(148,163,184,0.6);
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* HERO ACTIONS */
+
+    .hero-actions {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #02130f;
+      font-weight: 700;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .hero-meta {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .hero-tag {
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid rgba(148,163,184,0.4);
+    }
+
+    .side-highlight {
+      margin-top: 10px;
+      padding: 10px 9px;
+      border-radius: 10px;
+      background: #030712;
+      border: 1px dashed rgba(148,163,184,0.55);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* FAQ & CTA */
+
+    .faq-item {
+      padding: 11px 11px;
+      border-radius: 12px;
+      background: #020617;
+      border: 1px solid rgba(51,65,85,0.95);
+      font-size: 13px;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #e5e7eb;
+      font-size: 14px;
+    }
+
+    .cta-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      border-top: 1px solid rgba(15,23,42,0.9);
+      margin-top: 34px;
+      padding-top: 14px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+ <img src="../assets/LOGO.png" alt="Labh Logo" style="
+                        height: 50px;
+                        width: 50px;
+                        color: #a663ff;
+                        margin-right: 3px;
+                    ">
+                          <div>
+        <div class="brand-title">Labh</div>
+        <div class="brand-sub">Helping you avoid costly mistakes</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#what">What is NFO?</a>
+      <a href="#how">How it works</a>
+      <a href="#compare">NFO vs existing funds</a>
+      <a href="#faq">FAQ</a>
+      <button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">
+        Talk to an expert
+      </button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">Mutual Funds · New Fund Offer</div>
+        <h1>What is NFO in Mutual Fund?</h1>
+        <p>
+          NFO (New Fund Offer) is the first-time subscription offer for a new mutual fund
+          scheme. During the NFO period, the fund collects money from investors and then
+          invests it according to its stated objective. For many investors above 45,
+          the key question is not just “What is NFO?” but “Should I invest in this NFO?”.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="https://api.labh.io/get-app?medium=website&amp;campaign=what-is-sip" target="_blank" rel="noopener noreferrer">
+            Download Labh App
+          </a>
+          <a class="btn-secondary" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1CXpxTezdf5b0UFuznRClTEdGkyd6Cs7NksPBSRmexdA1T9jpaf-O_htli-EgCXz2lYnfKUdIL"
+             target="_blank" rel="noopener noreferrer">
+            Schedule NFO review call
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span class="hero-tag">New fund launch phase</span>
+          <span class="hero-tag">Units usually offered at ₹10</span>
+          <span class="hero-tag">Needs careful evaluation, not excitement</span>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <h3>In simple words</h3>
+        <p>
+          NFO is like the “opening day” of a new mutual fund. The AMC announces a new
+          scheme, describes how it will invest, and invites investors to put in money
+          for the first time.
+        </p>
+        <div class="side-highlight">
+          <strong>Important:</strong><br>
+          The fact that NFO units are priced at ₹10 does <em>not</em> make them cheaper
+          than an existing fund whose NAV is ₹100. What matters is the quality of the
+          portfolio and the fund’s strategy, not the starting NAV.
+        </div>
+        <div>
+          <span class="badge">New product launch</span>
+          <span class="badge">Needs extra due diligence</span>
+          <span class="badge">NAV of ₹10 is just a number</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- WHAT IS NFO -->
+    <section class="section" id="what">
+      <div class="card">
+        <h2>What exactly is a New Fund Offer (NFO)?</h2>
+        <p>
+          An NFO is the initial period when a new mutual fund scheme is open for
+          subscription at a face value (usually ₹10 per unit). After the NFO period
+          closes, the scheme reopens for buying and selling at market-driven NAV, like
+          any regular open-ended fund.
+        </p>
+
+        <div class="grid-3">
+          <div class="block">
+            <h3>Limited offer window</h3>
+            <p>
+              NFOs are typically open for a few days or weeks. Distributors often
+              promote them actively during this window.
+            </p>
+            <span class="pill">High “new launch” noise</span>
+          </div>
+          <div class="block">
+            <h3>Fund starts with your money</h3>
+            <p>
+              The fund manager gets cash first and then gradually deploys it into
+              various securities as per the scheme objective.
+            </p>
+            <span class="pill">Portfolio builds over time</span>
+          </div>
+          <div class="block">
+            <h3>Open-ended vs close-ended</h3>
+            <p>
+              Some NFOs launch close-ended funds (lock-in for a few years), others are
+              open-ended. This affects liquidity and flexibility.
+            </p>
+            <span class="pill">Check lock-in before investing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW NFO WORKS -->
+    <section class="section" id="how">
+      <div class="card">
+        <h2>How does an NFO work in practice?</h2>
+        <p>
+          Understanding the flow helps you decide whether an NFO fits your retirement
+          and wealth plans.
+        </p>
+
+        <div class="grid-2">
+          <div class="block">
+            <h3>1. AMC announces a new scheme</h3>
+            <p>
+              The fund house files documents with SEBI describing the scheme’s category,
+              objective, strategy, risk, and costs. After approval, the NFO dates are announced.
+            </p>
+          </div>
+          <div class="block">
+            <h3>2. NFO subscription period</h3>
+            <p>
+              Investors can apply for units at the face value (usually ₹10). This is
+              similar to an IPO period in the equity market, but for a fund, not a company.
+            </p>
+          </div>
+          <div class="block">
+            <h3>3. Allotment of units</h3>
+            <p>
+              After the NFO closes, units are allotted to investors based on the amount
+              invested and the face value. The fund now has a starting corpus.
+            </p>
+          </div>
+          <div class="block">
+            <h3>4. Portfolio creation & normal operations</h3>
+            <p>
+              The fund manager invests the corpus into securities. NAV starts getting
+              calculated daily, and the scheme functions like any other mutual fund.
+            </p>
+          </div>
+        </div>
+
+        <div class="example-box">
+          <strong>Illustrative example:</strong><br>
+          • Face value: ₹10 per unit<br>
+          • You invest ₹1,00,000 during NFO<br>
+          • You receive 10,000 units initially<br><br>
+          After deployment, if the market value of the investments rises, the NAV may
+          become (say) ₹11. Your 10,000 units would then be worth ₹1,10,000. The growth
+          depends on the portfolio performance, not on the fact that you entered at ₹10.
+        </div>
+      </div>
+    </section>
+
+    <!-- NFO VS EXISTING FUNDS -->
+    <section class="section" id="compare">
+      <div class="card">
+        <h2>NFO vs Existing Mutual Funds</h2>
+        <p>
+          For investors above 45, capital protection and consistency matter more than
+          “new product excitement”. It is important to compare an NFO with funds that
+          already have a track record.
+        </p>
+
+        <div class="grid-3">
+          <div class="block">
+            <h3>Track record</h3>
+            <p>
+              Existing funds have performance history across market cycles. NFOs have
+              no past track record — you rely mainly on the AMC’s reputation and mandate.
+            </p>
+            <span class="pill">Past behaviour vs new promise</span>
+          </div>
+          <div class="block">
+            <h3>Portfolio visibility</h3>
+            <p>
+              With existing funds, you can see the current holdings. With NFOs, the
+              portfolio is only built after money is collected.
+            </p>
+            <span class="pill">Clarity vs uncertainty</span>
+          </div>
+          <div class="block">
+            <h3>Is ₹10 cheaper?</h3>
+            <p>
+              No. A ₹10 NAV in NFO is not inherently cheaper than a ₹100 NAV in an
+              established fund. It’s like saying a 10-rupee share is cheaper than a
+              100-rupee share without looking at the business.
+            </p>
+            <span class="pill">Price per unit ≠ value</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHEN SHOULD 45+ CONSIDER NFO -->
+    <section class="section">
+      <div class="card">
+        <h2>Should you invest in NFOs after 45?</h2>
+        <p>
+          NFOs are not automatically good or bad. The key is <strong>fit</strong>:
+          Does this NFO offer something genuinely useful that is not already available
+          in existing, proven funds?
+        </p>
+
+        <div class="grid-3">
+          <div class="block">
+            <h3>Possible reasons to consider</h3>
+            <p>
+              • Unique investment theme or strategy<br>
+              • Missing piece in your asset allocation<br>
+              • AMC has strong track record in similar categories
+            </p>
+          </div>
+          <div class="block">
+            <h3>Reasons to be cautious</h3>
+            <p>
+              • Investing only because NAV is ₹10<br>
+              • Heavy marketing & FOMO pressure<br>
+              • Better, proven funds already exist in that category
+            </p>
+          </div>
+          <div class="block">
+            <h3>Typical approach after 45</h3>
+            <p>
+              Many seasoned investors prefer to allocate most of their money to
+              established funds and keep only a small, thoughtful allocation (if any)
+              to NFOs after careful analysis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="card">
+        <h2>Common questions about NFOs</h2>
+        <div class="grid-3">
+          <div class="faq-item">
+            <div class="faq-q">Is it necessary to invest in every NFO?</div>
+            <div class="faq-a">
+              No. Most investors do not need to invest in every new fund. In many cases,
+              existing schemes can already serve your goals well.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Do NFOs give higher returns?</div>
+            <div class="faq-a">
+              There is no guarantee that an NFO will give higher returns than an
+              existing fund. Returns depend on market conditions and fund management,
+              not on launch status.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Can I invest in the fund later, after NFO?</div>
+            <div class="faq-a">
+              For open-ended funds, yes. After the NFO closes and the scheme reopens
+              for ongoing subscription, you can invest later at the prevailing NAV.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" id="cta">
+      <div class="card cta-banner">
+        <div>
+          <h2>Not sure whether a specific NFO is right for you?</h2>
+          <p>
+            Before you sign any NFO form or click “invest”, Labh can help you compare
+            the NFO with existing options, understand the risk and decide whether it
+            deserves a place in your 45+ portfolio.
+          </p>
+        </div>
+        <div>
+          <a class="btn-primary" href="https://api.labh.io/get-app?medium=website&amp;campaign=what-is-sip" target="_blank" rel="noopener noreferrer">
+            Analyse funds on Labh
+          </a><br /><br />
+          <a class="btn-secondary" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1CXpxTezdf5b0UFuznRClTEdGkyd6Cs7NksPBSRmexdA1T9jpaf-O_htli-EgCXz2lYnfKUdIL"
+             target="_blank" rel="noopener noreferrer">
+            Book a free NFO opinion call
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>© Labh — Helping Indian investors make calm, informed decisions.</span>
+      <span>Mutual fund investments are subject to market risks. Please read all scheme related documents carefully before investing.</span>
+    </footer>
+  </main>
+
+</body>
+</html>
