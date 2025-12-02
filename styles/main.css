@@ -714,6 +714,57 @@ nav {
   overflow: scroll;
 }
 
+.sticky-qr-left {
+  left: 2.5vw;
+}
+
+.sticky-qr-mobile {
+  display: none;
+}
+
+.sticky-qr {
+  position: fixed;
+  width: 328px;
+  height: 104px;
+  background: linear-gradient(99.76deg, rgba(124, 122, 153, 0.32) 1.27%, rgba(206, 203, 255, 0.32) 23.48%, rgba(124, 122, 153, 0.32) 49.02%, rgba(206, 203, 255, 0.32) 82.34%);
+  backdrop-filter: blur(6px) saturate(140%);
+  top: 86vh;
+  right: 2.5vw;
+  z-index: 1;
+  border-radius: 16px;
+  padding: 13px 18px;
+}
+
+.qr-img {
+  border: 5px solid;
+  width: 80px;
+  height: 80px;
+  margin-right: 14px;
+}
+
+.sticky-qr p {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0px;
+  margin-right: 10px;
+}
+
+.download-now {
+  width: 18px;
+  height: 20px;
+  margin-top: 7px;
+}
+
+.playstore-app-store-icons {
+  margin-top: 9px;
+  width: 200px;
+  height: 35px;
+}
+
+.sticky-qr {
+  cursor: pointer;
+}
+
 .search-container .search-bar {
   position: relative;
 }
@@ -1966,6 +2017,28 @@ nav {
     opacity: 80%;
     z-index: 1;
     background-color: black;
+  }
+  .sticky-qr-mobile {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background: linear-gradient(92.23deg, rgba(255, 255, 255, 0.8) 0.14%, rgba(221, 219, 219, 0.8) 80.1%);
+    backdrop-filter: blur(41.9000015259px);
+    -webkit-backdrop-filter: blur(41.9000015259px);
+    z-index: 1;
+    border-radius: 16px;
+    bottom: 0px;
+    padding: 16px 10px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sticky-qr-mobile .s-logo {
+    height: 42px;
+    width: 42px;
+    margin: 0px 10px;
+  }
+  .sticky-qr-desktop {
+    display: none;
   }
 }
 @media (min-width: 745px) {
