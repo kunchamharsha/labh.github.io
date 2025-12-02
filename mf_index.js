@@ -99,9 +99,6 @@ function renderer(url) {
                             <img src="${result.image_url}" alt="mf-image">
                             <div>${result.scheme_name}</div>
                         </div>
-                        <div class="risk d-flex justify-content-center align-items-center">
-                            ${result.risk_involved ? result.risk_involved : "-"}
-                        </div>
                     </a>
                 `);
         });
