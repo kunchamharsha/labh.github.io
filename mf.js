@@ -182,6 +182,54 @@ var year = 1;
 
 $.get(`${domain}/api/mutual-funds/all/${fundId}/`, function (responseData) {
     data = responseData;
+
+    setMetaTag(
+        "name",
+        "description",
+        `Get the latest data on ${data.scheme_name} including NAV (${data.cagr["1_year"]}), 1-year return (${data.cagr["1_year"]}), and category insights. Compare performance and analyze fund history.`
+    );
+    setMetaTag(
+        "name",
+        "keywords",
+        `${data.scheme_name}, mutual fund NAV, mutual fund returns, SIP in ${data.scheme_name}, MF performance`
+    );
+
+    // Open Graph Meta Tags
+    setMetaTag("property", "og:type", "website");
+    setMetaTag(
+        "property",
+        "og:url",
+        `https://labh.io/mutual-fund/?id=${fundId}`
+    );
+    setMetaTag(
+        "property",
+        "og:title",
+        `${data.scheme_name} – NAV ${data.cagr["1_year"]}, 1Y Return ${data.cagr["1_year"]}`
+    );
+    setMetaTag(
+        "property",
+        "og:description",
+        `Get the latest data on ${data.scheme_name} including NAV (${data.cagr["1_year"]}), 1-year return (${data.cagr["1_year"]}), and category insights. Compare performance and analyze fund history.`
+    );
+
+    // Twitter Meta Tags
+    setMetaTag("name", "twitter:card", "summary_large_image");
+    setMetaTag(
+        "name",
+        "twitter:url",
+        `https://labh.io/mutual-fund/?id=${fundId}`
+    );
+    setMetaTag(
+        "name",
+        "twitter:title",
+        `${data.scheme_name} – NAV ${data.cagr["1_year"]}, 1Y Return ${data.cagr["1_year"]} `
+    );
+    setMetaTag(
+        "name",
+        "twitter:description",
+        `Get the latest data on ${data.scheme_name} including NAV (${data.cagr["1_year"]}), 1-year return (${data.cagr["1_year"]}), and category insights. Compare performance and analyze fund history.`
+    );
+
     renderChart(responseData, 1);
     $("#fund-name-heading").text(toTitleCase(responseData.scheme_name));
     $("#min-price").text(`₹ ${responseData.min_investment_value}`);
@@ -248,53 +296,6 @@ $.get(`${domain}/api/mutual-funds/all/${fundId}/`, function (responseData) {
     }
 
     document.title = `${data.scheme_name} – NAV ${data.cagr["1_year"]}`;
-
-    setMetaTag(
-        "name",
-        "description",
-        `Get the latest data on ${data.scheme_name} including NAV (${data.cagr["1_year"]}), 1-year return (${data.cagr["1_year"]}), and category insights. Compare performance and analyze fund history.`
-    );
-    setMetaTag(
-        "name",
-        "keywords",
-        `${data.scheme_name}, mutual fund NAV, mutual fund returns, SIP in ${data.scheme_name}, MF performance`
-    );
-
-    // Open Graph Meta Tags
-    setMetaTag("property", "og:type", "website");
-    setMetaTag(
-        "property",
-        "og:url",
-        `https://labh.io/mutual-fund/?id=${fundId}`
-    );
-    setMetaTag(
-        "property",
-        "og:title",
-        `${data.scheme_name} – NAV ${data.cagr["1_year"]}, 1Y Return ${data.cagr["1_year"]}`
-    );
-    setMetaTag(
-        "property",
-        "og:description",
-        `Get the latest data on ${data.scheme_name} including NAV (${data.cagr["1_year"]}), 1-year return (${data.cagr["1_year"]}), and category insights. Compare performance and analyze fund history.`
-    );
-
-    // Twitter Meta Tags
-    setMetaTag("name", "twitter:card", "summary_large_image");
-    setMetaTag(
-        "name",
-        "twitter:url",
-        `https://labh.io/mutual-fund/?id=${fundId}`
-    );
-    setMetaTag(
-        "name",
-        "twitter:title",
-        `${data.scheme_name} – NAV ${data.cagr["1_year"]}, 1Y Return ${data.cagr["1_year"]} `
-    );
-    setMetaTag(
-        "name",
-        "twitter:description",
-        `Get the latest data on ${data.scheme_name} including NAV (${data.cagr["1_year"]}), 1-year return (${data.cagr["1_year"]}), and category insights. Compare performance and analyze fund history.`
-    );
 
     // canonical
     tag = document.createElement("link");
