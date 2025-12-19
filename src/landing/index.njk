@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Labh – Mutual Fund Master Class</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family:"Inter", sans-serif;
+}
+
+body{
+  margin:0;
+  background:#ffffff;
+  color:#0f172a;
+  display:flex;
+  justify-content:center;
+}
+
+.page{
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+
+.container{
+  width:100%;
+  max-width:420px;
+  padding:0 16px 120px;
+}
+
+.header{
+  height:254px;
+  background:url('https://cms-labh-bucket.s3.ap-south-2.amazonaws.com/cms_images/3_bcbb4ac5-46d8-4568-8165-2bef0fbe0de1_Frame_4243.png') center/cover no-repeat;
+  padding:20px;
+  color:#fff;
+  position:relative;
+}
+
+.brand-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.logo-img{width:24px}
+
+.brand-name{
+  font-size:16px;
+  font-weight:600;
+}
+
+.hero-text{
+  position:absolute;
+  bottom:28px;
+  left:20px;
+}
+
+.hero-text h1{
+  margin:0;
+  font-size:32px;
+  line-height:1.15;
+  font-weight:400;
+}
+
+.hero-text strong{font-weight:700}
+
+.section{padding:24px 0}
+
+.tag{
+  font-size:13px;
+  letter-spacing:1px;
+  color:#6b7280;
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+.title{
+  font-size:30px;
+  font-weight:600;
+  line-height:1.1;
+  margin-bottom:12px;
+}
+
+.title span{
+  color:#8b5cf6;
+  font-size:24px;
+}
+
+.subtitle{
+  font-size:16px;
+  color:#6b7280;
+  margin-bottom:16px;
+  letter-spacing:0.3px; 
+}
+
+.pill{
+  background:#f3f4f6;
+  padding:10px 14px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:500;
+  display:inline-block;
+  margin-bottom:16px;
+}
+
+.info-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:15px;
+  font-weight:600;
+  margin-bottom:8px;
+}
+
+.info-row img{width:16px}
+
+.live{
+  color:#ef4444;
+  font-weight:600;
+}
+
+hr{
+  border:none;
+  border-top:1px solid #e5e7eb;
+  margin:24px 0;
+}
+
+.card{
+  background:#f7f7fb;
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:14px;
+}
+
+.card h3{
+  margin:0 0 8px;
+  font-size:16px;
+  font-weight:700;
+}
+
+.card ul{
+  margin:0;
+  padding-left:18px;
+  font-size:14px;
+  color:#4b5563;
+}
+
+.note{
+  font-size:14px;
+  color:#4b5563;
+}
+
+.speaker-section{
+  margin:24px 0;
+  padding:24px;
+  background:url('https://cms-labh-bucket.s3.ap-south-2.amazonaws.com/cms_images/3_1b3584e5-379d-4b9e-b54a-e11ef68eb70f_PROFILE_BG.png') center/cover no-repeat;
+  border-radius:20px;
+  color:#fff;
+}
+
+.speaker-content{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+.speaker-content img{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  border:3px solid #fff;
+  object-fit:cover;
+}
+
+.speaker-info span{
+  font-size:11px;
+  letter-spacing:1px;
+  opacity:.9;
+}
+
+.speaker-info h3{
+  margin:4px 0 2px;
+  font-size:16px;
+  font-weight:700;
+}
+
+.speaker-info p{
+  margin:0;
+  font-size:13px;
+  opacity:.95;
+}
+
+.schedule{
+  display:flex;
+  gap:12px;
+}
+
+.time-box,.price-box{
+  flex:1;
+  border-radius:16px;
+  padding:16px;
+  color:#fff;
+  background-size:cover;
+}
+
+.time-box{
+  background-image:url('https://cms-labh-bucket.s3.ap-south-2.amazonaws.com/cms_images/3_d13996d6-c4b4-49a1-aaa2-9462527100e4_ticket_bg.png');
+}
+
+.price-box{
+  background-image:url('https://cms-labh-bucket.s3.ap-south-2.amazonaws.com/cms_images/3_536d8aa3-8128-42a7-974b-49e95cda0a19_mukka.png');
+  text-align:center;
+}
+
+.price{
+  font-size:28px;
+  font-weight:800;
+}
+
+.sticky-wrapper{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#fff;
+  border-top:1px solid #e5e7eb;
+  display:flex;
+  justify-content:center;
+}
+
+.sticky-bar{
+  max-width:420px;
+  width:100%;
+  padding:12px 16px;
+  text-align:center;
+}
+
+.sticky-btn{
+  display:block;
+  width:100%;
+  background:#8b5cf6;
+  color:#fff;
+  padding:16px;
+  border-radius:14px;
+  font-size:16px;
+  font-weight:700;
+  text-decoration:none;
+}
+
+.secure{
+  font-size:12px;
+  color:#6b7280;
+  margin-top:6px;
+}
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];
+t=b.createElement(e);t.async=!0;
+t.src=v;
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '798888676516407', {}, {
+    "agent": "InitiateCheckout",
+    "test_event_code": "TEST52716"  // Replace with your actual code from Events Manager
+  });
+fbq('track', 'PageView');
+</script>
+
+<noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=798888676516407&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
+</head>
+
+<body>
+
+<div class="page">
+<div class="container">
+
+<div class="header">
+  <div class="brand-row">
+    <img src="https://images-onboard.s3.ap-south-2.amazonaws.com/template/Group.png" class="logo-img">
+    <span class="brand-name">Labh</span>
+  </div>
+
+  <div class="hero-text">
+    <h1>INVEST IN HOPE,<br><strong>HARVEST SUCCESS.</strong></h1>
+  </div>
+</div>
+
+<div class="section">
+  <div class="tag">MASTER CLASS</div>
+
+  <div class="title">
+    MUTUAL FUND INVESTMENTS AND
+    <span>PORTFOLIO MANAGEMENT</span>
+  </div>
+
+  <div class="subtitle">A starting point for mutual fund investing</div>
+
+  <div class="pill">● EXCLUSIVE FOR SOFTWARE ENGINEERS</div>
+
+  <div class="info-row">
+    <img src="https://cms-labh-bucket.s3.ap-south-2.amazonaws.com/cms_images/lets-icons_date-fill.svg">
+    23rd December 2025
+  </div>
+
+  <div class="info-row live">60 minutes | Live Online</div>
+
+  <hr>
+
+  <div class="card">
+    <h3>Basics of Mutual Funds</h3>
+    <ul>
+      <li>Understand what Mutual Funds are?</li>
+      <li>Types of Mutual Funds?</li>
+      <li>Categories you can invest in?</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Investment Strategy</h3>
+    <ul>
+      <li>What’s SIP and how to use it smartly?</li>
+      <li>SIP vs Lumpsum</li>
+      <li>Tax efficient wealth creation</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="note">
+    <strong>Note</strong>
+    The session is created by a research-led investment team grounded in
+    quantitative research and real investor behaviour.
+  </div>
+</div>
+
+<div class="speaker-section">
+  <div class="speaker-content">
+    <img src="https://cms-labh-bucket.s3.ap-south-2.amazonaws.com/cms_images/3_481f9b71-1f76-40a1-9a3a-54cc6e7fe061_Ram_Profile.png">
+    <div class="speaker-info">
+      <span>SPEAKER</span>
+      <h3>Ram Harsha</h3>
+      <p>Co-founder of Labh</p>
+      <p>IIM Ahmedabad alumni</p>
+    </div>
+  </div>
+</div>
+
+<div class="schedule">
+  <div class="time-box">
+    <div>08:00 PM – 09:00 PM</div>
+    <div>23rd Dec’25</div>
+  </div>
+
+  <div class="price-box">
+    <del>₹299</del>
+    <div class="price">₹99</div>
+    <div>Limited Time Price</div>
+  </div>
+</div>
+
+</div>
+</div>
+
+<div class="sticky-wrapper">
+  <div class="sticky-bar">
+    <a href="https://payments.cashfree.com/forms/labh" class="sticky-btn" onclick="fbq('track','InitiateCheckout');">
+      BOOK YOUR SEAT
+    </a>
+    <div class="secure">Your payment is 100% secure with us</div>
+  </div>
+</div>
+
+</body>
+</html>
