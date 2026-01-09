@@ -1,0 +1,190 @@
+# **Labh – Policy & Guidelines of Use**
+
+**Effective Date:** 9/1/2026
+**Last Updated:** 9/1/2026
+
+---
+
+## **1. Introduction**
+
+Welcome to **Labh** (“Company”, “we”, “our”, “us”). Labh is a financial research and analytics platform providing investment research, model portfolios, wealth baskets, and related tools for retail investors in India.
+
+By accessing, subscribing to, or using Labh’s website, mobile application, or any associated services (“Platform”), you agree to be bound by these **Policies and Guidelines of Use** (“Terms”). If you do not agree, you must discontinue use of the Platform immediately.
+
+---
+
+## **2. Nature of Services**
+
+1. Labh provides:
+
+   * Financial research, analysis, and insights
+   * Stock baskets and mutual fund baskets
+   * Portfolio construction and risk management tools
+   * Educational and informational content
+
+2. **Labh does not provide personalized investment advice**, portfolio management services, or guaranteed returns unless explicitly stated under a separately executed agreement.
+
+3. All content is provided **for informational and research purposes only**.
+
+---
+
+## **3. Eligibility**
+
+To use Labh, you must:
+
+* Be at least **18 years of age**
+* Be legally capable of entering into a binding contract under Indian law
+* Comply with all applicable laws and SEBI regulations
+
+---
+
+## **4. No Refund Policy (Strict)**
+
+### **IMPORTANT: NO REFUNDS**
+
+1. **All payments made to Labh are final and non-refundable.**
+
+2. This includes but is not limited to:
+
+   * Subscription fees
+   * One-time payments
+   * Renewal charges
+   * Promotional or discounted plans
+
+3. **No refunds** will be provided for:
+
+   * Partial usage
+   * Lack of usage
+   * Market losses
+   * Dissatisfaction with performance
+   * Change in personal financial circumstances
+   * Misinterpretation of research or strategies
+
+4. Users are advised to **review all plan details carefully before purchasing**.
+
+---
+
+## **5. Investment Risk Disclosure**
+
+1. Investments in securities and mutual funds are subject to **market risks**, including loss of capital.
+2. Past performance is **not indicative of future results**.
+3. Labh does **not guarantee returns, profits, or capital protection**.
+4. Users are solely responsible for their investment decisions.
+
+---
+
+## **6. User Responsibilities**
+
+You agree to:
+
+* Use the Platform only for lawful purposes
+* Not misuse, copy, scrape, resell, or redistribute Labh’s content
+* Maintain confidentiality of your login credentials
+* Ensure accuracy of information provided by you
+
+You must **not**:
+
+* Reverse engineer or replicate Labh’s models or algorithms
+* Share paid content with unauthorized users
+* Use Labh to manipulate markets or engage in illegal trading practices
+
+---
+
+## **7. Intellectual Property**
+
+1. All content, including:
+
+   * Research reports
+   * Data models
+   * Algorithms
+   * Branding, logos, and UI/UX
+
+   are the **exclusive intellectual property of Labh**.
+
+2. Unauthorized reproduction or commercial use is strictly prohibited and may lead to legal action.
+
+---
+
+## **8. Limitation of Liability**
+
+To the maximum extent permitted by law:
+
+1. Labh shall **not be liable** for:
+
+   * Any direct or indirect financial losses
+   * Trading losses or opportunity costs
+   * System downtime or data inaccuracies
+   * Decisions made based on Labh’s research
+
+2. Labh’s total liability, if any, shall **not exceed the amount paid by the user in the preceding 12 months**.
+
+---
+
+## **9. Third-Party Data & Integrations**
+
+1. Labh may use third-party data sources and APIs.
+2. Labh does **not guarantee the accuracy, completeness, or timeliness** of third-party data.
+3. Any reliance on such data is at the user’s own risk.
+
+---
+
+## **10. Suspension & Termination**
+
+Labh reserves the right to:
+
+* Suspend or terminate access without refund if:
+
+  * These Terms are violated
+  * Fraudulent or abusive behavior is detected
+  * Required by law or regulators
+
+Termination does not waive outstanding obligations.
+
+---
+
+## **11. Regulatory Compliance**
+
+1. Labh operates in compliance with applicable SEBI regulations.
+2. Users acknowledge that:
+
+   * Research outputs are **not investment advice**
+   * Final investment decisions rest solely with the user
+
+---
+
+## **12. Privacy & Data Usage**
+
+1. User data is handled in accordance with Labh’s Privacy Policy.
+2. Labh may collect usage data to improve services.
+3. Sensitive personal or financial data is protected using industry-standard security practices.
+
+---
+
+## **13. Modifications to Terms**
+
+1. Labh may update these Terms at any time.
+2. Continued use of the Platform after updates constitutes acceptance.
+3. Users are encouraged to review the Terms periodically.
+
+---
+
+## **14. Governing Law & Jurisdiction**
+
+1. These Terms shall be governed by the **laws of India**.
+2. Any disputes shall be subject to the **exclusive jurisdiction of courts in India**.
+
+---
+
+## **15. Contact Information**
+
+For questions or concerns, contact:
+📧 **[support@labh.io](mailto:support@labh.io)**
+🌐 **[https://labh.io](https://labh.io)**
+
+---
+
+### **Final Note**
+
+By using Labh, you acknowledge that you have read, understood, and agreed to these Policies and Guidelines of Use, including the **strict no-refund policy**.
+
+---
