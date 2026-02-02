@@ -15,6 +15,6 @@
         "heading": "Periodic Rebalancing",
         "content": "Smart Portfolio periodic-rebalanced for Growth",
         "img": "https://labh.io/assets/mobile/Rebalance%20-%20Illustration.svg",
-        "description": "Labh automatically adjusts your investment baskets using smart indicators to match changing market conditions. When one fund performs better than another, our system selects the stronger fund and updates your portfolio weights accordingly.\n\nDuring rebalancing, fund weights are optimized based on returns and risk levels. This allows your portfolio to naturally adapt to market changes, keeping you invested in the best-performing funds."
+        "description": "Labh periodically adjusts your investment baskets using smart indicators to match changing market conditions. When one fund performs better than another, our system selects the stronger fund and updates your portfolio weights accordingly.\n\nDuring rebalancing, fund weights are optimized based on returns and risk levels. This allows your portfolio to naturally adapt to market changes, keeping you invested in the best-performing funds."
     }
 ]
