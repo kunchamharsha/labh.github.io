@@ -12,8 +12,8 @@
         "description": "Labh continuously tracks thousands of mutual funds with 24/7 algorithms that analyze performance and market conditions. We quickly identify weak performers and focus on top funds offering the best risk-adjusted opportunities. By relying on quantitative analysis rather than emotions, we deliver consistent performance through all market cycles, protecting your investments during uncertain times while targeting optimal growth with data-driven discipline."
     },
     {
-        "heading": "Auto Rebalancing",
-        "content": "Smart Portfolio Auto-rebalanced for Growth",
+        "heading": "Periodic Rebalancing",
+        "content": "Smart Portfolio periodic-rebalanced for Growth",
         "img": "https://labh.io/assets/mobile/Rebalance%20-%20Illustration.svg",
         "description": "Labh automatically adjusts your investment baskets using smart indicators to match changing market conditions. When one fund performs better than another, our system selects the stronger fund and updates your portfolio weights accordingly.\n\nDuring rebalancing, fund weights are optimized based on returns and risk levels. This allows your portfolio to naturally adapt to market changes, keeping you invested in the best-performing funds."
     }
