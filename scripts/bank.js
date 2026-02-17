@@ -305,6 +305,8 @@ function submitBankForm() {
                         "Try Again"
                     );
                 }
+            } else if (response.error) {
+                showErrors("Error", response.error, "Try Again");
             } else {
                 showErrors("Error", "Something went wrong!", "Try Again");
             }
