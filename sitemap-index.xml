@@ -4,6 +4,10 @@
         <loc>https://labh.io/sitemap.xml</loc>
         <lastmod>2025-05-22</lastmod>
     </sitemap>
+     <sitemap>
+        <loc>https://labh.io/stocks-1.xml</loc>
+        <lastmod>2026-03-06</lastmod>
+    </sitemap>
     <sitemap>
         <loc>https://labh.io/sitemaps/pin-sitemap-1.xml</loc>
         <lastmod>2025-05-22</lastmod>
