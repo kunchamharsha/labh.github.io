@@ -508,6 +508,89 @@
       0% { background-position: 200% 0; }
       100% { background-position: -200% 0; }
     }
+
+    /* Sticky Promotional Footer */
+    .promo-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 100%);
+      border-top: 1px solid rgba(167, 139, 250, 0.3);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      z-index: 999;
+      box-shadow: 0 -4px 20px rgba(124, 58, 237, 0.3);
+      backdrop-filter: blur(12px);
+    }
+
+    .promo-content {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 1200px;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .promo-text {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .promo-btn {
+      background-color: #fff;
+      color: var(--purple-dark);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      white-space: nowrap;
+    }
+
+    .promo-btn:hover {
+      background-color: var(--purple-light);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Add padding to body to prevent content from being hidden under footer */
+    body {
+      padding-bottom: 80px;
+    }
+
+    @media (max-width: 768px) {
+      .promo-footer {
+        padding: 1rem;
+      }
+
+      .promo-content {
+        gap: 1rem;
+      }
+
+      .promo-text {
+        font-size: 0.875rem;
+      }
+
+      .promo-btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+      }
+
+      body {
+        padding-bottom: 100px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -546,6 +629,14 @@
       <a href="/search.html" style="color: #7c3aed; text-decoration: underline;">Return to Search</a>
     </div>
   </noscript>
+
+  <!-- Sticky Promotional Footer -->
+  <footer class="promo-footer" role="contentinfo" aria-label="Promotional banner">
+    <div class="promo-content">
+      <p class="promo-text">Looking to Invest in stocks? Check Expert picked Stock Baskets by Labh</p>
+      <a href="https://labh.io/download" class="promo-btn" aria-label="Download Labh app">Download Now</a>
+    </div>
+  </footer>
 
   <script>
     // Get symbol from URL parameter
@@ -645,6 +736,8 @@
         <article class="card full-width-card">
           <h2 class="card-title">Price History</h2>
           <div class="chart-controls" role="group" aria-label="Time period selection">
+            <button class="chart-control-btn" data-period="1D" aria-label="Show 1 day price history">1D</button>
+            <button class="chart-control-btn" data-period="1W" aria-label="Show 1 week price history">1W</button>
             <button class="chart-control-btn active" data-period="1M" aria-label="Show 1 month price history">1M</button>
             <button class="chart-control-btn" data-period="3M" aria-label="Show 3 months price history">3M</button>
             <button class="chart-control-btn" data-period="6M" aria-label="Show 6 months price history">6M</button>
@@ -1193,6 +1286,8 @@
 
       const now = new Date();
       const periodMap = {
+        '1D': 1,
+        '1W': 7,
         '1M': 30,
         '3M': 90,
         '6M': 180,
