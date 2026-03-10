@@ -498,6 +498,80 @@
       }
     }
 
+    /* Financial Tables */
+    .fin-table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .fin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      min-width: 600px;
+    }
+
+    .fin-table th,
+    .fin-table td {
+      padding: 0.6rem 1rem;
+      text-align: right;
+      white-space: nowrap;
+      border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+    }
+
+    .fin-table th {
+      color: #999;
+      font-weight: 500;
+      font-size: 0.8rem;
+      background: rgba(22, 22, 42, 0.8);
+    }
+
+    .fin-table td:first-child,
+    .fin-table th:first-child {
+      text-align: left;
+      position: sticky;
+      left: 0;
+      background: rgba(22, 22, 42, 0.95);
+      z-index: 1;
+      min-width: 160px;
+      color: #ccc;
+      font-weight: 500;
+    }
+
+    .fin-table th:first-child {
+      color: #999;
+      font-weight: 500;
+    }
+
+    .fin-table td {
+      color: #e0e0e0;
+    }
+
+    .fin-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .fin-table tr:hover td {
+      background: rgba(124, 58, 237, 0.07);
+    }
+
+    .fin-table tr:hover td:first-child {
+      background: rgba(30, 30, 55, 0.98);
+    }
+
+    .fin-table .highlight-row td {
+      color: #fff;
+      font-weight: 600;
+      border-top: 1px solid rgba(124, 58, 237, 0.25);
+    }
+
+    .fin-table .highlight-row td:first-child {
+      color: var(--purple-light);
+    }
+
+    .fin-table .positive { color: var(--green); }
+    .fin-table .negative { color: var(--red); }
+
     .skeleton {
       background: linear-gradient(90deg, rgba(124, 58, 237, 0.1) 25%, rgba(124, 58, 237, 0.2) 50%, rgba(124, 58, 237, 0.1) 75%);
       background-size: 200% 100%;
@@ -992,6 +1066,30 @@
           </div>
           ` : ''}
         </div>
+
+        <!-- Quarterly P&L -->
+        <article class="card full-width-card" style="margin-top:0">
+          <h2 class="card-title">Quarterly Results</h2>
+          <div class="fin-table-wrapper">
+            ${buildIncomeTable(data.fundamentals?.Financials?.Income_Statement?.quarterly, data.fundamentals?.Earnings?.History)}
+          </div>
+        </article>
+
+        <!-- Balance Sheet -->
+        <article class="card full-width-card" style="margin-top:0">
+          <h2 class="card-title">Balance Sheet</h2>
+          <div class="fin-table-wrapper">
+            ${buildBalanceSheetTable(data.fundamentals?.Financials?.Balance_Sheet?.quarterly)}
+          </div>
+        </article>
+
+        <!-- Cash Flows -->
+        <article class="card full-width-card" style="margin-top:0">
+          <h2 class="card-title">Cash Flows</h2>
+          <div class="fin-table-wrapper">
+            ${buildCashFlowTable(data.fundamentals?.Financials?.Cash_Flow?.quarterly)}
+          </div>
+        </article>
       `;
 
       document.getElementById('headerContent').innerHTML = headerHTML;
@@ -1373,6 +1471,162 @@
     function formatPercent(num) {
       if (!num || isNaN(num)) return 'N/A';
       return (num * 100).toFixed(2) + '%';
+    }
+
+    function fmtCr(val) {
+      if (val === null || val === undefined || val === '' || isNaN(Number(val))) return '—';
+      const n = Number(val) / 1e7; // raw value is in base currency units; divide by 1Cr
+      return n.toFixed(2);
+    }
+
+    function fmtPct(num, den) {
+      if (!num || !den || isNaN(num) || isNaN(den) || Number(den) === 0) return '—';
+      return (Math.abs(Number(num) / Number(den)) * 100).toFixed(1) + '%';
+    }
+
+    function fmtEps(val) {
+      if (val === null || val === undefined || val === '' || isNaN(Number(val))) return '—';
+      return Number(val).toFixed(2);
+    }
+
+    function buildIncomeTable(quarterly, earningsHistory) {
+      if (!quarterly) return '<p style="color:#999">No data available</p>';
+      const dates = Object.keys(quarterly).slice(0, 8).reverse();
+      if (!dates.length) return '<p style="color:#999">No data available</p>';
+
+      // Build EPS lookup by date
+      const epsMap = {};
+      if (earningsHistory) {
+        Object.values(earningsHistory).forEach(e => {
+          if (e.date && e.epsActual !== undefined) epsMap[e.date] = e.epsActual;
+        });
+      }
+
+      const rows = [
+        { label: 'Sales (₹Cr)',          key: 'totalRevenue',              fmt: fmtCr, highlight: false },
+        { label: 'Expenses (₹Cr)',        key: 'totalOperatingExpenses',    fmt: fmtCr, highlight: false },
+        { label: 'Operating Profit (₹Cr)',key: 'operatingIncome',           fmt: fmtCr, highlight: true  },
+        { label: 'Other Income (₹Cr)',    key: 'nonOperatingIncomeNetOther',fmt: fmtCr, highlight: false },
+        { label: 'Interest (₹Cr)',        key: 'interestExpense',           fmt: (v) => v ? Math.abs(fmtCr(v)) : '—', highlight: false },
+        { label: 'Depreciation (₹Cr)',    key: 'depreciationAndAmortization',fmt: fmtCr, highlight: false },
+        { label: 'PBT (₹Cr)',             key: 'incomeBeforeTax',           fmt: fmtCr, highlight: false },
+        { label: 'Tax %',                 key: '__tax_pct__',               fmt: null,  highlight: false },
+        { label: 'Net Profit (₹Cr)',      key: 'netIncome',                 fmt: fmtCr, highlight: true  },
+        { label: 'EPS (₹)',               key: '__eps__',                   fmt: null,  highlight: false },
+      ];
+
+      let html = '<table class="fin-table"><thead><tr><th>Metric</th>';
+      dates.forEach(d => { html += `<th>${formatQuarterLabel(d)}</th>`; });
+      html += '</tr></thead><tbody>';
+
+      rows.forEach(row => {
+        const cls = row.highlight ? ' class="highlight-row"' : '';
+        html += `<tr${cls}><td>${row.label}</td>`;
+        dates.forEach(d => {
+          const q = quarterly[d] || {};
+          let cell;
+          if (row.key === '__tax_pct__') {
+            cell = fmtPct(q.incomeTaxExpense, q.incomeBeforeTax);
+          } else if (row.key === '__eps__') {
+            cell = fmtEps(epsMap[d]);
+          } else {
+            cell = row.fmt(q[row.key]);
+          }
+          const numVal = parseFloat(cell);
+          let colorCls = '';
+          if (!isNaN(numVal) && row.key !== '__tax_pct__' && row.key !== '__eps__' && row.highlight) {
+            colorCls = numVal >= 0 ? ' class="positive"' : ' class="negative"';
+          }
+          html += `<td${colorCls}>${cell}</td>`;
+        });
+        html += '</tr>';
+      });
+
+      html += '</tbody></table>';
+      return html;
+    }
+
+    function buildBalanceSheetTable(quarterly) {
+      if (!quarterly) return '<p style="color:#999">No data available</p>';
+      const dates = Object.keys(quarterly).slice(0, 8).reverse();
+      if (!dates.length) return '<p style="color:#999">No data available</p>';
+
+      const rows = [
+        { label: 'Equity Capital (₹Cr)',   key: 'capitalStock',              highlight: false },
+        { label: 'Reserves (₹Cr)',         key: 'retainedEarnings',          highlight: false },
+        { label: 'Borrowings (₹Cr)',       key: 'shortLongTermDebtTotal',     highlight: false },
+        { label: 'Other Liabilities (₹Cr)',key: 'otherCurrentLiab',          highlight: false },
+        { label: 'Total Liabilities (₹Cr)',key: 'totalLiab',                 highlight: true  },
+        { label: 'Fixed Assets (₹Cr)',     key: 'propertyPlantAndEquipmentNet',highlight: false },
+        { label: 'Investments (₹Cr)',      key: 'longTermInvestments',        highlight: false },
+        { label: 'Cash & Equiv. (₹Cr)',    key: 'cashAndEquivalents',         highlight: false },
+        { label: 'Receivables (₹Cr)',      key: 'netReceivables',             highlight: false },
+        { label: 'Other Assets (₹Cr)',     key: 'otherAssets',                highlight: false },
+        { label: 'Total Assets (₹Cr)',     key: 'totalAssets',                highlight: true  },
+      ];
+
+      let html = '<table class="fin-table"><thead><tr><th>Metric</th>';
+      dates.forEach(d => { html += `<th>${formatQuarterLabel(d)}</th>`; });
+      html += '</tr></thead><tbody>';
+
+      rows.forEach(row => {
+        const cls = row.highlight ? ' class="highlight-row"' : '';
+        html += `<tr${cls}><td>${row.label}</td>`;
+        dates.forEach(d => {
+          const q = quarterly[d] || {};
+          const cell = fmtCr(q[row.key]);
+          html += `<td>${cell}</td>`;
+        });
+        html += '</tr>';
+      });
+
+      html += '</tbody></table>';
+      return html;
+    }
+
+    function buildCashFlowTable(quarterly) {
+      if (!quarterly) return '<p style="color:#999">No data available</p>';
+      const dates = Object.keys(quarterly).slice(0, 8).reverse();
+      if (!dates.length) return '<p style="color:#999">No data available</p>';
+
+      const rows = [
+        { label: 'Operating CF (₹Cr)',    key: 'totalCashFromOperatingActivities',    highlight: true  },
+        { label: 'Investing CF (₹Cr)',    key: 'totalCashflowsFromInvestingActivities',highlight: false },
+        { label: 'Financing CF (₹Cr)',    key: 'totalCashFromFinancingActivities',    highlight: false },
+        { label: 'Capex (₹Cr)',           key: 'capitalExpenditures',                highlight: false },
+        { label: 'Free Cash Flow (₹Cr)',  key: 'freeCashFlow',                       highlight: true  },
+        { label: 'Net Change in Cash (₹Cr)', key: 'changeInCash',                   highlight: false },
+      ];
+
+      let html = '<table class="fin-table"><thead><tr><th>Metric</th>';
+      dates.forEach(d => { html += `<th>${formatQuarterLabel(d)}</th>`; });
+      html += '</tr></thead><tbody>';
+
+      rows.forEach(row => {
+        const cls = row.highlight ? ' class="highlight-row"' : '';
+        html += `<tr${cls}><td>${row.label}</td>`;
+        dates.forEach(d => {
+          const q = quarterly[d] || {};
+          const cell = fmtCr(q[row.key]);
+          const numVal = parseFloat(cell);
+          let colorCls = '';
+          if (!isNaN(numVal) && row.highlight) {
+            colorCls = numVal >= 0 ? ' class="positive"' : ' class="negative"';
+          }
+          html += `<td${colorCls}>${cell}</td>`;
+        });
+        html += '</tr>';
+      });
+
+      html += '</tbody></table>';
+      return html;
+    }
+
+    function formatQuarterLabel(dateStr) {
+      const d = new Date(dateStr);
+      const month = d.toLocaleString('en-IN', { month: 'short' });
+      const year = String(d.getFullYear()).slice(-2);
+      return `${month} '${year}`;
     }
   </script>
    <script
