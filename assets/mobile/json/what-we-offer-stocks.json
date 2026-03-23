@@ -1,0 +1,26 @@
+[
+    {
+        "heading": "STOCK BASKET",
+        "content": "Algorithms scan markets and pick only the most consistent stocks",
+        "img": "https://labh.io/assets/mobile/stock_offer_illustrations/Stock_basket.svg",
+        "description": "Labh uses a quantitative model — a set of algorithms — to select stocks. Here is what that means in plain terms:\n\n<table>\n<tr><td><b>What it looks at</b></td><td>Stock prices, company financials, sector trends, macroeconomic signals and many more</td></tr>\n<tr><td><b>What it tests</b></td><td>Hundreds of market scenarios — bull runs, downturns, policy changes, global events</td></tr>\n<tr><td><b>What makes the cut</b></td><td>Only stocks that hold up consistently across all those conditions</td></tr>\n<tr><td><b>What drives the decision</b></td><td>Data and math — not opinions, not predictions, not emotion</td></tr>\n</table>"
+    },
+    {
+        "heading": "INVESTING",
+        "content": "Labh gives you a ready stock list. Place trades through your own broker",
+        "img": "https://labh.io/assets/mobile/stock_offer_illustrations/Investing.svg",
+        "description": "Investing Through Your Broker\nLabh does not hold your money and is not a broker. It gives you a stock list. You place the actual trades through your own SEBI-registered broker — Zerodha, Groww, Angel One, HDFC Securities, or any other broker you already use.\n\nHow the investing process works:\n\nStep 1\nGet your stock list from Labh\nAfter subscribing, you receive a clear list — stock names, quantities, and the proportion to invest in each one. Everything is laid out for you.\n\nStep 2\nOpen your broker app or platform\nLog into your existing demat and trading account. You do not need to open anything new. You can buy stocks through your existing broker. In case you have a Demat account with Zerodha or Groww, you can connect through our app.\n\nStep 3\nPlace your trades\nBuy the stocks from the list at your own pace. There is no time pressure — the basket is designed for medium to long-term holding. You are placing normal stock market orders, just with a clear, pre-researched list in hand.\n\nStep 4\nYour stocks land in your demat account\nEvery stock you buy is yours. It sits in your demat account under your name. Labh has no access to your holdings, your account, or your funds at any point."
+    },
+    {
+        "heading": "REBALANCING",
+        "content": "Rebalanced every 4 months. You just get the alert and take action",
+        "img": "https://labh.io/assets/mobile/stock_offer_illustrations/Rebalancing.svg",
+        "description": "Markets change. A stock that made sense six months ago may no longer fit the strategy today. Rebalancing is how Labh keeps your portfolio relevant without you having to track the market yourself.\n\n<table>\n<tr><td><b>How often</b></td><td>Every 4 months, Labh reviews the entire basket using its quantitative model.</td></tr>\n<tr><td><b>What gets reviewed</b></td><td>Every stock in the basket is re-evaluated against current market conditions, company performance, and the original strategy criteria.</td></tr>\n<tr><td><b>What changes</b></td><td>Stocks that no longer meet the criteria are replaced. Stocks that are still performing are retained. Weightages may also be adjusted.</td></tr>\n<tr><td><b>How you find out</b></td><td>You receive a clear rebalancing alert — listing exactly what to buy, what to sell, and what to hold.</td></tr>\n<tr><td><b>How long it takes you</b></td><td>Most rebalances take a few minutes to execute. The trades are straightforward — the same as placing any regular stock order through your broker.</td></tr>\n</table>"
+    },
+    {
+        "heading": "SUBSCRIPTION",
+        "content": "Subscribe to a basket and get the complete stock list",
+        "img": "https://labh.io/assets/mobile/stock_offer_illustrations/Subscription.svg",
+        "description": "Subscribing means you choose a basket and get access to everything inside it — the list of stocks, their weightages.\n\nYou see the full basket\nThe complete list of stocks, how much of each to buy, and the thinking behind the selection.\n\nNo research needed from your end\nLabh has already done the screening, the testing, and the optimisation. You just review and decide.\n\nOne subscription per basket\nEach basket is a separate subscription. You can hold one or multiple baskets depending on your goals and budget.\n\nSubscription fee varies by basket\nSome baskets are free. Others have a fee set by the investment expert or model behind the basket. This is shown clearly before you subscribe."
+    }
+]
