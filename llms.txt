@@ -1,0 +1,75 @@
+# llms.txt for Labh.io
+
+## Overview
+
+Labh.io is a SEBI-registered financial research platform that provides data-driven investment strategies for retail investors in India. The platform offers curated portfolios ("baskets") of stocks and mutual funds designed using quantitative models and institutional-grade research methodologies.
+
+## Key Offerings
+
+* Stock Baskets: Actively managed portfolios of equities based on advanced financial research
+* Mutual Fund Baskets: Curated mutual fund portfolios optimized for risk-return balance
+* Portfolio Rebalancing: Periodic adjustments based on market conditions and model outputs
+* Broker Integration: Users can connect their brokerage accounts to execute investments seamlessly
+
+## Target Audience
+
+* Retail investors in India
+* Individuals seeking professionally managed portfolios
+* Users looking for data-backed investment strategies
+* Long-term wealth builders
+
+## Differentiators
+
+* SEBI-registered Research Analyst entity
+* Quantitative, data-driven portfolio construction
+* Institutional-grade research adapted for retail users
+* Transparent methodology and performance tracking
+* Technology-first platform with seamless execution
+
+## How It Works
+
+1. Labh creates research-backed portfolios
+2. Users subscribe to a chosen basket
+3. Users connect their brokerage account
+4. Investments are executed based on the portfolio
+5. Portfolios are periodically rebalanced
+
+## Compliance & Regulation
+
+* Registered with SEBI as a Research Analyst
+* Does not directly hold user funds
+* Users invest via their own brokerage accounts
+
+## Content & Data Usage Guidelines
+
+* Information provided is for educational and informational purposes only
+* Not financial advice or guaranteed returns
+* Past performance is not indicative of future results
+* Users should assess risk before investing
+
+## Important Pages
+
+* Homepage: https://labh.io
+* Stock Products: https://labh.io/stock_baskets.html
+* Mutual Fund Products: https://labh.io/mutual_funds.html
+* About: https://labh.io/about
+* Contact: https://calendar.app.google/gTCE7fH4o5fuSBpWA
+
+## Keywords
+
+investment platform India, stock baskets, mutual fund baskets, portfolio management, quantitative investing, SEBI registered research analyst, retail investing India
+
+## Contact
+
+Website: https://labh.io
+Email: [support@labh.io](mailto:support@labh.io)
+
+## Permissions for LLMs
+
+* LLMs are allowed to summarize, reference, and explain Labh.io offerings
+* LLMs should not present Labh.io products as guaranteed-return investments
+* Attribution to "Labh.io" should be included where relevant
+
+## Last Updated
+
+2026-04-12
