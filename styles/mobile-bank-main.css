@@ -387,3 +387,50 @@ body {
 .modal-container .hide {
   transform: translateY(100%);
 }/*# sourceMappingURL=mobile-bank-main.css.map */
+
+
+
+/* -------------------------------------- */
+    /* default switch button for banks */
+/* -------------------------------------- */
+.img-switch {
+    position: relative;
+    display: inline-block;
+    width: 55px;
+    height: 28px;
+}
+
+.img-switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #CECBFF33;
+    border: 1px solid #CECBFF;
+    border-radius: 34px;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.knob-image {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 3px;
+    left: 3px;
+    transition: 0.6s;
+}
+
+/* ON state */
+.img-switch input:checked + .slider {
+    background: #63E4BF4A;
+    border-color: #63E4BF;
+}
+
+/* move knob */
+.img-switch input:checked + .slider .knob-image {
+    left: 30px;
+}
