@@ -205,7 +205,7 @@ function renderBankAccounts(addHistory = true) {
                             }
                         </div>
                         <div class="u-d">
-                            <div class="label">Account Number: </div>z
+                            <div class="label">Account Number: </div>
                             <div class="account-number">${
                               account.account_number
                             }</div>
