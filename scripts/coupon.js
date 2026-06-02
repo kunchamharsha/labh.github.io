@@ -2,6 +2,9 @@ let selectedCoupon = null;
 let couponToastTimer = null;
 let coupons = [];
 let expandedCouponIndexes = [];
+let activeCouponTab = "available";
+let couponSwipeStartX = 0;
+let couponSwipeStartY = 0;
 
 const COUPON_API_URL = TEST_DOMAIN + "/stocks/api/v1/coupon/";
 
@@ -57,18 +60,63 @@ function normalizeCoupon(coupon) {
   };
 }
 
-function renderCouponCards() {
-  if (!coupons.length) {
-    return `
+function getCouponTabCoupons(tab) {
+  const tabCoupons = coupons
+    .map(function (rawCoupon, index) {
+      return {
+        rawCoupon,
+        index,
+      };
+    })
+    .filter(function (entry) {
+      const isSelected =
+        selectedCoupon &&
+        selectedCoupon.id === entry.rawCoupon.id &&
+        selectedCoupon.code === entry.rawCoupon.coupon_code;
+      const isUsed = Boolean(entry.rawCoupon.redeemed || isSelected);
+
+      return tab === "used" ? isUsed : !isUsed;
+    });
+
+  if (tab === "used" && selectedCoupon) {
+    tabCoupons.sort(function (first, second) {
+      const firstSelected = first.rawCoupon.id === selectedCoupon.id ? 1 : 0;
+      const secondSelected = second.rawCoupon.id === selectedCoupon.id ? 1 : 0;
+      return secondSelected - firstSelected;
+    });
+  }
+
+  return tabCoupons;
+}
+
+function renderEmptyCouponState(tab) {
+  const title = tab === "used" ? "No used coupons" : "No coupons available";
+  const description =
+    tab === "used"
+      ? "Coupons you apply or have already used will appear here."
+      : "New offers will appear here when they are available.";
+
+  return `
       <div class="empty-coupon-state d-flex flex-column align-items-center justify-content-center">
-        <h4>No coupons available</h4>
-        <p>New offers will appear here when they are available.</p>
+        <h4>${title}</h4>
+        <p>${description}</p>
       </div>
+    `;
+}
+
+function renderCouponCards(tab) {
+  const tabCoupons = getCouponTabCoupons(tab);
+
+  if (!tabCoupons.length) {
+    return `
+      ${renderEmptyCouponState(tab)}
     `;
   }
 
-  return coupons
-    .map(function (rawCoupon, index) {
+  return tabCoupons
+    .map(function (entry) {
+      const rawCoupon = entry.rawCoupon;
+      const index = entry.index;
       const coupon = normalizeCoupon(rawCoupon);
 
       const isApplied =
@@ -196,7 +244,20 @@ function applyCoupon(index) {
     }),
     success: function () {
       selectedCoupon = coupon;
+      coupons = coupons.map(function (existingCoupon) {
+        if (existingCoupon.id === coupon.id) {
+          return Object.assign({}, existingCoupon, {
+            redeemed: true,
+          });
+        }
+
+        return existingCoupon;
+      });
+      activeCouponTab = "available";
       renderCouponList();
+      requestAnimationFrame(function () {
+        switchCouponTab("used");
+      });
       showCouponToast();
     },
     error: function (xhr, status, error) {
@@ -206,6 +267,12 @@ function applyCoupon(index) {
 }
 
 function bindCouponPageEvents() {
+  $(".coupon-tab-button")
+    .off("click")
+    .on("click", function () {
+      switchCouponTab($(this).data("tab"));
+    });
+
   $(".coupon-apply-button")
     .off("click")
     .on("click", function () {
@@ -217,6 +284,44 @@ function bindCouponPageEvents() {
     .on("click", function () {
       toggleCouponBullets($(this).data("index"));
     });
+
+  $(".coupon-tab-panels")
+    .off("touchstart touchend")
+    .on("touchstart", function (event) {
+      const touch = event.originalEvent.touches[0];
+      couponSwipeStartX = touch.clientX;
+      couponSwipeStartY = touch.clientY;
+    })
+    .on("touchend", function (event) {
+      const touch = event.originalEvent.changedTouches[0];
+      const deltaX = touch.clientX - couponSwipeStartX;
+      const deltaY = touch.clientY - couponSwipeStartY;
+
+      if (Math.abs(deltaX) < 48 || Math.abs(deltaX) < Math.abs(deltaY) * 1.2) {
+        return;
+      }
+
+      if (deltaX < 0 && activeCouponTab === "available") {
+        switchCouponTab("used");
+      } else if (deltaX > 0 && activeCouponTab === "used") {
+        switchCouponTab("available");
+      }
+    });
+}
+
+function switchCouponTab(tab) {
+  if (!["available", "used"].includes(tab) || activeCouponTab === tab) {
+    return;
+  }
+
+  activeCouponTab = tab;
+  $(".coupon-tabs").attr("data-active-tab", tab);
+  $(".coupon-tab-button")
+    .removeClass("active")
+    .attr("aria-selected", "false");
+  $(`.coupon-tab-button[data-tab="${tab}"]`)
+    .addClass("active")
+    .attr("aria-selected", "true");
 }
 
 function toggleCouponBullets(index) {
@@ -247,13 +352,52 @@ function renderCouponList() {
     return;
   }
 
+  const availableCount = getCouponTabCoupons("available").length;
+  const usedCount = getCouponTabCoupons("used").length;
+
   $root.html(`
         <section class="coupon-section">
             <div class="section-heading">
-                <h2>Available Coupons</h2>
+                <h2>Coupons</h2>
             </div>
-            <div class="coupon-list">
-                ${renderCouponCards()}
+            <div class="coupon-tabs" data-active-tab="${activeCouponTab}">
+                <div class="coupon-tab-bar" role="tablist" aria-label="Coupon status">
+                    <span class="coupon-tab-indicator" aria-hidden="true"></span>
+                    <button
+                        class="coupon-tab-button ${activeCouponTab === "available" ? "active" : ""}"
+                        type="button"
+                        role="tab"
+                        aria-selected="${activeCouponTab === "available"}"
+                        data-tab="available"
+                    >
+                        <span>Available</span>
+                        <strong>${availableCount}</strong>
+                    </button>
+                    <button
+                        class="coupon-tab-button ${activeCouponTab === "used" ? "active" : ""}"
+                        type="button"
+                        role="tab"
+                        aria-selected="${activeCouponTab === "used"}"
+                        data-tab="used"
+                    >
+                        <span>Redeemed</span>
+                        <strong>${usedCount}</strong>
+                    </button>
+                </div>
+                <div class="coupon-tab-panels">
+                    <div class="coupon-tab-track">
+                        <div class="coupon-tab-panel">
+                            <div class="coupon-list">
+                                ${renderCouponCards("available")}
+                            </div>
+                        </div>
+                        <div class="coupon-tab-panel">
+                            <div class="coupon-list">
+                                ${renderCouponCards("used")}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <div id="coupon-toast" class="coupon-toast">
