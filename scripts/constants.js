@@ -1,5 +1,5 @@
 const DOMAIN = "https://api.labh.io";
-const TEST_DOMAIN = "http://localhost:8000";
+const TEST_DOMAIN = "https://devapi.labh.io";
 const ASSETS_URL = "https://labh.io";
 const DEBUG = false;
 
