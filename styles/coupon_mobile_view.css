@@ -20,7 +20,9 @@ body {
     top: 0;
     z-index: 10;
     background: #050307;
-    padding: 2.3125rem 1.1875rem 0;
+    padding-top: 2.375rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
 }
 
 .logo {
@@ -30,8 +32,8 @@ body {
 }
 
 .logo img {
-    width: 6.25rem;
-    height: auto;
+    width: 6.6875rem;
+    height: 2.3125rem;
     object-fit: contain;
 }
 
@@ -65,38 +67,41 @@ body {
 }
 
 .go-back {
-    position: relative;
-    height: 4.0625rem;
-    margin-top: 1rem;
-    border-bottom: 1px solid rgba(206, 203, 255, 0.16);
+    margin-top: 2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 0.5px solid grey;
     display: flex;
     align-items: center;
 }
 
 .go-back > img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.5625rem;
+    height: 1.5625rem;
+    margin-right: 0.8125rem;
     object-fit: contain;
 }
 
 .go-back .details {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    min-width: 0;
 }
 
 .go-back .details .h {
     color: #f5f5f5;
-    font-size: 0.8125rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 600;
     line-height: 1.2;
 }
 
-.go-back .details .b,
+.go-back .details .b {
+    color: rgba(255, 255, 255, 0.6980392157);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
 .go-back .header-icon {
-    display: none;
+    display: block;
+    flex: 0 0 auto;
 }
 
 .contents {
@@ -127,6 +132,126 @@ body {
 
 .section-heading span {
     display: none;
+}
+
+.coupon-tabs {
+    --coupon-tab-slide: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%;
+}
+
+.coupon-tab-bar {
+    position: sticky;
+    top: 8.9375rem;
+    z-index: 8;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+    padding: 0.25rem;
+    border: 1px solid rgba(206, 203, 255, 0.12);
+    border-radius: 1rem;
+    background: rgba(18, 11, 27, 0.96);
+    box-shadow: 0 0.625rem 1.5rem rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(0.75rem);
+    overflow: hidden;
+}
+
+.coupon-tab-indicator {
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    z-index: 0;
+    width: calc((100% - 0.75rem) / 2);
+    height: calc(100% - 0.5rem);
+    border-radius: 0.8125rem;
+    background: linear-gradient(135deg, #6b3ba2 0%, #563083 58%, #45256c 100%);
+    box-shadow: 0 0.5rem 1.25rem rgba(86, 48, 131, 0.28);
+    transform: translateX(0);
+    transition: transform var(--coupon-tab-slide);
+    will-change: transform;
+}
+
+.coupon-tabs[data-active-tab="used"] .coupon-tab-indicator {
+    transform: translateX(calc(100% + 0.25rem));
+}
+
+.coupon-tab-button {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 0.8125rem;
+    background: transparent;
+    color: rgba(245, 245, 245, 0.68);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0 0.75rem;
+    white-space: nowrap;
+    transition: background var(--coupon-tab-slide), color var(--coupon-tab-slide), box-shadow var(--coupon-tab-slide);
+}
+
+.coupon-tab-button span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.coupon-tab-button strong {
+    min-width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(245, 245, 245, 0.76);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    transition: background var(--coupon-tab-slide), color var(--coupon-tab-slide);
+}
+
+.coupon-tab-button.active {
+    background: transparent;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+.coupon-tab-button.active strong {
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+}
+
+.coupon-tab-button:active {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.coupon-tab-panels {
+    width: 100%;
+    overflow: hidden;
+    touch-action: pan-y;
+}
+
+.coupon-tab-track {
+    display: grid;
+    grid-template-columns: repeat(2, 100%);
+    transform: translateX(0);
+    transition: transform var(--coupon-tab-slide);
+    will-change: transform;
+}
+
+.coupon-tabs[data-active-tab="used"] .coupon-tab-track {
+    transform: translateX(-100%);
+}
+
+.coupon-tab-panel {
+    min-width: 0;
 }
 
 .coupon-list {
