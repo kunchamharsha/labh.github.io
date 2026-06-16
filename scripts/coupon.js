@@ -120,8 +120,9 @@ function normalizeCoupon(coupon) {
       ? `Valid for ${coupon.tenure_applicable}-month plans`
       : null,
     coupon.per_user_usage
-      ? `Each user can use this coupon up to ${coupon.per_user_usage} time(s)`
+      ? `Among eligible baskets, you can choose up to ${coupon.per_user_usage} basket(s)`
       : null,
+    "Valid for 3 days after applied",
     getCouponRemainingUsersText(coupon),
   ];
 
@@ -146,11 +147,7 @@ function getCouponTabCoupons(tab) {
       };
     })
     .filter(function (entry) {
-      const isSelected =
-        selectedCoupon &&
-        selectedCoupon.id === entry.rawCoupon.id &&
-        selectedCoupon.code === entry.rawCoupon.coupon_code;
-      const isUsed = isCouponRedeemed(entry.rawCoupon) || isSelected;
+      const isUsed = isCouponRedeemed(entry.rawCoupon);
 
       return tab === "used" ? isUsed : !isUsed;
     });
@@ -295,7 +292,8 @@ function fetchCoupons() {
     type: "GET",
     headers: getCouponHeaders(),
     success: function (response) {
-      coupons = response;
+      selectedCoupon = null;
+      coupons = Array.isArray(response) ? response : [];
       renderCouponList();
     },
     error: function (xhr, status, error) {
@@ -322,28 +320,7 @@ function applyCoupon(index) {
       coupon_id: coupon.id,
     }),
     success: function () {
-      selectedCoupon = coupon;
-      coupons = coupons.map(function (existingCoupon) {
-        if (existingCoupon.id === coupon.id) {
-          const remainingUsers =
-            existingCoupon.remaining_users === null ||
-            existingCoupon.remaining_users === undefined
-              ? existingCoupon.remaining_users
-              : Math.max(Number(existingCoupon.remaining_users) - 1, 0);
-
-          return Object.assign({}, existingCoupon, {
-            redeemed: "Applied",
-            remaining_users: remainingUsers,
-          });
-        }
-
-        return existingCoupon;
-      });
-      activeCouponTab = "available";
-      renderCouponList();
-      requestAnimationFrame(function () {
-        switchCouponTab("used");
-      });
+      fetchCoupons();
       showCouponToast();
     },
     error: function (xhr, status, error) {
