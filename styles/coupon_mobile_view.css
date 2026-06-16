@@ -272,8 +272,16 @@ body {
     border-color: rgba(76, 223, 161, 0.36);
 }
 
+.coupon-card.expired {
+    border-color: rgba(255, 138, 101, 0.22);
+}
+
 .coupon-card.active .coupon-card-head {
     background: linear-gradient(135deg, #69409a 0%, #55357f 52%, #1f5f48 100%);
+}
+
+.coupon-card.expired .coupon-card-head {
+    background: linear-gradient(135deg, #5d3343 0%, #4c2e3b 56%, #2d2028 100%);
 }
 
 .coupon-card-head {
@@ -409,6 +417,11 @@ body {
 .coupon-apply-button:disabled {
     cursor: default;
     opacity: 0.56;
+}
+
+.coupon-apply-button.expired {
+    border-color: rgba(255, 160, 122, 0.28);
+    background: rgba(255, 138, 101, 0.14);
 }
 
 .apply-icon {

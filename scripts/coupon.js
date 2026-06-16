@@ -32,22 +32,97 @@ function escapeCouponText(value) {
     .replace(/'/g, "&#039;");
 }
 
+function getCouponStatus(coupon) {
+  if (coupon.redeemed === true) {
+    return "used";
+  }
+
+  if (coupon.redeemed === false) {
+    return "available";
+  }
+
+  return String(coupon.redeemed || "Available").trim().toLowerCase();
+}
+
+function isCouponAvailable(coupon) {
+  return getCouponStatus(coupon) === "available";
+}
+
+function isCouponRedeemed(coupon) {
+  return !isCouponAvailable(coupon);
+}
+
+function getCouponStatusLabel(coupon) {
+  const status = getCouponStatus(coupon);
+  if (status === "available") {
+    return "Available";
+  }
+  if (status === "used") {
+    return "Used";
+  }
+  if (status === "expired") {
+    return "Expired";
+  }
+  return status
+    .split(/\s+/)
+    .filter(Boolean)
+    .map(function (word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+}
+
+function getCouponBasketNames(coupon) {
+  const status = getCouponStatus(coupon);
+  const subscribedBaskets = Array.isArray(coupon.subscribed_basket)
+    ? coupon.subscribed_basket.filter(Boolean)
+    : [];
+  const basketNames = Array.isArray(coupon.basket_name)
+    ? coupon.basket_name.filter(Boolean)
+    : [];
+
+  if (status !== "available" && subscribedBaskets.length) {
+    return {
+      label: "Subscribed basket",
+      names: subscribedBaskets,
+    };
+  }
+
+  if (basketNames.length) {
+    return {
+      label: "Applicable to",
+      names: basketNames,
+    };
+  }
+
+  return null;
+}
+
+function getCouponRemainingUsersText(coupon) {
+  if (coupon.remaining_users === null || coupon.remaining_users === undefined) {
+    return "Available to unlimited users";
+  }
+
+  return `Remaining users: ${coupon.remaining_users}`;
+}
+
 function normalizeCoupon(coupon) {
   const discount = `${coupon.percentage}% OFF`;
-  const expiresOn = coupon.end_date;
-  const basketNames = coupon.basket_name || [];
+  const expiresOn = coupon.expire_on || coupon.end_date;
+  const basketDetails = getCouponBasketNames(coupon);
+  const statusLabel = getCouponStatusLabel(coupon);
 
   const bullets = [
-    basketNames.length ? `Applicable to: ${basketNames.join(", ")}` : null,
+    basketDetails
+      ? `${basketDetails.label}: ${basketDetails.names.join(", ")}`
+      : null,
     coupon.tenure_applicable
       ? `Valid for ${coupon.tenure_applicable}-month plans`
       : null,
     coupon.per_user_usage
       ? `Each user can use this coupon up to ${coupon.per_user_usage} time(s)`
       : null,
-    coupon.remaining_users !== null
-      ? `Available for ${coupon.remaining_users} more user(s)`
-      : "Available to unlimited users",
+    getCouponRemainingUsersText(coupon),
   ];
 
   return {
@@ -55,7 +130,9 @@ function normalizeCoupon(coupon) {
     code: coupon.coupon_code,
     discount,
     expiresOn,
-    redeemed: coupon.redeemed,
+    status: statusLabel,
+    isAvailable: isCouponAvailable(coupon),
+    isRedeemed: isCouponRedeemed(coupon),
     bullets: bullets.filter(Boolean),
   };
 }
@@ -73,7 +150,7 @@ function getCouponTabCoupons(tab) {
         selectedCoupon &&
         selectedCoupon.id === entry.rawCoupon.id &&
         selectedCoupon.code === entry.rawCoupon.coupon_code;
-      const isUsed = Boolean(entry.rawCoupon.redeemed || isSelected);
+      const isUsed = isCouponRedeemed(entry.rawCoupon) || isSelected;
 
       return tab === "used" ? isUsed : !isUsed;
     });
@@ -90,10 +167,10 @@ function getCouponTabCoupons(tab) {
 }
 
 function renderEmptyCouponState(tab) {
-  const title = tab === "used" ? "No used coupons" : "No coupons available";
+  const title = tab === "used" ? "No redeemed coupons" : "No coupons available";
   const description =
     tab === "used"
-      ? "Coupons you apply or have already used will appear here."
+      ? "Used or expired coupons will appear here."
       : "New offers will appear here when they are available.";
 
   return `
@@ -123,6 +200,7 @@ function renderCouponCards(tab) {
         selectedCoupon &&
         selectedCoupon.code === coupon.code &&
         selectedCoupon.id === coupon.id;
+      const isDisabled = !coupon.isAvailable || isApplied;
 
       const isExpanded = expandedCouponIndexes.includes(index);
       const primaryBullets = coupon.bullets.slice(0, 3)
@@ -150,9 +228,10 @@ function renderCouponCards(tab) {
             year: "numeric",
           })
         : "-";
+      const expiryLabel = coupon.status === "Expired" ? "Expired on" : "Ends on";
 
       return `
-        <article class="coupon-card ${isApplied ? "active" : ""}">
+        <article class="coupon-card ${isApplied ? "active" : ""} ${coupon.status.toLowerCase()}">
           <div class="coupon-card-head">
             <div>
               <div class="coupon-title-row">
@@ -162,20 +241,20 @@ function renderCouponCards(tab) {
 
               <div class="coupon-expiry">
                 <span class="clock-icon">◷</span>
-                <span>Ends on <strong>${expiryDate}</strong></span>
+                <span>${expiryLabel} <strong>${expiryDate}</strong></span>
               </div>
             </div>
 
             <button
-              class="coupon-apply-button"
+              class="coupon-apply-button ${coupon.status === "Expired" ? "expired" : ""}"
               type="button"
               data-index="${index}"
-              ${coupon.redeemed ? "disabled" : ""}
+              ${isDisabled ? "disabled" : ""}
             >
               ${
                 isApplied
                   ? '<span class="apply-icon">✓</span><span>Applied</span>'
-                  : `<span>${coupon.redeemed ? "Used" : "Apply"}</span>`
+                  : `<span>${coupon.isAvailable ? "Apply" : escapeCouponText(coupon.status)}</span>`
               }
             </button>
           </div>
@@ -246,8 +325,15 @@ function applyCoupon(index) {
       selectedCoupon = coupon;
       coupons = coupons.map(function (existingCoupon) {
         if (existingCoupon.id === coupon.id) {
+          const remainingUsers =
+            existingCoupon.remaining_users === null ||
+            existingCoupon.remaining_users === undefined
+              ? existingCoupon.remaining_users
+              : Math.max(Number(existingCoupon.remaining_users) - 1, 0);
+
           return Object.assign({}, existingCoupon, {
-            redeemed: true,
+            redeemed: "Applied",
+            remaining_users: remainingUsers,
           });
         }
 
