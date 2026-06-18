@@ -6,7 +6,7 @@ let activeCouponTab = "available";
 let couponSwipeStartX = 0;
 let couponSwipeStartY = 0;
 
-const COUPON_API_URL = DOMAIN + "/stocks/api/v1/coupon/";
+const COUPON_API_URL = TEST_DOMAIN + "/stocks/api/v1/coupon/";
 
 function getCouponRoot() {
   const $couponPager = $("#coupon-pager");
