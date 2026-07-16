@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Labh Referral</title>
+  <meta name="description" content="Copy your Labh referral code and download the Labh app." />
+  <link rel="icon" href="/assets/logo.svg" type="image/x-icon" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: #070707;
+      color: #ffffff;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 112px;
+      margin-bottom: 28px;
+    }
+
+    .card {
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      background: #15121c;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 32px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .code-box {
+      margin: 24px 0 16px;
+      padding: 16px;
+      border: 1px dashed rgba(255, 255, 255, 0.35);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 6px;
+      color: rgba(255, 255, 255, 0.64);
+      font-size: 13px;
+    }
+
+    .code {
+      display: block;
+      color: #ffffff;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      overflow-wrap: anywhere;
+    }
+
+    .status {
+      min-height: 22px;
+      margin-bottom: 18px;
+      color: #68d391;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .button {
+      width: 100%;
+      min-height: 52px;
+      border: 0;
+      border-radius: 8px;
+      background: #a663ff;
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .button:active {
+      transform: translateY(1px);
+    }
+
+    .store-icons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .store-icons img {
+      height: 38px;
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <img class="logo" src="/assets/logo_final.png" alt="Labh" />
+
+    <section class="card">
+      <h1>Use your referral code</h1>
+      <p>Tap below to copy your referral code, then download the Labh app.</p>
+
+      <div class="code-box" id="copy-code-box">
+        <span class="label">Referral code</span>
+        <span class="code" id="referral-code">Loading</span>
+      </div>
+
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+
+      <button class="button" id="download-button" type="button">
+        Copy code and download app
+      </button>
+
+      <div class="store-icons" aria-hidden="true">
+        <img src="/assets/googleplay.png" alt="" />
+        <img src="/assets/applestore.png" alt="" />
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var APP_INVITE_BASE_URL = "https://devapi.labh.io/invite/";
+      var params = new URLSearchParams(window.location.search);
+      var code = (params.get("code") || "").trim();
+      var codeEl = document.getElementById("referral-code");
+      var statusEl = document.getElementById("status");
+      var copyCodeBox = document.getElementById("copy-code-box");
+      var downloadButton = document.getElementById("download-button");
+
+      codeEl.textContent = code || "No code found";
+
+      if (code) {
+        saveReferralCode(code);
+      } else {
+        downloadButton.textContent = "Download app";
+      }
+
+      copyCodeBox.addEventListener("click", copyReferralCode);
+      downloadButton.addEventListener("click", function () {
+        downloadButton.disabled = true;
+        downloadButton.textContent = "Redirecting...";
+
+        copyReferralCode().finally(function () {
+          redirectToStore();
+        });
+      });
+
+      function saveReferralCode(value) {
+        try {
+          localStorage.setItem("labh_referral_code", value);
+        } catch (error) {
+          return false;
+        }
+
+        return true;
+      }
+
+      function copyReferralCode() {
+        if (!code) {
+          statusEl.textContent = "Referral code not found in this link.";
+          return Promise.resolve(false);
+        }
+
+        saveReferralCode(code);
+
+        if (navigator.clipboard && window.isSecureContext) {
+          return navigator.clipboard.writeText(code).then(function () {
+            statusEl.textContent = "Referral code copied.";
+            return true;
+          }).catch(function () {
+            fallbackCopy(code);
+            return true;
+          });
+        }
+
+        fallbackCopy(code);
+        return Promise.resolve(true);
+      }
+
+      function fallbackCopy(value) {
+        var input = document.createElement("textarea");
+        input.value = value;
+        input.setAttribute("readonly", "");
+        input.style.position = "fixed";
+        input.style.left = "-9999px";
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        document.body.removeChild(input);
+        statusEl.textContent = "Referral code copied.";
+      }
+
+      function redirectToStore() {
+        var inviteUrl = buildInviteUrl();
+
+        statusEl.textContent = "Redirecting to the app store...";
+
+        fetch(inviteUrl, {
+          method: "GET",
+          redirect: "follow"
+        }).then(function (response) {
+          window.location.href = response.url || inviteUrl;
+        }).catch(function () {
+          window.location.href = inviteUrl;
+        });
+      }
+
+      function buildInviteUrl() {
+        var invitePath = code ? encodeURIComponent(code) + "/" : "";
+        return new URL(invitePath, APP_INVITE_BASE_URL).toString();
+      }
+    })();
+  </script>
+</body>
+</html>
