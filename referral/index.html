@@ -156,6 +156,8 @@
 
       codeEl.textContent = code || "No code found";
 
+      trackReferralVisit();
+
       if (code) {
         saveReferralCode(code);
       } else {
@@ -171,6 +173,31 @@
           redirectToStore();
         });
       });
+
+      function trackReferralVisit() {
+        fetch("https://devapi.labh.io/stocks/api/v1/referral/track-visit/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            referral_code: code || null
+          }),
+          keepalive: true
+        })
+          .then(function (response) {
+            console.log("Referral API status:", response.status);
+            console.log("Referral API response:", response);
+
+            return response.text();
+          })
+          .then(function (data) {
+            console.log("Referral API response body:", data);
+          })
+          .catch(function (error) {
+            console.error("Failed to track referral visit:", error);
+          });
+      }
 
       function saveReferralCode(value) {
         try {
