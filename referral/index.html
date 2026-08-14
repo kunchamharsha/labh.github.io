@@ -184,9 +184,19 @@
             referral_code: code || null
           }),
           keepalive: true
-        }).catch(function (error) {
-          console.error("Failed to track referral visit:", error);
-        });
+        })
+          .then(function (response) {
+            console.log("Referral API status:", response.status);
+            console.log("Referral API response:", response);
+
+            return response.text();
+          })
+          .then(function (data) {
+            console.log("Referral API response body:", data);
+          })
+          .catch(function (error) {
+            console.error("Failed to track referral visit:", error);
+          });
       }
 
       function saveReferralCode(value) {
