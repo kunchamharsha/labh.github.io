@@ -1,7 +1,9 @@
 User-agent: *
 Disallow:
 
+Sitemap: https://labh.io/sitemap-index.xml
 Sitemap: https://labh.io/sitemap.xml
+Sitemap: https://labh.io/sitemaps/stocks-1.xml
 Sitemap: https://labh.io/sitemaps/pin-sitemap-1.xml
 Sitemap: https://labh.io/sitemaps/pin-sitemap-2.xml
 Sitemap: https://labh.io/sitemaps/pin-sitemap-3.xml
@@ -18,5 +20,5 @@ Sitemap: https://labh.io/sitemaps/pin-sitemap-13.xml
 Sitemap: https://labh.io/sitemaps/pin-sitemap-14.xml
 Sitemap: https://labh.io/sitemaps/pin-sitemap-15.xml
 Sitemap: https://labh.io/sitemaps/pin-sitemap-16.xml
-Sitemap: https://labh.io/mf-sitemap-1.xml
-Sitemap: https://labh.io/mf-sitemap-2.xml
+Sitemap: https://labh.io/mfsitemap-1.xml
+Sitemap: https://labh.io/mfsitemap-2.xml
