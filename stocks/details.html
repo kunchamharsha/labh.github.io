@@ -3,30 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="pageTitle">Stock Details - Labh</title>
-  <meta name="description" id="pageDescription" content="View detailed stock information, fundamentals, and analysis on Labh.">
-  <meta name="keywords" id="pageKeywords" content="stock analysis, stock fundamentals, investment, NSE, BSE, Indian stocks, Labh">
+  <title id="pageTitle">Share Price Today, Fundamentals &amp; Financials | Labh</title>
+  <meta name="description" id="pageDescription" content="Live NSE share price, market cap, P/E ratio, 52-week high/low, quarterly results, balance sheet and cash flow on Labh.">
   <meta name="author" content="Labh">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical URL -->
-  <link rel="canonical" id="canonicalUrl" href="https://labh.io/stocks/details.html">
+  <meta name="robots" id="metaRobots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="theme-color" content="#0a0a0a">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" id="ogUrl" content="https://labh.io/stocks/details.html">
-  <meta property="og:title" id="ogTitle" content="Stock Details - Labh">
-  <meta property="og:description" id="ogDescription" content="View detailed stock information, fundamentals, and analysis on Labh.">
+  <meta property="og:title" id="ogTitle" content="Share Price Today, Fundamentals &amp; Financials | Labh">
+  <meta property="og:description" id="ogDescription" content="Live NSE share price, market cap, P/E ratio, 52-week high/low, quarterly results, balance sheet and cash flow on Labh.">
   <meta property="og:image" content="https://labh.io/assets/LOGO.png">
   <meta property="og:site_name" content="Labh">
   <meta property="og:locale" content="en_IN">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" id="twitterTitle" content="Stock Details - Labh">
-  <meta name="twitter:description" id="twitterDescription" content="View detailed stock information, fundamentals, and analysis on Labh.">
+  <meta name="twitter:title" id="twitterTitle" content="Share Price Today, Fundamentals &amp; Financials | Labh">
+  <meta name="twitter:description" id="twitterDescription" content="Live NSE share price, market cap, P/E ratio, 52-week high/low, quarterly results, balance sheet and cash flow on Labh.">
   <meta name="twitter:image" content="https://labh.io/assets/LOGO.png">
   <meta name="twitter:site" content="@labh">
+
+  <!--
+    Per-stock canonical, title and social URLs are set synchronously here, before the
+    page renders. A static canonical pointing at /stocks/details.html would tell Google
+    that every ?symbol= URL is a duplicate of one page, so none is shipped in the HTML.
+  -->
+  <script>
+    (function () {
+      var raw = new URLSearchParams(location.search).get('symbol') || '';
+      var sym = raw.trim().toUpperCase().replace(/\.NSE$/, '');
+      var head = document.head;
+      if (!/^[A-Z0-9&_\-]{1,20}$/.test(sym)) {
+        // No (or invalid) symbol: nothing worth indexing on this URL.
+        document.getElementById('metaRobots').setAttribute('content', 'noindex, follow');
+        return;
+      }
+      window.__STOCK_SYMBOL__ = sym;
+      var url = 'https://labh.io/stocks/details.html?symbol=' + encodeURIComponent(sym);
+      var link = document.createElement('link');
+      link.rel = 'canonical';
+      link.id = 'canonicalUrl';
+      link.href = url;
+      head.appendChild(link);
+      document.getElementById('ogUrl').setAttribute('content', url);
+      var t = sym + ' Share Price Today, Fundamentals & Financials | Labh';
+      document.title = t;
+      document.getElementById('ogTitle').setAttribute('content', t);
+      document.getElementById('twitterTitle').setAttribute('content', t);
+    })();
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/LOGO.png">
@@ -42,19 +69,17 @@
   <link rel="preconnect" href="https://api.labh.io" crossorigin>
 
   <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <!-- Deferred so it doesn't block first paint (Core Web Vitals) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
-  <!-- Structured Data (will be populated dynamically) -->
+  <!-- Structured Data (populated per stock in updateSEOTags) -->
   <script type="application/ld+json" id="structuredData">
   {
     "@context": "https://schema.org",
-    "@type": "FinancialProduct",
-    "name": "Stock Details",
-    "provider": {
-      "@type": "Organization",
-      "name": "Labh",
-      "url": "https://labh.io"
-    }
+    "@type": "Organization",
+    "name": "Labh",
+    "url": "https://labh.io",
+    "logo": "https://labh.io/assets/LOGO.png"
   }
   </script>
 
@@ -665,6 +690,48 @@
         padding-bottom: 100px;
       }
     }
+
+    /* SEO content: breadcrumb, summary, FAQ */
+    .breadcrumb ol {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      color: #999;
+      margin-bottom: 1rem;
+    }
+    .breadcrumb li + li::before {
+      content: '›';
+      margin-right: 0.4rem;
+      color: #666;
+    }
+    .breadcrumb a {
+      color: var(--purple-light);
+      text-decoration: none;
+    }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .stock-summary {
+      color: #ccc;
+      line-height: 1.7;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(124, 58, 237, 0.15);
+      padding: 1rem 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .faq-item p {
+      color: #ccc;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -676,7 +743,7 @@
     </a>
     <div class="nav-links">
       <a href="/" class="nav-link" aria-label="Go to homepage">Home</a>
-      <a href="/search.html" class="nav-link" aria-label="Search stocks">Search</a>
+      <a href="/search.html" class="nav-link">Search Stocks</a>
       <a href="https://calendar.app.google/gTCE7fH4o5fuSBpWA" class="btn-primary" aria-label="Contact us">Contact</a>
     </div>
   </nav>
@@ -713,9 +780,8 @@
   </footer>
 
   <script>
-    // Get symbol from URL parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    const symbol = urlParams.get('symbol');
+    // Symbol is validated + normalised (uppercase, no .NSE suffix) by the inline script in <head>
+    const symbol = window.__STOCK_SYMBOL__ || null;
 
     // API Configuration
     const API_URL = 'https://api.labh.io/open/stock-fundamentals';
@@ -732,7 +798,7 @@
       showLoading();
 
       try {
-        const response = await fetch(`${API_URL}?symbol=${symbol}.NSE`);
+        const response = await fetch(`${API_URL}?symbol=${encodeURIComponent(symbol)}.NSE`);
 
         if (!response.ok) {
           throw new Error('Failed to fetch stock data');
@@ -765,25 +831,26 @@
       const priceChangePercent = previousClose ? ((priceChange / previousClose) * 100) : 0;
       const isPositive = priceChange >= 0;
 
-      const stockName = general.Name || symbol;
+      const stockName = escapeHTML(general.Name || symbol);
+      const asOfDate = currentPriceData.date ? new Date(currentPriceData.date) : new Date();
+      const asOfLabel = asOfDate.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 
       // Header Content
       const headerHTML = `
         <div class="stock-title-section">
           <div class="stock-info">
-            <nav aria-label="Breadcrumb">
-              <a href="/search.html" class="back-link" aria-label="Return to stock search">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"/>
-                </svg>
-                Back to Search
-              </a>
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+              <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/search.html">Stocks</a></li>
+                <li aria-current="page">${stockName}</li>
+              </ol>
             </nav>
-            <h1 class="stock-name" itemprop="name">${stockName}</h1>
-            <div class="stock-symbol" aria-label="Stock symbol and exchange">${general.Code || symbol} • ${general.Exchange || 'NSE'}</div>
+            <h1 class="stock-name">${stockName} Share Price</h1>
+            <div class="stock-symbol" aria-label="Stock symbol and exchange">${escapeHTML(general.Code || symbol)} • ${escapeHTML(general.Exchange || 'NSE')}</div>
             <div class="stock-tags" role="list" aria-label="Stock categories">
-              <span class="tag" role="listitem">${general.Sector || 'N/A'}</span>
-              <span class="tag" role="listitem">${general.Industry || 'N/A'}</span>
+              <span class="tag" role="listitem">${escapeHTML(general.Sector || 'N/A')}</span>
+              <span class="tag" role="listitem">${escapeHTML(general.Industry || 'N/A')}</span>
             </div>
           </div>
           <div class="stock-price-section">
@@ -798,7 +865,7 @@
               ${isPositive ? '+' : ''}${formatNumber(priceChange)} (${isPositive ? '+' : ''}${priceChangePercent.toFixed(2)}%)
             </div>
             <div class="price-meta">
-              As of ${currentPriceData.date ? new Date(currentPriceData.date).toLocaleDateString() : new Date().toLocaleDateString()}
+              As of <time datetime="${asOfDate.toISOString().slice(0, 10)}">${asOfLabel}</time>
             </div>
           </div>
         </div>
@@ -806,9 +873,15 @@
 
       // Main Content
       const mainHTML = `
+        <!-- Crawlable text summary of the key numbers -->
+        <section class="card full-width-card" aria-labelledby="overviewHeading">
+          <h2 class="card-title" id="overviewHeading">${stockName} Stock Overview</h2>
+          <p class="stock-summary">${buildSummary(data, symbol, currentPrice, priceChangePercent, asOfLabel)}</p>
+        </section>
+
         <!-- Price Chart -->
         <article class="card full-width-card">
-          <h2 class="card-title">Price History</h2>
+          <h2 class="card-title">${stockName} Share Price History</h2>
           <div class="chart-controls" role="group" aria-label="Time period selection">
             <button class="chart-control-btn active" data-period="1M" aria-label="Show 1 month price history">1M</button>
             <button class="chart-control-btn" data-period="3M" aria-label="Show 3 months price history">3M</button>
@@ -817,7 +890,7 @@
             <button class="chart-control-btn" data-period="5Y" aria-label="Show 5 years price history">5Y</button>
             <button class="chart-control-btn" data-period="ALL" aria-label="Show all available price history">All</button>
           </div>
-          <div class="chart-container" role="img" aria-label="Stock price chart showing historical performance">
+          <div class="chart-container" role="img" aria-label="${stockName} share price chart showing historical performance">
             <canvas id="priceChart"></canvas>
           </div>
         </article>
@@ -1047,10 +1120,10 @@
               ${Object.values(general.Officers).slice(0, 5).map(officer => `
                 <div class="officer-item">
                   <div>
-                    <div class="officer-name">${officer.Name || 'N/A'}</div>
-                    <div class="officer-title">${officer.Title || 'N/A'}</div>
+                    <div class="officer-name">${escapeHTML(officer.Name || 'N/A')}</div>
+                    <div class="officer-title">${escapeHTML(officer.Title || 'N/A')}</div>
                   </div>
-                  ${officer.YearBorn && officer.YearBorn !== 'NA' ? `<div class="officer-year">Born: ${officer.YearBorn}</div>` : ''}
+                  ${officer.YearBorn && officer.YearBorn !== 'NA' ? `<div class="officer-year">Born: ${escapeHTML(officer.YearBorn)}</div>` : ''}
                 </div>
               `).join('')}
             </div>
@@ -1061,15 +1134,15 @@
           ${general.Description ? `
           <div class="card full-width-card">
             <h2 class="card-title">About ${stockName}</h2>
-            <p style="color: #ccc; line-height: 1.7; margin-bottom: 1rem;">${general.Description}</p>
-            ${general.WebURL ? `<a href="${general.WebURL}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-block; text-decoration: none;">Visit Website</a>` : ''}
+            <p style="color: #ccc; line-height: 1.7; margin-bottom: 1rem;">${escapeHTML(general.Description)}</p>
+            ${/^https?:\/\//i.test(general.WebURL || '') ? `<a href="${escapeHTML(general.WebURL)}" target="_blank" rel="noopener noreferrer nofollow" class="btn-primary" style="display: inline-block; text-decoration: none;">Visit ${stockName} Website</a>` : ''}
           </div>
           ` : ''}
         </div>
 
         <!-- Quarterly P&L -->
         <article class="card full-width-card" style="margin-top:0">
-          <h2 class="card-title">Quarterly Results</h2>
+          <h2 class="card-title">${stockName} Quarterly Results</h2>
           <div class="fin-table-wrapper">
             ${buildIncomeTable(data.fundamentals?.Financials?.Income_Statement?.quarterly, data.fundamentals?.Earnings?.History)}
           </div>
@@ -1077,7 +1150,7 @@
 
         <!-- Balance Sheet -->
         <article class="card full-width-card" style="margin-top:0">
-          <h2 class="card-title">Balance Sheet</h2>
+          <h2 class="card-title">${stockName} Balance Sheet</h2>
           <div class="fin-table-wrapper">
             ${buildBalanceSheetTable(data.fundamentals?.Financials?.Balance_Sheet?.quarterly)}
           </div>
@@ -1085,11 +1158,22 @@
 
         <!-- Cash Flows -->
         <article class="card full-width-card" style="margin-top:0">
-          <h2 class="card-title">Cash Flows</h2>
+          <h2 class="card-title">${stockName} Cash Flows</h2>
           <div class="fin-table-wrapper">
             ${buildCashFlowTable(data.fundamentals?.Financials?.Cash_Flow?.quarterly)}
           </div>
         </article>
+
+        <!-- FAQ: visible Q&A, mirrored in FAQPage structured data -->
+        <section class="card full-width-card" style="margin-top:0" aria-labelledby="faqHeading">
+          <h2 class="card-title" id="faqHeading">${stockName} Share: Frequently Asked Questions</h2>
+          ${buildFaqs(data, symbol, currentPrice, asOfLabel).map(f => `
+            <div class="faq-item">
+              <h3>${escapeHTML(f.q)}</h3>
+              <p>${escapeHTML(f.a)}</p>
+            </div>
+          `).join('')}
+        </section>
       `;
 
       document.getElementById('headerContent').innerHTML = headerHTML;
@@ -1099,170 +1183,162 @@
       updateSEOTags(data, symbol, currentPrice, priceChange, priceChangePercent);
 
       // Initialize chart after content is loaded
-      setTimeout(() => {
+      // Chart.js is loaded with `defer`; wait for it if it isn't ready yet
+      if (window.Chart) {
         initPriceChart(priceHistory, isPositive);
-      }, 100);
+      } else {
+        window.addEventListener('load', () => initPriceChart(priceHistory, isPositive), { once: true });
+      }
     }
 
     // Update SEO meta tags and structured data
     function updateSEOTags(data, symbol, currentPrice, priceChange, priceChangePercent) {
       const general = data.fundamentals?.General || {};
       const highlights = data.fundamentals?.Highlights || {};
-      const technicals = data.fundamentals?.Technicals || {};
 
       const stockName = general.Name || symbol;
-      const sector = general.Sector || 'Stock';
-      const industry = general.Industry || '';
+      const sector = general.Sector || '';
       const exchange = general.Exchange || 'NSE';
+      const priceHistory = data.last_5_years_price || [];
+      const lastDate = priceHistory[priceHistory.length - 1]?.date;
+      const asOfLabel = (lastDate ? new Date(lastDate) : new Date())
+        .toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 
-      // Page Title
-      const title = `${stockName} (${symbol}) Stock Price & Analysis | Labh`;
+      // Title: "<Company> Share Price Today (<SYMBOL>)" matches how Indian users search
+      const title = `${stockName} Share Price Today (${symbol}) - Fundamentals & Financials | Labh`;
       document.getElementById('pageTitle').textContent = title;
       document.title = title;
 
-      // Meta Description
-      const description = `Get detailed analysis of ${stockName} stock. Current price: ₹${formatNumber(currentPrice)}, Change: ${priceChange >= 0 ? '+' : ''}${priceChangePercent.toFixed(2)}%. View fundamentals, financials, charts & more on Labh.`;
+      // Meta description (~155 chars, leads with the price query)
+      const stats = [];
+      if (highlights.MarketCapitalization) stats.push(`Market cap ₹${formatLargeNumber(highlights.MarketCapitalization)}`);
+      if (highlights.PERatio) stats.push(`P/E ${formatNumber(highlights.PERatio)}`);
+      const description = `${stockName} (${exchange}: ${symbol}) share price today is ₹${formatNumber(currentPrice)} (${priceChange >= 0 ? '+' : ''}${priceChangePercent.toFixed(2)}%) as of ${asOfLabel}.`
+        + (stats.length ? ` ${stats.join(', ')}.` : '')
+        + ` View quarterly results, balance sheet, cash flow & charts on Labh.`;
       document.getElementById('pageDescription').setAttribute('content', description);
 
-      // Keywords
-      const keywords = `${stockName}, ${symbol}, ${sector}, ${industry}, stock price, stock analysis, NSE, BSE, Indian stocks, fundamentals, P/E ratio, market cap, Labh`;
-      document.getElementById('pageKeywords').setAttribute('content', keywords);
+      const canonicalUrl = `https://labh.io/stocks/details.html?symbol=${encodeURIComponent(symbol)}`;
+      let canonical = document.getElementById('canonicalUrl');
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.rel = 'canonical';
+        canonical.id = 'canonicalUrl';
+        document.head.appendChild(canonical);
+      }
+      canonical.setAttribute('href', canonicalUrl);
 
-      // Canonical URL
-      const canonicalUrl = `https://labh.io/stocks/details.html?symbol=${symbol}`;
-      document.getElementById('canonicalUrl').setAttribute('href', canonicalUrl);
-
-      // Open Graph
+      // Open Graph / Twitter
       document.getElementById('ogUrl').setAttribute('content', canonicalUrl);
       document.getElementById('ogTitle').setAttribute('content', title);
       document.getElementById('ogDescription').setAttribute('content', description);
-
-      // Twitter Card
       document.getElementById('twitterTitle').setAttribute('content', title);
       document.getElementById('twitterDescription').setAttribute('content', description);
 
-      // Structured Data
-      const structuredData = {
-        "@context": "https://schema.org",
-        "@type": "FinancialProduct",
+      // Structured data: WebPage about a Corporation (with tickerSymbol), BreadcrumbList, FAQPage.
+      // Note: no AggregateRating/Offer — fabricated ratings violate Google's guidelines.
+      const corporation = {
+        "@type": "Corporation",
+        "@id": `${canonicalUrl}#corporation`,
         "name": stockName,
-        "description": general.Description || `${stockName} stock listed on ${exchange}`,
-        "category": sector,
-        "provider": {
-          "@type": "Organization",
-          "name": general.Name || stockName,
-          "url": general.WebURL || "https://labh.io",
-          "logo": general.LogoURL ? `https://labh.io${general.LogoURL}` : "https://labh.io/assets/LOGO.png",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": general.AddressData?.Street || general.Address || "",
-            "addressLocality": general.AddressData?.City || "",
-            "addressCountry": general.AddressData?.Country || general.CountryName || "India"
-          }
-        },
-        "offers": {
-          "@type": "Offer",
-          "price": currentPrice,
-          "priceCurrency": general.CurrencyCode || "INR",
-          "availability": "https://schema.org/InStock",
-          "url": canonicalUrl
-        },
-        "aggregateRating": highlights.PERatio ? {
-          "@type": "AggregateRating",
-          "ratingValue": Math.min(5, Math.max(1, 5 - (highlights.PERatio - 15) / 10)),
-          "reviewCount": "1000",
-          "bestRating": "5",
-          "worstRating": "1"
-        } : undefined,
-        "brand": {
-          "@type": "Brand",
-          "name": stockName
-        },
-        "additionalProperty": [
+        "tickerSymbol": `${exchange}: ${symbol}`,
+        "description": general.Description || `${stockName} is listed on the ${exchange}.`
+      };
+      if (general.ISIN) corporation.identifier = { "@type": "PropertyValue", "propertyID": "ISIN", "value": general.ISIN };
+      if (/^https?:\/\//i.test(general.WebURL || '')) corporation.url = general.WebURL;
+      if (general.FullTimeEmployees) corporation.numberOfEmployees = { "@type": "QuantitativeValue", "value": general.FullTimeEmployees };
+      if (general.AddressData || general.CountryName) {
+        corporation.address = {
+          "@type": "PostalAddress",
+          "streetAddress": general.AddressData?.Street || undefined,
+          "addressLocality": general.AddressData?.City || undefined,
+          "addressRegion": general.AddressData?.State || undefined,
+          "addressCountry": general.AddressData?.Country || general.CountryName || "India"
+        };
+      }
+      if (sector) corporation.industry = general.Industry ? `${sector} - ${general.Industry}` : sector;
+
+      const faqs = buildFaqs(data, symbol, currentPrice, asOfLabel);
+
+      const graph = {
+        "@context": "https://schema.org",
+        "@graph": [
           {
-            "@type": "PropertyValue",
-            "name": "Symbol",
-            "value": symbol
+            "@type": "WebPage",
+            "@id": canonicalUrl,
+            "url": canonicalUrl,
+            "name": title,
+            "description": description,
+            "inLanguage": "en-IN",
+            "dateModified": lastDate || new Date().toISOString().slice(0, 10),
+            "isPartOf": { "@type": "WebSite", "name": "Labh", "url": "https://labh.io" },
+            "publisher": { "@type": "Organization", "name": "Labh", "url": "https://labh.io", "logo": "https://labh.io/assets/LOGO.png" },
+            "about": { "@id": `${canonicalUrl}#corporation` },
+            "breadcrumb": { "@id": `${canonicalUrl}#breadcrumb` }
+          },
+          corporation,
+          {
+            "@type": "BreadcrumbList",
+            "@id": `${canonicalUrl}#breadcrumb`,
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://labh.io/" },
+              { "@type": "ListItem", "position": 2, "name": "Stocks", "item": "https://labh.io/search.html" },
+              { "@type": "ListItem", "position": 3, "name": `${stockName} Share Price`, "item": canonicalUrl }
+            ]
           },
           {
-            "@type": "PropertyValue",
-            "name": "Exchange",
-            "value": exchange
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "Sector",
-            "value": sector
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "Industry",
-            "value": industry
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "Market Cap",
-            "value": formatLargeNumber(highlights.MarketCapitalization || 0)
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "P/E Ratio",
-            "value": formatNumber(highlights.PERatio || 0)
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "52 Week High",
-            "value": formatNumber(technicals['52WeekHigh'] || 0)
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "52 Week Low",
-            "value": formatNumber(technicals['52WeekLow'] || 0)
+            "@type": "FAQPage",
+            "@id": `${canonicalUrl}#faq`,
+            "mainEntity": faqs.map(f => ({
+              "@type": "Question",
+              "name": f.q,
+              "acceptedAnswer": { "@type": "Answer", "text": f.a }
+            }))
           }
         ]
       };
 
-      // Update structured data
       const structuredDataScript = document.getElementById('structuredData');
       if (structuredDataScript) {
-        structuredDataScript.textContent = JSON.stringify(structuredData, null, 2);
+        structuredDataScript.textContent = JSON.stringify(graph);
       }
+    }
 
-      // Add breadcrumb structured data
-      const breadcrumbData = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://labh.io"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Search",
-            "item": "https://labh.io/search.html"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": stockName,
-            "item": canonicalUrl
-          }
-        ]
-      };
+    // Plain-text overview paragraph built from the data (indexable text, not just numbers in cards)
+    function buildSummary(data, symbol, currentPrice, priceChangePercent, asOfLabel) {
+      const g = data.fundamentals?.General || {};
+      const h = data.fundamentals?.Highlights || {};
+      const t = data.fundamentals?.Technicals || {};
+      const name = g.Name || symbol;
+      const s = [];
+      s.push(`${name} (${g.Exchange || 'NSE'}: ${symbol}) shares closed at ₹${formatNumber(currentPrice)} on ${asOfLabel}, ${priceChangePercent >= 0 ? 'up' : 'down'} ${Math.abs(priceChangePercent).toFixed(2)}% from the previous close.`);
+      if (g.Sector) s.push(`The company operates in the ${g.Sector}${g.Industry ? ` sector (${g.Industry})` : ' sector'}.`);
+      if (h.MarketCapitalization) s.push(`It has a market capitalisation of ₹${formatLargeNumber(h.MarketCapitalization)}${h.PERatio ? ` and trades at a P/E ratio of ${formatNumber(h.PERatio)}` : ''}.`);
+      if (t['52WeekHigh'] && t['52WeekLow']) s.push(`Its 52-week high is ₹${formatNumber(t['52WeekHigh'])} and its 52-week low is ₹${formatNumber(t['52WeekLow'])}.`);
+      if (h.RevenueTTM) s.push(`Trailing twelve-month revenue stands at ₹${formatLargeNumber(h.RevenueTTM)}${h.ProfitMargin ? ` with a net profit margin of ${formatPercent(h.ProfitMargin)}` : ''}.`);
+      return escapeHTML(s.join(' '));
+    }
 
-      // Create breadcrumb script if it doesn't exist
-      let breadcrumbScript = document.getElementById('breadcrumbData');
-      if (!breadcrumbScript) {
-        breadcrumbScript = document.createElement('script');
-        breadcrumbScript.type = 'application/ld+json';
-        breadcrumbScript.id = 'breadcrumbData';
-        document.head.appendChild(breadcrumbScript);
-      }
-      breadcrumbScript.textContent = JSON.stringify(breadcrumbData, null, 2);
+    // FAQ entries targeting common "people also ask" queries. Only includes answers we have data for.
+    function buildFaqs(data, symbol, currentPrice, asOfLabel) {
+      const g = data.fundamentals?.General || {};
+      const h = data.fundamentals?.Highlights || {};
+      const t = data.fundamentals?.Technicals || {};
+      const d = data.fundamentals?.SplitsDividends || {};
+      const name = g.Name || symbol;
+      const faqs = [];
+      if (currentPrice) faqs.push({ q: `What is the share price of ${name} today?`, a: `${name} (${symbol}) share price is ₹${formatNumber(currentPrice)} as of ${asOfLabel} on the ${g.Exchange || 'NSE'}.` });
+      if (h.MarketCapitalization) faqs.push({ q: `What is the market cap of ${name}?`, a: `The market capitalisation of ${name} is ₹${formatLargeNumber(h.MarketCapitalization)}.` });
+      if (h.PERatio) faqs.push({ q: `What is the P/E ratio of ${name}?`, a: `${name} has a trailing P/E ratio of ${formatNumber(h.PERatio)}${h.EarningsShare ? ` with earnings per share (EPS) of ₹${formatNumber(h.EarningsShare)}` : ''}.` });
+      if (t['52WeekHigh'] && t['52WeekLow']) faqs.push({ q: `What is the 52-week high and low of ${name} share?`, a: `The 52-week high of ${name} is ₹${formatNumber(t['52WeekHigh'])} and the 52-week low is ₹${formatNumber(t['52WeekLow'])}.` });
+      if (d.ForwardAnnualDividendRate) faqs.push({ q: `Does ${name} pay dividends?`, a: `Yes. ${name} has an annual dividend of ₹${formatNumber(d.ForwardAnnualDividendRate)} per share, a dividend yield of ${formatPercent(d.ForwardAnnualDividendYield || 0)}.` });
+      if (g.Sector) faqs.push({ q: `Which sector does ${name} belong to?`, a: `${name} belongs to the ${g.Sector} sector${g.Industry ? `, in the ${g.Industry} industry` : ''}.` });
+      faqs.push({ q: `How can I buy ${name} shares?`, a: `You can buy ${name} (${symbol}) shares on the NSE through a SEBI-registered stockbroker using a demat and trading account. You can also explore expert-curated stock baskets on the Labh app.` });
+      return faqs;
+    }
+
+    function escapeHTML(str) {
+      return String(str ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
     }
 
     // Initialize price chart
@@ -1273,7 +1349,7 @@
       allPriceData = priceHistory;
 
       const ctx = document.getElementById('priceChart');
-      if (!ctx) return;
+      if (!ctx || !window.Chart) return;
 
       // Filter data for 1 month by default
       const filteredData = filterPriceData(priceHistory, '1M');
@@ -1429,6 +1505,8 @@
 
     // Show error state
     function showError(title, message) {
+      // Error / empty pages must not be indexed (avoids soft-404s in Search Console)
+      document.getElementById('metaRobots')?.setAttribute('content', 'noindex, follow');
       document.getElementById('headerContent').innerHTML = `
         <div class="error-container" role="alert" aria-live="assertive">
           <svg class="error-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
